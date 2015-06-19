@@ -27,7 +27,7 @@ namespace Homepage
             
 
             bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css","~/Content/mortenalbring.css","~/Content/css/font-awesome.css")
+                .Include("~/Content/mortenalbring.css","~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css","~/Content/css/font-awesome.css")
                 );
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -43,6 +43,10 @@ namespace Homepage
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+            
+            BundleTable.EnableOptimizations = false;
         }
+
+        
     }
 }

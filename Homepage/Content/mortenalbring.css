@@ -20,12 +20,6 @@
         background: #2980b9;
     color: #000;  
 }
-.nav-topbar .active > a {
-    background: #3591cd;
-    color: #ccc;    
-    border-bottom: 3px solid;
-    border-color: #f1d00f;
-}
 
 .nav-topbar li > a:hover, .nav-topbar li > a:active {
     background: #3591cd;
@@ -52,7 +46,7 @@
     font-size: small;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-  color: #ccc;    
+  color: #000;    
     border-radius: 4px;
     border-right: 1px solid;
     border-right-color: #ccc;   
@@ -73,7 +67,7 @@
 .nav-topbar .dropdown-menu,
 .nav-topbar .dropdown-menu li > a:visited {
     background: #418abc;
-    color: #ccc;  
+    color: #000;  
 }
 
 .home-content {
@@ -82,8 +76,7 @@
 
 .section-intro {
     padding-top: 100px;
-    height: 500px;
-    border-bottom: 1px solid;
+    height: 500px;    
 }
 
 .section-intro h1 {
@@ -104,5 +97,5 @@ h1,h2,h3 {
 }
 
 .spacer {
-    height: 20px;
+    height:20px;
 }

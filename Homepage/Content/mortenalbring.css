@@ -1,0 +1,75 @@
+﻿.nav-topbar-header {
+    background: #2980b9;
+    color: #fff;
+}
+.topbar {
+    background: #2980b9;
+}
+.topbar img {
+    margin-top: 15px;
+    margin-left: 13px;
+    margin-right: 13px;
+    max-height: 20px;
+}
+
+.nav-topbar li > a:visited {
+        background: #2980b9;
+    color: #fff;  
+}
+.nav-topbar .active > a {
+    background: #3591cd;
+    color: #fff;    
+    border-bottom: 3px solid;
+    border-color: #f1d00f;
+}
+
+.nav-topbar li > a:hover, .nav-topbar li > a:active {
+    background: #40a4e7;
+    color: #fff;
+}
+
+
+.nav-topbar > li > a > i,
+.nav-topbar .dropdown-menu  > li > a > i,
+.nav-topbar .dropdown-menu > li > form > a > i
+ {
+    margin-right: 5px;
+    font-size: small;    
+    padding: 4px;
+    width: 22px;    
+    border-radius: 8px;
+    background: #FFEB3B;
+    color: #2e15ff;
+}
+
+.nav-topbar > li > a,
+.nav-topbar .dropdown-menu  > li > a,
+.nav-topbar .dropdown-menu > li > form > a {    
+    font-size: small;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+  color: #fff;    
+    border-radius: 4px;    
+}
+
+.nav-topbar .dropdown-menu > li > a,
+.nav-topbar .dropdown-menu > li > form > a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.nav-topbar .open > a, .nav-topbar .open > a:hover, .nav-topbar .open > a:focus
+  {    
+    background:#0b74b9
+}
+
+.nav-topbar .dropdown-menu,
+.nav-topbar .dropdown-menu li > a:visited {
+    background: #418abc;
+    color: #fff;  
+}
+
+.home-content {
+    padding-top: 40px;
+}

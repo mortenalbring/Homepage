@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <title>@ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
@@ -14,48 +14,59 @@
 
 
 </head>
-<body>
+    <body> 
+        
+        <div class="container-fluid">
+            <div class="navbar navbar-fixed-top" role="navigation">
+                <div class="navbar-header nav-topbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse topbar">
+                    <ul class="nav navbar-nav nav-topbar">
+                        <li>
+                            <div class="hidden-xs">
+                                <img src="" />
+                            </div>
+                        </li>
 
-
-
-
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-            </div>
-            <div class="float-right">
-                <section id="login">
-                    @Html.Partial("_LoginPartial")
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">
+                                <i class="fa fa-fw fa-bolt"></i><span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("About", "Home")"><i class="fa fa-fw fa-book"></i><span>About</span></a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Contact", "Home")">
+                                <i class="fa fa-fw fa-rocket"></i><span>Contact</span>
+                            </a>
+                        </li>
                     </ul>
-                </nav>
+
+
+
+                </div>
+
             </div>
         </div>
-    </header>
 
-    <div id="body">
+            <div id="body">
+
+                <div class="home-content">
 
 
-        @RenderSection("featured", required: false)
 
-        @RenderBody()
+                    @RenderBody()
+                </div>
 
-    </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
             </div>
-        </div>
-    </footer>
+            <footer></footer>
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
 </body>
 </html>

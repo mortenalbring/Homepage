@@ -1,9 +1,12 @@
 ﻿.nav-topbar-header {
-    background: #2980b9;
-    color: #fff;
+    background: #ffffff;
+    color: #ccc;
 }
 .topbar {
-    background: #2980b9;
+    background: #ffffff;
+    border-bottom: 1px solid;
+    border-bottom-color: #ccc;
+    
 }
 .topbar img {
     margin-top: 15px;
@@ -12,19 +15,20 @@
     max-height: 20px;
 }
 
+
 .nav-topbar li > a:visited {
         background: #2980b9;
-    color: #fff;  
+    color: #000;  
 }
 .nav-topbar .active > a {
     background: #3591cd;
-    color: #fff;    
+    color: #ccc;    
     border-bottom: 3px solid;
     border-color: #f1d00f;
 }
 
 .nav-topbar li > a:hover, .nav-topbar li > a:active {
-    background: #40a4e7;
+    background: #3591cd;
     color: #fff;
 }
 
@@ -37,9 +41,9 @@
     font-size: small;    
     padding: 4px;
     width: 22px;    
-    border-radius: 8px;
-    background: #FFEB3B;
-    color: #2e15ff;
+    border-radius: 3px;
+    background: #3591cd;
+    color: #fff;
 }
 
 .nav-topbar > li > a,
@@ -48,14 +52,16 @@
     font-size: small;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-  color: #fff;    
-    border-radius: 4px;    
+  color: #ccc;    
+    border-radius: 4px;
+    border-right: 1px solid;
+    border-right-color: #ccc;   
 }
 
 .nav-topbar .dropdown-menu > li > a,
 .nav-topbar .dropdown-menu > li > form > a{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 
@@ -67,7 +73,7 @@
 .nav-topbar .dropdown-menu,
 .nav-topbar .dropdown-menu li > a:visited {
     background: #418abc;
-    color: #fff;  
+    color: #ccc;  
 }
 
 .home-content {

@@ -79,3 +79,30 @@
 .home-content {
     padding-top: 40px;
 }
+
+.section-intro {
+    padding-top: 100px;
+    height: 500px;
+    border-bottom: 1px solid;
+}
+
+.section-intro h1 {
+    font-weight: 800;
+}
+
+.section-intro h2 {
+    font-weight: 200;
+}
+.section-main {
+    margin-top: 40px;
+    height: 500px;
+}
+
+
+h1,h2,h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.spacer {
+    height: 20px;
+}

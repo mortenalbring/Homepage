@@ -24,10 +24,12 @@ namespace Homepage
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/d3").Include("~/Scripts/d3/d3.js"));
             
 
             bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/mortenalbring.css","~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css","~/Content/css/font-awesome.css")
+                .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
                 );
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(

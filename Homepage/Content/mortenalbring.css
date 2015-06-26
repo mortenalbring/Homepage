@@ -1,11 +1,9 @@
 ﻿.nav-topbar-header {
-    background: #ffffff;
+    background: #418abc;
     color: #ccc;
 }
 .topbar {
-    background: #ffffff;
-    border-bottom: 1px solid;
-    border-bottom-color: #ccc;
+    background: #1976D2;
     
 }
 .topbar img {
@@ -18,12 +16,13 @@
 
 .nav-topbar li > a:visited {
         background: #2980b9;
-    color: #000;  
+    color: #fff;  
 }
 
-.nav-topbar li > a:hover, .nav-topbar li > a:active {
-    background: #3591cd;
-    color: #fff;
+.nav-topbar > li > a:hover, .nav > li > a:focus {
+        background-color: #2196F3 !important; 
+    color: #fff;  
+    
 }
 
 
@@ -36,7 +35,7 @@
     padding: 4px;
     width: 22px;    
     border-radius: 3px;
-    background: #3591cd;
+    background: #2196F3;
     color: #fff;
 }
 
@@ -46,10 +45,8 @@
     font-size: small;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-  color: #000;    
+  color: #fff;    
     border-radius: 4px;
-    border-right: 1px solid;
-    border-right-color: #ccc;   
 }
 
 .nav-topbar .dropdown-menu > li > a,
@@ -67,7 +64,7 @@
 .nav-topbar .dropdown-menu,
 .nav-topbar .dropdown-menu li > a:visited {
     background: #418abc;
-    color: #000;  
+    color: #fff;  
 }
 
 .home-content {
@@ -98,4 +95,9 @@ h1,h2,h3 {
 
 .spacer {
     height:20px;
+}
+
+.container-intro {
+    background-color: #2196F3;
+    color: #fff;
 }

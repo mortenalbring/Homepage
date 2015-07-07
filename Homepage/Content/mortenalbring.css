@@ -95,6 +95,10 @@
     height: 500px;
 }
 
+.section-posts {
+    border-top: 1px solid;
+}
+
 
 h1,h2,h3 {
     font-family: 'Open Sans', sans-serif;

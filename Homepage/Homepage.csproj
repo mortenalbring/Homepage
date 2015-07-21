@@ -200,6 +200,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\me.png" />
+    <Content Include="Content\images\slizardbennet.jpg" />
     <Content Include="Content\mortenalbring-charts.css" />
     <Content Include="Content\mortenalbring.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

@@ -40,11 +40,65 @@
         <p>The first term in this equation describes the free motion of particles, while the second term describes the binary collisions between pairs of particles. </p>
         <p>In this equation, if we substitute <em>t</em> for <em>-t</em>, the equation does <strong>not</strong> remain unchanged. As we also have to change the sign of the velocity <span class="latex">v</span>, the second term ends up with a negative sign.</p>
         <p>This is our first indication of an irreversible process arising entirely out of reversible fundamental physics</p>
-        
+
         <h3>The Excorcism of Maxwell's Demon</h3>
         <p>This concept of irreversibility is inseparable from the Second Law of Thermodynamics, which may well be the only fundamental law of physics that exhibits an intrinsic arrow of time. Historically, this law has been stated in many different but equivalent ways, combining heat and work to the conceptual meaning of time. The variable entropy was introduced to quantify this relation. </p>
         <p>One statement of the Second Law of Thermodynamics is it is never possible for a cyclic process to convert heat entirely into work, so that in a closed system the overall entropy must always increase.</p>
         <p>The possibility of violating this law is encapsulated by Maxwell's Demon thought experiment. This formulation shows how thermodynamic irreversibility is linked to the act of measurement and introduces the link between entropy and information.</p>
-        <img src="../../Content/images/slizardbennet.jpg" alt="" />
+
+        <img class="img-thumbnail" src="../../Content/images/slizardbennet.jpg" alt="" />
+
+        <p>
+            The image above shows a single molecule <em>Slizard engine</em>.. A Slizard engine is the simplest possible steam engine, consisting of a cylinder with a single molecule inside it. The cylinder is is contact with a heat reservoir to maintain constant thermal conditions. There is, however, a demon outside this cylinder that controls a partition that can either open or close the partition at will.
+        </p>
+
+        <p>
+            The phase space representing what the demon 'knows' about the position of the molecule.
+            This phase space has three states:
+            <ul>
+                <li>
+                    S meaning the demon knows nothing        
+                </li>
+                <li>
+                    L if the demon knows the particle is at the left side        
+                </li>
+                <li>
+                    R if the demon knows it is on the right side.
+                </li>
+            </ul>                       
+        </p>
+        <p>
+            The engine goes through six steps in the procedure 
+            <ol>
+                <li>The molecule is in the thermal path and moves randomly throughout this box</li>
+                <li>The demon inserts a diving wall into the box to hold the molecule on the left side or the right side</li>
+                <li>The demon carries out a reversible measurement to determine whether the molecule is on the left or the right</li>
+                <li>
+                    The demon inserts a piston the side <em>not</em> containing the molecule and uses this to extract work from the molecule bouncing against the partition.
+                    <br />
+                    The amount of work extracted can be calculated using the ideal gas equation <span lang="latex">pV = NkT</span> where in this case <span lang="latex">N=1</span>. The maximum work extracted is <span lang="latex">W = kT ln(2)</span>
+
+                </li>
+                <li>The piston has moved to fill the box again</li>
+                <li>The system is reset and both the demon and the box are at the same state as when it started</li>
+
+            </ol>
+        </p>
+        <p>
+            The molecule is always in thermal contact with the reservoir so the kinetic energy of the molecule is always <span lang="latex">\frac{3}{2} kT</span>.  This process makes it <em>appear</em> that the demon can extract heat from the closed system and convert it into userful work. The demon could repeat this process cyclically, in clear violation of the Second Law of Thermodynamics. 
+
+        </p>
+        <p>The only way to avoid this violation is if the acquisition of knowledge causes a corresponding entropy cost.</p>
+        <p>But where does this cost occur?</p>
+        <p>The entropy cost occurs from steps <strong>5</strong> to <strong>6</strong>, when the demon <em>resets</em> its mind. It is this process of <em>resetting</em> that compresses the phase state. This phase state compression corresponds to an inavoidable entropy increase</p>
+        <div lang="latex">
+            E_{l} = kT ln(2)
+        </div>
+        <p>This limit is the <em>Landauer limit</em>, first discovered in 1961 by Rolf Landauer of IBM. Landauer's principle states that any logically irreversible operation that manipulates information, such as erasing information (or resetting the demon's mind), requires an unavoidable entropy increase. Consequently, the corresponding amount of energy is dissipated as heat. </p>
+        
+        <p>This is approximately <span lang="latex">3 \times 10^{-21}</span> Joules at room temperature. A 100 MHz processor with 100,000 gates erasing one bit at every cycle will dissipate about 28 nanowatts, due to the Landauer limit </p>
+        <p>In 2012, physicists from the Ecole Normale Supérieure de Lyon, University of Augsburg and the University of Kaiserslautern <a href="http://www.nature.com/nature/journal/v483/n7388/full/nature10872.html">published an article in Nature</a> describing that they have indeed measured the minute amount of energy dissipated when an individual bit is increased</p>
+        
+        <p>In reality, this processor dissipates approximately 100 million times this amount, so this limit may seem unimportant. However, this limit is a fundamental consequence of the Second Law of Thermodynamics, so cannot be avoided by engineering current reversible architechture.</p>
     </div>
 </div>

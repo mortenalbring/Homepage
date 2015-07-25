@@ -21,5 +21,10 @@ namespace Homepage.Controllers
             return View();
         }
 
+        public ActionResult PovRayPeterdeJong()
+        {
+            return View();
+        }
+
     }
 }

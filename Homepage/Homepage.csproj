@@ -209,6 +209,8 @@
     <Content Include="Content\images\anyons.jpg" />
     <Content Include="Content\images\dimerschematic.png" />
     <Content Include="Content\images\me.png" />
+    <Content Include="Content\images\peterDeJongattactor.png" />
+    <Content Include="Content\images\peterDeJongattactor_small.png" />
     <Content Include="Content\images\slizardbennet.jpg" />
     <Content Include="Content\mortenalbring-charts.css" />
     <Content Include="Content\mortenalbring.css" />

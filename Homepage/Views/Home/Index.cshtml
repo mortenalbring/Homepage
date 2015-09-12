@@ -2,21 +2,19 @@
     ViewBag.Title = "Morten Albring - Personal Homepage";
 }
 
-<div class="container-fluid container-intro section-intro">    
-        <div class="row">            
-            <div class="col-md-3">
-                <img class="img-responsive" src="../../Content/images/me.png" alt="" />
+<div class="container-fluid container-intro section-intro">
+    <div class="row">
+        <div class="col-md-3">
+            <img class="img-responsive" src="../../Content/images/me.png" alt="" />
+        </div>
+        <div class="col-md-6">
+            <h1>Morten Alexander Albring</h1>
+            <div>
+                <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
+                <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>                
             </div>
-            <div class="col-md-6">
-                <h1>Morten Alexander Albring</h1>
-                <div>
-                    <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
-                    <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>
-
-                    <a class="btn btn-block btn-primary" href="@Url.Action("About","Home")">Read more about me</a>
-                </div>
-            </div>
-        </div>   
+        </div>
+    </div>
 </div>
 
 
@@ -24,29 +22,50 @@
     <div class="row">
         <div class="col-md-10">
             <p>I primarily work with a <strong>.NET stack</strong>, and comfortable with both front-end and back end development.</p>
-            <p><strong>Backend:</strong> My bread and butter is ASP.NET MVC 5 with Entity Framework and SQL. I am confident in creating database-driven web applications, writing web APIs and CRUD applications. I also have some experience with PHP and MongoDB. </p>
-            <p><strong>Frontend:</strong> I am very familiar writing clean, maintainable and responsive HTML5 and CSS. In 1999, my first web project was at the age of 12, when I was paid to develop the public-facing website for my secondary school. That site has, fortunately, been long-since deprecated! 
-            Since then, I have become adept with Javascript, JQuery and a host of front-end frameworks. Currently I <em>love</em> working with AngularJS to create powerful front-end driven web applications. </p>
-            <p><strong>Physics and mathematics:</strong> I studied for an masters degree in Theoretical Physics at Lancaster University, and a PhD in nanoscience from The University of Manchester. Although I left academia for software development, I still enjoy keeping up to date with the latest developments in science. I occassionally write posts about fundamental aspects of Physics and producing simulations of mathematical structures.  </p>
+            <h2><i class="fa fa-fw fa-database"></i> Back-end</h2>
+            <p>My bread and butter is <strong>ASP.NET MVC 5</strong> with <strong>Entity Framework</strong> and <strong>SQL</strong>. I am confident in creating database-driven web applications, writing web APIs and CRUD applications. I also have some experience with PHP and MongoDB. </p>
+            <h2><i class="fa fa-fw fa-desktop"></i> Front-end</h2>
+            <p>
+                I am very familiar writing clean, maintainable and responsive <strong>HTML5</strong> and <strong>CSS3</strong>. In 1999, my first web project was at the age of 12, when I was paid to develop the public-facing website for my secondary school. That site has, fortunately, been long-since deprecated!
+                Since then, I have become adept with <strong>Javascript</strong>, <strong>JQuery</strong> and a host of front-end frameworks. Currently I <em>love</em> working with <strong>AngularJS</strong> to create powerful front-end driven web applications.
+            </p>
+            <h2><i class="fa fa-fw fa-graduation-cap"></i> Physics and mathematics</h2>
+            <p> I studied for an masters degree in Theoretical Physics at Lancaster University, and a PhD in nanoscience from The University of Manchester. Although I left academia for software development, I still enjoy keeping up to date with the latest developments in science. I occassionally write posts about fundamental aspects of Physics and producing simulations of mathematical structures.  </p>
+            <a class="btn btn-block btn-primary" href="@Url.Action("About","Home")">More about me</a>
         </div>
         <div class="col-md-2">
-            <p>You can see some of my projects on <a href="https://github.com/mortenalbring">GitHub</a>.</p> 
-            <p>Also my <a href="https://www.youtube.com/channel/UCSBTzJEMrIAr5BUXF0P8GcQ">YouTube channel</a> has videos of some interesting mathematical simulations</p>
+            <p><i class="fa fa-github"></i> You can see some of my projects on <a href="https://github.com/mortenalbring">GitHub</a>.</p>
+            <p><i class="fa fa-youtube"></i> My <a href="https://www.youtube.com/channel/UCSBTzJEMrIAr5BUXF0P8GcQ">YouTube channel</a> has videos of some interesting mathematical simulations</p>
+            <p><i class="fa fa-twitter"></i> Follow me on <a href="https://twitter.com/mortenalbring">Twitter</a> for latest updates</p>
         </div>
     </div>
-   
+
 </div>
 
 <div class="container-fluid section-posts">
     <div class="row">
         <div class="col-md-4">
-            <a class="btn btn-default btn-block" href="@Url.Action("ComputationsIrreversibility", "Posts")">Thermodynamics, Computation and Irreversibility</a>
+            <div class="container-post">
+                <a href="@Url.Action("ComputationsIrreversibility", "Posts")">                   
+                     
+                    <img class="img-responsive" src="~/Images/demon-sm-trans.png" />
+                    <h1>Thermodynamics, Computation and Irreversibility</h1>
+                    <p>This is a brief exploration into the link between thermodynamics, the limits of computation and logical irreversibility.</p>                   
+                </a>
+            </div>
         </div>
         <div class="col-md-4">
-            <a class="btn btn-default btn-block" href="@Url.Action("PovRayPeterdeJong", "Posts")">Thermodynamics, Computation and Irreversibility</a>
+            <div class="container-post">
+                <a href="@Url.Action("ComputationsIrreversibility", "Posts")">
+                    
+                    <img class="img-responsive" src="~/Images/LorenzAttractor_sm-trans.png" />
+                    <h1>Lorenz Attractor</h1>
+                    <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
+                </a>
+            </div>
         </div>
-
     </div>
+  
 
 </div>
 

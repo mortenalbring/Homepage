@@ -2,32 +2,39 @@
     ViewBag.Title = "Morten Albring - Personal Homepage";
 }
 
-<div class="container-fluid container-intro">
-    <div class="section-intro">
+<div class="container-fluid container-intro section-intro">    
         <div class="row">            
-            <div class="col-md-3 col-md-offset-3">
-                <img src="../../Content/images/me.png" alt="" />
+            <div class="col-md-3">
+                <img class="img-responsive" src="../../Content/images/me.png" alt="" />
             </div>
             <div class="col-md-6">
                 <h1>Morten Alexander Albring</h1>
+                <div>
+                    <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
+                    <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>
+
+                    <a class="btn btn-block btn-primary" href="@Url.Action("About","Home")">Read more about me</a>
+                </div>
             </div>
-        </div>
-    </div>
-
-
+        </div>   
 </div>
 
 
-<div class="container-fluid section-description">
-
+<div class="container section-description">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
-            <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>
-
-            <a class="btn btn-primary" href="@Url.Action("About","Home")">Read more about me</a>
+        <div class="col-md-10">
+            <p>I primarily work with a <strong>.NET stack</strong>, and comfortable with both front-end and back end development.</p>
+            <p><strong>Backend:</strong> My bread and butter is ASP.NET MVC 5 with Entity Framework and SQL. I am confident in creating database-driven web applications, writing web APIs and CRUD applications. I also have some experience with PHP and MongoDB. </p>
+            <p><strong>Frontend:</strong> I am very familiar writing clean, maintainable and responsive HTML5 and CSS. In 1999, my first web project was at the age of 12, when I was paid to develop the public-facing website for my secondary school. That site has, fortunately, been long-since deprecated! 
+            Since then, I have become adept with Javascript, JQuery and a host of front-end frameworks. Currently I <em>love</em> working with AngularJS to create powerful front-end driven web applications. </p>
+            <p><strong>Physics and mathematics:</strong> I studied for an masters degree in Theoretical Physics at Lancaster University, and a PhD in nanoscience from The University of Manchester. Although I left academia for software development, I still enjoy keeping up to date with the latest developments in science. I occassionally write posts about fundamental aspects of Physics and producing simulations of mathematical structures.  </p>
+        </div>
+        <div class="col-md-2">
+            <p>You can see some of my projects on <a href="https://github.com/mortenalbring">GitHub</a>.</p> 
+            <p>Also my <a href="https://www.youtube.com/channel/UCSBTzJEMrIAr5BUXF0P8GcQ">YouTube channel</a> has videos of some interesting mathematical simulations</p>
         </div>
     </div>
+   
 </div>
 
 <div class="container-fluid section-posts">

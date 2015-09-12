@@ -80,8 +80,8 @@
 }
 
 .section-intro {
-    padding-top: 100px;
-    min-height: 400px;    
+    padding-top: 40px;
+    min-height: 300px;    
 }
 
 .section-intro h1 {
@@ -90,6 +90,11 @@
 
 .section-intro h2 {
     font-weight: 200;
+}
+
+.section-intro p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;    
 }
 .section-main {
     margin-top: 40px;
@@ -110,7 +115,7 @@ h1,h2,h3 {
 }
 
 .container-intro {
-    background-color: #ffffff;
+    background-color: #418abc;
     font-family: 'Open Sans', sans-serif;
-    color: #181818;
+    color: #fff;
 }

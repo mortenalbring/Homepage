@@ -77,13 +77,14 @@
     background-color: #ffffff;
 }
 
-.section-description h2 {
-    font-size:large;
-    font-weight:800;
-}
-.section-description h2 i {
-    margin-right:10px;
-}
+    .section-description h2 {
+        font-size: large;
+        font-weight: 800;
+    }
+
+        .section-description h2 i {
+            margin-right: 10px;
+        }
 
 
 .section-intro {
@@ -146,9 +147,9 @@ h1, h2, h3 {
     margin-right: auto;
 }
 
-.container-post a p  {
-padding-left:20px;
-padding-right:20px;
+.container-post a p {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container-post a {
@@ -181,3 +182,24 @@ padding-right:20px;
         text-decoration: none;
         background: #1976D2;
     }
+
+.post-title {
+    padding-top:0px;
+    background: #1976D2;
+    padding-bottom:20px;
+    margin-bottom:20px;
+    border-bottom:4px solid #418abc;
+}
+.post-title img {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.post-title h1 {    
+    padding-top:40px;
+    text-align:center;    
+    font-family: 'Open Sans', sans-serif;
+    font-weight:800;
+    color:#fff;
+    text-shadow: 3px 0px #1d9d74, 9px 8px 0px rgba(0, 0, 0, 0.15);
+}

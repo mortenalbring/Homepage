@@ -283,13 +283,17 @@
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Content\images\me.psd" />
+    <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
     <Content Include="Images\15920848636_f9d4c69ee0_o.jpg" />
     <Content Include="Images\19238835106_b57eaa8160_o.jpg" />
     <Content Include="Images\demon-sm.png" />
     <Content Include="Images\demon.png" />
+    <Content Include="Images\feynman-bongos.png" />
+    <Content Include="Images\LorenzAttractor-cover-trans.png" />
     <Content Include="Images\LorenzAttractor4790.png" />
+    <Content Include="Images\LorenzAttractor_sm-trans.png" />
     <Content Include="Images\LorenzAttractor_sm.png" />
     <Content Include="Scripts\d3\d3.js" />
     <Content Include="Scripts\d3\d3.min.js" />
@@ -344,6 +348,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\Posts\PovRayPeterdeJong.cshtml" />
+    <Content Include="Views\Posts\LorenzAttractor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

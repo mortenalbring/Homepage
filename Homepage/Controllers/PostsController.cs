@@ -26,5 +26,10 @@ namespace Homepage.Controllers
             return View();
         }
 
+        public ActionResult LorenzAttractor()
+        {
+            return View();
+        }
+
     }
 }

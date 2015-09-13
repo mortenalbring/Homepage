@@ -283,6 +283,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Content\images\me.psd" />
+    <Content Include="Images\demon-cover-trans.png" />
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
@@ -319,7 +320,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Views\Home\Redesign.cshtml" />
-    <None Include="Views\Posts\ComputationsIrreversibility.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -349,6 +349,7 @@
     <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\Posts\PovRayPeterdeJong.cshtml" />
     <Content Include="Views\Posts\LorenzAttractor.cshtml" />
+    <Content Include="Views\Posts\ComputationsIrreversibility.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

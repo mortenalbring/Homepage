@@ -70,7 +70,7 @@
 }
 
 .section-description {
-    padding-top: 80px;
+    padding-top: 30px;
     padding-bottom: 80px;
     font-family: 'Open Sans', sans-serif;
     font-size: medium;
@@ -89,14 +89,20 @@
 
 .section-intro {
     padding-top: 40px;
-    min-height: 300px;
+    min-height: 400px;
+    border-bottom:10px solid #418abc;
 }
+
+    .section-intro i {
+        margin-right: 10px;
+    }
 
     .section-intro h1 {
         font-family: 'Open Sans', sans-serif;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         font-weight: 800;
+        text-shadow: 3px 0px #418abc, 9px 8px 0px rgba(0, 0, 0, 0.15);
     }
 
     .section-intro h2 {
@@ -184,22 +190,38 @@ h1, h2, h3 {
     }
 
 .post-title {
-    padding-top:0px;
+    padding-top: 0px;
     background: #1976D2;
-    padding-bottom:20px;
-    margin-bottom:20px;
-    border-bottom:4px solid #418abc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #418abc;
 }
-.post-title img {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+
+    .post-title img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-title h1 {
+        padding-top: 80px;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+        color: #fff;
+        text-shadow: 3px 0px #808080, 9px 8px 0px rgba(0, 0, 0, 0.15);
+    }
+
+.post-title-lorenz {
+    background-image: url('/Images/LorenzAttractor-cover-trans.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
 }
-.post-title h1 {    
-    padding-top:40px;
-    text-align:center;    
-    font-family: 'Open Sans', sans-serif;
-    font-weight:800;
-    color:#fff;
-    text-shadow: 3px 0px #1d9d74, 9px 8px 0px rgba(0, 0, 0, 0.15);
+
+.post-title-computations {
+    background-image: url('/Images/demon-cover-trans.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
 }

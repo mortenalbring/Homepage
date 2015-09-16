@@ -1,4 +1,12 @@
-﻿<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+</script>
+
+<script src="/Scripts/MathJax/MathJax.js"></script>
 
 <div class="post-title post-title-lorenz">    
     <div class="container">
@@ -14,7 +22,7 @@
 
 <div class="container">  
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1">    
             <p>
                 Edward Lorenz was an American mathematician and pioneer of chaos theory.
                 Lorenz built mathematical models of the motion of air in the atmosphere.
@@ -30,11 +38,14 @@
             </p>
             <p>The system is described by three coupled non-linear differential equations:</p>
 
-            <div lang="latex">
-                \frac{dx}{dt} = a (y - x)
-            </div>
-            \frac{dy}{dt} = x (b - z) - y
-            \frac{dz}{dt} = xy - cz
+            <p>
+                \begin{align}
+                \frac{dx}{dt} & = a (y - x) \\
+                \frac{dy}{dt} & = x (b - z) - y \\
+                \frac{dz}{dt} & = xy - cz \\
+                \end{align}
+            </p>
+      
         </div>
     </div>
 </div>

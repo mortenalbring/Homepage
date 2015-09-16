@@ -112,6 +112,11 @@
     .section-intro p {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
+        padding:10px;
+    }
+    .section-intro img {
+padding:10px;
+
     }
 
 .section-main {

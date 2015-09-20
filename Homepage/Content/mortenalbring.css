@@ -70,12 +70,17 @@
 }
 
 .section-description {
-    padding-top: 30px;
-    padding-bottom: 80px;
     font-family: 'Open Sans', sans-serif;
     font-size: medium;
     background-color: #ffffff;
+    padding-top:30px;
+    padding-bottom:30px;
 }
+
+    .section-description .row {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 
     .section-description h2 {
         font-size: large;
@@ -89,8 +94,9 @@
 
 .section-intro {
     padding-top: 40px;
+    padding-bottom:40px;
     min-height: 400px;
-    border-bottom:10px solid #418abc;
+    border-bottom: 10px solid #418abc;
 }
 
     .section-intro i {
@@ -112,11 +118,19 @@
     .section-intro p {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
-        padding:10px;
+        padding: 10px;
     }
-    .section-intro img {
-padding:10px;
 
+    .section-intro img {
+        padding-top: 20px;
+    }
+    .section-intro a {
+        color:#fff;
+    }
+    .section-intro a:hover {
+        color:#eee;
+        text-decoration:none;
+        text-shadow: 2px 2px 2px #333;
     }
 
 .section-main {

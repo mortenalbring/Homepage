@@ -293,7 +293,8 @@
     <Content Include="Images\demon.png" />
     <Content Include="Images\feynman-bongos.png" />
     <Content Include="Images\LorenzAttractor-cover-trans.png" />
-    <Content Include="Images\LorenzAttractor4790.png" />
+    <Content Include="Images\LorenzAttractorCheckered.png" />
+    <Content Include="Images\LorenzAttractorNoBall.png" />
     <Content Include="Images\LorenzAttractor_sm-trans.png" />
     <Content Include="Images\LorenzAttractor_sm.png" />
     <Content Include="Scripts\d3\d3.js" />

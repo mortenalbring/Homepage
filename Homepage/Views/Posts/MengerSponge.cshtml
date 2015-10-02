@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
-                <h1>POV-Ray animation of Menger Sponge</h1>
+                <h1>POV-Ray rendering of Menger Sponge</h1>
             </div>
         </div>
     </div>
@@ -23,21 +23,129 @@
                 His father, Carl Menger, was a founder of the Austrian school of economic thought and developed the theory of marginalism.
             </p>
             <p>
-                In 1920, Karl Menger enrolled at the University of Vienna to study Physics. After only a few months, he switched to mathematics and attended a pivotal lecture by Hans Hahn. 
-                Hahn lectured on a problem of defining the concept of a curve, at the time considered unsolvable. 
+                In 1920, Karl Menger enrolled at the University of Vienna to study Physics. After only a few months, he switched to mathematics and attended a pivotal lecture by Hans Hahn.
+                Hahn lectured on a problem of defining the concept of a curve, at the time considered unsolvable.
             </p>
             <p>
-                Part-way through his studies, in 1921 Menger was diagnosed with tuberculosis and sent to a sanitorium in Aflenz. While he was confined in Aflenz, both his father and mother passed away. 
-                When Karl returned to University, he had developed a full theory of curves and earned his doctorate with Hahn. 
+                Part-way through his studies, in 1921 Menger was diagnosed with tuberculosis and sent to a sanitorium in Aflenz. While he was confined in Aflenz, both his father and mother passed away.
+                When Karl returned to University, he had developed a full theory of curves and earned his doctorate with Hahn.
+            </p>
+            <p>
+                Menger thought about geometry in its most fundamental sense, in a way that modern mathematicians would describe as <em>general topology</em>.
+                He devised a completely new approach to Euclidean geomtry, an approach that played a significant role in John von Neumann's mathematical foundation of quantum mechanics.
+
+                One of his important contributions to geometry was the discovery of a 'universal curve' in three-dimensional space.
+                This curve has the property that every concievable curve can be embedded within it.
+            </p>
+            <p>
+                One constructs a Menger sponge by starting with a regular cube and then iteratively doing the following:
+                <ol>
+                    <li>Divide every face into nine equal squares, and subdivide the cube into 27 smaller cubes. </li>
+                    <li>Remove the smaller cube in the centre of each face.</li>
+                    <li>Remove the smaller cube from the centre of the large cube</li>
+                </ol>
+
+            </p>
+            <p>
+                After one iteration, we have a level-1 Menger sponge.
+            </p>
+            <p>
+                After two iterations, we have a level-2 Menger sponge.
+            </p>
+            <p>
+                After three iterations, we have a level-3 Menger sponge.
             </p>
 
-            https://en.wikipedia.org/wiki/Karl_Menger#Contributions_to_mathematics
+            <p>The computational energy required to render this sponge increases rapidly with each iteration. The Menger sponge is the result of this process after an <em>infinite</em> set of iterations. The images you see above are a crude approximation of the structure.</p>
+            <p>We can calculate the surface area and volume for each iteration and see some interesting results. The surface area is calculated in multiples of the initial face area, and the volume is calculated as a percentage of the initial volume.</p>
 
-            https://books.google.co.uk/books?id=oakkBgAAQBAJ&pg=PA7&lpg=PA7&dq=Hermione+Andermann&source=bl&ots=cYEHFVypZ5&sig=UTt9YR1Qmz3gNXPbHbhner_89Nw&hl=en&sa=X&ved=0CDIQ6AEwBWoVChMIwfaG1a-OyAIVhlwUCh3wygAQ#v=onepage&q=Hermione%20Andermann&f=false
-        
-        
-            https://science.iit.edu/applied-mathematics/about/about-karl-menger
-        
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Iterations</th>
+                        <th>Surface area</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>0.740740741</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>13.03703704</td>
+                        <td>0.548696845</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>24.75720165</td>
+                        <td>0.406442107</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>51.2702332</td>
+                        <td>0.301068228</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>110.6042778</td>
+                        <td>0.223013502</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>242.8276629</td>
+                        <td>0.165195187</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>536.9862544</td>
+                        <td>0.122366805</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <p>With every iteration, the surface area rapidly shoots up, while the volume rapidly decreases. After an infinite number of iterations, the Menger sponge has an infinite surface area and also zero volume. </p>
+
+            <h2>POV-Ray code</h2>
+
+            <p>The first few iterations of the Menger sponge can be rendered in the raytracing software POV-Ray. <a href="https://github.com/mortenalbring/MengerSponge">You can see the complete code on GitHub here</a>. </p>
+            <p>As with the construction above, we begin with a simple cube</p>
+
+            <pre>
+                box {  <0, 0, 0>    <1,1,1>  }
+            </pre>
+
+
+            <p>References:</p>
+
+            <p><a href="https://en.wikipedia.org/wiki/Karl_Menger#Contributions_to_mathematics">https://en.wikipedia.org/wiki/Karl_Menger#Contributions_to_mathematics</a></p>
+
+            <p>
+                <a href="https://books.google.co.uk/books?id=oakkBgAAQBAJ&pg=PA7&lpg=PA7&dq=Hermione+Andermann&source=bl&ots=cYEHFVypZ5&sig=UTt9YR1Qmz3gNXPbHbhner_89Nw&hl=en&sa=X&ved=0CDIQ6AEwBWoVChMIwfaG1a-OyAIVhlwUCh3wygAQ#v=onepage&q=Hermione%20Andermann&f=false">
+                    https://books.google.co.uk/books?id=oakkBgAAQBAJ&pg=PA7&lpg=PA7&dq=Hermione+Andermann&source=bl&ots=cYEHFVypZ5&sig=UTt9YR1Qmz3gNXPbHbhner_89Nw&hl=en&sa=X&ved=0CDIQ6AEwBWoVChMIwfaG1a-OyAIVhlwUCh3wygAQ#v=onepage&q=Hermione%20Andermann&f=false
+                </a>
+            </p>
+
+            <p>
+                <a href="https://science.iit.edu/applied-mathematics/about/about-karl-menger">https://science.iit.edu/applied-mathematics/about/about-karl-menger</a>
+            </p>
+
+            <p>
+                <a href="http://www.wolframalpha.com/input/?i=Menger+sponge&a=*C.Menger+sponge-_*Formula.dflt-&f2=5&f=MengerSponge.n_5">http://www.wolframalpha.com/input/?i=Menger+sponge&a=*C.Menger+sponge-_*Formula.dflt-&f2=5&f=MengerSponge.n_5</a>
+            </p>
+
+
+
+
         </div>
     </div>
 </div>

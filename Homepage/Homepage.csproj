@@ -209,10 +209,17 @@
     <Content Include="Content\images\anyons.jpg" />
     <Content Include="Content\images\dimerschematic.png" />
     <Content Include="Content\images\me.png" />
+    <Content Include="Content\images\menger\menger-layers-loop.gif" />
+    <Content Include="Content\images\menger\menger-level-0-sm.png" />
     <Content Include="Content\images\menger\menger-level-0.png" />
+    <Content Include="Content\images\menger\menger-level-1-sm.png" />
     <Content Include="Content\images\menger\menger-level-1.png" />
+    <Content Include="Content\images\menger\menger-level-2-sm.png" />
     <Content Include="Content\images\menger\menger-level-2.png" />
+    <Content Include="Content\images\menger\menger-level-3-sm.png" />
     <Content Include="Content\images\menger\menger-level-3.png" />
+    <Content Include="Content\images\menger\menger-level-4-sm.png" />
+    <Content Include="Content\images\menger\menger-level-4.png" />
     <Content Include="Content\images\peterDeJongattactor.png" />
     <Content Include="Content\images\peterDeJongattactor_small.png" />
     <Content Include="Content\images\slizardbennet.jpg" />

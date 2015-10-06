@@ -38,7 +38,12 @@
                 This curve has the property that every concievable curve can be embedded within it.
             </p>
             <p>
-                One constructs a Menger sponge by starting with a regular cube and then iteratively doing the following:
+                One constructs a Menger sponge by starting with a regular cube.
+                <br />
+
+                <img src="~/Content/images/menger/menger-level-0-sm.png"/>
+                <br />
+                Then iteratively doing the following:
                 <ol>
                     <li>Divide every face into nine equal squares, and subdivide the cube into 27 smaller cubes. </li>
                     <li>Remove the smaller cube in the centre of each face.</li>
@@ -49,12 +54,18 @@
             <p>
                 After one iteration, we have a level-1 Menger sponge.
             </p>
+            <img src="~/Content/images/menger/menger-level-1-sm.png" />
             <p>
                 After two iterations, we have a level-2 Menger sponge.
             </p>
+            <img src="~/Content/images/menger/menger-level-2-sm.png" />
             <p>
                 After three iterations, we have a level-3 Menger sponge.
             </p>
+            <img src="~/Content/images/menger/menger-level-3-sm.png" />
+
+            <p>And so on..</p>
+            <img src="~/Content/images/menger/menger-layers-loop.gif" />
 
             <p>The computational energy required to render this sponge increases rapidly with each iteration. The Menger sponge is the result of this process after an <em>infinite</em> set of iterations. The images you see above are a crude approximation of the structure.</p>
             <p>We can calculate the surface area and volume for each iteration and see some interesting results. The surface area is calculated in multiples of the initial face area, and the volume is calculated as a percentage of the initial volume.</p>

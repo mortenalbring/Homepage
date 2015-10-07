@@ -220,6 +220,8 @@
     <Content Include="Content\images\menger\menger-level-3.png" />
     <Content Include="Content\images\menger\menger-level-4-sm.png" />
     <Content Include="Content\images\menger\menger-level-4.png" />
+    <Content Include="Content\images\menger\menger-void-sm.gif" />
+    <Content Include="Content\images\menger\menger-void.gif" />
     <Content Include="Content\images\peterDeJongattactor.png" />
     <Content Include="Content\images\peterDeJongattactor_small.png" />
     <Content Include="Content\images\slizardbennet.jpg" />

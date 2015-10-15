@@ -243,17 +243,23 @@ h1, h2, h3 {
         text-align: center;
     }
 
+    .container-post a {
+        outline:none;
+    }
     .container-post a:visited {
+        outline:none;
         color: #000;
         text-decoration: none;
     }
 
     .container-post a:active {
+        outline:none;
         color: #000;
         text-decoration: none;
     }
 
     .container-post a:hover {
+        outline:none;
         color: #fff;
         text-decoration: none;
         background: #1976D2;

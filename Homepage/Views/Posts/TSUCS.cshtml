@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+</script>
+
+<script src="/Scripts/MathJax/MathJax.js"></script>
+
+
+<div class="post-title post-title-tsucs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <h1>POV-Ray rendering of Three-Scroll Unified Chaotic System</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <p>
+                The Three-Scroll Unified Chaotic System (TSUCS) was introduced by Lin Pan, Wuneng Zhou, Jian’an Fang and Dequan Li in <a href="http://www.internonlinearscience.org/upload/papers/20110618025420887.pdf">a paper submitted to the International Journal of Nonlinear Science</a> in 2010. The TSUCS contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.
+            </p>
+       
+            <p>
+                \begin{align}
+                \frac{dx}{dt} & = \textrm{a} (y - x) + \textrm{d} x y \\
+                \frac{dy}{dt} & = \textrm{c}x - xy + \textrm{f}y \\
+                \frac{dz}{dt} & = \textrm{b}z + yx - \textrm{e}x^2 \\
+                \end{align}
+            </p>
+
+            where I use the parameters
+            <p>
+                \begin{align}
+                \textrm{a} & = 40 \\
+                \textrm{b} & = 1.833 \\
+                \textrm{c} & = 55 \\
+                \textrm{d} & = 0.16 \\
+                \textrm{e} & = 0.65 \\
+                \textrm{f} & = 20                
+                \end{align}
+
+            </p>
+            
+
+
+        </div>
+
+    </div>
+
+</div>

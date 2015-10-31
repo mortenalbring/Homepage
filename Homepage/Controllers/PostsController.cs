@@ -36,5 +36,10 @@ namespace Homepage.Controllers
             return View();
         }
 
+        public ActionResult TSUCS()
+        {
+            return View();
+        }
+
     }
 }

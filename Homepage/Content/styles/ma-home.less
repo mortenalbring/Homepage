@@ -1,3 +1,39 @@
-﻿.post-overview-home {
-    background:#ff0;
+﻿.post-overview {
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.post-overview-home {
+    display: flex;
+    flex-grow: 1;
+    max-width: 300px;
+    height: 300px;
+    background: #ff0;
+    flex-direction: row;
+}
+
+.post-overview-home h1 {
+    justify-content: flex-end;
+}
+
+.post-overview-home-tsucs {
+    background-image: url(/Content/images/tsucs/tsucs-cover-home.png);
+    background-repeat: no-repeat;
+}
+
+.test-container {
+    background-image: url(/Content/images/tsucs/tsucs-cover-home.png);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 250px;
+}
+
+.test-container a {
+    flex:1;
+
+    align-self: flex-end;
+}
+

@@ -81,38 +81,7 @@
 </div>
 
 <div class="container section-posts">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="container-post">
-                <a href="@Url.Action("ComputationsIrreversibility", "Posts")">
-
-                    <img class="img-responsive" src="/Images/demon-sm-trans.png" />
-                    <h1>Thermodynamics, Computation and Irreversibility</h1>
-                    <p>This is a brief exploration into the link between thermodynamics, the limits of computation and logical irreversibility.</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="container-post">
-                <a href="@Url.Action("LorenzAttractor", "Posts")">
-
-                    <img class="img-responsive" src="/Images/LorenzAttractor_sm-trans.png" />
-                    <h1>Lorenz Attractor</h1>
-                    <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="container-post">
-                <a href="@Url.Action("MengerSponge", "Posts")">
-
-                    <img class="img-responsive" src="~/Content/images/menger/menger-level-5-cover.png" />
-                    <h1>Menger Sponge</h1>
-                    <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
-                </a>
-            </div>
-        </div>
-    </div>
+    <h1>Recent posts</h1>
    
     <div class="flex-row-container">
 
@@ -120,26 +89,32 @@
         <div class="post-summary-container post-summary-tsucs">
             <a href="@Url.Action("TSUCS","Posts")">
                 <h1>
-                    Three-Unified Chaotic Scroll system
+                    Three-Unified Chaotic Scroll
                 </h1>
                 <p>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</p>
             </a>
         </div>
 
         <div class="post-summary-container post-summary-menger">
-            <a href="@Url.Action("MengerSponge", "Posts")">
-                
+            <a href="@Url.Action("MengerSponge", "Posts")">                
                 <h1>Menger Sponge</h1>
-                <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
+                <p>
+                    The Menger sponge is a three-dimensional fractal curve that exhibits infinite surface area and zero volume. This shows the POV-Ray code to render this mathematical structure
+                </p>
             </a>
         </div>
 
         <div class="post-summary-container post-summary-lorenz">
-            <a href="@Url.Action("LorenzAttractor", "Posts")">
-
-                
+            <a href="@Url.Action("LorenzAttractor", "Posts")">                
                 <h1>Lorenz Attractor</h1>
                 <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
+            </a>
+        </div>
+
+        <div class="post-summary-container post-summary-computations">
+            <a href="@Url.Action("ComputationsIrreversibility", "Posts")">                
+                <h1>Thermodynamics, Computation and Irreversibility</h1>
+                <p>This is a brief exploration into the link between thermodynamics, the limits of computation and logical irreversibility.</p>
             </a>
         </div>
 

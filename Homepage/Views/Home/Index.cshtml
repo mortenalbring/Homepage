@@ -113,33 +113,38 @@
             </div>
         </div>
     </div>
-    <div class="post-overview">
-        <div class="post-overview-home post-overview-home-tsucs">
+   
+    <div class="flex-row-container">
+
+
+        <div class="post-summary-container post-summary-tsucs">
             <a href="@Url.Action("TSUCS","Posts")">
-                <h1>Three-Unified Chaotic Scroll system</h1>
-                <p>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</p>
-            </a>
-        </div>
-        <div class="post-overview-home">
-            <a href="@Url.Action("TSUCS","Posts")">
-                <h1>Three-Unified Chaotic Scroll system</h1>
-                <p>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</p>
-            </a>
-        </div>
-        <div class="post-overview-home">
-            <a href="@Url.Action("TSUCS","Posts")">
-                <h1>Three-Unified Chaotic Scroll system</h1>
+                <h1>
+                    Three-Unified Chaotic Scroll system
+                </h1>
                 <p>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</p>
             </a>
         </div>
 
-    </div>
+        <div class="post-summary-container post-summary-menger">
+            <a href="@Url.Action("MengerSponge", "Posts")">
+                
+                <h1>Menger Sponge</h1>
+                <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
+            </a>
+        </div>
 
-    <div class="test-container">
-        <a href="@Url.Action("TSUCS","Posts")">
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-        </a>
+        <div class="post-summary-container post-summary-lorenz">
+            <a href="@Url.Action("LorenzAttractor", "Posts")">
+
+                
+                <h1>Lorenz Attractor</h1>
+                <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
+            </a>
+        </div>
+
     </div>
+ 
 
 
 </div>

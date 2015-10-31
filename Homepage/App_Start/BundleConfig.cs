@@ -31,6 +31,8 @@ namespace Homepage
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
                 );
+            bundles.Add(new LessBundle("~/Content/less")
+                .Include("~/Content/styles/ma-home.less"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

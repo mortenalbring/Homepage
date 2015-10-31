@@ -4,16 +4,14 @@
 }
 
 .post-overview-home {
-    display: flex;
-    flex-grow: 1;
+    display: block;
+    
     max-width: 300px;
-    height: 300px;
+    height: 350px;
     background: #ff0;
     flex-direction: row;
-}
-
-.post-overview-home h1 {
-    justify-content: flex-end;
+    padding-top:150px;
+    padding-bottom:20px;
 }
 
 .post-overview-home-tsucs {
@@ -21,19 +19,47 @@
     background-repeat: no-repeat;
 }
 
-.test-container {
-    background-image: url(/Content/images/tsucs/tsucs-cover-home.png);
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 400px;
-    width: 250px;
+
+
+.flex-row-container {
+    display:flex;
+    flex-wrap:wrap;
 }
 
-.test-container a {
-    flex:1;
-
-    align-self: flex-end;
+.post-summary-container {    
+    background-color:#02046f;
+    background-repeat: no-repeat;    
+    background-position-x:center;    
+    margin:4px;
+    width: 350px;    
+    transition:1s;
 }
 
+.post-summary-container:hover {    
+    background-color:#ccc;
+    }
+
+
+.post-summary-tsucs {
+    background-image: url(/Content/images/tsucs/tsucs-cover-home.png);    
+}
+.post-summary-menger {
+    background-image: url(/Content/images/menger/menger-level-5-cover.png);
+}
+.post-summary-lorenz {
+    background-image: url(/Images/LorenzAttractor_sm-trans.png);
+}
+
+
+.post-summary-container a {
+    padding-top:250px;
+    padding-left:20px;
+    padding-right:20px;
+    display:block;    
+    color:#fff;
+}
+
+.post-summary-container a:hover {
+    color:#ccc;
+                   text-decoration:none;
+                }

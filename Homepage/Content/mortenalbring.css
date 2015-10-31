@@ -1,9 +1,4 @@
-﻿@media (max-width:767px) {
-    body {
-        font-size:10px !important;        
-    }
-}
-.row-centered {
+﻿.row-centered {
     text-align:center;
 }
 .col-centered {

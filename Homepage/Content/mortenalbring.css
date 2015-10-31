@@ -1,9 +1,4 @@
-﻿@media (max-width:767px) {
-    body {
-        font-size: 10px !important;
-    }
-}
-
+﻿
 body {
     font-family: 'Open Sans', sans-serif !important;
     color: #0d0d0d !important;
@@ -299,6 +294,14 @@ h1, h2, h3 {
         color: #fff;
         text-shadow: 3px 0px #808080, 9px 8px 0px rgba(0, 0, 0, 0.15);
     }
+
+    .post-title-tsucs {
+    background-image: url('/Content/images/tsucs/tsucs-cover.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
 
 .post-title-lorenz {
     background-image: url('/Images/LorenzAttractor-cover-trans.png');

@@ -228,6 +228,10 @@
     <Content Include="Content\images\peterDeJongattactor.png" />
     <Content Include="Content\images\peterDeJongattactor_small.png" />
     <Content Include="Content\images\slizardbennet.jpg" />
+    <Content Include="Content\images\tsucs\tsucs-cover-home.png" />
+    <Content Include="Content\images\tsucs\tsucs-cover.png" />
+    <Content Include="Content\images\tsucs\tsucs3407.png" />
+    <Content Include="Content\images\tsucs\tsucs3407_sm.png" />
     <Content Include="Content\mortenalbring-charts.css" />
     <Content Include="Content\mortenalbring.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -30838,6 +30842,7 @@
     <Content Include="Scripts\MathJax\fonts\HTML-CSS\TeX\woff\MathJax_Size4-Regular.woff" />
     <Content Include="Scripts\MathJax\fonts\HTML-CSS\TeX\woff\MathJax_Typewriter-Regular.woff" />
     <Content Include="Views\Posts\MengerSponge.cshtml" />
+    <Content Include="Views\Posts\TSUCS.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -319,6 +319,7 @@
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-home.less" />
+    <Content Include="Projects\AngularD3\containers.css" />
     <Content Include="Projects\AngularD3\d3\LICENSE" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
     <Content Include="Images\15920848636_f9d4c69ee0_o.jpg" />
@@ -338,8 +339,6 @@
     <Content Include="Projects\AngularD3\AngularD3.js" />
     <Content Include="Projects\AngularD3\d3\d3.js" />
     <Content Include="Projects\AngularD3\d3\d3.min.js" />
-    <Content Include="Projects\AngularD3\test.html" />
-    <Content Include="Projects\AngularD3\test2.txt" />
     <Content Include="Projects\index.txt" />
     <Content Include="Scripts\d3\d3.js" />
     <Content Include="Scripts\d3\d3.min.js" />

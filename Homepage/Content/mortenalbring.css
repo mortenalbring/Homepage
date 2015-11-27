@@ -172,12 +172,12 @@ footer {
         padding-top: 20px;
     }
 
-    .section-intro a {
+    .section-intro .project-link {
         color: #ccc;
         transition: 0.5s;
     }
 
-        .section-intro a:hover {
+        .section-intro .project-link:hover {
             color: #191919;
             text-decoration: none;
             text-shadow: 8px 8px 8px #cecece;

@@ -343,7 +343,9 @@
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-DNA.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-graphene-auto.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-graphene.js" />
+    <Content Include="Projects\AngularD3\presets\AngularD3-preset-home.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-multiplecubes.js" />
+    <Content Include="Projects\AngularD3\presets\AngularD3-preset-multiplespheres.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-norskekongehuset.css" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-norskekongehuset.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-sphere.js" />

@@ -319,6 +319,8 @@
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-home.less" />
+    <Content Include="Projects\AngularD3\AngularD3-Controllers.js" />
+    <Content Include="Projects\AngularD3\AngularD3-SettingsService.js" />
     <Content Include="Projects\AngularD3\packages\LICENSE" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
     <Content Include="Images\15920848636_f9d4c69ee0_o.jpg" />
@@ -348,6 +350,7 @@
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-multiplespheres.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-norskekongehuset.css" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-norskekongehuset.js" />
+    <Content Include="Projects\AngularD3\presets\AngularD3-preset-orbit.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-sphere.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-square-lattice.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-windsors.css" />

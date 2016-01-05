@@ -47,15 +47,12 @@
                 <h2>Enemies</h2>
                 <div class="enemycontainer">
 
-                    <div ng-repeat="enemy in Enemies" class="enemy" ng-if="enemy.Alive" ng-click="reduceEnemyHealth(enemy.ID,1)">
+                    <div ng-repeat="enemy in Enemies" class="enemy" ng-click="reduceEnemyHealth(enemy.ID,1)">
 
-                        <pre>
-   )
-   (
- ()-()
-_(o o)_  
- /\o/\
-</pre>
+
+
+                        <div ng-if="enemy.Alive" enemy-mouse></div>
+                        <div class="dead" ng-if="!enemy.Alive" dead-mouse></div>
                     </div>
 
                 </div>
@@ -68,9 +65,15 @@ _(o o)_
         </div>
     </div>
 
+    <pre>
+   )
+   (
+ ()-()
+_(o o)_  
+ /\o/\
+</pre>
     <script src="angular.min.js"></script>
     <script src="AngularClicker.js"></script>
-
 
 </body>
 

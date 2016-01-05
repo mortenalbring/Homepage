@@ -1,20 +1,28 @@
 <html>
 <head>
     <title>Angular Clicker</title>
-
+    <link rel="stylesheet" href="AngularClicker.css" type="text/css" />
 </head>
 
 <body>
-<h1>Angular Clicker</h1>
+    <h1>Angular Clicker</h1>
 
-<div ng-app="AngularClicker">
-    <div ng-controller="HomeController">
-        {{test}}
+    <div ng-app="AngularClicker">
+        <div ng-controller="HomeController">
+            {{test}}
+
+            <div class="enemy">
+                <div>
+                    {{EnemyHealth}}
+                </div>
+
+                <button ng-click="reduceEnemyHealth()">Attack</button>
+            </div>
+        </div>
     </div>
-</div>
 
-<script src="angular.min.js"></script>
-<script src="AngularClicker.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="AngularClicker.js"></script>
 
 
 </body>

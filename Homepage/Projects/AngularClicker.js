@@ -29,7 +29,8 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         XP: 0,
         Gold: 10,
         AttackDamage: 1,
-        AutoAttackDamage: 0
+        AutoAttackDamage: 0,
+        AutoBury: false
     }
 
     $scope.EnemyTypes = [
@@ -68,6 +69,13 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         }
     },
     {
+        Title: "Hire gravedigger",
+        Cost: 20,
+        RunFunction: function () {
+            $scope.hireGravedigger(this);
+        }
+    },
+    {
         Title: "Visit graveyard",
         Cost: 0,
         RunFunction: function () {
@@ -76,6 +84,17 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
     },
 
     ];
+
+    $scope.hireGravedigger = function(element) {
+        if (!$scope.subtractCost(element.Cost)) {
+            return;
+        }
+
+        $scope.Player.AutoBury = true;
+        var indx = $scope.Shop.indexOf(element);
+        $scope.Shop.splice(indx, 1);
+
+    }
     $scope.buyAttackBoost = function (element) {
         if (!$scope.subtractCost(element.Cost)) {
             return;
@@ -132,16 +151,26 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
 
     }
 
-    $scope.buryDeadEnemies = function (cost) {
+    $scope.buryDeadEnemies = function (cost,autobury) {
+        var deadEnemies = $scope.Enemies.filter(function (e) {
+            return e.Alive != true;
+        });
+        if (deadEnemies.length == 0) {
+            return;
+        }
+
         if (!$scope.subtractCost(cost)) {
             return;
         }
 
-        var deadEnemies = $scope.Enemies.filter(function (e) {
-            return e.Alive != true;
-        });
+       
 
-        $scope.MessageLog.push("You bury " + deadEnemies.length + " dead enemies");
+        if (autobury) {
+            $scope.MessageLog.push("The gravedigger buries " + deadEnemies.length + " dead enemies");
+        } else {
+            $scope.MessageLog.push("You bury " + deadEnemies.length + " dead enemies");
+        }
+        
 
         for (var i = 0; i < deadEnemies.length; i++) {
             var indx = $scope.Enemies.indexOf(deadEnemies[i]);
@@ -218,13 +247,17 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
                 }
 
             }
-
         }
+
+        if ($scope.Player.AutoBury) {
+            $scope.buryDeadEnemies(0, true);
+        }
+
         var rand = Math.random();
 
         var aliveEnemies = $scope.Enemies.filter(function (e) { return e.Alive == true; })
 
-        if ((rand > 0.1) && (aliveEnemies.length < 20)) {
+        if ((rand > 0.5) && (aliveEnemies.length < 5)) {
             var message = "A new enemy has appeared!";
             $scope.MessageLog.push(message);
             $scope.generateEnemies(1);

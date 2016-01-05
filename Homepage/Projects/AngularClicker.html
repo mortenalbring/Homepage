@@ -19,28 +19,38 @@
             <div ng-show="started" class="gamecontainer">
 
 
-                <div>
+                <div class="playerContainer">
                     <div class="player">
                         {{Player.Name}}
-                        <br />
+                        <br/>
 
                         XP - {{Player.XP}}
-                        <br />
+                        <br/>
 
                         Gold - {{Player.Gold}}
-                        <br />
-                        AutoAttack - {{Player.AutoAttack}}
+                        <br/>
+                        Attack - {{Player.AttackDamage}}
+                        <br/>
+
+                        AutoAttack - {{Player.AutoAttackDamage}}
                     </div>
                     <div class="shop">
-                        <button ng-click="increaseAutoAttack()">Increase auto attack</button>
+                        <div ng-repeat="item in Shop">
+                            <button ng-click="item.RunFunction()" ng-disabled="item.Cost > Player.Gold">
+                                [{{item.Cost}} G] {{item.Title}} 
+                            </button>
+                        </div>                        
                     </div>
                 </div>
 
+
+                <h2>Enemies</h2>
                 <div class="enemycontainer">
+                    
                     <div ng-repeat="enemy in Enemies" class="enemy" ng-if="enemy.Alive" ng-click="reduceEnemyHealth(enemy.ID,1)">
 
                         ID: {{enemy.ID}}
-                        <br />
+                        <br/>
 
                         Health: {{enemy.Health}}
 

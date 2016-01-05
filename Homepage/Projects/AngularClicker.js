@@ -39,7 +39,14 @@ angularClicker.directive('playerFace', function () {
 ' //_ _)' + '\n' +
 ' ( &quot;&bsol;&quot;' + '\n' +
  '  &bsol;_O/' + '\n' +
+ '</pre>' +
+'<pre ng-if= "pstatus == 2" >' + '\n' +
+'  __)),' + '\n' +
+' //   )' + '\n' +
+' ( -&bsol;-' + '\n' +
+ '  &bsol;_-/' + '\n' +
  '</pre>' + "<br>" +
+
 
  '{{pstatus}}'
     }
@@ -159,9 +166,11 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
 
 
     $scope.visitGraveyard = function () {
+        
         if ($scope.Graveyard.length == 0) {
             $scope.MessageLog.push("There is nothing here but an empty meadow");
         } else {
+            $scope.Player.Status = 2;
             $scope.MessageLog.push("You solemnly mourn the " + $scope.Graveyard.length + " graves in the graveyard");
         }
     }
@@ -187,12 +196,10 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         if (!$scope.subtractCost(cost)) {
             return;
         }
-
-
-
         if (autobury) {
             $scope.MessageLog.push("The gravedigger buries " + deadEnemies.length + " dead enemies");
         } else {
+            $scope.Player.Status = 2;
             $scope.MessageLog.push("You bury " + deadEnemies.length + " dead enemies");
         }
 

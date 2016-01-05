@@ -22,44 +22,48 @@
                 <div class="playerContainer">
                     <div class="player">
                         {{Player.Name}}
-                        <br/>
+                        <br />
 
                         XP - {{Player.XP}}
-                        <br/>
+                        <br />
 
                         Gold - {{Player.Gold}}
-                        <br/>
+                        <br />
                         Attack - {{Player.AttackDamage}}
-                        <br/>
+                        <br />
 
                         AutoAttack - {{Player.AutoAttackDamage}}
                     </div>
                     <div class="shop">
                         <div ng-repeat="item in Shop">
                             <button ng-click="item.RunFunction()" ng-disabled="item.Cost > Player.Gold">
-                                [{{item.Cost}} G] {{item.Title}} 
+                                [{{item.Cost}} G] {{item.Title}}
                             </button>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
 
 
                 <h2>Enemies</h2>
                 <div class="enemycontainer">
-                    
+
                     <div ng-repeat="enemy in Enemies" class="enemy" ng-if="enemy.Alive" ng-click="reduceEnemyHealth(enemy.ID,1)">
 
-                        ID: {{enemy.ID}}
-                        <br/>
-
-                        Health: {{enemy.Health}}
-
-
+                        <pre>
+   )
+   (
+ ()-()
+_(o o)_  
+ /\o/\
+</pre>
                     </div>
 
                 </div>
-                
 
+
+                <div ng-repeat="message in MessageLog.slice().reverse() | limitTo:10 track by $index ">
+                    {{message}}
+                </div>
             </div>
         </div>
     </div>

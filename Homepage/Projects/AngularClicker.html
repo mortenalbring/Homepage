@@ -20,8 +20,6 @@
 
 
                 <div>
-
-
                     <div class="player">
                         {{Player.Name}}
                         <br />
@@ -38,14 +36,19 @@
                     </div>
                 </div>
 
-                <div ng-repeat="enemy in Enemies" class="enemy" ng-if="enemy.Alive">
+                <div class="enemycontainer">
+                    <div ng-repeat="enemy in Enemies" class="enemy" ng-if="enemy.Alive" ng-click="reduceEnemyHealth(enemy.ID,1)">
 
-                    {{enemy.ID}}
-                    {{enemy.Health}}
-                    <button ng-click="reduceEnemyHealth(enemy.ID,1)">Attack</button>
+                        ID: {{enemy.ID}}
+                        <br />
+
+                        Health: {{enemy.Health}}
+
+
+                    </div>
 
                 </div>
-
+                
 
             </div>
         </div>

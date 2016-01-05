@@ -1,0 +1,47 @@
+
+.playercontainer {
+    display:flex;
+}
+.enemycontainer {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:row;    
+}
+.enemycontainer div {
+    flex:1;
+}
+
+.dead {
+    color: #808080;
+}
+.enemy {     
+    display:flex;   
+    min-width:100px;
+    height:100px;    
+    padding:5px;        
+    border-radius:3px;
+    margin:5px;
+
+      -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+    .enemy:hover {
+        transition:0.5s;
+        border-radius:5px;
+        color:#ff6a00;
+        cursor: pointer;
+    }
+    .enemy:active {
+        color:#ff0000;
+        background:#ffffff;
+    }
+
+
+.player {    
+    border:5px solid #030870;
+    width:200px;
+}

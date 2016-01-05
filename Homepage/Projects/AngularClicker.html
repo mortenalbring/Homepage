@@ -9,30 +9,44 @@
 
     <div ng-app="AngularClicker">
         <div ng-controller="HomeController">
-            What is your name? 
-            <input ng-model="Player.Name"/>
-            
-
-            <div class="player">
-                {{Player.Name}}
-                <br/>
-
-                XP - {{Player.XP}}
-                <br/>
-
-                Gold - {{Player.Gold}}
-                <br/>
-                AutoAttack - {{Player.AutoAttack}}
+            <div ng-hide="started">
+                What is your name?
+                <input ng-model="Player.Name" />
+                <button ng-click="initialise()">
+                    Start
+                </button>
             </div>
+            <div ng-show="started" class="gamecontainer">
 
-            <div ng-repeat="enemy in Enemies" class="enemy">
-                {{enemy.ID}}
-                {{enemy.Health}}
-                <button ng-click="reduceEnemyHealth(enemy.ID,1)">Attack</button>
-            </div>
 
-            <div class="shop">
-                <button ng-click="increaseAutoAttack()">Increase auto attack</button>
+                <div>
+
+
+                    <div class="player">
+                        {{Player.Name}}
+                        <br />
+
+                        XP - {{Player.XP}}
+                        <br />
+
+                        Gold - {{Player.Gold}}
+                        <br />
+                        AutoAttack - {{Player.AutoAttack}}
+                    </div>
+                    <div class="shop">
+                        <button ng-click="increaseAutoAttack()">Increase auto attack</button>
+                    </div>
+                </div>
+
+                <div ng-repeat="enemy in Enemies" class="enemy" ng-if="enemy.Alive">
+
+                    {{enemy.ID}}
+                    {{enemy.Health}}
+                    <button ng-click="reduceEnemyHealth(enemy.ID,1)">Attack</button>
+
+                </div>
+
+
             </div>
         </div>
     </div>

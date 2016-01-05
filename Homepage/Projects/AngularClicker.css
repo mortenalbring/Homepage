@@ -1,7 +1,15 @@
+.gamecontainer {
+    display:flex;
+}
+
 .enemy {
     width:100px;
     height:100px;
     padding:2px;
     background:#ff6a00;
+    border:5px solid #ff0000;
+}
 
+.player {    
+    border:5px solid #030870;
 }

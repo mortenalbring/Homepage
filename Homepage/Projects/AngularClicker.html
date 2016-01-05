@@ -21,12 +21,18 @@
                 <br/>
 
                 Gold - {{Player.Gold}}
+                <br/>
+                AutoAttack - {{Player.AutoAttack}}
             </div>
-           
+
             <div ng-repeat="enemy in Enemies" class="enemy">
                 {{enemy.ID}}
                 {{enemy.Health}}
-                <button ng-click="reduceEnemyHealth(enemy.ID)">Attack</button>
+                <button ng-click="reduceEnemyHealth(enemy.ID,1)">Attack</button>
+            </div>
+
+            <div class="shop">
+                <button ng-click="increaseAutoAttack()">Increase auto attack</button>
             </div>
         </div>
     </div>

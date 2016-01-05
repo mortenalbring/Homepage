@@ -59,7 +59,7 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         Name: "",
         Status: 0,
         XP: 0,
-        Gold: 10,
+        Gold: 20,
         AttackDamage: 1,
         AutoAttackDamage: 0,
         AutoBury: false

@@ -22,10 +22,35 @@ angularClicker.directive('deadMouse', function () {
         '    </pre>'
     }
 });
+angularClicker.directive('playerFace', function () {
+    return {
+        scope: {
+            pstatus: '='
+        },
+        template:
+        '<pre ng-if= "pstatus == 0" >' + '\n' +
+'  __)),' + '\n' +
+' //_ _)' + '\n' +
+' ( &quot;&bsol;&quot;' + '\n' +
+ '  &bsol;_-/' + '\n' +
+ '</pre>' + 
+'<pre ng-if= "pstatus == 1" >' + '\n' +
+'  __)),' + '\n' +
+' //_ _)' + '\n' +
+' ( &quot;&bsol;&quot;' + '\n' +
+ '  &bsol;_O/' + '\n' +
+ '</pre>' + "<br>" +
+
+ '{{pstatus}}'
+    }
+
+
+})
 
 angularClicker.controller("HomeController", function ($interval, $scope) {
     $scope.Player = {
         Name: "",
+        Status: 0,
         XP: 0,
         Gold: 10,
         AttackDamage: 1,
@@ -51,7 +76,7 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         Title: "Attack Boost",
         Cost: 5,
         RunFunction: function () {
-            $scope.buyAttackBoost(this);            
+            $scope.buyAttackBoost(this);
         }
     },
     {
@@ -85,7 +110,7 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
 
     ];
 
-    $scope.hireGravedigger = function(element) {
+    $scope.hireGravedigger = function (element) {
         if (!$scope.subtractCost(element.Cost)) {
             return;
         }
@@ -104,7 +129,7 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         element.Cost = element.Cost + 1;
     }
 
-    $scope.upgradeAutoTurret = function(element) {
+    $scope.upgradeAutoTurret = function (element) {
         if (!$scope.subtractCost(element.Cost)) {
             return;
         }
@@ -120,7 +145,7 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
 
         $scope.Player.AutoAttackDamage = 2;
 
-        var indx = $scope.Shop.indexOf(element);        
+        var indx = $scope.Shop.indexOf(element);
         $scope.Shop.splice(indx, 1);
         var upgrade = {
             Title: "Upgrade Auto Turret",
@@ -151,7 +176,7 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
 
     }
 
-    $scope.buryDeadEnemies = function (cost,autobury) {
+    $scope.buryDeadEnemies = function (cost, autobury) {
         var deadEnemies = $scope.Enemies.filter(function (e) {
             return e.Alive != true;
         });
@@ -163,14 +188,14 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
             return;
         }
 
-       
+
 
         if (autobury) {
             $scope.MessageLog.push("The gravedigger buries " + deadEnemies.length + " dead enemies");
         } else {
             $scope.MessageLog.push("You bury " + deadEnemies.length + " dead enemies");
         }
-        
+
 
         for (var i = 0; i < deadEnemies.length; i++) {
             var indx = $scope.Enemies.indexOf(deadEnemies[i]);
@@ -202,9 +227,17 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         $scope.Player.AttackDamage = $scope.Player.AttackDamage + val;
     }
 
-    $scope.increaseAutoAttack = function (val) {    
-        $scope.Player.AutoAttackDamage = $scope.Player.AutoAttackDamage + val;        
+    $scope.increaseAutoAttack = function (val) {
+        $scope.Player.AutoAttackDamage = $scope.Player.AutoAttackDamage + val;
     }
+
+    $scope.manualAttack = function (ID) {
+        console.log(ID);
+        $scope.Player.Status = 1;
+        $scope.reduceEnemyHealth(ID, $scope.Player.AttackDamage);
+
+    }
+
     $scope.reduceEnemyHealth = function (ID, damage) {
         var enemy = $scope.Enemies.filter(function (e) {
             return e.ID == ID;
@@ -236,6 +269,8 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
 
     }
     $interval(function () {
+        $scope.Player.Status = 0;
+
         if (!$scope.started) {
             return;
         }

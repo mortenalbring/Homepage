@@ -1,3 +1,7 @@
+
+.playercontainer {
+    display:flex;
+}
 .enemycontainer {
     display:flex;
     flex-direction:row;    
@@ -25,8 +29,15 @@
         background:#ffd800;
         cursor: pointer;
     }
+    .enemy:active {
+        border-color: #ffd800;
+        border-style:solid;
+        border-radius:20px;
+        background:#ffffff;
+    }
 
 
 .player {    
     border:5px solid #030870;
+    width:200px;
 }

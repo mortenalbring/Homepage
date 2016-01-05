@@ -9,14 +9,24 @@
 
     <div ng-app="AngularClicker">
         <div ng-controller="HomeController">
-            {{test}}
+            What is your name? 
+            <input ng-model="Player.Name"/>
+            
 
-            <div class="enemy">
-                <div>
-                    {{EnemyHealth}}
-                </div>
+            <div class="player">
+                {{Player.Name}}
+                <br/>
 
-                <button ng-click="reduceEnemyHealth()">Attack</button>
+                XP - {{Player.XP}}
+                <br/>
+
+                Gold - {{Player.Gold}}
+            </div>
+           
+            <div ng-repeat="enemy in Enemies" class="enemy">
+                {{enemy.ID}}
+                {{enemy.Health}}
+                <button ng-click="reduceEnemyHealth(enemy.ID)">Attack</button>
             </div>
         </div>
     </div>

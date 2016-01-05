@@ -8,8 +8,11 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         AttackDamage: 1,
         AutoAttackDamage: 0
     }
-
+    
     $scope.Enemies = [];
+
+    $scope.MessageLog = [];
+
 
     $scope.Shop = [
     {
@@ -36,7 +39,12 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
 
             var enemyID = $scope.Enemies.length + 1;
 
-            var enemy = { ID: enemyID, Alive:true, Health: 10 }
+            var enemy = {
+                ID: enemyID,
+                Name: "Mouse",
+                Alive: true,
+                Health: 10
+            }
             $scope.Enemies.push(enemy);
         }
     }
@@ -60,9 +68,11 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         });
         if (enemy.length == 1) {
             enemy[0].Health = enemy[0].Health - damage;
+            $scope.MessageLog.push("You attack " + enemy[0].Name + " for " + damage + " pts of damage");
 
             if (enemy[0].Health <= 0) {
                 enemy[0].Alive = false;
+                $scope.MessageLog.push(enemy[0].Name + " is dead");
                 $scope.Player.XP = $scope.Player.XP + 1;
                 $scope.Player.Gold = $scope.Player.Gold + 10;
             }
@@ -96,6 +106,8 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         var aliveEnemies = $scope.Enemies.filter(function (e) { return e.Alive == true;})
 
         if ((rand > 0.5) && (aliveEnemies.length < 10)) {
+            var message = "A new enemy has appeared!";
+            $scope.MessageLog.push(message);
             $scope.generateEnemies(1);
         }
 

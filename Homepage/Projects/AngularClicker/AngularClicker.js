@@ -5,6 +5,19 @@ angularClicker.service('EnemyService', ['MessageService', AngularClickerEnemySer
 angularClicker.service('PlayerService', AngularClickerPlayerService);
 angularClicker.service('ShopService', ['MessageService', 'PlayerService', 'EnemyService', AngularClickerShopService]);
 
+
+angularClicker.directive('turret', function () {
+    return {
+        template: '<pre>' +
+            '   |' + '\n' +
+            '' + '\n' +
+            ' ()-()' + '\n' +
+            '_(o o)_  ' + '\n' +
+            ' /&bsol;o/&bsol; ' + '\n' +
+        '    </pre>'
+    }
+});
+
 angularClicker.directive('enemyMouse', function () {
     return {
         template: '<pre>' +

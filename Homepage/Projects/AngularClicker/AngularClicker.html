@@ -24,17 +24,18 @@
                         {{Player.Name}}
                         <br/>
                         <div player-face pstatus="Player.Status"></div>
-                        
+
                         XP - {{Player.XP}}
-                        <br />
+                        <br/>
 
                         Gold - {{Player.Gold}}
-                        <br />
+                        <br/>
                         Attack - {{Player.AttackDamage}}
-                        <br />
+                        <br/>
 
                         AutoAttack - {{Player.AutoAttackDamage}}
                     </div>
+                    <div class="grave-digger" ng-if="Player.AutoBury" grave-digger></div>
                     <div class="shop">
                         <div ng-repeat="item in Shop">
                             <button ng-click="item.RunFunction()" ng-disabled="item.Cost > Player.Gold">
@@ -42,7 +43,9 @@
                             </button>
                         </div>
                     </div>
+                    
                 </div>
+                
 
 
                 <h2>Enemies</h2>
@@ -68,9 +71,11 @@
                     {{message}}
                 </div>
             </div>
+            
         </div>
     </div>
 
+    
 <pre>
    )
    (

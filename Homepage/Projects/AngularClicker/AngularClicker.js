@@ -22,6 +22,23 @@ angularClicker.directive('deadMouse', function () {
         '    </pre>'
     }
 });
+angularClicker.directive('graveDigger', function() {
+    return {
+        template: '<pre>' +
+'     _' + '\n' +
+'   _/_&bsol;_' + '\n' +
+'    &bsol;_/' + '\n' +
+'   /&bsol;Y/&bsol;' + '\n' +
+'  || : ||' + '\n' +
+'  || : ||' + '\n' +
+'  (|---|)' + '\n' +
+'   | | |¦' + '\n' +
+'   | | |¦' + '\n' +
+'   |_|_|¦' + '\n' +
+'   (/ &bsol;)#' +
+'</pre>'
+    }
+})
 angularClicker.directive('playerFace', function () {
     return {
         scope: {

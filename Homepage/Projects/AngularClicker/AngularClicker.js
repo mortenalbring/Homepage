@@ -71,7 +71,7 @@ angularClicker.directive('playerFace', function () {
 
 angularClicker.controller("HomeController", function ($interval, $scope) {
     $scope.Player = {
-        Name: "",
+        Name: "Bob",
         Status: 0,
         XP: 0,
         Gold: 20,

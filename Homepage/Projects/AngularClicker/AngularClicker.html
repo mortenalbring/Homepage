@@ -52,7 +52,12 @@
 
 
 
-                        <div ng-if="enemy.Alive" enemy-mouse></div>
+                        <div ng-if="enemy.Alive" enemy-mouse
+                             ng-class="{
+                             'health-full' : (enemy.Health == enemy.MaxHealth),
+                             'health-injured' : ((enemy.Health < enemy.MaxHealth) && ((enemy.Health / enemy.MaxHealth) >= 0.5)),
+                             'health-dying' : ((enemy.Health < enemy.MaxHealth) && ((enemy.Health / enemy.MaxHealth) < 0.5))
+                              }"></div>
                         <div class="dead" ng-if="!enemy.Alive" dead-mouse></div>
                     </div>
 

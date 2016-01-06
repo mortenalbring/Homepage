@@ -285,6 +285,15 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         }
     }
 
+
+    $scope.getColour = function (enemy) {
+
+        var frac = (enemy.Health / enemy.MaxHealth);
+
+        var outcss = "rgba(" + parseInt(frac * 255) + ",0,0,1)";        
+        return outcss;
+    }
+
     $scope.initialise = function () {
         $scope.started = true;
 

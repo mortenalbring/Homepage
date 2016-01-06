@@ -1,5 +1,8 @@
 var angularClicker = angular.module("AngularClicker", []);
 
+angularClicker.service('PlayerService', AngularClickerPlayerService);
+angularClicker.service('ShopService', ['PlayerService', AngularClickerShopService]);
+
 angularClicker.directive('enemyMouse', function () {
     return {
         template: '<pre>' +
@@ -69,15 +72,17 @@ angularClicker.directive('playerFace', function () {
 
 })
 
-angularClicker.controller("HomeController", function ($interval, $scope) {
-    $scope.Player = {
-        Name: "Bob",
-        Status: 0,
-        XP: 0,
-        Gold: 20,
-        AttackDamage: 1,
-        AutoAttackDamage: 0,
-        AutoBury: false
+angularClicker.controller("HomeController", function (PlayerService,ShopService,$interval, $scope) {
+    $scope.Player = PlayerService.Player;
+
+    $scope.subtractCost = function (cost) {
+        if ($scope.Player.Gold >= cost) {
+            $scope.Player.Gold = $scope.Player.Gold - cost;
+            return true;
+        }
+        return false;
+
+
     }
 
     $scope.EnemyTypes = [
@@ -93,44 +98,8 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
     $scope.MessageLog = [];
 
 
-    $scope.Shop = [
-    {
-        Title: "Attack Boost",
-        Cost: 5,
-        RunFunction: function () {
-            $scope.buyAttackBoost(this);
-        }
-    },
-    {
-        Title: "Buy Auto Turret",
-        Cost: 10,
-        RunFunction: function () {
-            $scope.buyAutoTurret(this);
-        }
-    },
-    {
-        Title: "Bury dead",
-        Cost: 1,
-        RunFunction: function () {
-            $scope.buryDeadEnemies(this.Cost);
-        }
-    },
-    {
-        Title: "Hire gravedigger",
-        Cost: 20,
-        RunFunction: function () {
-            $scope.hireGravedigger(this);
-        }
-    },
-    {
-        Title: "Visit graveyard",
-        Cost: 0,
-        RunFunction: function () {
-            $scope.visitGraveyard();
-        }
-    },
+    $scope.Shop = ShopService.Shop;
 
-    ];
 
     $scope.hireGravedigger = function (element) {
         if (!$scope.subtractCost(element.Cost)) {
@@ -192,15 +161,7 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
         }
     }
 
-    $scope.subtractCost = function (cost) {
-        if ($scope.Player.Gold >= cost) {
-            $scope.Player.Gold = $scope.Player.Gold - cost;
-            return true;
-        }
-        return false;
-
-
-    }
+   
 
     $scope.buryDeadEnemies = function (cost, autobury) {
         var deadEnemies = $scope.Enemies.filter(function (e) {

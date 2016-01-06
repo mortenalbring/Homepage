@@ -6,12 +6,26 @@
 <body>
     <div ng-app="ASCIIGenerator">
         <div ng-controller="HomeController">
-            {{test}}
+
+
+            <textarea rows="10" ng-model="input"></textarea>
+            <br />
+            <button ng-click="generate()">Generate</button>
+            <br />
+            <br />
+            <textarea rows="10" ng-bind-html-unsafe="output"></textarea>
+        
+            <pre>{{output}}</pre>
         </div>
+
+        
 
     </div>
 
+
+
     <script src="angular.min.js"></script>
+    <script src="angular-sanitize.js"></script>
     <script src="AngularClickerASCIIGen.js"></script>
 </body>
 </html>

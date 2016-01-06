@@ -22,16 +22,16 @@
                 <div class="playerContainer">
                     <div class="player">
                         {{Player.Name}}
-                        <br/>
+                        <br />
                         <div player-face pstatus="Player.Status"></div>
 
                         XP - {{Player.XP}}
-                        <br/>
+                        <br />
 
                         Gold - {{Player.Gold}}
-                        <br/>
+                        <br />
                         Attack - {{Player.AttackDamage}}
-                        <br/>
+                        <br />
 
                         AutoAttack - {{Player.AutoAttackDamage}}
                     </div>
@@ -43,9 +43,9 @@
                             </button>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
 
 
                 <h2>Enemies</h2>
@@ -57,7 +57,7 @@
 
                         <div ng-if="enemy.Alive" enemy-mouse
                              ng-style="{'color':getColour(enemy)}">
-                            
+
                         </div>
                         <div class="dead" ng-if="!enemy.Alive" dead-mouse></div>
                     </div>
@@ -69,11 +69,11 @@
                     {{message}}
                 </div>
             </div>
-            
+
         </div>
     </div>
 
-    
+
 <pre>
    )
    (
@@ -83,6 +83,8 @@ _(o o)_
 </pre>
 
 <script src="angular.min.js"></script>
+    <script src="AngularClickerEnemyService.js"></script>
+    <script src="AngularClickerMessageService.js"></script>
     <script src="AngularClickerPlayerService.js"></script>
     <script src="AngularClickerShopService.js"></script>
     <script src="AngularClicker.js"></script>

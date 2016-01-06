@@ -16,6 +16,9 @@ var AngularClickerPlayerService = function() {
         },
         IncreaseAttack: function(val) {
             this.AttackDamage = this.AttackDamage + val;
+        },
+        IncreaseAutoAttack: function (val) {
+            this.AutoAttackDamage = this.AutoAttackDamage + val;
         }
     }
 

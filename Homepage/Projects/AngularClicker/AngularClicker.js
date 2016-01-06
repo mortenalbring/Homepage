@@ -1,7 +1,9 @@
 var angularClicker = angular.module("AngularClicker", []);
 
+angularClicker.service('MessageService', AngularClickerMessageService);
+angularClicker.service('EnemyService', AngularClickerEnemyService);
 angularClicker.service('PlayerService', AngularClickerPlayerService);
-angularClicker.service('ShopService', ['PlayerService', AngularClickerShopService]);
+angularClicker.service('ShopService', ['MessageService', 'PlayerService', 'EnemyService', AngularClickerShopService]);
 
 angularClicker.directive('enemyMouse', function () {
     return {
@@ -25,7 +27,7 @@ angularClicker.directive('deadMouse', function () {
         '    </pre>'
     }
 });
-angularClicker.directive('graveDigger', function() {
+angularClicker.directive('graveDigger', function () {
     return {
         template: '<pre>' +
 '     _' + '\n' +
@@ -51,7 +53,7 @@ angularClicker.directive('playerFace', function () {
 ' //_ _)' + '\n' +
 ' ( &quot;&bsol;&quot;' + '\n' +
  '  &bsol;_-/' + '\n' +
- '</pre>' + 
+ '</pre>' +
 '<pre ng-if= "pstatus == 1" >' + '\n' +
 '  __)),' + '\n' +
 ' //_ _)' + '\n' +
@@ -72,7 +74,7 @@ angularClicker.directive('playerFace', function () {
 
 })
 
-angularClicker.controller("HomeController", function (PlayerService,ShopService,$interval, $scope) {
+angularClicker.controller("HomeController", function (MessageService, PlayerService, EnemyService, ShopService, $interval, $scope) {
     $scope.Player = PlayerService.Player;
 
     $scope.subtractCost = function (cost) {
@@ -92,103 +94,14 @@ angularClicker.controller("HomeController", function (PlayerService,ShopService,
         }
     ]
 
-    $scope.Enemies = [];
+    $scope.Enemies = EnemyService.Enemies;
     $scope.Graveyard = [];
 
-    $scope.MessageLog = [];
+    $scope.MessageLog = MessageService.MessageLog;
 
 
     $scope.Shop = ShopService.Shop;
 
-
-    $scope.hireGravedigger = function (element) {
-        if (!$scope.subtractCost(element.Cost)) {
-            return;
-        }
-
-        $scope.MessageLog.push("You hire a kindly old gravedigger to clear out corpses for you");
-
-        $scope.Player.AutoBury = true;
-        var indx = $scope.Shop.indexOf(element);
-        $scope.Shop.splice(indx, 1);
-
-    }
-    $scope.buyAttackBoost = function (element) {
-        if (!$scope.subtractCost(element.Cost)) {
-            return;
-        }
-        $scope.increaseAttack(1);
-
-        element.Cost = element.Cost + 1;
-    }
-
-    $scope.upgradeAutoTurret = function (element) {
-        if (!$scope.subtractCost(element.Cost)) {
-            return;
-        }
-        $scope.increaseAutoAttack(1);
-        element.Cost = element.Cost + 2;
-
-
-    }
-    $scope.buyAutoTurret = function (element) {
-        if (!$scope.subtractCost(element.Cost)) {
-            return;
-        }
-
-        $scope.Player.AutoAttackDamage = 2;
-
-        var indx = $scope.Shop.indexOf(element);
-        $scope.Shop.splice(indx, 1);
-        var upgrade = {
-            Title: "Upgrade Auto Turret",
-            Cost: 10,
-            RunFunction: function () {
-                $scope.upgradeAutoTurret(this);
-            }
-        };
-        $scope.Shop.push(upgrade);
-    }
-
-
-    $scope.visitGraveyard = function () {
-        
-        if ($scope.Graveyard.length == 0) {
-            $scope.MessageLog.push("There is nothing here but an empty meadow");
-        } else {
-            $scope.Player.Status = 2;
-            $scope.MessageLog.push("You solemnly mourn the " + $scope.Graveyard.length + " graves in the graveyard");
-        }
-    }
-
-   
-
-    $scope.buryDeadEnemies = function (cost, autobury) {
-        var deadEnemies = $scope.Enemies.filter(function (e) {
-            return e.Alive != true;
-        });
-        if (deadEnemies.length == 0) {
-            return;
-        }
-
-        if (!$scope.subtractCost(cost)) {
-            return;
-        }
-        if (autobury) {
-            $scope.MessageLog.push("The gravedigger buries " + deadEnemies.length + " dead enemies");
-        } else {
-            $scope.Player.Status = 2;
-            $scope.MessageLog.push("You bury " + deadEnemies.length + " dead enemies");
-        }
-
-
-        for (var i = 0; i < deadEnemies.length; i++) {
-            var indx = $scope.Enemies.indexOf(deadEnemies[i]);
-            $scope.Enemies.splice(indx, 1);
-            $scope.Graveyard.push(deadEnemies[i]);
-        }
-
-    }
 
     $scope.generateEnemies = function (number) {
 
@@ -205,20 +118,12 @@ angularClicker.controller("HomeController", function (PlayerService,ShopService,
                 Health: 10,
                 MaxHealth: 10
             }
-            $scope.Enemies.push(enemy);
+            EnemyService.Enemies.push(enemy);
         }
     }
 
-    $scope.increaseAttack = function (val) {
-        $scope.Player.AttackDamage = $scope.Player.AttackDamage + val;
-    }
-
-    $scope.increaseAutoAttack = function (val) {
-        $scope.Player.AutoAttackDamage = $scope.Player.AutoAttackDamage + val;
-    }
-
-    $scope.manualAttack = function (ID) {
-        console.log(ID);
+   
+    $scope.manualAttack = function (ID) {        
         $scope.Player.Status = 1;
         $scope.reduceEnemyHealth(ID, $scope.Player.AttackDamage);
 
@@ -251,7 +156,7 @@ angularClicker.controller("HomeController", function (PlayerService,ShopService,
 
         var frac = (enemy.Health / enemy.MaxHealth);
 
-        var outcss = "rgba(" + parseInt(frac * 255) + ",0,0,1)";        
+        var outcss = "rgba(" + parseInt(frac * 255) + ",0,0,1)";
         return outcss;
     }
 
@@ -280,7 +185,12 @@ angularClicker.controller("HomeController", function (PlayerService,ShopService,
         }
 
         if ($scope.Player.AutoBury) {
-            $scope.buryDeadEnemies(0, true);
+            var buried = EnemyService.BuryDead();
+            if (buried > 0) {
+                MessageService.MessageLog.push("The gravedigger buries " + buried + " dead enemies");
+            }
+
+
         }
 
         var rand = Math.random();

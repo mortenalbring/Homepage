@@ -48,7 +48,7 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
             MessageService.MessageLog.push("You solemnly mourn the " + EnemyService.Graveyard.length + " graves in the graveyard");
         }
     }
-    
+
     function buryDeadEnemies(element) {
         var deadEnemies = EnemyService.Enemies.filter(function (e) {
             return e.Alive != true;
@@ -66,9 +66,6 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
         var buried = EnemyService.BuryDead();
 
         MessageService.MessageLog.push("You bury " + buried + " dead enemies");
-        
-        
-        
     }
 
     function hireGraveDigger(element) {
@@ -80,6 +77,31 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
         PlayerService.Player.AutoBury = true;
         var indx = self.Shop.indexOf(element);
         self.Shop.splice(indx, 1);
+
+        var dismissDigElement = {
+            Title: "Dismiss gravedigger",
+            Cost: 0,
+            RunFunction: function () {
+                dismissDigger(this);
+            }
+        };
+
+        self.Shop.push(dismissDigElement);
+    }
+    function dismissDigger(element) {
+        var indx = self.Shop.indexOf(element);
+        self.Shop.splice(indx, 1);
+        PlayerService.Player.AutoBury = false;
+        MessageService.MessageLog.push("You fire the kindly old gravedigger");
+
+        var enemy = {         
+            Name: "Gravedigger",
+            Type: "Gravedigger",
+            Alive: true,
+            Health: 20,
+            MaxHealth: 20
+        }
+        EnemyService.AddNewEnemy(enemy);
     }
 
     function buyAttackBoost(element) {
@@ -96,7 +118,7 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
             return;
         }
         PlayerService.Player.IncreaseAutoAttack(1);
-        
+
         var indx = self.Shop.indexOf(element);
         self.Shop.splice(indx, 1);
         var upgrade = {

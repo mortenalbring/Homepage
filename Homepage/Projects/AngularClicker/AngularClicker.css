@@ -11,6 +11,17 @@
     flex:1;
 }
 
+.health-full {
+    color:#208d00;
+}
+.health-injured {
+    color:#ee883f;
+}
+.health-dying {
+    color:#ff0000;
+}
+
+
 .dead {
     color: #808080;
 }
@@ -30,15 +41,9 @@
     -webkit-user-select: none;
 }
     .enemy:hover {
-        transition:0.5s;
-        border-radius:5px;
-        color:#ff6a00;
         cursor: pointer;
     }
-    .enemy:active {
-        color:#ff0000;
-        background:#ffffff;
-    }
+  
 
 
 .player {    

@@ -122,6 +122,8 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
             return;
         }
 
+        $scope.MessageLog.push("You hire a kindly old gravedigger to clear out corpses for you");
+
         $scope.Player.AutoBury = true;
         var indx = $scope.Shop.indexOf(element);
         $scope.Shop.splice(indx, 1);
@@ -224,7 +226,8 @@ angularClicker.controller("HomeController", function ($interval, $scope) {
                 ID: enemyID,
                 Name: "Mouse",
                 Alive: true,
-                Health: 10
+                Health: 10,
+                MaxHealth: 10
             }
             $scope.Enemies.push(enemy);
         }

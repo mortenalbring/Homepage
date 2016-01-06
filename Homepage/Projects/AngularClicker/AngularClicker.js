@@ -27,52 +27,64 @@ angularClicker.directive('deadMouse', function () {
         '    </pre>'
     }
 });
-angularClicker.directive('graveDigger', function () {
+angularClicker.directive('graveDigger', function() {
     return {
         template: '<pre>' +
-'     _' + '\n' +
-'   _/_&bsol;_' + '\n' +
-'    &bsol;_/' + '\n' +
-'   /&bsol;Y/&bsol;' + '\n' +
-'  || : ||' + '\n' +
-'  (|---|)' + '\n' +
-'   | | |¦' + '\n' +
-'   |_|_|¦' + '\n' +
-'   (/ &bsol;)#' +
-'</pre>'
+            '     _' + '\n' +
+            '   _/_&bsol;_' + '\n' +
+            '    &bsol;_/' + '\n' +
+            '   /&bsol;Y/&bsol;' + '\n' +
+            '  || : ||' + '\n' +
+            '  (|---|)' + '\n' +
+            '   | | |¦' + '\n' +
+            '   |_|_|¦' + '\n' +
+            '   (/ &bsol;)#' +
+            '</pre>'
     }
-})
-angularClicker.directive('playerFace', function () {
+});
+angularClicker.directive('deadGraveDigger', function () {
+    return {
+        template: '<pre>' +
+            '     _' + '\n' +
+            '    / &bsol;' + '\n' +
+            '    &bsol; /' + '\n' +
+            '   /&bsol;Y/&bsol;' + '\n' +
+            '  || : ||' + '\n' +
+            '  (|---|)' + '\n' +
+            '   | | |' + '\n' +
+            '   |_|_|' + '\n' +
+            '   (/ &bsol;)' +
+            '</pre>'
+    }
+});
+
+angularClicker.directive('playerFace', function() {
     return {
         scope: {
             pstatus: '='
         },
         template:
-        '<pre ng-if= "pstatus == 0" >' + '\n' +
-'  __)),' + '\n' +
-' //_ _)' + '\n' +
-' ( &quot;&bsol;&quot;' + '\n' +
- '  &bsol;_-/' + '\n' +
- '</pre>' +
-'<pre ng-if= "pstatus == 1" >' + '\n' +
-'  __)),' + '\n' +
-' //_ _)' + '\n' +
-' ( &quot;&bsol;&quot;' + '\n' +
- '  &bsol;_O/' + '\n' +
- '</pre>' +
-'<pre ng-if= "pstatus == 2" >' + '\n' +
-'  __)),' + '\n' +
-' //   )' + '\n' +
-' ( -&bsol;-' + '\n' +
- '  &bsol;_-/' + '\n' +
- '</pre>' + "<br>" +
-
-
- '{{pstatus}}'
+            '<pre ng-if= "pstatus == 0" >' + '\n' +
+                '  __)),' + '\n' +
+                ' //_ _)' + '\n' +
+                ' ( &quot;&bsol;&quot;' + '\n' +
+                '  &bsol;_-/' + '\n' +
+                '</pre>' +
+                '<pre ng-if= "pstatus == 1" >' + '\n' +
+                '  __)),' + '\n' +
+                ' //_ _)' + '\n' +
+                ' ( &quot;&bsol;&quot;' + '\n' +
+                '  &bsol;_O/' + '\n' +
+                '</pre>' +
+                '<pre ng-if= "pstatus == 2" >' + '\n' +
+                '  __)),' + '\n' +
+                ' //   )' + '\n' +
+                ' ( -&bsol;-' + '\n' +
+                '  &bsol;_-/' + '\n' +
+                '</pre>' + "<br>" +
+                '{{pstatus}}'
     }
-
-
-})
+});
 
 angularClicker.controller("HomeController", function (MessageService, PlayerService, EnemyService, ShopService, $interval, $scope) {
     $scope.Player = PlayerService.Player;    

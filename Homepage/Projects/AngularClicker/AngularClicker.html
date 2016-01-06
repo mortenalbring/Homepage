@@ -55,11 +55,15 @@
 
 
 
-                        <div ng-if="enemy.Alive" enemy-mouse
+                        <div ng-if="enemy.Alive && enemy.Type == 'Mouse'" enemy-mouse
                              ng-style="{'color':getColour(enemy)}">
-
                         </div>
-                        <div class="dead" ng-if="!enemy.Alive" dead-mouse></div>
+                        <div class="dead" ng-if="!enemy.Alive && enemy.Type == 'Mouse'" dead-mouse></div>
+
+                        <div ng-if="enemy.Alive && enemy.Type == 'Gravedigger'" grave-digger
+                             ng-style="{'color':getColour(enemy)}"></div>
+
+                        <div class="dead" ng-if="!enemy.Alive && enemy.Type == 'Gravedigger'" dead-grave-digger></div>
                     </div>
 
                 </div>
@@ -69,11 +73,12 @@
                     {{message}}
                 </div>
             </div>
-
+            
         </div>
     </div>
 
 
+    
 <pre>
    )
    (

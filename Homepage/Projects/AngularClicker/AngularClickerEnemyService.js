@@ -50,6 +50,7 @@ var AngularClickerEnemyService = function (MessageService) {
             var enemy = {
                 ID: enemyID,
                 Name: "Mouse",
+                Type: "Mouse",
                 Alive: true,
                 Health: 10,
                 MaxHealth: 10
@@ -58,6 +59,13 @@ var AngularClickerEnemyService = function (MessageService) {
         }
     }
 
+    this.AddNewEnemy = function(enemy) {
+        
+        if (!enemy.ID) {
+            enemy.ID = guid();
+        }
+        self.Enemies.push(enemy);
+    }
 
 
     function guid() {

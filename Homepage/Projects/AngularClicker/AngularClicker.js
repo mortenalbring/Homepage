@@ -30,9 +30,7 @@ angularClicker.directive('graveDigger', function() {
 '    &bsol;_/' + '\n' +
 '   /&bsol;Y/&bsol;' + '\n' +
 '  || : ||' + '\n' +
-'  || : ||' + '\n' +
 '  (|---|)' + '\n' +
-'   | | |¦' + '\n' +
 '   | | |¦' + '\n' +
 '   |_|_|¦' + '\n' +
 '   (/ &bsol;)#' +

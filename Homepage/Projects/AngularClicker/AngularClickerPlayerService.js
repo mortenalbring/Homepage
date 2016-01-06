@@ -1,4 +1,4 @@
-var AngularClickerPlayerService = function() {
+var AngularClickerPlayerService = function () {
     this.Player = {
         Name: "Bob",
         Status: 0,
@@ -14,12 +14,19 @@ var AngularClickerPlayerService = function() {
             }
             return false;
         },
-        IncreaseAttack: function(val) {
+        IncreaseAttack: function (val) {
             this.AttackDamage = this.AttackDamage + val;
         },
         IncreaseAutoAttack: function (val) {
             this.AutoAttackDamage = this.AutoAttackDamage + val;
+        },
+        IncreaseXP: function (val) {
+            this.XP = this.XP + val;
+        },
+        IncreaseGold: function (val) {
+            this.Gold = this.Gold + val;
         }
+
     }
 
 }

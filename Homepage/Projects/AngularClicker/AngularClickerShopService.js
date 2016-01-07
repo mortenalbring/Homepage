@@ -1,4 +1,4 @@
-var AngularClickerShopService = function (MessageService, PlayerService, EnemyService) {
+var AngularClickerShopService = function ($interval,MessageService, PlayerService, EnemyService) {
     /// <summary>
     /// This service is responsible for all aspects of the shop, including the shop inventory and the methods that run when
     /// items are bought from the shop. These methods can affect the player and enemies and so the shop service needs
@@ -46,10 +46,15 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
     ];
 
     function visitGraveyard() {
+      
         if (EnemyService.Graveyard.length == 0) {
             MessageService.MessageLog.push("There is nothing here but an empty meadow");
         } else {
             PlayerService.Player.Status = 2;
+            $interval(function () {
+                PlayerService.Player.Status = 0;
+            }, 5000, 1);
+
             MessageService.MessageLog.push("You solemnly mourn the " + EnemyService.Graveyard.length + " graves in the graveyard");
         }
     }
@@ -67,6 +72,9 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
         }
 
         PlayerService.Player.Status = 2;
+        $interval(function () {
+            PlayerService.Player.Status = 0;
+        }, 1000, 1);
 
         var buried = EnemyService.BuryDead();
 

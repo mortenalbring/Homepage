@@ -95,8 +95,7 @@ angularClicker.directive('playerFace', function() {
                 ' //   )' + '\n' +
                 ' ( -&bsol;-' + '\n' +
                 '  &bsol;_-/' + '\n' +
-                '</pre>' + "<br>" +
-                '{{pstatus}}'
+                '</pre>' + "<br>"                
     }
 });
 
@@ -109,11 +108,11 @@ angularClicker.controller("HomeController", function (MessageService, PlayerServ
    
     $scope.manualAttack = function (ID) {        
         $scope.Player.Status = 1;
-        $scope.reduceEnemyHealth(ID, $scope.Player.AttackDamage);
+        $scope.attackEnemy(ID, $scope.Player.AttackDamage);
     }
 
-    $scope.reduceEnemyHealth = function (ID, damage) {
-        var killed = EnemyService.ReduceEnemyHealth(ID, damage);
+    $scope.attackEnemy = function (ID, damage,autoAttack) {
+        var killed = EnemyService.ReduceEnemyHealth(ID, damage,autoAttack);
         if (killed) {
             PlayerService.Player.IncreaseXP(10);
             PlayerService.Player.IncreaseGold(1);
@@ -142,7 +141,7 @@ angularClicker.controller("HomeController", function (MessageService, PlayerServ
 
             for (var i = 0; i < $scope.Enemies.length; i++) {
                 if ($scope.Enemies[i].Alive) {
-                    $scope.reduceEnemyHealth($scope.Enemies[i].ID, $scope.Player.AutoAttackDamage);
+                    $scope.attackEnemy($scope.Enemies[i].ID, $scope.Player.AutoAttackDamage, true);
                 }
             }
         }

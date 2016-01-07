@@ -20,11 +20,14 @@
 
 
                 <div class="playerContainer">
-                    <div class="player">
-                        {{Player.Name}}
-                        <br />
-                        <div player-face pstatus="Player.Status"></div>
-
+                    <div class="shop">
+                        <div ng-repeat="item in Shop | orderBy:'Cost'">
+                            <button ng-click="item.RunFunction()" ng-disabled="item.Cost > Player.Gold">
+                                [{{item.Cost}} G] {{item.Title}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="player-stats">
                         XP - {{Player.XP}}
                         <br />
 
@@ -35,17 +38,18 @@
 
                         AutoAttack - {{Player.AutoAttackDamage}}
                     </div>
+                    <div class="player">
+                        {{Player.Name}}
+                        <br/>
+                        <div player-face pstatus="Player.Status"></div>
+
+                    </div>
+                   
                     <div class="character" ng-if="Player.AutoBury" grave-digger></div>
 
                     <div class="character" turret ng-if="Player.AutoAttackDamage > 0"></div>
 
-                    <div class="shop">
-                        <div ng-repeat="item in Shop">
-                            <button ng-click="item.RunFunction()" ng-disabled="item.Cost > Player.Gold">
-                                [{{item.Cost}} G] {{item.Title}}
-                            </button>
-                        </div>
-                    </div>
+
 
                 </div>
 

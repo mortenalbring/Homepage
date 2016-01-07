@@ -10,19 +10,21 @@ asciiGenerator.controller("HomeController", function ($scope) {
         
         var spl = $scope.input.split("\n");
         var out = [];
-        out.push("'<pre>' + '\\n' +");
+        out.push("'<pre>' + ");
         for (var i = 0; i < spl.length; i++) {            
-            var safe = spl[i].replace("\\", "&bsol;");
+            var safe = spl[i].replace("\\", "&bsol;");            
+            safe = replaceAll(safe, "'", "&#39;");            
+            safe = replaceAll(safe, " ", "&nbsp;");
             console.log(spl[i]);
 
-            var line = "'" + safe + "'" + " + '\\n' + ";
-            out.push(line);
-            //console.log(line);
+            var line = "'" + safe + "\\n'" + " + ";
+            out.push(line);            
         }
-        out.push("</pre>");
+        out.push("'</pre>'");
         $scope.output = out.join('\n');
-        //console.log($scope.output);
+    }
 
-        //$scope.output = $scope.input.replace("\\", "&bsol;");
+    function replaceAll(str, find, replace) {
+        return str.replace(new RegExp(find, 'g'), replace);
     }
 });

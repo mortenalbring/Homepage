@@ -9,12 +9,11 @@ angularClicker.service('ShopService', ['MessageService', 'PlayerService', 'Enemy
 angularClicker.directive('turret', function () {
     return {
         template: '<pre>' +
-            '   |' + '\n' +
-            '' + '\n' +
-            ' ()-()' + '\n' +
-            '_(o o)_  ' + '\n' +
-            ' /&bsol;o/&bsol; ' + '\n' +
-        '    </pre>'
+'&nbsp;&nbsp;&nbsp;_\n' +
+'&nbsp;&nbsp;/&nbsp;&bsol;_\n' +
+'&nbsp;&nbsp;&bsol;_/\n' +
+'&nbsp;&nbsp;/|&bsol;\n' +
+'</pre>'
     }
 });
 
@@ -70,6 +69,8 @@ angularClicker.directive('deadGraveDigger', function () {
             '</pre>'
     }
 });
+
+
 
 angularClicker.directive('playerFace', function() {
     return {

@@ -3,7 +3,7 @@ var angularClicker = angular.module("AngularClicker", []);
 angularClicker.service('MessageService', AngularClickerMessageService);
 angularClicker.service('EnemyService', ['MessageService', AngularClickerEnemyService]);
 angularClicker.service('PlayerService', AngularClickerPlayerService);
-angularClicker.service('ShopService', ['MessageService', 'PlayerService', 'EnemyService', AngularClickerShopService]);
+angularClicker.service('ShopService', ['$interval', 'MessageService', 'PlayerService', 'EnemyService', AngularClickerShopService]);
 
 
 angularClicker.directive('turret', function () {
@@ -39,7 +39,7 @@ angularClicker.directive('deadMouse', function () {
         '    </pre>'
     }
 });
-angularClicker.directive('graveDigger', function() {
+angularClicker.directive('graveDigger', function () {
     return {
         template: '<pre>' +
             '     _' + '\n' +
@@ -72,7 +72,7 @@ angularClicker.directive('deadGraveDigger', function () {
 
 
 
-angularClicker.directive('playerFace', function() {
+angularClicker.directive('playerFace', function () {
     return {
         scope: {
             pstatus: '='
@@ -95,24 +95,30 @@ angularClicker.directive('playerFace', function() {
                 ' //   )' + '\n' +
                 ' ( -&bsol;-' + '\n' +
                 '  &bsol;_-/' + '\n' +
-                '</pre>' + "<br>"                
+                '</pre>' + "<br>"
     }
 });
 
 angularClicker.controller("HomeController", function (MessageService, PlayerService, EnemyService, ShopService, $interval, $scope) {
-    $scope.Player = PlayerService.Player;    
+    $scope.Player = PlayerService.Player;
     $scope.Enemies = EnemyService.Enemies;
     $scope.Graveyard = EnemyService.Graveyard;
     $scope.MessageLog = MessageService.MessageLog;
-    $scope.Shop = ShopService.Shop; 
-   
-    $scope.manualAttack = function (ID) {        
-        $scope.Player.Status = 1;
+    $scope.Shop = ShopService.Shop;
+
+    $scope.manualAttack = function (ID) {
+        if ($scope.Player.Status == 0) {
+            $scope.Player.Status = 1;
+            $interval(function () {
+                PlayerService.Player.Status = 0;
+            }, 1000, 1);
+        }
+
         $scope.attackEnemy(ID, $scope.Player.AttackDamage);
     }
 
-    $scope.attackEnemy = function (ID, damage,autoAttack) {
-        var killed = EnemyService.ReduceEnemyHealth(ID, damage,autoAttack);
+    $scope.attackEnemy = function (ID, damage, autoAttack) {
+        var killed = EnemyService.ReduceEnemyHealth(ID, damage, autoAttack);
         if (killed) {
             PlayerService.Player.IncreaseXP(10);
             PlayerService.Player.IncreaseGold(1);
@@ -133,7 +139,7 @@ angularClicker.controller("HomeController", function (MessageService, PlayerServ
     }
 
     $interval(function () {
-        $scope.Player.Status = 0;
+
         if (!$scope.started) {
             return;
         }
@@ -163,5 +169,5 @@ angularClicker.controller("HomeController", function (MessageService, PlayerServ
             EnemyService.GenerateEnemies(1);
         }
 
-    }, 1000);  
+    }, 1000);
 });

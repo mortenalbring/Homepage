@@ -8,12 +8,12 @@
         <div ng-controller="HomeController">
 
 
-            <textarea rows="10" ng-model="input"></textarea>
+            <textarea rows="10" ng-model="input" ng-trim="false"></textarea>
             <br />
             <button ng-click="generate()">Generate</button>
             <br />
             <br />
-            <textarea rows="10" ng-bind-html-unsafe="output"></textarea>
+            <textarea rows="10" ng-model="output"></textarea>
         
             <pre>{{output}}</pre>
         </div>
@@ -24,8 +24,7 @@
 
 
 
-    <script src="angular.min.js"></script>
-    <script src="angular-sanitize.js"></script>
+    <script src="angular.min.js"></script>    
     <script src="AngularClickerASCIIGen.js"></script>
 </body>
 </html>

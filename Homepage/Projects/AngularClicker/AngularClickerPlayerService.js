@@ -1,4 +1,7 @@
 var AngularClickerPlayerService = function () {
+    /// <summary>
+    /// This service is responsible for storing 
+    /// </summary>
     this.Player = {
         Name: "Bob",
         Status: 0,

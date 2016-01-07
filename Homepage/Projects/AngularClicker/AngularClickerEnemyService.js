@@ -1,4 +1,8 @@
 var AngularClickerEnemyService = function (MessageService) {
+    /// <summary>
+    /// This service keeps track of the enemies are on screen, the graveyard of enemies that have been killed and also
+    /// methods that affect the enemy health
+    /// </summary>    
     var self = this;
 
     this.Enemies = [];

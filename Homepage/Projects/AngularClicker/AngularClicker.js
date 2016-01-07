@@ -5,6 +5,18 @@ angularClicker.service('EnemyService', ['MessageService', AngularClickerEnemySer
 angularClicker.service('PlayerService', AngularClickerPlayerService);
 angularClicker.service('ShopService', ['MessageService', 'PlayerService', 'EnemyService', AngularClickerShopService]);
 
+
+angularClicker.directive('turret', function () {
+    return {
+        template: '<pre>' +
+'&nbsp;&nbsp;&nbsp;_\n' +
+'&nbsp;&nbsp;/&nbsp;&bsol;_\n' +
+'&nbsp;&nbsp;&bsol;_/\n' +
+'&nbsp;&nbsp;/|&bsol;\n' +
+'</pre>'
+    }
+});
+
 angularClicker.directive('enemyMouse', function () {
     return {
         template: '<pre>' +
@@ -57,6 +69,8 @@ angularClicker.directive('deadGraveDigger', function () {
             '</pre>'
     }
 });
+
+
 
 angularClicker.directive('playerFace', function() {
     return {

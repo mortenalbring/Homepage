@@ -2,8 +2,8 @@ var angularClicker = angular.module("AngularClicker", []);
 
 angularClicker.service('MessageService', AngularClickerMessageService);
 angularClicker.service('EnemyService', ['MessageService', AngularClickerEnemyService]);
-angularClicker.service('PlayerService', AngularClickerPlayerService);
-angularClicker.service('ShopService', ['$interval', 'MessageService', 'PlayerService', 'EnemyService', AngularClickerShopService]);
+angularClicker.service('PlayerService', ['$interval', AngularClickerPlayerService]);
+angularClicker.service('ShopService', ['MessageService', 'PlayerService', 'EnemyService', AngularClickerShopService]);
 
 
 angularClicker.directive('turret', function () {
@@ -108,11 +108,8 @@ angularClicker.controller("HomeController", function (MessageService, PlayerServ
     $scope.Shop = ShopService.Shop;
 
     $scope.manualAttack = function (ID) {
-        if ($scope.Player.Status == 0) {
-            $scope.Player.Status = 1;
-            $interval(function () {
-                PlayerService.Player.Status = 0;
-            }, 1000, 1);
+        if ($scope.Player.Status == 0) {            
+            PlayerService.SetStatus(PlayerService.PlayerStatuses.Angry, 1000);
         }
 
         $scope.attackEnemy(ID, $scope.Player.AttackDamage);

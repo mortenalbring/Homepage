@@ -1,10 +1,18 @@
-var AngularClickerPlayerService = function () {
+var AngularClickerPlayerService = function ($interval) {
     /// <summary>
     /// This service is responsible for storing 
     /// </summary>
+    var self = this;
+    this.PlayerStatuses = {
+        Normal: 0,
+        Angry: 1,
+        Solemn: 2
+    }
+
+
     this.Player = {
         Name: "Bob",
-        Status: 0,
+        Status: self.PlayerStatuses.Normal,
         XP: 0,
         Gold: 20,
         AttackDamage: 1,
@@ -32,4 +40,19 @@ var AngularClickerPlayerService = function () {
 
     }
 
+    this.SetStatus = function(Status, Duration, ResetStatus) {
+        if (!ResetStatus) {
+            ResetStatus = self.PlayerStatuses.Normal;
+        }
+        if (!Duration) {
+            Duration = 1000;
+        }
+
+        self.Player.Status = Status;
+        $interval(function () {
+            self.Player.Status = ResetStatus;
+        }, Duration, 1);
+    }
+
+ 
 }

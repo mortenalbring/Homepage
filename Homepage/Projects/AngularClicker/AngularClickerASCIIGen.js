@@ -11,13 +11,15 @@ asciiGenerator.controller("HomeController", function ($scope) {
         var spl = $scope.input.split("\n");
         var out = [];
         out.push("'<pre>' + ");
-        for (var i = 0; i < spl.length; i++) {            
-            var safe = spl[i].replace("\\", "&bsol;");            
+        for (var i = 0; i < spl.length; i++) {
+            
+            var safe = spl[i];
+            safe = replaceAll(safe, "\\\\", "&bsol;");
             safe = replaceAll(safe, "'", "&#39;");            
             safe = replaceAll(safe, " ", "&nbsp;");
             console.log(spl[i]);
 
-            var line = "'" + safe + "\\n'" + " + ";
+            var line = "'" + safe + "' + " + "'\\n'" + " + ";
             out.push(line);            
         }
         out.push("'</pre>'");

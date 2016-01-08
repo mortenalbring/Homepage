@@ -6,7 +6,8 @@ var AngularClickerPlayerService = function ($interval) {
     this.PlayerStatuses = {
         Normal: 0,
         Angry: 1,
-        Solemn: 2
+        Solemn: 2,
+        Surprised: 3,
     }
 
 

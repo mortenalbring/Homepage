@@ -13,7 +13,7 @@ angularClicker.directive('turret', function () {
 '&nbsp;&nbsp;/&nbsp;&bsol;_\n' +
 '&nbsp;&nbsp;&bsol;_/\n' +
 '&nbsp;&nbsp;/|&bsol;\n' +
-'</pre>' + 
+'</pre>' +
 '<br> <small>Attack damage : {{Player.AutoAttackDamage}}</small>'
     }
 });
@@ -79,24 +79,33 @@ angularClicker.directive('playerFace', function () {
             pstatus: '='
         },
         template:
-            '<pre ng-if= "pstatus == 0" >' + '\n' +
-                '  __)),' + '\n' +
-                ' //_ _)' + '\n' +
-                ' ( &quot;&bsol;&quot;' + '\n' +
-                '  &bsol;_-/' + '\n' +
-                '</pre>' +
-                '<pre ng-if= "pstatus == 1" >' + '\n' +
-                '  __)),' + '\n' +
-                ' //_ _)' + '\n' +
-                ' ( &quot;&bsol;&quot;' + '\n' +
-                '  &bsol;_O/' + '\n' +
-                '</pre>' +
-                '<pre ng-if= "pstatus == 2" >' + '\n' +
-                '  __)),' + '\n' +
-                ' //   )' + '\n' +
-                ' ( -&bsol;-' + '\n' +
-                '  &bsol;_-/' + '\n' +
-                '</pre>'
+            '<pre ng-if= "pstatus == 0" >' +
+'&nbsp;&nbsp;__)),' + '\n' +
+'&nbsp;//_&nbsp;_)' + '\n' +
+'&nbsp;(&nbsp;&#39;&bsol;&#39;' + '\n' +
+'&nbsp;&nbsp;&bsol;_-/' + '\n' +
+'</pre>' +
+
+'<pre ng-if="pstatus == 1">' + 
+'&nbsp;&nbsp;__)),' + '\n' + 
+'&nbsp;//_&nbsp;_)' + '\n' + 
+'&nbsp;(&nbsp;&#39;&bsol;&#39;' + '\n' + 
+'&nbsp;&nbsp;&bsol;_O/' + '\n' + 
+'</pre>' +
+
+'<pre ng-if="pstatus == 2">' +
+'&nbsp;&nbsp;__)),' + '\n' + 
+'&nbsp;//_&nbsp;_)' + '\n' + 
+'&nbsp;(&nbsp;-&bsol;-' + '\n' + 
+'&nbsp;&nbsp;&bsol;_-/' + '\n' + 
+'</pre>' +
+
+'<pre ng-if="pstatus == 3">' +
+'&nbsp;&nbsp;__)),' + '\n' +
+'&nbsp;//-&nbsp;-)' + '\n' +
+'&nbsp;(&nbsp;&#39;&bsol;&#39;' + '\n' +
+'&nbsp;&nbsp;&bsol;_-/' + '\n' +
+'</pre>'
     }
 });
 
@@ -108,11 +117,15 @@ angularClicker.controller("HomeController", function (MessageService, PlayerServ
     $scope.Shop = ShopService.Shop;
 
     $scope.manualAttack = function (ID) {
-        if ($scope.Player.Status == 0) {            
+        if ($scope.Player.Status == 0) {
             PlayerService.SetStatus(PlayerService.PlayerStatuses.Angry, 1000);
         }
 
         $scope.attackEnemy(ID, $scope.Player.AttackDamage);
+    }
+
+    $scope.surprisePlayer = function (ID) {
+        PlayerService.SetStatus(PlayerService.PlayerStatuses.Surprised, 500);
     }
 
     $scope.attackEnemy = function (ID, damage, autoAttack) {

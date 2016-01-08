@@ -21,7 +21,13 @@
 }
 
 .character {
+    padding:5px;
     width:100px;    
+    border:1px solid #ccc;
+}
+
+pre {
+    cursor:pointer;
 }
 
 .dead {
@@ -54,8 +60,14 @@
     border:1px solid #ccc;
 }
 
-.player-stats {
-    padding-left:20px;    
-    padding-right:20px;
+
+.shop {
     border:1px solid #ccc;
+}
+
+.shop button {    
+    width:100%;
+    text-align:left;
+    padding:0.5em;
+    cursor:pointer;
 }

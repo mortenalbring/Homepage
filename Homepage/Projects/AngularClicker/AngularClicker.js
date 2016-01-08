@@ -13,7 +13,8 @@ angularClicker.directive('turret', function () {
 '&nbsp;&nbsp;/&nbsp;&bsol;_\n' +
 '&nbsp;&nbsp;&bsol;_/\n' +
 '&nbsp;&nbsp;/|&bsol;\n' +
-'</pre>'
+'</pre>' + 
+'<br> <small>Attack damage : {{Player.AutoAttackDamage}}</small>'
     }
 });
 
@@ -42,16 +43,16 @@ angularClicker.directive('deadMouse', function () {
 angularClicker.directive('graveDigger', function () {
     return {
         template: '<pre>' +
-            '     _' + '\n' +
-            '   _/_&bsol;_' + '\n' +
-            '    &bsol;_/' + '\n' +
-            '   /&bsol;Y/&bsol;' + '\n' +
-            '  || : ||' + '\n' +
-            '  (|---|)' + '\n' +
-            '   | | |¦' + '\n' +
-            '   |_|_|¦' + '\n' +
-            '   (/ &bsol;)#' +
-            '</pre>'
+'&nbsp;&nbsp;&nbsp;_' + '\n' +
+'&nbsp;_/_&bsol;_' + '\n' +
+'&nbsp;&nbsp;&bsol;_/' + '\n' +
+'&nbsp;/&bsol;Y/&bsol;' + '\n' +
+'||&nbsp;:&nbsp;||' + '\n' +
+'(|---|)' + '\n' +
+'&nbsp;|&nbsp;|&nbsp;|¦' + '\n' +
+'&nbsp;|_|_|¦' + '\n' +
+'&nbsp;(/&nbsp;&bsol;)#' + '\n' +
+'</pre>'
     }
 });
 angularClicker.directive('deadGraveDigger', function () {
@@ -95,7 +96,7 @@ angularClicker.directive('playerFace', function () {
                 ' //   )' + '\n' +
                 ' ( -&bsol;-' + '\n' +
                 '  &bsol;_-/' + '\n' +
-                '</pre>' + "<br>"
+                '</pre>'
     }
 });
 

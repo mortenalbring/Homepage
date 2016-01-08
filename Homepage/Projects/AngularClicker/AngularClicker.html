@@ -27,25 +27,23 @@
                             </button>
                         </div>
                     </div>
-                    <div class="player-stats">
-                        XP - {{Player.XP}}
-                        <br />
-
-                        Gold - {{Player.Gold}}
-                        <br />
-                        Attack - {{Player.AttackDamage}}
-                        <br />
-
-                        AutoAttack - {{Player.AutoAttackDamage}}
-                    </div>
+             
                     <div class="player">
                         {{Player.Name}}
                         <br/>
                         <div player-face pstatus="Player.Status"></div>
+                        <small>XP - {{Player.XP}}</small>
+                        <br />
+                        <small>Gold - {{Player.Gold}}</small>
+                        <br />
+                        <small>Attack damage - {{Player.AttackDamage}}</small>
+                        <br />
+
 
                     </div>
-                   
-                    <div class="character" ng-if="Player.AutoBury" grave-digger></div>
+                    <div class="character" ng-if="Player.AutoBury"><span>Gravedigger</span>
+                        <div grave-digger></div>
+                    </div>
 
                     <div class="character" turret ng-if="Player.AutoAttackDamage > 0"></div>
 
@@ -67,10 +65,10 @@
                         </div>
                         <div class="dead" ng-if="!enemy.Alive && enemy.Type == 'Mouse'" dead-mouse></div>
 
-                        <div class="character" ng-if="enemy.Alive && enemy.Type == 'Gravedigger'" grave-digger
+                        <div  ng-if="enemy.Alive && enemy.Type == 'Gravedigger'" grave-digger
                              ng-style="{'color':getColour(enemy)}"></div>
 
-                        <div class="dead character" ng-if="!enemy.Alive && enemy.Type == 'Gravedigger'" dead-grave-digger></div>
+                        <div class="dead" ng-if="!enemy.Alive && enemy.Type == 'Gravedigger'" dead-grave-digger></div>
                     </div>
 
                 </div>

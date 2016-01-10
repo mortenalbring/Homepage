@@ -8,7 +8,7 @@ var AngularClickerEnemyService = function (MessageService) {
     this.Enemies = [];
     this.Graveyard = [];
 
-    this.ReduceEnemyHealth = function(ID, damage) {
+    this.ReduceEnemyHealth = function (ID, damage, autoAttack) {
         var enemy = self.Enemies.filter(function (e) {
             return e.ID == ID;
         });
@@ -19,7 +19,12 @@ var AngularClickerEnemyService = function (MessageService) {
                 return false;
             }
             enemy[0].Health = enemy[0].Health - damage;
-            MessageService.MessageLog.push("You attack " + enemy[0].Name + " for " + damage + " pts of damage");
+            if (autoAttack) {
+                MessageService.MessageLog.push("Turret attacks " + enemy[0].Name + " for " + damage + " pts of damage");
+            } else {
+                MessageService.MessageLog.push("You attack " + enemy[0].Name + " for " + damage + " pts of damage");
+            }
+            
 
             if (enemy[0].Health <= 0) {
                 enemy[0].Alive = false;

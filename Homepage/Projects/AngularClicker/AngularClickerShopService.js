@@ -46,10 +46,12 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
     ];
 
     function visitGraveyard() {
+      
         if (EnemyService.Graveyard.length == 0) {
             MessageService.MessageLog.push("There is nothing here but an empty meadow");
         } else {
-            PlayerService.Player.Status = 2;
+            PlayerService.SetStatus(PlayerService.PlayerStatuses.Solemn, 5000);
+
             MessageService.MessageLog.push("You solemnly mourn the " + EnemyService.Graveyard.length + " graves in the graveyard");
         }
     }
@@ -66,7 +68,7 @@ var AngularClickerShopService = function (MessageService, PlayerService, EnemySe
             return;
         }
 
-        PlayerService.Player.Status = 2;
+        PlayerService.SetStatus(PlayerService.PlayerStatuses.Solemn, 5000);
 
         var buried = EnemyService.BuryDead();
 

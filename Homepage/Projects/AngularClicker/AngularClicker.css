@@ -20,8 +20,14 @@
     color:#ff0000;
 }
 
-.grave-digger {
-    width:100px;
+.character {
+    padding:5px;
+    width:100px;    
+    border:1px solid #ccc;
+}
+
+pre {
+    cursor:pointer;
 }
 
 .dead {
@@ -48,6 +54,20 @@
   
 
 
-.player {        
-    width:200px;
+.player {   
+    padding-left:20px;     
+    width:150px;
+    border:1px solid #ccc;
+}
+
+
+.shop {
+    border:1px solid #ccc;
+}
+
+.shop button {    
+    width:100%;
+    text-align:left;
+    padding:0.5em;
+    cursor:pointer;
 }

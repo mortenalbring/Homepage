@@ -330,6 +330,7 @@
     <Content Include="Projects\AngularClicker\AngularClickerPlayerService.js" />
     <Content Include="Projects\AngularClicker\AngularClickerShopService.js" />
     <Content Include="Projects\AngularD3\AngularD3-Controllers.js" />
+    <Content Include="Projects\AngularD3\AngularD3-GraphService.js" />
     <Content Include="Projects\AngularD3\AngularD3-SettingsService.js" />
     <Content Include="Projects\AngularD3\packages\LICENSE" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />

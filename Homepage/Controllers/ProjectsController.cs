@@ -8,7 +8,12 @@ namespace Homepage.Controllers
 {
     public class ProjectsController : Controller
     {
-        public ActionResult AngularWithD3()
+        public ActionResult ProjectAngularD3()
+        {
+            return View();
+        }
+
+        public ActionResult ProjectAngularClicker()
         {
             return View();
         }

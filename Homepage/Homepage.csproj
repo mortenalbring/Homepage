@@ -319,6 +319,16 @@
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-home.less" />
+    <Content Include="Projects\AngularClicker\angular.min.js" />
+    <Content Include="Projects\AngularClicker\AngularClicker.css" />
+    <Content Include="Projects\AngularClicker\AngularClicker.html" />
+    <Content Include="Projects\AngularClicker\AngularClicker.js" />
+    <Content Include="Projects\AngularClicker\AngularClickerASCIIGen.html" />
+    <Content Include="Projects\AngularClicker\AngularClickerASCIIGen.js" />
+    <Content Include="Projects\AngularClicker\AngularClickerEnemyService.js" />
+    <Content Include="Projects\AngularClicker\AngularClickerMessageService.js" />
+    <Content Include="Projects\AngularClicker\AngularClickerPlayerService.js" />
+    <Content Include="Projects\AngularClicker\AngularClickerShopService.js" />
     <Content Include="Projects\AngularD3\AngularD3-Controllers.js" />
     <Content Include="Projects\AngularD3\AngularD3-SettingsService.js" />
     <Content Include="Projects\AngularD3\packages\LICENSE" />
@@ -30883,7 +30893,8 @@
     <Content Include="Scripts\MathJax\fonts\HTML-CSS\TeX\woff\MathJax_Typewriter-Regular.woff" />
     <Content Include="Views\Posts\MengerSponge.cshtml" />
     <Content Include="Views\Posts\TSUCS.cshtml" />
-    <Content Include="Views\Projects\AngularWithD3.cshtml" />
+    <Content Include="Views\Projects\ProjectAngularD3.cshtml" />
+    <Content Include="Views\Projects\ProjectAngularClicker.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

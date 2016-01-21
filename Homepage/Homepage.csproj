@@ -30902,6 +30902,8 @@
     <Content Include="Views\Projects\ProjectAngularClicker.cshtml" />
     <Content Include="tempfiles\test.pdf" />
     <Content Include="tempfiles\test2.pdf" />
+    <Content Include="tempfiles\test3.pdf" />
+    <Content Include="tempfiles\test4.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

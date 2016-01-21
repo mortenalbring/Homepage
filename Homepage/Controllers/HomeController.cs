@@ -35,8 +35,8 @@ namespace Homepage.Controllers
 
         public void ReadFromPdf()
         {
-            var file = Server.MapPath("~/tempfiles/test4.pdf");
-            var lineArray = makeLineList(file);
+            var file = Server.MapPath("~/tempfiles/test3.pdf");
+            var lineArray = ConstructLineArrayFromFile(file);
 
             var gamesDetails = ConstructGameInfo(lineArray);            
             
@@ -59,12 +59,12 @@ namespace Homepage.Controllers
                 if (gameInfo == null) { continue; }
 
 
-                var linesBetween = findLinesBetween(lineArray, gameInfoLines[i], gameInfoLines[i + 1]);
+                var linesBetween = FindLinesBetween(lineArray, gameInfoLines[i], gameInfoLines[i + 1]);
                 if (linesBetween.Any())
                 {
                     if (linesBetween[0].StartsWith("Player"))
                     {
-                        var playerInfo = GetPlayerResults(linesBetween);
+                        var playerInfo = ConstructPlayerInfo(linesBetween);
                         gameInfo.PlayerScores.AddRange(playerInfo);
                     }
                 }
@@ -106,32 +106,30 @@ namespace Homepage.Controllers
             }
             return gameInfoLines;
         }
-        private List<PlayerInfo> GetPlayerResults(List<string> PlayerGameLines)
+
+        private List<PlayerInfo> ConstructPlayerInfo(List<string> playerGameLines)
         {
             var playerInfoList = new List<PlayerInfo>();
 
-
-
-
-            var playerInfoLines = new List<int>();
-            playerInfoLines.Add(0);
-            for (int i = 0; i < PlayerGameLines.Count; i++)
+            var playerInfoLines = new List<int> {0};
+            for (var i = 0; i < playerGameLines.Count; i++)
             {
-                if (PlayerGameLines[i].StartsWith("Total"))
+                if (playerGameLines[i].StartsWith("Total"))
                 {
                     playerInfoLines.Add(i);
                 }                
             }
 
-            for (int i = 0; i < (playerInfoLines.Count-1); i++)
+            for (var i = 0; i < (playerInfoLines.Count-1); i++)
             {
-                var PlayerInfo = new PlayerInfo();
-                var playerInfostr = findLinesBetween(PlayerGameLines, playerInfoLines[i], playerInfoLines[i + 1]);
+                var playerInfostr = FindLinesBetween(playerGameLines, playerInfoLines[i], playerInfoLines[i + 1]);
+
+                var PlayerInfo = new PlayerInfo();                
                 PlayerInfo.ScoreString = playerInfostr[0];
-                playerInfoList.Add(PlayerInfo);
+                PlayerInfo.ParseScoreString();
 
-                var xx = 42;
-
+                playerInfoList.Add(PlayerInfo);                
+                
 
             }
 
@@ -140,45 +138,28 @@ namespace Homepage.Controllers
 
         }
 
-        private List<string> findLinesBetween(List<string> lines, int start, int end)
+        private List<string> FindLinesBetween(List<string> lines, int start, int end)
         {
-            var output = new List<string>();
-            for (int i = 0; i < lines.Count; i++)
-            {
-                if ((i > start) && (i < end))
-                {
-                    output.Add(lines[i]);
-                }
-            }
-            return output;
+            return lines.Where((t, i) => (i > start) && (i < end)).ToList();
         }
 
-        private List<string> makeLineList(string file)
+
+        private List<string> ConstructLineArrayFromFile(string file)
         {          
             PdfReader pdfReader = new PdfReader(file);
-
             var textContent = new List<string>();
-
             for (var page = 1; page <= pdfReader.NumberOfPages; page++)
             {
-
                 ITextExtractionStrategy strategy = new SimpleTextExtractionStrategy();
                 var currentText = PdfTextExtractor.GetTextFromPage(pdfReader, page, strategy);
                 textContent.Add(currentText);
-
             }
-
             var lineArray = new List<string>();
-
-            foreach (var text in textContent)
+            foreach (var lines in textContent.Select(text => text.Split('\n')))
             {
-                var lines = text.Split('\n');
-
                 lineArray.AddRange(lines);
             }
-
             return lineArray;
-
         }
     }
 }

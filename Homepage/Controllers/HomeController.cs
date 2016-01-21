@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Homepage.Models.Amenhokit;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 
@@ -37,25 +38,19 @@ namespace Homepage.Controllers
             var file = Server.MapPath("~/tempfiles/test4.pdf");
             var lineArray = makeLineList(file);
 
-            var gameInfoLines = new List<int>();
-
-            int l = 0;
-            foreach (var line in lineArray)
-            {                
-                if (line.StartsWith("Team"))
-                {
-                    gameInfoLines.Add(l);
-                }
-                l++;
-            }
+            var gameInfoLines = GetGameInfoLines(lineArray);
 
             var playerInfoLines = new List<string>();
 
 
             for (int i = 0; i < (gameInfoLines.Count-1); i++)
             {
+
                 var gameInfoLine = lineArray[gameInfoLines[i]];
-                
+
+                var gameInfo = GetGameAndLaneInfo(gameInfoLine);
+                if (gameInfo == null) { continue; }
+
 
                 var linesBetween = findLinesBetween(lineArray, gameInfoLines[i], gameInfoLines[i + 1]);
                 if (linesBetween.Any())
@@ -77,8 +72,36 @@ namespace Homepage.Controllers
 
         }
 
+        private GameInfo GetGameAndLaneInfo(string gameInfoLine)
+        {
+
+            var spl = gameInfoLine.Split(' ').Where(e => e != "").ToList();
+            if (spl.Count == 1) { return null; }
+
+            var GameInfo = new GameInfo();
+
+            GameInfo.Lane = Convert.ToInt32(spl[3]);
+            GameInfo.GameNumber = Convert.ToInt32(spl[5]);
+            GameInfo.Date = Convert.ToDateTime(spl[6]);
 
 
+            return GameInfo;
+        }
+
+        private List<int> GetGameInfoLines(List<string> lineArray)
+        {
+            var gameInfoLines = new List<int>();
+            int l = 0;
+            foreach (var line in lineArray)
+            {
+                if (line.StartsWith("Team"))
+                {
+                    gameInfoLines.Add(l);
+                }
+                l++;
+            }
+            return gameInfoLines;
+        }
         private void GetPlayerResults(List<string> PlayerGameLines)
         {
             var playerInfoLines = new List<int>();

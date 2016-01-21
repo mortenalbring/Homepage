@@ -17,5 +17,10 @@ namespace Homepage.Controllers
         {
             return View();
         }
+
+        public ActionResult ProjectAmenhokit()
+        {
+            return View();
+        }
     }
 }

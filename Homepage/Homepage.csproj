@@ -213,6 +213,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Amenhokit\GameInfo.cs" />
+    <Compile Include="Models\Amenhokit\PlayerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

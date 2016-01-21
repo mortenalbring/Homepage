@@ -11,5 +11,6 @@ namespace Homepage.Models.Amenhokit
         public int Lane { get; set; }
         public int GameNumber { get; set; }
         public DateTime Date { get; set; }
+        public List<PlayerInfo> PlayerScores = new List<PlayerInfo>();
     }
 }

@@ -55,6 +55,10 @@
       <HintPath>..\packages\dotless.1.4.0.0\lib\dotless.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -30896,6 +30900,8 @@
     <Content Include="Views\Posts\TSUCS.cshtml" />
     <Content Include="Views\Projects\ProjectAngularD3.cshtml" />
     <Content Include="Views\Projects\ProjectAngularClicker.cshtml" />
+    <Content Include="tempfiles\test.pdf" />
+    <Content Include="tempfiles\test2.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

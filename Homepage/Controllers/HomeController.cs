@@ -34,7 +34,7 @@ namespace Homepage.Controllers
 
         public void ReadFromPdf()
         {
-            var file = Server.MapPath("~/tempfiles/test2.pdf");
+            var file = Server.MapPath("~/tempfiles/test4.pdf");
             var lineArray = makeLineList(file);
 
             var gameInfoLines = new List<int>();
@@ -49,8 +49,70 @@ namespace Homepage.Controllers
                 l++;
             }
 
+            var playerInfoLines = new List<string>();
+
+
+            for (int i = 0; i < (gameInfoLines.Count-1); i++)
+            {
+                var gameInfoLine = lineArray[gameInfoLines[i]];
+                
+
+                var linesBetween = findLinesBetween(lineArray, gameInfoLines[i], gameInfoLines[i + 1]);
+                if (linesBetween.Any())
+                {
+                    if (linesBetween[0].StartsWith("Player"))
+                    {                   
+                        GetPlayerResults(linesBetween);
+
+                    }
+                }
+
+                var xxx = 42;
+
+            }
+
+            
+
             var xx = 42;
 
+        }
+
+
+
+        private void GetPlayerResults(List<string> PlayerGameLines)
+        {
+            var playerInfoLines = new List<int>();
+            playerInfoLines.Add(0);
+            for (int i = 0; i < PlayerGameLines.Count; i++)
+            {
+                if (PlayerGameLines[i].StartsWith("Total"))
+                {
+                    playerInfoLines.Add(i);
+                }                
+            }
+
+            for (int i = 0; i < (playerInfoLines.Count-1); i++)
+            {
+                var playerInfo = findLinesBetween(PlayerGameLines, playerInfoLines[i], playerInfoLines[i + 1]);
+
+                var xx = 42;
+
+
+            }
+
+        }
+
+        private List<string> findLinesBetween(List<string> lines, int start, int end)
+        {
+            var output = new List<string>();
+            for (int i = 0; i < lines.Count; i++)
+            {
+                if ((i > start) && (i < end))
+                {
+                    output.Add(lines[i]);
+                }
+            }
+            return output;
         }
 
         private List<string> makeLineList(string file)

@@ -57,8 +57,8 @@ namespace Homepage.Controllers
                 {
                     if (linesBetween[0].StartsWith("Player"))
                     {                   
-                        GetPlayerResults(linesBetween);
-
+                        var playerInfo = GetPlayerResults(linesBetween);
+                        gameInfo.PlayerScores.AddRange(playerInfo);
                     }
                 }
 
@@ -102,8 +102,13 @@ namespace Homepage.Controllers
             }
             return gameInfoLines;
         }
-        private void GetPlayerResults(List<string> PlayerGameLines)
+        private List<PlayerInfo> GetPlayerResults(List<string> PlayerGameLines)
         {
+            var playerInfoList = new List<PlayerInfo>();
+
+
+
+
             var playerInfoLines = new List<int>();
             playerInfoLines.Add(0);
             for (int i = 0; i < PlayerGameLines.Count; i++)
@@ -116,12 +121,18 @@ namespace Homepage.Controllers
 
             for (int i = 0; i < (playerInfoLines.Count-1); i++)
             {
-                var playerInfo = findLinesBetween(PlayerGameLines, playerInfoLines[i], playerInfoLines[i + 1]);
+                var PlayerInfo = new PlayerInfo();
+                var playerInfostr = findLinesBetween(PlayerGameLines, playerInfoLines[i], playerInfoLines[i + 1]);
+                PlayerInfo.ScoreString = playerInfostr[0];
+                playerInfoList.Add(PlayerInfo);
 
                 var xx = 42;
 
 
             }
+
+
+            return playerInfoList;
 
         }
 

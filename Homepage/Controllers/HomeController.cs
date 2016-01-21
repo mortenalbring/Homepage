@@ -38,12 +38,19 @@ namespace Homepage.Controllers
             var file = Server.MapPath("~/tempfiles/test4.pdf");
             var lineArray = makeLineList(file);
 
+            var gamesDetails = ConstructGameInfo(lineArray);            
+            
+
+            var xx = 42;
+
+        }
+
+        private List<GameInfo> ConstructGameInfo(List<string> lineArray)
+        {
+            var GameInfoList = new List<GameInfo>();
+
             var gameInfoLines = GetGameInfoLines(lineArray);
-
-            var playerInfoLines = new List<string>();
-
-
-            for (int i = 0; i < (gameInfoLines.Count-1); i++)
+            for (int i = 0; i < (gameInfoLines.Count - 1); i++)
             {
 
                 var gameInfoLine = lineArray[gameInfoLines[i]];
@@ -56,21 +63,18 @@ namespace Homepage.Controllers
                 if (linesBetween.Any())
                 {
                     if (linesBetween[0].StartsWith("Player"))
-                    {                   
+                    {
                         var playerInfo = GetPlayerResults(linesBetween);
                         gameInfo.PlayerScores.AddRange(playerInfo);
                     }
                 }
-
-                var xxx = 42;
-
+                GameInfoList.Add(gameInfo);                
             }
 
-            
-
-            var xx = 42;
-
+            return GameInfoList;
         }
+
+
 
         private GameInfo GetGameAndLaneInfo(string gameInfoLine)
         {

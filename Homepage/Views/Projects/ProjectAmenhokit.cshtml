@@ -2,20 +2,51 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<link href="~/Projects/AmenhokitApp/amenhokit.css" rel="stylesheet" />
 <script src="~/Projects/AmenhokitApp/amenhokitApp.js"></script>
-<h1>Amenhokit</h1>
-<div ng-app="amenhokit">
-    <div ng-controller="HomeController">
-        {{test}}
 
-        <div ng-repeat="game in gameInfo">
-            {{game.Lane}}
+<div class="content">
 
-            <div ng-repeat="player in game.PlayerScores">
-                {{player.ScoreString}} - {{player.Score}}
+
+    <div ng-app="amenhokit">
+        <div ng-controller="HomeController">
+            {{test}}
+
+            <div class="scoreselectContainer">
+
+                <div>
+                    <strong>Filelist</strong>
+
+                    <div ng-repeat="file in filelist">
+                        {{file}} <button ng-click="process(file)">Process {{file}}</button>
+                    </div>
+                </div>
+                <div>
+                    <div ng-repeat="game in gameInfo">
+                        <strong>Game {{game.GameNumber}}</strong> - <span>Lane {{game.Lane}}</span>
+                        <table class="scoretable">
+                            <thead>
+                                <tr>
+                                    <th>Score string</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="player in game.PlayerScores">
+                                    <td>
+                                        {{player.ScoreString}}
+                                    </td>
+                                    <td>
+                                        {{player.Score}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+</div>

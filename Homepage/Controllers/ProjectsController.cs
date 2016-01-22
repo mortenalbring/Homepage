@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Homepage.Models.Amenhokit;
 
 namespace Homepage.Controllers
 {
@@ -31,37 +32,13 @@ namespace Homepage.Controllers
             return View();
         }
 
-        public ActionResult ProjectTest()
-        {
-            return View();
-        }
-
-
-        [HttpGet]
-        public JsonResult TestReadFile()
-        {
-
-            var filepath = Server.MapPath("~/tempfiles/test1.txt");
-
-            var file = new StreamReader(filepath);
-            var output = "";
-            string line;
-            while ((line = file.ReadLine()) != null)
-            {
-                output = output + line;                
-            }
-
-            return Json(output, JsonRequestBehavior.AllowGet);
-
-        }
+                
         [HttpGet]
         public JsonResult GetGameInfo()
         {
             try
             {            
-                var amenhokitRepository = new AmenhokitRepository();
-                var file = HttpContext.Server.MapPath("/tempfiles/test4.pdf");
-                var gameDetails = amenhokitRepository.ReadFromPdf(file);
+                var gameDetails = GetGameInfo("test4.pdf");
                 return Json(new { success = true, data = gameDetails}, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
@@ -75,18 +52,34 @@ namespace Homepage.Controllers
         [HttpPost]
         public JsonResult ProcessFile(string filename)
         {
-            var amenhokitRepository = new AmenhokitRepository();
-            var file = Server.MapPath("~/tempfiles/" + filename);
-            var gameDetails = amenhokitRepository.ReadFromPdf(file);
+            try
+            {
+                var gameDetails = GetGameInfo(filename);
+                return Json(new { success = true, data = gameDetails }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
 
-            return Json(gameDetails, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public JsonResult ListFiles()
         {
-            var files = Directory.GetFiles(Server.MapPath("~/tempfiles"));
+            var files = Directory.GetFiles(Server.MapPath("/tempfiles"));
             return Json(files, JsonRequestBehavior.AllowGet);
         }
+
+        private List<GameInfo> GetGameInfo(string filename)
+        {
+            var amenhokitRepository = new AmenhokitRepository();
+            var file = Server.MapPath("~/tempfiles/" + filename);
+            var gameDetails = amenhokitRepository.ReadFromPdf(file);
+
+            return gameDetails;
+        }
+
+
     }
 }

@@ -68,7 +68,7 @@ namespace Homepage.Models.Amenhokit
             var t = 0;
 
             if (c == 'X') t += 10;
-            else if (c == '/') throw new Exception("spare found on first bowl !!");
+            else if (c == '/') throw new Exception("spare found on first bowl?!");
             else t += int.Parse(c.ToString());
 
             if (bowlingRecord.Length == (ptr + 2)) return t;

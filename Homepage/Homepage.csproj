@@ -328,6 +328,7 @@
     <Content Include="Content\styles\ma-home.less" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
+    <Content Include="Projects\AmenhokitApp\home.html" />
     <Content Include="Projects\AngularClicker\angular.min.js" />
     <Content Include="Projects\AngularClicker\AngularClicker.css" />
     <Content Include="Projects\AngularClicker\AngularClicker.html" />
@@ -30319,7 +30320,6 @@
     <Content Include="Scripts\MathJax\MathJax.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="tempfiles\test1.txt" />
     <Content Include="Views\Home\Redesign.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -30913,12 +30913,24 @@
     <Content Include="Views\Posts\TSUCS.cshtml" />
     <Content Include="Views\Projects\ProjectAngularD3.cshtml" />
     <Content Include="Views\Projects\ProjectAngularClicker.cshtml" />
-    <Content Include="tempfiles\test.pdf" />
     <Content Include="tempfiles\test2.pdf" />
     <Content Include="tempfiles\test3.pdf" />
     <Content Include="tempfiles\test4.pdf" />
     <Content Include="Views\Projects\ProjectAmenhokit.cshtml" />
-    <Content Include="Views\Projects\ProjectTest.cshtml" />
+    <Content Include="tempfiles\George - Lane 22.pdf" />
+    <Content Include="tempfiles\George 15.07.pdf" />
+    <Content Include="tempfiles\George 21.04.pdf" />
+    <Content Include="tempfiles\George 21.07.pdf" />
+    <Content Include="tempfiles\George 31.03.pdf" />
+    <Content Include="tempfiles\gw 14.pdf" />
+    <Content Include="tempfiles\Lane 8.pdf" />
+    <Content Include="tempfiles\TUESDAY GW.pdf" />
+    <Content Include="tempfiles\Whitehead 1 2.pdf" />
+    <Content Include="tempfiles\Whitehead 24.03.pdf" />
+    <Content Include="tempfiles\Whitehead 250815.pdf" />
+    <Content Include="tempfiles\George 13.10.pdf" />
+    <Content Include="tempfiles\George 28.07.pdf" />
+    <Content Include="tempfiles\whitehead 260515.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

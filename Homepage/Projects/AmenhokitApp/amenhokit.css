@@ -1,6 +1,31 @@
-﻿.content {
+﻿.file-container {
+    border:1px solid #ccc;
+    border-radius:5px;
+    display:flex;
+}
+
+.content {
     padding-top:30px;
     padding-left:2em;
+}
+
+.processButton {
+    background:#1000ff;
+    color:#fff;
+    padding:0.5em;
+    border: #0a009a;
+    border-radius:10px;
+    text-decoration:none;
+} 
+.processButton:hover {
+    text-decoration:none;
+    color:#fff;
+    transition:0.3s;
+    background:#4f43ff;
+
+}
+.scoretable {
+    width:100%;
 }
 .scoretable th {
     background:#01008f;
@@ -12,6 +37,10 @@
     
 }
 
-.scoreselectContainer {
+.scoreselectContainer {    
     display:flex;
+}
+
+.scoreselectContainer div {
+    margin:2em;
 }

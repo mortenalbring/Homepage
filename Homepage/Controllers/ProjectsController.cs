@@ -22,22 +22,54 @@ namespace Homepage.Controllers
 
         public ActionResult ProjectAmenhokit()
         {
-            var file = Server.MapPath("~/tempfiles/test4.pdf");
+            //var file = Server.MapPath("~/tempfiles/test4.pdf");
 
-            var amenhokitRepository = new AmenhokitRepository();
+           // var amenhokitRepository = new AmenhokitRepository();
 
-            var gameDetails = amenhokitRepository.ReadFromPdf(file);
+          //  var gameDetails = amenhokitRepository.ReadFromPdf(file);
 
             return View();
         }
 
+        public ActionResult ProjectTest()
+        {
+            return View();
+        }
+
+
+        [HttpGet]
+        public JsonResult TestReadFile()
+        {
+
+            var filepath = Server.MapPath("~/tempfiles/test1.txt");
+
+            var file = new StreamReader(filepath);
+            var output = "";
+            string line;
+            while ((line = file.ReadLine()) != null)
+            {
+                output = output + line;                
+            }
+
+            return Json(output, JsonRequestBehavior.AllowGet);
+
+        }
         [HttpGet]
         public JsonResult GetGameInfo()
         {
-            var amenhokitRepository = new AmenhokitRepository();
-            var file = Server.MapPath("~/tempfiles/test4.pdf");
-            var gameDetails = amenhokitRepository.ReadFromPdf(file);
-            return Json(gameDetails, JsonRequestBehavior.AllowGet);
+            try
+            {            
+                var amenhokitRepository = new AmenhokitRepository();
+                var file = HttpContext.Server.MapPath("/tempfiles/test4.pdf");
+                var gameDetails = amenhokitRepository.ReadFromPdf(file);
+                return Json(new { success = true, data = gameDetails}, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+            
+            
         }
 
         [HttpPost]

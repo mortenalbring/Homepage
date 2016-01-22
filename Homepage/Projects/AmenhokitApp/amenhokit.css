@@ -1,4 +1,13 @@
-﻿.file-container {
+﻿.scorestringtest {
+    border:1px solid #ccc;
+    border-radius:5px;
+    padding:0.5em;
+}
+.scorestringinput {
+    width:100%;
+}
+
+.file-container {
     border:1px solid #ccc;
     border-radius:5px;
     display:flex;

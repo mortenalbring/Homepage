@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Homepage.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,12 @@ namespace Homepage.Controllers
 
         public ActionResult ProjectAmenhokit()
         {
+            var file = Server.MapPath("~/tempfiles/test4.pdf");
+
+            var amenhokitRepository = new AmenhokitRepository();
+
+            var gameDetails = amenhokitRepository.ReadFromPdf(file);
+
             return View();
         }
     }

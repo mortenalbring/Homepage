@@ -1,0 +1,17 @@
+﻿.content {
+    padding-top:30px;
+    padding-left:2em;
+}
+.scoretable th {
+    background:#01008f;
+    color:#fff;
+}
+.scoretable td,th {
+    padding:0.5em;
+    border:1px solid #ccc;
+    
+}
+
+.scoreselectContainer {
+    display:flex;
+}

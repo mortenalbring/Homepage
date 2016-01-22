@@ -8,6 +8,14 @@
 <div ng-app="amenhokit">
     <div ng-controller="HomeController">
         {{test}}
+
+        <div ng-repeat="game in gameInfo">
+            {{game.Lane}}
+
+            <div ng-repeat="player in game.PlayerScores">
+                {{player.ScoreString}}
+            </div>
+        </div>
     </div>
 </div>
 

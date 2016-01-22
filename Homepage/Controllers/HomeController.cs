@@ -10,8 +10,7 @@ namespace Homepage.Controllers
     {
         public ActionResult Index()
         {            
-
-            return View("Home");
+            return View("Index");
         }
 
         public ActionResult About()
@@ -26,7 +25,7 @@ namespace Homepage.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
+        }        
 
 
        

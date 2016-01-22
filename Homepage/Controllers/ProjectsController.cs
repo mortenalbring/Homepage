@@ -29,5 +29,14 @@ namespace Homepage.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public JsonResult GetGameInfo()
+        {
+            var amenhokitRepository = new AmenhokitRepository();
+            var file = Server.MapPath("~/tempfiles/test4.pdf");
+            var gameDetails = amenhokitRepository.ReadFromPdf(file);
+            return Json(gameDetails, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -25,28 +25,42 @@ namespace Homepage.Controllers
         {
             //var file = Server.MapPath("~/tempfiles/test4.pdf");
 
-           // var amenhokitRepository = new AmenhokitRepository();
+            // var amenhokitRepository = new AmenhokitRepository();
 
-          //  var gameDetails = amenhokitRepository.ReadFromPdf(file);
+            //  var gameDetails = amenhokitRepository.ReadFromPdf(file);
 
             return View();
         }
 
-                
+
         [HttpGet]
         public JsonResult GetGameInfo()
         {
             try
-            {            
+            {
                 var gameDetails = GetGameInfo("test4.pdf");
-                return Json(new { success = true, data = gameDetails}, JsonRequestBehavior.AllowGet);
+                return Json(new { success = true, data = gameDetails }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
                 return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
-            
-            
+        }
+
+        [HttpPost]
+        public JsonResult CalculateScore(string scorestring)
+        {
+            try
+            {
+                var player = new PlayerInfo();
+                player.ScoreString = "Test " + scorestring;
+                player.ParseScoreString();
+                return Json(new { success = true, data = player.Score }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }        
         }
 
         [HttpPost]

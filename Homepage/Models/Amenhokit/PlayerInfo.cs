@@ -22,12 +22,10 @@ namespace Homepage.Models.Amenhokit
             var spl = this.ScoreString.Split(' ');
             var firstelem = spl.First();
             var rest = string.Join("", spl.Skip(1));
-            rest = rest.Replace('-', '0');
-            
-                                    
-
+            rest = rest.Replace('-', '0');                                             
 
             var finalScore = FinalScore(rest, 0);
+            this.Score = finalScore;
         }
 
         private static int FinalScore(string bowlingRecord, int ptr)

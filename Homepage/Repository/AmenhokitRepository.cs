@@ -62,7 +62,7 @@ namespace Homepage.Repository
 
             GameInfo.Lane = Convert.ToInt32(spl[3]);
             GameInfo.GameNumber = Convert.ToInt32(spl[5]);
-            GameInfo.Date = Convert.ToDateTime(spl[6]);
+            GameInfo.Date = spl[6];
 
 
             return GameInfo;

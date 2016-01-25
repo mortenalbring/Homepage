@@ -106,5 +106,39 @@ namespace Homepage.Tests
 
             Assert.AreEqual(60, player.Score);
         }
+
+        [TestMethod]
+        public void TestScoreCalculator10()
+        {
+            var player = new PlayerInfo();
+            player.ScoreString = "MORT 1 / 6 / 3 2 X 5 0 X 3 / X 4 2 5 / 3";
+
+            player.ParseScoreString();
+
+            Assert.AreEqual(129, player.Score);
+        }
+
+        [TestMethod]
+        public void TestScoreCalculator11()
+        {
+            var player = new PlayerInfo();
+            player.ScoreString = "GEORGE 5 1 7 / 6 - 7 2 X 3 1 3 - 6 - 6 / 3 6";
+
+            player.ParseScoreString();
+
+            Assert.AreEqual(86, player.Score);
+        }
+
+        [TestMethod]
+        public void TestScoreCalculator12()
+        {
+            var player = new PlayerInfo();
+            player.ScoreString = "GEORGE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 / 3 6";
+
+            player.ParseScoreString();
+
+            Assert.AreEqual(22, player.Score);
+        }
+
     }
 }

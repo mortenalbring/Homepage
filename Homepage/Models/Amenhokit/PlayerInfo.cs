@@ -22,82 +22,81 @@ namespace Homepage.Models.Amenhokit
             var spl = this.ScoreString.Split(' ');
             var firstelem = spl.First();
             var rest = string.Join("", spl.Skip(1));
-            rest = rest.Replace('-', '0');                                             
+            rest = rest.Replace('-', '0');
 
-            var finalScore = FinalScore(rest, 0);
+            var finalScore = CalculateScore(rest, 0);
             this.Score = finalScore;
         }
 
 
 
-        private static int FinalScore(string bowlingRecord, int ptr)
+        private static int CalculateScore(string bowlingRecord, int ptr)
         {
             if (bowlingRecord.Length == ptr) return 0;
 
             var numBowls = bowlingRecord.Length;
 
-            bool finalFrame = ptr >= (numBowls - 3);
-            var frameCount = Math.Ceiling((((double)(ptr + 1)/ (double)numBowls)) * 10);
-            Console.WriteLine(ptr + "/ " + numBowls + " : " + frameCount);
+            var threeFramesFromEnd = ptr >= (numBowls - 3);
+            var twoFramesFromEnd = ptr >= (numBowls - 2);
 
-            bool inFinalFrame = ptr >= (numBowls - 2);
-
-            char c = bowlingRecord[ptr];
-            if (c == 'X')
+            var c = bowlingRecord[ptr];
+            switch (c)
             {
-                if (finalFrame)
-                {
-                    return 10 + NextTwoAfterStrike(bowlingRecord, ptr);
-                }
-                else
-                {
-                    return 10 + NextTwoAfterStrike(bowlingRecord, ptr) + FinalScore(bowlingRecord, ptr + 1); // recursion
-                }
+                case 'X':
+                    if (threeFramesFromEnd)
+                    {
+                        return 10 + NextTwoAfterStrike(bowlingRecord, ptr);
+                    }
+                    return 10 + NextTwoAfterStrike(bowlingRecord, ptr) + CalculateScore(bowlingRecord, ptr + 1);
+                case '/':
+                    if (twoFramesFromEnd)
+                    {
+                        return 10 - int.Parse(bowlingRecord[ptr - 1].ToString()) + NextOneAfterSpare(bowlingRecord, ptr);
+                    }
+                    return 10 - int.Parse(bowlingRecord[ptr - 1].ToString()) + NextOneAfterSpare(bowlingRecord, ptr) + CalculateScore(bowlingRecord, ptr + 1); // recursion
             }
-            else if (c == '/')
-            {
-                if (inFinalFrame)
-                {
-                    return 10 - int.Parse(bowlingRecord[ptr - 1].ToString()) + NextOneAfterSpare(bowlingRecord, ptr);
-                }
-                else
-                {
-                    return 10 - int.Parse(bowlingRecord[ptr - 1].ToString()) +
-                        NextOneAfterSpare(bowlingRecord, ptr) +
-                        FinalScore(bowlingRecord, ptr + 1); // recursion
-                }
-            }
-            else
-            {
-                return int.Parse(c.ToString()) + FinalScore(bowlingRecord, ptr + 1);
-
-            }
-
+            return int.Parse(c.ToString()) + CalculateScore(bowlingRecord, ptr + 1);
         }
 
         private static int NextOneAfterSpare(string bowlingRecord, int ptr)
         {
             if (bowlingRecord.Length == (ptr + 1)) return 0;
-            char c = bowlingRecord[ptr + 1];
-            if (c == 'X') return 10;
-            return int.Parse(c.ToString());
+            var c = bowlingRecord[ptr + 1];
+            return c == 'X' ? 10 : int.Parse(c.ToString());
         }
 
         private static int NextTwoAfterStrike(string bowlingRecord, int ptr)
         {
             if (bowlingRecord.Length == (ptr + 1)) return 0;
-            char c = bowlingRecord[ptr + 1];
+            var c = bowlingRecord[ptr + 1];
             var t = 0;
 
-            if (c == 'X') t += 10;
-            else if (c == '/') throw new Exception("spare found on first bowl?!");
-            else t += int.Parse(c.ToString());
+            switch (c)
+            {
+                case 'X':
+                    t += 10;
+                    break;
+                case '/':
+                    throw new Exception("spare found on first bowl?!");
+                default:
+                    t += int.Parse(c.ToString());
+                    break;
+            }
 
             if (bowlingRecord.Length == (ptr + 2)) return t;
-            char c2 = bowlingRecord[ptr + 2];
-            if (c2 == 'X') t += 10;
-            else if (c2 == '/') t += (10 - t);
-            else t += int.Parse(c2.ToString());
+            var c2 = bowlingRecord[ptr + 2];
+            switch (c2)
+            {
+                case 'X':
+                    t += 10;
+                    break;
+                case '/':
+                    t += (10 - t);
+                    break;
+                default:
+                    t += int.Parse(c2.ToString());
+                    break;
+            }
             return t;
         }
     }

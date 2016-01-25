@@ -2,7 +2,7 @@
 
     $scope.test = "moop";
 
-    console.log("started");
+    $scope.selectedFile = null;
 
     $scope.gameInfo = [];
 

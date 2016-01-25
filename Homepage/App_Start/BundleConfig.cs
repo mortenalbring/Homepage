@@ -29,8 +29,11 @@ namespace Homepage
 
             bundles.Add(new ScriptBundle("~/bundles/angular")
                 .Include("~/Scripts/angular.js")
-                .Include("~/Scripts/angular-route.js")
-                );
+                .Include("~/Scripts/angular-route.js", 
+                "~/Scripts/ng-file-upload.js",
+            "~/Scripts/ng-file-upload-all.js",
+            "~/Scripts/ng-file-upload-shim.js",
+            "~/Scripts/FileAPI.js"));
 
 
             bundles.Add(new StyleBundle("~/Content/css")

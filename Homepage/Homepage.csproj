@@ -328,8 +328,11 @@
     <Content Include="Content\styles\ma-home.less" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
+    <Content Include="Projects\AmenhokitApp\FileUploadService.js" />
     <Content Include="Projects\AmenhokitApp\home.html" />
     <Content Include="Projects\AmenhokitApp\HomeController.js" />
+    <Content Include="Projects\AmenhokitApp\upload.html" />
+    <Content Include="Projects\AmenhokitApp\UploadController.js" />
     <Content Include="Projects\AngularClicker\angular.min.js" />
     <Content Include="Projects\AngularClicker\AngularClicker.css" />
     <Content Include="Projects\AngularClicker\AngularClicker.html" />
@@ -395,6 +398,9 @@
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\FileAPI.flash.swf" />
+    <Content Include="Scripts\FileAPI.js" />
+    <Content Include="Scripts\FileAPI.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -30320,6 +30326,12 @@
     <Content Include="Scripts\MathJax\jax\output\SVG\jax.js" />
     <Content Include="Scripts\MathJax\MathJax.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ng-file-upload-all.js" />
+    <Content Include="Scripts\ng-file-upload-all.min.js" />
+    <Content Include="Scripts\ng-file-upload-shim.js" />
+    <Content Include="Scripts\ng-file-upload-shim.min.js" />
+    <Content Include="Scripts\ng-file-upload.js" />
+    <Content Include="Scripts\ng-file-upload.min.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Views\Home\Redesign.cshtml" />
     <Content Include="Web.config" />

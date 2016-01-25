@@ -28,22 +28,44 @@ namespace Homepage.Models.Amenhokit
             this.Score = finalScore;
         }
 
+
+
         private static int FinalScore(string bowlingRecord, int ptr)
         {
             if (bowlingRecord.Length == ptr) return 0;
 
+            var numBowls = bowlingRecord.Length;
+
+            bool finalFrame = ptr >= (numBowls - 3);
+            var frameCount = Math.Ceiling((((double)(ptr + 1)/ (double)numBowls)) * 10);
+            Console.WriteLine(ptr + "/ " + numBowls + " : " + frameCount);
+
+            bool inFinalFrame = ptr >= (numBowls - 2);
+
             char c = bowlingRecord[ptr];
             if (c == 'X')
             {
-                return 10 +
-                    NextTwoAfterStrike(bowlingRecord, ptr) +
-                    FinalScore(bowlingRecord, ptr + 1); // recursion
+                if (finalFrame)
+                {
+                    return 10 + NextTwoAfterStrike(bowlingRecord, ptr);
+                }
+                else
+                {
+                    return 10 + NextTwoAfterStrike(bowlingRecord, ptr) + FinalScore(bowlingRecord, ptr + 1); // recursion
+                }
             }
             else if (c == '/')
             {
-                return 10 - int.Parse(bowlingRecord[ptr - 1].ToString()) +
-                    NextOneAfterSpare(bowlingRecord, ptr) +
-                    FinalScore(bowlingRecord, ptr + 1); // recursion
+                if (inFinalFrame)
+                {
+                    return 10 - int.Parse(bowlingRecord[ptr - 1].ToString()) + NextOneAfterSpare(bowlingRecord, ptr);
+                }
+                else
+                {
+                    return 10 - int.Parse(bowlingRecord[ptr - 1].ToString()) +
+                        NextOneAfterSpare(bowlingRecord, ptr) +
+                        FinalScore(bowlingRecord, ptr + 1); // recursion
+                }
             }
             else
             {

@@ -23,18 +23,19 @@ namespace Homepage.Repository
 
         private List<GameInfo> ConstructGameInfo(List<string> lineArray)
         {
-            var GameInfoList = new List<GameInfo>();
+            var gameInfoList = new List<GameInfo>();
 
             var gameInfoLines = GetGameInfoLines(lineArray);
             for (int i = 0; i < (gameInfoLines.Count - 1); i++)
             {
 
                 var gameInfoLine = lineArray[gameInfoLines[i]];
+                
 
                 var gameInfo = GetGameAndLaneInfo(gameInfoLine);
+
+
                 if (gameInfo == null) { continue; }
-
-
                 var linesBetween = FindLinesBetween(lineArray, gameInfoLines[i], gameInfoLines[i + 1]);
                 if (linesBetween.Any())
                 {
@@ -44,10 +45,12 @@ namespace Homepage.Repository
                         gameInfo.PlayerScores.AddRange(playerInfo);
                     }
                 }
-                GameInfoList.Add(gameInfo);
+                gameInfoList.Add(gameInfo);
             }
 
-            return GameInfoList;
+
+
+            return gameInfoList;
         }
 
 
@@ -68,7 +71,13 @@ namespace Homepage.Repository
             return GameInfo;
         }
 
-        private List<int> GetGameInfoLines(List<string> lineArray)
+        /// <summary>
+        /// Gets the list of line numbers that contain information about the 'Game' (such as date, lane number). 
+        /// The lines between those that contain the word 'Team' contain information about the game.
+        /// </summary>
+        /// <param name="lineArray">Line array content from the document</param>
+        /// <returns>List of line numbers</returns>
+        private static List<int> GetGameInfoLines(List<string> lineArray)
         {
             var gameInfoLines = new List<int>();
             int l = 0;
@@ -83,6 +92,11 @@ namespace Homepage.Repository
             return gameInfoLines;
         }
 
+        /// <summary>
+        /// Reads in the Player Info. The lines inbetween the lines that start with the string 'Total' contain the information about the Player. All we really need is the score string and most everything else can be extracted from that
+        /// </summary>
+        /// <param name="playerGameLines">The lines from which to extract data</param>
+        /// <returns>List of populated PlayerInfo objects</returns>
         private List<PlayerInfo> ConstructPlayerInfo(List<string> playerGameLines)
         {
             var playerInfoList = new List<PlayerInfo>();
@@ -114,12 +128,24 @@ namespace Homepage.Repository
 
         }
 
+        /// <summary>
+        /// Finds the lines between two positions 
+        /// </summary>
+        /// <param name="lines">List of lines</param>
+        /// <param name="start">Start position</param>
+        /// <param name="end">End position</param>
+        /// <returns></returns>
         private List<string> FindLinesBetween(List<string> lines, int start, int end)
         {
             return lines.Where((t, i) => (i > start) && (i < end)).ToList();
         }
 
 
+        /// <summary>
+        /// Reads in the PDF document and constructs a simple list of plaintext from the content in the document, split by newlines
+        /// </summary>
+        /// <param name="file">Filename of file</param>
+        /// <returns>List of string</returns>
         private List<string> ConstructLineArrayFromFile(string file)
         {
             PdfReader pdfReader = new PdfReader(file);

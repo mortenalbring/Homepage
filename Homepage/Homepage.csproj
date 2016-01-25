@@ -329,6 +329,7 @@
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
     <Content Include="Projects\AmenhokitApp\home.html" />
+    <Content Include="Projects\AmenhokitApp\HomeController.js" />
     <Content Include="Projects\AngularClicker\angular.min.js" />
     <Content Include="Projects\AngularClicker\AngularClicker.css" />
     <Content Include="Projects\AngularClicker\AngularClicker.html" />

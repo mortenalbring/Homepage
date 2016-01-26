@@ -24,13 +24,7 @@ namespace Homepage.Controllers
         }
 
         public ActionResult ProjectAmenhokit()
-        {
-            //var file = Server.MapPath("~/tempfiles/test4.pdf");
-
-            // var amenhokitRepository = new AmenhokitRepository();
-
-            //  var gameDetails = amenhokitRepository.ReadFromPdf(file);
-
+        {      
             return View();
         }
 
@@ -80,12 +74,7 @@ namespace Homepage.Controllers
 
         }
 
-        [HttpGet]
-        public JsonResult ListFiles()
-        {
-            var files = Directory.GetFiles(Server.MapPath("/tempfiles"));
-            return Json(files, JsonRequestBehavior.AllowGet);
-        }
+      
 
         private List<GameInfo> GetGameInfo(string filename)
         {
@@ -97,63 +86,8 @@ namespace Homepage.Controllers
         }
 
 
-        [HttpPost]
-        public JsonResult UploadFile()
-        {
-            string Message;
-            var userID = 0;
-            var uploadedFile = new UploadedFile();
-            try
-            {
-                var sentParameters = Request.Params;
-                HttpFileCollectionBase files = Request.Files;
 
-                if (files.Count == 0) { throw new Exception("No files recieved"); }
-                
-                
-                               
-
-                uploadedFile = UploadFile(Request.Files, userID, Server.MapPath("~/tempfiles"));
-
-
-            }
-            catch (Exception ex)
-            {
-                Message = ex.Message;
-            }
-            return Json(uploadedFile, JsonRequestBehavior.AllowGet);
-        }
-
-        private UploadedFile UploadFile(HttpFileCollectionBase files, int userID,  string filePath)
-        {
-            var uploadedFile = new UploadedFile();
-            string Message = "";
-            try
-            {
-                var file = files[0];
-                string actualFileName = Path.GetFileName(file.FileName);
-                string fileName = Guid.NewGuid() + "_" + Path.GetFileNameWithoutExtension(actualFileName) + Path.GetExtension(file.FileName);
-                int size = file.ContentLength;
-
-
-                uploadedFile.FileName = actualFileName;
-                uploadedFile.FilePath = fileName;                
-                uploadedFile.UserID = userID;
-                uploadedFile.FileSize = size;
-                
-                file.SaveAs(Path.Combine(filePath, fileName));
-
-                Message = "File upload succeeded";
-
-
-            }
-            catch (Exception ex)
-            {
-                Message = ex.Message;
-            }
-            return uploadedFile;
-        }
-
+       
 
     }
 }

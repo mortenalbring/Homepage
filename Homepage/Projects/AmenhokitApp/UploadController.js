@@ -35,7 +35,7 @@
 
                         $scope.queries--;
 
-                        $scope.completedFiles.push(data.FilePath);
+                        $scope.completedFiles.push(data.Filepath);
 
                     });
 

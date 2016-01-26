@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Homepage.Models.Amenhokit
 {
-    public class UploadedFile
+    public class UploadFile
     {
         /// <summary>
         /// ID of file
@@ -22,19 +22,19 @@ namespace Homepage.Models.Amenhokit
         /// <summary>
         /// Filename of local file that user uploaded
         /// </summary>
-        public string FileName { get; set; }
+        public string Filename { get; set; }
 
         /// <summary>
         /// The auto-generated filename of the file on the server
         /// The file is usually appeneded with a GUID in case the user uploads the same file several times.
         /// </summary>
-        public string FilePath { get; set; }
+        public string Filepath { get; set; }
 
 
         /// <summary>
         /// Filesize in bytes
         /// </summary>
-        public int FileSize { get; set; }
+        public int Filesize { get; set; }
 
         private DateTime? _dateCreated = null;
 

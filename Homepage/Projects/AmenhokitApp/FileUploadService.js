@@ -7,7 +7,7 @@
 
 
 
-    $http.get('/Projects/ListFiles').success(function (data) {
+    $http.get('/Upload/ListFiles').success(function (data) {
         for (var i = 0; i < data.length; i++) {
 //            var rawDate = data[i].DateCreated;
 
@@ -69,7 +69,7 @@
     fac.UploadFile = function (file, callback) {
 
         Upload.upload({
-            url: '/Projects/UploadFile', // webapi url
+            url: '/Upload/UploadFile', // webapi url
             method: 'POST',            
             file: file
         }).progress(function (evt) {
@@ -86,7 +86,7 @@
 
             if (callback) { callback(data); }
 
-            fac.UploadedFiles.push(data.FilePath);
+            fac.UploadedFiles.push(data.Filepath);
 
         }).error(function (data, status, headers, config) {
             // file failed to upload

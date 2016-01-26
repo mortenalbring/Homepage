@@ -13,7 +13,8 @@ namespace Homepage.Models
         public DataContext() : base("AmenhokitConnection")
         {}
 
-        public DbSet<PlayerInfo> Player { get; set; }
+        public DbSet<PlayerInfo> Player { get; set; }     
+        public DbSet<UploadFile> UploadFiles { get; set; }
 
     }
 }

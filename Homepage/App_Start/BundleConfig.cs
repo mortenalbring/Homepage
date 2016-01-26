@@ -26,7 +26,15 @@ namespace Homepage
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3").Include("~/Scripts/d3/d3.js"));
-            
+
+            bundles.Add(new ScriptBundle("~/bundles/angular")
+                .Include("~/Scripts/angular.js")
+                .Include("~/Scripts/angular-route.js", 
+                "~/Scripts/ng-file-upload.js",
+            "~/Scripts/ng-file-upload-all.js",
+            "~/Scripts/ng-file-upload-shim.js",
+            "~/Scripts/FileAPI.js"));
+
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")

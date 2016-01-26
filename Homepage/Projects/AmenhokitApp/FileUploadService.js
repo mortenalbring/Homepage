@@ -15,7 +15,11 @@
   //          var jsDate = new Date(parseInt(rawDate.substr(6)));
             //data[i].DateCreatedJS = jsDate;
             
-            fac.UploadedFiles.push(data[i]);
+            var spl = data[i].split("\\");
+            var filename = spl[spl.length - 1];
+
+
+            fac.UploadedFiles.push(filename);
         }
 
     }).error(function (a, b, c) {
@@ -62,13 +66,11 @@
 
     }
 
-    fac.UploadFile = function (file, uploadFileType, callback) {
+    fac.UploadFile = function (file, callback) {
 
         Upload.upload({
-            url: 'Upload/UploadFile', // webapi url
-            method: 'POST',
-            data: { uploadFileType: uploadFileType },
-            uploadFileType: uploadFileType,
+            url: '/Projects/UploadFile', // webapi url
+            method: 'POST',            
             file: file
         }).progress(function (evt) {
             // set upload percentage

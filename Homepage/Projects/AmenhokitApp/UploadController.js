@@ -1,4 +1,5 @@
 ﻿var UploadController = function (FileUploadService, $scope) {
+    $scope.completedFiles = [];
 
     $scope.existingFiles = FileUploadService.UploadedFiles;
     $scope.readyToUpload = function () {
@@ -34,7 +35,7 @@
 
                         $scope.queries--;
 
-                        $scope.completedFiles.push(data);
+                        $scope.completedFiles.push(data.FilePath);
 
                     });
 

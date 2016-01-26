@@ -1,4 +1,13 @@
-﻿.drop-box {
+﻿.upload-container {
+    display:flex;
+    padding-left:1em;
+    padding-right:1em;
+}
+.upload-container div {
+    flex:1;
+}
+
+.drop-box {
     background-color: #cec9c9;    
     padding: 20px;
     width:80%;    

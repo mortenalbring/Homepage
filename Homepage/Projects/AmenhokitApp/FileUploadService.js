@@ -78,15 +78,15 @@
         }).success(function (data, status, headers, config) {
             // file is uploaded successfully
 
-            var rawDate = data.DateCreated;
+            //var rawDate = data.DateCreated;
 
             //Processing .NET date string to javascript date object
-            var jsDate = new Date(parseInt(rawDate.substr(6)));
-            data.DateCreatedJS = jsDate;
+            //var jsDate = new Date(parseInt(rawDate.substr(6)));
+            //data.DateCreatedJS = jsDate;
 
             if (callback) { callback(data); }
 
-            fac.UploadedFiles.push(data);
+            fac.UploadedFiles.push(data.FilePath);
 
         }).error(function (data, status, headers, config) {
             // file failed to upload

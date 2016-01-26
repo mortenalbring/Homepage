@@ -1,4 +1,14 @@
-﻿.scorestringtest {
+﻿.drop-box {
+    background-color: #cec9c9;    
+    padding: 20px;
+    width:80%;    
+    border: 3px dotted #2980B9;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.scorestringtest {
     border:1px solid #ccc;
     border-radius:5px;
     padding:0.5em;

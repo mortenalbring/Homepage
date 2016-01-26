@@ -214,6 +214,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Amenhokit\GameInfo.cs" />
     <Compile Include="Models\Amenhokit\PlayerInfo.cs" />
+    <Compile Include="Models\Amenhokit\UploadedFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AmenhokitRepository.cs" />
   </ItemGroup>

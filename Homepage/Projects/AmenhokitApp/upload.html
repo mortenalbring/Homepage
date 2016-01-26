@@ -1,28 +1,13 @@
 ﻿
+
+
+<div ng-repeat="file in existingFiles">
+    {{file}}
+</div>
+
+
 <div class="row">
-    <div class="col-md-3">
-        <div class="panel panel-default" ng-class="{'panel-danger' : (( files && files.length) && (radio.model == undefined))  }">
-            <div class="panel-heading">
-
-
-                Select file description
-            </div>
-            <div class="panel-body">
-                <div class="btn-group btn-group-vertical">
-                    <button ng-repeat="value in allowedFileDescriptions"
-                            class="btn btn-default"
-                            type="button"
-                            ng-model="radio.model"
-                            ng-disabled="(queries > 0)"
-                            btn-radio="$index">
-                        {{value}}
-                    </button>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
+   
     <div class="col-md-9">
 
         <div ngf-drop ngf-select ng-model="files"
@@ -31,7 +16,7 @@
              class="drop-box ng-valid ng-dirty"
              ngf-multiple="true"
              ngf-allow-dir="true"
-             ngf-accept="'text/plain,image/*,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword,application/vnd.ms-powerpoint,application/excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/octet-stream,application/zip,application/x-zip'"
+             ngf-accept="'application/pdf'"
              ngf-drop-available="dropAvailable">
             <div ngf-no-file-drop class="ng-hide">File Drop not available</div>
             <div ng-show="dropAvailable" class=""><span>Drag files here or click to browse</span></div>
@@ -42,16 +27,14 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <div class="btn btn-primary btn-block btn-lg"
-             ng-disabled="!(files && (radio.model != undefined)) || (queries > 0)"
+             ng-disabled="!(files || (queries > 0))"
              ng-click="upload(files,$event, rejFiles, anotherCustomParam)">
             <span ng-if="!(files && files.length)">
                 Select files to upload
             </span>
-            <span ng-if="(files && files.length) && (radio.model == undefined)">
-                Select description of file<span ng-if="files.length>1">s</span>
-            </span>
+     
             <span ng-if="readyToUpload()">
-                Start upload of {{files.length}} file<span ng-if="files.length>1">s</span> with description {{allowedFileDescriptions[radio.model]}}
+                Start upload of {{files.length}} file<span ng-if="files.length>1">s</span> 
             </span>
         </div>
 
@@ -82,12 +65,7 @@
         <table class="table table-bordered table-hover" ng-show="(files && files.length)">
             <tbody>
                 <tr ng-repeat="file in files">
-                    <td class="col-md-2">
-                        <span class="label label-warning" ng-if="(radio.model == undefined)">Select file description</span>
-                        <span class="label label-primary" ng-if="(files && files.length) && (radio.model != undefined)">
-                            {{allowedFileDescriptions[radio.model]}}
-                        </span>
-
+                    <td class="col-md-2">                       
                         <span class="label label-success" ng-show="file.complete">Done</span>
                         <span class="label label-danger" ng-show="file.error">Error</span>
                     </td>

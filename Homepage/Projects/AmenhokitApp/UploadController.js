@@ -1,4 +1,12 @@
 ﻿var UploadController = function (FileUploadService, $scope) {
+
+    $scope.existingFiles = FileUploadService.UploadedFiles;
+    $scope.readyToUpload = function () {
+        if (($scope.files && $scope.files.length)) {
+            return true;
+        }
+        return false;
+    }
     $scope.upload = function (files, event, rejectedFiles) {
 
         for (var r in rejectedFiles) {
@@ -7,7 +15,7 @@
         $scope.loading = true;
 
 
-        if (files && files.length && ($scope.radio.model != undefined)) {
+        if (files && files.length) {
 
             for (var i = 0; i < files.length; i++) {
 
@@ -17,7 +25,7 @@
 
                     $scope.queries++;
 
-                    FileUploadService.UploadFile(file, $scope.radio.model, function (data) {
+                    FileUploadService.UploadFile(file, function (data) {
                         file.complete = true;
 
                         var index = files.indexOf(file);

@@ -3,13 +3,46 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using Homepage.Models;
+using Homepage.Models.Amenhokit.Database;
+using Homepage.Models.Amenhokit.PdfScan;
 
 namespace Homepage.Repository
 {
 	public class AmenhokitRepository
 	{
+	    public void ConstructDatabaseObjects(List<GameInfo> gameInfos)
+	    {
+	        using (var db = new DataContext())
+	        {
+                foreach (var gameInfo in gameInfos)
+                {
+                    var dateString = gameInfo.Date;
+
+                    var dateObject = DateTime.Parse(dateString);
+
+                    var matchingSession = db.Session.FirstOrDefault(e => e.Date == dateObject);
+
+                    if (matchingSession == null)
+                    {
+                        var newSession = new Session();
+                        newSession.Date = dateObject;
+                        db.Session.Add(newSession);
+                        db.SaveChanges();
+                    }
+
+                    var xx = 42;
+
+                }
+
+            }
+
+        }
+
+
         public List<GameInfo> ReadFromPdf(string file)
         {            
             var lineArray = ConstructLineArrayFromFile(file);

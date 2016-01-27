@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Homepage.Models.Amenhokit;
+using Homepage.Models.Amenhokit.PdfScan;
 using Newtonsoft.Json;
 using WebMatrix.WebData;
 

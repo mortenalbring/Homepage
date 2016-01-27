@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Homepage.Models.Amenhokit;
+using Homepage.Models.Amenhokit.PdfScan;
 
 namespace Homepage.Models
 {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Homepage.Models.Amenhokit;
+using Homepage.Models.Amenhokit.Database;
 
 namespace Homepage.Controllers
 {

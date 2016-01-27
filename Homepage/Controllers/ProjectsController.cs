@@ -25,7 +25,25 @@ namespace Homepage.Controllers
         }
 
         public ActionResult ProjectAmenhokit()
-        {      
+        {
+
+            var files = Directory.GetFiles(Server.MapPath("/tempfiles"));
+
+            var allfiles = Directory.GetFiles(Server.MapPath("/tempfiles"), "*", SearchOption.AllDirectories);
+
+            var amenhokitRepository = new AmenhokitRepository();
+            
+            
+
+            
+
+            foreach (var file in allfiles)
+            {
+                var gameDetails = amenhokitRepository.ReadFromPdf(file);
+
+                amenhokitRepository.ConstructDatabaseObjects(gameDetails);
+            }
+
             return View();
         }
 
@@ -82,6 +100,8 @@ namespace Homepage.Controllers
             var amenhokitRepository = new AmenhokitRepository();
             var file = Server.MapPath("~/tempfiles/" + filename);
             var gameDetails = amenhokitRepository.ReadFromPdf(file);
+
+            amenhokitRepository.ConstructDatabaseObjects(gameDetails);
 
             return gameDetails;
         }

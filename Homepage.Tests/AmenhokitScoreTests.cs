@@ -1,5 +1,6 @@
 ﻿using System;
 using Homepage.Models.Amenhokit;
+using Homepage.Models.Amenhokit.PdfScan;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Homepage.Tests

@@ -222,8 +222,12 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Amenhokit\GameInfo.cs" />
-    <Compile Include="Models\Amenhokit\PlayerInfo.cs" />
+    <Compile Include="Models\Amenhokit\Database\Game.cs" />
+    <Compile Include="Models\Amenhokit\Database\Player.cs" />
+    <Compile Include="Models\Amenhokit\Database\PlayerScore.cs" />
+    <Compile Include="Models\Amenhokit\Database\Session.cs" />
+    <Compile Include="Models\Amenhokit\PdfScan\GameInfo.cs" />
+    <Compile Include="Models\Amenhokit\PdfScan\PlayerInfo.cs" />
     <Compile Include="Models\Amenhokit\UploadFile.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

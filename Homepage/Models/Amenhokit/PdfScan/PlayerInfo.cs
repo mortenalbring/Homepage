@@ -19,6 +19,9 @@ namespace Homepage.Models.Amenhokit.PdfScan
             this.NumberOfStrikes = numberOfStrikes;
             var spl = this.ScoreString.Split(' ');
             var firstelem = spl.First();
+
+            this.Name = firstelem.ToLower();
+
             var rest = string.Join("", spl.Skip(1));
             rest = rest.Replace('-', '0');
 

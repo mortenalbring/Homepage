@@ -12,7 +12,8 @@ namespace Homepage.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {          
+        {
+            return RedirectToAction("ProjectAmenhokit", "Projects");
 
             return View("Index");
         }

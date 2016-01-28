@@ -15,7 +15,7 @@ namespace Homepage.Repository
 {
     public class AmenhokitRepository
     {
-        public void ConstructDatabaseObjects(List<GameInfo> gameInfos, string PdfDocumentPath)
+        public void ConstructDatabaseObjects(List<PdfGameInfo> gameInfos, string PdfDocumentPath)
         {
             var i = 0;
             foreach (var gameInfo in gameInfos)
@@ -45,6 +45,36 @@ namespace Homepage.Repository
                 db.Database.ExecuteSqlCommand("TRUNCATE TABLE [PlayerScores]");
                 db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Sessions]");
             }
+        }
+
+        public void UpdatePlayerScoresFromAliases()
+        {
+            using (var db = new DataContext())
+            {
+                var aliases = db.PlayerAlias.ToList();
+
+                foreach (var alias in aliases)
+                {
+                    var aliasPlayers = db.Player.Where(e => e.Name == alias.Alias);
+                    var actualPlayer = db.Player.FirstOrDefault(e => e.Name == alias.Name);
+
+                    if (actualPlayer == null)
+                    {
+                        continue;
+                    }
+
+                    foreach (var aliasPlayer in aliasPlayers)
+                    {
+                        var aliasScores = db.PlayerScore.Where(e => e.Player == aliasPlayer.ID).ToList();
+                        foreach (var score in aliasScores)
+                        {
+                            score.Player = actualPlayer.ID;
+                        }
+                        db.Player.Remove(aliasPlayer);
+                    }
+                }
+                db.SaveChanges();
+            }           
         }
 
         private PlayerScore SavePlayerScore(PlayerInfo playerInfo, Game game, Session session, Player player)
@@ -92,7 +122,7 @@ namespace Homepage.Repository
             }
         }
 
-        private Game SaveOrReturnGame(GameInfo game, Session session)
+        private Game SaveOrReturnGame(PdfGameInfo game, Session session)
         {
             using (var db = new DataContext())
             {
@@ -112,7 +142,7 @@ namespace Homepage.Repository
 
         }
 
-        private Session SaveOrReturnSession(GameInfo game, string PdfDocumentPath)
+        private Session SaveOrReturnSession(PdfGameInfo game, string PdfDocumentPath)
         {
             using (var db = new DataContext())
             {
@@ -135,7 +165,7 @@ namespace Homepage.Repository
         }
 
 
-        public List<GameInfo> ReadFromPdf(string file)
+        public List<PdfGameInfo> ReadFromPdf(string file)
         {
             var lineArray = ConstructLineArrayFromFile(file);
 
@@ -146,9 +176,9 @@ namespace Homepage.Repository
 
         }
 
-        private List<GameInfo> ConstructGameInfo(List<string> lineArray)
+        private List<PdfGameInfo> ConstructGameInfo(List<string> lineArray)
         {
-            var gameInfoList = new List<GameInfo>();
+            var gameInfoList = new List<PdfGameInfo>();
 
             var gameInfoLines = GetGameInfoLines(lineArray);
             for (int i = 0; i < (gameInfoLines.Count - 1); i++)
@@ -180,13 +210,13 @@ namespace Homepage.Repository
 
 
 
-        private GameInfo GetGameAndLaneInfo(string gameInfoLine)
+        private PdfGameInfo GetGameAndLaneInfo(string gameInfoLine)
         {
 
             var spl = gameInfoLine.Split(' ').Where(e => e != "").ToList();
             if (spl.Count == 1) { return null; }
 
-            var GameInfo = new GameInfo();
+            var GameInfo = new PdfGameInfo();
 
             GameInfo.Lane = Convert.ToInt32(spl[3]);
             GameInfo.GameNumber = Convert.ToInt32(spl[5]);

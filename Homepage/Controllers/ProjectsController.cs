@@ -33,6 +33,9 @@ namespace Homepage.Controllers
 
             var amenhokitRepository = new AmenhokitRepository();
 
+            amenhokitRepository.UpdatePlayerScoresFromAliases();
+
+            return View();
 
             amenhokitRepository.WipeTables();
             
@@ -41,10 +44,25 @@ namespace Homepage.Controllers
             {
                 var gameDetails = amenhokitRepository.ReadFromPdf(file);
 
-                amenhokitRepository.ConstructDatabaseObjects(gameDetails,file);
+                var virtualPath = GetVirtualPath(file);
+
+                amenhokitRepository.ConstructDatabaseObjects(gameDetails, virtualPath);                
             }
 
+            amenhokitRepository.UpdatePlayerScoresFromAliases();
+
             return View();
+        }
+
+        public string GetVirtualPath(string physicalPath)
+        {
+            if (!physicalPath.StartsWith(HttpContext.Request.PhysicalApplicationPath))
+            {
+                throw new InvalidOperationException("Physical path is not within the application root");
+            }
+
+            return "~/" + physicalPath.Substring(HttpContext.Request.PhysicalApplicationPath.Length)
+                  .Replace("\\", "/");
         }
 
 
@@ -95,7 +113,7 @@ namespace Homepage.Controllers
 
       
 
-        private List<GameInfo> GetGameInfo(string filename)
+        private List<PdfGameInfo> GetGameInfo(string filename)
         {
             var amenhokitRepository = new AmenhokitRepository();
             var file = Server.MapPath("~/tempfiles/" + filename);

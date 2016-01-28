@@ -53,7 +53,7 @@ namespace Homepage.Repository
             {
                 var matching =
                     db.PlayerScore.FirstOrDefault(
-                        e => e.Game == game.ID && e.Session == session.ID && e.Player == player.ID);
+                        e => e.Game == game.ID && e.Session == session.ID && e.Player == player.ID && e.Scorestring == playerInfo.ScoreString);
 
                 if (matching == null)
                 {

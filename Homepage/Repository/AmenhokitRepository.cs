@@ -3,6 +3,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -12,39 +13,130 @@ using Homepage.Models.Amenhokit.PdfScan;
 
 namespace Homepage.Repository
 {
-	public class AmenhokitRepository
-	{
-	    public void ConstructDatabaseObjects(List<GameInfo> gameInfos)
-	    {
-	        using (var db = new DataContext())
-	        {
-                foreach (var gameInfo in gameInfos)
+    public class AmenhokitRepository
+    {
+        public void ConstructDatabaseObjects(List<GameInfo> gameInfos, string PdfDocumentPath)
+        {
+            var i = 0;
+            foreach (var gameInfo in gameInfos)
+            {
+                Debug.WriteLine(i + "/" + gameInfos.Count);
+                i++;
+                var session = SaveOrReturnSession(gameInfo, PdfDocumentPath);
+                var game = SaveOrReturnGame(gameInfo, session);
+
+                foreach (var playerInfo in gameInfo.PlayerScores)
                 {
-                    var dateString = gameInfo.Date;
-
-                    var dateObject = DateTime.Parse(dateString);
-
-                    var matchingSession = db.Session.FirstOrDefault(e => e.Date == dateObject);
-
-                    if (matchingSession == null)
-                    {
-                        var newSession = new Session();
-                        newSession.Date = dateObject;
-                        db.Session.Add(newSession);
-                        db.SaveChanges();
-                    }
-
-                    var xx = 42;
-
+                    var player = SaveOrReturnPlayer(playerInfo);
+                    var pscore = SavePlayerScore(playerInfo, game, session, player);
                 }
+
 
             }
 
         }
 
+        public void WipeTables()
+        {
+            using (var db = new DataContext())
+            {
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Games]");
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Players]");
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [PlayerScores]");
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Sessions]");
+            }
+        }
+
+        private PlayerScore SavePlayerScore(PlayerInfo playerInfo, Game game, Session session, Player player)
+        {
+            using (var db = new DataContext())
+            {
+                var matching =
+                    db.PlayerScore.FirstOrDefault(
+                        e => e.Game == game.ID && e.Session == session.ID && e.Player == player.ID);
+
+                if (matching == null)
+                {
+                    var playerScore = new PlayerScore();
+                    playerScore.Game = game.ID;
+                    playerScore.Session = session.ID;
+                    playerScore.Player = player.ID;
+                    playerScore.Score = playerInfo.Score;
+                    playerScore.Scorestring = playerInfo.ScoreString;
+
+                    db.PlayerScore.Add(playerScore);
+                    db.SaveChanges();
+                    matching = playerScore;
+                }
+
+                return matching;
+
+            }
+
+        }
+
+        private Player SaveOrReturnPlayer(PlayerInfo playerInfo)
+        {
+            using (var db = new DataContext())
+            {
+                var matchingPlayer = db.Player.FirstOrDefault(e => e.Name == playerInfo.Name);
+                if (matchingPlayer == null)
+                {
+                    var newPlayer = new Player();
+                    newPlayer.Name = playerInfo.Name;
+                    db.Player.Add(newPlayer);
+                    db.SaveChanges();
+                    matchingPlayer = newPlayer;
+                }
+                return matchingPlayer;
+            }
+        }
+
+        private Game SaveOrReturnGame(GameInfo game, Session session)
+        {
+            using (var db = new DataContext())
+            {
+                var matchingGame = db.Game.FirstOrDefault(e => e.Session == session.ID && e.GameNumber == game.GameNumber);
+                if (matchingGame == null)
+                {
+                    var newGame = new Game();
+                    newGame.Session = session.ID;
+                    newGame.Lane = game.Lane;
+                    newGame.GameNumber = game.GameNumber;
+                    db.Game.Add(newGame);
+                    db.SaveChanges();
+                    matchingGame = newGame;
+                }
+                return matchingGame;
+            }
+
+        }
+
+        private Session SaveOrReturnSession(GameInfo game, string PdfDocumentPath)
+        {
+            using (var db = new DataContext())
+            {
+                var dateString = game.Date;
+                var dateObject = DateTime.Parse(dateString);
+
+                var matchingSession = db.Session.FirstOrDefault(e => e.Date == dateObject);
+
+                if (matchingSession == null)
+                {
+                    var newSession = new Session();
+                    newSession.Date = dateObject;
+                    newSession.PdfDocument = PdfDocumentPath;
+                    db.Session.Add(newSession);
+                    db.SaveChanges();
+                    matchingSession = newSession;
+                }
+                return matchingSession;
+            }
+        }
+
 
         public List<GameInfo> ReadFromPdf(string file)
-        {            
+        {
             var lineArray = ConstructLineArrayFromFile(file);
 
             var gamesDetails = ConstructGameInfo(lineArray);
@@ -63,7 +155,7 @@ namespace Homepage.Repository
             {
 
                 var gameInfoLine = lineArray[gameInfoLines[i]];
-                
+
 
                 var gameInfo = GetGameAndLaneInfo(gameInfoLine);
 

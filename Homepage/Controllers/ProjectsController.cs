@@ -32,16 +32,16 @@ namespace Homepage.Controllers
             var allfiles = Directory.GetFiles(Server.MapPath("/tempfiles"), "*", SearchOption.AllDirectories);
 
             var amenhokitRepository = new AmenhokitRepository();
-            
-            
 
+
+            amenhokitRepository.WipeTables();
             
 
             foreach (var file in allfiles)
             {
                 var gameDetails = amenhokitRepository.ReadFromPdf(file);
 
-                amenhokitRepository.ConstructDatabaseObjects(gameDetails);
+                amenhokitRepository.ConstructDatabaseObjects(gameDetails,file);
             }
 
             return View();
@@ -101,7 +101,7 @@ namespace Homepage.Controllers
             var file = Server.MapPath("~/tempfiles/" + filename);
             var gameDetails = amenhokitRepository.ReadFromPdf(file);
 
-            amenhokitRepository.ConstructDatabaseObjects(gameDetails);
+            //amenhokitRepository.ConstructDatabaseObjects(gameDetails,filename);
 
             return gameDetails;
         }

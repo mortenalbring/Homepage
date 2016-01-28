@@ -9,6 +9,7 @@ namespace Homepage.Models.Amenhokit.Database
     public class Session
     {
         public int ID { get; set; }
-        public DateTime Date { get; set; }        
+        public DateTime Date { get; set; }    
+        public string PdfDocument { get; set; }    
     }
 }

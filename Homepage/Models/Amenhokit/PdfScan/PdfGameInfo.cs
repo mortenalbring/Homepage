@@ -2,7 +2,7 @@
 
 namespace Homepage.Models.Amenhokit.PdfScan
 {
-    public class GameInfo
+    public class PdfGameInfo
     {
         public int Lane { get; set; }
         public int GameNumber { get; set; }

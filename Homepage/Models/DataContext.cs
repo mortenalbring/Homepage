@@ -20,6 +20,7 @@ namespace Homepage.Models
         public DbSet<PlayerScore> PlayerScore { get; set; }
         public DbSet<Session> Session { get; set; }
         public DbSet<UploadFile> UploadFiles { get; set; }
+        public DbSet<PlayerAlias> PlayerAlias { get; set; }
 
     }
 }

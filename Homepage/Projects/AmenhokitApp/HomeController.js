@@ -1,4 +1,4 @@
-﻿var HomeController = function ($routeParams, $http, $scope) {
+﻿var HomeController = function ($routeParams, $http, $q, $scope) {
 
     $scope.sessions = [];
 
@@ -26,69 +26,134 @@
     }
 
 
-    function getScores(sessionId, gameId) {
-        ajaxGetScores(sessionId, gameId).then(function (scoresresponse) {
-            if (scoresresponse.data.success) {
-                var scores = scoresresponse.data.playerScores;
+    function processScoreResults(scores) {
+        var scoresList = [];
 
-                for (var j = 0; j < scores.length; j++) {
-                    var matchingSession = $scope.sessions.filter(function (e) {
-                        return e.ID === scores[j].Session;
-                    });
+        for (var j = 0; j < scores.length; j++) {
+            var matchingSession = $scope.sessions.filter(function (e) {
+                return e.ID === scores[j].Session;
+            });
 
-                    if (matchingSession.length > 0) {
-                        var matchingGame = matchingSession[0].Games.filter(function (e) {
-                            return e.ID == scores[j].Game;
-                        });
+            if (matchingSession.length > 0) {
+                var matchingGame = matchingSession[0].Games.filter(function (e) {
+                    return e.ID == scores[j].Game;
+                });
 
-                        if (matchingGame.length > 0) {
+                if (matchingGame.length > 0) {
 
-                            var newScore = {};
-                            newScore.ID = scores[j].ID;
-                            newScore.Player = scores[j].Player;
-                            newScore.Score = scores[j].Score;
-                            newScore.Scorestring = scores[j].Scorestring;
+                    var newScore = {};
+                    newScore.ID = scores[j].ID;
+                    newScore.Player = scores[j].Player;
+                    newScore.Score = scores[j].Score;
+                    newScore.Scorestring = scores[j].Scorestring;
 
-                            matchingGame[0].Scores.push(newScore);
-                        }
+                    matchingGame[0].Scores.push(newScore);
 
-
-                    }
+                    scoresList.push(newScore);
                 }
             }
-        });
+        }
+        return scoresList;
     }
 
 
-    function getGames(id) {
-        ajaxGetGames(id).then(function (gamesresponse) {
-            if (gamesresponse.data.success) {
-                var games = gamesresponse.data.games;
+    function processGameResponse(games) {
+        var gamesList = [];
 
-                for (var j = 0; j < games.length; j++) {
-                    var matchingSession = $scope.sessions.filter(function (e) {
-                        return e.ID === games[j].Session;
-                    });
+        for (var j = 0; j < games.length; j++) {
+            var matchingSession = $scope.sessions.filter(function (e) {
+                return e.ID === games[j].Session;
+            });
 
-                    if (matchingSession.length > 0) {
-                        var newGame = {};
-                        newGame.ID = games[j].ID;
-                        newGame.Lane = games[j].Lane;
-                        newGame.GameNumber = games[j].GameNumber;
-                        newGame.Scores = [];
+            if (matchingSession.length > 0) {
+                var newGame = {};
+                newGame.ID = games[j].ID;
+                newGame.Session = games[j].Session;
+                newGame.Lane = games[j].Lane;
+                newGame.GameNumber = games[j].GameNumber;
+                newGame.Scores = [];
 
-                        matchingSession[0].Games.push(newGame);
+                matchingSession[0].Games.push(newGame);
 
-                        getScores(matchingSession[0].ID,newGame.ID);
+                gamesList.push(newGame);                
 
+                //getScores(matchingSession[0].ID, newGame.ID);
+
+            }
+        }
+
+        return gamesList;
+    }
+
+    function getAllGames(sessionIds) {
+        var gamesQueryList = [];
+        for (var i = 0; i < sessionIds.length; i++) {
+            gamesQueryList.push(ajaxGetGames(sessionIds[i]));
+        }
+
+        
+
+        $q.all(gamesQueryList).then(function (responses) {
+            var gamesList = [];
+
+            for (var j = 0; j < responses.length; j++) {
+                if (responses[j].data.success) {
+                    var games = responses[j].data.games;
+                    var gameObjs = processGameResponse(games);
+                    for (var l = 0; l < gameObjs.length; l++) {
+                        gamesList.push(gameObjs[l]);
                     }
+                    
                 }
             }
+
+            var scoresQueryList = [];
+            for (var k = 0; k < gamesList.length; k++) {
+                scoresQueryList.push(ajaxGetScores(gamesList[k].Session, gamesList[k].ID));
+            }
+
+            $q.all(scoresQueryList).then(function(scoresResponses) {
+                var scoresList = [];
+
+                for (var m = 0; m < scoresResponses.length; m++) {
+                    if (scoresResponses[m].data.success) {
+                        var scores = scoresResponses[m].data.playerScores;
+                        var scoreObjs = processScoreResults(scores);
+
+                        for (var n = 0; n < scoreObjs.length; n++) {
+                            scoresList.push(scoreObjs[n]);
+                        }
+                    }
+                }
+
+                var uniquePlayerIds = [];
+                for (var o = 0; o < scoresList.length; o++) {
+                    var scorePid = scoresList[o].Player;
+                    var indx = uniquePlayerIds.indexOf(scorePid);
+                    if (indx === -1) {
+                        uniquePlayerIds.push(scorePid);
+                    }
+                }
+
+                var xxx = 42;
+
+                for (var p = 0; p < uniquePlayerIds.length; p++) {
+                    //Get player names
+
+                }
+
+
+
+            });
+
         });
     }
 
     ajaxListSessions().then(function (response) {
         if (response.data.success) {
+
+            var sessionIDs = [];
+
             var sessions = response.data.sessions;
 
             for (var i = 0; i < sessions.length; i++) {
@@ -98,16 +163,18 @@
                 newsession.PdfDocument = sessions[i].PdfDocument;
                 newsession.Games = [];
                 $scope.sessions.push(newsession);
-                getGames(newsession.ID);
 
+                sessionIDs.push(newsession.ID);
+
+                //getGames(newsession.ID);
             }
+
+            getAllGames(sessionIDs);
 
 
         }
     });
-
-
-    $scope.test = "moop";
+    
 
     $scope.selectedFile = null;
 

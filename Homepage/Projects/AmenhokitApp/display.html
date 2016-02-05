@@ -1,5 +1,9 @@
 ﻿<div ng-if="loading">Loading data...</div>
 
+Sessions - {{sessions.length}}
+Games - {{games.length}}
+Scores - {{playerscores.length}}
+
 <div ng-repeat="session in sessions">
     {{session.Date | date: 'yyyy-MM-dd'}}
 

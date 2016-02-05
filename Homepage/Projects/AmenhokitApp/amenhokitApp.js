@@ -9,10 +9,11 @@ amenhokit.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '/Projects/AmenhokitApp/home.html',
             controller: 'HomeController'
         }).otherwise({
-            templateUrl: '/Projects/AmenhokitApp/home.html',
-            controller: 'HomeController'
+            templateUrl: '/Projects/AmenhokitApp/display.html',
+            controller: 'DisplayController'
         });
 }]);
 amenhokit.factory('FileUploadService', ["$rootScope", "$http", "$q", "Upload", FileUploadService]);
-amenhokit.controller("HomeController",  HomeController);
+amenhokit.controller("HomeController", HomeController);
+amenhokit.controller("DisplayController", DisplayController);
 amenhokit.controller("UploadController",["FileUploadService","$scope", UploadController]);

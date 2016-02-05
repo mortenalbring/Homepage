@@ -345,6 +345,7 @@
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-home.less" />
+    <Content Include="Projects\AmenhokitApp\AjaxService.js" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
     <Content Include="Projects\AmenhokitApp\DataService.js" />
@@ -353,6 +354,7 @@
     <Content Include="Projects\AmenhokitApp\FileUploadService.js" />
     <Content Include="Projects\AmenhokitApp\home.html" />
     <Content Include="Projects\AmenhokitApp\HomeController.js" />
+    <Content Include="Projects\AmenhokitApp\playerinfo.html" />
     <Content Include="Projects\AmenhokitApp\upload.html" />
     <Content Include="Projects\AmenhokitApp\UploadController.js" />
     <Content Include="Projects\AngularClicker\angular.min.js" />

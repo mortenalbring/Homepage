@@ -102,7 +102,7 @@
 
     function makeUniquePlayerIdList(scoresList) {
         var uniquePlayerIds = [];
-        for (var o = 0; o < scoresList.length; o++) {
+        for (var o = 0; o < scoresList.length; o++) {            
             var scorePid = scoresList[o].Player;
             var indx = uniquePlayerIds.indexOf(scorePid);
             if (indx === -1) {
@@ -117,6 +117,8 @@
         for (var j = 0; j < responses.length; j++) {
             if (responses[j].data.success) {
                 var player = responses[j].data.player;
+
+                self.players.push(player);
 
                 var playerscores = scoresList.filter(function (e) {
                     return e.Player == player.ID;

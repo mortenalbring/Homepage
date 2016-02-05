@@ -8,7 +8,12 @@ amenhokit.config(['$routeProvider', function ($routeProvider) {
         .when('/file/:filename', {
             templateUrl: '/Projects/AmenhokitApp/home.html',
             controller: 'HomeController'
-        }).otherwise({
+        })
+                .when('/player/:playerId', {
+                    templateUrl: '/Projects/AmenhokitApp/playerinfo.html',
+                    controller: 'DisplayController'
+                })
+        .otherwise({
             templateUrl: '/Projects/AmenhokitApp/display.html',
             controller: 'DisplayController'
         });

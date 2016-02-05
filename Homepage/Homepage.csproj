@@ -347,6 +347,9 @@
     <Content Include="Content\styles\ma-home.less" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
+    <Content Include="Projects\AmenhokitApp\DataService.js" />
+    <Content Include="Projects\AmenhokitApp\display.html" />
+    <Content Include="Projects\AmenhokitApp\DisplayController.js" />
     <Content Include="Projects\AmenhokitApp\FileUploadService.js" />
     <Content Include="Projects\AmenhokitApp\home.html" />
     <Content Include="Projects\AmenhokitApp\HomeController.js" />

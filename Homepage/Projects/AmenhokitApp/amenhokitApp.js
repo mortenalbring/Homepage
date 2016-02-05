@@ -14,6 +14,9 @@ amenhokit.config(['$routeProvider', function ($routeProvider) {
         });
 }]);
 amenhokit.factory('FileUploadService', ["$rootScope", "$http", "$q", "Upload", FileUploadService]);
+amenhokit.factory('AjaxService', ["$http", AjaxService]);
+amenhokit.service('DataService', ["$q","AjaxService", DataService]);
 amenhokit.controller("HomeController", HomeController);
-amenhokit.controller("DisplayController", DisplayController);
+amenhokit.controller("DisplayController", ["$routeParams","$scope","DataService", DisplayController]);
+
 amenhokit.controller("UploadController",["FileUploadService","$scope", UploadController]);

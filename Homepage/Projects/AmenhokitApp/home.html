@@ -1,20 +1,5 @@
 ﻿
 
-<div ng-if="loading">Loading data...</div>
-
-<div ng-repeat="session in sessions">
-    {{session.Date | date: 'yyyy-MM-dd'}}
-
-    <div ng-repeat="game in session.Games">
-        <strong>{{game.GameNumber}} - {{game.Lane}}</strong>
-        
-        <div ng-repeat="score in game.Scores">
-            {{score.Player}} - {{score.Name}} - {{score.Scorestring}} - {{score.Score}}
-        </div>
-    </div>
-
-</div>
-
 
 <div class="scoreselectContainer">    
    <div>        

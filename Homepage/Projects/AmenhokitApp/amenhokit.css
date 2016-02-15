@@ -72,3 +72,38 @@
 .scoreselectContainer div {
     margin:2em;
 }
+
+.playerinfo-container {
+    display:flex;
+}
+.playerinfo-container div {
+    padding:1em;
+}
+
+.playerlist {
+}
+.playerlist ul {
+    list-style:none;
+    padding:0;    
+}
+.playerlist li {
+    border:1px solid #ccc;
+    border-radius:5px;
+    
+    text-decoration:none;    
+}
+.playerlist li a {
+    padding:0.3em;
+    text-decoration:none;
+color:#000;    
+    display: block;
+}
+.playerlist li:not(.active) a:hover {
+    transition:0.2s;
+    background: #1000ff;
+    color:#fff;
+}
+.playerlist .active {
+    background:#ffa10e;
+}
+

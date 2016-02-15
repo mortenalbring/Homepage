@@ -1,3 +1,37 @@
-﻿{{selectedPlayer}}
+﻿<h1>
+    {{selectedPlayer.Name | titlecase}}
+</h1>
 
-{{players.length}}
+<div>
+{{selectedPlayerScores.length}} scores recorded    
+</div>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Lane</th>
+        <th>Game Number</th>
+        <th>Score string</th>        
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
+        <td ng-bind="sessionPropertyFor(selectedPlayerScore,'Date')">
+
+        </td>
+        <td ng-bind="gamePropertyFor(selectedPlayerScore,'Lane')"></td>
+        <td ng-bind="gamePropertyFor(selectedPlayerScore,'GameNumber')">            
+        </td>
+        <td>
+            {{selectedPlayerScore.Scorestring}}
+        </td>
+        <td>
+            {{selectedPlayerScore.Score}}
+        </td>
+    </tr>
+    </tbody>
+
+</table>

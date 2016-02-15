@@ -133,7 +133,7 @@
 
     }
 
-    function getAllGames(sessionIds) {
+    function getAllGames(sessionIds, callback) {
         var gamesQueryList = [];
         for (var i = 0; i < sessionIds.length; i++) {
             gamesQueryList.push(AjaxService.GetGames(sessionIds[i]));
@@ -158,13 +158,17 @@
 
                 $q.all(playerQueryList).then(function (responses) {
                     processPlayerQueries(responses, scoresList);
-                    
+                    if (callback) {
+                        callback();
+                    }
+
                 });
             });
         });
     }
     
-    this.GetAllData = function() {
+
+    function getAllSessions(callback) {
 
         AjaxService.ListSessions().then(function (response) {
 
@@ -185,12 +189,15 @@
                     sessionIDs.push(newsession.ID);
                 }
 
-                getAllGames(sessionIDs);
+                getAllGames(sessionIDs, callback);
             }
         });
-
     }
 
+    this.GetAllData = function(callback) {
+        getAllSessions(callback);
+    }
 
+   
 
 }

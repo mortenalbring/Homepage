@@ -36,6 +36,13 @@ namespace Homepage
             "~/Scripts/FileAPI.js"));
 
 
+            bundles.Add(new ScriptBundle("~/bundles/amenhokit")
+               
+               .IncludeDirectory("~/Projects/AmenhokitApp/Controllers","*.js")
+               .IncludeDirectory("~/Projects/AmenhokitApp/Services", "*.js")
+               .Include("~/Projects/AmenhokitApp/amenhokitApp.js"));
+
+
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
                 );

@@ -2,19 +2,19 @@
 amenhokit.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/upload', {
-            templateUrl: '/Projects/AmenhokitApp/upload.html',
+            templateUrl: '/Projects/AmenhokitApp/Templates/upload.html',
             controller: 'UploadController'
         })
         .when('/file/:filename', {
-            templateUrl: '/Projects/AmenhokitApp/home.html',
+            templateUrl: '/Projects/AmenhokitApp/Templates/home.html',
             controller: 'HomeController'
         })
         .when('/player/:playerId', {
-            templateUrl: '/Projects/AmenhokitApp/playerinfo.html',
+            templateUrl: '/Projects/AmenhokitApp/Templates/playerinfo.html',
             controller: 'DisplayController'
         })
         .otherwise({
-            templateUrl: '/Projects/AmenhokitApp/display.html',
+            templateUrl: '/Projects/AmenhokitApp/Templates/display.html',
             controller: 'DisplayController'
         });
 }]);

@@ -24,7 +24,7 @@
         <div>
             <span>{{selectedPlayerScores.length}} scores recorded</span>
             <br/>
-            <span>Highest score on record is {{highestgame.Score}}, on {{sessionPropertyFor(highestgame,'Date')  | amDateFormat: 'dddd, MMMM Do YYYY'}}.</span>
+            <span>Highest score on record is {{highestgame.Score}}, on {{highestgame.Date  | amDateFormat: 'dddd, MMMM Do YYYY'}}.</span>
             <br/>
             <span>Average score is {{averageScore}}</span>
         </div>
@@ -67,13 +67,16 @@
             <tbody>
             <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
                 <td>
-                    <span title="{{sessionPropertyFor(selectedPlayerScore,'Date') | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{sessionPropertyFor(selectedPlayerScore,'Date') | amCalendar}}</span>
-                    
-                    
+                    <span title="{{selectedPlayerScore.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{selectedPlayerScore.Date | amCalendar}}</span>
+                                        
                 </td>
                 
-                <td ng-bind="gamePropertyFor(selectedPlayerScore,'Lane')"></td>
-                <td ng-bind="gamePropertyFor(selectedPlayerScore,'GameNumber')"></td>
+                <td>
+                    {{selectedPlayerScore.Lane}}
+                </td>                
+                <td>
+                    {{selectedPlayerScore.GameNumber}}
+                </td>
                 <td>
                     {{selectedPlayerScore.Scorestring}}
                 </td>

@@ -30,13 +30,11 @@
         return null;
     }
 
-
-
-
     $scope.sessions = DataService.sessions;
     $scope.games = DataService.games;
     $scope.playerscores = DataService.playerscores;
     $scope.players = DataService.players;
+    $scope.loading = false;
 
     var finalCallback = function () {
         console.log('done');
@@ -57,12 +55,14 @@
                 return e.Player == $routeParams.playerId;
             });
 
+            $scope.loading = false;
         }
 
 
     }
 
     if ($scope.sessions.length == 0) {
+        $scope.loading = true;
         DataService.GetAllData(finalCallback);
     } else {
         finalCallback();

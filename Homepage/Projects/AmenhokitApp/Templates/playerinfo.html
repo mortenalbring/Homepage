@@ -16,19 +16,44 @@
 
         </div>
     </div>
-    <div ng-if="!loading">
-
-
-
+    <div ng-if="!loading">       
         <h1>
             {{selectedPlayer.Name | titlecase}}
         </h1>
 
         <div>
-            {{selectedPlayerScores.length}} scores recorded
+            <span>{{selectedPlayerScores.length}} scores recorded</span>
+            <br/>
+            <span>Highest score on record is {{highestgame.Score}}, on {{sessionPropertyFor(highestgame,'Date')  | amDateFormat: 'dddd, MMMM Do YYYY'}}.</span>
+            <br/>
+            <span>Average score is {{averageScore}}</span>
         </div>
+        
+        <h2>Scores by lane</h2>
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Lane</th>
+                <th>Times played on</th>
+                <th>Average score for lane</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="lanescore in lanestotals | orderBy:'-Average'">
+                <td>
+                    {{lanescore.Lane}}
+                </td>
+                <td>
+                    {{lanescore.Count}}
+                </td>
+                <td>
+                    {{lanescore.Average}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-
+        <h2>All Scores</h2>
         <table class="table table-condensed table-bordered table-striped">
             <thead>
             <tr>
@@ -41,7 +66,12 @@
             </thead>
             <tbody>
             <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
-                <td ng-bind="sessionPropertyFor(selectedPlayerScore,'Date')"></td>
+                <td>
+                    <span title="{{sessionPropertyFor(selectedPlayerScore,'Date') | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{sessionPropertyFor(selectedPlayerScore,'Date') | amCalendar}}</span>
+                    
+                    
+                </td>
+                
                 <td ng-bind="gamePropertyFor(selectedPlayerScore,'Lane')"></td>
                 <td ng-bind="gamePropertyFor(selectedPlayerScore,'GameNumber')"></td>
                 <td>

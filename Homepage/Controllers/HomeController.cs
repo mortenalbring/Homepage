@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Homepage.Models;
 using Homepage.Models.Amenhokit;
+using Homepage.Models.Amenhokit.PdfScan;
 
 namespace Homepage.Controllers
 {
@@ -12,15 +13,7 @@ namespace Homepage.Controllers
     {
         public ActionResult Index()
         {
-
-            using (var db = new DataContext())
-            {
-                var testplayer = new PlayerInfo();
-                testplayer.Name = "MOOP";
-                db.Player.Add(testplayer);
-                db.SaveChanges();
-
-            }
+            return RedirectToAction("ProjectAmenhokit", "Projects");
 
             return View("Index");
         }

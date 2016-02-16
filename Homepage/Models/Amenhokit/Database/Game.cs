@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homepage.Models.Amenhokit
+namespace Homepage.Models.Amenhokit.Database
 {
-    public class GameInfo
+    public class Game
     {
+        public int ID { get; set; }
         public int Lane { get; set; }
         public int GameNumber { get; set; }
-        public string Date { get; set; }
-        public List<PlayerInfo> PlayerScores = new List<PlayerInfo>();
+        public int Session { get; set; }
     }
 }

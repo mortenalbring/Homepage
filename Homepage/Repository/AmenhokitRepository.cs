@@ -3,15 +3,170 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
+using Homepage.Models;
+using Homepage.Models.Amenhokit.Database;
+using Homepage.Models.Amenhokit.PdfScan;
 
 namespace Homepage.Repository
 {
-	public class AmenhokitRepository
-	{
-        public List<GameInfo> ReadFromPdf(string file)
-        {            
+    public class AmenhokitRepository
+    {
+        public void ConstructDatabaseObjects(List<PdfGameInfo> gameInfos, string PdfDocumentPath)
+        {
+            var i = 0;
+            foreach (var gameInfo in gameInfos)
+            {
+                Debug.WriteLine(i + "/" + gameInfos.Count);
+                i++;
+                var session = SaveOrReturnSession(gameInfo, PdfDocumentPath);
+                var game = SaveOrReturnGame(gameInfo, session);
+
+                foreach (var playerInfo in gameInfo.PlayerScores)
+                {
+                    var player = SaveOrReturnPlayer(playerInfo);
+                    var pscore = SavePlayerScore(playerInfo, game, session, player);
+                }
+
+
+            }
+
+        }
+
+        public void WipeTables()
+        {
+            using (var db = new DataContext())
+            {
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Games]");
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Players]");
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [PlayerScores]");
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Sessions]");
+            }
+        }
+
+        public void UpdatePlayerScoresFromAliases()
+        {
+            using (var db = new DataContext())
+            {
+                var aliases = db.PlayerAlias.ToList();
+
+                foreach (var alias in aliases)
+                {
+                    var aliasPlayers = db.Player.Where(e => e.Name == alias.Alias);
+                    var actualPlayer = db.Player.FirstOrDefault(e => e.Name == alias.Name);
+
+                    if (actualPlayer == null)
+                    {
+                        continue;
+                    }
+
+                    foreach (var aliasPlayer in aliasPlayers)
+                    {
+                        var aliasScores = db.PlayerScore.Where(e => e.Player == aliasPlayer.ID).ToList();
+                        foreach (var score in aliasScores)
+                        {
+                            score.Player = actualPlayer.ID;
+                        }
+                        db.Player.Remove(aliasPlayer);
+                    }
+                }
+                db.SaveChanges();
+            }           
+        }
+
+        private PlayerScore SavePlayerScore(PlayerInfo playerInfo, Game game, Session session, Player player)
+        {
+            using (var db = new DataContext())
+            {
+                var matching =
+                    db.PlayerScore.FirstOrDefault(
+                        e => e.Game == game.ID && e.Session == session.ID && e.Player == player.ID && e.Scorestring == playerInfo.ScoreString);
+
+                if (matching == null)
+                {
+                    var playerScore = new PlayerScore();
+                    playerScore.Game = game.ID;
+                    playerScore.Session = session.ID;
+                    playerScore.Player = player.ID;
+                    playerScore.Score = playerInfo.Score;
+                    playerScore.Scorestring = playerInfo.ScoreString;
+
+                    db.PlayerScore.Add(playerScore);
+                    db.SaveChanges();
+                    matching = playerScore;
+                }
+
+                return matching;
+
+            }
+
+        }
+
+        private Player SaveOrReturnPlayer(PlayerInfo playerInfo)
+        {
+            using (var db = new DataContext())
+            {
+                var matchingPlayer = db.Player.FirstOrDefault(e => e.Name == playerInfo.Name);
+                if (matchingPlayer == null)
+                {
+                    var newPlayer = new Player();
+                    newPlayer.Name = playerInfo.Name;
+                    db.Player.Add(newPlayer);
+                    db.SaveChanges();
+                    matchingPlayer = newPlayer;
+                }
+                return matchingPlayer;
+            }
+        }
+
+        private Game SaveOrReturnGame(PdfGameInfo game, Session session)
+        {
+            using (var db = new DataContext())
+            {
+                var matchingGame = db.Game.FirstOrDefault(e => e.Session == session.ID && e.GameNumber == game.GameNumber);
+                if (matchingGame == null)
+                {
+                    var newGame = new Game();
+                    newGame.Session = session.ID;
+                    newGame.Lane = game.Lane;
+                    newGame.GameNumber = game.GameNumber;
+                    db.Game.Add(newGame);
+                    db.SaveChanges();
+                    matchingGame = newGame;
+                }
+                return matchingGame;
+            }
+
+        }
+
+        private Session SaveOrReturnSession(PdfGameInfo game, string PdfDocumentPath)
+        {
+            using (var db = new DataContext())
+            {
+                var dateString = game.Date;
+                var dateObject = DateTime.Parse(dateString);
+
+                var matchingSession = db.Session.FirstOrDefault(e => e.Date == dateObject);
+
+                if (matchingSession == null)
+                {
+                    var newSession = new Session();
+                    newSession.Date = dateObject;
+                    newSession.PdfDocument = PdfDocumentPath;
+                    db.Session.Add(newSession);
+                    db.SaveChanges();
+                    matchingSession = newSession;
+                }
+                return matchingSession;
+            }
+        }
+
+
+        public List<PdfGameInfo> ReadFromPdf(string file)
+        {
             var lineArray = ConstructLineArrayFromFile(file);
 
             var gamesDetails = ConstructGameInfo(lineArray);
@@ -21,16 +176,16 @@ namespace Homepage.Repository
 
         }
 
-        private List<GameInfo> ConstructGameInfo(List<string> lineArray)
+        private List<PdfGameInfo> ConstructGameInfo(List<string> lineArray)
         {
-            var gameInfoList = new List<GameInfo>();
+            var gameInfoList = new List<PdfGameInfo>();
 
             var gameInfoLines = GetGameInfoLines(lineArray);
             for (int i = 0; i < (gameInfoLines.Count - 1); i++)
             {
 
                 var gameInfoLine = lineArray[gameInfoLines[i]];
-                
+
 
                 var gameInfo = GetGameAndLaneInfo(gameInfoLine);
 
@@ -55,13 +210,13 @@ namespace Homepage.Repository
 
 
 
-        private GameInfo GetGameAndLaneInfo(string gameInfoLine)
+        private PdfGameInfo GetGameAndLaneInfo(string gameInfoLine)
         {
 
             var spl = gameInfoLine.Split(' ').Where(e => e != "").ToList();
             if (spl.Count == 1) { return null; }
 
-            var GameInfo = new GameInfo();
+            var GameInfo = new PdfGameInfo();
 
             GameInfo.Lane = Convert.ToInt32(spl[3]);
             GameInfo.GameNumber = Convert.ToInt32(spl[5]);

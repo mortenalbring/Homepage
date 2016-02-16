@@ -31,20 +31,7 @@
     }
 
 
-    $scope.gamePropertyFor = function (playerScore, property) {
-        var game = getGameFor(playerScore);
-        if (!game) { return null; }
-        if (property == 'GameNumber') {
-            return game.GameNumber;
-        }
-        if (property == 'Lane') {
-            return game.Lane;
-        }
-
-
-        return null;
-
-    }
+    
 
     $scope.sessions = DataService.sessions;
     $scope.games = DataService.games;
@@ -57,6 +44,45 @@
         console.log('done');
     }
 
+    function calculateStats() {
+        var highestgame = {};
+        highestgame.Score = 0;
+        var scoresum = 0;
+
+        var lanestotal = [];
+
+        $.each($scope.selectedPlayerScores, function (i, o) {
+            if (o.Score > highestgame.Score) {
+                highestgame = o;
+            }
+            scoresum = scoresum + o.Score;
+            var lane = o.Lane;
+
+            var matching = lanestotal.filter(function (e) {
+                return e.Lane == lane;
+            });
+            if (matching.length == 1) {
+                matching[0].Count = matching[0].Count + 1;
+                matching[0].ScoreSum = matching[0].ScoreSum + o.Score;
+            } else {
+                lanestotal.push({
+                    Lane: lane,
+                    Count: 1,
+                    ScoreSum: o.Score
+                });
+            }
+        });
+        $scope.lanestotals = [];
+        $.each(lanestotal, function (i, o) {
+            o.Average = parseInt(o.ScoreSum / o.Count);
+            $scope.lanestotals.push(o);
+        });
+
+
+        $scope.averageScore = parseInt(scoresum / $scope.selectedPlayerScores.length);
+
+        $scope.highestgame = highestgame;
+    }
 
     if ($routeParams.playerId) {
         finalCallback = function () {
@@ -72,44 +98,8 @@
                 return e.Player == $routeParams.playerId;
             });
 
-            var highestgame = {};
-            highestgame.Score = 0;
-            var scoresum = 0;
 
-            var lanestotal = [];
-
-            $.each($scope.selectedPlayerScores, function (i, o) {
-                if (o.Score > highestgame.Score) {
-                    highestgame = o;
-                }
-                scoresum = scoresum + o.Score;
-                var lane = $scope.gamePropertyFor(o, 'Lane');
-
-                var matching = lanestotal.filter(function(e) {
-                    return e.Lane == lane;
-                });
-                if (matching.length == 1) {
-                    matching[0].Count = matching[0].Count + 1;
-                    matching[0].ScoreSum = matching[0].ScoreSum + o.Score;
-                } else {
-                    lanestotal.push({
-                        Lane: lane,
-                        Count: 1,
-                        ScoreSum: o.Score
-                    });
-                }
-            });
-            $scope.lanestotals = [];
-            $.each(lanestotal, function(i, o) {
-                o.Average = parseInt(o.ScoreSum / o.Count);
-                $scope.lanestotals.push(o);
-            });
-            
-
-            $scope.averageScore = parseInt(scoresum / $scope.selectedPlayerScores.length);
-
-            $scope.highestgame = highestgame;
-
+            calculateStats();
 
 
             $scope.loading = false;
@@ -125,20 +115,7 @@
         finalCallback();
     }
 
-    $scope.sessionPropertyFor = function (playerScore, property) {
-        var game = getGameFor(playerScore);
-        if (!game) { return null; }
-
-        var session = getSessionFor(game);
-
-        if (property == 'Date') {
-            return session.Date;
-        }
-
-        return null;
-
-
-    }
+  
 
 
 

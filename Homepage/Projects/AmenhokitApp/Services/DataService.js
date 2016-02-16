@@ -25,6 +25,9 @@
 
                     var newScore = {};
                     newScore.ID = scores[j].ID;
+                    newScore.Date = matchingGame[0].Date;
+                    newScore.Lane = matchingGame[0].Lane;
+                    newScore.GameNumber = matchingGame[0].GameNumber;
                     newScore.Player = scores[j].Player;
                     newScore.Score = scores[j].Score;
                     newScore.Scorestring = scores[j].Scorestring;
@@ -50,6 +53,7 @@
             if (matchingSession.length > 0) {
                 var newGame = {};
                 newGame.ID = games[j].ID;
+                newGame.Date = matchingSession[0].Date;
                 newGame.Session = games[j].Session;
                 newGame.Lane = games[j].Lane;
                 newGame.GameNumber = games[j].GameNumber;

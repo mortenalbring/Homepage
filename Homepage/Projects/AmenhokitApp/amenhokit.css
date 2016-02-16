@@ -1,16 +1,17 @@
 ﻿.upload-container {
-    display:flex;
-    padding-left:1em;
-    padding-right:1em;
-}
-.upload-container div {
-    flex:1;
+    display: flex;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
+    .upload-container div {
+        flex: 1;
+    }
+
 .drop-box {
-    background-color: #cec9c9;    
+    background-color: #cec9c9;
     padding: 20px;
-    width:80%;    
+    width: 80%;
     border: 3px dotted #2980B9;
     border-radius: 15px;
     margin-bottom: 20px;
@@ -18,92 +19,103 @@
 }
 
 .scorestringtest {
-    border:1px solid #ccc;
-    border-radius:5px;
-    padding:0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5em;
 }
+
 .scorestringinput {
-    width:100%;
+    width: 100%;
 }
 
 .file-container {
-    border:1px solid #ccc;
-    border-radius:5px;
-    display:flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
 }
 
 .content {
-    padding-top:30px;
-    padding-left:2em;
+    padding-top: 30px;
+    padding-left: 2em;
 }
 
 .processButton {
-    background:#1000ff;
-    color:#fff;
-    padding:0.5em;
+    background: #1000ff;
+    color: #fff;
+    padding: 0.5em;
     border: #0a009a;
-    border-radius:10px;
-    text-decoration:none;
-} 
-.processButton:hover {
-    text-decoration:none;
-    color:#fff;
-    transition:0.3s;
-    background:#4f43ff;
-
+    border-radius: 10px;
+    text-decoration: none;
 }
+
+    .processButton:hover {
+        text-decoration: none;
+        color: #fff;
+        transition: 0.3s;
+        background: #4f43ff;
+    }
+
 .scoretable {
-    width:100%;
-}
-.scoretable th {
-    background:#01008f;
-    color:#fff;
-}
-.scoretable td,th {
-    padding:0.5em;
-    border:1px solid #ccc;
-    
+    width: 100%;
 }
 
-.scoreselectContainer {    
-    display:flex;
+    .scoretable th {
+        background: #01008f;
+        color: #fff;
+    }
+
+    .scoretable td, th {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+    }
+
+.scoreselectContainer {
+    display: flex;
 }
 
-.scoreselectContainer div {
-    margin:2em;
-}
+    .scoreselectContainer div {
+        margin: 2em;
+    }
 
 .playerinfo-container {
-    display:flex;
+    display: flex;
 }
-.playerinfo-container div {
-    padding:1em;
-}
+
+    .playerinfo-container div {
+        padding: 1em;
+    }
 
 .playerlist {
-}
-.playerlist ul {
-    list-style:none;
-    padding:0;    
-}
-.playerlist li {
-    border:1px solid #ccc;
-    border-radius:5px;
-    
-    text-decoration:none;    
-}
-.playerlist li a {
-    padding:0.3em;
-    text-decoration:none;
-color:#000;    
-    display: block;
-}
-.playerlist li:not(.active) a:hover {
-    transition:0.2s;
-    background: #1000ff;
-    color:#fff;
-}
-.playerlist .active {
-    background:#ffa10e;
+        border:1px solid #ccc;
+        border-radius:5px;
+
 }
 
+    .playerlist ul {
+        min-width: 100px;
+        list-style: none;
+        padding: 0;
+    }
+
+    .playerlist li {
+        
+        
+        text-decoration: none;
+    }
+
+        .playerlist li a {
+            padding: 0.3em;
+            text-decoration: none;
+            color: #000;
+            display: block;
+        }
+
+        .playerlist li:not(.active) a:hover {
+            transition: 0.2s;
+            background: #1000ff;
+            color: #fff;
+        }
+
+    .playerlist .active {
+        background: #ffa10e;
+    }

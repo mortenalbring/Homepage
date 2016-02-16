@@ -1,19 +1,24 @@
 ﻿
+
 <div class="playerinfo-container">
-    <div class="playerlist">
-        <strong>Players</strong>
+    <div ng-if="!loading">
+        <div class="playerlist">
+            <strong>Players</strong>
 
-        <ul>
-            <li>
-                <a href="#">All</a>
-            </li>
-            <li ng-repeat="player in players" ng-class="{'active' : player.ID == selectedPlayer.ID}">
-                <a href="#player/{{player.ID}}"> {{player.Name | titlecase}}</a>
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <a href="#">All</a>
+                </li>
+                <li ng-repeat="player in players" ng-class="{'active' : player.ID == selectedPlayer.ID}">
+                    <a href="#player/{{player.ID}}"> {{player.Name | titlecase}}</a>
+                </li>
+            </ul>
 
+        </div>
     </div>
-    <div>
+    <div ng-if="!loading">
+
+
 
         <h1>
             {{selectedPlayer.Name | titlecase}}
@@ -26,28 +31,29 @@
 
         <table class="table table-condensed table-bordered table-striped">
             <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Lane</th>
-                    <th>Game Number</th>
-                    <th>Score string</th>
-                    <th>Score</th>
-                </tr>
+            <tr>
+                <th>Date</th>
+                <th>Lane</th>
+                <th>Game Number</th>
+                <th>Score string</th>
+                <th>Score</th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
-                    <td ng-bind="sessionPropertyFor(selectedPlayerScore,'Date')"></td>
-                    <td ng-bind="gamePropertyFor(selectedPlayerScore,'Lane')"></td>
-                    <td ng-bind="gamePropertyFor(selectedPlayerScore,'GameNumber')"></td>
-                    <td>
-                        {{selectedPlayerScore.Scorestring}}
-                    </td>
-                    <td>
-                        {{selectedPlayerScore.Score}}
-                    </td>
-                </tr>
+            <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
+                <td ng-bind="sessionPropertyFor(selectedPlayerScore,'Date')"></td>
+                <td ng-bind="gamePropertyFor(selectedPlayerScore,'Lane')"></td>
+                <td ng-bind="gamePropertyFor(selectedPlayerScore,'GameNumber')"></td>
+                <td>
+                    {{selectedPlayerScore.Scorestring}}
+                </td>
+                <td>
+                    {{selectedPlayerScore.Score}}
+                </td>
+            </tr>
             </tbody>
 
         </table>
     </div>
+    <div ng-if="loading">Loading data.. <i class="fa fa-spin fa-spinner"></i> </div>
 </div>

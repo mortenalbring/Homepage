@@ -1,4 +1,4 @@
-﻿var amenhokit = angular.module("amenhokit", ["ngFileUpload", "ngRoute"]);
+﻿var amenhokit = angular.module("amenhokit", ["angularMoment","ngFileUpload", "ngRoute"]);
 amenhokit.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/upload', {

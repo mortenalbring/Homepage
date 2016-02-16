@@ -1,0 +1,92 @@
+﻿
+
+<div class="playerinfo-container">
+    <div ng-if="!loading">
+        <div class="playerlist">
+            <strong>Players</strong>
+
+            <ul>
+                <li>
+                    <a href="#">All</a>
+                </li>
+                <li ng-repeat="player in players" ng-class="{'active' : player.ID == selectedPlayer.ID}">
+                    <a href="#player/{{player.ID}}"> {{player.Name | titlecase}}</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div ng-if="!loading">       
+        <h1>
+            {{selectedPlayer.Name | titlecase}}
+        </h1>
+
+        <div>
+            <span>{{selectedPlayerScores.length}} scores recorded</span>
+            <br/>
+            <span>Highest score on record is {{highestgame.Score}}, on {{highestgame.Date  | amDateFormat: 'dddd, MMMM Do YYYY'}}.</span>
+            <br/>
+            <span>Average score is {{averageScore}}</span>
+        </div>
+        
+        <h2>Scores by lane</h2>
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Lane</th>
+                <th>Times played on</th>
+                <th>Average score for lane</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="lanescore in lanestotals | orderBy:'-Average'">
+                <td>
+                    {{lanescore.Lane}}
+                </td>
+                <td>
+                    {{lanescore.Count}}
+                </td>
+                <td>
+                    {{lanescore.Average}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>All Scores</h2>
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Lane</th>
+                <th>Game Number</th>
+                <th>Score string</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
+                <td>
+                    <span title="{{selectedPlayerScore.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{selectedPlayerScore.Date | amCalendar}}</span>
+                                        
+                </td>
+                
+                <td>
+                    {{selectedPlayerScore.Lane}}
+                </td>                
+                <td>
+                    {{selectedPlayerScore.GameNumber}}
+                </td>
+                <td>
+                    {{selectedPlayerScore.Scorestring}}
+                </td>
+                <td>
+                    {{selectedPlayerScore.Score}}
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div ng-if="loading">Loading data.. <i class="fa fa-spin fa-spinner"></i> </div>
+</div>

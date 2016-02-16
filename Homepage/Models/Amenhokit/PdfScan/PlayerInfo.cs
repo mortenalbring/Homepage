@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Homepage.Models.Amenhokit
+namespace Homepage.Models.Amenhokit.PdfScan
 {
     public class PlayerInfo
     {
@@ -22,6 +19,9 @@ namespace Homepage.Models.Amenhokit
             this.NumberOfStrikes = numberOfStrikes;
             var spl = this.ScoreString.Split(' ');
             var firstelem = spl.First();
+
+            this.Name = firstelem.ToLower();
+
             var rest = string.Join("", spl.Skip(1));
             rest = rest.Replace('-', '0');
 

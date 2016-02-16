@@ -1,0 +1,33 @@
+﻿
+
+
+<div class="scoreselectContainer">    
+   <div>        
+        <div ng-repeat="game in gameInfo">
+            <span>{{game.Date}}</span> - <strong>Game {{game.GameNumber}}</strong> - <span>Lane {{game.Lane}}</span>
+            <table class="scoretable">
+                <thead>
+                <tr>
+                    <th>Score string</th>
+                    <th>Score</th>
+                    <th>Strikes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="player in game.PlayerScores">
+                    <td>
+                        {{player.ScoreString}}
+                    </td>
+                    <td>
+                        {{player.Score}}
+                    </td>
+                    <td>
+                        {{player.NumberOfStrikes}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

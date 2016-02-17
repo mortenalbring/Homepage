@@ -1,4 +1,4 @@
-﻿var UploadController = function (FileUploadService, $scope) {
+﻿var UploadController = function (FileUploadService, AjaxService,$scope) {
     $scope.completedFiles = [];
 
     $scope.existingFiles = FileUploadService.UploadedFiles;
@@ -8,6 +8,15 @@
         }
         return false;
     }
+
+    $scope.updateDatabase = function() {
+        AjaxService.UpdateDatabase().then(function(response) {
+
+            var xx = 42;
+        });
+
+    }
+
     $scope.upload = function (files, event, rejectedFiles) {
 
         for (var r in rejectedFiles) {

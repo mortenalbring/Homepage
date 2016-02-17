@@ -1,6 +1,13 @@
 ﻿var AjaxService = function($http) {
     var axj = {};
 
+    axj.UpdateDatabase = function() {
+        return $http({
+            method: 'GET',
+            url: '/Amenhokit/UpdateDatabase'
+        });
+    }
+
     axj.ListSessions = function() {
         return $http({
             method: 'GET',

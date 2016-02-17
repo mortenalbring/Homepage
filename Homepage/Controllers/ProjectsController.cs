@@ -25,45 +25,9 @@ namespace Homepage.Controllers
         }
 
         public ActionResult ProjectAmenhokit()
-        {
-
-            var files = Directory.GetFiles(Server.MapPath("/tempfiles"));
-
-            var allfiles = Directory.GetFiles(Server.MapPath("/tempfiles"), "*", SearchOption.AllDirectories);
-
-            var amenhokitRepository = new AmenhokitRepository();
-
-            amenhokitRepository.UpdatePlayerScoresFromAliases();
-
-            return View();
-
-            amenhokitRepository.WipeTables();
-            
-
-            foreach (var file in allfiles)
-            {
-                var gameDetails = amenhokitRepository.ReadFromPdf(file);
-
-                var virtualPath = GetVirtualPath(file);
-
-                amenhokitRepository.ConstructDatabaseObjects(gameDetails, virtualPath);                
-            }
-
-            amenhokitRepository.UpdatePlayerScoresFromAliases();
-
-            return View();
-        }
-
-        public string GetVirtualPath(string physicalPath)
-        {
-            if (!physicalPath.StartsWith(HttpContext.Request.PhysicalApplicationPath))
-            {
-                throw new InvalidOperationException("Physical path is not within the application root");
-            }
-
-            return "~/" + physicalPath.Substring(HttpContext.Request.PhysicalApplicationPath.Length)
-                  .Replace("\\", "/");
-        }
+        {            
+            return View();          
+        }     
 
 
         [HttpGet]

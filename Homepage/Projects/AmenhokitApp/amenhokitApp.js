@@ -28,7 +28,7 @@ amenhokit.service('DataService', ["$q", "AjaxService", DataService]);
 amenhokit.controller("HomeController", HomeController);
 amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataService", DisplayController]);
 
-amenhokit.controller("UploadController", ["FileUploadService", "$scope", UploadController]);
+amenhokit.controller("UploadController", ["FileUploadService","AjaxService","$scope", UploadController]);
 
 
 amenhokit.directive('drPlayerList', function() {

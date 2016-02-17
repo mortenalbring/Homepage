@@ -1,4 +1,12 @@
-﻿.upload-container {
+﻿.amenhokit-container {
+    display: flex;
+}
+
+    .amenhokit-container div {
+        padding: 1em;
+    }
+
+.upload-container {
     display: flex;
     padding-left: 1em;
     padding-right: 1em;
@@ -77,13 +85,7 @@
         margin: 2em;
     }
 
-.playerinfo-container {
-    display: flex;
-}
 
-    .playerinfo-container div {
-        padding: 1em;
-    }
 
 .playerlist {
         border:1px solid #ccc;

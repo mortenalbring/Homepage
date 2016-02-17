@@ -27,6 +27,16 @@ amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataServic
 amenhokit.controller("UploadController", ["FileUploadService", "$scope", UploadController]);
 
 
+amenhokit.directive('drPlayerList', function() {
+    return {        
+        scope: {
+            players: '=players',
+            selectedPlayer: '=selectedPlayer'
+        },
+        templateUrl: '/Projects/AmenhokitApp/Templates/drPlayerList.html'
+    }
+})
+
 amenhokit.filter('titlecase', function () {
     return function (s) {
         s = (s === undefined || s === null) ? '' : s;

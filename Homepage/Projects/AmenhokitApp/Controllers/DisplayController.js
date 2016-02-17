@@ -41,7 +41,7 @@
     
 
     var finalCallback = function () {
-        console.log('done');
+        $scope.loading = false;
     }
 
     function calculateStats() {

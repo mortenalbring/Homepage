@@ -1,20 +1,8 @@
 ﻿
 
-<div class="playerinfo-container">
+<div class="amenhokit-container">
     <div ng-if="!loading">
-        <div class="playerlist">
-            <strong>Players</strong>
-
-            <ul>
-                <li>
-                    <a href="#">All</a>
-                </li>
-                <li ng-repeat="player in players" ng-class="{'active' : player.ID == selectedPlayer.ID}">
-                    <a href="#player/{{player.ID}}"> {{player.Name | titlecase}}</a>
-                </li>
-            </ul>
-
-        </div>
+        <dr-player-list players="players" selected-player="selectedPlayer"></dr-player-list>      
     </div>
     <div ng-if="!loading">       
         <h1>

@@ -1,0 +1,13 @@
+﻿<div class="playerlist">
+    <strong>Players</strong>
+
+    <ul>
+        <li>
+            <a href="#">All</a>
+        </li>
+        <li ng-repeat="player in players" ng-class="{'active' : player.ID == selectedPlayer.ID}">
+            <a href="#player/{{player.ID}}"> {{player.Name | titlecase}}</a>
+        </li>
+    </ul>
+
+</div>

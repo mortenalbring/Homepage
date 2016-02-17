@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Homepage.Models;
 using Homepage.Models.Amenhokit.Database;
+using Homepage.Repository;
 
 namespace Homepage.Controllers
 {
@@ -81,6 +83,47 @@ namespace Homepage.Controllers
             {
                 return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
+        }
+
+
+        [HttpGet]
+        public JsonResult UpdateDatabase()
+        {
+            try
+            {
+                var allfiles = Directory.GetFiles(Server.MapPath("/tempfiles"), "*", SearchOption.AllDirectories);
+                var amenhokitRepository = new AmenhokitRepository();
+                var sessionList = new List<Session>();
+                foreach (var file in allfiles)
+                {
+                    var gameDetails = amenhokitRepository.ReadFromPdf(file);
+
+                    var virtualPath = GetVirtualPath(file);
+
+                    var sessions = amenhokitRepository.ConstructDatabaseObjects(gameDetails, virtualPath);
+                    sessionList.AddRange(sessions);
+                }
+
+                amenhokitRepository.UpdatePlayerScoresFromAliases();
+
+                return Json(new { success = true, sessions = sessionList }, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public string GetVirtualPath(string physicalPath)
+        {
+            if (!physicalPath.StartsWith(HttpContext.Request.PhysicalApplicationPath))
+            {
+                throw new InvalidOperationException("Physical path is not within the application root");
+            }
+
+            return "~/" + physicalPath.Substring(HttpContext.Request.PhysicalApplicationPath.Length)
+                  .Replace("\\", "/");
         }
 
     }

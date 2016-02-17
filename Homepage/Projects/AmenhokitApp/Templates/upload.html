@@ -77,20 +77,24 @@
 
         <table class="table table-bordered table-hover" ng-show="completedFiles.length > 0">
             <thead>
-                <tr>
-                    <th>
-                        Completed uploads
-                    </th>
-                </tr>
+            <tr>
+                <th>
+                    Completed uploads
+                </th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="completedFile in completedFiles">
-                    <td>
-                        {{completedFile}}
-                    </td>
-                </tr>
+            <tr ng-repeat="completedFile in completedFiles">
+                <td>
+                    {{completedFile}}
+                </td>
+            </tr>
             </tbody>
         </table>
+
+        <button class="btn btn-primary" ng-click="updateDatabase()">
+            Update database
+        </button>
 
     </div>
 </div>

@@ -15,24 +15,26 @@ namespace Homepage.Repository
 {
     public class AmenhokitRepository
     {
-        public void ConstructDatabaseObjects(List<PdfGameInfo> gameInfos, string PdfDocumentPath)
+        public List<Session> ConstructDatabaseObjects(List<PdfGameInfo> gameInfos, string PdfDocumentPath)
         {
-            var i = 0;
+            var sessionList = new List<Session>();
+
             foreach (var gameInfo in gameInfos)
             {
-                Debug.WriteLine(i + "/" + gameInfos.Count);
-                i++;
                 var session = SaveOrReturnSession(gameInfo, PdfDocumentPath);
+                sessionList.Add(session);
                 var game = SaveOrReturnGame(gameInfo, session);
 
                 foreach (var playerInfo in gameInfo.PlayerScores)
                 {
                     var player = SaveOrReturnPlayer(playerInfo);
-                    var pscore = SavePlayerScore(playerInfo, game, session, player);
+                    SavePlayerScore(playerInfo, game, session, player);
                 }
 
 
             }
+
+            return sessionList.Distinct().ToList();
 
         }
 
@@ -76,6 +78,10 @@ namespace Homepage.Repository
                 db.SaveChanges();
             }           
         }
+
+
+
+       
 
         private PlayerScore SavePlayerScore(PlayerInfo playerInfo, Game game, Session session, Player player)
         {

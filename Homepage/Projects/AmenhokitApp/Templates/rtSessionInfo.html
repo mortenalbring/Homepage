@@ -1,0 +1,59 @@
+﻿
+
+<div class="amenhokit-container">
+    <div ng-if="!loading">
+        <dr-player-list players="players" active-players="activePlayers"></dr-player-list>
+    </div>
+
+    <div ng-if="!loading">        
+        <h1>{{selectedSession.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}</h1>
+
+        <div>
+            {{activePlayers.length}} players for {{selectedSession.Games.length}} games
+        </div>
+
+        <div>
+            <a href="{{selectedSession.PdfDocument}}">Download original scoresheet</a>
+        </div>
+
+        <div ng-repeat="game in selectedSession.Games">
+            
+
+            Game {{game.GameNumber}} on lane {{game.Lane}}
+
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Score string
+                        </th>
+                        <th>
+                            Score
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr ng-repeat="score in game.Scores | orderBy:'-Score'">
+                        <td>
+                            <a href="#player/{{score.Player}}">{{score.Name | titlecase}}</a>
+                        </td>
+                        <td>
+                            {{score.Scorestring}}
+                        </td>
+                        <td>
+                            {{score.Score}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+  
+    </div>
+    <div ng-if="loading">Loading data...</div>
+
+</div>

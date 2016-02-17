@@ -112,12 +112,18 @@
             display: block;
         }
 
-        .playerlist li:not(.active) a:hover {
+        .playerlist li:not(.selected) a:hover {
             transition: 0.2s;
             background: #1000ff;
             color: #fff;
         }
 
-    .playerlist .active {
+    .playerlist .selected {
         background: #ffa10e;
+        font-weight: bold;
     }
+        .playerlist .active {
+        background: #fffece;
+            font-weight: bold;
+    }
+

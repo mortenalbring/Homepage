@@ -352,9 +352,11 @@
     <Content Include="Projects\AmenhokitApp\Templates\display.html" />
     <Content Include="Projects\AmenhokitApp\Controllers\DisplayController.js" />
     <Content Include="Projects\AmenhokitApp\Services\FileUploadService.js" />
+    <Content Include="Projects\AmenhokitApp\Templates\drPlayerList.html" />
     <Content Include="Projects\AmenhokitApp\Templates\home.html" />
     <Content Include="Projects\AmenhokitApp\Controllers\HomeController.js" />
     <Content Include="Projects\AmenhokitApp\Templates\playerinfo.html" />
+    <Content Include="Projects\AmenhokitApp\Templates\rtSessionInfo.html" />
     <Content Include="Projects\AmenhokitApp\Templates\upload.html" />
     <Content Include="Projects\AmenhokitApp\Controllers\UploadController.js" />
     <Content Include="Projects\AngularClicker\angular.min.js" />

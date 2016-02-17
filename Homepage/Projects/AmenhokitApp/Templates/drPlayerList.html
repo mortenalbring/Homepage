@@ -5,9 +5,10 @@
         <li>
             <a href="#">All</a>
         </li>
-        <li ng-repeat="player in players" ng-class="{'active' : player.ID == selectedPlayer.ID}">
+        <li ng-repeat="player in players"
+            ng-class="{'selected' : player.ID == selectedPlayer.ID,
+            'active' : activePlayers.indexOf(player.ID) > -1}">
             <a href="#player/{{player.ID}}"> {{player.Name | titlecase}}</a>
         </li>
     </ul>
-
 </div>

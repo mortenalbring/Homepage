@@ -25,6 +25,8 @@
 
                     var newScore = {};
                     newScore.ID = scores[j].ID;
+                    newScore.Session = scores[j].Session;
+                    newScore.Game = scores[j].Game;
                     newScore.Date = matchingGame[0].Date;
                     newScore.Lane = matchingGame[0].Lane;
                     newScore.GameNumber = matchingGame[0].GameNumber;
@@ -186,7 +188,7 @@
                     var newsession = {};
                     newsession.ID = sessions[i].ID;
                     newsession.Date = new Date(parseInt(sessions[i].Date.substr(6)));
-                    newsession.PdfDocument = sessions[i].PdfDocument;
+                    newsession.PdfDocument = sessions[i].PdfDocument.replace("~","");
                     newsession.Games = [];
                     self.sessions.push(newsession);
 

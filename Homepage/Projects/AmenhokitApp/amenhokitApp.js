@@ -13,6 +13,10 @@ amenhokit.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '/Projects/AmenhokitApp/Templates/playerinfo.html',
             controller: 'DisplayController'
         })
+         .when('/session/:sessionId', {
+             templateUrl: '/Projects/AmenhokitApp/Templates/rtSessionInfo.html',
+             controller: 'DisplayController'
+         })
         .otherwise({
             templateUrl: '/Projects/AmenhokitApp/Templates/display.html',
             controller: 'DisplayController'
@@ -31,7 +35,8 @@ amenhokit.directive('drPlayerList', function() {
     return {        
         scope: {
             players: '=players',
-            selectedPlayer: '=selectedPlayer'
+            selectedPlayer: '=selectedPlayer',
+            activePlayers: '=activePlayers'
         },
         templateUrl: '/Projects/AmenhokitApp/Templates/drPlayerList.html'
     }

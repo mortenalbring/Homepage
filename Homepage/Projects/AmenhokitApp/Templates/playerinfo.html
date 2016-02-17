@@ -55,7 +55,10 @@
             <tbody>
             <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
                 <td>
-                    <span title="{{selectedPlayerScore.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{selectedPlayerScore.Date | amCalendar}}</span>
+                    <a href="#/session/{{selectedPlayerScore.Session}}">
+
+                        <span title="{{selectedPlayerScore.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{selectedPlayerScore.Date | amCalendar}}</span>
+                    </a>
                                         
                 </td>
                 

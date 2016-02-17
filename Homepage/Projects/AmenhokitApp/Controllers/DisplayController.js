@@ -1,44 +1,10 @@
-﻿var DisplayController = function ($routeParams, $scope, DataService) {
-
-    function getGameFor(playerScore) {
-        var result = $scope.games.filter(function (e) {
-            if (e.Scores.indexOf(playerScore) !== -1) {
-                return e;
-            }
-
-        });
-
-        if ((result) && (result.length == 1)) {
-
-            return result[0];
-        }
-        return null;
-    }
-
-    function getSessionFor(game) {
-        var result = $scope.sessions.filter(function (e) {
-            if (e.Games.indexOf(game) !== -1) {
-                return e;
-            }
-
-        });
-
-        if ((result) && (result.length == 1)) {
-
-            return result[0];
-        }
-        return null;
-    }
-
-
-    
-
+﻿var DisplayController = function ($routeParams, $scope, DataService) { 
     $scope.sessions = DataService.sessions;
     $scope.games = DataService.games;
     $scope.playerscores = DataService.playerscores;
     $scope.players = DataService.players;
     $scope.loading = false;
-    
+
 
     var finalCallback = function () {
         $scope.loading = false;
@@ -92,7 +58,7 @@
             if ((selectedPlayer) && (selectedPlayer.length == 1)) {
                 $scope.selectedPlayer = selectedPlayer[0];
             }
-            
+
 
             $scope.selectedPlayerScores = $scope.playerscores.filter(function (e) {
                 return e.Player == $routeParams.playerId;
@@ -104,18 +70,45 @@
 
             $scope.loading = false;
         }
+    }
+    if ($routeParams.sessionId) {
 
+        finalCallback = function () {
 
+            var selectedSession = $scope.sessions.filter(function (e) {
+                return e.ID == $routeParams.sessionId;
+            });
+            if (selectedSession && selectedSession.length === 1) {
+                $scope.selectedSession = selectedSession[0];
+                $scope.activePlayers = [];
+                
+                for (var i = 0; i < $scope.selectedSession.Games.length; i++) {
+                    for (var j = 0; j < $scope.selectedSession.Games[i].Scores.length; j++) {
+
+                        var playerId = $scope.selectedSession.Games[i].Scores[j].Player;
+
+                        var indx = $scope.activePlayers.indexOf(playerId);
+                        if (indx === -1) {
+                            $scope.activePlayers.push(playerId);
+                        }
+                    }
+                }                               
+
+            }
+
+            $scope.loading = false;
+        }
     }
 
-    if ($scope.sessions.length == 0) {
+
+    if ($scope.sessions.length === 0) {
         $scope.loading = true;
         DataService.GetAllData(finalCallback);
     } else {
         finalCallback();
     }
 
-  
+
 
 
 

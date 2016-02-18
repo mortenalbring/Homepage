@@ -1,13 +1,17 @@
-﻿var drGraph = function($rootScope, $window) {
+﻿var drGraph = function ($rootScope, $window,$location) {
     return {
         restrict: "EA",
         template: "<svg id='graph-container'></svg>" +
-            "<br>{{selectedScore}}",
-        link: function(scope, elem, attrs) {
+            "<br>" +
+            "<div ng-if='selected'>" +
+            "{{selected.ID}} + Score : {{selected.Score}}, Lane: {{selected.Lane}} " +
+            "</div>",
 
-            scope.selectedScore = 0;
+        link: function (scope, elem, attrs) {
 
-            var salesDataToPlot = scope[attrs.chartData];            
+            scope.selected = null;
+
+            var plotData = scope[attrs.chartData];
             var pathClass = "path";
             var xScale, yScale, xAxisGen, yAxisGen, lineFun;
 
@@ -15,21 +19,50 @@
             var rawSvg = elem.find("svg")[0];
             var svg = d3.select(rawSvg);
 
-            var margin = { top: 30, right: 20, bottom: 60, left: 50 },
+            var margin = { top: 30, right: 50, bottom: 60, left: 50 },
                 width = 600 - margin.left - margin.right,
                 height = 270 - margin.top - margin.bottom;
 
+            function calculateAverages() {
+
+                var datesList = [];
+
+                for (var i = 0; i < plotData.length; i++) {
+                    var indx = datesList.indexOf(plotData[i].Date);
+                    if (indx == -1) {
+                        datesList.push(plotData[i].Date);
+                    }
+                }
+
+                var averageData = [];
+                for (var j = 0; j < datesList.length; j++) {
+                    var matchingDates = plotData.filter(function (e) {
+                        return e.Date == datesList[j];
+                    });
+
+                    var sum = 0;
+                    for (var k = 0; k < matchingDates.length; k++) {
+                        sum = sum + matchingDates[k].Score;
+                    }
+                    var average = sum / matchingDates.length;
+
+                    averageData.push({ Date: datesList[j], AverageScore: average });
+                }
+
+                return averageData;
+            }
+
+            var averageData = calculateAverages();
+
             function setChartParameters(container) {
-
-
                 xScale = d3.time.scale()
-                    .domain([salesDataToPlot[0].Date, salesDataToPlot[salesDataToPlot.length - 1].Date])
+                    .domain([plotData[0].Date, plotData[plotData.length - 1].Date])
                     .range([0, width]);
 
 
                 yScale = d3.scale.linear()
                     .domain([
-                        0, d3.max(salesDataToPlot, function(d) {
+                        0, d3.max(plotData, function (d) {
                             return d.Score;
                         })
                     ])
@@ -46,27 +79,33 @@
                     .ticks(5);
 
                 lineFun = d3.svg.line()
-                    .x(function(d) {
+                    .x(function (d) {
                         return xScale(d.Date);
                     })
-                    .y(function(d) {
-                        return yScale(d.Score);
+                    .y(function (d) {
+                        return yScale(d.AverageScore);
                     })
                     .interpolate("cardinal");
 
                 var points = container.selectAll(".point")
-                    .data(salesDataToPlot)
+                    .data(plotData)
                     .enter().append("svg:circle")
                     .attr("stroke", "black")
-                    .attr("fill", function(d, i) { return "black" })
-                    .attr("cx", function(d, i) { return xScale(d.Date) })
-                    .attr("cy", function(d, i) { return yScale(d.Score) })
-                    .attr("r", function(d, i) { return 3 })
-                    .on("mouseover", function(d) {
+                    //.attr("fill", function(d, i) { return "blue" })
+                    .attr("cx", function (d, i) { return xScale(d.Date) })
+                    .attr("cy", function (d, i) { return yScale(d.Score) })
+                    .attr("class", "data-circle")
+                    .attr("r", function (d, i) { return 3 })
+                    .on("click", function(d) {
+                        var xx = 42;
                         $rootScope.$apply(function() {
+                            $location.path("/session/" + d.Session);
+                        });
 
-
-                            scope.selectedScore = d.Score;
+                    })
+                    .on("mouseover", function (d) {
+                        $rootScope.$apply(function () {
+                            scope.selected = d;
                         });
                     });;
             }
@@ -95,12 +134,17 @@
 
                 container.append("path")
                     .attr({
-                        d: lineFun(salesDataToPlot),
-                        "stroke": "blue",
+                        d: lineFun(averageData),
                         "stroke-width": 2,
                         "fill": "none",
                         "class": pathClass
-                    });
+                    })
+                    .attr("opacity", "0")
+                    .attr("stroke", "blue")
+                .transition().attr("opacity", "1").duration(1000).delay(100)
+
+                
+                ;
             }
 
             drawLineChart();

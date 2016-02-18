@@ -138,3 +138,11 @@
     padding:1em;
     border:1px solid #ccc;
 }
+
+.data-circle {
+    fill:yellow;
+    cursor:pointer;
+}
+.data-circle:hover {
+    fill:orange;
+}

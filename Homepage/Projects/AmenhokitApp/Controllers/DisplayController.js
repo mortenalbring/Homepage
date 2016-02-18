@@ -1,4 +1,4 @@
-﻿var DisplayController = function ($routeParams, $scope, DataService) { 
+﻿var DisplayController = function ($routeParams, $scope, DataService) {
     $scope.sessions = DataService.sessions;
     $scope.games = DataService.games;
     $scope.playerscores = DataService.playerscores;
@@ -68,17 +68,14 @@
 
             calculateStats();
 
-            $scope.chartData =[];
+            $scope.chartData = [];
 
             for (var i = 0; i < $scope.selectedPlayerScores.length; i++) {
 
-                $scope.chartData.push({
-                    Date: $scope.selectedPlayerScores[i].Date,
-                    Score: $scope.selectedPlayerScores[i].Score
-                });
+                $scope.chartData.push($scope.selectedPlayerScores[i]);
             }
 
-            $scope.chartData.sort(function(a, b) {
+            $scope.chartData.sort(function (a, b) {
                 return new Date(b.Date) - new Date(a.Date);
             });
 
@@ -95,7 +92,7 @@
             if (selectedSession && selectedSession.length === 1) {
                 $scope.selectedSession = selectedSession[0];
                 $scope.activePlayers = [];
-                
+
                 for (var i = 0; i < $scope.selectedSession.Games.length; i++) {
                     for (var j = 0; j < $scope.selectedSession.Games[i].Scores.length; j++) {
 
@@ -106,7 +103,7 @@
                             $scope.activePlayers.push(playerId);
                         }
                     }
-                }                               
+                }
 
             }
 

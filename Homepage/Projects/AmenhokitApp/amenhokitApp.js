@@ -35,7 +35,7 @@ amenhokit.controller("UploadController", ["FileUploadService","AjaxService","$sc
 amenhokit.directive('drGraph', function($window) {
     return {
         restrict: "EA",
-        template: "<svg width='850' height='200'></svg>",
+        template: "<svg id='graph-container'></svg>",
         link: function(scope, elem, attrs) {
             var salesDataToPlot = scope[attrs.chartData];
             var padding = 20;
@@ -46,21 +46,29 @@ amenhokit.directive('drGraph', function($window) {
             var rawSvg = elem.find("svg")[0];
             var svg = d3.select(rawSvg);
 
-            function setChartParameters() {
-                xScale = d3.scale.linear()
-                           .domain([salesDataToPlot[0].hour, salesDataToPlot[salesDataToPlot.length - 1].hour])
+            var margin = { top: 30, right: 20, bottom: 30, left: 50 },
+    width = 600 - margin.left - margin.right,
+    height = 270 - margin.top - margin.bottom;
+
+            function setChartParameters(container) {
+                
+
+                
+                xScale = d3.time.scale()
+                           .domain([salesDataToPlot[0].Date, salesDataToPlot[salesDataToPlot.length - 1].Date])
                            .range([padding + 5, rawSvg.clientWidth - padding]);
 
+                
                 yScale = d3.scale.linear()
                   .domain([0, d3.max(salesDataToPlot, function (d) {
-                      return d.sales;
-                  })])
+                      return d.Score;
+                  })+10])
                .range([rawSvg.clientHeight - padding, 0]);
 
                 xAxisGen = d3.svg.axis()
                              .scale(xScale)
                              .orient("bottom")
-                             .ticks(salesDataToPlot.length - 1);
+                             .ticks(5);
 
                 yAxisGen = d3.svg.axis()
                              .scale(yScale)
@@ -69,29 +77,45 @@ amenhokit.directive('drGraph', function($window) {
 
                 lineFun = d3.svg.line()
                             .x(function (d) {
-                                return xScale(d.hour);
+                                return xScale(d.Date);
                             })
                             .y(function (d) {
-                                return yScale(d.sales);
+                                return yScale(d.Score);
                             })
-                            .interpolate("basis");
+                            .interpolate("cardinal");
+
+                var points = container.selectAll(".point")
+                .data(salesDataToPlot)
+                .enter().append("svg:circle")
+                .attr("stroke", "black")
+                   .attr("fill", function (d, i) { return "black" })
+         .attr("cx", function (d, i) { return xScale(d.Date) })
+         .attr("cy", function (d, i) { return yScale(d.Score) })
+         .attr("r", function (d, i) { return 3 });
             }
 
             function drawLineChart() {
 
-                setChartParameters();
+                
+                svg.attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom);
+                    
+                var container = svg.append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+             
+                setChartParameters(container);
 
-                svg.append("svg:g")
+                container.append("g")
                    .attr("class", "x axis")
-                   .attr("transform", "translate(0,180)")
+                   .attr("transform", "translate(0," + height + ")")
                    .call(xAxisGen);
 
-                svg.append("svg:g")
-                   .attr("class", "y axis")
-                   .attr("transform", "translate(20,0)")
+                container.append("g")
+                   .attr("class", "y axis")                   
                    .call(yAxisGen);
 
-                svg.append("svg:path")
+                container.append("path")
                    .attr({
                        d: lineFun(salesDataToPlot),
                        "stroke": "blue",
@@ -109,10 +133,7 @@ amenhokit.directive('drGraph', function($window) {
 
 
 amenhokit.directive('drPlayerList', function () {
-
-
-    return {
-        
+    return {        
         scope: {
             players: '=players',
             selectedPlayer: '=selectedPlayer',

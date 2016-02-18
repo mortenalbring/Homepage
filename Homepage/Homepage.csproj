@@ -345,11 +345,11 @@
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-home.less" />
+    <Content Include="Projects\AmenhokitApp\Directives\drGraph.js" />
     <Content Include="Projects\AmenhokitApp\Services\AjaxService.js" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
     <Content Include="Projects\AmenhokitApp\Services\DataService.js" />
-    <Content Include="Projects\AmenhokitApp\Services\GraphService.js" />
     <Content Include="Projects\AmenhokitApp\Templates\display.html" />
     <Content Include="Projects\AmenhokitApp\Controllers\DisplayController.js" />
     <Content Include="Projects\AmenhokitApp\Services\FileUploadService.js" />

@@ -5,7 +5,7 @@
     $scope.players = DataService.players;
     $scope.loading = false;
 
-    $scope.salesData =[
+    $scope.chartData =[
     {
         hour: 1, sales : 54
         },
@@ -29,61 +29,6 @@
         }
         ];
 
-    function drawGraph() {
-
-    var m =[10, 80, 25, 80] // margins: top, left, bottom, right
-    var w = $(window).width() - m[1] -m[3] // width
-    var h = 150 -m[0]-m[2] // height
-
-        var x_data = [1, 2, 3, 4, 5, 5.5, 7, 8, 9, 12];
-        var y_data =[1, 5, 4, 6, 4, 3, 5, 6, 7, 8];
-
-    var x = d3.scale.linear().domain([0, d3.max(x_data)]).range([0, w])
-    var y = d3.scale.linear().domain([0, d3.max(y_data)]).range([h, 0])
-
-    var line = d3.svg.line()
-        .x(function(d, i) {
-            return x(d)
-        })
-        .y(function(d, i) {
-            return y(y_data[i])
-            })
-
-    var test1 = angular.element('#graph-container');
-
-    var test2 = $('#graph-container');
-
-    var test3 = angular.element(document.getElementById('graph-container'));
-
-        var test4 = angular.element.find('#graph-container');
-
-
-        
-
-        var xx = 42;
-
-    var graph = d3.select("#graph-container").append("svg:svg")
-        .attr("width", w +m[1]+m[3])
-        .attr("height", h +m[0]+m[2])
-        .append("svg:g")
-        .attr("transform", "translate(" +m[3]+ "," +m[0]+ ")")
-
-    var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
-    graph.append("svg:g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," +(h) + ")")
-        .call(xAxis);
-
-            // Add the y-axis
-            var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
-            graph.append("svg:g")
-                .attr("class", "y axis")
-        .attr("transform", "translate(-25,0)")
-        .call(yAxisLeft);
-
-    graph.append("svg:path").attr("d", line(x_data))
-        .attr("stroke", "#ff0000")
-    }
 
 
     var finalCallback = function () {
@@ -147,7 +92,19 @@
 
             calculateStats();
 
-            drawGraph();
+            $scope.chartData =[];
+
+            for (var i = 0; i < $scope.selectedPlayerScores.length; i++) {
+
+                $scope.chartData.push({
+                    Date: $scope.selectedPlayerScores[i].Date,
+                    Score: $scope.selectedPlayerScores[i].Score
+                });
+            }
+
+            $scope.chartData.sort(function(a, b) {
+                return new Date(b.Date) - new Date(a.Date);
+            });
 
             $scope.loading = false;
         }

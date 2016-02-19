@@ -31,7 +31,10 @@ amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataServic
 amenhokit.controller("UploadController", ["FileUploadService","AjaxService","$scope", UploadController]);
 
 
-amenhokit.directive('drPlayerList', function() {
+amenhokit.directive('drGraph', drGraph);
+
+
+amenhokit.directive('drPlayerList', function () {
     return {        
         scope: {
             players: '=players',

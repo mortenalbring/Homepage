@@ -1,9 +1,10 @@
-﻿var DisplayController = function ($routeParams, $scope, DataService) { 
+﻿var DisplayController = function ($routeParams, $scope, DataService) {
     $scope.sessions = DataService.sessions;
     $scope.games = DataService.games;
     $scope.playerscores = DataService.playerscores;
     $scope.players = DataService.players;
     $scope.loading = false;
+    $scope.chartData = [];
 
 
     var finalCallback = function () {
@@ -67,6 +68,16 @@
 
             calculateStats();
 
+            $scope.chartData = [];
+
+            for (var i = 0; i < $scope.selectedPlayerScores.length; i++) {
+
+                $scope.chartData.push($scope.selectedPlayerScores[i]);
+            }
+
+            $scope.chartData.sort(function (a, b) {
+                return new Date(a.Date) - new Date(b.Date);
+            });
 
             $scope.loading = false;
         }
@@ -81,7 +92,7 @@
             if (selectedSession && selectedSession.length === 1) {
                 $scope.selectedSession = selectedSession[0];
                 $scope.activePlayers = [];
-                
+
                 for (var i = 0; i < $scope.selectedSession.Games.length; i++) {
                     for (var j = 0; j < $scope.selectedSession.Games[i].Scores.length; j++) {
 
@@ -92,7 +103,7 @@
                             $scope.activePlayers.push(playerId);
                         }
                     }
-                }                               
+                }
 
             }
 
@@ -107,8 +118,6 @@
     } else {
         finalCallback();
     }
-
-
 
 
 

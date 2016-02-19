@@ -88,9 +88,8 @@
 
 
 .playerlist {
-        border:1px solid #ccc;
-        border-radius:5px;
-
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
     .playerlist ul {
@@ -100,8 +99,6 @@
     }
 
     .playerlist li {
-        
-        
         text-decoration: none;
     }
 
@@ -122,8 +119,34 @@
         background: #ffa10e;
         font-weight: bold;
     }
-        .playerlist .active {
+
+    .playerlist .active {
         background: #fffece;
-            font-weight: bold;
+        font-weight: bold;
     }
 
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;        
+    shape-rendering: crispEdges;
+}
+
+#graph-container {
+    padding:1em;
+    border:1px solid #ccc;
+}
+
+.data-circle {
+    fill:yellow;
+    cursor:pointer;
+}
+.data-circle:hover {
+    fill:orange;
+}
+
+.axis {
+    font-size:10px;
+}

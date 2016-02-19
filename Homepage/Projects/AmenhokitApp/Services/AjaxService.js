@@ -1,5 +1,13 @@
 ﻿var AjaxService = function($http) {
-    var axj = {};
+    var axj = {};    
+
+    axj.UpdatePlayerAliases = function () {
+        return $http({
+            method: 'GET',
+            url: '/Amenhokit/UpdatePlayerScoresFromAliases'
+        });
+    }
+
 
     axj.UpdateDatabase = function() {
         return $http({

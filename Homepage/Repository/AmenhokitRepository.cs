@@ -57,8 +57,8 @@ namespace Homepage.Repository
 
                 foreach (var alias in aliases)
                 {
-                    var aliasPlayers = db.Player.Where(e => e.Name == alias.Alias);
-                    var actualPlayer = db.Player.FirstOrDefault(e => e.Name == alias.Name);
+                    var aliasPlayers = db.Player.Where(e => e.Name.ToLower() == alias.Alias.ToLower());
+                    var actualPlayer = db.Player.FirstOrDefault(e => e.Name.ToLower() == alias.Name.ToLower());
 
                     if (actualPlayer == null)
                     {
@@ -196,7 +196,11 @@ namespace Homepage.Repository
                 var gameInfo = GetGameAndLaneInfo(gameInfoLine);
 
 
-                if (gameInfo == null) { continue; }
+                if (gameInfo == null)
+                {
+                    var xx = 42;
+                    continue;
+                }
                 var linesBetween = FindLinesBetween(lineArray, gameInfoLines[i], gameInfoLines[i + 1]);
                 if (linesBetween.Any())
                 {
@@ -218,18 +222,29 @@ namespace Homepage.Repository
 
         private PdfGameInfo GetGameAndLaneInfo(string gameInfoLine)
         {
-
-            var spl = gameInfoLine.Split(' ').Where(e => e != "").ToList();
-            if (spl.Count == 1) { return null; }
-
-            var GameInfo = new PdfGameInfo();
-
-            GameInfo.Lane = Convert.ToInt32(spl[3]);
-            GameInfo.GameNumber = Convert.ToInt32(spl[5]);
-            GameInfo.Date = spl[6];
+            try
+            {
 
 
-            return GameInfo;
+                var spl = gameInfoLine.Split(' ').Where(e => e != "").ToList();
+                if (spl.Count < 5)
+                {
+                    return null;
+                }
+
+                var GameInfo = new PdfGameInfo();
+
+                GameInfo.Lane = Convert.ToInt32(spl[spl.Count - 4]);
+                GameInfo.GameNumber = Convert.ToInt32(spl[spl.Count - 2]);
+                GameInfo.Date = spl[spl.Count -1];
+
+
+                return GameInfo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary>

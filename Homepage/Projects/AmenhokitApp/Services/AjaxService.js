@@ -1,6 +1,13 @@
 ﻿var AjaxService = function($http) {
     var axj = {};    
 
+    axj.WipeTables = function () {
+        return $http({
+            method: 'GET',
+            url: '/Amenhokit/WipeTables'
+        });
+    }
+
     axj.UpdatePlayerAliases = function () {
         return $http({
             method: 'GET',

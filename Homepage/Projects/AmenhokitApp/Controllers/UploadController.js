@@ -9,18 +9,32 @@
         return false;
     }
 
-    $scope.updatePlayerNames = function() {
+    $scope.loading = false;
+
+    $scope.wipeTables = function () {
+        $scope.loading = true;
+
+        AjaxService.WipeTables().then(function (response) {
+            console.log("done");
+            $scope.loading = false;
+
+        });
+    }
+
+    $scope.updatePlayerNames = function () {
+        $scope.loading = true;
         AjaxService.UpdatePlayerAliases().then(function (response) {
             console.log("done");
-
+            $scope.loading = false;
             var xx = 42;
 
         });
     }
 
-    $scope.updateDatabase = function() {
+    $scope.updateDatabase = function () {
+        $scope.loading = true;
         AjaxService.UpdateDatabase().then(function(response) {
-
+            $scope.loading = false;
             var xx = 42;
         });
 
@@ -31,7 +45,7 @@
         for (var r in rejectedFiles) {
             console.log(rejectedFiles[r]);
         }
-        $scope.loading = true;
+        
 
 
         if (files && files.length) {

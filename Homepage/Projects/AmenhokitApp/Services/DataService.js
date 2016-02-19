@@ -124,6 +124,9 @@
             if (responses[j].data.success) {
                 var player = responses[j].data.player;
 
+                if (player == null) {
+                    continue;}
+
                 self.players.push(player);
 
                 var playerscores = scoresList.filter(function (e) {

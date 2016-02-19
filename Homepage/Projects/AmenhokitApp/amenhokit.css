@@ -130,7 +130,7 @@
 .axis line {
     fill: none;
     stroke: grey;
-    stroke-width: 1;
+    stroke-width: 1;        
     shape-rendering: crispEdges;
 }
 
@@ -145,4 +145,8 @@
 }
 .data-circle:hover {
     fill:orange;
+}
+
+.axis {
+    font-size:10px;
 }

@@ -21,7 +21,7 @@ namespace Homepage.Controllers
                 {
                     var sessions = db.Session.ToList();
 
-                    return Json(new {success = true, sessions = sessions}, JsonRequestBehavior.AllowGet);
+                    return Json(new { success = true, sessions = sessions }, JsonRequestBehavior.AllowGet);
                 }
             }
             catch (Exception ex)
@@ -37,10 +37,28 @@ namespace Homepage.Controllers
             {
                 using (var db = new DataContext())
                 {
-                    var games = db.Game.Where(e => e.Session == sessionId).ToList();                    
+                    var games = db.Game.Where(e => e.Session == sessionId).ToList();
 
                     return Json(new { success = true, games = games }, JsonRequestBehavior.AllowGet);
                 }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
+        [HttpGet]
+        public JsonResult WipeTables()
+        {
+            try
+            {
+                var am = new AmenhokitRepository();
+                am.WipeTables();
+
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+
             }
             catch (Exception ex)
             {
@@ -119,12 +137,12 @@ namespace Homepage.Controllers
         public JsonResult UpdatePlayerScoresFromAliases()
         {
             try
-            {                
+            {
                 var amenhokitRepository = new AmenhokitRepository();
-          
+
                 amenhokitRepository.UpdatePlayerScoresFromAliases();
 
-                return Json(new { success = true}, JsonRequestBehavior.AllowGet);
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
 
             }
             catch (Exception ex)

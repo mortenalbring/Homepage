@@ -2,7 +2,11 @@
 
 <div class="upload-container">
 
-    <div>
+    <div ng-if="loading">
+        Loading ...
+    </div>
+
+    <div ng-if="!loading">
         <strong>Previously uploaded files</strong>
 
         <div ng-repeat="file in existingFiles">
@@ -10,7 +14,7 @@
         </div>
     </div>
 
-    <div>
+    <div ng-if="!loading">
         <div ngf-drop ngf-select ng-model="files"
              ng-model-rejected="rejFiles"
              ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
@@ -99,6 +103,11 @@
         <button class="btn btn-primary" ng-click="updatePlayerNames()">
             Update player names
         </button>
+
+        <button class="btn btn-warning" ng-click="wipeTables()">
+            Wipe tables
+        </button>
+
 
     </div>
 </div>

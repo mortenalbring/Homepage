@@ -9,6 +9,15 @@
         return false;
     }
 
+    $scope.updatePlayerNames = function() {
+        AjaxService.UpdatePlayerAliases().then(function (response) {
+            console.log("done");
+
+            var xx = 42;
+
+        });
+    }
+
     $scope.updateDatabase = function() {
         AjaxService.UpdateDatabase().then(function(response) {
 

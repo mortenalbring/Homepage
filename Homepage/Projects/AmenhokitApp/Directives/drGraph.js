@@ -4,7 +4,7 @@
         template: "<svg id='graph-container'></svg>" +
             "<br>" +
             "<div ng-if='selected'>" +
-            "{{selected.ID}} + Score : {{selected.Score}}, Lane: {{selected.Lane}} " +
+            "{{selected.ID}} | Score : {{selected.Score}}, Lane: {{selected.Lane}}, Date : {{selected.Date}} " +
             "</div>",
 
         link: function (scope, elem, attrs) {
@@ -71,7 +71,7 @@
                 xAxisGen = d3.svg.axis()
                     .scale(xScale)
                     .orient("bottom")
-                    .ticks(5);
+                    .ticks(8);
 
                 yAxisGen = d3.svg.axis()
                     .scale(yScale)

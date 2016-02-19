@@ -76,7 +76,7 @@
             }
 
             $scope.chartData.sort(function (a, b) {
-                return new Date(b.Date) - new Date(a.Date);
+                return new Date(a.Date) - new Date(b.Date);
             });
 
             $scope.loading = false;

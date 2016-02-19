@@ -115,6 +115,26 @@ namespace Homepage.Controllers
             }
         }
 
+        [HttpGet]
+        public JsonResult UpdatePlayerScoresFromAliases()
+        {
+            try
+            {                
+                var amenhokitRepository = new AmenhokitRepository();
+          
+                amenhokitRepository.UpdatePlayerScoresFromAliases();
+
+                return Json(new { success = true}, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+
+
+        }
+
         public string GetVirtualPath(string physicalPath)
         {
             if (!physicalPath.StartsWith(HttpContext.Request.PhysicalApplicationPath))

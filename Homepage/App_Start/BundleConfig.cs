@@ -37,8 +37,10 @@ namespace Homepage
 
 
             bundles.Add(new ScriptBundle("~/bundles/amenhokit")
-               .Include("~/Scripts/moment.js")
+               .Include("~/Scripts/d3.js")
+                .Include("~/Scripts/moment.js")
                .Include("~/Scripts/angular-moment.js")
+               .IncludeDirectory("~/Projects/AmenhokitApp/Directives", "*.js")
                .IncludeDirectory("~/Projects/AmenhokitApp/Controllers","*.js")
                .IncludeDirectory("~/Projects/AmenhokitApp/Services", "*.js")
                .Include("~/Projects/AmenhokitApp/amenhokitApp.js"));

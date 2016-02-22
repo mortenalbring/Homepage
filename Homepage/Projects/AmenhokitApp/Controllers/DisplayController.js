@@ -16,12 +16,25 @@
         highestgame.Score = 0;
         var scoresum = 0;
 
-        var lanestotal = [];
+        var lanestotal = [];        
+        $scope.turkeyGames = [];
+        $scope.cloverGames = [];
 
         $.each($scope.selectedPlayerScores, function (i, o) {
             if (o.Score > highestgame.Score) {
                 highestgame = o;
             }
+
+            var turkeyMatches = (o.Scorestring.match(/X X X/g) || []).length;
+            if (turkeyMatches > 0) {
+                $scope.turkeyGames.push(o);
+            }
+            var cloverMatches = (o.Scorestring.match(/X X X X/g) || []).length;
+            if (cloverMatches > 0) {
+                $scope.cloverGames.push(o);
+            }
+
+
             scoresum = scoresum + o.Score;
             var lane = o.Lane;
 
@@ -46,7 +59,7 @@
         });
 
 
-        $scope.averageScore = parseInt(scoresum / $scope.selectedPlayerScores.length);
+        $scope.averageScore = parseInt(scoresum / $scope.selectedPlayerScores.length);        
 
         $scope.highestgame = highestgame;
     }

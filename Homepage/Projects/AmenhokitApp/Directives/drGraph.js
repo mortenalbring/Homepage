@@ -71,7 +71,7 @@
                 xAxisGen = d3.svg.axis()
                     .scale(xScale)
                     .orient("bottom")
-                    .ticks(8);
+                    .ticks(5);
 
                 yAxisGen = d3.svg.axis()
                     .scale(yScale)

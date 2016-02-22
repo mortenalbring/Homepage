@@ -40,6 +40,7 @@ namespace Homepage
                .Include("~/Scripts/d3.js")
                 .Include("~/Scripts/moment.js")
                .Include("~/Scripts/angular-moment.js")
+               .Include("~/Scripts/angular-animate.js")
                .IncludeDirectory("~/Projects/AmenhokitApp/Directives", "*.js")
                .IncludeDirectory("~/Projects/AmenhokitApp/Controllers","*.js")
                .IncludeDirectory("~/Projects/AmenhokitApp/Services", "*.js")
@@ -47,7 +48,7 @@ namespace Homepage
 
 
             bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
+                .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/animate.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
                 );
             bundles.Add(new LessBundle("~/Content/less")
                 .Include("~/Content/styles/ma-home.less"));

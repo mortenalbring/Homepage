@@ -2,7 +2,7 @@
     display: flex;
 }
 
-    .amenhokit-container div {
+    .amenhokit-container > div {
         padding: 1em;
     }
 
@@ -86,10 +86,18 @@
     }
 
 
+    .playerinfo-summary {
+        border:1px solid #ccc;
+        padding:1em;
+        margin-bottom:1em;
+        border-radius:15px;
+    }
+
 
 .playerlist {
     border: 1px solid #ccc;
     border-radius: 5px;
+    padding:1em;    
 }
 
     .playerlist ul {

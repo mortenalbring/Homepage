@@ -19,11 +19,13 @@
 
 
 
-        <table class="table table-bordered table-striped" ng-repeat="session in sessions">
+        <table class="table table-bordered table-striped" ng-repeat="session in sessions | orderBy: '-Date'">
             <thead>
             <tr>
                 <th>
-                    {{session.Date | date: 'yyyy-MM-dd'}} - {{session.Games.length}} games
+                    <a href="#session/{{session.ID}}">
+                        {{session.Date | date: 'yyyy-MM-dd'}} - <time am-time-ago="session.Date"></time> - {{session.Games.length}} games
+                    </a>
                 </th>
             </tr>
             </thead>

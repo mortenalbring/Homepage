@@ -6,24 +6,46 @@
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
 
+        function parseScore(score) {
+            if (score === "X") {
+                return 10;
+            }
+            var s = 0;
+            if (isNumeric(score)) {
+                s = parseInt(score);
+            }
+            return s;
+            
+        }
 
-        function nextTwoAfterStrikeFromFrameArray(index, array) {
+        function nextTwoAfterStrikeFromFrameArray(index, array) {            
             if ((index + 1) === array.length) {
+                //Final frame
+                var thisFrame = array[index];
+                var fc2 = thisFrame.Result[1];
+                var fc3 = thisFrame.Result[2];
 
-
-                return 0;
+                var fs2 = parseScore(fc2);
+                var fs3 = parseScore(fc3);                
+                
+                return fs2 + fs3;
             }
             var total = 0;
 
             var nextFrame = array[index + 1];
-            if (nextFrame.Result.length === 1) {
+            if (nextFrame.Result[0] === "X") {
                 total = total + 10;
 
                 if ((index + 2) === array.length) {
+                    //Final frame
+                    total = total + parseScore(nextFrame.Result[1]);
+
+
                     return total;
                 }
                 var frameAfterNext = array[index + 2];
-                if (frameAfterNext.Result.length === 1) {
+
+                if (frameAfterNext.Result[0] === "X") {
                     total = total + 10;
                 } else {
                     total = total + parseInt(frameAfterNext.Result[0]);
@@ -31,7 +53,7 @@
 
             } else {
                 var s1 = 0;
-                if (isNumeric(nextFrame[Result[0]])) {
+                if (isNumeric(nextFrame.Result[0])) {
                     s1 = parseInt(nextFrame.Result[0]);
                 }                
                 total = s1;
@@ -41,7 +63,7 @@
                     total += (10 - total);
                 } else {
                     var s2 = 0;
-                    if (isNumeric(nextFrame[Result[1]])) {
+                    if (isNumeric(nextFrame.Result[1])) {
                         s2 = parseInt(nextFrame.Result[1]);
                     }
                     total = total + s2;
@@ -54,25 +76,37 @@
 
 
         function nextOneAfterSpareFromFrameArray(index, array) {
-            if ((index + 1) === array.length) {
-                return 0;
+            if ((index + 1) === array.length) {                
+                //Final frame
+                var thisFrame = array[index];
+                var c3 = thisFrame.Result[2];
+                if (c3 == "X") {
+                    return 10;
+                }
+                var s3 = 0;
+                if (isNumeric(c3)) {
+                    s3 = parseInt(c3);
+                }
+
+                return s3;
             }
             var nextArray = array[index + 1];
             if (nextArray.Result.length == 1) {
                 return 10;
             }
             var r1 = nextArray.Result[0];
-            return parseInt(r1);
+            
+            return parseScore(r1);
 
         }
 
 
-
         function returnScoreFromFrameArray(index, array) {
-            var results = array[index].Result;
+            var results = array[index].Result;      
 
-            //If there's only one result, that frame was a strike
-            if (results.length === 1) {
+
+            
+            if (results[0] === "X") {
                 var nextTwo = nextTwoAfterStrikeFromFrameArray(index, array);
                 return 10 + nextTwo;
             }
@@ -132,9 +166,13 @@
         function calculateFrameArray(scoreArray) {
 
             var fArray = constructFrameArray(scoreArray);
+            var sum = 0;
+
             for (var j = 0; j < fArray.length; j++) {
                 var fscore = returnScoreFromFrameArray(j, fArray);
                 fArray[j].Score = fscore;
+                sum = sum + fscore;
+                fArray[j].Cumulative = sum;
             }
             return fArray;
 

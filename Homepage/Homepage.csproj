@@ -353,6 +353,7 @@
     <Content Include="Projects\AmenhokitApp\Services\AjaxService.js" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
+    <Content Include="Projects\AmenhokitApp\Services\BowlingService.js" />
     <Content Include="Projects\AmenhokitApp\Services\DataService.js" />
     <Content Include="Projects\AmenhokitApp\Templates\display.html" />
     <Content Include="Projects\AmenhokitApp\Controllers\DisplayController.js" />

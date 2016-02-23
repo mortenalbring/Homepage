@@ -141,5 +141,16 @@ namespace Homepage.Tests
             Assert.AreEqual(22, player.Score);
         }
 
+        [TestMethod]
+        public void TestScoreCalculator13()
+        {
+            var player = new PlayerInfo();
+            player.ScoreString = "MORT 5 2 6 / 9 - 5 - 7 2 7 - 9 / 7 1 X 1 4";
+
+            player.ParseScoreString();
+
+            Assert.AreEqual(101, player.Score);
+        }
+
     }
 }

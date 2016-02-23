@@ -46,7 +46,7 @@ namespace Homepage.Models.Amenhokit.PdfScan
                 case 'X':
                     if (threeFramesFromEnd)
                     {
-                        return 10 + NextTwoAfterStrike(bowlingRecord, ptr);
+                        return 10 + NextTwoAfterStrike(bowlingRecord, ptr); 
                     }
                     return 10 + NextTwoAfterStrike(bowlingRecord, ptr) + CalculateScore(bowlingRecord, ptr + 1);
                 case '/':

@@ -5,7 +5,7 @@
         <dr-player-list players="players" active-players="activePlayers"></dr-player-list>
     </div>
 
-    <div ng-if="!loading">        
+    <div ng-if="!loading">
         <h1>{{selectedSession.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}</h1>
 
         <div>
@@ -17,7 +17,7 @@
         </div>
 
         <div ng-repeat="game in selectedSession.Games">
-            
+
 
             Game {{game.GameNumber}} on lane {{game.Lane}}
 
@@ -43,6 +43,34 @@
                         </td>
                         <td>
                             {{score.Scorestring}}
+                            <br />
+                            <table class="table table-bordered table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th ng-repeat="frame in score.FrameArray">
+                                            {{frame.Frame}}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td ng-repeat="frame in score.FrameArray">
+                                        <span ng-repeat="result in frame.Result">
+                                                {{result}}&nbsp;
+                                            </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td ng-repeat="frame in score.FrameArray">
+                                        {{frame.Score}}
+                                    </td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+
+
                         </td>
                         <td>
                             {{score.Score}}
@@ -52,7 +80,7 @@
             </table>
 
         </div>
-  
+
     </div>
     <div ng-if="loading">Loading data...</div>
 

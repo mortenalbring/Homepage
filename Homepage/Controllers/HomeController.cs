@@ -12,7 +12,13 @@ namespace Homepage.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {            
+        {
+
+            var player = new PlayerInfo();
+            player.ScoreString = "MORT 5 2 6 / 9 - 5 - 7 2 7 - 9 / 7 1 X 1 4";
+
+            player.ParseScoreString();
+
             return View("Index");
         }
 

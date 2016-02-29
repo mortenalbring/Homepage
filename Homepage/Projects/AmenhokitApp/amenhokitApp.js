@@ -32,7 +32,7 @@ amenhokit.factory('BowlingService', [BowlingService]);
 amenhokit.service('DataService', ["$q", "AjaxService", DataService]);
 amenhokit.controller("HomeController", HomeController);
 amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataService", "BowlingService", DisplayController]);
-amenhokit.controller("TestController", ["$scope","BowlingService", TestController]);
+amenhokit.controller("TestController", ["$scope","DataService","BowlingService", TestController]);
 
 amenhokit.controller("UploadController", ["FileUploadService", "AjaxService", "$scope", UploadController]);
 

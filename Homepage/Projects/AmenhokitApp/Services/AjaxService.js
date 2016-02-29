@@ -1,6 +1,17 @@
 ﻿var AjaxService = function($http) {
     var axj = {};    
 
+    axj.UpdateScore = function (id,newScore) {
+        return $http({
+            method: 'POST',
+            url: '/Amenhokit/UpdateScore',
+            data: {
+                id: id,
+                newScore: newScore
+            }
+        });
+    }
+
     axj.WipeTables = function () {
         return $http({
             method: 'GET',

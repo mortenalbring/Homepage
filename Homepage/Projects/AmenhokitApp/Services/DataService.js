@@ -203,6 +203,23 @@
         });
     }
 
+
+    this.UpdateScores = function (scores, callback) {
+
+        var querylist = [];
+
+        for (var i = 0; i < scores.length; i++) {
+
+            querylist.push(AjaxService.UpdateScore(scores[i].ID, scores[i].Score));
+            
+        }
+        $q.all(querylist).then(function(responses) {
+            if (callback) {
+                callback();
+            }
+        });
+    }
+
     this.GetAllData = function(callback) {
         getAllSessions(callback);
     }

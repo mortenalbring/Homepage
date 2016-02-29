@@ -10,7 +10,6 @@
     var finalCallback = function () {
         $scope.loading = false;
     }
-
    
     function calculateStats() {
         var highestgame = {};

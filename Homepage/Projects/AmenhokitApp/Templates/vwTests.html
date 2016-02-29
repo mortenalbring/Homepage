@@ -1,0 +1,48 @@
+﻿<h1>Tests</h1>
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div ng-repeat="testScoreString in testScoreStrings">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="42">
+                                {{testScoreString.Scorestring}}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th ng-repeat="frame in testScoreString.FrameScores">
+                                {{frame.Frame}}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td ng-repeat="frame in testScoreString.FrameScores">
+                                {{frame.Result}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ng-repeat="frame in testScoreString.FrameScores">
+                                {{frame.Cumulative}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="42">
+                                Expected final score - {{testScoreString.Expected}}
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+</div>

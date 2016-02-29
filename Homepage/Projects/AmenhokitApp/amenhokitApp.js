@@ -1,4 +1,4 @@
-﻿var amenhokit = angular.module("amenhokit", ["angularMoment","ngFileUpload","ngAnimate","ngRoute"]);
+﻿var amenhokit = angular.module("amenhokit", ["angularMoment", "ngFileUpload", "ngAnimate", "ngRoute"]);
 amenhokit.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/upload', {
@@ -14,9 +14,13 @@ amenhokit.config(['$routeProvider', function ($routeProvider) {
             controller: 'DisplayController'
         })
          .when('/session/:sessionId', {
-             templateUrl: '/Projects/AmenhokitApp/Templates/rtSessionInfo.html',
+             templateUrl: '/Projects/AmenhokitApp/Templates/vwSessionInfo.html',
              controller: 'DisplayController'
          })
+        .when('/tests', {
+            templateUrl: '/Projects/AmenhokitApp/Templates/vwTests.html',
+            controller: 'TestController'
+        })
         .otherwise({
             templateUrl: '/Projects/AmenhokitApp/Templates/display.html',
             controller: 'DisplayController'
@@ -27,16 +31,17 @@ amenhokit.factory('AjaxService', ["$http", AjaxService]);
 amenhokit.factory('BowlingService', [BowlingService]);
 amenhokit.service('DataService', ["$q", "AjaxService", DataService]);
 amenhokit.controller("HomeController", HomeController);
-amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataService","BowlingService", DisplayController]);
+amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataService", "BowlingService", DisplayController]);
+amenhokit.controller("TestController", ["$scope","BowlingService", TestController]);
 
-amenhokit.controller("UploadController", ["FileUploadService","AjaxService","$scope", UploadController]);
+amenhokit.controller("UploadController", ["FileUploadService", "AjaxService", "$scope", UploadController]);
 
 
 amenhokit.directive('drGraph', drGraph);
 
 
 amenhokit.directive('drPlayerList', function () {
-    return {        
+    return {
         scope: {
             players: '=players',
             selectedPlayer: '=selectedPlayer',

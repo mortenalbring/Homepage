@@ -48,7 +48,7 @@
                 if (frameAfterNext.Result[0] === "X") {
                     total = total + 10;
                 } else {
-                    total = total + parseInt(frameAfterNext.Result[0]);
+                    total = total + parseScore(frameAfterNext.Result[0]);
                 }
 
             } else {

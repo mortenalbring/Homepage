@@ -12,6 +12,32 @@ namespace Homepage.Controllers
 {
     public class AmenhokitController : Controller
     {
+        [HttpPost]
+        public JsonResult UpdateScore(int id, int newScore)
+        {
+            try
+            {
+                using (var db = new DataContext())
+                {
+                    var score = db.PlayerScore.FirstOrDefault(e => e.ID == id);
+                    if (score == null)
+                    {
+                        throw new Exception("No such score with ID " + id);
+                    }
+                    score.Score = newScore;
+
+                    db.SaveChanges();
+                    
+
+                    return Json(new { success = true, score = score }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         [HttpGet]
         public JsonResult ListSessions()
         {

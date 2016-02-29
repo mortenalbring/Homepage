@@ -203,11 +203,8 @@ h1, h2, h3 {
     color: #454545;
 }
 
-.section-posts {
-    padding-top: 3em;
+.section-posts {    
     padding-bottom: 80px;
-    border-top: 1px solid;
-    border-color: #ccc;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -297,6 +294,13 @@ h1, h2, h3 {
 
     .post-title-tsucs {
     background-image: url('/Content/images/tsucs/tsucs-cover.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
+        .post-title-angulard3 {
+    background-image: url('/Content/images/angularD3/AngularD3-cover.png');
     background-position: center;
     background-repeat: no-repeat;
     height: 350px;

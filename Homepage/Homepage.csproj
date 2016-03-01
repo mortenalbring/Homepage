@@ -249,6 +249,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\angularD3\AngularD3-cover.png" />
+    <Content Include="Content\images\angularD3\AngularD3-preview.png" />
     <Content Include="Content\images\anyons.jpg" />
     <Content Include="Content\images\dimerschematic.png" />
     <Content Include="Content\images\me.png" />

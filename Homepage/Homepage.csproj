@@ -248,6 +248,8 @@
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\images\angularD3\AngularD3-cover.png" />
+    <Content Include="Content\images\angularD3\AngularD3-preview.png" />
     <Content Include="Content\images\anyons.jpg" />
     <Content Include="Content\images\dimerschematic.png" />
     <Content Include="Content\images\me.png" />
@@ -269,6 +271,9 @@
     <Content Include="Content\images\menger\menger-void.gif" />
     <Content Include="Content\images\peterDeJongattactor.png" />
     <Content Include="Content\images\peterDeJongattactor_small.png" />
+    <Content Include="Content\images\peterdejong\peterdejong-cover.png" />
+    <Content Include="Content\images\peterdejong\peterdejong-home.png" />
+    <Content Include="Content\images\peterdejong\peterdejong.png" />
     <Content Include="Content\images\slizardbennet.jpg" />
     <Content Include="Content\images\tsucs\tsucs-cover-home.png" />
     <Content Include="Content\images\tsucs\tsucs-cover.png" />

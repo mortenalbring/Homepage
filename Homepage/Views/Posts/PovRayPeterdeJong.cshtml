@@ -2,14 +2,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
+<div class="post-title post-title-peterdejong">
+    <div class="post-title-text">
+        <h1>POV-Ray rendering of Peter de Jong attractor</h1>
+    </div>
+</div>
+
+
 <div class="container">
-
-
-
     <div class="row">
         <div class="col-md-12">
-            <h1>Peter de Jong attractor in POV Ray</h1>
-            <a href="~/Content/images/peterDeJongattactor.png"><img class="img-thumbnail" src="~/Content/images/peterDeJongattactor_small.png" /></a>
+            
 
             <p>Chaotic attractors are mathematical systems that evolve over time. The Peter de Jong attractors are systems that are especially beautiful, following the underlying equations: </p>
             <div lang="latex">
@@ -31,28 +35,25 @@
             </p>
 
             <p>
-                <a href="http://www.povray.org/">POV-RAY</a> is a free raytracing tool for creating three-dimensional graphics. 
+                <a href="http://www.povray.org/">POV-RAY</a> is a free raytracing tool for creating three-dimensional graphics.
                 We can encode the equations above into POV-RAY to produce a visualisation of the Peter de Jong attractor.
             </p>
             <pre>
-
-// Declaring an area light sources to create soft shadows
 light_source {
-  0*x                 // light's position 
-  color rgb 1.0       // light's color
+  0*x                 
+  color rgb 1.0       
   area_light
-            <8, 0, 0> <0, 0, 8> // lights spread out across this distance (x * z)
-  4, 4                // total number of lights in grid (4x*4z = 16 lights)
-  adaptive 0          // 0,1,2,3...
-  jitter              // adds random softening of light
-  circular            // make the shape of the light circular
-  orient              // orient light
-  translate <40, 80, -40>   // <x y z> position of light
+            <8, 0, 0> <0, 0, 8>
+  4, 4                
+  adaptive 0          
+  jitter              
+  circular            
+  orient              
+  translate <40, 80, -40>
 }
-// create a regular point light source
 light_source {
-  0*x                  // light's position 
-  color rgb <1,1,1>    // light's color
+  0*x
+  color rgb <1,1,1>
   translate <0,20,-20>
 }
 /* Peter de Jong style attractor */
@@ -67,7 +68,7 @@ light_source {
 #while(i>0)
    #declare x2=sin(a*y1)-cos(b*x1);
    #declare y2=sin(c*x1)-cos(d*y1);
-   sphere{ <x2,y2,3.2>, 0.001 
+   sphere{ <x1,y1,3>, 0.001  
    pigment { rgb <(1-(x2*2)),0.5,(1-(y2*2))> }
    finish{  diffuse 0.7      ambient 0.0      specular 0.3      reflection { 0.8  metallic } }
     }
@@ -81,15 +82,15 @@ camera {
 location < 0,0,-5> 
 look_at <0,0,0>
 }
-// An infinite planar surface
-// plane {<A, B, C>, D } where: A*x + B*y + C*z = D
 plane {
-  y, // <X Y Z> unit surface normal, vector points "away from surface"
-  -4.0 // distance from the origin in the direction of the surface normal
-  hollow on // has an inside pigment?
+  y,
+  -4.0
+  hollow on 
   pigment { rgb 1 }
-}
+} 
 </pre>
+            <p>This results in this beautiful render of the attractor</p>
+            <a href="~/Content/images/peterDeJongattactor.png"><img class="img-thumbnail" src="~/Content/images/peterDeJongattactor_small.png" /></a>
 
         </div>
 
@@ -101,7 +102,7 @@ plane {
                 <li class="list-group-item"><a href="http://paulbourke.net/fractals/peterdejong/">Paul Bourke's illustrations of Peter de Jong Attractors</a></li>
                 <li class="list-group-item"><a href="http://www.povray.org/">POV-RAY software</a></li>
             </ul>
-            
+
 
         </div>
 

@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Projects/AmenhokitApp/amenhokit.css" rel="stylesheet" />
+@section Scripts {
+    @Scripts.Render("~/bundles/amenhokit")
+}
+
+
+<div class="content">
+
+
+    <div ng-app="amenhokit">
+        <div ng-view></div>
+    </div>
+
+</div>

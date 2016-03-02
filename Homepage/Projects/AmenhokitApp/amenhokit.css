@@ -1,0 +1,170 @@
+﻿.amenhokit-container {
+    display: flex;
+}
+
+    .amenhokit-container > div {
+        padding: 1em;
+    }
+
+.upload-container {
+    display: flex;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+    .upload-container div {
+        flex: 1;
+    }
+
+.drop-box {
+    background-color: #cec9c9;
+    padding: 20px;
+    width: 80%;
+    border: 3px dotted #2980B9;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.scorestringtest {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.scorestringinput {
+    width: 100%;
+}
+
+.file-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+}
+
+.content {
+    padding-top: 30px;
+    padding-left: 2em;
+}
+
+.processButton {
+    background: #1000ff;
+    color: #fff;
+    padding: 0.5em;
+    border: #0a009a;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+    .processButton:hover {
+        text-decoration: none;
+        color: #fff;
+        transition: 0.3s;
+        background: #4f43ff;
+    }
+
+.scoretable {
+    width: 100%;
+}
+
+    .scoretable th {
+        background: #01008f;
+        color: #fff;
+    }
+
+    .scoretable td, th {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+    }
+
+.scoreselectContainer {
+    display: flex;
+}
+
+    .scoreselectContainer div {
+        margin: 2em;
+    }
+
+
+    .playerinfo-summary {
+        border:1px solid #ccc;
+        padding:1em;
+        margin-bottom:1em;
+        border-radius:15px;
+    }
+
+
+.playerlist {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:1em;    
+}
+
+    .playerlist ul {
+        min-width: 100px;
+        list-style: none;
+        padding: 0;
+    }
+
+    .playerlist li {
+        text-decoration: none;
+    }
+
+        .playerlist li a {
+            padding: 0.3em;
+            text-decoration: none;
+            color: #000;
+            display: block;
+        }
+
+        .playerlist li:not(.selected) a:hover {
+            transition: 0.2s;
+            background: #1000ff;
+            color: #fff;
+        }
+
+    .playerlist .selected {
+        background: #ffa10e;
+        font-weight: bold;
+    }
+
+    .playerlist .active {
+        background: #fffece;
+        font-weight: bold;
+    }
+
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;        
+    shape-rendering: crispEdges;
+}
+
+#graph-container {
+    padding:1em;
+    border:1px solid #ccc;
+}
+
+.data-circle {
+    fill:yellow;
+    cursor:pointer;
+}
+.data-circle:hover {
+    fill:orange;
+}
+
+.axis {
+    font-size:10px;
+}
+
+/* when hiding the picture */
+.ng-hide-add {    
+     animation:0.5s fadeOut ease;
+}
+
+/* when showing the picture */
+.ng-hide-remove      { animation:0.5s fadeIn ease; }
+
+

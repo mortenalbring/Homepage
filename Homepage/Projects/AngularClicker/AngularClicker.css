@@ -1,0 +1,73 @@
+.playercontainer {
+    display:flex;
+}
+.enemycontainer {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:row;    
+}
+.enemycontainer div {
+    flex:1;
+}
+
+.health-full {
+    color:#208d00;
+}
+.health-injured {
+    color:#ee883f;
+}
+.health-dying {
+    color:#ff0000;
+}
+
+.character {
+    padding:5px;
+    width:100px;    
+    border:1px solid #ccc;
+}
+
+pre {
+    cursor:pointer;
+}
+
+.dead {
+    color: #808080;
+}
+.enemy {     
+    display:flex;   
+    min-width:100px;
+    height:100px;    
+    padding:5px;        
+    border-radius:3px;
+    margin:5px;
+
+      -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+    .enemy:hover {
+        cursor: pointer;
+    }
+  
+
+
+.player {   
+    padding-left:20px;     
+    width:150px;
+    border:1px solid #ccc;
+}
+
+
+.shop {
+    border:1px solid #ccc;
+}
+
+.shop button {    
+    width:100%;
+    text-align:left;
+    padding:0.5em;
+    cursor:pointer;
+}

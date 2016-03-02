@@ -4,16 +4,21 @@ body {
 margin:0;
 }
 
+
 .container {
     display:flex;
     flex-wrap:wrap;    
+    
 }
 
 .item-left {
-    width:30%;
+    width:25%;    
 }
 .item-right {
-    width:65%;
+    width:70%;
+}
+.item-full {
+    width:100%;
 }
 
 .item {    
@@ -46,9 +51,11 @@ margin:0;
 }
 
 #graph-container {
-    margin-top:2em;
-    width:90%;
-    height:600px;
-    border:1px solid;
+    margin-top:1em;
+    width:95%;
+    
+    height:80vh;
+    border:1px solid #808080;
+    border-radius:5px;
     background:#f6f6f6;
 }

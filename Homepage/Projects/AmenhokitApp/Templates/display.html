@@ -1,0 +1,77 @@
+﻿
+<div class="amenhokit-container">
+    <div ng-if="!loading">
+        <dr-player-list players="players"></dr-player-list>        
+    </div>
+
+    <div ng-if="!loading">
+        <p>
+            {{sessions.length}} Sessions
+        </p>
+        <p>
+            Games - {{games.length}}
+        </p>
+        <p>
+            Scores - {{playerscores.length}}
+        </p>
+
+
+
+
+
+        <table class="table table-bordered table-striped" ng-repeat="session in sessions | orderBy: '-Date'">
+            <thead>
+            <tr>
+                <th>
+                    <a href="#session/{{session.ID}}">
+                        {{session.Date | date: 'yyyy-MM-dd'}} - <time am-time-ago="session.Date"></time> - {{session.Games.length}} games
+                    </a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="game in session.Games">
+                <td>
+                    <span>Game {{game.GameNumber}} on lane {{game.Lane}}</span>
+
+                    <table class="table table-bordered table-condensed">
+                        <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Score string
+                            </th>
+                            <th>
+                                Score
+                            </th>
+                        </tr>
+
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="score in game.Scores | orderBy:'-Score'">
+                            <td>
+                                <a href="#player/{{score.Player}}">{{score.Name | titlecase}}</a>
+                            </td>
+                            <td>
+                                {{score.Scorestring}}
+                            </td>
+                            <td>
+                                {{score.Score}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div ng-if="loading">Loading data...</div>
+</div>
+
+

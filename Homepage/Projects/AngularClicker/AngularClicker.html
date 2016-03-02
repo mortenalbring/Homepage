@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Angular Clicker</title>
+    <link rel="stylesheet" href="AngularClicker.css" type="text/css" />
+</head>
+
+<body>
+    <h1>Angular Clicker</h1>
+
+    <div ng-app="AngularClicker">
+        <div ng-controller="HomeController">
+            <div ng-hide="started">
+                What is your name?
+                <input ng-model="Player.Name" />
+                <button ng-click="initialise()">
+                    Start
+                </button>
+            </div>
+            <div ng-show="started" class="gamecontainer">
+
+
+                <div class="playerContainer">
+                    <div class="shop">
+                        <div ng-repeat="item in Shop | orderBy:'Cost'">
+                            <button ng-click="item.RunFunction()" ng-disabled="item.Cost > Player.Gold">
+                                [{{item.Cost}} G] {{item.Title}}
+                            </button>
+                        </div>
+                    </div>
+             
+                    <div class="player">
+                        {{Player.Name}}
+                        <br/>
+                        <div player-face ng-click="surprisePlayer()" pstatus="Player.Status"></div>
+                        <small>XP - {{Player.XP}}</small>
+                        <br />
+                        <small>Gold - {{Player.Gold}}</small>
+                        <br />
+                        <small>Attack damage - {{Player.AttackDamage}}</small>
+                        <br />
+
+
+                    </div>
+                    <div class="character" ng-if="Player.AutoBury"><span>Gravedigger</span>
+                        <div grave-digger></div>
+                    </div>
+
+                    <div class="character" turret ng-if="Player.AutoAttackDamage > 0"></div>
+
+
+
+                </div>
+
+
+
+                <h2>Enemies</h2>
+                <div class="enemycontainer">
+
+                    <div ng-repeat="enemy in Enemies" class="enemy" ng-click="manualAttack(enemy.ID)">
+
+
+
+                        <div ng-if="enemy.Alive && enemy.Type == 'Mouse'" enemy-mouse
+                             ng-style="{'color':getColour(enemy)}">
+                        </div>
+                        <div class="dead" ng-if="!enemy.Alive && enemy.Type == 'Mouse'" dead-mouse></div>
+
+                        <div  ng-if="enemy.Alive && enemy.Type == 'Gravedigger'" grave-digger
+                             ng-style="{'color':getColour(enemy)}"></div>
+
+                        <div class="dead" ng-if="!enemy.Alive && enemy.Type == 'Gravedigger'" dead-grave-digger></div>
+                    </div>
+
+                </div>
+
+
+                <div ng-repeat="message in MessageLog.slice().reverse() | limitTo:10 track by $index ">
+                    {{message}}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    
+<pre>
+   )
+   (
+ ()-()
+_(o o)_  
+ /\o/\
+</pre>
+
+    <script src="angular.min.js"></script>
+    <script src="AngularClickerEnemyService.js"></script>
+    <script src="AngularClickerMessageService.js"></script>
+    <script src="AngularClickerPlayerService.js"></script>
+    <script src="AngularClickerShopService.js"></script>
+    <script src="AngularClicker.js"></script>
+
+</body>
+
+</html>

@@ -14,7 +14,7 @@
 <body ng-app="angularD3">
     <div ng-controller="HomeController">
         <div class="container">
-            <div class="item-left control-bar">
+            <div class="item-left control-bar" ng-hide="hiddenSettings">
                 <h1>Angular with D3</h1>
 
                 <div class="options-container">
@@ -26,8 +26,6 @@
                             ng-options="option.Title for option in preset.options track by option.ID"></select>
 
                 </div>
-                <button ng-click="redrawGraph()">Redraw graph</button>
-                <button ng-click="drawGraph()" title="Sometimes the simulation stops. This sort of jiggles the graph a bit to get it back into motion">Jiggle graph</button>
 
                 <br />
 
@@ -211,7 +209,18 @@
                             <input type="radio" ng-model="settings.lockToContainer" data-ng-value="false" ng-change="drawGraph()" />
                             Off
                         </label>
-
+                    </div>
+                    <div class="options-container">
+                        <small>Show arrows</small>
+                        <br />
+                        <label>
+                            <input type="radio" ng-model="settings.showArrows" data-ng-value="true" ng-change="drawGraph()" />
+                            On
+                        </label>
+                        <label>
+                            <input type="radio" ng-model="settings.showArrows" data-ng-value="false" ng-change="drawGraph()" />
+                            Off
+                        </label>
                     </div>
                 </div>
 
@@ -318,7 +327,8 @@
                 </div>
             </div>
 
-            <div class="item-right graph-content">
+            <div ng-class="{'item-right graph-content': !hiddenSettings,'item-full graph-content':hiddenSettings}">
+
                 <h1> {{info.Title}}</h1>
 
                 <div id="graph-container"></div>
@@ -326,6 +336,10 @@
                 <div class="graph-message">
                     {{info.Message}}
                 </div>
+
+                <button ng-click="hideSettings();"><span ng-if="hiddenSettings">Show</span><span ng-if="!hiddenSettings">Hide</span>  Settings</button>
+                <button ng-click="redrawGraph()">Redraw graph</button>
+                <button ng-click="drawGraph()" title="Sometimes the simulation stops. This sort of jiggles the graph a bit to get it back into motion">Jiggle graph</button>
 
 
 
@@ -335,16 +349,22 @@
 
     <script src="packages/angular.min.js"></script>
     <script src='packages/d3.min.js'></script>
+    <script src="presets/AngularD3-preset-home.js"></script>
     <script src="presets/AngularD3-preset-graphene.js"></script>
     <script src="presets/AngularD3-preset-graphene-auto.js"></script>
     <script src="presets/AngularD3-preset-cube.js"></script>
     <script src="presets/AngularD3-preset-sphere.js"></script>
     <script src="presets/AngularD3-preset-DNA.js"></script>
     <script src="presets/AngularD3-preset-multiplecubes.js"></script>
+    <script src="presets/AngularD3-preset-multiplespheres.js"></script>
     <script src="presets/AngularD3-preset-square-lattice.js"></script>
     <script src="presets/AngularD3-preset-windsors.js"></script>
     <script src="presets/AngularD3-preset-norskekongehuset.js"></script>
+    <script src="presets/AngularD3-preset-orbit.js"></script>
 
+    <script src="AngularD3-Controllers.js"></script>
+    <script src="AngularD3-SettingsService.js"></script>
+    <script src="AngularD3-GraphService.js"></script>
     <script src="AngularD3.js"></script>
 </body>
 </html>

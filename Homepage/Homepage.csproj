@@ -271,6 +271,9 @@
     <Content Include="Content\images\menger\menger-void.gif" />
     <Content Include="Content\images\peterDeJongattactor.png" />
     <Content Include="Content\images\peterDeJongattactor_small.png" />
+    <Content Include="Content\images\peterdejong\peterdejong-cover.png" />
+    <Content Include="Content\images\peterdejong\peterdejong-home.png" />
+    <Content Include="Content\images\peterdejong\peterdejong.png" />
     <Content Include="Content\images\slizardbennet.jpg" />
     <Content Include="Content\images\tsucs\tsucs-cover-home.png" />
     <Content Include="Content\images\tsucs\tsucs-cover.png" />

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Angular Clicker ASCII Art Generator</title>
+</head>
+
+<body>
+    <div ng-app="ASCIIGenerator">
+        <div ng-controller="HomeController">
+
+            Draw ASCII Art here:
+            <br/>
+
+            <textarea rows="10" ng-model="input" ng-trim="false"></textarea>
+            <br />
+            <button ng-click="generate()">Generate safe HTML string</button>
+            <br />
+            <br />
+            <textarea rows="10" ng-model="output"></textarea>
+        
+            <pre>{{output}}</pre>
+        </div>
+
+        
+
+    </div>
+
+
+
+    <script src="angular.min.js"></script>    
+    <script src="AngularClickerASCIIGen.js"></script>
+</body>
+</html>

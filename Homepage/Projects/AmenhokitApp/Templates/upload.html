@@ -1,0 +1,123 @@
+﻿
+
+<div class="upload-container">
+
+    <div ng-if="loading">
+        Loading ...
+    </div>
+
+    <div ng-if="!loading">
+        <strong>Previously uploaded files</strong>
+
+        <div ng-repeat="file in existingFiles">
+            {{file}}
+        </div>
+    </div>
+
+    <div ng-if="!loading">
+        <div ngf-drop ngf-select ng-model="files"
+             ng-model-rejected="rejFiles"
+             ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
+             class="drop-box ng-valid ng-dirty"
+             ngf-multiple="true"
+             ngf-allow-dir="true"
+             ngf-accept="'application/pdf'"
+             ngf-drop-available="dropAvailable">
+            <div ngf-no-file-drop class="ng-hide">File Drop not available</div>
+            <div ng-show="dropAvailable" class=""><span>Drag files here or click to browse</span></div>
+        </div>
+
+        <div class="btn btn-primary btn-block btn-lg"
+             ng-disabled="!(files || (queries > 0))"
+             ng-click="upload(files,$event, rejFiles, anotherCustomParam)">
+            <span ng-if="!(files && files.length)">
+                Select files to upload
+            </span>
+
+            <span ng-if="readyToUpload()">
+                Start upload of {{files.length}} file<span ng-if="files.length>1">s</span>
+            </span>
+        </div>
+
+        <table class="table table-bordered">
+            <tr ng-repeat="file in rejFiles">
+                <td>
+                    <span class="label label-danger">Rejected</span>
+                </td>
+                <td>{{file.type}}</td>
+                <td>
+                    {{file.name}}
+                </td>
+
+            </tr>
+
+        </table>
+
+        <table class="table table-bordered table-hover" ng-show="(files && files.length)">
+            <tbody>
+            <tr ng-repeat="file in files">
+                <td class="col-md-2">
+                    <span class="label label-success" ng-show="file.complete">Done</span>
+                    <span class="label label-danger" ng-show="file.error">Error</span>
+                </td>
+                <td class="col-md-7">
+                    <span class="file-title {{file.type}}">{{file.name}}</span>
+                    <br/>
+                    <div class="progress-bar" ng-show="file.progress > 0" ng-style="{'width' : file.progress + '%' }">
+                        {{file.progress}}%
+                    </div>
+
+                </td>
+                <td class="col-md-2">
+                    {{file.type}}
+                </td>
+                <td class="col-md-1">
+                    <span class="file-size">({{file.size / 1024 | number: 0 }} KB)</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <table class="table table-bordered table-hover" ng-show="completedFiles.length > 0">
+            <thead>
+            <tr>
+                <th>
+                    Completed uploads
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="completedFile in completedFiles">
+                <td>
+                    {{completedFile}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" ng-click="updateDatabase()">
+            Update database
+        </button>
+
+        <button class="btn btn-primary" ng-click="updatePlayerNames()">
+            Update player names
+        </button>
+
+        <button class="btn btn-warning" ng-click="wipeTables()">
+            Wipe tables
+        </button>
+
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+       
+    </div>
+</div>
+
+

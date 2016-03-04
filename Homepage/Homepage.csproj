@@ -386,6 +386,7 @@
     <Content Include="Projects\AngularD3\AngularD3-GraphService.js" />
     <Content Include="Projects\AngularD3\AngularD3-SettingsService.js" />
     <Content Include="Projects\AngularD3\packages\LICENSE" />
+    <Content Include="Content\styles\ma-navbar.less" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
     <Content Include="Images\15920848636_f9d4c69ee0_o.jpg" />
     <Content Include="Images\19238835106_b57eaa8160_o.jpg" />
@@ -30974,6 +30975,8 @@
     <Content Include="Views\Projects\ProjectAngularD3.cshtml" />
     <Content Include="Views\Projects\ProjectAngularClicker.cshtml" />
     <Content Include="Views\Projects\ProjectAmenhokit.cshtml" />
+    <Content Include="Views\Shared\_NavbarLinks.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

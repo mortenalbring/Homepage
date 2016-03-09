@@ -288,6 +288,7 @@
     <Content Include="Content\styles\ma-post-summary.less" />
     <Content Include="Projects\AmenhokitApp\Controllers\TestController.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drGraph.js" />
+    <Content Include="Projects\AmenhokitApp\Directives\drMultiLineGraph.js" />
     <Content Include="Projects\AmenhokitApp\Services\AjaxService.js" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
@@ -30917,7 +30918,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\less\" />
     <Folder Include="tempfiles\" />
-    <Folder Include="Views\Amenhokit\" />
     <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>

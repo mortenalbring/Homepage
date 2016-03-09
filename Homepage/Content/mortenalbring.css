@@ -132,57 +132,6 @@ footer {
         }
 
 
-.section-intro {
-    padding-top: 3em;
-    padding-bottom: 2em;
-}
-
-    .section-intro i {
-        font-size: 4em;
-        padding-bottom: 0.3em;
-    }
-
-    .section-intro .row {
-        padding-top: 1em;
-        padding-bottom: 0.5em;
-    }
-
-    .section-intro h1 {
-        text-align: center;
-        font-family: 'Open Sans', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 800;
-        font-size: 4em;
-        text-shadow: 0.05em 0px #b4b4b4, 0.2em 0.1em 0px rgb(230, 230, 230);
-    }
-
-    .section-intro h2 {
-        font-weight: 200;
-    }
-
-    .section-intro p {
-        font-family: 'Open Sans', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 400;
-        font-size: 1.2em;
-        padding: 10px;
-    }
-
-    .section-intro img {
-        padding-top: 20px;
-    }
-
-    .section-intro .project-link {
-        color: #ccc;
-        transition: 0.5s;
-    }
-
-        .section-intro .project-link:hover {
-            color: #191919;
-            text-decoration: none;
-            text-shadow: 8px 8px 8px #cecece;
-        }
-
 .section-main {
     margin-top: 40px;
     height: 500px;
@@ -198,10 +147,6 @@ h1, h2, h3 {
     height: 20px;
 }
 
-.container-intro {
-    font-family: 'Open Sans', sans-serif;
-    color: #454545;
-}
 
 .section-posts {    
     padding-bottom: 80px;

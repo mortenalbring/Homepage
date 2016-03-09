@@ -47,10 +47,10 @@ namespace Homepage
                .Include("~/Projects/AmenhokitApp/amenhokitApp.js"));
 
 
-            bundles.Add(new StyleBundle("~/Content/css")
+            bundles.Add(new StyleBundle("~/bundles/css")
                 .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/animate.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
                 );
-            bundles.Add(new LessBundle("~/Content/less")
+            bundles.Add(new LessBundle("~/bundles/less")
                 .IncludeDirectory("~/Content/styles/","*.less"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -67,7 +67,7 @@ namespace Homepage
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
             
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }
 
         

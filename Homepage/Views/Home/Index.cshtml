@@ -2,47 +2,53 @@
     ViewBag.Title = "Morten Albring - Personal Homepage";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+<div class="home-intro">
+    <h1>
+        Morten <span class="hidden-xs">Alexander</span> Albring
+    </h1>
 
-<div class="container-fluid container-intro section-intro">
+</div>
 
-    <div class="row row-centered">
-        <div class="col-md-3 col-centered">
-            <img class="center-block img-responsive" src="../../Content/images/me.png" alt="" />
-        </div>
-        <div class="col-md-6 col-centered">
-            <h1>Morten <span class="hidden-xs">Alexander</span> Albring</h1>
-            <div class="row row-centered">
-                <div class="col-sm-3 col-md-3 col-centered">
-                    <a class="project-link" title="Check out my projects on GitHub" href="https://github.com/mortenalbring"><i class="fa fa-github"></i></a>
-                </div>
-                <div class="col-sm-3 col-md-3 col-centered">
-                    <a class="project-link" title="Check out my YouTube channel for some mildly interesting mathematical simulations" href="https://www.youtube.com/channel/UCSBTzJEMrIAr5BUXF0P8GcQ">
-                        <i class="fa fa-youtube"></i>
-                    </a>
-                </div>
-                <div class="col-sm-3 col-md-3 col-centered">
-                    <a class="project-link" title="Follow me on Twitter for latest updates" href="https://twitter.com/mortenalbring">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </div>
-                <div class="col-sm-3 col-md-3 col-centered">
-                    <a class="project-link" title="See my LinkedIn profile" href="https://uk.linkedin.com/pub/morten-albring/52/380/787">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                </div>
-                <div class="row row-centered">
-                    <div class="col-md-10 col-md-offset-1">
-                        <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
-                        <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>
-                        <p>
-                            <a class="btn btn-block btn-primary" href="@Url.Action("About", "Home")">More about me</a>
-                        </p>
-                    </div>
-                </div>
+<div class="home-intro">
+    <div><img src="../../Content/images/me.png" alt="" /></div>
+    <div>
+
+        <div class="icon-row">
+            <div>
+                <a title="Check out my projects on GitHub" href="https://github.com/mortenalbring">
+                    <i class="fa fa-github"></i>
+                </a>
             </div>
+            <div>
+                <a title="Check out my YouTube channel for some mildly interesting mathematical simulations" href="https://www.youtube.com/channel/UCSBTzJEMrIAr5BUXF0P8GcQ">
+                    <i class="fa fa-youtube"></i>
+                </a>
+            </div>
+            <div>
+                <a title="Follow me on Twitter for latest updates" href="https://twitter.com/mortenalbring">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            <div>
+                <a title="See my LinkedIn profile" href="https://uk.linkedin.com/pub/morten-albring/52/380/787">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                </div>
         </div>
+        
+        <div>
+
+            <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
+            <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>
+            <p>
+                <a class="btn btn-primary" href="@Url.Action("About", "Home")">More about me</a>
+            </p>
+
+        </div>
+            
     </div>
 </div>
+
 
 
 
@@ -96,7 +102,7 @@
             <a href="@Url.Action("ComputationsIrreversibility", "Posts")">                
                 <h1>Thermodynamics, Computation and Irreversibility</h1>
                 <p>This is a brief exploration into the link between thermodynamics, the limits of computation and logical irreversibility.</p>
-                    </p>
+                    
             </a>
         </div>
 

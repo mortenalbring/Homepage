@@ -106,6 +106,8 @@
                 $scope.selectedSession = selectedSession[0];
                 $scope.activePlayers = [];
 
+                $scope.plotData = [];
+
                 for (var i = 0; i < $scope.selectedSession.Games.length; i++) {
                     for (var j = 0; j < $scope.selectedSession.Games[i].Scores.length; j++) {
 
@@ -113,6 +115,7 @@
 
                         var ss = $scope.selectedSession.Games[i].Scores[j].Scorestring;
                         $scope.selectedSession.Games[i].Scores[j].FrameArray = BowlingService.CalculateFrameScores(ss);
+                        $scope.plotData.push($scope.selectedSession.Games[i].Scores[j]);
 
 
                         var indx = $scope.activePlayers.indexOf(playerId);

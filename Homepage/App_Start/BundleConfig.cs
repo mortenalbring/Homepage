@@ -37,7 +37,7 @@ namespace Homepage
 
 
             bundles.Add(new ScriptBundle("~/bundles/amenhokit")
-               .Include("~/Scripts/d3.js")
+               .Include("~/Scripts/d3/d3.js")
                 .Include("~/Scripts/moment.js")
                .Include("~/Scripts/angular-moment.js")
                .Include("~/Scripts/angular-animate.js")
@@ -67,7 +67,7 @@ namespace Homepage
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
             
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
 
         

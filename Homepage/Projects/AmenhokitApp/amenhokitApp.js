@@ -38,7 +38,8 @@ amenhokit.controller("UploadController", ["FileUploadService", "AjaxService", "$
 
 
 amenhokit.directive('drGraph', drGraph);
-amenhokit.directive('drMultigraph', drMultiLineGraph);
+amenhokit.directive('drFramescoregraph', drFrameScoreGraph);
+amenhokit.directive('drLanebarchart', drLaneBarChart);
 
 
 amenhokit.directive('drPlayerList', function () {

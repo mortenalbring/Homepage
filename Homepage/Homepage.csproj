@@ -288,7 +288,7 @@
     <Content Include="Content\styles\ma-post-summary.less" />
     <Content Include="Projects\AmenhokitApp\Controllers\TestController.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drGraph.js" />
-    <Content Include="Projects\AmenhokitApp\Directives\drMultiLineGraph.js" />
+    <Content Include="Projects\AmenhokitApp\Directives\drFrameScoreGraph.js" />
     <Content Include="Projects\AmenhokitApp\Services\AjaxService.js" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />

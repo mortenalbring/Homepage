@@ -203,49 +203,55 @@
 .bar {
     font: 12px sans-serif;
     text-align: left;
-    padding-top:0.3em;
-    padding-bottom:0.3em;
-    padding-left:0.5em;
-    border:1px solid;
-    border-color: #e1e1e1;
-    border-bottom-right-radius:5px;
-    border-top-right-radius:5px;
-    cursor:pointer;
-    opacity :0.9;
-}
-.bar:hover {
-    opacity:1.0;
-}
-
-    .goodlane {
-        color: white;
-        background-color: #0b8e3a;
-        border-color: #066c2b;
-    }
-    .badlane {
-        color: white;
-        background-color: #c13602;
-        border-color: #8e2e0b;
-    }
-
-    .playeraverage {
-        font-weight: bold;
-        background-color: #c18a09;
-        border-color: #aa7a08;
-    }
-.bar span {
-    border:1px solid #ccc;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.5em;
+    border: 1px solid;
+    
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    opacity: 0.9;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
 }
 
-    .tooltip {   
-  position: absolute;           
-  text-align: left;              
-  padding: 2px;             
-  font: 10px sans-serif;        
-  background: lightsteelblue;   
-  border: 0px;      
-  border-radius: 4px;           
-  pointer-events: none;         
+    .bar:hover {
+        opacity: 1.0;
+    }
+
+.goodlane {
+    color: black;
+    border-color: #fff;      
+}
+
+.badlane {
+    color: black;
+    border-color: #fff;       
+}
+
+.playeraverage {
+    color: black;
+    font-weight: bold;
+    border-color:#000;
+}
+
+.bar .lanebar-info {
+    width:100px;
+    margin-right: 2em;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: left;
+    padding: 2px;
+    font: 10px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 4px;
+    pointer-events: none;
 }
 /* when hiding the picture */
 .ng-hide-add {

@@ -83,7 +83,7 @@
             newbar.append("div")
                 .attr("class", "lanebar-info")
                 .text(function (d) {
-                    return "Average : " + d.Average;
+                    return "Average score: " + d.Average;
                 });
 
 

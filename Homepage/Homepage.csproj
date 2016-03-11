@@ -236,9 +236,7 @@
     <Compile Include="Repository\AmenhokitRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConnectionStrings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ConnectionStrings.config" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-theme.css" />

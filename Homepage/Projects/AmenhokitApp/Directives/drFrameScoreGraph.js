@@ -1,16 +1,25 @@
-﻿var drMultiLineGraph = function ($rootScope, $window, $location) {
+﻿var drFrameScoreGraph = function ($rootScope, $window, $location) {
     return {
         restrict: "EA",
-        template: "<svg id='graph-container'></svg>" +
+        template: "<div class='graph-control-container'>" +
+            "<svg id='graph-container'></svg>" +
             "<br>" +
-            "<button ng-click='setSelectedGame(1)'>Game 1</button>" +
-            "<button ng-click='setSelectedGame(2)'>Game 2</button>" +
-            "<button ng-click='setSelectedGame(3)'>Game 3</button>" +
-            "<div ng-if='selected'>" +
-            "{{selected.ID}} | Score : {{selected.Score}}, Lane: {{selected.Lane}}, Date : {{selected.Date}} " +
+            "<ul class='graph-button-container'>" +
+                "<li ng-class=\"{'button-active' : !selectedGame}\"><div ng-click='setSelectedGame()'>All Games</li>" +
+                "<li ng-repeat='gameNumber in gameNumbers' ng-class=\"{'button-active' : selectedGame == gameNumber}\">" +
+                    "<div ng-click='setSelectedGame(gameNumber)'>Game {{gameNumber}}</div>" +
+                "</li>" +
+            "</ul>" +
+            "<ul class='graph-button-container'>" +
+                "<li ng-class=\"{'button-active' : !selectedPlayer}\"><div ng-click='setSelectedPlayer()'>All Players</li>" +
+                "<li ng-repeat='playerName in playerNames' ng-class=\"{'button-active' : selectedPlayer == playerName}\">" +
+                    "<div ng-click='setSelectedPlayer(playerName)'>{{playerName | titlecase}}</div>" +
+                "</li>" +
+            "</ul>" +
             "</div>",
 
-        link: function (scope, elem, attrs) {
+        link: function (scope, elem, attrs) {         
+
             function getPlayerColor(player) {
                 switch (player) {
                     case 1:
@@ -37,16 +46,20 @@
             }
             
             scope.selectedGame = null;
-            scope.setSelectedGame = function(game) {
-                var xx = 42;
+            scope.selectedPlayer = null;
+            scope.setSelectedGame = function(game) {                
                 scope.selectedGame = game;
                 drawLineChart();
             }
+            scope.setSelectedPlayer = function (player) {
+                scope.selectedPlayer = player;
+                drawLineChart();
+            }
+
 
             scope.selected = null;
 
-            var plotData = scope[attrs.chartData];
-            var pathClass = "path";
+            var plotData = scope[attrs.chartData];            
             var xScale, yScale, xAxisGen, yAxisGen;
 
             var d3 = $window.d3;
@@ -78,6 +91,17 @@
                     }));                    
                 }));
 
+                var gameNumbers = plotData.map(function (e) {
+                    return e.GameNumber;
+                }).filter(function (item, i, ar) { return ar.indexOf(item) === i; });;
+                var playerNames = plotData.map(function (e) {
+                    return e.Name;
+                }).filter(function (item, i, ar) { return ar.indexOf(item) === i; });;
+
+                scope.gameNumbers = gameNumbers;
+                scope.playerNames = playerNames;
+                
+
                 yScale = d3.scale.linear()
                .domain([0, hscore])
                .range([height, 0]);
@@ -90,11 +114,19 @@
 
 
                 for (var j = 0; j < plotData.length; j++) {
+                    var isActive = true;
+                    
                     if (scope.selectedGame) {
-                        if (plotData[j].GameNumber !== scope.selectedGame) {
-                            continue;
+                        if (plotData[j].GameNumber !== scope.selectedGame) {                            
+                            isActive = false;
                         }
                     }
+                    if (scope.selectedPlayer) {
+                        if (plotData[j].Name !== scope.selectedPlayer) {
+                            isActive = false;
+                        }
+                    }
+
                     var frameArray = plotData[j].FrameArray;
                   
                     var player = plotData[j].Player;                    
@@ -106,7 +138,18 @@
                     container.append("path")
                         .attr("class", "line")
                         .attr("fill", "none")
-                        .attr("stroke-width", 2)
+                        .attr("stroke-width", function() {
+                            if (isActive) {
+                                return 3;
+                            }
+                            return 1;
+                        })
+                        .attr("stroke-opacity", function () {
+                            if (isActive) {
+                                return 1;
+                            }
+                            return 0.2;
+                        })
                         .attr("stroke", function () {return getPlayerColor(player);} )
                         .attr("d", function(d) { return line(frameArray); });
 
@@ -117,12 +160,19 @@
                    .attr("fill", function (d, i) { return getPlayerColor(player); })
                    .attr("cx", function (d, i) { return xScale(d.Frame) })
                    .attr("cy", function (d, i) { return yScale(d.Cumulative) })                   
-                   .attr("r", function (d, i) { return 3 })
+                   .attr("r", function (d, i) {
+                       if (isActive) {
+                            return 3;
+                       }
+                            return 0;
+                        })
                    .on("click", function (d) {
                        var xx = 42;
+                       /*
                        $rootScope.$apply(function () {
                            $location.path("/session/" + d.Session);
                        });
+                       */
 
                    })
                    .on("mouseover", function (d) {

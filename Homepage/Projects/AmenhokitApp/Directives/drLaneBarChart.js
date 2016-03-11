@@ -15,12 +15,24 @@
 
             plotData.sort(function (a, b) {
                 return parseInt(a.Lane) - parseInt(b.Lane);
-            })
+            });
             var x = d3.scale.linear()
                 .domain([0, d3.max(plotData, function (d) {
                     return d.Average;
                 })])
                 .range([0, 100]);
+
+            var colorscale = d3.scale.linear()
+                .domain([
+                    d3.min(plotData, function (d) {
+                        return d.Average;
+                    }),                    
+                    d3.max(plotData, function (d) {
+                        return d.Average;
+                    })
+                ])
+                .range(["#F08080", "#90EE90"]);
+
 
             var tooltip = svg.append("div")
                 .attr("class", "tooltip")
@@ -29,14 +41,18 @@
             var newbar = svg.selectAll("div")
                 .data(plotData)
                 .enter().append("div")
-                .style("width", function(d) { return x(d.Average) + "%"; })
-                .attr("class", function(d) {
+                .style("width", function (d) { return x(d.Average) + "%"; })
+                .style("background-color", function (d) {
+                    var color = colorscale(d.Average);
+                    return colorscale(d.Average);
+                })                
+                .attr("class", function (d) {
                     if (d.Average > playerAverage) {
                         return "bar goodlane";
                     }
                     return "bar badlane";
                 })
-                .on("mouseover", function(d) {
+                .on("mouseover", function (d) {
                     tooltip.transition()
                         .duration(200)
                         .style("opacity", 0.9);
@@ -53,18 +69,27 @@
                         .style("left", (d3.event.pageX) + "px")
                         .style("top", (d3.event.pageY - 28) + "px");
                 })
-                .on("mouseout", function(d) {
+                .on("mouseout", function (d) {
                     tooltip.transition()
                         .duration(500)
                         .style("opacity", 0);
-                }).text(function (d) { return "Lane " + d.Lane + "Average : " + d.Average });
+                });
 
-            newbar.append("span").text(function(d) {
-                return "Average : " + d.Average
-            });
+            newbar.append("div")
+                .attr("class", "lanebar-info")
+                .text(function (d) {
+                    return "Lane " + d.Lane;
+                });
+            newbar.append("div")
+                .attr("class", "lanebar-info")
+                .text(function (d) {
+                    return "Average : " + d.Average;
+                });
+
 
             svg.insert("div", ":first-child")
             .style("width", function () { return x(playerAverage) + "%"; })
+                .style("background-color", function() { return colorscale(playerAverage)})
             .attr("class", "bar playeraverage")
             .text(function () { return "Player Average : " + playerAverage });
 

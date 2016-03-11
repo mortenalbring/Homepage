@@ -201,13 +201,13 @@
 }
 
 .bar {
-    font: 12px sans-serif;
-    text-align: left;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    padding-left: 0.5em;
-    border: 1px solid;
+    font: 10px sans-serif;
     
+    padding-bottom: 0.3em;
+    
+    color: white;
+    border: 1px solid;
+    margin: 0.2em;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
@@ -216,30 +216,42 @@
     display: -ms-flexbox; /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
+    overflow:hidden;
 }
 
     .bar:hover {
         opacity: 1.0;
     }
 
+.goodlane, .badlane {
+    text-align: left;
+}
+
 .goodlane {
-    color: black;
-    border-color: #fff;      
+    border-color: rgb(152,78,163);
+    border-color: #032201;
 }
 
 .badlane {
-    color: black;
-    border-color: #fff;       
+    border-color: #fed087;
+    border-color: #460202;
 }
 
 .playeraverage {
-    color: black;
+    color: white;        
     font-weight: bold;
-    border-color:#000;
+    border-color: #000;
 }
 
 .bar .lanebar-info {
-    width:100px;
+    height:100%;
+    background-color:rgba(255, 255, 255, 0.5);
+    border:1px solid #ccc;
+    border-radius:4px;
+    color:#000;
+    padding-left:0.2em;
+    padding-right:0.2em;
+    min-width: 80px;
     margin-right: 2em;
 }
 

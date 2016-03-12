@@ -285,6 +285,7 @@
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-post-summary.less" />
     <Content Include="Projects\AmenhokitApp\Controllers\TestController.js" />
+    <Content Include="Projects\AmenhokitApp\Directives\drGameNumberBarChart.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drGraph.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drFrameScoreGraph.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drLaneBarChart.js" />

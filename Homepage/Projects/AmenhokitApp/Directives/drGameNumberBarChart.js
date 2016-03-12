@@ -3,7 +3,7 @@
         restrict: "EA",
         template: "<div class='graph-control-container'>" +
            "<ul class='graph-button-container'>" +
-           "<li ng-class=\"{'button-active' : sortprop == 'lane'}\" ng-click=sortBy('lane',true)>Sort by lane</li>" +
+           "<li ng-class=\"{'button-active' : sortprop == 'gamenumber'}\" ng-click=sortBy('gamenumber',true)>Sort by game number</li>" +
            "<li ng-class=\"{'button-active' : sortprop == 'average'}\" ng-click=sortBy('average',true)>Sort by score</li>" +
            "<li ng-class=\"{'button-active' : sortprop == 'count'}\" ng-click=sortBy('count',true)>Sort by play count</li>" +
            "</ul>" +
@@ -15,7 +15,7 @@
 
             scope.sortBy = function (prop, redraw) {
                 scope.sortprop = prop;
-                if (prop == 'lane') {
+                if (prop == 'gamenumber') {
                     plotData.sort(function (a, b) {
                         return parseInt(a.GameNumber) - parseInt(b.GameNumber);
                     });
@@ -47,7 +47,7 @@
             var plotData = scope[attrs.chartData];
             var playerAverage = scope[attrs.playerAverage];
 
-            scope.sortBy('average', false);
+            scope.sortBy('gamenumber', false);
 
             var x = d3.scale.linear()
                 .domain([0, d3.max(plotData, function (d) {

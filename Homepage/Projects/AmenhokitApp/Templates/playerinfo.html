@@ -76,15 +76,22 @@
 
 
         <h2>Breakdown by game number</h2>
-        <div dr-gamenumberbarchart chart-data="gamenumberstotal" player-average="averageScore"></div>
 
-        
-
-        <table class="table table-condensed table-bordered table-striped">
+        <div class="btn btn-default btn-sm" ng-click="showGamesTable=!showGamesTable">
+            <span ng-if="showGamesTable">
+                Show chart
+            </span>
+            <span ng-if="!showGamesTable">
+                Show table
+            </span>
+        </div>
+        <div ng-if="!showGamesTable" dr-gamenumberbarchart chart-data="gamenumberstotal" player-average="averageScore"></div>
+       
+        <table ng-if="showGamesTable" class="table table-condensed table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Game Number</th>                    
-                    <th></th>
+                    <th>Play count</th>
                     <th>Average score</th>
                 </tr>
             </thead>

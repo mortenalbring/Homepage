@@ -236,9 +236,7 @@
     <Compile Include="Repository\AmenhokitRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConnectionStrings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ConnectionStrings.config" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -287,7 +285,10 @@
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-post-summary.less" />
     <Content Include="Projects\AmenhokitApp\Controllers\TestController.js" />
+    <Content Include="Projects\AmenhokitApp\Directives\drGameNumberBarChart.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drGraph.js" />
+    <Content Include="Projects\AmenhokitApp\Directives\drFrameScoreGraph.js" />
+    <Content Include="Projects\AmenhokitApp\Directives\drLaneBarChart.js" />
     <Content Include="Projects\AmenhokitApp\Services\AjaxService.js" />
     <Content Include="Projects\AmenhokitApp\amenhokit.css" />
     <Content Include="Projects\AmenhokitApp\amenhokitApp.js" />
@@ -30917,7 +30918,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\less\" />
     <Folder Include="tempfiles\" />
-    <Folder Include="Views\Amenhokit\" />
     <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>

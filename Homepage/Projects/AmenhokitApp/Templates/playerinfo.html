@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div dr-graph chart-data="chartData"></div>
+        <div dr-graph chart-data="selectedPlayerScores"></div>
 
         <h2>Breakdown by lane</h2>
 
@@ -49,7 +49,6 @@
         </div>
 
         <div ng-if="!showLanesTable" dr-lanebarchart chart-data="lanestotals" player-average="averageScore"></div>
-
 
 
         <table ng-if="showLanesTable" class="table table-condensed table-bordered table-striped">
@@ -74,6 +73,36 @@
                 </tr>
             </tbody>
         </table>
+
+
+        <h2>Breakdown by game number</h2>
+        <div dr-gamenumberbarchart chart-data="gamenumberstotal" player-average="averageScore"></div>
+
+        
+
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Game Number</th>                    
+                    <th></th>
+                    <th>Average score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="gamenumber in gamenumberstotal | orderBy:'-Average'">
+                    <td>
+                        {{gamenumber.GameNumber}}
+                    </td>
+                    <td>
+                        {{gamenumber.Count}}
+                    </td>
+                    <td>
+                        {{gamenumber.Average}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
 
         <h2>All Scores</h2>
         <table class="table table-condensed table-bordered table-striped">

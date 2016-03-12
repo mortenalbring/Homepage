@@ -17,6 +17,8 @@
         var scoresum = 0;
 
         var lanestotal = [];
+        var gamenumberstotal = [];
+
         $scope.turkeyGames = [];
         $scope.cloverGames = [];
 
@@ -34,7 +36,6 @@
                 $scope.cloverGames.push(o);
             }
 
-
             scoresum = scoresum + o.Score;
             var lane = o.Lane;
 
@@ -51,12 +52,35 @@
                     ScoreSum: o.Score
                 });
             }
+
+            var gamenumber = o.GameNumber;
+            var matching = gamenumberstotal.filter(function (e) {
+                return e.GameNumber == gamenumber;
+            });
+            if (matching.length == 1) {
+                matching[0].Count = matching[0].Count + 1;
+                matching[0].ScoreSum = matching[0].ScoreSum + o.Score;
+            }
+            else {
+                gamenumberstotal.push({
+                    GameNumber: gamenumber,
+                    Count: 1,
+                    ScoreSum: o.Score
+                });
+            }
         });
+
         $scope.lanestotals = [];
         $.each(lanestotal, function (i, o) {
             o.Average = parseInt(o.ScoreSum / o.Count);
             $scope.lanestotals.push(o);
         });
+        $scope.gamenumberstotal = [];
+        $.each(gamenumberstotal, function (i, o) {
+            o.Average = parseInt(o.ScoreSum / o.Count);
+            $scope.gamenumberstotal.push(o);
+        });
+
 
 
         $scope.averageScore = parseInt(scoresum / $scope.selectedPlayerScores.length);
@@ -73,22 +97,13 @@
                 $scope.selectedPlayer = selectedPlayer[0];
             }
 
-
             $scope.selectedPlayerScores = $scope.playerscores.filter(function (e) {
                 return e.Player == $routeParams.playerId;
             });
 
+            calculateStats();      
 
-            calculateStats();
-
-            $scope.chartData = [];
-
-            for (var i = 0; i < $scope.selectedPlayerScores.length; i++) {
-
-                $scope.chartData.push($scope.selectedPlayerScores[i]);
-            }
-
-            $scope.chartData.sort(function (a, b) {
+            $scope.selectedPlayerScores.sort(function (a, b) {
                 return new Date(a.Date) - new Date(b.Date);
             });
 

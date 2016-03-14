@@ -45,7 +45,7 @@
                 }
             }
             
-            scope.selectedGame = null;
+            scope.selectedGame = 1;
             scope.selectedPlayer = null;
             scope.setSelectedGame = function(game) {                
                 scope.selectedGame = game;
@@ -65,10 +65,11 @@
             var d3 = $window.d3;
             var rawSvg = elem.find("svg")[0];
             var svg = d3.select(rawSvg);
+            var elemwidth = svg.style('width');
 
-            var margin = { top: 30, right: 50, bottom: 60, left: 50 },
-                width = 600 - margin.left - margin.right,
-                height = 270 - margin.top - margin.bottom;
+            var margin = { top: 10, right: 50, bottom: 60, left: 50 },
+                width = parseInt(elemwidth) - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
 
       
             function setChartParameters(container) {
@@ -162,7 +163,7 @@
                    .attr("cy", function (d, i) { return yScale(d.Cumulative) })                   
                    .attr("r", function (d, i) {
                        if (isActive) {
-                            return 3;
+                            return 4;
                        }
                             return 0;
                         })

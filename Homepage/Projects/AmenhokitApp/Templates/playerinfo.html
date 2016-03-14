@@ -4,7 +4,7 @@
     <div ng-if="!loading">
         <dr-player-list players="players" selected-player="selectedPlayer"></dr-player-list>
     </div>
-    <div ng-if="!loading">
+    <div class="amenhokit-maincontent" ng-if="!loading">
         <h1>
             {{selectedPlayer.Name | titlecase}}
         </h1>
@@ -37,78 +37,91 @@
 
         <div dr-graph chart-data="selectedPlayerScores"></div>
 
-        <h2>Breakdown by lane</h2>
 
-        <div class="btn btn-default btn-sm" ng-click="showLanesTable=!showLanesTable">
-            <span ng-if="showLanesTable">
-                Show chart
-            </span>
-            <span ng-if="!showLanesTable">
-                Show table
-            </span>
+        <div class="amenhokit-row">
+            <div class="amenhokit-row-item">
+
+                <h2>Breakdown by lane</h2>
+
+                <div class="btn btn-default btn-sm" ng-click="showLanesTable=!showLanesTable">
+                    <span ng-if="showLanesTable">
+                        Show chart
+                    </span>
+                    <span ng-if="!showLanesTable">
+                        Show table
+                    </span>
+                </div>
+
+                <div ng-if="!showLanesTable" dr-lanebarchart chart-data="lanestotals" player-average="averageScore"></div>
+
+
+                <table ng-if="showLanesTable" class="table table-condensed table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Lane</th>
+                            <th>Times played on</th>
+                            <th>Average score for lane</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="lanescore in lanestotals | orderBy:'-Average'">
+                            <td>
+                                {{lanescore.Lane}}
+                            </td>
+                            <td>
+                                {{lanescore.Count}}
+                            </td>
+                            <td>
+                                {{lanescore.Average}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="amenhokit-row-item">
+
+                <h2>Breakdown by game number</h2>
+
+                <div class="btn btn-default btn-sm" ng-click="showGamesTable=!showGamesTable">
+                    <span ng-if="showGamesTable">
+                        Show chart
+                    </span>
+                    <span ng-if="!showGamesTable">
+                        Show table
+                    </span>
+                </div>
+                <div ng-if="!showGamesTable" class="half-height"
+                     dr-gamenumberbarchart
+                     chart-data="gamenumberstotal" 
+                     player-average="averageScore"></div>
+
+                <table ng-if="showGamesTable" class="table table-condensed table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Game Number</th>
+                            <th>Play count</th>
+                            <th>Average score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="gamenumber in gamenumberstotal | orderBy:'-Average'">
+                            <td>
+                                {{gamenumber.GameNumber}}
+                            </td>
+                            <td>
+                                {{gamenumber.Count}}
+                            </td>
+                            <td>
+                                {{gamenumber.Average}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div ng-if="!showLanesTable" dr-lanebarchart chart-data="lanestotals" player-average="averageScore"></div>
 
-
-        <table ng-if="showLanesTable" class="table table-condensed table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Lane</th>
-                    <th>Times played on</th>
-                    <th>Average score for lane</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="lanescore in lanestotals | orderBy:'-Average'">
-                    <td>
-                        {{lanescore.Lane}}
-                    </td>
-                    <td>
-                        {{lanescore.Count}}
-                    </td>
-                    <td>
-                        {{lanescore.Average}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-
-        <h2>Breakdown by game number</h2>
-
-        <div class="btn btn-default btn-sm" ng-click="showGamesTable=!showGamesTable">
-            <span ng-if="showGamesTable">
-                Show chart
-            </span>
-            <span ng-if="!showGamesTable">
-                Show table
-            </span>
-        </div>
-        <div ng-if="!showGamesTable" dr-gamenumberbarchart chart-data="gamenumberstotal" player-average="averageScore"></div>
-       
-        <table ng-if="showGamesTable" class="table table-condensed table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Game Number</th>                    
-                    <th>Play count</th>
-                    <th>Average score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="gamenumber in gamenumberstotal | orderBy:'-Average'">
-                    <td>
-                        {{gamenumber.GameNumber}}
-                    </td>
-                    <td>
-                        {{gamenumber.Count}}
-                    </td>
-                    <td>
-                        {{gamenumber.Average}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
 
         <h2>All Scores</h2>

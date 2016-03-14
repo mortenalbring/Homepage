@@ -6,6 +6,23 @@
         padding: 1em;
     }
 
+    .amenhokit-maincontent {
+        width:100%;
+        margin-right:4em;
+    }
+
+.amenhokit-row {
+    width:100%;
+    display:flex;
+    
+}
+.amenhokit-row > .amenhokit-row-item {
+    padding-left:1em;
+    padding-right:1em;
+    flex-grow:1;
+}
+
+
 .upload-container {
     display: flex;
     padding-left: 1em;
@@ -143,6 +160,7 @@
 }
 
 #graph-container {
+    width:100%;
     padding: 1em;
     border: 1px solid #f1f1f1;
 }
@@ -162,7 +180,8 @@
 
 .graph-control-container {
     padding: 0.2em;
-    border: 1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;    
 }
 
 .graph-button-container {
@@ -204,14 +223,32 @@
     
     width:100%;
 }
+
+.barchart-gamenumber {    
+    height:100%;    
+    display:flex;    
+}
+.gamenumber-bar {    
+    flex-grow:1;
+    align-self: flex-end;
+    border:1px solid #ccc;
+    border-radius:5px;
+    margin-left:1em;
+    margin-right:1em;
+}
+.half-height {
+    height:50%;
+}
+.full-height {
+    height:100%;
+}
+
 .bar {
-    font: 10px sans-serif;
-    
-    padding-bottom: 0.3em;
-    
+    font: 10px sans-serif;            
     color: white;
     margin:0.1em;
-    
+    padding-top:0.6em;
+    padding-bottom:0.6em;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
@@ -222,6 +259,7 @@
     display: flex;
     overflow:hidden;
     align-items:center;
+    
 }
 
     .bar:hover {
@@ -243,17 +281,22 @@
 }
 
 .playeraverage {
+    padding-left:2em;    
     color: white;        
     font-weight: bold;
     border-color: #000;
 }
+.lanebar-info {
+    padding-left:0.2em;
+    padding-right:0.2em;    
+    min-width:80px;
+}
 
-.bar .lanebar-info {    
-    
+.gamenumber-info {
     padding-left:0.2em;
     padding-right:0.2em;
-    min-width: 80px;
-    margin-right: 2em;
+    font-size:10px;
+    color:#fff;
 }
 
 .tooltip {

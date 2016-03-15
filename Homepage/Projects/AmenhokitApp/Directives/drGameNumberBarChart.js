@@ -117,19 +117,26 @@
                         return "Game " + d.GameNumber;
                     });
                 newbar.append("div")
+                   .attr("class", "gamenumber-info")
+                   .text(function (d) {
+                       return "Plays : " + d.Count;
+                   });
+                newbar.append("div")
                     .attr("class", "gamenumber-info")
                     .text(function (d) {
                         return "Average : " + d.Average;
                     });
 
 
-                /*
-                svg.insert("div", ":first-child")
-                .style("height", function () { return x(playerAverage) + "%"; })
-                    .style("background-color", function () { return colorscale(playerAverage) })
-                .attr("class", "bar playeraverage")
+                var averagebar = svg.insert("div", ":first-child")
+                    .style("height", function() { return x(playerAverage) + "%"; })
+                    .style("background-color", function() { return colorscale(playerAverage) })
+                    .attr("class", "gamenumber-bar");
+
+                averagebar.append("div")
+                 .attr("class", "gamenumber-info")
                 .text(function () { return "Player Average : " + playerAverage });
-                */
+                
 
                 var tooltip = svg.append("div")
                  .attr("class", "tooltip")

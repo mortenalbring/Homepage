@@ -125,6 +125,14 @@
                         return "Average score: " + d.Average;
                     });
 
+                if (scope.sortprop == "count") {
+                    newbar.append("div")
+                     .attr("class", "lanebar-info")
+                     .text(function (d) {
+                         return "Plays : " + d.Count;
+                     });
+                }
+
 
                 svg.insert("div", ":first-child")
                 .style("width", function () { return x(playerAverage) + "%"; })

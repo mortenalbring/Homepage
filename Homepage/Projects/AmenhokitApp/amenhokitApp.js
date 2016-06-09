@@ -15,7 +15,7 @@ amenhokit.config(['$routeProvider', function ($routeProvider) {
         })
          .when('/session/:sessionId', {
              templateUrl: '/Projects/AmenhokitApp/Templates/vwSessionInfo.html',
-             controller: 'DisplayController'
+             controller: 'SessionDisplayController'
          })
         .when('/tests', {
             templateUrl: '/Projects/AmenhokitApp/Templates/vwTests.html',
@@ -32,6 +32,8 @@ amenhokit.factory('BowlingService', [BowlingService]);
 amenhokit.service('DataService', ["$q", "AjaxService", DataService]);
 amenhokit.controller("HomeController", HomeController);
 amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataService", "BowlingService", DisplayController]);
+amenhokit.controller("SessionDisplayController", ["$routeParams", "$scope", "DataService", "BowlingService", SessionDisplayController]);
+
 amenhokit.controller("TestController", ["$scope","DataService","BowlingService", TestController]);
 
 amenhokit.controller("UploadController", ["FileUploadService", "AjaxService", "$scope", UploadController]);

@@ -68,7 +68,7 @@
     background: #1000ff;
     color: #fff;
     padding: 0.5em;
-    border: #0a009a;
+    border: #0a009a;    
     border-radius: 10px;
     text-decoration: none;
 }
@@ -111,9 +111,8 @@
 }
 
 
-.playerlist {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.playerlist {    
+    border-right:1px solid #ccc;    
     padding: 1em;
 }
 

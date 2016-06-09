@@ -284,7 +284,10 @@
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-post-summary.less" />
+    <Content Include="Projects\AmenhokitApp\Controllers\PlayerDisplayController.js" />
+    <Content Include="Projects\AmenhokitApp\Controllers\SessionDisplayController.js" />
     <Content Include="Projects\AmenhokitApp\Controllers\TestController.js" />
+    <Content Include="Projects\AmenhokitApp\Directives\drMultiplayerGraph.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drGameNumberBarChart.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drGraph.js" />
     <Content Include="Projects\AmenhokitApp\Directives\drFrameScoreGraph.js" />

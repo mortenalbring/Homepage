@@ -5,12 +5,6 @@
             "<svg id='graph-container'></svg>" +
             "<br>" +
             "<ul class='graph-button-container'>" +
-                "<li ng-class=\"{'button-active' : !selectedGame}\"><div ng-click='setSelectedGame()'>All Games</li>" +
-                "<li ng-repeat='gameNumber in gameNumbers' ng-class=\"{'button-active' : selectedGame == gameNumber}\">" +
-                    "<div ng-click='setSelectedGame(gameNumber)'>Game {{gameNumber}}</div>" +
-                "</li>" +
-            "</ul>" +
-            "<ul class='graph-button-container'>" +
                 "<li ng-class=\"{'button-active' : !selectedPlayer}\"><div ng-click='setSelectedPlayer()'>All Players</li>" +
                 "<li ng-repeat='playerName in playerNames' ng-class=\"{'button-active' : selectedPlayer == playerName}\">" +
                     "<div ng-click='setSelectedPlayer(playerName)'>{{playerName | titlecase}}</div>" +
@@ -69,33 +63,31 @@
             elemwidth = 800;
 
 
-            var margin = { top: 10, right: 5, bottom: 60, left: 35 },
+            var margin = { top: 10, right: 50, bottom: 60, left: 35 },
                 width = parseInt(elemwidth) - margin.left - margin.right,
                 height = 400 - margin.top - margin.bottom;
 
 
             function setChartParameters(container) {
 
-                var minDate = Math.min.apply(Math,
-                    plotData.map(function(o) {
-                        return o.Date;
-                    }));
-                
-                var maxDate = Math.max.apply(Math,
-                    plotData.map(function (o) {
-                        return o.Date;
-                    }));
+                var dateArray = plotData.map(function (o) {
+                    return o.Date;
+                }).sort(function (a, b) {
+                    return new Date(a) - new Date(b);
+                });
+
+                var minDate = dateArray[0];
+                var maxDate = dateArray[dateArray.length - 1];
+
 
 
                 xScale = d3.time.scale()
                 .domain([minDate, maxDate])
-                .range([width, margin.left]);
-
-
+                .range([0, width - 100]);
 
 
                 xAxisGen = d3.svg.axis()
-                    .scale(xScale)                    
+                    .scale(xScale)
                     .orient("bottom")
                     .ticks(10);
 
@@ -111,6 +103,10 @@
                     return e.Name;
                 }).filter(function (item, i, ar) { return ar.indexOf(item) === i; });;
 
+                var playerIds = plotData.map(function (e) {
+                    return e.Player;
+                }).filter(function (item, i, ar) { return ar.indexOf(item) === i; });;
+
                 scope.gameNumbers = gameNumbers;
                 scope.playerNames = playerNames;
 
@@ -124,11 +120,13 @@
                     .orient("left")
                     .ticks(5);
 
+                var isActive = true;
 
                 var points = container.selectAll(".point")
                .data(plotData)
                .enter().append("svg:circle")
                .attr("stroke", "black")
+                    .attr("opacity", 0.1)
                .attr("fill", function (d, i) { return getPlayerColor(d.Player); })
                .attr("cx", function (d, i) {
                    var yy = xScale(d.Date);
@@ -136,7 +134,7 @@
                })
                .attr("cy", function (d, i) { return yScale(d.Score) })
                .attr("r", function (d, i) {
-                  
+
                    return 3;
                })
                .on("click", function (d) {
@@ -152,40 +150,56 @@
                    $rootScope.$apply(function () {
                        scope.selected = d;
                    });
-               });;
-            }
+               });
 
-            /*
-                for (var j = 0; j < plotData.length; j++) {
-                    var isActive = true;
-                    
-                    if (scope.selectedGame) {
-                        if (plotData[j].GameNumber !== scope.selectedGame) {                            
-                            isActive = false;
+                var line = d3.svg.line()
+              .interpolate("basis")
+              .x(function (d) {
+                  return xScale(d.Date);
+              })
+              .y(function (d) {
+                  return yScale(d.Average);
+              });
+
+
+                for (var j = 0; j < playerIds.length; j++) {
+                    var playerData = plotData.filter(function (e) {
+                        return e.Player == playerIds[j];
+                    });
+
+                    var playerDates = playerData.map(function (e) {
+                        return e.Date;
+                    }).filter(function (item, i, ar) { return ar.indexOf(item) === i; }).sort(function (a, b) {
+                        return new Date(a) - new Date(b);
+                    });
+
+                    var playerAverages = [];
+
+                    for (var k = 0; k < playerDates.length; k++) {
+                        var playerDateScores = playerData.filter(function (e) {
+                            return e.Date === playerDates[k];
+                        }).map(function (f) {
+                            return f.Score;
+                        });
+
+                        var sum = 0;
+                        for (var l = 0; l < playerDateScores.length; l++) {
+                            sum = sum + playerDateScores[l];
                         }
-                    }
-                    if (scope.selectedPlayer) {
-                        if (plotData[j].Name !== scope.selectedPlayer) {
-                            isActive = false;
-                        }
-                    }
+                        var average = sum / playerDateScores.length;
 
-                  //  var frameArray = plotData[j].FrameArray;
-                  
-                    var player = plotData[j].Player;                    
+                        var obj = {
+                            Date: playerDates[k],
+                            Average: average
+                        };
+                        playerAverages.push(obj);
 
-                    /*
-                    var line = d3.svg.line()
-                        .interpolate("basis")                        
-                        .x(function(d) {
-                            var blarg = xScale(d.Date);
-                            return xScale(d.Date);
-                        })
-                        .y(function (d) { return yScale(d.Score) });
+                    }                    
+
                     container.append("path")
                         .attr("class", "line")
                         .attr("fill", "none")
-                        .attr("stroke-width", function() {
+                        .attr("stroke-width", function () {
                             if (isActive) {
                                 return 3;
                             }
@@ -197,36 +211,11 @@
                             }
                             return 0.2;
                         })
-                        .attr("stroke", function () {return getPlayerColor(player);} )
-                        .attr("d", function(d) { return line(frameArray); });
-                        */
+                        .attr("stroke", function () { return getPlayerColor(playerIds[j]); })
+                        .attr("d", function (d) { return line(playerAverages); });
+                }
 
-
-            /*
-            var points = container.selectAll(".point")
-                .data(plotData)
-                .enter().append("svg:circle")
-                .attr("stroke", "black")
-                //.attr("fill", function(d, i) { return "blue" })
-                .attr("cx", function (d, i) { return xScale(d.Date) })
-                .attr("cy", function (d, i) { return yScale(d.Score) })
-                .attr("class", "data-circle")
-                .attr("r", function (d, i) { return 3 })
-                .on("click", function (d) {
-                    var xx = 42;
-                    $rootScope.$apply(function () {
-                        $location.path("/session/" + d.Session);
-                    });
-
-                })
-                .on("mouseover", function (d) {
-                    $rootScope.$apply(function () {
-                        scope.selected = d;
-                    });
-                });;
-    
-    }
-                */
+            }
 
 
             function drawLineChart() {

@@ -6,7 +6,7 @@
 
     <div ng-if="!loading">
 
-        <div dr-graph chart-data="playerscores"></div>
+        <div dr-multiplayergraph chart-data="playerscores"></div>
 
 
         <p>
@@ -23,7 +23,7 @@
 
 
 
-        <table class="table table-bordered table-striped" ng-repeat="session in sessions | orderBy: '-Date'">
+        <table class="table table-bordered table-striped" ng-repeat="session in sessions | orderBy: '-Date'  | limitTo:10" >
             <thead>
             <tr>
                 <th>
@@ -35,7 +35,7 @@
             </thead>
             <tbody>
 
-            <tr ng-repeat="game in session.Games">
+            <tr ng-repeat="game in session.Games ">
                 <td>
                     <span>Game {{game.GameNumber}} on lane {{game.Lane}}</span>
 

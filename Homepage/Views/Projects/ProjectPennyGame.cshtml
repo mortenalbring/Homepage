@@ -16,7 +16,41 @@
 <h2>ProjectPennyGame</h2>
 
 <div ng-app="PennyGame">
-    <div ng-controller="HomeController">
-        {{test}}
+    <div ng-controller="HomeController">        
+        <button class="btn btn-default" ng-click="flipCoin(1)">Flip</button>
+        <button class="btn btn-default" ng-click="flipCoin(10)">Flip 10 times</button>
+
+        <span>{{result}}</span>
+        <div>
+            <span ng-repeat="result in results track by $index">
+                {{result}}
+            </span>
+        </div>
+
+        <div>
+            <span>
+                Heads: {{(results | filter: 'H').length}}
+            </span>
+
+            <span>
+             Percentage:   {{(results | filter: 'H').length / results.length | number : 2}}
+            </span>
+        </div>
+
+        <div>
+            <span>
+                Tails: {{(results | filter: 'T').length}}
+            </span>
+
+            <span>
+                Percentage:   {{(results | filter: 'T').length / results.length | number : 2 }}
+            </span>
+
+        </div>
+
+        <div>
+            
+        </div>
+
     </div>
 </div>

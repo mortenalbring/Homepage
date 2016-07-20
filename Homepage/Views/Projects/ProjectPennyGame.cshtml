@@ -17,8 +17,38 @@
 
 <div ng-app="PennyGame">
     <div ng-controller="HomeController">        
-        <button class="btn btn-default" ng-click="flipCoin(1)">Flip</button>
-        <button class="btn btn-default" ng-click="flipCoin(10)">Flip 10 times</button>
+        <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(1)">Flip</button>
+        <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(10)">Flip 10 times</button>
+        <button class="btn btn-default" ng-disabled="!winner" ng-click="reset()">Reset</button>
+        <button class="btn btn-default" ng-click="playGames(10)">Play 10 games</button>
+        <button class="btn btn-default" ng-click="playGames(100)">Play 100 games</button>
+        <button class="btn btn-default" ng-click="playGames(1000)">Play 1000 games</button>
+        <div>
+            <span>
+                Your choice:              
+            </span>
+            <span ng-repeat="inp in input track by $index">
+                {{inp}}
+            </span>
+        </div>
+        <div>
+            <span>
+                Penny choice: 
+            </span>
+            <span ng-repeat="inp in pennyInput track by $index">
+                {{inp}}
+            </span>
+            
+        </div>
+        <div>
+            <span>Game : {{gameNumber}} </span>
+        </div>
+        <div>
+            <span>Penny wins: {{pennyWins}}</span>
+            <span>Your wins: {{userWins}}</span>
+        </div>
+
+        
 
         <span>{{result}}</span>
         <div>
@@ -29,23 +59,22 @@
 
         <div>
             <span>
-                Heads: {{(results | filter: 'H').length}}
+                Heads: {{totalHeads}}
             </span>
 
             <span>
-             Percentage:   {{(results | filter: 'H').length / results.length | number : 2}}
+             Percentage: {{(totalHeads / (totalHeads + totalTails)) | number : 2}}
             </span>
         </div>
 
         <div>
             <span>
-                Tails: {{(results | filter: 'T').length}}
+                Tails: {{totalTails}}
             </span>
 
             <span>
-                Percentage:   {{(results | filter: 'T').length / results.length | number : 2 }}
+                Percentage: {{(totalTails / (totalHeads + totalTails)) | number : 2}}
             </span>
-
         </div>
 
         <div>

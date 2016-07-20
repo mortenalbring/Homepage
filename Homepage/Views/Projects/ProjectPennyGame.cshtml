@@ -23,6 +23,8 @@
         <button class="btn btn-default" ng-click="playGames(10)">Play 10 games</button>
         <button class="btn btn-default" ng-click="playGames(100)">Play 100 games</button>
         <button class="btn btn-default" ng-click="playGames(1000)">Play 1000 games</button>
+        <button class="btn btn-default" ng-click="goFaster()">Faster [{{gameSpeed}}]</button>
+        <button class="btn btn-default" ng-click="goSlower()">Slower [{{gameSpeed}}]</button>
         <div>
             <span>
                 Your choice:              
@@ -46,6 +48,18 @@
         <div>
             <span>Penny wins: {{pennyWins}}</span>
             <span>Your wins: {{userWins}}</span>
+        </div>
+
+        <div> 
+            <div ng-style="{width: ((pennyWins/(maxGames+1))*500) + 'px' }" style="height:30px;background-color:red;">
+
+            </div>
+            <div ng-style="{width: ((userWins/(maxGames+1))*500) + 'px' }" style="height:30px;background-color:blue;">
+
+            </div>
+            <span>
+                {{(pennyWins / (maxGames+1)) | number : 2}}
+            </span>
         </div>
 
         

@@ -1,14 +1,15 @@
 ﻿var pennyGame = angular.module("PennyGame", []);
 
-pennyGame.controller("HomeController", function ($interval, $scope) {
+pennyGame.controller("HomeController", function ($interval,$timeout, $scope) {
     $scope.results = [];
 
-    $scope.pennyInput = ["T", "T", "H"];
+    $scope.pennyInput = ["T", "H", "H"];
 
-    $scope.input = ["H", "H", "T"];
+    $scope.input = ["H", "H", "H"];
 
-    
-    
+    $scope.maxGames = 0;
+    $scope.gameSpeed = 1000;
+
     $scope.reset = function () {
         $scope.winner = false;
         $scope.results.length = 0;
@@ -17,7 +18,9 @@ pennyGame.controller("HomeController", function ($interval, $scope) {
         $scope.totalHeads = 0;
         $scope.totalTails = 0;
         $scope.totalWins = 0;
-        $scope.gameNumber = 0;
+        $scope.gameNumber = 0;        
+
+      
     }
     $scope.reset();
 
@@ -30,22 +33,45 @@ pennyGame.controller("HomeController", function ($interval, $scope) {
         }
     }
 
+    $scope.goFaster = function () {
+        $scope.gameSpeed = $scope.gameSpeed / 2;
+
+        if ($scope.gameSpeed <= 5) {
+            $scope.gameSpeed = 5;        
+        }
+    }
+    $scope.goSlower = function () {
+        $scope.gameSpeed = $scope.gameSpeed * 2;
+        if ($scope.gameSpeed >= 1000) {
+            $scope.gameSpeed = 1000;
+        }
+
+    }
+
     $scope.playGames = function (max) {
+        $scope.maxGames = max;
         $scope.reset();
 
-        gameLoop = $interval(function () {           
-            $scope.flipCoin(1);
-
-            if ($scope.winner) {
-
-                if ($scope.gameNumber == (max-1)) {
-                    $scope.stopLoop();
+        var shouldStop = false;
+        var loop = function () {
+            if (!shouldStop) {
+                $scope.gameNumber++;
+                if ($scope.gameNumber == ($scope.maxGames-1)) {
+                    shouldStop = true;
+                }
+                $scope.flipCoin(1);
+                if ($scope.winner) {
+                    $scope.results.length = 0;
                 }
 
-                $scope.gameNumber++;
-                $scope.results.length = 0;
+                $timeout(loop,$scope.gameSpeed)
+
             }
-        }, 10)
+
+        }
+        loop();
+
+       
     }
 
     $scope.flipCoin = function (iterations) {
@@ -79,12 +105,12 @@ pennyGame.controller("HomeController", function ($interval, $scope) {
 
         if (resultsString.indexOf(inputString) > -1) {
             $scope.winner = true;
-            $scope.userWins++;
+            $scope.userWins++;            
             return;
         }
         if (resultsString.indexOf(pennyString) > -1) {
             $scope.winner = true;
-            $scope.pennyWins++;
+            $scope.pennyWins++;          
             return;
         }
 

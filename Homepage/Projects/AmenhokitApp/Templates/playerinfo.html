@@ -2,21 +2,21 @@
 
 <div class="amenhokit-container">
     <div ng-if="!loading">
-        <dr-player-list players="players" selected-player="selectedPlayer"></dr-player-list>      
+        <dr-player-list players="players" selected-player="selectedPlayer"></dr-player-list>
     </div>
-    <div ng-if="!loading">       
+    <div class="amenhokit-maincontent" ng-if="!loading">
         <h1>
             {{selectedPlayer.Name | titlecase}}
         </h1>
 
         <div class="playerinfo-summary">
             <span>{{selectedPlayerScores.length}} scores recorded</span>
-            <br/>
+            <br />
             <span>Highest score on record is {{highestgame.Score}}, on <a href="#session/{{highestgame.Session}}">{{highestgame.Date  | amDateFormat: 'dddd, MMMM Do YYYY'}}</a>.</span>
-            <br/>
+            <br />
             <span>Average score is {{averageScore}}</span>
-            <br/>
-            <div ng-if="turkeyGames.length > 0">            
+            <br />
+            <div ng-if="turkeyGames.length > 0">
                 <a ng-click="showTurkeyGames = !showTurkeyGames" style="cursor:pointer">{{turkeyGames.length}} turkey<span ng-if="turkeyGames.length > 1">s</span></a>
                 <ul ng-show="showTurkeyGames">
                     <li ng-repeat="turkeyGame in turkeyGames">
@@ -35,66 +35,124 @@
             </div>
         </div>
 
-        <div dr-graph chart-data="chartData"></div>
+        <div dr-graph chart-data="selectedPlayerScores"></div>
 
-        <h2>Scores by lane</h2>
-        <table class="table table-condensed table-bordered table-striped">
+
+
+
+        <h2>Breakdown by lane</h2>
+
+        <div class="btn btn-default btn-sm" ng-click="showLanesTable=!showLanesTable">
+            <span ng-if="showLanesTable">
+                Show chart
+            </span>
+            <span ng-if="!showLanesTable">
+                Show table
+            </span>
+        </div>
+
+        <div ng-if="!showLanesTable" dr-lanebarchart chart-data="lanestotals" player-average="averageScore"></div>
+
+
+        <table ng-if="showLanesTable" class="table table-condensed table-bordered table-striped">
             <thead>
-            <tr>
-                <th>Lane</th>
-                <th>Times played on</th>
-                <th>Average score for lane</th>
-            </tr>
+                <tr>
+                    <th>Lane</th>
+                    <th>Times played on</th>
+                    <th>Average score for lane</th>
+                </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="lanescore in lanestotals | orderBy:'-Average'">
-                <td>
-                    {{lanescore.Lane}}
-                </td>
-                <td>
-                    {{lanescore.Count}}
-                </td>
-                <td>
-                    {{lanescore.Average}}
-                </td>
-            </tr>
+                <tr ng-repeat="lanescore in lanestotals | orderBy:'-Average'">
+                    <td>
+                        {{lanescore.Lane}}
+                    </td>
+                    <td>
+                        {{lanescore.Count}}
+                    </td>
+                    <td>
+                        {{lanescore.Average}}
+                    </td>
+                </tr>
             </tbody>
         </table>
+
+
+        <h2>Breakdown by game number</h2>
+
+        <div class="btn btn-default btn-sm" ng-click="showGamesTable=!showGamesTable">
+            <span ng-if="showGamesTable">
+                Show chart
+            </span>
+            <span ng-if="!showGamesTable">
+                Show table
+            </span>
+        </div>
+        <div ng-if="!showGamesTable" 
+             dr-gamenumberbarchart
+             chart-data="gamenumberstotal"
+             player-average="averageScore"></div>
+
+        <table ng-if="showGamesTable" class="table table-condensed table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Game Number</th>
+                    <th>Play count</th>
+                    <th>Average score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="gamenumber in gamenumberstotal | orderBy:'-Average'">
+                    <td>
+                        {{gamenumber.GameNumber}}
+                    </td>
+                    <td>
+                        {{gamenumber.Count}}
+                    </td>
+                    <td>
+                        {{gamenumber.Average}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
 
         <h2>All Scores</h2>
         <table class="table table-condensed table-bordered table-striped">
             <thead>
-            <tr>
-                <th>Date</th>
-                <th>Lane</th>
-                <th>Game Number</th>
-                <th>Score string</th>
-                <th>Score</th>
-            </tr>
+                <tr>
+                    <th>Date</th>
+                    <th>Lane</th>
+                    <th>Game Number</th>
+                    <th>Score string</th>
+                    <th>Score</th>
+                </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
-                <td>
-                    <a href="#/session/{{selectedPlayerScore.Session}}">
+                <tr ng-repeat="selectedPlayerScore in selectedPlayerScores">
+                    <td>
+                        <a href="#/session/{{selectedPlayerScore.Session}}">
 
-                        <span title="{{selectedPlayerScore.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{selectedPlayerScore.Date | amCalendar}}</span>
-                    </a>
-                                        
-                </td>
-                
-                <td>
-                    {{selectedPlayerScore.Lane}}
-                </td>                
-                <td>
-                    {{selectedPlayerScore.GameNumber}}
-                </td>
-                <td>
-                    {{selectedPlayerScore.Scorestring}}
-                </td>
-                <td>
-                    {{selectedPlayerScore.Score}}
-                </td>
-            </tr>
+                            <span title="{{selectedPlayerScore.Date | amDateFormat: 'dddd, MMMM Do YYYY' }}">{{selectedPlayerScore.Date | amCalendar}}</span>
+                        </a>
+
+                    </td>
+
+                    <td>
+                        {{selectedPlayerScore.Lane}}
+                    </td>
+                    <td>
+                        {{selectedPlayerScore.GameNumber}}
+                    </td>
+                    <td>
+                        {{selectedPlayerScore.Scorestring}}
+                    </td>
+                    <td>
+                        {{selectedPlayerScore.Score}}
+                    </td>
+                </tr>
             </tbody>
 
         </table>

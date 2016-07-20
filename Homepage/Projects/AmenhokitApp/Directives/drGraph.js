@@ -1,16 +1,32 @@
 ﻿var drGraph = function ($rootScope, $window,$location) {
     return {
         restrict: "EA",
-        template: "<svg id='graph-container'></svg>" +
+        template: "<div class='graph-control-container'>" +
+            "<svg id='graph-container'></svg>" +
             "<br>" +
             "<div ng-if='selected'>" +
             "{{selected.ID}} | Score : {{selected.Score}}, Lane: {{selected.Lane}}, Date : {{selected.Date}} " +
+            "</div>" +
+            "<ul class='graph-button-container'>" +
+            "<li>Interpolation</li>" +
+                    "<li ng-repeat='interpolateOption in interpolateOptions' ng-class=\"{'button-active' : selectedInterpolate == interpolateOption}\">" +
+                    "<div ng-click='setSelectedInterpolation(interpolateOption)'>{{interpolateOption | titlecase}}</div>" +
+                "</li>" +
+            "</ul>" +
             "</div>",
 
         link: function (scope, elem, attrs) {
 
             scope.selected = null;
 
+            scope.selectedInterpolate = 'basis'
+            scope.interpolateOptions = ['linear','bundle','cardinal', 'basis','monotone'];
+
+            scope.setSelectedInterpolation = function(interpolation) {
+                scope.selectedInterpolate = interpolation;
+                drawLineChart();
+            }
+         
             var plotData = scope[attrs.chartData];
             var pathClass = "path";
             var xScale, yScale, xAxisGen, yAxisGen, lineFun;
@@ -19,9 +35,11 @@
             var rawSvg = elem.find("svg")[0];
             var svg = d3.select(rawSvg);
 
+            var elemwidth = svg.style('width');
+
             var margin = { top: 30, right: 50, bottom: 60, left: 50 },
-                width = 600 - margin.left - margin.right,
-                height = 270 - margin.top - margin.bottom;
+                width = parseInt(elemwidth) - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
 
             function calculateAverages() {
 
@@ -85,7 +103,7 @@
                     .y(function (d) {
                         return yScale(d.AverageScore);
                     })
-                    .interpolate("cardinal");
+                    .interpolate(scope.selectedInterpolate);
 
                 var points = container.selectAll(".point")
                     .data(plotData)
@@ -95,7 +113,7 @@
                     .attr("cx", function (d, i) { return xScale(d.Date) })
                     .attr("cy", function (d, i) { return yScale(d.Score) })
                     .attr("class", "data-circle")
-                    .attr("r", function (d, i) { return 3 })
+                    .attr("r", function (d, i) { return 4 })
                     .on("click", function(d) {
                         var xx = 42;
                         $rootScope.$apply(function() {
@@ -112,7 +130,7 @@
 
             function drawLineChart() {
 
-
+                svg.selectAll("*").remove();
                 svg.attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom);
 
@@ -139,9 +157,8 @@
                         "fill": "none",
                         "class": pathClass
                     })
-                    .attr("opacity", "0")
-                    .attr("stroke", "blue")
-                .transition().attr("opacity", "1").duration(1000).delay(100)
+                    .attr("opacity", "1")
+                    .attr("stroke", "blue")                
 
                 
                 ;

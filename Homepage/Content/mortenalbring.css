@@ -237,7 +237,7 @@ h1, h2, h3 {
         text-shadow: 1px 4px #808080, 4px 4px 0px rgba(0, 0, 0, 0.15);
     }
     .post-title-text {
-        background: linear-gradient(rgba(255, 255, 255, 0), white);
+        background: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), white);
         
         width:100%;
         position: absolute;

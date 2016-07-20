@@ -27,8 +27,12 @@ namespace Homepage.Controllers
         public ActionResult ProjectAmenhokit()
         {            
             return View();          
-        }     
+        }
 
+        public ActionResult ProjectPennyGame()
+        {
+            return View();
+        }
 
         [HttpGet]
         public JsonResult GetGameInfo()

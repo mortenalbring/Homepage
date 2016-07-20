@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ProjectPennyGame";
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/angular")
+
+<script src="~/Projects/PennyGame/PennyGame.js"></script>    
+}
+
+
+
+
+<h2>ProjectPennyGame</h2>
+
+<div ng-app="PennyGame">
+    <div ng-controller="HomeController">
+        {{test}}
+    </div>
+</div>

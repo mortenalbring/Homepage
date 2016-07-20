@@ -369,6 +369,7 @@
     <Content Include="Projects\AngularD3\styles\nodestyles.css" />
     <Content Include="Projects\AngularD3\styles\pagestyles.css" />
     <Content Include="Projects\index.txt" />
+    <Content Include="Projects\PennyGame\PennyGame.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-moment.js" />
@@ -30916,6 +30917,7 @@
     <Content Include="Views\Projects\ProjectAmenhokit.cshtml" />
     <Content Include="Views\Shared\_NavbarLinks.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

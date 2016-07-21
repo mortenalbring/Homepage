@@ -10,7 +10,11 @@
 <script src="~/Projects/PennyGame/PennyGame.js"></script>    
 }
 
-
+<style>
+    .highlighted {
+        background-color:yellow;
+    }
+</style>
 
 
 <h2>ProjectPennyGame</h2>
@@ -29,9 +33,39 @@
             <span>
                 Your choice:              
             </span>
-            <span ng-repeat="inp in input track by $index">
-                {{inp}}
-            </span>
+            <div>
+                <strong>Coin 1</strong>
+                <div class="btn btn-group">
+                    <div class="btn btn-default" ng-click="inputOne = 'H'">
+                        H
+                    </div>
+                    <div class="btn btn-default" ng-click="inputOne = 'T'">
+                        T
+                    </div>
+                </div>
+            </div>
+            <div>
+                <strong>Coin 2</strong>
+                <div class="btn btn-group">
+                    <div class="btn btn-default" ng-click="inputTwo = 'H'">
+                        H
+                    </div>
+                    <div class="btn btn-default" ng-click="inputTwo = 'T'">
+                        T
+                    </div>
+                </div>
+            </div>
+            <div>
+                <strong>Coin 3</strong>
+                <div class="btn btn-group">
+                    <div class="btn btn-default" ng-click="inputThree = 'H'">
+                        H
+                    </div>
+                    <div class="btn btn-default" ng-click="inputThree = 'T'">
+                        T
+                    </div>
+                </div>
+            </div>            
         </div>
         <div>
             <span>
@@ -101,15 +135,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="h in history">
+                    <tr ng-repeat="h in history | orderBy: '-game' | limitTo:50">
                         <td>
                             {{h.game}}
                         </td>
                         <td>
-                            {{h.result}}
+                            
+                            <span ng-bind-html="h.result | highlight:h.winnerInput"></span>
+
                         </td>
                         <td>
-                            {{h.winner}}
+                            {{h.winner}}                            
+                            
+                        </td>
+                        <td>
+                            {{h.winnerInput}}
                         </td>
                     </tr>
                 </tbody>

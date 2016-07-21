@@ -20,9 +20,9 @@
         <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(1)">Flip</button>
         <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(10)">Flip 10 times</button>
         <button class="btn btn-default" ng-disabled="!winner" ng-click="reset()">Reset</button>
-        <button class="btn btn-default" ng-click="playGames(10)">Play 10 games</button>
+        <button class="btn btn-default" ng-click="playGames(10,20)">Play 10 games</button>
         <button class="btn btn-default" ng-click="playGames(100)">Play 100 games</button>
-        <button class="btn btn-default" ng-click="playGames(1000)">Play 1000 games</button>
+        <button class="btn btn-default" ng-click="playGames(1000,10)">Play 1000 games</button>
         <button class="btn btn-default" ng-click="goFaster()">Faster [{{gameSpeed}}]</button>
         <button class="btn btn-default" ng-click="goSlower()">Slower [{{gameSpeed}}]</button>
         <div>
@@ -92,6 +92,29 @@
         </div>
 
         <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Result</th>
+                        <th>Winner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="h in history">
+                        <td>
+                            {{h.game}}
+                        </td>
+                        <td>
+                            {{h.result}}
+                        </td>
+                        <td>
+                            {{h.winner}}
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
             
         </div>
 

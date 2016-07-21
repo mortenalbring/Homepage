@@ -7,6 +7,8 @@ pennyGame.controller("HomeController", function ($interval,$timeout, $scope) {
 
     $scope.input = ["H", "H", "H"];
 
+    $scope.history = [];
+
     $scope.maxGames = 0;
     $scope.gameSpeed = 1000;
 
@@ -19,7 +21,7 @@ pennyGame.controller("HomeController", function ($interval,$timeout, $scope) {
         $scope.totalTails = 0;
         $scope.totalWins = 0;
         $scope.gameNumber = 0;        
-
+        $scope.history.length = 0;
       
     }
     $scope.reset();
@@ -48,19 +50,23 @@ pennyGame.controller("HomeController", function ($interval,$timeout, $scope) {
 
     }
 
-    $scope.playGames = function (max) {
+    $scope.playGames = function (max, gamespeed) {
+        if (gamespeed) {
+            $scope.gameSpeed = gamespeed;
+        }
         $scope.maxGames = max;
         $scope.reset();
 
         var shouldStop = false;
         var loop = function () {
             if (!shouldStop) {
-                $scope.gameNumber++;
-                if ($scope.gameNumber == ($scope.maxGames-1)) {
+                
+                if ($scope.gameNumber == $scope.maxGames) {
                     shouldStop = true;
                 }
                 $scope.flipCoin(1);
                 if ($scope.winner) {
+                    $scope.gameNumber++;
                     $scope.results.length = 0;
                 }
 
@@ -69,10 +75,10 @@ pennyGame.controller("HomeController", function ($interval,$timeout, $scope) {
             }
 
         }
-        loop();
-
-       
+        loop();       
     }
+
+    
 
     $scope.flipCoin = function (iterations) {
         for (var i = 0; i < iterations; i++) {
@@ -95,8 +101,9 @@ pennyGame.controller("HomeController", function ($interval,$timeout, $scope) {
                 break;
             }
         }
-
     }
+
+
 
     function checkForWinner() {
         var inputString = $scope.input.join();
@@ -105,12 +112,26 @@ pennyGame.controller("HomeController", function ($interval,$timeout, $scope) {
 
         if (resultsString.indexOf(inputString) > -1) {
             $scope.winner = true;
-            $scope.userWins++;            
+            $scope.userWins++;
+            var h = {
+                result: resultsString,
+                winner: "User",
+                winnerInput: inputString,
+                game: $scope.gameNumber                
+            }
+            $scope.history.push(h);
             return;
         }
         if (resultsString.indexOf(pennyString) > -1) {
             $scope.winner = true;
             $scope.pennyWins++;          
+            var h = {
+                result: resultsString,
+                winner: "Penny",
+                winnerInput: pennyString,
+                game: $scope.gameNumber
+            }
+            $scope.history.push(h);
             return;
         }
 

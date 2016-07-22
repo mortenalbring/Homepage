@@ -3,7 +3,7 @@
 pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
     $scope.results = [];
 
-    $scope.pennyInput = ["T", "H", "H"];
+    $scope.pennyInput = [];
 
 
     $scope.inputOne = null;
@@ -53,7 +53,28 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
         }
 
     }
+    $scope.pennyResult = function () {
+        $scope.pennyInput = [];
+        if ((!$scope.inputOne) || (!$scope.inputTwo) || (!$scope.inputThree)) {
+            return;
+        }
+        $scope.pennyThinking = true;
 
+        $interval(function () {
+            $scope.pennyThinking = false;
+
+         
+
+            if ($scope.inputTwo == 'H') {
+                $scope.pennyInput.push('T');
+            }
+            if ($scope.inputTwo == 'T') {
+                $scope.pennyInput.push('H');
+            }
+            $scope.pennyInput.push($scope.inputOne);
+            $scope.pennyInput.push($scope.inputTwo);
+        }, 1000, 1);
+    }
     $scope.playGames = function (max, gamespeed) {
         if ((!$scope.inputOne) || (!$scope.inputTwo) || (!$scope.inputThree)) {
             return;

@@ -41,103 +41,100 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-        <span>
-            Ready to play? Choose a sequence?
-        </span>
-        <div>
-            <strong>Coin 1</strong>
-            <div class="btn btn-group">
-                <div class="btn btn-default"
-                     ng-disabled="playing"
-                     ng-class="{'btn-success' : inputOne == 'H'}"
-                     ng-click="inputOne = 'H'">
-                    Heads
-                </div>
-                <div class="btn btn-default"
-                     ng-disabled="playing"
-                     ng-class="{'btn-success' : inputOne == 'T'}"
-                     ng-click="inputOne = 'T'">
-                    Tails
-                </div>
-            </div>
-        </div>
-        <div ng-show="inputOne">
-            <strong>Coin 2</strong>
-            <div class="btn btn-group">
-                <div class="btn btn-default"
-                     ng-disabled="playing"
-                     ng-class="{'btn-success' : inputTwo == 'H'}"
-                     ng-click="inputTwo = 'H'">
-                    Heads
-                </div>
-                <div class="btn btn-default"
-                     ng-disabled="playing"
-                     ng-class="{'btn-success' : inputTwo == 'T'}"
-                     ng-click="inputTwo = 'T'">
-                    Tails
-                </div>
-            </div>
-        </div>
-        <div ng-show="inputOne && inputTwo">
-            <strong>Coin 3</strong>
-            <div class="btn btn-group">
-                <div class="btn btn-default"
-                     ng-disabled="playing"
-                     ng-class="{'btn-success' : inputThree == 'H'}"
-                     ng-click="inputThree = 'H'">
-                    Heads
-                </div>
-                <div class="btn btn-default"
-                     ng-disabled="playing"
-                     ng-class="{'btn-success' : inputThree == 'T'}"
-                     ng-click="inputThree = 'T'">
-                    Tails
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6" ng-show="inputOne && inputTwo && inputThree">
-        <span>
-            Penny choice:
-        </span>
-        <div ng-repeat="c in pennyInput track by $index">
-            <strong>Coin {{$index}}</strong>
-            <div class="btn btn-group">
-
-                <div class="btn btn-default"
-                     ng-class="{'btn-success' : c == 'H'}">
-                    H
-                </div>
-                <div class="btn btn-default"
-                     ng-class="{'btn-success' : c == 'T'}">
-                    T
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="row" ng-show="inputOne && inputTwo && inputThree">
-        <div class="col-md-12">
-            <div >
-                <div >
-                    <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(1)">Flip</button>
-                    <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(10)">Flip 10 times</button>
-                    <button class="btn btn-default" ng-disabled="!winner" ng-click="reset()">Reset</button>
-                    <button class="btn btn-default" ng-click="playGames(10,20)">Play 10 games</button>
-                    <button class="btn btn-default" ng-click="playGames(100)">Play 100 games</button>
-                    <button class="btn btn-default" ng-click="playGames(1000,10)">Play 1000 games</button>
-                    <button class="btn btn-default" ng-click="goFaster()">Faster [{{gameSpeed}}]</button>
-                    <button class="btn btn-default" ng-click="goSlower()">Slower [{{gameSpeed}}]</button>
-
-                    <div class="container">
-                        <d
-                        </div>
+        <div class="col-md-4">
+            <span>
+                Ready to play? Choose a sequence?
+            </span>
+            <div>
+                <strong>Coin 1</strong>
+                <div class="btn btn-group">
+                    <div class="btn btn-default"
+                         ng-disabled="playing"
+                         ng-class="{'btn-success' : inputOne == 'H'}"
+                         ng-click="inputOne = 'H';pennyResult();">
+                        Heads
                     </div>
+                    <div class="btn btn-default"
+                         ng-disabled="playing"
+                         ng-class="{'btn-success' : inputOne == 'T'}"
+                         ng-click="inputOne = 'T';pennyResult();">
+                        Tails
+                    </div>
+                </div>
+            </div>
+            <div ng-show="inputOne">
+                <strong>Coin 2</strong>
+                <div class="btn btn-group">
+                    <div class="btn btn-default"
+                         ng-disabled="playing"
+                         ng-class="{'btn-success' : inputTwo == 'H'}"
+                         ng-click="inputTwo = 'H';pennyResult();">
+                        Heads
+                    </div>
+                    <div class="btn btn-default"
+                         ng-disabled="playing"
+                         ng-class="{'btn-success' : inputTwo == 'T'}"
+                         ng-click="inputTwo = 'T';pennyResult();">
+                        Tails
+                    </div>
+                </div>
+            </div>
+            <div ng-show="inputOne && inputTwo">
+                <strong>Coin 3</strong>
+                <div class="btn btn-group">
+                    <div class="btn btn-default"
+                         ng-disabled="playing"
+                         ng-class="{'btn-success' : inputThree == 'H'}"
+                         ng-click="inputThree = 'H';pennyResult();">
+                        Heads
+                    </div>
+                    <div class="btn btn-default"
+                         ng-disabled="playing"
+                         ng-class="{'btn-success' : inputThree == 'T'}"
+                         ng-click="inputThree = 'T';pennyResult();">
+                        Tails
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <span ng-if="pennyThinking">Penny is thinking..</span>
+        </div>
+        <div class="col-md-4" ng-show="inputOne && inputTwo && inputThree">
+            <span>
+                Penny choice:
+            </span>
+            <div ng-repeat="c in pennyInput track by $index">
+                <strong>Coin {{$index}}</strong>
+                <div class="btn btn-group">
+
+                    <div class="btn btn-default"
+                         ng-class="{'btn-danger' : c == 'H'}">
+                        Heads
+                    </div>
+                    <div class="btn btn-default"
+                         ng-class="{'btn-danger' : c == 'T'}">
+                        Tails
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" ng-show="inputOne && inputTwo && inputThree">
+            <div class="col-md-12">
+                <div>
                     <div>
-
+                        <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(1)">Flip</button>
+                        <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(10)">Flip 10 times</button>
+                        <button class="btn btn-default" ng-disabled="!winner" ng-click="reset()">Reset</button>
+                        <button class="btn btn-default" ng-click="playGames(10,20)">Play 10 games</button>
+                        <button class="btn btn-default" ng-click="playGames(100,10)">Play 100 games</button>
+                        <button class="btn btn-default" ng-click="playGames(1000,10)">Play 1000 games</button>
+                        <button class="btn btn-default" ng-click="goFaster()">Faster [{{gameSpeed}}]</button>
+                        <button class="btn btn-default" ng-click="goSlower()">Slower [{{gameSpeed}}]</button>
 
                     </div>
+           
                     <div>
                         <span>Game : {{gameNumber}} </span>
                     </div>

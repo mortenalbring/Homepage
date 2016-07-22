@@ -59,6 +59,8 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
             return;
         }
         $scope.input = [$scope.inputOne, $scope.inputTwo, $scope.inputThree];
+        $scope.playing = true;
+
         if (gamespeed) {
             $scope.gameSpeed = gamespeed;
         }
@@ -71,6 +73,7 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
 
                 if ($scope.gameNumber == $scope.maxGames) {
                     shouldStop = true;
+                    $scope.playing = false;
                 }
                 $scope.flipCoin(1);
                 if ($scope.winner) {

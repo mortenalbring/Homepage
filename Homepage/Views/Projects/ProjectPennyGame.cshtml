@@ -31,196 +31,235 @@
                 If it's yours, it's a win for you. If it's Penny's, it's a win for Penny.
             </p>
             <p>
-                We'll keep playing for the best of 10, and find out who is better at guessing!
-            </p>
-            <p>
                 The coin flips are entirely random (or at least as random as JavaScript can manage).
                 There's nothing sneaky going on with manipulating the results, you can
                 <a href="~/Projects/PennyGame/PennyGame.js">check the source code</a> to be sure.
             </p>
+            <p>
+                But in order to account for any spurious oddities in the 'randomness' of the coin flips, we'll play for the best of 100 and truly find out who is better at guessing!
+            </p>
+            <p>
+                Ready to play? Choose a sequence!
+            </p>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="padding-top: 20px;">
         <div class="col-md-4">
-            <span>
-                Ready to play? Choose a sequence?
-            </span>
-            <div>
-                <strong>Coin 1</strong>
-                <div class="btn btn-group">
-                    <div class="btn btn-default"
-                         ng-disabled="playing"
-                         ng-class="{'btn-success' : inputOne == 'H'}"
-                         ng-click="inputOne = 'H';pennyResult();">
-                        Heads
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Your choice
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <strong>Coin 1</strong>
+                        <div class="btn btn-group">
+                            <div class="btn btn-default"
+                                 ng-disabled="playing"
+                                 ng-class="{'btn-success' : inputOne == 'H'}"
+                                 ng-click="inputOne = 'H';pennyResult();">
+                                Heads
+                            </div>
+                            <div class="btn btn-default"
+                                 ng-disabled="playing"
+                                 ng-class="{'btn-success' : inputOne == 'T'}"
+                                 ng-click="inputOne = 'T';pennyResult();">
+                                Tails
+                            </div>
+                        </div>
                     </div>
-                    <div class="btn btn-default"
-                         ng-disabled="playing"
-                         ng-class="{'btn-success' : inputOne == 'T'}"
-                         ng-click="inputOne = 'T';pennyResult();">
-                        Tails
+                    <div ng-show="inputOne">
+                        <strong>Coin 2</strong>
+                        <div class="btn btn-group">
+                            <div class="btn btn-default"
+                                 ng-disabled="playing"
+                                 ng-class="{'btn-success' : inputTwo == 'H'}"
+                                 ng-click="inputTwo = 'H';pennyResult();">
+                                Heads
+                            </div>
+                            <div class="btn btn-default"
+                                 ng-disabled="playing"
+                                 ng-class="{'btn-success' : inputTwo == 'T'}"
+                                 ng-click="inputTwo = 'T';pennyResult();">
+                                Tails
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="inputOne && inputTwo">
+                        <strong>Coin 3</strong>
+                        <div class="btn btn-group">
+                            <div class="btn btn-default"
+                                 ng-disabled="playing"
+                                 ng-class="{'btn-success' : inputThree == 'H'}"
+                                 ng-click="inputThree = 'H';pennyResult();">
+                                Heads
+                            </div>
+                            <div class="btn btn-default"
+                                 ng-disabled="playing"
+                                 ng-class="{'btn-success' : inputThree == 'T'}"
+                                 ng-click="inputThree = 'T';pennyResult();">
+                                Tails
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div ng-show="inputOne">
-                <strong>Coin 2</strong>
-                <div class="btn btn-group">
-                    <div class="btn btn-default"
-                         ng-disabled="playing"
-                         ng-class="{'btn-success' : inputTwo == 'H'}"
-                         ng-click="inputTwo = 'H';pennyResult();">
-                        Heads
-                    </div>
-                    <div class="btn btn-default"
-                         ng-disabled="playing"
-                         ng-class="{'btn-success' : inputTwo == 'T'}"
-                         ng-click="inputTwo = 'T';pennyResult();">
-                        Tails
-                    </div>
-                </div>
-            </div>
-            <div ng-show="inputOne && inputTwo">
-                <strong>Coin 3</strong>
-                <div class="btn btn-group">
-                    <div class="btn btn-default"
-                         ng-disabled="playing"
-                         ng-class="{'btn-success' : inputThree == 'H'}"
-                         ng-click="inputThree = 'H';pennyResult();">
-                        Heads
-                    </div>
-                    <div class="btn btn-default"
-                         ng-disabled="playing"
-                         ng-class="{'btn-success' : inputThree == 'T'}"
-                         ng-click="inputThree = 'T';pennyResult();">
-                        Tails
-                    </div>
-                </div>
-            </div>
+           
         </div>
         <div class="col-md-4">
-            <span ng-if="pennyThinking">Penny is thinking..</span>
+            <div class="alert alert-warning" ng-if="pennyThinking">Penny is thinking..</div>
         </div>
         <div class="col-md-4" ng-show="inputOne && inputTwo && inputThree">
-            <span>
-                Penny choice:
-            </span>
-            <div ng-repeat="c in pennyInput track by $index">
-                <strong>Coin {{$index}}</strong>
-                <div class="btn btn-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Penny's choice:
+                </div>
+                <div class="panel-body">
+                    <div ng-repeat="c in pennyInput track by $index">
+                        <strong>Coin {{$index}}</strong>
+                        <div class="btn btn-group">
 
-                    <div class="btn btn-default"
-                         ng-class="{'btn-danger' : c == 'H'}">
-                        Heads
+                            <div class="btn btn-default"
+                                 ng-class="{'btn-danger' : c == 'H'}">
+                                Heads
+                            </div>
+                            <div class="btn btn-default"
+                                 ng-class="{'btn-danger' : c == 'T'}">
+                                Tails
+                            </div>
+                        </div>
                     </div>
-                    <div class="btn btn-default"
-                         ng-class="{'btn-danger' : c == 'T'}">
-                        Tails
-                    </div>
+
                 </div>
             </div>
 
         </div>
-        <div class="row" ng-show="inputOne && inputTwo && inputThree">
-            <div class="col-md-12">
-                <div>
-                    <div>
-                        <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(1)">Flip</button>
-                        <button class="btn btn-default" ng-disabled="winner" ng-click="flipCoin(10)">Flip 10 times</button>
-                        <button class="btn btn-default" ng-disabled="!winner" ng-click="reset()">Reset</button>
-                        <button class="btn btn-default" ng-click="playGames(10,20)">Play 10 games</button>
-                        <button class="btn btn-default" ng-click="playGames(100,10)">Play 100 games</button>
-                        <button class="btn btn-default" ng-click="playGames(1000,10)">Play 1000 games</button>
-                        <button class="btn btn-default" ng-click="goFaster()">Faster [{{gameSpeed}}]</button>
-                        <button class="btn btn-default" ng-click="goSlower()">Slower [{{gameSpeed}}]</button>
+    </div>
+    <div class="row" ng-show="pennyInput.length > 0">
+        <div class="col-md-12">
+            <p>Ok, ready to start!</p>
+            <p>You can choose to either flip the coin manually, or autoplay all the games.</p>
+        </div>
+    </div>
 
-                    </div>
-           
-                    <div>
+    <div class="row" ng-show="pennyInput.length > 0" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="col-md-12">
+            <div>
+                <div>
+                    <button class="btn btn-default" ng-disabled="autoplay" ng-click="flipCoin(1)">Flip</button>
+                    <button class="btn btn-default" ng-disabled="playing" ng-click="autoplay=false;reset()">Reset</button>
+                    <button class="btn btn-default" ng-disabled="playing" ng-click="playGames(20,30)">Autoplay 20 games</button>
+                    <button class="btn btn-default" ng-disabled="playing" ng-click="playGames(100,10)">Autoplay 100 games</button>
+                    <button class="btn btn-default" ng-disabled="playing" ng-click="playGames(1000,10)">Autoplay 1000 games</button>
+
+                </div>
+
+                <div class="panel panel-default" ng-class="{'panel-success' : winner}">
+                    <div class="panel-heading">
                         <span>Game : {{gameNumber}} </span>
                     </div>
-                    <div>
-                        <span>Penny wins: {{pennyWins}}</span>
-                        <span>Your wins: {{userWins}}</span>
-                    </div>
-
-                    <div>
-                        <div ng-style="{width: ((pennyWins/(maxGames+1))*500) + 'px' }" style="height:30px;background-color:red;">
-
+                    <div class="panel-body">
+                        <span>Coin result: <strong> {{result}}</strong></span>
+                        <div>
+                            <span>Current sequence: </span>
+                            <strong>
+                                <span ng-repeat="result in results track by $index">
+                                    {{result}}
+                                </span>
+                            </strong>
                         </div>
-                        <div ng-style="{width: ((userWins/(maxGames+1))*500) + 'px' }" style="height:30px;background-color:blue;">
-
-                        </div>
-                        <span>
-                            {{(pennyWins / (maxGames+1)) | number : 2}}
-                        </span>
                     </div>
-
-
-
-                    <span>{{result}}</span>
-                    <div>
-                        <span ng-repeat="result in results track by $index">
-                            {{result}}
-                        </span>
-                    </div>
-
-                    <div>
-                        <span>
-                            Heads: {{totalHeads}}
-                        </span>
-
-                        <span>
-                            Percentage: {{(totalHeads / (totalHeads + totalTails)) | number : 2}}
-                        </span>
-                    </div>
-
-                    <div>
-                        <span>
-                            Tails: {{totalTails}}
-                        </span>
-
-                        <span>
-                            Percentage: {{(totalTails / (totalHeads + totalTails)) | number : 2}}
-                        </span>
-                    </div>
-
-                    <div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
                         <table>
-                            <thead>
-                                <tr>
-                                    <th>Game</th>
-                                    <th>Result</th>
-                                    <th>Winner</th>
-                                </tr>
-                            </thead>
                             <tbody>
-                                <tr ng-repeat="h in history | orderBy: '-game' | limitTo:50">
-                                    <td>
-                                        {{h.game}}
+                                <tr>
+                                    <td style="padding-right: 10px;">
+                                        <span>Penny wins: {{pennyWins}}</span>
                                     </td>
                                     <td>
+                                        <div ng-style="{width: ((pennyWins/(maxGames+1))*500) + 'px' }" style="height: 30px; background-color: red;">
 
-                                        <span ng-bind-html="h.result | highlight:h.winnerInput"></span>
-
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Your wins: {{userWins}}</span>
                                     </td>
                                     <td>
-                                        {{h.winner}}
+                                        <div ng-style="{width: ((userWins/(maxGames+1))*500) + 'px' }" style="height: 30px; background-color: blue;">
 
-                                    </td>
-                                    <td>
-                                        {{h.winnerInput}}
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
-
                         </table>
-
                     </div>
-
                 </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" ng-show="(totalHeads > 0) || (totalTails > 0)">
+
+        <div class="col-md-8">
+            <table class="table" ng-show="history.length > 0">
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Sequence</th>
+                        <th>Winner</th>
+                        <th>Winning guess</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="h in history | orderBy: '-game' | limitTo:50">
+                        <td>
+                            {{h.game + 1}}
+                        </td>
+                        <td>
+
+                            <span ng-bind-html="h.result | highlight:h.winnerInput"></span>
+
+                        </td>
+                        <td>
+                            {{h.winner}}
+
+                        </td>
+                        <td>
+                            {{h.winnerInput}}
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="col-md-4">
+            <div>
+                <span>
+                    Total Heads: {{totalHeads}} ({{((totalHeads / (totalHeads + totalTails)) )*100 | number : 2}}%)
+                </span>
+
+              
+            </div>
+
+            <div>
+                <span>
+                    Total Tails: {{totalTails}} ({{((totalTails / (totalHeads + totalTails)))*100 | number : 2}}%)
+                </span>
+
+             
             </div>
 
         </div>
-    </div>
-</div>
 
+    </div>
+
+
+</div>

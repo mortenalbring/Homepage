@@ -7,16 +7,16 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
 
 
     $scope.inputOne = null;
-    $scope.input = [$scope.inputOne, "H", "H"];
+    $scope.input = [];
     $scope.inputTwo = null;
     $scope.inputThree = null;
 
     $scope.history = [];
 
-    $scope.maxGames = 0;
+    $scope.maxGames = 20;
     $scope.gameSpeed = 1000;
 
-    $scope.reset = function () {
+    $scope.reset = function () {        
         $scope.winner = false;
         $scope.results.length = 0;
         $scope.userWins = 0;
@@ -33,7 +33,6 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
     var gameLoop;
 
     $scope.stopLoop = function () {
-
         if (angular.isDefined(gameLoop)) {
             $interval.cancel(gameLoop);
         }
@@ -53,17 +52,16 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
         }
 
     }
-    $scope.pennyResult = function () {
+    $scope.pennyResult = function () {        
         $scope.pennyInput = [];
         if ((!$scope.inputOne) || (!$scope.inputTwo) || (!$scope.inputThree)) {
             return;
         }
         $scope.pennyThinking = true;
+        $scope.reset();
 
         $interval(function () {
-            $scope.pennyThinking = false;
-
-         
+            $scope.pennyThinking = false;         
 
             if ($scope.inputTwo == 'H') {
                 $scope.pennyInput.push('T');
@@ -73,9 +71,16 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
             }
             $scope.pennyInput.push($scope.inputOne);
             $scope.pennyInput.push($scope.inputTwo);
+
+            $scope.input.length = 0;
+            $scope.input.push($scope.inputOne);
+            $scope.input.push($scope.inputTwo);
+            $scope.input.push($scope.inputThree);
+
         }, 1000, 1);
     }
     $scope.playGames = function (max, gamespeed) {
+        $scope.autoplay = true;
         if ((!$scope.inputOne) || (!$scope.inputTwo) || (!$scope.inputThree)) {
             return;
         }
@@ -92,20 +97,16 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
         var loop = function () {
             if (!shouldStop) {
 
-                if ($scope.gameNumber == $scope.maxGames) {
+                if ($scope.gameNumber == ($scope.maxGames)) {
                     shouldStop = true;
                     $scope.playing = false;
+                    $scope.results.length = 0;
+                    $scope.result = null;
                 }
                 $scope.flipCoin(1);
-                if ($scope.winner) {
-                    $scope.gameNumber++;
-                    $scope.results.length = 0;
-                }
 
-                $timeout(loop, $scope.gameSpeed)
-
+                $timeout(loop, $scope.gameSpeed);
             }
-
         }
         loop();
     }
@@ -113,6 +114,10 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
 
 
     $scope.flipCoin = function (iterations) {
+        if ($scope.winner) {
+            $scope.gameNumber++;
+            $scope.results.length = 0;
+        }
         for (var i = 0; i < iterations; i++) {
 
             var x = (Math.floor(Math.random() * 2) == 0);

@@ -332,6 +332,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\styles\ma-home-intro.less" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
     <Content Include="Images\15920848636_f9d4c69ee0_o.jpg" />
     <Content Include="Images\19238835106_b57eaa8160_o.jpg" />

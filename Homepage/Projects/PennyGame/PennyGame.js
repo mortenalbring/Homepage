@@ -152,7 +152,7 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
             $scope.userWins++;
             var h = {
                 result: resultsString,
-                winner: "User",
+                winner: "You",
                 winnerInput: inputString,
                 game: $scope.gameNumber
             }

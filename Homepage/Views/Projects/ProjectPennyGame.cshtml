@@ -16,13 +16,13 @@
     }
 </style>
 
-
 <div class="container" ng-app="PennyGame" ng-controller="HomeController">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10 col-md-offset-1">
             <h1>
                 Can you beat Penny at guessing coin flips?
             </h1>
+
             <p>
                 The game involves just you, Penny, and a coin.
                 You need to guess the sequence of outcomes of three independent, sequential coin flips.
@@ -36,7 +36,7 @@
                 <a href="~/Projects/PennyGame/PennyGame.js">check the source code</a> to be sure.
             </p>
             <p>
-                But in order to account for any spurious oddities in the 'randomness' of the coin flips, we'll play for the best of 100 and truly find out who is better at guessing!
+                But in order to account for any spurious oddities in the 'randomness' of the coin flips, we'll play for the best of 20 and truly find out who is better at guessing!
             </p>
             <p>
                 Ready to play? Choose a sequence!
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="row" style="padding-top: 20px;">
-        <div class="col-md-4">
+        <div class="col-md-3 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Your choice
@@ -105,17 +105,17 @@
             </div>
            
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
             <div class="alert alert-warning" ng-if="pennyThinking">Penny is thinking..</div>
         </div>
-        <div class="col-md-4" ng-show="inputOne && inputTwo && inputThree">
+        <div class="col-md-3" ng-show="inputOne && inputTwo && inputThree">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Penny's choice:
                 </div>
                 <div class="panel-body">
                     <div ng-repeat="c in pennyInput track by $index">
-                        <strong>Coin {{$index}}</strong>
+                        <strong>Coin {{$index + 1}}</strong>
                         <div class="btn btn-group">
 
                             <div class="btn btn-default"
@@ -135,14 +135,14 @@
         </div>
     </div>
     <div class="row" ng-show="pennyInput.length > 0">
-        <div class="col-md-12">
+        <div class="col-md-10 col-md-offset-2">
             <p>Ok, ready to start!</p>
             <p>You can choose to either flip the coin manually, or autoplay all the games.</p>
         </div>
     </div>
 
     <div class="row" ng-show="pennyInput.length > 0" style="padding-top: 20px; padding-bottom: 20px;">
-        <div class="col-md-12">
+        <div class="col-md-10 col-md-offset-1">
             <div>
                 <div>
                     <button class="btn btn-default" ng-disabled="autoplay" ng-click="flipCoin(1)">Flip</button>
@@ -207,8 +207,8 @@
 
     <div class="row" ng-show="(totalHeads > 0) || (totalTails > 0)">
 
-        <div class="col-md-8">
-            <table class="table" ng-show="history.length > 0">
+        <div class="col-md-10 col-md-offset-1">
+            <table class="table table-striped" ng-show="history.length > 0">
                 <thead>
                     <tr>
                         <th>Game</th>
@@ -240,23 +240,30 @@
             </table>
 
         </div>
-        <div class="col-md-4">
-            <div>
-                <span>
-                    Total Heads: {{totalHeads}} ({{((totalHeads / (totalHeads + totalTails)) )*100 | number : 2}}%)
-                </span>
+      
 
-              
+    </div>
+
+    <div class="row" ng-show="(totalHeads > 0) || (totalTails > 0)">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-4">
+                <div>
+                    <span>
+                        Total Heads: {{totalHeads}} ({{((totalHeads / (totalHeads + totalTails)) )*100 | number : 2}}%)
+                    </span>
+
+
+                </div>
+
+                <div>
+                    <span>
+                        Total Tails: {{totalTails}} ({{((totalTails / (totalHeads + totalTails)))*100 | number : 2}}%)
+                    </span>
+
+
+                </div>
+
             </div>
-
-            <div>
-                <span>
-                    Total Tails: {{totalTails}} ({{((totalTails / (totalHeads + totalTails)))*100 | number : 2}}%)
-                </span>
-
-             
-            </div>
-
         </div>
 
     </div>

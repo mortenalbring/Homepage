@@ -332,6 +332,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\styles\ma-home-intro.less" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
     <Content Include="Images\15920848636_f9d4c69ee0_o.jpg" />
     <Content Include="Images\19238835106_b57eaa8160_o.jpg" />
@@ -369,6 +370,7 @@
     <Content Include="Projects\AngularD3\styles\nodestyles.css" />
     <Content Include="Projects\AngularD3\styles\pagestyles.css" />
     <Content Include="Projects\index.txt" />
+    <Content Include="Projects\PennyGame\PennyGame.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-moment.js" />
@@ -30916,6 +30918,7 @@
     <Content Include="Views\Projects\ProjectAmenhokit.cshtml" />
     <Content Include="Views\Shared\_NavbarLinks.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

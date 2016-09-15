@@ -1,48 +1,120 @@
 ﻿<div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Manual Entry</h1>
+            <h1>Manual Data Entry</h1>
+
+            <div class="row" style="padding-top: 10px;padding-bottom: 10px">
+                
+                Date:
+
+            </div>
+            <div class="row" style="padding-top: 30px;padding-bottom: 30px">
+                Game:
+
+                <div class="btn-group">
+                    <button class="btn btn-default" ng-repeat="num in gameNumbers" ng-class="{'btn-success' : num == activeGame}" ng-click="setActiveGame(num)">
+                        {{num}}
+                    </button>
+
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-2">
+                    <strong>Select Player</strong>
+                    <div ng-repeat="player in players">
+                        <button class="btn btn-sm btn-block btn-default"
+                                ng-class="{'btn-success' : activePlayer.ID == player.ID}"
+                                ng-click="setActivePlayer(player)">
+                            {{player.Name | titlecase}}
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <p>
+                        <strong>Enter Score String</strong>
+                        <br />
+                        <span>Separate each bowl with spaces, so an expected score string is of the form: </span>
+                        <br/>
+                                                
+                        <div class="btn btn-default btn-sm" ng-click="manualScoreString = exampleString;calculateScore(manualScoreString)">
+                            {{exampleString}}
+                        </div>
+                        <br />
+                        <span>where a strike is indicated by <strong>X</strong> and a spare is indicated by <strong>/</strong> (forward slash)</span>.
+                        <br/>
+                        <span>As you type, I'll calculate the score and you can double check against the score sheet.</span>
+                    </p>
+
+
+                    <input class="form-control" placeholder="Score string" ng-model="manualScoreString" ng-change="calculateScore(manualScoreString)" />
+
+                    <br />
+           
+                    <div class="alert alert-info" ng-if="activePlayer">
+                        Game {{activeGame}} - {{activePlayer.Name | titlecase}}
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Frame
+                                </th>
+                                <th>
+                                    Result
+                                </th>
+                                <th>
+                                    Score
+                                </th>
+                                <th>
+                                    Cumulative
+                                </th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="frame in scoreStringCalculated">
+                            <td>
+                                {{frame.Frame}}
+                            </td>
+                            <td>
+                                {{frame.Result}}
+                            </td>
+                            <td>
+                                {{frame.Score}}
+                            </td>
+                            <td>
+                                {{frame.Cumulative}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-if="errors.length > 0">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Validation
+                    </div>
+                    <div class="panel-body">
+                        <div ng-repeat="error in errors" class="alert alert-warning">
+                            {{error}}
+                        </div>                        
+                    </div>
+                </div>
+            </div>            
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn btn-block btn-primary" ng-disabled="errors.length > 0 || !activePlayer">Save score</div>
+                </div>
+            </div>
+
 
             <br />
 
-            <input class="form-control" placeholder="Score string" ng-model="manualScoreString" ng-change="calculateScore(manualScoreString)" />
 
-            <table>
-                <thead>
-                <tr>
-                    <th>
-                        Frame
-                    </th>
-                    <th>
-                        Result
-                    </th>
-                    <th>
-                        Score
-                    </th>
-                    <th>
-                        Cumulative
-                    </th>
-                </tr>
-                </thead>
-                <tr ng-repeat="frame in scoreStringCalculated">
-                    <td>
-                        {{frame.Frame}}
-                    </td>
-                    <td>
-                        {{frame.Result}}
-                    </td>
-                    <td>
-                        {{frame.Score}}
-                    </td>
-                    <td>
-                        {{frame.Cumulative}}
-                    </td>
-                </tr>
-            </table>
-
-            <br />
-            {{output}}
-            
         </div>
     </div>
 </div>

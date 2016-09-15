@@ -1,6 +1,20 @@
 ﻿var BowlingService = function() {
     var bws = {};
 
+
+    bws.CheckForErrors = function(scores) {
+        var errors = [];
+
+        var frameCount = scores.length;
+
+        if (frameCount != 10) {
+            errors.push("Incorrect number of frames. Expected 10, actual " + frameCount);
+        }
+
+        return errors;
+
+    }
+
     bws.CalculateFrameScores = function(scoreString) {
         function isNumeric(n) {
             return !isNaN(parseFloat(n)) && isFinite(n);
@@ -182,7 +196,9 @@
 
 
         var spl = scoreString.split(" ");
-        spl.shift();
+
+        //spl.shift();
+
         var fa = calculateFrameArray(spl);
         return fa;
 

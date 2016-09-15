@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -28,6 +29,7 @@
     <OldToolsVersion>12.0</OldToolsVersion>
     <UseGlobalApplicationHostFile />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -284,6 +286,7 @@
     <Content Include="Images\demon-sm-trans.png" />
     <Content Include="Images\demon.psd" />
     <Content Include="Content\styles\ma-post-summary.less" />
+    <Content Include="Projects\AmenhokitApp\Controllers\ManualEntryController.js" />
     <Content Include="Projects\AmenhokitApp\Controllers\PlayerDisplayController.js" />
     <Content Include="Projects\AmenhokitApp\Controllers\SessionDisplayController.js" />
     <Content Include="Projects\AmenhokitApp\Controllers\TestController.js" />
@@ -304,6 +307,7 @@
     <Content Include="Projects\AmenhokitApp\Templates\home.html" />
     <Content Include="Projects\AmenhokitApp\Controllers\HomeController.js" />
     <Content Include="Projects\AmenhokitApp\Templates\playerinfo.html" />
+    <Content Include="Projects\AmenhokitApp\Templates\vwManualEntry.html" />
     <Content Include="Projects\AmenhokitApp\Templates\vwSessionInfo.html" />
     <Content Include="Projects\AmenhokitApp\Templates\upload.html" />
     <Content Include="Projects\AmenhokitApp\Controllers\UploadController.js" />
@@ -30934,11 +30938,15 @@
       <DependentUpon>201512301041542_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

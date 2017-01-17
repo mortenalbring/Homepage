@@ -4,12 +4,14 @@
             <h1>Manual Data Entry</h1>
 
             <div class="row" style="padding-top: 10px;padding-bottom: 10px">
-                <div class="col-md-3">
-                    Date:
+                <div class="col-md-4">
+                    Date (yyyy-mm-dd) 
                     <br />
-                    <input ng-model="gameDate" class="form-control" />
+                    <input ng-model="gameDate" class="form-control"/>
+                    <br/>
+                    ({{gameDate | date:"fullDate"}})
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     Game:
                     <br/>
                     <div class="btn-group">
@@ -20,32 +22,26 @@
                     </div>
 
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <strong>Select Player</strong>
                     <br/>
                     <select class="form-control" ng-model="activePlayer" ng-options="player.Name for player in players"></select>
                
                 </div>
-
-
             </div>
-
-
-            <div class="row">
-
-             
+            <div class="row">             
                 <div class="col-md-12">
                     <p>
                         <strong>Enter Score String</strong>
                         <br />
-                        <span>Separate each bowl with spaces, so an expected score string is of the form: </span>
+                        <span>An expected score string is of the form: </span>
                         <br />
 
                         <div class="btn btn-default btn-sm" ng-click="manualScoreString = exampleString;calculateScore(manualScoreString)">
                             {{exampleString}}
                         </div>
                         <br />
-                        <span>where a strike is indicated by <strong>X</strong> and a spare is indicated by <strong>/</strong> (forward slash)</span>.
+                        <span>where a strike is indicated by <strong>X</strong>, a spare is indicated by <strong>/</strong> (forward slash)</span> and a gutterball is indicated by a <strong>-</strong>.
                         <br />
                         <span>As you type, I'll calculate the score and you can double check against the score sheet.</span>
                     </p>
@@ -108,7 +104,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="btn btn-block btn-primary" ng-disabled="errors.length > 0 || !activePlayer">Save score</div>
+                    <div class="btn btn-block btn-primary" ng-click="saveScore()" ng-disabled="errors.length > 0 || !activePlayer">Save score</div>
                 </div>
             </div>
 

@@ -195,28 +195,12 @@
 
 
 
-        var spl = scoreString.split(" ");
+        var spl = scoreString.split("");
 
         //spl.shift();
 
         var fa = calculateFrameArray(spl);
-        return fa;
-
-        var testss = "X 7 / 7 2 9 / X X X 2 3 6 / 7 / 3";
-        var testssarr = testss.split(" ");
-
-        calculateFrameArray(testssarr);
-
-        var onlyss = scoreString.replace(spl[0], "");
-
-        var scoreArray = onlyss.split(" ");
-
-
-        calculateFrameArray(spl);
-
-        var xx = 42;
-
-
+        return fa;   
 
     }
 

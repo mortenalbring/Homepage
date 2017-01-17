@@ -3,7 +3,7 @@
     $scope.players = [];
     $scope.errors = [];
 
-    $scope.exampleString = "5 3 X 1 1 2 2 X X 5 3 2 2 3 / 2 1";
+    $scope.exampleString = "53X1122XX53223/21";
 
     $scope.gameNumbers = [1, 2, 3, 4, 5];
 
@@ -33,6 +33,19 @@
 
         });
 
+    $scope.savedScores = [];
+
+    $scope.saveScore = function() {
+        var date = $scope.gameDate;
+        var gameNumber = $scope.activeGame;
+        var player = $scope.activePlayer;
+        var scorestring = $scope.manualScoreString;
+        var score = $scope.scoreStringCalculated;
+
+        var zz = 42;
+
+
+    }
     
     $scope.calculateScore = function (string) {
         

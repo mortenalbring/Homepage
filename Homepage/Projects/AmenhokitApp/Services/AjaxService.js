@@ -64,6 +64,12 @@
             data: { playerId: playerId }
         });
     }
+    axj.GetPlayers = function () {
+        return $http({
+            method: 'POST',
+            url: '/Amenhokit/GetPlayers'
+        });
+    }
 
     return axj;
 }

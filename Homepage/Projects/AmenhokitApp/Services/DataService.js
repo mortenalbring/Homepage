@@ -224,6 +224,10 @@
         getAllSessions(callback);
     }
 
+    this.GetPlayers = function() {
+        return AjaxService.GetPlayers;
+    }
+
    
 
 }

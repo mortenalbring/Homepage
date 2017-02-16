@@ -1,6 +1,20 @@
 ﻿var BowlingService = function() {
     var bws = {};
 
+
+    bws.CheckForErrors = function(scores) {
+        var errors = [];
+
+        var frameCount = scores.length;
+
+        if (frameCount != 10) {
+            errors.push("Incorrect number of frames. Expected 10, actual " + frameCount);
+        }
+
+        return errors;
+
+    }
+
     bws.CalculateFrameScores = function(scoreString) {
         function isNumeric(n) {
             return !isNaN(parseFloat(n)) && isFinite(n);
@@ -181,26 +195,12 @@
 
 
 
-        var spl = scoreString.split(" ");
-        spl.shift();
+        var spl = scoreString.split("");
+
+        //spl.shift();
+
         var fa = calculateFrameArray(spl);
-        return fa;
-
-        var testss = "X 7 / 7 2 9 / X X X 2 3 6 / 7 / 3";
-        var testssarr = testss.split(" ");
-
-        calculateFrameArray(testssarr);
-
-        var onlyss = scoreString.replace(spl[0], "");
-
-        var scoreArray = onlyss.split(" ");
-
-
-        calculateFrameArray(spl);
-
-        var xx = 42;
-
-
+        return fa;   
 
     }
 

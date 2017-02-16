@@ -112,6 +112,24 @@ namespace Homepage.Controllers
 
 
         [HttpPost]
+        public JsonResult GetPlayers()
+        {
+            try
+            {
+                using (var db = new DataContext())
+                {
+                    var players = db.Player.ToList();
+
+                    return Json(new { success = true, players = players }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpPost]
         public JsonResult GetPlayer(int playerId)
         {
             try

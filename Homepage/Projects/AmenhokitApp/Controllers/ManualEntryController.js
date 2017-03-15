@@ -11,16 +11,32 @@
     $scope.activeGame = null;
 
     $scope.playerErrorMsg = "No active player set";
+    $scope.activeGameErrorMsg = "No active game set";
     $scope.setActiveGame = function(num) {
         $scope.activeGame = num;
     }
-    $scope.setActivePlayer = function(player) {
-        $scope.activePlayer = player;
-        var indx = $scope.errors.indexOf($scope.playerErrorMsg);
+ 
+
+    $scope.$watch('activePlayer',
+        function (player) {
+            if (player == null) {
+                return;
+            }
+            var indx = $scope.errors.indexOf($scope.playerErrorMsg);
+            if (indx > -1) {
+                $scope.errors.splice(indx, 1);
+            }
+        });
+    $scope.$watch('activeGame',
+    function (player) {
+        if (player == null) {
+            return;
+        }
+        var indx = $scope.errors.indexOf($scope.activeGameErrorMsg);
         if (indx > -1) {
             $scope.errors.splice(indx, 1);
         }
-    }
+    });
 
  
     AjaxService.GetPlayers()
@@ -54,8 +70,10 @@
         var errors = BowlingService.CheckForErrors(score);
 
         if (!$scope.activePlayer) {
-            errors.push("No active player set");
-
+            errors.push($scope.playerErrorMsg);
+        }
+        if (!$scope.activeGame) {
+            errors.push($scope.activeGameErrorMsg);
         }
 
 

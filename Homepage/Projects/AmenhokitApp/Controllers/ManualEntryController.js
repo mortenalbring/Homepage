@@ -1,4 +1,4 @@
-﻿var ManualEntryController = function ($routeParams, $scope, DataService,AjaxService, BowlingService) {
+﻿var ManualEntryController = function ($routeParams, $scope, $http, DataService,AjaxService, BowlingService) {
 
     $scope.players = [];
     $scope.errors = [];
@@ -52,13 +52,25 @@
     $scope.savedScores = [];
 
     $scope.saveScore = function() {
-        var date = $scope.gameDate;
+        var gameDate = $scope.gameDate;
         var gameNumber = $scope.activeGame;
         var player = $scope.activePlayer;
         var scorestring = $scope.manualScoreString;
         var score = $scope.scoreStringCalculated;
+        var finalFrame = score[score.length - 1];
+        var finalScore = finalFrame.Cumulative;
 
         var zz = 42;
+
+        $http.post("/Amenhokit/AddNewScore",
+        {
+            playerId: player.ID,
+            gameDate: gameDate,
+            gameNumber: gameNumber,
+            lane: 0,
+            scoreString: scorestring,
+            finalScore: finalScore
+        });
 
 
     }

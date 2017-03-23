@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,59 @@ namespace Homepage.Controllers
 {
     public class AmenhokitController : Controller
     {
+        [HttpPost]
+        public void AddNewScore(int playerId, string gameDate, int gameNumber, int lane, string scoreString, int finalScore)
+        {
+            try
+            {
+                using (var db = new DataContext())
+                {
+                    var player = db.Player.FirstOrDefault(e => e.ID == playerId);
+                    if (player == null)
+                    {
+                        throw new Exception("No player found with ID " + playerId);
+                    }
+
+                    var gameDateObj = DateTime.Parse(gameDate);
+
+                    var session =
+                        db.Session.FirstOrDefault(
+                            e =>
+                                e.Date.Year == gameDateObj.Year && e.Date.Minute == gameDateObj.Month &&
+                                e.Date.Day == gameDateObj.Day);
+
+                    if (session == null)
+                    {
+                        session = new Session();
+                        session.Date = gameDateObj;
+                        db.Session.Add(session);
+                    }
+
+                    var game = db.Game.FirstOrDefault(e => e.Session == session.ID && e.GameNumber == gameNumber);
+                    if (game == null)
+                    {
+                        game = new Game();
+                        game.GameNumber = gameNumber;
+                        game.Session = session.ID;
+                        game.Lane = lane;
+                        db.Game.Add(game);
+                    }
+
+                    var playerScore = new PlayerScore();
+                    playerScore.Game = game.ID;
+                    playerScore.Session = session.ID;
+                    playerScore.Score = finalScore;
+                    playerScore.Scorestring = scoreString;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+
+        }
         [HttpPost]
         public JsonResult UpdateScore(int id, int newScore)
         {

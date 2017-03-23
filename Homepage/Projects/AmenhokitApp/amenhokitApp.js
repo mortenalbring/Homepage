@@ -36,7 +36,7 @@ amenhokit.factory('BowlingService', [BowlingService]);
 amenhokit.service('DataService', ["$q", "AjaxService", DataService]);
 amenhokit.controller("HomeController", HomeController);
 amenhokit.controller("DisplayController", ["$routeParams", "$scope", "DataService", "BowlingService", DisplayController]);
-amenhokit.controller("ManualEntryController", ["$routeParams", "$scope", "DataService","AjaxService", "BowlingService", ManualEntryController]);
+amenhokit.controller("ManualEntryController", ["$routeParams", "$scope", "$http", "DataService","AjaxService", "BowlingService", ManualEntryController]);
 amenhokit.controller("SessionDisplayController", ["$routeParams", "$scope", "DataService", "BowlingService", SessionDisplayController]);
 amenhokit.controller("PlayerDisplayController", ["$routeParams", "$scope", "DataService", "BowlingService", PlayerDisplayController]);
 

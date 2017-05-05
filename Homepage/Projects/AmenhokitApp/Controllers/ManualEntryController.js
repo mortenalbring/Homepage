@@ -2,7 +2,7 @@
 
     $scope.players = [];
     $scope.errors = [];
-
+    $scope.laneNumber = 1;
     $scope.exampleString = "53X1122XX53223/21";
 
     $scope.gameNumbers = [1, 2, 3, 4, 5];
@@ -59,6 +59,7 @@
         var score = $scope.scoreStringCalculated;
         var finalFrame = score[score.length - 1];
         var finalScore = finalFrame.Cumulative;
+        var laneNumber = parseInt($scope.laneNumber);
 
         var zz = 42;
 
@@ -67,7 +68,7 @@
             playerId: player.ID,
             gameDate: gameDate,
             gameNumber: gameNumber,
-            lane: 0,
+            lane: laneNumber,
             scoreString: scorestring,
             finalScore: finalScore
         });

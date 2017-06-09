@@ -11,12 +11,13 @@ namespace Homepage.Models.Amenhokit.ViewModels
         public Player Player { get; set; }
         public PlayerScore PlayerScore { get; set; }
         public Session Session { get; set; }
-
+        public string DateTime { get; set; }
         public PlayerSessionScore(Player player, PlayerScore playerScore, Session session)
         {
             Player = player;
             PlayerScore = playerScore;
             Session = session;
+            DateTime = session.Date.ToString("yyyy-MM-dd");
         }
     }
 

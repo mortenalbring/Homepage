@@ -8,7 +8,7 @@
         $stateProvider.state("home",
         {
             url: "/",
-            templateUrl: "/AngularApps/NewExport/Views/home.html",
+            templateUrl: "/Projects/NewAmenhokitApp/Views/home.html",
             controller: "HomeController",
             controllerAs: "vm"
         });

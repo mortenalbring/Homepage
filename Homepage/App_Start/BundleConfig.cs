@@ -29,6 +29,7 @@ namespace Homepage
 
             bundles.Add(new ScriptBundle("~/bundles/angular")
                 .Include("~/Scripts/angular.js")
+                .Include("~/Scripts/angular-ui.js")
                 .Include("~/Scripts/angular-route.js", 
                 "~/Scripts/ng-file-upload.js",
             "~/Scripts/ng-file-upload-all.js",
@@ -38,11 +39,13 @@ namespace Homepage
 
             bundles.Add(new ScriptBundle("~/bundles/newamenhokit")
        .Include("~/Scripts/d3/d3.js")
+       .Include("~/Scripts/angular-ui.js")
         .Include("~/Scripts/moment.js")
        .Include("~/Scripts/angular-moment.js")
        .Include("~/Scripts/angular-animate.js")       
        .IncludeDirectory("~/Projects/NewAmenhokitApp/Controllers", "*.js")
        .IncludeDirectory("~/Projects/NewAmenhokitApp/Services", "*.js")
+       .Include("~/Projects/NewAmenhokitApp/newAmenhokitRouting.js")
        .Include("~/Projects/NewAmenhokitApp/newAmenhokitApp.js"));
 
 

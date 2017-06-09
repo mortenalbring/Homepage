@@ -5,15 +5,16 @@
 <link href="~/Projects/AmenhokitApp/amenhokit.css" rel="stylesheet" />
 @section Scripts {
     @Scripts.Render("~/bundles/angular")
-    @Scripts.Render("~/bundles/amenhokit")
+    @Scripts.Render("~/bundles/newamenhokit")
 }
 
 
 <div class="content">
 
+  
 
-    <div ng-app="amenhokit">
-        <div ng-view autoscroll="true"></div>
+    <div ng-app="NewAmenhokit">
+        <div ui-view></div>
     </div>
 
 </div>

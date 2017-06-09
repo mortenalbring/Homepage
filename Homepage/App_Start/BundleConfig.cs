@@ -46,7 +46,7 @@ namespace Homepage
                .IncludeDirectory("~/Projects/AmenhokitApp/Services", "*.js")
                .Include("~/Projects/AmenhokitApp/amenhokitApp.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/amenhokit")
+            bundles.Add(new ScriptBundle("~/bundles/newamenhokit")
           .Include("~/Scripts/d3/d3.js")
            .Include("~/Scripts/moment.js")
            .Include("~/Scripts/angular-ui-router.js")

@@ -14,6 +14,47 @@ namespace Homepage.Controllers
 {
     public class AmenhokitController : Controller
     {
+
+        public void FixSessions()
+        {
+            using (var db = new DataContext())
+            {
+                var sessions = db.Session.GroupBy(e => e.Date).Where(e => e.Count() > 1).ToList();
+
+                foreach (var session in sessions)
+                {
+                    var first = session.First();
+                    var others = session.Where(e => e.ID != first.ID).ToList();
+
+                    foreach (var other in others)
+                    {
+                        var brokenGames = db.Game.Where(e => e.Session == other.ID).ToList();
+
+                        foreach (var brokenGame in brokenGames)
+                        {
+                            db.Game.Attach(brokenGame);
+                            brokenGame.Session = first.ID;
+                            db.SaveChanges();
+                        }
+
+                        var brokenPlayerScores = db.PlayerScore.Where(e => e.Session == other.ID).ToList();
+
+                        foreach (var brokenScore in brokenPlayerScores)
+                        {
+                            db.PlayerScore.Attach(brokenScore);
+                            brokenScore.Session = first.ID;
+                            db.SaveChanges();
+                        }
+
+                        db.Session.Remove(other);
+                        db.SaveChanges();
+                    }
+                }
+
+                var xx = 42;
+            }
+        }
+
         [HttpPost]
         public void AddNewScore(int playerId, string gameDate, int gameNumber, int lane, string scoreString, int finalScore)
         {
@@ -32,31 +73,40 @@ namespace Homepage.Controllers
                     var session =
                         db.Session.FirstOrDefault(
                             e =>
-                                e.Date.Year == gameDateObj.Year && e.Date.Minute == gameDateObj.Month &&
+                                e.Date.Year == gameDateObj.Year && e.Date.Month == gameDateObj.Month &&
                                 e.Date.Day == gameDateObj.Day);
 
                     if (session == null)
                     {
-                        session = new Session();
-                        session.Date = gameDateObj;
+                        session = new Session {Date = gameDateObj};
                         db.Session.Add(session);
+                        db.SaveChanges();
                     }
 
                     var game = db.Game.FirstOrDefault(e => e.Session == session.ID && e.GameNumber == gameNumber);
                     if (game == null)
                     {
-                        game = new Game();
-                        game.GameNumber = gameNumber;
-                        game.Session = session.ID;
-                        game.Lane = lane;
+                        game = new Game
+                        {
+                            GameNumber = gameNumber,
+                            Session = session.ID,
+                            Lane = lane
+                        };
                         db.Game.Add(game);
-                    }
+                        db.SaveChanges();
+                    }                    
 
-                    var playerScore = new PlayerScore();
-                    playerScore.Game = game.ID;
-                    playerScore.Session = session.ID;
-                    playerScore.Score = finalScore;
-                    playerScore.Scorestring = scoreString;
+                    var playerScore = new PlayerScore
+                    {
+                        Player = player.ID,
+                        Game = game.ID,
+                        Session = session.ID,
+                        Score = finalScore,
+                        Scorestring = scoreString
+                    };
+
+                    db.PlayerScore.Add(playerScore);
+                    db.SaveChanges();
 
                 }
             }

@@ -29,6 +29,11 @@ namespace Homepage.Controllers
             return View();          
         }
 
+        public ActionResult ProjectAmenhokitOld()
+        {
+            return View();
+        }
+
         public ActionResult ProjectPennyGame()
         {
             return View();

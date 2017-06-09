@@ -43,10 +43,14 @@
 
                     if (dateSplit.length >= 2) {
 
-                        var year = dateSplit[0];
-                        var month = dateSplit[1];
-                        var day = dateSplit[2];
-                        outobj.Date = new Date(year, month, day);
+                        var year = parseInt(dateSplit[0]);
+                        var month = parseInt(dateSplit[1]);
+                        var day = parseInt(dateSplit[2]);
+                        outobj.Date = new Date(year, month-1, day);
+
+                        if (year == "2017") {
+                            var zz = 42;
+                        }
                         outputArray.push(outobj);
                     }
 
@@ -137,10 +141,10 @@
                     continue;
                 }
 
-                var year = dateSplit[0];
-                var month = dateSplit[1];
-                var day = dateSplit[2];
-                var dateObj = new Date(year, month, day);
+                var year = parseInt(dateSplit[0]);
+                var month = parseInt(dateSplit[1]);
+                var day = parseInt(dateSplit[2]);
+                var dateObj = new Date(year, month-1, day);
 
                 outputRow.push(dateObj);
                 for (var l = 1; l < bowlingTable[k].length; l++) {
@@ -164,7 +168,7 @@
                     format: 'd/M/yy',
                     gridlines: { count: 15 }
                 },
-                vAxis: { title: 'Score', minValue: 0, maxValue: 250 },
+                vAxis: { title: 'Score', minValue: 0, maxValue: 200 },
                 legend: { position: 'top' },
                 trendlines: {  }
             };

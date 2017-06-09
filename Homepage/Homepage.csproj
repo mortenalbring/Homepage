@@ -30930,6 +30930,7 @@
     <Content Include="Views\Shared\_NavbarLinks.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
+    <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

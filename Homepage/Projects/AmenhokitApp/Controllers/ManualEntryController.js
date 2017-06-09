@@ -4,7 +4,7 @@
     $scope.errors = [];
     $scope.laneNumber = 1;
     $scope.exampleString = "53X1122XX53223/21";
-
+    $scope.gameDate = "2017-";
     $scope.gameNumbers = [1, 2, 3, 4, 5];
 
     $scope.activePlayer = null;
@@ -60,18 +60,28 @@
         var finalFrame = score[score.length - 1];
         var finalScore = finalFrame.Cumulative;
         var laneNumber = parseInt($scope.laneNumber);
-
-        var zz = 42;
-
+        $scope.saving = true;
         $http.post("/Amenhokit/AddNewScore",
-        {
-            playerId: player.ID,
-            gameDate: gameDate,
-            gameNumber: gameNumber,
-            lane: laneNumber,
-            scoreString: scorestring,
-            finalScore: finalScore
-        });
+            {
+                playerId: player.ID,
+                gameDate: gameDate,
+                gameNumber: gameNumber,
+                lane: laneNumber,
+                scoreString: scorestring,
+                finalScore: finalScore
+            })
+            .then(function () {
+                $scope.saving = false;
+                if ($scope.activeGame === 3) {
+                    $scope.activeGame = 1;
+                    $scope.activePlayer = null;
+                } else {
+                    $scope.activeGame = $scope.activeGame + 1;
+                }
+
+                $scope.manualScoreString = null;
+                $scope.scoreStringCalculated = null;
+            });
 
 
     }

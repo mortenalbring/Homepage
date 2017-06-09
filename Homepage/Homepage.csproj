@@ -374,6 +374,10 @@
     <Content Include="Projects\AngularD3\styles\nodestyles.css" />
     <Content Include="Projects\AngularD3\styles\pagestyles.css" />
     <Content Include="Projects\index.txt" />
+    <Content Include="Projects\NewAmenhokitApp\Controllers\HomeController.js" />
+    <Content Include="Projects\NewAmenhokitApp\newAmenhokitApp.js" />
+    <Content Include="Projects\NewAmenhokitApp\newAmenhokitRouting.js" />
+    <Content Include="Projects\NewAmenhokitApp\Views\home.html" />
     <Content Include="Projects\PennyGame\PennyGame.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -381,6 +385,7 @@
     <Content Include="Scripts\angular-moment.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -30927,6 +30932,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\less\" />
+    <Folder Include="Projects\NewAmenhokitApp\Services\" />
     <Folder Include="tempfiles\" />
     <Folder Include="Views\Upload\" />
   </ItemGroup>

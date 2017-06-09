@@ -29,7 +29,7 @@ namespace Homepage
 
             bundles.Add(new ScriptBundle("~/bundles/angular")
                 .Include("~/Scripts/angular.js")
-                .Include("~/Scripts/angular-route.js", 
+                .Include("~/Scripts/angular-route.js",
                 "~/Scripts/ng-file-upload.js",
             "~/Scripts/ng-file-upload-all.js",
             "~/Scripts/ng-file-upload-shim.js",
@@ -42,16 +42,27 @@ namespace Homepage
                .Include("~/Scripts/angular-moment.js")
                .Include("~/Scripts/angular-animate.js")
                .IncludeDirectory("~/Projects/AmenhokitApp/Directives", "*.js")
-               .IncludeDirectory("~/Projects/AmenhokitApp/Controllers","*.js")
+               .IncludeDirectory("~/Projects/AmenhokitApp/Controllers", "*.js")
                .IncludeDirectory("~/Projects/AmenhokitApp/Services", "*.js")
                .Include("~/Projects/AmenhokitApp/amenhokitApp.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/amenhokit")
+          .Include("~/Scripts/d3/d3.js")
+           .Include("~/Scripts/moment.js")
+           .Include("~/Scripts/angular-ui-router.js")
+          .Include("~/Scripts/angular-moment.js")
+          .Include("~/Scripts/angular-animate.js")          
+          .IncludeDirectory("~/Projects/NewAmenhokitApp/Controllers", "*.js")
+          .IncludeDirectory("~/Projects/NewAmenhokitApp/Services", "*.js")
+          .Include("~/Projects/NewAmenhokitApp/newAmenhokitRouting.js")
+          .Include("~/Projects/NewAmenhokitApp/newAmenhokitApp.js"));
 
 
             bundles.Add(new StyleBundle("~/bundles/css")
                 .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/animate.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
                 );
             bundles.Add(new LessBundle("~/bundles/less")
-                .IncludeDirectory("~/Content/styles/","*.less"));
+                .IncludeDirectory("~/Content/styles/", "*.less"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -66,10 +77,10 @@ namespace Homepage
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
-            
+
             BundleTable.EnableOptimizations = false;
         }
 
-        
+
     }
 }

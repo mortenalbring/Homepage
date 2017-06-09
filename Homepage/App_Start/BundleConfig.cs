@@ -36,6 +36,16 @@ namespace Homepage
             "~/Scripts/FileAPI.js"));
 
 
+            bundles.Add(new ScriptBundle("~/bundles/newamenhokit")
+       .Include("~/Scripts/d3/d3.js")
+        .Include("~/Scripts/moment.js")
+       .Include("~/Scripts/angular-moment.js")
+       .Include("~/Scripts/angular-animate.js")       
+       .IncludeDirectory("~/Projects/NewAmenhokitApp/Controllers", "*.js")
+       .IncludeDirectory("~/Projects/NewAmenhokitApp/Services", "*.js")
+       .Include("~/Projects/NewAmenhokitApp/newAmenhokitApp.js"));
+
+
             bundles.Add(new ScriptBundle("~/bundles/amenhokit")
                .Include("~/Scripts/d3/d3.js")
                 .Include("~/Scripts/moment.js")

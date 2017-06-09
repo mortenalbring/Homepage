@@ -14,6 +14,7 @@
 
         this.allScores = [];
         this.bowlingDataTable = [];
+        this.uniquePlayers = [];
 
         var self = this;
 
@@ -29,6 +30,9 @@
                     var session = result.data[i].Session;
 
                     var playerName = player.Name;
+                    if (playerName != "mort" && playerName != "george" && playerName != "bern" && playerName != "tom") {
+                        continue;
+                    }
                     var finalScore = playerScore.Score;
                     var sessionDate = result.data[i].DateTime;
                     var dateSplit = sessionDate.split('-');
@@ -48,7 +52,6 @@
 
                 }
 
-                var tableData = [];
                 var uniqueDates = [];
                 for (var j = 0; j < outputArray.length; j++) {
                     if (uniqueDates.indexOf(outputArray[j].DateString) == -1) {
@@ -62,6 +65,8 @@
                         uniquePlayers.push(outputArray[k].Name);
                     }
                 }
+
+                self.uniquePlayers = uniquePlayers;
 
                 var tableRows = [];
                 var tableHeaders = ["Score"];
@@ -113,9 +118,6 @@
 
 
         function drawChart() {
-
-            var bowlingData = self.allScores;
-
             var bowlingTable = self.bowlingDataTable;
 
             var multiTable = new google.visualization.DataTable();
@@ -139,36 +141,22 @@
                 var month = dateSplit[1];
                 var day = dateSplit[2];
                 var dateObj = new Date(year, month, day);
-               
+
                 outputRow.push(dateObj);
                 for (var l = 1; l < bowlingTable[k].length; l++) {
                     outputRow.push(bowlingTable[k][l]);
                 }
-                
+
                 multiTable.addRow(outputRow);
             }
 
-            var testArr = [['A', 'B']];
             var dataTable = new google.visualization.DataTable();
             dataTable.addColumn('date', 'Date');
             dataTable.addColumn('number', 'Score');
 
-            var testRows = [];
-            for (var i = 0; i < bowlingData.length; i++) {
-                var testKey = i;
-                var dateKey = new Date(1900, 1, 1);
-
-                var bowlingDate = bowlingData[i].Date;
 
 
-                var testVal = bowlingData[i].Score;
-                var testElem = [testKey, testVal];
-                testArr.push(testElem);
-                var testElem2 = [bowlingDate, testVal];
-                testRows.push(testElem2);
-            }
 
-            dataTable.addRows(testRows);
 
             var options = {
                 title: 'All scores',
@@ -177,8 +165,27 @@
                     gridlines: { count: 15 }
                 },
                 vAxis: { title: 'Score', minValue: 0, maxValue: 250 },
-                legend: 'none'
+                legend: { position: 'top' },
+                trendlines: {  }
             };
+
+
+            var trendObjs = [];
+            for (var i = 0; i < self.uniquePlayers.length; i++) {
+                var trendObj = {}
+                var inc = i + 1;
+                trendObj = { type:'linear', opacity:0.25 }
+                trendObjs.push(trendObj);
+            }
+
+            var rv = {};
+            for (var m = 0; m < trendObjs.length; m++) {
+                rv[m] = trendObjs[m];
+            }
+            options.trendlines = rv;
+
+
+
 
             var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
 

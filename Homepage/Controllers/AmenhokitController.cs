@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Homepage.Models;
 using Homepage.Models.Amenhokit.Database;
+using Homepage.Models.Amenhokit.ViewModels;
 using Homepage.Repository;
 
 namespace Homepage.Controllers
@@ -247,7 +248,29 @@ namespace Homepage.Controllers
             {
                 return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
+        }
 
+
+        [HttpGet]
+        public JsonResult GetAllScores()
+        {
+            using (var db = new DataContext())
+            {
+                var pscs = (from ps in db.PlayerScore
+                    join p in db.Player on ps.Player equals p.ID
+                    join s in db.Session on ps.Session equals s.ID
+                    select new {player = p, playerscore = ps, session = s}
+                    ).ToList();
+
+                var output = new List<PlayerSessionScore>();
+                foreach (var psc in pscs)
+                {
+                    output.Add(new PlayerSessionScore(psc.player,psc.playerscore,psc.session));
+                }
+                
+
+                return Json(output, JsonRequestBehavior.AllowGet);
+            }
 
         }
 

@@ -1,7 +1,48 @@
-﻿{{vm.test}}
-
+﻿
 <div id="chart_div" style="width: 90%; height: 500px;"></div>
-<!-- 
+
+{{vm.sessions.length}}
+<!--
+<div ng-repeat="playerScore in vm.playerScores">
+    {{playerScore}}
+</div>
+-->
+<div ng-repeat="session in vm.sessions | orderBy:'-DateParsed'">
+
+    <strong>{{session.DateParsed | date:'d MMM yyyy'}}</strong>
+
+    <br/>
+    <!--
+    {{session.PlayerScores}}
+    -->
+
+    {{session.Games.length}}
+
+    <div ng-repeat="game in session.Games">
+        {{game}}
+        <br/>
+        <strong>Game {{game.GameNumber}}</strong>
+        <hr/>
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Score string</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="playerScore in game.PlayerScores">
+                    <td>{{playerScore.Player}}</td>
+                    <td>{{playerScore.Scorestring}}</td>
+                    <td>{{playerScore.Score}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  
+</div>
+<!--
 <table class="table table-bordered table-condensed" ng-if="vm.bowlingDataTable.length > 0">
     <thead>
     <tr>

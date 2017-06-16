@@ -4,12 +4,9 @@
     function HomeController($rootScope, $scope, $state, DataService) {
         google.charts.load('current', { 'packages': ['corechart'] });
 
-
-
         this.$rootScope = $rootScope;
         this.$scope = $scope;
-        this.$state = $state;
-        this.test = "moop";
+        this.$state = $state;      
         this.dataService = DataService;
 
         this.allScores = [];
@@ -17,6 +14,8 @@
         this.uniquePlayers = [];
 
         var self = this;
+        this.sessions = [];
+        this.playerScores = [];
 
         DataService.getAllScores()
             .then(function (result) {
@@ -28,13 +27,22 @@
                     var player = result.data[i].Player;
                     var playerScore = result.data[i].PlayerScore;
                     var session = result.data[i].Session;
+                    var game = result.data[i].Game;
+                   
 
                     var playerName = player.Name;
+                    /*
                     if (playerName != "mort" && playerName != "george" && playerName != "bern" && playerName != "tom") {
                         continue;
                     }
+                    */
                     var finalScore = playerScore.Score;
                     var sessionDate = result.data[i].DateTime;
+
+                    self.addSession(session, sessionDate);
+                    self.addGame(game);
+                    self.addPlayerScore(playerScore);
+
                     var dateSplit = sessionDate.split('-');
                     var outobj = {};
                     outobj.Name = playerName;
@@ -48,9 +56,7 @@
                         var day = parseInt(dateSplit[2]);
                         outobj.Date = new Date(year, month-1, day);
 
-                        if (year == "2017") {
-                            var zz = 42;
-                        }
+                      
                         outputArray.push(outobj);
                     }
 
@@ -165,7 +171,7 @@
             var options = {
                 title: 'All scores',
                 hAxis: {
-                    format: 'd/M/yy',
+                    format: 'MM/yyyy',
                     gridlines: { count: 15 }
                 },
                 vAxis: { title: 'Score', minValue: 0, maxValue: 200 },
@@ -198,7 +204,82 @@
 
     }
 
+    HomeController.prototype.addSession = function (session, sessionDate) {
+        var sessionId = session.ID;
+        var exists = this.sessions.filter(function(e) {
+            return e.ID == sessionId;
+        });
+        if (exists.length == 0) {
 
+            var dateSplit = sessionDate.split('-');
+
+            if (dateSplit.length >= 2) {
+
+                var year = parseInt(dateSplit[0]);
+                var month = parseInt(dateSplit[1]);
+                var day = parseInt(dateSplit[2]);
+                session.DateParsed = new Date(year, month - 1, day);                
+            }
+
+            this.sessions.push(session);
+        }
+    }
+
+    HomeController.prototype.addGame = function(game) {
+        var sessionId = game.Session;
+
+        var sessionObjs = this.sessions.filter(function (e) {
+            return e.ID == sessionId;
+        });
+
+        if (sessionObjs.length > 0) {
+            var sessionObj = sessionObjs[0];
+            if (!sessionObj.Games) {
+                sessionObj.Games = [];
+            }
+
+            var exists = sessionObj.Games.filter(function(e) {
+                return e.ID == game.ID;
+            });
+            if (exists.length == 0) {
+                sessionObj.Games.push(game);
+            }
+            
+        } else {
+            console.log("No session object found for " + game);
+        }
+
+        
+    }
+
+    HomeController.prototype.addPlayerScore = function(playerScore) {
+        this.playerScores.push(playerScore);
+        var sessionId = playerScore.Session;
+        var gameId = playerScore.Game;
+        var sessionObjs = this.sessions.filter(function(e) {
+            return e.ID == sessionId;
+        });
+
+        if (sessionObjs.length > 0) {
+            var sessionObj = sessionObjs[0];
+
+            var gameObjs = sessionObj.Games.filter(function(e) {
+                return e.ID == gameId;
+            });
+
+            if (gameObjs.length > 0) {
+                var gameObj = gameObjs[0];
+                if (!gameObj.PlayerScores) {
+                    gameObj.PlayerScores = [];
+                }
+                gameObj.PlayerScores.push(playerScore);
+            }
+
+         
+        } else {
+            console.log("No session found for " + playerScore);
+        }
+    }
     return HomeController;
 
 }();

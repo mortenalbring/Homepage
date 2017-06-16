@@ -179,6 +179,7 @@ namespace Homepage.Controllers
             }
         }
 
+        /*
 
         [HttpGet]
         public JsonResult WipeTables()
@@ -196,6 +197,7 @@ namespace Homepage.Controllers
                 return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
+        */
 
         [HttpPost]
         public JsonResult GetScores(int sessionId, int gameId)
@@ -308,14 +310,15 @@ namespace Homepage.Controllers
             {
                 var pscs = (from ps in db.PlayerScore
                     join p in db.Player on ps.Player equals p.ID
+                    join g in db.Game on ps.Game equals g.ID
                     join s in db.Session on ps.Session equals s.ID
-                    select new {player = p, playerscore = ps, session = s}
+                    select new {player = p, playerscore = ps, session = s, game = g}
                     ).ToList();
 
                 var output = new List<PlayerSessionScore>();
                 foreach (var psc in pscs)
                 {
-                    output.Add(new PlayerSessionScore(psc.player,psc.playerscore,psc.session));
+                    output.Add(new PlayerSessionScore(psc.player,psc.playerscore,psc.session,psc.game));
                 }
                 
 

@@ -14,7 +14,58 @@ namespace Homepage.Controllers
 {
     public class AmenhokitController : Controller
     {
+        public void FixPlayerScores()
+        {
 
+            using (var db = new DataContext())
+            {
+                var playerScores = db.PlayerScore.GroupBy(e => e.Session).ToList();
+
+                
+            }
+        }
+        public void FixGames()
+        {
+            using (var db = new DataContext())
+            {
+                var allSessions = db.Session.ToList();
+
+                foreach (var session in allSessions)
+                {
+                    var games = db.Game.Where(e => e.Session == session.ID).ToList();
+
+                    var grouped = games.GroupBy(e => e.GameNumber).ToList();
+                    foreach (var group in grouped)
+                    {
+                        if (group.Count() > 1)
+                        {
+                            var xx = 42;
+                            var firstGroup = group.First();
+
+                            var otherGroups = group.Where(e => e.ID != firstGroup.ID);
+
+                            foreach (var other in otherGroups)
+                            {
+                                var playerScores = db.PlayerScore.Where( e => e.Session == session.ID && e.Game == other.ID).ToList();
+
+                                foreach (var score in playerScores)
+                                {
+                                    db.PlayerScore.Attach(score);
+                                    score.Game = firstGroup.ID;
+                                    db.SaveChanges();
+                                }
+
+                                db.Game.Attach(other);
+                                db.Game.Remove(other);
+                                db.SaveChanges();
+                                var zz = 42;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
         public void FixSessions()
         {
             using (var db = new DataContext())

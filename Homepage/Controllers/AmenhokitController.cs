@@ -19,8 +19,35 @@ namespace Homepage.Controllers
 
             using (var db = new DataContext())
             {
-                var playerScores = db.PlayerScore.GroupBy(e => e.Session).ToList();
+                var playerScores = db.PlayerScore.ToList();
+                var removed = 0;
+                foreach (var ps in playerScores)
+                {
+                    var dupes =
+                        db.PlayerScore.Where(
+                            e =>
+                                e.Session == ps.Session && e.Game == ps.Game && e.Player == ps.Player &&
+                                e.Score == ps.Score).ToList();
 
+                    if (dupes.Count > 1)
+                    {
+                        var xx = 42;
+                        var first = dupes.First();
+                        var others = dupes.Where(e => e.ID != first.ID).ToList();
+
+                        foreach (var other in others)
+                        {
+                            db.PlayerScore.Attach(other);
+                            db.PlayerScore.Remove(other);
+                            removed++;
+                            Debug.WriteLine(removed);
+                            db.SaveChanges();
+                        }
+
+                        var zz = 42;
+
+                    }
+                }
                 
             }
         }

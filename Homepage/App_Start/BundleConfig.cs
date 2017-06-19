@@ -78,6 +78,10 @@ namespace Homepage
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
+            bundles.Add(new StyleBundle("~/bundles/newamenhokitstyles")
+                .IncludeDirectory("~/Projects/NewAmenhokitApp/Styles","*.css")
+                );
+
             BundleTable.EnableOptimizations = false;
         }
 

@@ -1,65 +1,51 @@
 ﻿
 <div id="chart_div" style="width: 90%; height: 500px;"></div>
 
-{{vm.sessions.length}}
+
 <!--
 <div ng-repeat="playerScore in vm.playerScores">
     {{playerScore}}
 </div>
 -->
-<div ng-repeat="session in vm.sessions | orderBy:'-DateParsed'">
 
-    <strong>{{session.DateParsed | date:'d MMM yyyy'}}</strong>
+<div class="container-fluid">
+    <div class="col-md-6 col-md-offset-2">
+        <div ng-repeat="session in vm.sessions | orderBy:'-DateParsed'" class="am-sessions">
 
-    <br/>
-    <!--
-    {{session.PlayerScores}}
-    -->
+            <span>
+                <strong>{{session.DateParsed | date:'d MMM yyyy'}}</strong>
+                - {{session.Games.length}} games
+            </span>
 
-    {{session.Games.length}}
 
-    <div ng-repeat="game in session.Games">
-        {{game}}
-        <br/>
-        <strong>Game {{game.GameNumber}}</strong>
-        <hr/>
-        <table class="table table-bordered table-condensed">
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Score string</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="playerScore in game.PlayerScores">
-                    <td>{{playerScore.Player}}</td>
-                    <td>{{playerScore.Scorestring}}</td>
-                    <td>{{playerScore.Score}}</td>
-                </tr>
-            </tbody>
-        </table>
+            <div ng-repeat="game in session.Games">
+                <!-- {{game}}-->             
+                <table class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="3">
+
+                                Game {{game.GameNumber}}
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Player</th>
+                            <th>Score string</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="playerScore in game.PlayerScores">
+                            <td>{{playerScore.Player.Name}}</td>
+                            <td>{{playerScore.Scorestring}}</td>
+                            <td>{{playerScore.Score}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
     </div>
-  
 </div>
-<!--
-<table class="table table-bordered table-condensed" ng-if="vm.bowlingDataTable.length > 0">
-    <thead>
-    <tr>
-        <th ng-repeat="col in vm.bowlingDataTable[0]">
-            {{col}}
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="row in vm.bowlingDataTable track by $index | limitTo:10">
-        {{row}}
-        <td ng-repeat="col in row track by $index">
-            {{col}}
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-
-    -->

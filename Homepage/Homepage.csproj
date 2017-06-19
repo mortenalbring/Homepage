@@ -376,6 +376,7 @@
     <Content Include="Projects\AngularD3\styles\pagestyles.css" />
     <Content Include="Projects\index.txt" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\HomeController.js" />
+    <Content Include="Projects\NewAmenhokitApp\Styles\newAmenhokit.css" />
     <Content Include="Projects\NewAmenhokitApp\newAmenhokitApp.js" />
     <Content Include="Projects\NewAmenhokitApp\newAmenhokitRouting.js" />
     <Content Include="Projects\NewAmenhokitApp\Services\DataService.js" />

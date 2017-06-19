@@ -11,15 +11,18 @@
 <div class="container-fluid">
     <div class="col-md-6 col-md-offset-2">
         <div ng-repeat="session in vm.sessions | orderBy:'-DateParsed'" class="am-sessions">
+            <a ng-href="#/sessions/{{session.ID}}">
 
-            <span>
-                <strong>{{session.DateParsed | date:'d MMM yyyy'}}</strong>
-                - {{session.Games.length}} games
-            </span>
 
+                <span>
+                    <strong>{{session.DateParsed | date:'d MMM yyyy'}}</strong>
+                    - {{session.Games.length}} games
+                </span>
+            </a>
 
             <div ng-repeat="game in session.Games">
-                <!-- {{game}}-->             
+                <!-- {{game}}-->
+                <table
                 <table class="table table-bordered table-condensed">
                     <thead>
                         <tr>

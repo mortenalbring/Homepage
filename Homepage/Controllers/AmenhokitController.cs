@@ -381,6 +381,31 @@ namespace Homepage.Controllers
         }
 
 
+        [HttpPost]
+        public JsonResult GetScoresBySession(int sessionId)
+        {
+            using (var db = new DataContext())
+            {
+                var pscs = (from ps in db.PlayerScore
+                            join p in db.Player on ps.Player equals p.ID
+                            join g in db.Game on ps.Game equals g.ID
+                            join s in db.Session on ps.Session equals s.ID
+                            where s.ID == sessionId
+                            select new { player = p, playerscore = ps, session = s, game = g }
+                    ).ToList();
+
+                var output = new List<PlayerSessionScore>();
+                foreach (var psc in pscs)
+                {
+                    output.Add(new PlayerSessionScore(psc.player, psc.playerscore, psc.session, psc.game));
+                }
+
+
+                return Json(output, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
         [HttpGet]
         public JsonResult GetAllScores()
         {

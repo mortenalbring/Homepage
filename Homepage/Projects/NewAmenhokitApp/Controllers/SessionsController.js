@@ -6,13 +6,14 @@
         var sessionId = parseInt($stateParams.sessionId);
 
         this.dataService = DataService;
+        this.dataService.resetData();
 
         this.players = this.dataService.players;
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
         //todo some logic to check for existing data        
-
+      
         this.session = null;
         var self = this;
 

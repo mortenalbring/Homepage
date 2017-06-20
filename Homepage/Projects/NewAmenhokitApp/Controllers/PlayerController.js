@@ -5,17 +5,22 @@
         google.charts.load('current', { 'packages': ['calendar'] });
 
         var playerId = parseInt($stateParams.playerId);
-        
+        this.$rootScope = $rootScope;
         this.dataService = DataService;
-        this.dataService.sessions = [];
-        this.dataService.playerScores = [];
+        this.dataService.resetData();
+        this.$state = $state;
+
+        this.player = null;
+        this.selected = {
+            session: null
+    }
 
         this.players = this.dataService.players;
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
         //todo some logic to check for existing data        
-
+      
         this.sessionDataPoints = [];
 
         var self = this;
@@ -34,6 +39,10 @@
                 self.dataService.addPlayerScore(playerScore);
             }
 
+            var playerObj = self.players.filter(function (e) { return e.ID == playerId });
+            if (playerObj.length > 0) {
+                self.player = playerObj[0];
+            }
             self.makeSessionScoreTable();
 
             google.charts.setOnLoadCallback(drawChart);
@@ -46,37 +55,43 @@
            
             var dataTable = new google.visualization.DataTable();
             dataTable.addColumn({ type: 'date', id: 'Date' });
-            dataTable.addColumn({ type: 'number', id: 'Score' });
+            dataTable.addColumn({ type: 'number', id: 'Score' });            
 
             for (var i = 0; i < self.sessionDataPoints.length; i++) {
                 dataTable.addRow([self.sessionDataPoints[i].Date, self.sessionDataPoints[i].Score]);
             }
-            /*
-            dataTable.addRows([
-               [new Date(2012, 3, 13), 37032],
-               [new Date(2012, 3, 14), 38024],
-               [new Date(2012, 3, 15), 38024],
-               [new Date(2012, 3, 16), 38108],
-               [new Date(2012, 3, 17), 38229],
-               // Many rows omitted for brevity.
-               [new Date(2013, 9, 4), 38177],
-               [new Date(2013, 9, 5), 38705],
-               [new Date(2013, 9, 12), 38210],
-               [new Date(2013, 9, 13), 38029],
-               [new Date(2013, 9, 19), 38823],
-               [new Date(2013, 9, 23), 38345],
-               [new Date(2013, 9, 24), 38436],
-               [new Date(2013, 9, 30), 38447]
-            ]);
-            */
+   
             var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
 
             var options = {
-                title: "Score",
+                title: "Average score per session",
                 
             };
 
             chart.draw(dataTable, options);
+            google.visualization.events.addListener(chart, 'select', selectHandler);
+            function selectHandler(e) {
+
+                var selectedItem = chart.getSelection();
+                //alert('A table row was selected');
+                
+                var selectedRow = selectedItem[0].row;
+                if (selectedRow) {
+                    var rowprop = dataTable.getRowProperties(selectedRow);
+                    var val1 = dataTable.getValue(selectedRow, 0);
+                    var val2 = dataTable.getValue(selectedRow, 1);
+
+                    var matchingData = self.sessionDataPoints.filter(function (e) { return e.Date == val1 });
+                    if (matchingData.length > 0) {
+                        self.$rootScope.$apply(function() {
+                            self.selected.session = matchingData[0];
+                            self.$state.go('sessions', { sessionId: self.selected.session.ID });
+                        });
+
+                    }                    
+                }
+                
+            }
         }
     }
 
@@ -94,13 +109,12 @@
             });
 
             var cumScore = 0;
-            for (var j = 0; j < scores.length; j++) {
-                var zz = 42;
+            for (var j = 0; j < scores.length; j++) {                
                 cumScore = cumScore + scores[j].Score;
             }
-            var averageScore = cumScore / scores.length;
+            var averageScore = parseInt(cumScore / scores.length);
 
-            var dataPoint = {Date: sessionDate, Score: averageScore}
+            var dataPoint = {Date: sessionDate, Score: averageScore, ID: session.ID}
 
             var xx = 42;
             this.sessionDataPoints.push(dataPoint);

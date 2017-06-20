@@ -1,9 +1,17 @@
-﻿
-{{pc.playerScores.length}}
-<div id="calendar_basic" style="width: 1000px; height: 1000px;"></div>
+﻿<div ng-if="pc.player">
+    <h1 class="text-capitalize">{{pc.player.Name}}</h1>
+</div>
+<div id="calendar_basic" style="width: 1000px; height: 800px;"></div>
+
+<div ng-if="pc.selected.session">
+    <strong>{{pc.selected.session}}</strong> 
+</div>
+
 <div ng-repeat="data in pc.sessionDataPoints">
     {{data}}
 </div>
+
+
 
 <!--
 <div ng-repeat="score in pc.playerScores">

@@ -8,7 +8,11 @@
         this.playerScores = [];
 
     }
-
+    DataService.prototype.resetData = function() {
+        this.players = [];
+        this.sessions = [];
+        this.playerScores = [];
+    }
     DataService.prototype.getAllScores = function () {
         return this.$http.get('/Amenhokit/GetAllScores');
     }

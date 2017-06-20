@@ -10,14 +10,19 @@
         this.$scope = $scope;
         this.$state = $state;
         this.dataService = DataService;
+        this.dataService.resetData();
 
         this.allScores = [];
         this.bowlingDataTable = [];
         this.uniquePlayers = [];
+
+        
+
         this.players = this.dataService.players;
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
+      
         DataService.getAllScores()
             .then(function (result) {
                 var outputArray = [];

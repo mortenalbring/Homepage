@@ -40,7 +40,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="playerScore in game.PlayerScores">
-                            <td>{{playerScore.Player.Name}}</td>
+                            <td><a ng-href="#/player/{{playerScore.Player.ID}}">{{playerScore.Player.Name}}</a></td>
                             <td>{{playerScore.Scorestring}}</td>
                             <td>{{playerScore.Score}}</td>
                         </tr>

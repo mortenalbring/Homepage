@@ -1,4 +1,4 @@
-﻿var DataService = function() {
+﻿var DataService = function () {
     DataService.$inject = ["$http"];
 
     function DataService($http) {
@@ -9,17 +9,22 @@
 
     }
 
-    DataService.prototype.getAllScores = function() {
+    DataService.prototype.getAllScores = function () {
         return this.$http.get('/Amenhokit/GetAllScores');
     }
 
     DataService.prototype.getScoresBySession = function (sessionId) {
         return this.$http.post('/Amenhokit/GetScoresBySession/',
         {
-            sessionId:sessionId
-    });
+            sessionId: sessionId
+        });
     }
-
+    DataService.prototype.getScoresByPlayer = function (playerId) {
+        return this.$http.post('/Amenhokit/GetScoresByPlayer/',
+        {
+            playerId: playerId
+        });
+    }
     DataService.prototype.addPlayer = function (player) {
         var exists = this.players.filter(function (e) {
             return e.ID == player.ID;

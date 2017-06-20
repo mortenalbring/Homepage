@@ -19,7 +19,13 @@
             controller: "SessionsController",
             controllerAs: "sc"
         })
-
+        .state("player",
+        {
+            url: "/player/:playerId",
+            templateUrl: "/Projects/NewAmenhokitApp/Views/player.html",
+            controller: "PlayerController",
+            controllerAs: "pc"
+        })
         ;
 
 

@@ -376,12 +376,14 @@
     <Content Include="Projects\AngularD3\styles\pagestyles.css" />
     <Content Include="Projects\index.txt" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\HomeController.js" />
+    <Content Include="Projects\NewAmenhokitApp\Controllers\PlayerController.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\SessionsController.js" />
     <Content Include="Projects\NewAmenhokitApp\Styles\newAmenhokit.css" />
     <Content Include="Projects\NewAmenhokitApp\newAmenhokitApp.js" />
     <Content Include="Projects\NewAmenhokitApp\newAmenhokitRouting.js" />
     <Content Include="Projects\NewAmenhokitApp\Services\DataService.js" />
     <Content Include="Projects\NewAmenhokitApp\Views\home.html" />
+    <Content Include="Projects\NewAmenhokitApp\Views\player.html" />
     <Content Include="Projects\NewAmenhokitApp\Views\sessions.html" />
     <Content Include="Projects\PennyGame\PennyGame.js" />
     <Content Include="Scripts\angular-animate.js" />

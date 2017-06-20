@@ -15,8 +15,6 @@
         this.bowlingDataTable = [];
         this.uniquePlayers = [];
         this.players = this.dataService.players;
-
-
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 

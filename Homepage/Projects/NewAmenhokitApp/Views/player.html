@@ -7,10 +7,10 @@
     <strong>{{pc.selected.session}}</strong> 
 </div>
 
-<div ng-repeat="data in pc.sessionDataPoints">
-    {{data}}
+<br/>
+<div>
+    {{pc.player.Name | titlecase}}'s highest score was {{pc.highestScore}} on <a ng-href="#sessions/{{pc.highestScoreSession.ID}}"> {{pc.highestScoreSession.DateParsed | date:"EEEE d MMMM yyyy" }} </a>
 </div>
-
 
 
 <!--

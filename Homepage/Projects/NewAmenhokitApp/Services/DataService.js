@@ -39,14 +39,17 @@
     }
 
     DataService.prototype.addSession = function (session, sessionDate) {
+        processDate(session, sessionDate);
         var sessionId = session.ID;
         var exists = this.sessions.filter(function (e) {
             return e.ID == sessionId;
         });
-        if (exists.length == 0) {
-
+        if (exists.length == 0) {                 
+            this.sessions.push(session);
+        }
+      
+        function processDate(session, sessionDate) {
             var dateSplit = sessionDate.split('-');
-
             if (dateSplit.length >= 2) {
 
                 var year = parseInt(dateSplit[0]);
@@ -54,8 +57,6 @@
                 var day = parseInt(dateSplit[2]);
                 session.DateParsed = new Date(year, month - 1, day);
             }
-
-            this.sessions.push(session);
         }
     }
 

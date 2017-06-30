@@ -22,6 +22,8 @@
         //todo some logic to check for existing data        
       
         this.sessionDataPoints = [];
+        this.highestScore = 0;
+        this.highestScoreSession = null;
 
         var self = this;
 
@@ -35,6 +37,11 @@
 
                 self.dataService.addPlayer(player);
                 self.dataService.addSession(session, sessionDate);
+
+                if (playerScore.Score > self.highestScore) {
+                    self.highestScore = playerScore.Score;
+                    self.highestScoreSession = session;
+                }
                 self.dataService.addGame(game);
                 self.dataService.addPlayerScore(playerScore);
             }

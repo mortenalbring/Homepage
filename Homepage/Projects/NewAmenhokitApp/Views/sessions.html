@@ -1,7 +1,7 @@
 ﻿
 
 <div ng-if="sc.session">
-   <!--  {{sc.session}}-->
+    <!--  {{sc.session}}-->
 
     <h1>{{sc.session.DateParsed | date:"EEEE d MMMM yyyy" }}</h1>
 
@@ -25,7 +25,11 @@
             </thead>
             <tbody>
                 <tr ng-repeat="playerScore in game.PlayerScores">
-                    <td>{{playerScore.Player.Name}}</td>
+                    <td>
+                        <a ng-href="#player/{{playerScore.Player.ID}}">
+                            {{playerScore.Player.Name | titlecase}}
+                        </a>
+                    </td>
                     <td>{{playerScore.Scorestring}}</td>
                     <td>{{playerScore.Score}}</td>
                 </tr>

@@ -62,11 +62,8 @@
                         var month = parseInt(dateSplit[1]);
                         var day = parseInt(dateSplit[2]);
                         outobj.Date = new Date(year, month - 1, day);
-
-
                         outputArray.push(outobj);
                     }
-
                 }
 
                 var uniqueDates = [];

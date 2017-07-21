@@ -237,6 +237,7 @@
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AmenhokitRepository.cs" />
+    <Compile Include="Services\Amenhokit\FunStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConnectionStrings.config" />
@@ -378,6 +379,7 @@
     <Content Include="Projects\NewAmenhokitApp\Controllers\HomeController.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\PlayerController.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\SessionsController.js" />
+    <Content Include="Projects\NewAmenhokitApp\Services\BowlingService.js" />
     <Content Include="Projects\NewAmenhokitApp\Styles\newAmenhokit.css" />
     <Content Include="Projects\NewAmenhokitApp\newAmenhokitApp.js" />
     <Content Include="Projects\NewAmenhokitApp\newAmenhokitRouting.js" />

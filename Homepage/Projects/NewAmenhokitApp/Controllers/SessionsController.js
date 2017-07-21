@@ -1,10 +1,10 @@
 ﻿var SessionsController = function() {
-    SessionsController.$inject = ["$rootScope", "$scope","$state", "$stateParams", "DataService"];
+    SessionsController.$inject = ["$rootScope", "$scope","$state", "$stateParams", "DataService", "BowlingService"];
 
-    function SessionsController($rootScope, $scope, $state, $stateParams, DataService) {
+    function SessionsController($rootScope, $scope, $state, $stateParams, DataService, BowlingService) {
 
         var sessionId = parseInt($stateParams.sessionId);
-
+        this.bowlingService = BowlingService;
         this.dataService = DataService;
         this.dataService.resetData();
 
@@ -24,12 +24,13 @@
                 var session = result.data[i].Session;
                 var game = result.data[i].Game;
                 var sessionDate = result.data[i].DateTime;
+                var frameScores = self.bowlingService.CalculateFrameScores(playerScore.Scorestring);
+                playerScore.FrameScores = frameScores;
 
                 self.dataService.addPlayer(player);
                 self.dataService.addSession(session, sessionDate);
                 self.dataService.addGame(game);
-                self.dataService.addPlayerScore(playerScore);
-                
+                self.dataService.addPlayerScore(playerScore);                
             }
 
             var sessionObj = self.sessions.filter(function(e) {
@@ -41,8 +42,6 @@
             }
             self.session = sessionObj[0];
         });
-
-        var xx = 42;
     }
 
     return SessionsController;

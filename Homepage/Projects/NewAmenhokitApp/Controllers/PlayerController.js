@@ -1,12 +1,13 @@
 ﻿var PlayerController = function () {
-    PlayerController.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "DataService"];
+    PlayerController.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "DataService","BowlingService"];
 
-    function PlayerController($rootScope, $scope, $state, $stateParams, DataService) {
+    function PlayerController($rootScope, $scope, $state, $stateParams, DataService, BowlingService) {
         google.charts.load('current', { 'packages': ['calendar'] });
 
         var playerId = parseInt($stateParams.playerId);
         this.$rootScope = $rootScope;
         this.dataService = DataService;
+        this.bowlingService = BowlingService;
         this.dataService.resetData();
         this.$state = $state;
 

@@ -1,5 +1,17 @@
-﻿
-<div id="chart_div" style="width: 90%; height: 500px;"></div>
+﻿<div class="container-fluid">
+    <div class="col-md-2">
+        <div ng-repeat="player in vm.players | orderBy:'ID'">
+            <a ng-href="#/player/{{player.ID}}">
+                {{player.Name | titlecase}}
+            </a>
+
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div id="chart_div" style="width: 90%; height: 500px;"></div>
+    </div>
+
+</div>
 
 
 <!--
@@ -9,7 +21,9 @@
 -->
 
 <div class="container-fluid">
+
     <div class="col-md-6 col-md-offset-2">
+
         <div ng-repeat="session in vm.sessions | orderBy:'-DateParsed'" class="am-sessions">
             <a ng-href="#/sessions/{{session.ID}}">
 
@@ -22,8 +36,10 @@
 
             <div ng-repeat="game in session.Games">
                 <!-- {{game}}-->
-             
+
                 <table class="table table-bordered table-condensed">
+                    <thead>
+
                     <thead>
                         <tr>
                             <th colspan="3">

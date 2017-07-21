@@ -71,7 +71,7 @@
             var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
 
             var options = {
-                title: "Average score per session",
+                title: "Highest score per session",
                 
             };
 
@@ -116,12 +116,16 @@
             });
 
             var cumScore = 0;
+            var highestSessionScore = 0; 
             for (var j = 0; j < scores.length; j++) {                
+                if (scores[j].Score > highestSessionScore) {
+                    highestSessionScore = scores[j].Score;
+                }
                 cumScore = cumScore + scores[j].Score;
             }
             var averageScore = parseInt(cumScore / scores.length);
 
-            var dataPoint = {Date: sessionDate, Score: averageScore, ID: session.ID}
+            var dataPoint = { Date: sessionDate, Score: highestSessionScore, ID: session.ID}
 
             var xx = 42;
             this.sessionDataPoints.push(dataPoint);

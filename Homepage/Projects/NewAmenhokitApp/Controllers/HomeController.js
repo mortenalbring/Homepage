@@ -108,12 +108,16 @@
                         if (matchingScores.length > 0) {
 
                             var cumscore = 0;
+                            var highestGameScore = 0;
 
                             for (var m = 0; m < matchingScores.length; m++) {
+                                if (matchingScores[m].Score > highestGameScore) {
+                                    highestGameScore = matchingScores[m].Score;
+                                }
                                 cumscore = cumscore + matchingScores[m].Score;
                             }
                             var averageScore = cumscore / matchingScores.length;
-                            tableRow.push(averageScore);
+                            tableRow.push(highestGameScore);
                         } else {
                             tableRow.push(null);
                         }

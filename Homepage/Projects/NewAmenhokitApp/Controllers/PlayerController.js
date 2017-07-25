@@ -1,13 +1,40 @@
 ﻿var PlayerController = function () {
-    PlayerController.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "DataService","BowlingService"];
-   
+    PlayerController.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "DataService", "BowlingService"];
+
     function PlayerController($rootScope, $scope, $state, $stateParams, DataService, BowlingService) {
         var self = this;
 
         google.charts.load('current', { 'packages': ['calendar', 'corechart'] }).then(function () {
             self.scatterChart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
-
         });
+
+        this.scatterChartOptions = {
+            title: 'Scores over time',
+            animation: {
+                duration: 1000,
+                startup: true,
+                easing: 'inAndOut'
+
+            },
+            hAxis: {
+                format: 'MM/yyyy',
+                gridlines: { count: 15 }
+            },
+            legend: "none",
+            vAxis: {
+                title: 'Score',
+                viewWindowMode: 'pretty',
+                textPosition:'in'
+            },
+            chartArea: {
+                width: '80%',
+                height:'80%'
+            },
+            trendlines: {
+                0: {}
+            },
+        
+        }
 
         var playerId = parseInt($stateParams.playerId);
         this.$rootScope = $rootScope;
@@ -20,20 +47,19 @@
         this.player = null;
         this.selected = {
             session: null
-    }
+        }
 
         this.players = this.dataService.players;
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
-       // this.scatterChart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
 
         //todo some logic to check for existing data        
-      
-       this.highestScore = 0;
+
+        this.highestScore = 0;
         this.highestScoreSession = null;
 
-     
+
         this.dataService.getScoresByPlayer(playerId).then(function (result) {
             for (var i = 0; i < result.data.length; i++) {
                 var player = result.data[i].Player;
@@ -59,47 +85,59 @@
             }
             self.makeSessionScoreTable();
 
-            google.charts.setOnLoadCallback(drawCalendarChart);
-           // google.charts.setOnLoadCallback(self.drawScatterChart);
+            google.charts.setOnLoadCallback(drawCalendarAndScatterChart);
 
         });
 
-     
-      
 
-        function drawCalendarChart() {           
+
+
+        function drawCalendarAndScatterChart() {
             var dataTable = new google.visualization.DataTable();
             dataTable.addColumn({ type: 'date', id: 'Date' });
-            dataTable.addColumn({ type: 'number', id: 'Score' });            
+            dataTable.addColumn({ type: 'number', id: 'Score' });
 
             for (var i = 0; i < self.sessionDataPoints.length; i++) {
                 dataTable.addRow([self.sessionDataPoints[i].Date, self.sessionDataPoints[i].Score]);
             }
-            var scatterChart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
 
             var calendarChart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
-           
+
             var calendarOptions = {
-                title: "Highest score per session"               
+                title: "Highest score per session"
             };
 
-            var scatterChartOptions = {
-                title: 'Scores over time',
-                hAxis: {
-                    format: 'MM/yyyy',
-                    gridlines: { count: 15 }
-                },
-                vAxis: { title: 'Score', minValue: 0, maxValue: 200 },
-                legend: { position: 'top' },              
-            }
-            scatterChart.draw(dataTable, scatterChartOptions);
+
+            self.scatterChart.draw(dataTable, self.scatterChartOptions);
             calendarChart.draw(dataTable, calendarOptions);
-            google.visualization.events.addListener(calendarChart, 'select', selectHandler);
-            function selectHandler(e) {
+            google.visualization.events.addListener(calendarChart, 'select', calendarChartHandler);
+            google.visualization.events.addListener(self.scatterChart, 'select', scatterChartHandler);
+
+
+            function scatterChartHandler(e) {
+                var selectedItem = self.scatterChart.getSelection();
+
+                var selectedRow = selectedItem[0].row;
+
+                if (selectedRow) {
+                    var val1 = dataTable.getValue(selectedRow, 0);
+
+                    var matchingData = self.sessionDataPoints.filter(function (e) { return e.Date == val1 });
+                    if (matchingData.length > 0) {
+                        self.$rootScope.$apply(function () {
+                            self.selected.session = matchingData[0];
+                            self.$state.go('sessions', { sessionId: self.selected.session.ID });
+                        });
+
+                    }
+                }
+            }
+
+            function calendarChartHandler(e) {
 
                 var selectedItem = calendarChart.getSelection();
                 //alert('A table row was selected');
-                
+
                 var selectedRow = selectedItem[0].row;
                 if (selectedRow) {
                     var rowprop = dataTable.getRowProperties(selectedRow);
@@ -108,41 +146,19 @@
 
                     var matchingData = self.sessionDataPoints.filter(function (e) { return e.Date == val1 });
                     if (matchingData.length > 0) {
-                        self.$rootScope.$apply(function() {
+                        self.$rootScope.$apply(function () {
                             self.selected.session = matchingData[0];
                             self.$state.go('sessions', { sessionId: self.selected.session.ID });
                         });
 
-                    }                    
+                    }
                 }
-                
+
             }
         }
     }
 
-    PlayerController.prototype.drawScatterChart = function () {
-        var self = this;
-        var dataTable = new google.visualization.DataTable();
-        dataTable.addColumn({ type: 'date', id: 'Date' });
-        dataTable.addColumn({ type: 'number', id: 'Score' });
-        for (var i = 0; i < this.sessionDataPoints.length; i++) {
-            dataTable.addRow([this.sessionDataPoints[i].Date, this.sessionDataPoints[i].Score]);
-        }
-        var scatterChartOptions = {
-            title: 'Scores over time',
-            hAxis: {
-                format: 'MM/yyyy',
-                gridlines: { count: 15 }
-            },
-            vAxis: { title: 'Score', minValue: 0, maxValue: 300 },
-            legend: { position: 'top' },
-            animation: {
-                "startup": true,
-                duration: 2000
-            }
-        }
-        this.scatterChart.draw(dataTable, scatterChartOptions);
-    }
+
 
     PlayerController.prototype.makeSessionScoreTable = function () {
         var self = this;
@@ -152,23 +168,23 @@
 
             var sessionDate = session.DateParsed;
 
-            var scores = this.playerScores.filter(function(e) {
+            var scores = this.playerScores.filter(function (e) {
                 return e.Session == session.ID;
             });
 
-          
-            var highestSessionScore = 0; 
-            for (var j = 0; j < scores.length; j++) {                
+
+            var highestSessionScore = 0;
+            for (var j = 0; j < scores.length; j++) {
                 if (scores[j].Score > highestSessionScore) {
                     highestSessionScore = scores[j].Score;
-                }               
-            }         
-            var dataPoint = { Date: sessionDate, Score: highestSessionScore, ID: session.ID}         
+                }
+            }
+            var dataPoint = { Date: sessionDate, Score: highestSessionScore, ID: session.ID }
             self.sessionDataPoints.push(dataPoint);
 
         }
     }
-    
+
 
     return PlayerController;
 }();

@@ -60,8 +60,7 @@
         DataService.getAllScores()
             .then(function (result) {
                 var outputArray = [];
-                var ouputDataTable = [];
-
+               
               //  fixBorkedScores(result.data);
 
                 for (var i = 0; i < result.data.length; i++) {
@@ -216,6 +215,7 @@
                     gridlines: { count: 15 }
                 },
                 vAxis: { title: 'Score', minValue: 0, maxValue: 200 },
+            
                 legend: { position: 'top' },
                 trendlines: {}
             };

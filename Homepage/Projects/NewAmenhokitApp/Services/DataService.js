@@ -13,6 +13,13 @@
         this.sessions = [];
         this.playerScores = [];
     }
+    DataService.prototype.updateScore = function (id,newscore) {
+        return this.$http.post('/Amenhokit/UpdateScore',
+            {
+                id: id,
+                newScore: newscore
+            });
+    }
     DataService.prototype.getAllScores = function () {
         return this.$http.get('/Amenhokit/GetAllScores');
     }

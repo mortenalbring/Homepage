@@ -1,7 +1,7 @@
 ﻿var HomeController = function () {
-    HomeController.$inject = ["$rootScope", "$scope", "$state", "DataService"];
+    HomeController.$inject = ["$rootScope", "$scope", "$state", "DataService", "BowlingService"];
 
-    function HomeController($rootScope, $scope, $state, DataService) {
+    function HomeController($rootScope, $scope, $state, DataService, BowlingService) {
         google.charts.load('current', { 'packages': ['corechart'] });
 
         var self = this;
@@ -10,6 +10,7 @@
         this.$scope = $scope;
         this.$state = $state;
         this.dataService = DataService;
+        this.bowlingService = BowlingService;
         this.dataService.resetData();
 
         this.allScores = [];
@@ -22,11 +23,46 @@
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
+        function fixBorkedScores(scores) {
+            var borkedScores = [];
+
+            for (var i = 0; i < scores.length; i++) {
+
+                var score = scores[i];
+                var scorestring = score.PlayerScore.Scorestring;
+
+                var bowlFrames = self.bowlingService.CalculateFrameScores(scorestring);
+                var finalFrame = bowlFrames[bowlFrames.length - 1];
+                var finalScore = finalFrame.Cumulative;
+                var dbScore = score.PlayerScore.Score;
+
+                if (finalScore != dbScore) {             
+                    score.PlayerScore.FixedScore = finalScore;
+                    borkedScores.push(score.PlayerScore);
+
+                }
+                
+
+            }
+
+            for (var j = 0; j < borkedScores.length; j++) {
+                var borkedScore = borkedScores[j];
+                var borkedId = borkedScore.ID;
+                var fixedScore = borkedScore.FixedScore;
+
+               // self.dataService.updateScore(borkedId, fixedScore);
+            }
+
+            
+
+        }
       
         DataService.getAllScores()
             .then(function (result) {
                 var outputArray = [];
                 var ouputDataTable = [];
+
+              //  fixBorkedScores(result.data);
 
                 for (var i = 0; i < result.data.length; i++) {
 

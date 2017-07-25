@@ -1,8 +1,13 @@
 ﻿var PlayerController = function () {
     PlayerController.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "DataService","BowlingService"];
-
+   
     function PlayerController($rootScope, $scope, $state, $stateParams, DataService, BowlingService) {
-        google.charts.load('current', { 'packages': ['calendar'] });
+        var self = this;
+
+        google.charts.load('current', { 'packages': ['calendar', 'corechart'] }).then(function () {
+            self.scatterChart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
+
+        });
 
         var playerId = parseInt($stateParams.playerId);
         this.$rootScope = $rootScope;
@@ -10,6 +15,7 @@
         this.bowlingService = BowlingService;
         this.dataService.resetData();
         this.$state = $state;
+        this.sessionDataPoints = [];
 
         this.player = null;
         this.selected = {
@@ -20,14 +26,14 @@
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
+       // this.scatterChart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
+
         //todo some logic to check for existing data        
       
-        this.sessionDataPoints = [];
-        this.highestScore = 0;
+       this.highestScore = 0;
         this.highestScoreSession = null;
 
-        var self = this;
-
+     
         this.dataService.getScoresByPlayer(playerId).then(function (result) {
             for (var i = 0; i < result.data.length; i++) {
                 var player = result.data[i].Player;
@@ -53,14 +59,15 @@
             }
             self.makeSessionScoreTable();
 
-            google.charts.setOnLoadCallback(drawChart);
+            google.charts.setOnLoadCallback(drawCalendarChart);
+           // google.charts.setOnLoadCallback(self.drawScatterChart);
 
         });
-        
 
-        function drawChart() {
+     
+      
 
-           
+        function drawCalendarChart() {           
             var dataTable = new google.visualization.DataTable();
             dataTable.addColumn({ type: 'date', id: 'Date' });
             dataTable.addColumn({ type: 'number', id: 'Score' });            
@@ -68,19 +75,29 @@
             for (var i = 0; i < self.sessionDataPoints.length; i++) {
                 dataTable.addRow([self.sessionDataPoints[i].Date, self.sessionDataPoints[i].Score]);
             }
-   
-            var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
+            var scatterChart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
 
-            var options = {
-                title: "Highest score per session",
-                
+            var calendarChart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
+           
+            var calendarOptions = {
+                title: "Highest score per session"               
             };
 
-            chart.draw(dataTable, options);
-            google.visualization.events.addListener(chart, 'select', selectHandler);
+            var scatterChartOptions = {
+                title: 'Scores over time',
+                hAxis: {
+                    format: 'MM/yyyy',
+                    gridlines: { count: 15 }
+                },
+                vAxis: { title: 'Score', minValue: 0, maxValue: 200 },
+                legend: { position: 'top' },              
+            }
+            scatterChart.draw(dataTable, scatterChartOptions);
+            calendarChart.draw(dataTable, calendarOptions);
+            google.visualization.events.addListener(calendarChart, 'select', selectHandler);
             function selectHandler(e) {
 
-                var selectedItem = chart.getSelection();
+                var selectedItem = calendarChart.getSelection();
                 //alert('A table row was selected');
                 
                 var selectedRow = selectedItem[0].row;
@@ -103,9 +120,32 @@
         }
     }
 
+    PlayerController.prototype.drawScatterChart = function () {
+        var self = this;
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn({ type: 'date', id: 'Date' });
+        dataTable.addColumn({ type: 'number', id: 'Score' });
+        for (var i = 0; i < this.sessionDataPoints.length; i++) {
+            dataTable.addRow([this.sessionDataPoints[i].Date, this.sessionDataPoints[i].Score]);
+        }
+        var scatterChartOptions = {
+            title: 'Scores over time',
+            hAxis: {
+                format: 'MM/yyyy',
+                gridlines: { count: 15 }
+            },
+            vAxis: { title: 'Score', minValue: 0, maxValue: 300 },
+            legend: { position: 'top' },
+            animation: {
+                "startup": true,
+                duration: 2000
+            }
+        }
+        this.scatterChart.draw(dataTable, scatterChartOptions);
+    }
 
-
-    PlayerController.prototype.makeSessionScoreTable = function() {
+    PlayerController.prototype.makeSessionScoreTable = function () {
+        var self = this;
         for (var i = 0; i < this.sessions.length; i++) {
 
             var session = this.sessions[i];
@@ -116,20 +156,15 @@
                 return e.Session == session.ID;
             });
 
-            var cumScore = 0;
+          
             var highestSessionScore = 0; 
             for (var j = 0; j < scores.length; j++) {                
                 if (scores[j].Score > highestSessionScore) {
                     highestSessionScore = scores[j].Score;
-                }
-                cumScore = cumScore + scores[j].Score;
-            }
-            var averageScore = parseInt(cumScore / scores.length);
-
-            var dataPoint = { Date: sessionDate, Score: highestSessionScore, ID: session.ID}
-
-            var xx = 42;
-            this.sessionDataPoints.push(dataPoint);
+                }               
+            }         
+            var dataPoint = { Date: sessionDate, Score: highestSessionScore, ID: session.ID}         
+            self.sessionDataPoints.push(dataPoint);
 
         }
     }

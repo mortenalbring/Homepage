@@ -23,140 +23,20 @@
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
-        function fixBorkedScores(scores) {
-            var borkedScores = [];
 
-            for (var i = 0; i < scores.length; i++) {
-
-                var score = scores[i];
-                var scorestring = score.PlayerScore.Scorestring;
-
-                var bowlFrames = self.bowlingService.CalculateFrameScores(scorestring);
-                var finalFrame = bowlFrames[bowlFrames.length - 1];
-                var finalScore = finalFrame.Cumulative;
-                var dbScore = score.PlayerScore.Score;
-
-                if (finalScore != dbScore) {             
-                    score.PlayerScore.FixedScore = finalScore;
-                    borkedScores.push(score.PlayerScore);
-
-                }
-                
-
-            }
-
-            for (var j = 0; j < borkedScores.length; j++) {
-                var borkedScore = borkedScores[j];
-                var borkedId = borkedScore.ID;
-                var fixedScore = borkedScore.FixedScore;
-
-               // self.dataService.updateScore(borkedId, fixedScore);
-            }
-
-            
-
-        }
-      
+        var t0 = performance.now();
         DataService.getAllScores()
             .then(function (result) {
-                var outputArray = [];
-               
-              //  fixBorkedScores(result.data);
 
-                for (var i = 0; i < result.data.length; i++) {
-
-                    var player = result.data[i].Player;
-                    var playerScore = result.data[i].PlayerScore;
-                    var session = result.data[i].Session;
-                    var game = result.data[i].Game;
+                var t1 = performance.now();
+                console.log("Get data " + (t1 - t0) + " ms");
 
 
-                    var playerName = player.Name;
-                    /*
-                    if (playerName != "mort" && playerName != "george" && playerName != "bern" && playerName != "tom") {
-                        continue;
-                    }
-                    */
-                    var finalScore = playerScore.Score;
-                    var sessionDate = result.data[i].DateTime;
-                    self.dataService.addPlayer(player);
-                    self.dataService.addSession(session, sessionDate);
-                    self.dataService.addGame(game);
-                    
-                    self.dataService.addPlayerScore(playerScore);
-
-                    var dateSplit = sessionDate.split('-');
-                    var outobj = {};
-                    outobj.Name = playerName;
-                    outobj.Score = finalScore;
-                    outobj.DateString = sessionDate;
-
-                    if (dateSplit.length >= 2) {
-
-                        var year = parseInt(dateSplit[0]);
-                        var month = parseInt(dateSplit[1]);
-                        var day = parseInt(dateSplit[2]);
-                        outobj.Date = new Date(year, month - 1, day);
-                        outputArray.push(outobj);
-                    }
-                }
-
-                var uniqueDates = [];
-                for (var j = 0; j < outputArray.length; j++) {
-                    if (uniqueDates.indexOf(outputArray[j].DateString) == -1) {
-                        uniqueDates.push(outputArray[j].DateString);
-                    }
-                }
-                var uniquePlayers = [];
-                for (var k = 0; k < outputArray.length; k++) {
-
-                    if (uniquePlayers.indexOf(outputArray[k].Name) == -1) {
-                        uniquePlayers.push(outputArray[k].Name);
-                    }
-                }
-
-                self.uniquePlayers = uniquePlayers;
-
-                var tableRows = [];
-                var tableHeaders = ["Score"];
-                for (var i = 0; i < uniquePlayers.length; i++) {
-                    tableHeaders.push(uniquePlayers[i]);
-                }
-                tableRows.push(tableHeaders);
-
-
-                for (var l = 0; l < uniqueDates.length; l++) {
-                    var dateString = uniqueDates[l];
-                    var tableRow = [dateString];
-
-                    for (var i = 0; i < uniquePlayers.length; i++) {
-
-                        var playerName = uniquePlayers[i];
-
-                        var matchingScores = outputArray.filter(function (e) {
-                            return e.Name == playerName && e.DateString == dateString;
-                        });
-
-                        if (matchingScores.length > 0) {
-
-                            var cumscore = 0;
-                            var highestGameScore = 0;
-
-                            for (var m = 0; m < matchingScores.length; m++) {
-                                if (matchingScores[m].Score > highestGameScore) {
-                                    highestGameScore = matchingScores[m].Score;
-                                }
-                                cumscore = cumscore + matchingScores[m].Score;
-                            }
-                            var averageScore = cumscore / matchingScores.length;
-                            tableRow.push(highestGameScore);
-                        } else {
-                            tableRow.push(null);
-                        }
-
-                        tableRows.push(tableRow);
-                    }
-                }
+                var outputArray = self.makeOutputArray(result.data);
+                self.uniquePlayers = self.findUniquePlayers(outputArray);
+                var filteredArray = self.filterByPlayerCount(outputArray, 10);
+                var tableRows = self.makeTableRows(filteredArray);
+              
 
                 self.bowlingDataTable = tableRows;
 
@@ -204,17 +84,17 @@
             dataTable.addColumn('date', 'Date');
             dataTable.addColumn('number', 'Score');
 
-
-
-
-
             var options = {
                 title: 'All scores',
                 hAxis: {
                     format: 'MM/yyyy',
                     gridlines: { count: 15 }
                 },
-                vAxis: { title: 'Score', minValue: 0, maxValue: 200 },
+                vAxis: {
+                    viewWindowMode: 'pretty',
+                    textPosition: 'out'
+                },
+                chartArea: {width:'90%', height:'90%'},
             
                 legend: { position: 'top' },
                 trendlines: {}
@@ -223,8 +103,7 @@
 
             var trendObjs = [];
             for (var i = 0; i < self.uniquePlayers.length; i++) {
-                var trendObj = {}
-                var inc = i + 1;
+                var trendObj = {}            
                 trendObj = { type: 'linear', opacity: 0.25 }
                 trendObjs.push(trendObj);
             }
@@ -235,9 +114,6 @@
             }
             options.trendlines = rv;
 
-
-
-
             var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
 
             chart.draw(multiTable, options);
@@ -245,7 +121,150 @@
 
     }
 
-  
+    HomeController.prototype.filterByPlayerCount = function(outputArray, minCount) {
+        var filteredArray = [];
+        for (var i = 0; i < this.uniquePlayers.length; i++) {
+
+            var playerName = this.uniquePlayers[i];
+            
+
+            var playerScores = outputArray.filter(function(e) {
+                return e.Name == playerName;
+            });
+
+            var scoreCount = playerScores.length;
+
+            if (scoreCount > minCount) {
+
+                for (var j = 0; j < playerScores.length; j++) {
+
+                    filteredArray.push(playerScores[j]);
+
+                }
+
+            }            
+
+        }
+
+        return filteredArray;
+    }
+    HomeController.prototype.findUniquePlayers = function(outputArray) {
+        var uniquePlayers = [];
+        for (var k = 0; k < outputArray.length; k++) {
+
+            if (uniquePlayers.indexOf(outputArray[k].Name) == -1) {
+                uniquePlayers.push(outputArray[k].Name);
+            }
+        }
+        return uniquePlayers;
+    }
+    HomeController.prototype.makeTableRows = function (outputArray) {
+        var t0 = performance.now();
+        
+        var self = this;
+        var tableRows = [];
+
+        var uniquePlayers = self.findUniquePlayers(outputArray);
+
+        var uniqueDates = [];
+        for (var j = 0; j < outputArray.length; j++) {
+            if (uniqueDates.indexOf(outputArray[j].DateString) == -1) {
+                uniqueDates.push(outputArray[j].DateString);
+            }
+        }
+     
+
+       
+        var tableHeaders = ["Score"];
+        for (var i = 0; i < uniquePlayers.length; i++) {
+            tableHeaders.push(uniquePlayers[i]);
+        }
+        tableRows.push(tableHeaders);
+
+
+        for (var l = 0; l < uniqueDates.length; l++) {
+            var dateString = uniqueDates[l];
+            var tableRow = [dateString];
+
+            for (var i = 0; i < uniquePlayers.length; i++) {
+
+                var playerName = uniquePlayers[i];
+
+                var matchingScores = outputArray.filter(function (e) {
+                    return e.Name == playerName && e.DateString == dateString;
+                });
+
+                if (matchingScores.length > 0) {                  
+                    var highestGameScore = 0;
+                    for (var m = 0; m < matchingScores.length; m++) {
+                        if (matchingScores[m].Score > highestGameScore) {
+                            highestGameScore = matchingScores[m].Score;
+                        }                      
+                    }
+
+                    tableRow.push(highestGameScore);
+                } else {
+                    tableRow.push(null);
+                }
+
+                tableRows.push(tableRow);
+            }
+        }
+        var t1 = performance.now();
+        console.log("Make Table Rows " + (t1 - t0) + " ms");
+        return tableRows;
+    }
+
+    HomeController.prototype.makeOutputArray = function (data) {
+        var t0 = performance.now();
+        var self = this;
+        var outputArray = [];
+
+
+        for (var i = 0; i < data.length; i++) {
+
+            var player = data[i].Player;
+            var playerScore = data[i].PlayerScore;
+            var session = data[i].Session;
+            var game = data[i].Game;
+
+
+            var playerName = player.Name;
+            /*
+            if (playerName != "mort" && playerName != "george" && playerName != "bern" && playerName != "tom") {
+                continue;
+            }
+            */
+            var finalScore = playerScore.Score;
+            var sessionDate = data[i].DateTime;
+            self.dataService.addPlayer(player);
+            self.dataService.addSession(session, sessionDate);
+            self.dataService.addGame(game);
+
+            self.dataService.addPlayerScore(playerScore);
+
+            var dateSplit = sessionDate.split('-');
+            var outobj = {};
+            outobj.Name = playerName;
+            outobj.Score = finalScore;
+            outobj.DateString = sessionDate;
+
+            if (dateSplit.length >= 2) {
+
+                var year = parseInt(dateSplit[0]);
+                var month = parseInt(dateSplit[1]);
+                var day = parseInt(dateSplit[2]);
+                outobj.Date = new Date(year, month - 1, day);
+                outputArray.push(outobj);
+            }
+        }
+        var t1 = performance.now();
+        console.log("Make Output Array" + (t1 - t0) + " ms");
+
+        return outputArray;
+
+    }
+
     return HomeController;
 
 }();

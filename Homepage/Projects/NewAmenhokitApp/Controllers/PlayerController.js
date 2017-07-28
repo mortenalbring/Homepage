@@ -21,8 +21,7 @@
                 gridlines: { count: 15 }
             },
             legend: "none",
-            vAxis: {
-                title: 'Score',
+            vAxis: {                
                 viewWindowMode: 'pretty',
                 textPosition:'in'
             },

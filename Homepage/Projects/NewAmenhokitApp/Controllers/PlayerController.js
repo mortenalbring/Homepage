@@ -11,7 +11,7 @@
         this.scatterChartOptions = {
             title: 'Scores over time',
             animation: {
-                duration: 1000,
+                duration: 500,
                 startup: true,
                 easing: 'inAndOut'
 
@@ -52,6 +52,7 @@
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
+        this.unfilteredDataPoints = [];
 
         //todo some logic to check for existing data        
 
@@ -167,7 +168,30 @@
         }
     }
 
+    
+    PlayerController.prototype.drawScatterChartFiltered = function() {
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn({ type: 'date', id: 'Date' });
+        dataTable.addColumn({ type: 'number', id: 'Score' });
 
+        for (var i = 0; i < this.sessionDataPoints.length; i++) {
+            dataTable.addRow([this.sessionDataPoints[i].Date, this.sessionDataPoints[i].Score]);
+        }
+
+        this.scatterChart.draw(dataTable, this.scatterChartOptions);
+    }
+
+    PlayerController.prototype.drawScatterChartUnfiltered = function() {
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn({ type: 'date', id: 'Date' });
+        dataTable.addColumn({ type: 'number', id: 'Score' });
+
+        for (var i = 0; i < this.unfilteredDataPoints.length; i++) {
+            dataTable.addRow([this.unfilteredDataPoints[i].Date, this.unfilteredDataPoints[i].Score]);
+        }
+             
+        this.scatterChart.draw(dataTable, this.scatterChartOptions);
+    }
 
     PlayerController.prototype.makeSessionScoreTable = function () {
         var self = this;
@@ -187,6 +211,9 @@
                 if (scores[j].Score > highestSessionScore) {
                     highestSessionScore = scores[j].Score;
                 }
+
+                var unfilteredDataPoint = { Date: sessionDate, Score: scores[j].Score, ID: session.ID }
+                this.unfilteredDataPoints.push(unfilteredDataPoint);
             }
             var dataPoint = { Date: sessionDate, Score: highestSessionScore, ID: session.ID }
             self.sessionDataPoints.push(dataPoint);

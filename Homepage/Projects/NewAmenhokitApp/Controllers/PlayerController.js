@@ -21,18 +21,20 @@
                 gridlines: { count: 15 }
             },
             legend: "none",
-            vAxis: {                
+            vAxis: {
                 viewWindowMode: 'pretty',
-                textPosition:'in'
+                textPosition: 'in'
             },
             chartArea: {
                 width: '80%',
-                height:'80%'
+                height: '80%'
             },
             trendlines: {
                 0: {}
             },
-        
+            displayToggle: 'highest'
+
+
         }
 
         var playerId = parseInt($stateParams.playerId);
@@ -61,7 +63,7 @@
 
         this.allPlayers = [];
         this.dataService.getAllPlayers().then(function (result) {
-            
+
             if (result.data.success) {
                 for (var i = 0; i < result.data.players.length; i++) {
                     self.allPlayers.push(result.data.players[i]);
@@ -168,8 +170,8 @@
         }
     }
 
-    
-    PlayerController.prototype.drawScatterChartFiltered = function() {
+
+    PlayerController.prototype.drawScatterChartFiltered = function () {
         var dataTable = new google.visualization.DataTable();
         dataTable.addColumn({ type: 'date', id: 'Date' });
         dataTable.addColumn({ type: 'number', id: 'Score' });
@@ -177,11 +179,12 @@
         for (var i = 0; i < this.sessionDataPoints.length; i++) {
             dataTable.addRow([this.sessionDataPoints[i].Date, this.sessionDataPoints[i].Score]);
         }
-
+        this.scatterChartOptions.displayToggle = 'highest';
+        this.scatterChartOptions.title = 'Scores over time (highest per session)';
         this.scatterChart.draw(dataTable, this.scatterChartOptions);
     }
 
-    PlayerController.prototype.drawScatterChartUnfiltered = function() {
+    PlayerController.prototype.drawScatterChartUnfiltered = function () {
         var dataTable = new google.visualization.DataTable();
         dataTable.addColumn({ type: 'date', id: 'Date' });
         dataTable.addColumn({ type: 'number', id: 'Score' });
@@ -189,7 +192,8 @@
         for (var i = 0; i < this.unfilteredDataPoints.length; i++) {
             dataTable.addRow([this.unfilteredDataPoints[i].Date, this.unfilteredDataPoints[i].Score]);
         }
-             
+        this.scatterChartOptions.displayToggle = 'unfiltered';
+        this.scatterChartOptions.title = 'Scores over time (unfiltered)';
         this.scatterChart.draw(dataTable, this.scatterChartOptions);
     }
 

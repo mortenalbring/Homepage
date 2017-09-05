@@ -14,125 +14,7 @@ namespace Homepage.Controllers
 {
     public class AmenhokitController : Controller
     {
-        public void FixPlayerScores()
-        {
-
-            using (var db = new DataContext())
-            {
-                var playerScores = db.PlayerScore.ToList();
-                var removed = 0;
-                foreach (var ps in playerScores)
-                {
-                    var dupes =
-                        db.PlayerScore.Where(
-                            e =>
-                                e.Session == ps.Session && e.Game == ps.Game && e.Player == ps.Player &&
-                                e.Score == ps.Score).ToList();
-
-                    if (dupes.Count > 1)
-                    {
-                        var xx = 42;
-                        var first = dupes.First();
-                        var others = dupes.Where(e => e.ID != first.ID).ToList();
-
-                        foreach (var other in others)
-                        {
-                            db.PlayerScore.Attach(other);
-                            db.PlayerScore.Remove(other);
-                            removed++;
-                            Debug.WriteLine(removed);
-                            db.SaveChanges();
-                        }
-
-                        var zz = 42;
-
-                    }
-                }
-                
-            }
-        }
-        public void FixGames()
-        {
-            using (var db = new DataContext())
-            {
-                var allSessions = db.Session.ToList();
-
-                foreach (var session in allSessions)
-                {
-                    var games = db.Game.Where(e => e.Session == session.ID).ToList();
-
-                    var grouped = games.GroupBy(e => e.GameNumber).ToList();
-                    foreach (var group in grouped)
-                    {
-                        if (group.Count() > 1)
-                        {
-                            var xx = 42;
-                            var firstGroup = group.First();
-
-                            var otherGroups = group.Where(e => e.ID != firstGroup.ID);
-
-                            foreach (var other in otherGroups)
-                            {
-                                var playerScores = db.PlayerScore.Where( e => e.Session == session.ID && e.Game == other.ID).ToList();
-
-                                foreach (var score in playerScores)
-                                {
-                                    db.PlayerScore.Attach(score);
-                                    score.Game = firstGroup.ID;
-                                    db.SaveChanges();
-                                }
-
-                                db.Game.Attach(other);
-                                db.Game.Remove(other);
-                                db.SaveChanges();
-                                var zz = 42;
-                            }
-
-                        }
-                    }
-                }
-            }
-        }
-        public void FixSessions()
-        {
-            using (var db = new DataContext())
-            {
-                var sessions = db.Session.GroupBy(e => e.Date).Where(e => e.Count() > 1).ToList();
-
-                foreach (var session in sessions)
-                {
-                    var first = session.First();
-                    var others = session.Where(e => e.ID != first.ID).ToList();
-
-                    foreach (var other in others)
-                    {
-                        var brokenGames = db.Game.Where(e => e.Session == other.ID).ToList();
-
-                        foreach (var brokenGame in brokenGames)
-                        {
-                            db.Game.Attach(brokenGame);
-                            brokenGame.Session = first.ID;
-                            db.SaveChanges();
-                        }
-
-                        var brokenPlayerScores = db.PlayerScore.Where(e => e.Session == other.ID).ToList();
-
-                        foreach (var brokenScore in brokenPlayerScores)
-                        {
-                            db.PlayerScore.Attach(brokenScore);
-                            brokenScore.Session = first.ID;
-                            db.SaveChanges();
-                        }
-
-                        db.Session.Remove(other);
-                        db.SaveChanges();
-                    }
-                }
-
-                var xx = 42;
-            }
-        }
-
+      
         [HttpPost]
         public void AddNewScore(int playerId, string gameDate, int gameNumber, int lane, string scoreString, int finalScore)
         {
@@ -465,6 +347,126 @@ namespace Homepage.Controllers
             return "~/" + physicalPath.Substring(HttpContext.Request.PhysicalApplicationPath.Length)
                   .Replace("\\", "/");
         }
+
+        public void FixPlayerScores()
+        {
+
+            using (var db = new DataContext())
+            {
+                var playerScores = db.PlayerScore.ToList();
+                var removed = 0;
+                foreach (var ps in playerScores)
+                {
+                    var dupes =
+                        db.PlayerScore.Where(
+                            e =>
+                                e.Session == ps.Session && e.Game == ps.Game && e.Player == ps.Player &&
+                                e.Score == ps.Score).ToList();
+
+                    if (dupes.Count > 1)
+                    {
+                        var xx = 42;
+                        var first = dupes.First();
+                        var others = dupes.Where(e => e.ID != first.ID).ToList();
+
+                        foreach (var other in others)
+                        {
+                            db.PlayerScore.Attach(other);
+                            db.PlayerScore.Remove(other);
+                            removed++;
+                            Debug.WriteLine(removed);
+                            db.SaveChanges();
+                        }
+
+                        var zz = 42;
+
+                    }
+                }
+
+            }
+        }
+        public void FixGames()
+        {
+            using (var db = new DataContext())
+            {
+                var allSessions = db.Session.ToList();
+
+                foreach (var session in allSessions)
+                {
+                    var games = db.Game.Where(e => e.Session == session.ID).ToList();
+
+                    var grouped = games.GroupBy(e => e.GameNumber).ToList();
+                    foreach (var group in grouped)
+                    {
+                        if (group.Count() > 1)
+                        {
+                            var xx = 42;
+                            var firstGroup = group.First();
+
+                            var otherGroups = group.Where(e => e.ID != firstGroup.ID);
+
+                            foreach (var other in otherGroups)
+                            {
+                                var playerScores = db.PlayerScore.Where(e => e.Session == session.ID && e.Game == other.ID).ToList();
+
+                                foreach (var score in playerScores)
+                                {
+                                    db.PlayerScore.Attach(score);
+                                    score.Game = firstGroup.ID;
+                                    db.SaveChanges();
+                                }
+
+                                db.Game.Attach(other);
+                                db.Game.Remove(other);
+                                db.SaveChanges();
+                                var zz = 42;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        public void FixSessions()
+        {
+            using (var db = new DataContext())
+            {
+                var sessions = db.Session.GroupBy(e => e.Date).Where(e => e.Count() > 1).ToList();
+
+                foreach (var session in sessions)
+                {
+                    var first = session.First();
+                    var others = session.Where(e => e.ID != first.ID).ToList();
+
+                    foreach (var other in others)
+                    {
+                        var brokenGames = db.Game.Where(e => e.Session == other.ID).ToList();
+
+                        foreach (var brokenGame in brokenGames)
+                        {
+                            db.Game.Attach(brokenGame);
+                            brokenGame.Session = first.ID;
+                            db.SaveChanges();
+                        }
+
+                        var brokenPlayerScores = db.PlayerScore.Where(e => e.Session == other.ID).ToList();
+
+                        foreach (var brokenScore in brokenPlayerScores)
+                        {
+                            db.PlayerScore.Attach(brokenScore);
+                            brokenScore.Session = first.ID;
+                            db.SaveChanges();
+                        }
+
+                        db.Session.Remove(other);
+                        db.SaveChanges();
+                    }
+                }
+
+                var xx = 42;
+            }
+        }
+
 
     }
 }

@@ -17,6 +17,20 @@
         this.session = null;
         var self = this;
 
+        this.allPlayers = [];
+
+        this.dataService.getAllPlayers().then(function (result) {
+
+            if (result.data.success) {
+                for (var i = 0; i < result.data.players.length; i++) {
+                    self.allPlayers.push(result.data.players[i]);
+                }
+            }
+
+        });
+
+        this.playerIds = [];
+
         this.dataService.getScoresBySession(sessionId).then(function(result) {            
             for (var i = 0; i < result.data.length; i++) {
                 var player = result.data[i].Player;
@@ -28,10 +42,17 @@
                 playerScore.FrameScores = frameScores;
 
                 self.dataService.addPlayer(player);
+
+                if (self.playerIds.indexOf(player.ID) === -1) {
+                    self.playerIds.push(player.ID);
+                }
+
                 self.dataService.addSession(session, sessionDate);
                 self.dataService.addGame(game);
                 self.dataService.addPlayerScore(playerScore);                
             }
+
+            
 
             var sessionObj = self.sessions.filter(function(e) {
                 return e.ID == sessionId;

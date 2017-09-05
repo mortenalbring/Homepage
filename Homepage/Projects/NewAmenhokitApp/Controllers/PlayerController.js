@@ -58,6 +58,16 @@
         this.highestScore = 0;
         this.highestScoreSession = null;
 
+        this.allPlayers = [];
+        this.dataService.getAllPlayers().then(function (result) {
+            
+            if (result.data.success) {
+                for (var i = 0; i < result.data.players.length; i++) {
+                    self.allPlayers.push(result.data.players[i]);
+                }
+            }
+
+        });
 
         this.dataService.getScoresByPlayer(playerId).then(function (result) {
             for (var i = 0; i < result.data.length; i++) {

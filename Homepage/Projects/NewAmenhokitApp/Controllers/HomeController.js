@@ -158,6 +158,7 @@
         }
         return uniquePlayers;
     }
+
     HomeController.prototype.makeTableRows = function (outputArray) {
         var t0 = performance.now();
         

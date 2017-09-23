@@ -1,12 +1,12 @@
 ﻿<div class="container-fluid">
-    <div class="col-md-1">
+    <div class="col-xs-1 col-sm-1">
         <div class="list-group">
             <a class="list-group-item" ng-repeat="player in vm.players | orderBy:'ID'" ng-href="#/player/{{player.ID}}">
                 {{player.Name | titlecase}}
             </a>
         </div>
     </div>
-    <div class="col-md-11">
+    <div class="col-xs-11 col-sm-11">
         <div id="chart_div" style="width: 100%; height: 800px;"></div>
     </div>
 

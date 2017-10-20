@@ -1,21 +1,9 @@
 ﻿var BowlingService = function() {
-    var bws = {};
 
-
-    bws.CheckForErrors = function(scores) {
-        var errors = [];
-
-        var frameCount = scores.length;
-
-        if (frameCount != 10) {
-            errors.push("Incorrect number of frames. Expected 10, actual " + frameCount);
-        }
-
-        return errors;
+    function BowlingService() {
 
     }
-
-    bws.CalculateFrameScores = function(scoreString) {
+    BowlingService.prototype.CalculateFrameScores = function (scoreString) {
         function isNumeric(n) {
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
@@ -29,10 +17,10 @@
                 s = parseInt(score);
             }
             return s;
-            
+
         }
 
-        function nextTwoAfterStrikeFromFrameArray(index, array) {            
+        function nextTwoAfterStrikeFromFrameArray(index, array) {
             if ((index + 1) === array.length) {
                 //Final frame
                 var thisFrame = array[index];
@@ -40,8 +28,8 @@
                 var fc3 = thisFrame.Result[2];
 
                 var fs2 = parseScore(fc2);
-                var fs3 = parseScore(fc3);                
-                
+                var fs3 = parseScore(fc3);
+
                 return fs2 + fs3;
             }
             var total = 0;
@@ -69,7 +57,7 @@
                 var s1 = 0;
                 if (isNumeric(nextFrame.Result[0])) {
                     s1 = parseInt(nextFrame.Result[0]);
-                }                
+                }
                 total = s1;
 
                 var c2 = nextFrame.Result[1];
@@ -90,7 +78,7 @@
 
 
         function nextOneAfterSpareFromFrameArray(index, array) {
-            if ((index + 1) === array.length) {                
+            if ((index + 1) === array.length) {
                 //Final frame
                 var thisFrame = array[index];
                 var c3 = thisFrame.Result[2];
@@ -109,17 +97,17 @@
                 return 10;
             }
             var r1 = nextArray.Result[0];
-            
+
             return parseScore(r1);
 
         }
 
 
         function returnScoreFromFrameArray(index, array) {
-            var results = array[index].Result;      
+            var results = array[index].Result;
 
 
-            
+
             if (results[0] === "X") {
                 var nextTwo = nextTwoAfterStrikeFromFrameArray(index, array);
                 return 10 + nextTwo;
@@ -193,18 +181,38 @@
 
         }
 
+        //Need to strip out player names and other unsafe stuff from the string. May need some work!
+        var safeString = "";
+        for (var k = 0; k < scoreString.length; k++) {
+            var isSafe = false;
+            if (isNumeric(scoreString[k])) {
+                isSafe = true;
+            }
+            if (scoreString[k] == "X") {
+                isSafe = true;
+            }
+            if (scoreString[k] == "/") {
+                isSafe = true;
+            }
+            if (scoreString[k] == "-") {
+                isSafe = true;
+            }
+
+            if (isSafe) {
+                safeString = safeString + scoreString[k];
+            }
 
 
-        var spl = scoreString.split("");
+        }
+
+        var spl = safeString.split("");
 
         //spl.shift();
 
         var fa = calculateFrameArray(spl);
-        return fa;   
+        return fa;
 
     }
 
-    return bws;
-
-
-}
+    return BowlingService;
+}();

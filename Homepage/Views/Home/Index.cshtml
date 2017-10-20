@@ -11,7 +11,13 @@
 
 
 <div class="home-intro">
-    <div><img src="../../Content/images/me.png" style="align-content: center" alt="" /></div>
+    <div>
+        <a href="/Projects/ProjectAmenhokit">
+
+
+            <img src="../../Content/images/me.png" style="align-content: center" alt="" />
+        </a>
+    </div>
     <div>
 
         <div class="icon-row">
@@ -34,11 +40,11 @@
                 <a title="See my LinkedIn profile" href="https://uk.linkedin.com/pub/morten-albring/52/380/787">
                     <i class="fa fa-linkedin"></i>
                 </a>
-                </div>
+            </div>
         </div>
-        
+
         <div>
-            
+
             <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
             <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>
             <p>
@@ -46,7 +52,7 @@
             </p>
 
         </div>
-            
+
     </div>
 </div>
 
@@ -55,23 +61,14 @@
 
 <div class="container section-posts">
     <h1>Recent posts</h1>
-   
-    <div class="flex-row-container">
-        <div class="post-summary-container post-summary-angulard3">
-            <a href="@Url.Action("ProjectAngularD3","Projects")">
-                <h1>
-                    Angular with D3
-                </h1>
-                <p>D3.js is a powerful library for displaying data in web applications, using SVG and CSS. This project uses D3.js to produce force-directed graphs and combines it with AngularJS for dynamic and interactive controls.</p>
-            </a>
-        </div>
 
-        <div class="post-summary-container post-summary-peterdejong">
-            <a href="@Url.Action("PovRayPeterDeJong","Posts")">
-                <h1>
-                    Peter de Jong attractor
-                </h1>
-                <p>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</p>
+    <div class="flex-row-container">
+        <div class="post-summary-container post-summary-menger">
+            <a href="@Url.Action("MengerSponge", "Posts")">
+                <h1>Menger Sponge</h1>
+                <p>
+                    The Menger sponge is a three-dimensional fractal curve that exhibits infinite surface area and zero volume. This shows the POV-Ray code to render this mathematical structure
+                </p>
             </a>
         </div>
         <div class="post-summary-container post-summary-tsucs">
@@ -83,32 +80,49 @@
             </a>
         </div>
 
-        <div class="post-summary-container post-summary-menger">
-            <a href="@Url.Action("MengerSponge", "Posts")">                
-                <h1>Menger Sponge</h1>
-                <p>
-                    The Menger sponge is a three-dimensional fractal curve that exhibits infinite surface area and zero volume. This shows the POV-Ray code to render this mathematical structure
-                </p>
+        <div class="post-summary-container post-summary-angulard3">
+            <a href="@Url.Action("ProjectAngularD3","Projects")">
+                <h1>
+                    Angular with D3
+                </h1>
+                <p>D3.js is a powerful library for displaying data in web applications, using SVG and CSS. This project uses D3.js to produce force-directed graphs and combines it with AngularJS for dynamic and interactive controls.</p>
             </a>
         </div>
-
+        <div class="post-summary-container" style="background-image:url(/Content/images/penny/penny-cover.png)">
+            <a href="@Url.Action("ProjectPennyGame","Projects")">
+                <h1>
+                    Penney's Game
+                </h1>
+                <p>Penney's game is a simple game for two players that involves selecting a sequnce of heads and tails and then flipping a coin until that sequence comes up. If a chosen sequence comes up, that player wins. </p>
+            </a>
+        </div>
+        <div class="post-summary-container post-summary-peterdejong">
+            <a href="@Url.Action("PovRayPeterDeJong","Posts")">
+                <h1>
+                    Peter de Jong attractor
+                </h1>
+                <p>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</p>
+            </a>
+        </div>
+     
+    
         <div class="post-summary-container post-summary-lorenz">
-            <a href="@Url.Action("LorenzAttractor", "Posts")">                
+            <a href="@Url.Action("LorenzAttractor", "Posts")">
                 <h1>Lorenz Attractor</h1>
                 <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
             </a>
         </div>
 
         <div class="post-summary-container post-summary-computations">
-            <a href="@Url.Action("ComputationsIrreversibility", "Posts")">                
+            <a href="@Url.Action("ComputationsIrreversibility", "Posts")">
                 <h1>Thermodynamics, Computation and Irreversibility</h1>
                 <p>This is a brief exploration into the link between thermodynamics, the limits of computation and logical irreversibility.</p>
-                    
+
             </a>
         </div>
 
     </div>
- 
+
 
 
 </div>

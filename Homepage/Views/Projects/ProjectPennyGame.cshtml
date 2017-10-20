@@ -136,8 +136,9 @@
     </div>
     <div class="row" ng-show="pennyInput.length > 0">
         <div class="col-md-10 col-md-offset-2">
-            <p>Ok, ready to start!</p>
-            <p>You can choose to either flip the coin manually, or autoplay all the games.</p>
+            <p>Ok, ready to start! You'll need to keep flipping the coin until either your sequence, or Penny's sequence, comes up exactly.</p>  
+            <p>See if you can win a best of 20 with your chosen sequence.</p>
+            <p>You can choose to either flip the coin manually, or autoplay a number of games.</p>
         </div>
     </div>
 
@@ -145,12 +146,11 @@
         <div class="col-md-10 col-md-offset-1">
             <div>
                 <div>
-                    <button class="btn btn-default" ng-disabled="autoplay" ng-click="flipCoin(1)">Flip</button>
-                    <button class="btn btn-default" ng-disabled="playing" ng-click="autoplay=false;reset()">Reset</button>
+                    <button class="btn btn-success" ng-disabled="autoplay" ng-click="flipCoin(1)">Flip coin</button>                    
                     <button class="btn btn-default" ng-disabled="playing" ng-click="playGames(20,30)">Autoplay 20 games</button>
                     <button class="btn btn-default" ng-disabled="playing" ng-click="playGames(100,10)">Autoplay 100 games</button>
                     <button class="btn btn-default" ng-disabled="playing" ng-click="playGames(1000,10)">Autoplay 1000 games</button>
-
+                    <button class="btn btn-default" ng-disabled="playing" ng-click="autoplay=false;reset()">Reset</button>
                 </div>
 
                 <div class="panel panel-default" ng-class="{'panel-success' : winner}">

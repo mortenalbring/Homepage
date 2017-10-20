@@ -1,22 +1,29 @@
-﻿var pennyGame = angular.module("PennyGame", []);
+﻿//This app simulates Walter Penney's binary sequence game with two players. 
+//The user plays one player, and the AI will play the second player.
+var pennyGame = angular.module("PennyGame", []);
 
 pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
+    //Stores the game results
     $scope.results = [];
 
-    $scope.pennyInput = [];
-
-
-    $scope.inputOne = null;
+    //Stores the user input
     $scope.input = [];
+    //Stores the AI input
+    $scope.pennyInput = [];
+    //The values for the different coins
+    $scope.inputOne = null;
     $scope.inputTwo = null;
     $scope.inputThree = null;
 
+    //Stores the history of all previous games played
     $scope.history = [];
 
     $scope.maxGames = 20;
     $scope.gameSpeed = 1000;
 
-    $scope.reset = function () {        
+
+    $scope.reset = function () {
+        //Resets the game state
         $scope.winner = false;
         $scope.results.length = 0;
         $scope.userWins = 0;
@@ -50,9 +57,11 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
         if ($scope.gameSpeed >= 1000) {
             $scope.gameSpeed = 1000;
         }
-
     }
-    $scope.pennyResult = function () {        
+
+
+    $scope.pennyResult = function () {
+        //Calculates Penny's choice based on the user input
         $scope.pennyInput = [];
         if ((!$scope.inputOne) || (!$scope.inputTwo) || (!$scope.inputThree)) {
             return;
@@ -61,7 +70,8 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
         $scope.reset();
 
         $interval(function () {
-            $scope.pennyThinking = false;         
+            //I added a timer here to simulate 'thinking', as it felt a little unnatural to have the choice come up immediately
+            $scope.pennyThinking = false;
 
             if ($scope.inputTwo == 'H') {
                 $scope.pennyInput.push('T');
@@ -79,8 +89,11 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
 
         }, 1000, 1);
     }
+
     $scope.playGames = function (max, gamespeed) {
+        //Triggers the autoplay
         $scope.autoplay = true;
+        //Some error checking
         if ((!$scope.inputOne) || (!$scope.inputTwo) || (!$scope.inputThree)) {
             return;
         }
@@ -114,12 +127,14 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
 
 
     $scope.flipCoin = function (iterations) {
+        //This flips the coin manually a specified number of times
         if ($scope.winner) {
             $scope.gameNumber++;
             $scope.results.length = 0;
         }
         for (var i = 0; i < iterations; i++) {
 
+            //Simulates the random coin flip
             var x = (Math.floor(Math.random() * 2) == 0);
 
             if (x) {
@@ -132,6 +147,7 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
             }
             $scope.results.push($scope.result);
 
+            //We need to check if there's a winner
             checkForWinner();
 
             if ($scope.winner) {
@@ -143,6 +159,7 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
 
 
     function checkForWinner() {
+        //This checks if the user sequence has appeared in the game yet
         var inputString = $scope.input.join();
         var pennyString = $scope.pennyInput.join();
         var resultsString = $scope.results.join();
@@ -150,25 +167,23 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
         if (resultsString.indexOf(inputString) > -1) {
             $scope.winner = true;
             $scope.userWins++;
-            var h = {
+            $scope.history.push({
                 result: resultsString,
                 winner: "You",
                 winnerInput: inputString,
                 game: $scope.gameNumber
-            }
-            $scope.history.push(h);
+            });
             return;
         }
         if (resultsString.indexOf(pennyString) > -1) {
             $scope.winner = true;
             $scope.pennyWins++;
-            var h = {
+            $scope.history.push({
                 result: resultsString,
                 winner: "Penny",
                 winnerInput: pennyString,
                 game: $scope.gameNumber
-            }
-            $scope.history.push(h);
+            });
             return;
         }
 
@@ -179,10 +194,12 @@ pennyGame.controller("HomeController", function ($interval, $timeout, $scope) {
 });
 
 pennyGame.filter('highlight', function ($sce) {
+    //Handles the yellow highlighting in the sequence table
     return function (text, phrase) {
-        if (phrase) text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
-          '<span class="highlighted">$1</span>')
+        if (phrase)
+            text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
+                '<span class="highlighted">$1</span>');
 
-        return $sce.trustAsHtml(text)
+        return $sce.trustAsHtml(text);
     }
 })

@@ -233,9 +233,11 @@
     <Compile Include="Models\Amenhokit\PdfScan\PdfGameInfo.cs" />
     <Compile Include="Models\Amenhokit\PdfScan\PlayerInfo.cs" />
     <Compile Include="Models\Amenhokit\Database\UploadFile.cs" />
+    <Compile Include="Models\Amenhokit\ViewModels\PlayerSessionScore.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AmenhokitRepository.cs" />
+    <Compile Include="Services\Amenhokit\FunStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConnectionStrings.config" />
@@ -374,6 +376,17 @@
     <Content Include="Projects\AngularD3\styles\nodestyles.css" />
     <Content Include="Projects\AngularD3\styles\pagestyles.css" />
     <Content Include="Projects\index.txt" />
+    <Content Include="Projects\NewAmenhokitApp\Controllers\HomeController.js" />
+    <Content Include="Projects\NewAmenhokitApp\Controllers\PlayerController.js" />
+    <Content Include="Projects\NewAmenhokitApp\Controllers\SessionsController.js" />
+    <Content Include="Projects\NewAmenhokitApp\Services\BowlingService.js" />
+    <Content Include="Projects\NewAmenhokitApp\Styles\newAmenhokit.css" />
+    <Content Include="Projects\NewAmenhokitApp\newAmenhokitApp.js" />
+    <Content Include="Projects\NewAmenhokitApp\newAmenhokitRouting.js" />
+    <Content Include="Projects\NewAmenhokitApp\Services\DataService.js" />
+    <Content Include="Projects\NewAmenhokitApp\Views\home.html" />
+    <Content Include="Projects\NewAmenhokitApp\Views\player.html" />
+    <Content Include="Projects\NewAmenhokitApp\Views\sessions.html" />
     <Content Include="Projects\PennyGame\PennyGame.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -381,6 +394,7 @@
     <Content Include="Scripts\angular-moment.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -30923,6 +30937,7 @@
     <Content Include="Views\Shared\_NavbarLinks.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
+    <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

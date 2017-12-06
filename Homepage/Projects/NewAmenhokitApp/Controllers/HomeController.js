@@ -23,7 +23,29 @@
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
+        DataService.getPlayersFromFile().then(function(result) {
+            self.players = result.data;
+        });
 
+
+        DataService.getGraphDataFromFile().then(function (result) {
+            var graphData = result.data;
+            self.makeDateObjects(graphData);
+
+            self.uniquePlayers = self.findUniquePlayers(graphData);
+            var filteredArray = self.filterByPlayerCount(graphData, 10);
+            var tableRows = self.makeTableRows(filteredArray);
+
+
+            self.bowlingDataTable = tableRows;
+
+            self.allScores = graphData;
+
+            google.charts.setOnLoadCallback(drawChart);
+
+        });
+
+        /*
         var t0 = performance.now();
         DataService.getAllScores()
             .then(function (result) {
@@ -45,6 +67,8 @@
                 google.charts.setOnLoadCallback(drawChart);
 
             });
+
+        */
 
 
         function drawChart() {
@@ -214,6 +238,22 @@
         var t1 = performance.now();
         console.log("Make Table Rows " + (t1 - t0) + " ms");
         return tableRows;
+    }
+
+    HomeController.prototype.makeDateObjects = function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+            var sessionDate = data[i].DateString;
+            var dateSplit = sessionDate.split('-');
+            if (dateSplit.length >= 2) {
+
+                var year = parseInt(dateSplit[0]);
+                var month = parseInt(dateSplit[1]);
+                var day = parseInt(dateSplit[2]);
+                data[i].Date = new Date(year, month - 1, day);                
+            }
+        }
+
     }
 
     HomeController.prototype.makeOutputArray = function (data) {

@@ -7,8 +7,11 @@ using System.Web;
 using System.Web.Mvc;
 using Homepage.Models;
 using Homepage.Models.Amenhokit.Database;
+using Homepage.Models.Amenhokit.JsonModels;
 using Homepage.Models.Amenhokit.ViewModels;
 using Homepage.Repository;
+using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
 
 namespace Homepage.Controllers
 {
@@ -65,7 +68,21 @@ namespace Homepage.Controllers
                         Scorestring = scoreString
                     };
 
-                    db.PlayerScore.Add(playerScore);
+                    var existing =
+                        db.PlayerScore.FirstOrDefault(e => e.Player == playerScore.ID && e.Game == playerScore.Game &&
+                                                           e.Session == playerScore.Game &&
+                                                           e.Score == playerScore.Score);
+
+                    if (existing == null)
+                    {
+                        db.PlayerScore.Add(playerScore);
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Player score already inserted " + playerScore.Scorestring);
+                    }
+
+                    
                     db.SaveChanges();
 
                 }
@@ -335,7 +352,70 @@ namespace Homepage.Controllers
 
         }
 
-     
+        public void WriteAllScoresToFile()
+        {
+            using (var db = new DataContext())
+            {
+                var pscs = (from ps in db.PlayerScore
+                    join p in db.Player on ps.Player equals p.ID
+                    join g in db.Game on ps.Game equals g.ID
+                    join s in db.Session on ps.Session equals s.ID
+                    select new { player = p, playerscore = ps, session = s, game = g }
+                ).ToList();
+
+                var output = new List<PlayerSessionScore>();
+                foreach (var psc in pscs)
+                {
+                    output.Add(new PlayerSessionScore(psc.player, psc.playerscore, psc.session, psc.game));
+                }
+
+                var filePath = Server.MapPath("~/tempfiles/uniquePlayers.txt");
+
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+
+                var players = pscs.Select(e => e.player).DistinctBy(e => e.ID).ToList();
+
+
+                var json = JsonConvert.SerializeObject(players.ToArray());
+
+                System.IO.File.WriteAllText(filePath,json);
+
+
+                var graphOutput = new List<GraphDisplay>();
+                
+                foreach (var p in pscs)
+                {
+                    var g = new GraphDisplay();
+                    g.SessionDate = p.session.Date;
+                    g.Score = p.playerscore.Score;
+                    g.Name = p.player.Name;
+                    g.DateString = p.session.Date.ToString("yyyy-MM-dd");
+                    graphOutput.Add(g);
+                }
+
+                var graphFile = Server.MapPath("~/tempfiles/graphOutput.txt");
+
+                if (System.IO.File.Exists(graphFile))
+                {
+                    System.IO.File.Delete(graphFile);
+                }
+                System.IO.File.WriteAllText(graphFile, JsonConvert.SerializeObject(graphOutput.ToArray()));
+
+
+
+
+
+            }
+
+
+        }
+
+       
+
 
         public string GetVirtualPath(string physicalPath)
         {

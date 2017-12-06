@@ -20,7 +20,12 @@
                 newScore: newscore
             });
     }
-
+    DataService.prototype.getGraphDataFromFile = function () {
+        return this.$http.get('/tempfiles/graphOutput.txt');
+    }
+    DataService.prototype.getPlayersFromFile = function() {
+        return this.$http.get('/tempfiles/uniquePlayers.txt');
+    }
     DataService.prototype.getAllPlayers = function() {
         return this.$http.post('/Amenhokit/GetPlayers');
     }

@@ -230,6 +230,7 @@
     <Compile Include="Models\Amenhokit\Database\PlayerAlias.cs" />
     <Compile Include="Models\Amenhokit\Database\PlayerScore.cs" />
     <Compile Include="Models\Amenhokit\Database\Session.cs" />
+    <Compile Include="Models\Amenhokit\JsonModels\GraphDisplay.cs" />
     <Compile Include="Models\Amenhokit\PdfScan\PdfGameInfo.cs" />
     <Compile Include="Models\Amenhokit\PdfScan\PlayerInfo.cs" />
     <Compile Include="Models\Amenhokit\Database\UploadFile.cs" />

@@ -14,7 +14,6 @@ namespace Homepage.Services.Amenhokit
 {
     public class WriteDataToJson
     {
-
         private static List<PlayerSessionScore> GetAllData()
         {
             var output = new List<PlayerSessionScore>();
@@ -46,8 +45,7 @@ namespace Homepage.Services.Amenhokit
 
             foreach (var player in players)
             {
-                var playerReport = new PlayerReport();
-                playerReport.Player = player;
+                var playerReport = new PlayerReport {Player = player};
                 var playerData = allData.Where(e => e.Player.ID == player.ID).ToList();
 
                 var scoreSum = 0;

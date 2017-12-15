@@ -11,6 +11,6 @@ namespace Homepage.Models.Amenhokit.JsonModels
         public Player Player { get; set; }
         public float AverageScore { get; set; }
         public int HighestScore { get; set; }
-        public PlayerScore HighestSessionScore { get; set; }
+        public PlayerScore HighestSessionScore { get; set; }        
     }
 }

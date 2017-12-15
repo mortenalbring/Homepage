@@ -1,14 +1,18 @@
 ﻿var HomeController = function () {
-    HomeController.$inject = ["$rootScope", "$scope", "$state", "DataService", "BowlingService"];
+    HomeController.$inject = ["$rootScope", "$scope", "$state", "$window","$timeout", "DataService", "BowlingService"];
 
-    function HomeController($rootScope, $scope, $state, DataService, BowlingService) {
-        google.charts.load('current', { 'packages': ['corechart'] });
+    function HomeController($rootScope, $scope, $state, $window, $timeout, DataService, BowlingService) {
+        google.charts.load('current', { 'packages': ['scatter'] });
 
         var self = this;
 
+
+        
         this.$rootScope = $rootScope;
         this.$scope = $scope;
         this.$state = $state;
+        this.$timeout = $timeout;
+        this.$window = $window;
         this.dataService = DataService;
         this.bowlingService = BowlingService;
         this.dataService.resetData();
@@ -17,7 +21,16 @@
         this.bowlingDataTable = [];
         this.uniquePlayers = [];
         this.playerReports = [];
-        
+
+        this.width = this.$window.innerWidth;
+
+        angular.element($window).bind('resize',
+            function() {
+
+                renderChart();
+            });
+
+
 
         this.players = this.dataService.players;
         this.sessions = this.dataService.sessions;
@@ -50,31 +63,13 @@
 
         });
 
-        /*
-        var t0 = performance.now();
-        DataService.getAllScores()
-            .then(function (result) {
 
-                var t1 = performance.now();
-                console.log("Get data " + (t1 - t0) + " ms");
+        function renderChart() {
 
+            var chart = new google.charts.Scatter(document.getElementById('chart_div'));
 
-                var outputArray = self.makeOutputArray(result.data);
-                self.uniquePlayers = self.findUniquePlayers(outputArray);
-                var filteredArray = self.filterByPlayerCount(outputArray, 10);
-                var tableRows = self.makeTableRows(filteredArray);
-              
-
-                self.bowlingDataTable = tableRows;
-
-                self.allScores = outputArray;
-
-                google.charts.setOnLoadCallback(drawChart);
-
-            });
-
-        */
-
+            chart.draw(self.multiTable, google.charts.Scatter.convertOptions(self.options));
+        }
 
         function drawChart() {
             var bowlingTable = self.bowlingDataTable;
@@ -121,7 +116,7 @@
                 },
                 vAxis: {
                     viewWindowMode: 'pretty',
-                    textPosition: 'out'
+                    textPosition: 'in'
                 },
                 chartArea: {width:'90%', height:'90%'},
             
@@ -143,9 +138,10 @@
             }
             options.trendlines = rv;
 
-            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
 
-            chart.draw(multiTable, options);
+            self.multiTable = multiTable;
+            self.options = options;
+            renderChart();
         }
 
     }
@@ -156,7 +152,6 @@
 
             var playerName = this.uniquePlayers[i];
             
-
             var playerScores = outputArray.filter(function(e) {
                 return e.Name == playerName;
             });
@@ -170,9 +165,7 @@
                     filteredArray.push(playerScores[j]);
 
                 }
-
             }            
-
         }
 
         return filteredArray;
@@ -261,56 +254,7 @@
 
     }
 
-    HomeController.prototype.makeOutputArray = function (data) {
-        var t0 = performance.now();
-        var self = this;
-        var outputArray = [];
-
-
-        for (var i = 0; i < data.length; i++) {
-
-            var player = data[i].Player;
-            var playerScore = data[i].PlayerScore;
-            var session = data[i].Session;
-            var game = data[i].Game;
-
-
-            var playerName = player.Name;
-            /*
-            if (playerName != "mort" && playerName != "george" && playerName != "bern" && playerName != "tom") {
-                continue;
-            }
-            */
-            var finalScore = playerScore.Score;
-            var sessionDate = data[i].DateTime;
-            self.dataService.addPlayer(player);
-            self.dataService.addSession(session, sessionDate);
-            self.dataService.addGame(game);
-
-            self.dataService.addPlayerScore(playerScore);
-
-            var dateSplit = sessionDate.split('-');
-            var outobj = {};
-            outobj.Name = playerName;
-            outobj.Score = finalScore;
-            outobj.DateString = sessionDate;
-
-            if (dateSplit.length >= 2) {
-
-                var year = parseInt(dateSplit[0]);
-                var month = parseInt(dateSplit[1]);
-                var day = parseInt(dateSplit[2]);
-                outobj.Date = new Date(year, month - 1, day);
-                outputArray.push(outobj);
-            }
-        }
-        var t1 = performance.now();
-        console.log("Make Output Array" + (t1 - t0) + " ms");
-
-        return outputArray;
-
-    }
-
+   
     return HomeController;
 
 }();

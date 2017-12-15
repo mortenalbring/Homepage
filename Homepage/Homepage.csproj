@@ -231,6 +231,7 @@
     <Compile Include="Models\Amenhokit\Database\PlayerScore.cs" />
     <Compile Include="Models\Amenhokit\Database\Session.cs" />
     <Compile Include="Models\Amenhokit\JsonModels\GraphDisplay.cs" />
+    <Compile Include="Models\Amenhokit\JsonModels\PlayerReport.cs" />
     <Compile Include="Models\Amenhokit\PdfScan\PdfGameInfo.cs" />
     <Compile Include="Models\Amenhokit\PdfScan\PlayerInfo.cs" />
     <Compile Include="Models\Amenhokit\Database\UploadFile.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AmenhokitRepository.cs" />
     <Compile Include="Services\Amenhokit\FunStats.cs" />
+    <Compile Include="Services\Amenhokit\WriteDataToJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConnectionStrings.config" />
@@ -30342,6 +30344,8 @@
     <Content Include="Scripts\ng-file-upload-shim.min.js" />
     <Content Include="Scripts\ng-file-upload.js" />
     <Content Include="Scripts\ng-file-upload.min.js" />
+    <Content Include="tempfiles\graphOutput.txt" />
+    <Content Include="tempfiles\uniquePlayers.txt" />
     <Content Include="Views\Home\Redesign.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -30944,7 +30948,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\less\" />
-    <Folder Include="tempfiles\" />
     <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>

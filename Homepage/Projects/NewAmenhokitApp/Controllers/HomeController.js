@@ -16,7 +16,7 @@
         this.allScores = [];
         this.bowlingDataTable = [];
         this.uniquePlayers = [];
-
+        this.playerReports = [];
         
 
         this.players = this.dataService.players;
@@ -27,6 +27,11 @@
             self.players = result.data;
         });
 
+        DataService.getPlayerReports().then(function(result) {
+            for (var i = 0; i < result.data.length; i++) {
+                self.playerReports.push(result.data[i]);
+            }            
+        });
 
         DataService.getGraphDataFromFile().then(function (result) {
             var graphData = result.data;

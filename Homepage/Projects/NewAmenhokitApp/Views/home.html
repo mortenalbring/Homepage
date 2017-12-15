@@ -13,6 +13,40 @@
 </div>
 
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+           
+            <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Average Score</th>
+                    <th>Highest Score</th>
+
+                </tr>
+                </thead>
+                
+                <tbody>
+                <tr ng-repeat="p in vm.playerReports">
+                    <td>
+                        {{p.Player.Name}}
+                    </td>
+                    <td>
+                        {{p.AverageScore}}
+                    </td>
+                    <td>
+                        {{p.HighestScore}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+          
+        </div>
+    </div>
+
+</div>
+
 <!--
 <div ng-repeat="playerScore in vm.playerScores">
     {{playerScore}}

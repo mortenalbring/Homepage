@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Homepage.Models;
 using Homepage.Models.Amenhokit;
 using Homepage.Models.Amenhokit.PdfScan;
+using Homepage.Services.Amenhokit;
 
 namespace Homepage.Controllers
 {
@@ -14,7 +15,9 @@ namespace Homepage.Controllers
         public ActionResult Index()
         {
 
-          //  return RedirectToAction("ProjectAmenhokit", "Projects");
+            WriteDataToJson.WritePlayerReports();
+
+            return RedirectToAction("ProjectAmenhokit", "Projects");
 
             return View("Index");
         }

@@ -232,6 +232,7 @@
     <Compile Include="Models\Amenhokit\Database\Session.cs" />
     <Compile Include="Models\Amenhokit\JsonModels\GraphDisplay.cs" />
     <Compile Include="Models\Amenhokit\JsonModels\PlayerReport.cs" />
+    <Compile Include="Models\Amenhokit\JsonModels\TeamReport.cs" />
     <Compile Include="Models\Amenhokit\PdfScan\PdfGameInfo.cs" />
     <Compile Include="Models\Amenhokit\PdfScan\PlayerInfo.cs" />
     <Compile Include="Models\Amenhokit\Database\UploadFile.cs" />
@@ -30944,6 +30945,7 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
     <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
+    <Content Include="tempfiles\playerReports.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

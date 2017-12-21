@@ -27,12 +27,55 @@ namespace Homepage.Services.Amenhokit
                             select new { player = p, playerscore = ps, session = s, game = g }
                 ).ToList();
 
-                foreach (var psc in pscs)
-                {
-                    output.Add(new PlayerSessionScore(psc.player, psc.playerscore, psc.session, psc.game));
-                }
+                output.AddRange(pscs.Select(psc => new PlayerSessionScore(psc.player, psc.playerscore, psc.session, psc.game)));
             }
             return output;
+        }
+
+        public static void WriteTeamReports()
+        {
+            
+            var allData = GetAllData();
+
+            var groupedByGame = allData.GroupBy(e => e.Game);
+
+            float highestTeamScore = 0;
+            
+            var bestGame = new Game();
+
+            var teamReports = new List<TeamReport>();
+            
+            foreach (var game in groupedByGame)
+            {
+                var teamReport = new TeamReport();
+
+                var playerCount = game.Select(e => e.Player.Name).Distinct().Count();
+                var teamScore = 0;
+
+                foreach (var s in game)
+                {
+                    teamScore = teamScore + s.PlayerScore.Score;
+                }
+
+                var scorePerPlayer = (float)teamScore / playerCount;
+
+
+
+                    teamReport.BestGame = game.Key;
+                    teamReport.BestTeamScore = teamScore;
+                    teamReport.PlayerCount = playerCount;
+                    teamReport.ScorePerPlayer = scorePerPlayer;
+                    
+                teamReports.Add(teamReport);
+
+            }
+
+            var orderedReports = teamReports.OrderByDescending(e => e.ScorePerPlayer).Take(10).ToList();
+
+
+          
+            WriteToFile(orderedReports, "teamreport.json");
+
         }
 
         public static void WritePlayerReports()
@@ -46,10 +89,16 @@ namespace Homepage.Services.Amenhokit
             foreach (var player in players)
             {
                 var playerReport = new PlayerReport {Player = player};
+                
+                
+                
+
                 var playerData = allData.Where(e => e.Player.ID == player.ID).ToList();
+                playerReport.NumberOfGames = playerData.Count;
 
                 var scoreSum = 0;
                 var highestScore = 0;
+                var totalStrikes = 0;
                 var highestScoreSession = new PlayerScore();
                 foreach (var score in playerData)
                 {
@@ -59,6 +108,9 @@ namespace Homepage.Services.Amenhokit
                         highestScore = score.PlayerScore.Score;
                         highestScoreSession = score.PlayerScore;
                     }
+
+                    var strikes = score.PlayerScore.Scorestring.Count(e => e == 'X');
+                    totalStrikes = totalStrikes + strikes;
                 }
 
                 float averageScore = (float)scoreSum / playerData.Count;
@@ -66,7 +118,8 @@ namespace Homepage.Services.Amenhokit
                 playerReport.AverageScore = averageScore;
                 playerReport.HighestScore = highestScore;
                 playerReport.HighestSessionScore = highestScoreSession;
-
+                playerReport.TotalNumberOfStrikes = totalStrikes;
+                playerReport.StrikesPerGame = (float)playerReport.TotalNumberOfStrikes / playerReport.NumberOfGames;
                 output.Add(playerReport);
             }
 
@@ -85,6 +138,18 @@ namespace Homepage.Services.Amenhokit
             System.IO.File.WriteAllText(filePath, json);
         }
 
+        private static void WriteToFile<T>(T obj, string filename)
+        {
+            var filePath = HttpContext.Current.Server.MapPath("~/tempfiles/" + filename);
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+            var json = JsonConvert.SerializeObject(obj);
+
+            System.IO.File.WriteAllText(filePath, json);
+
+        }
         private static void WriteToFile<T>(List<T> objects, string filename)
         {
             var filePath = HttpContext.Current.Server.MapPath("~/tempfiles/" + filename);
@@ -98,8 +163,14 @@ namespace Homepage.Services.Amenhokit
 
         }
 
-     
 
+        public static void WriteAll()
+        {
+            WriteAllScores();
+            WriteTeamReports();
+            WritePlayerReports();
+            WriteUniquePlayers();
+        }
 
 
         public static void WriteUniquePlayers()

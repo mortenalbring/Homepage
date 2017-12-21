@@ -20,6 +20,10 @@
                 newScore: newscore
             });
     }
+
+    DataService.prototype.getTeamReport = function () {
+        return this.$http.get('/tempfiles/teamReport.json');
+    }
     DataService.prototype.getPlayerReports = function () {
         return this.$http.get('/tempfiles/playerReports.json');
     }

@@ -7,7 +7,9 @@
         var self = this;
 
 
-        
+        this.viewOptions = {
+            allScoresDisplayLimit: 10
+        }
         this.$rootScope = $rootScope;
         this.$scope = $scope;
         this.$state = $state;
@@ -40,6 +42,9 @@
             self.players = result.data;
         });
 
+        DataService.getTeamReport().then(function(result) {
+            self.teamReport = result.data;
+        })
         DataService.getPlayerReports().then(function(result) {
             for (var i = 0; i < result.data.length; i++) {
                 self.playerReports.push(result.data[i]);

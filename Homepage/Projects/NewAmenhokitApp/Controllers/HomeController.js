@@ -2,7 +2,11 @@
     HomeController.$inject = ["$rootScope", "$scope", "$state", "$window","$timeout", "DataService", "BowlingService"];
 
     function HomeController($rootScope, $scope, $state, $window, $timeout, DataService, BowlingService) {
-        google.charts.load('current', { 'packages': ['scatter'] });
+        try {
+            google.charts.load('current', { 'packages': ['scatter'] });
+        } catch (err) {
+            console.log("Unable to load google charts package");
+        }
 
         var self = this;
 
@@ -63,17 +67,23 @@
             self.bowlingDataTable = tableRows;
 
             self.allScores = graphData;
-
-            google.charts.setOnLoadCallback(drawChart);
+             try {
+                 google.charts.setOnLoadCallback(drawChart);
+             } catch(err) {
+                 console.log("Unable to load google charts");
+             }
 
         });
 
 
         function renderChart() {
+            try {
+                var chart = new google.charts.Scatter(document.getElementById('chart_div'));
 
-            var chart = new google.charts.Scatter(document.getElementById('chart_div'));
-
-            chart.draw(self.multiTable, google.charts.Scatter.convertOptions(self.options));
+                chart.draw(self.multiTable, google.charts.Scatter.convertOptions(self.options));
+            } catch (err) {
+                console.log("Unable to render chart");
+            }
         }
 
         function drawChart() {

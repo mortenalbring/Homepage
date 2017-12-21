@@ -2,6 +2,7 @@
 app.controller("HomeController", HomeController);
 app.controller("SessionsController", SessionsController);
 app.controller("PlayerController", PlayerController);
+app.controller("StatsController", StatsController);
 app.service("DataService", DataService);
 app.service("BowlingService", BowlingService);
 app.config(NewAmenhokitRouting);

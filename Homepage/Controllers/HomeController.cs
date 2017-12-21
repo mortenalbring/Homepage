@@ -14,10 +14,10 @@ namespace Homepage.Controllers
     {
         public ActionResult Index()
         {
-
-            WriteDataToJson.WritePlayerReports();
-
-            return RedirectToAction("ProjectAmenhokit", "Projects");
+          //  WriteDataToJson.WriteTeamReports();
+          //  WriteDataToJson.WritePlayerReports();
+        //  WriteDataToJson.WriteAll();
+        //    return RedirectToAction("ProjectAmenhokit", "Projects");
 
             return View("Index");
         }

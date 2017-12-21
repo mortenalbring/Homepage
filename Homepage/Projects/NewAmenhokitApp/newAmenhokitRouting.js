@@ -11,7 +11,14 @@
             templateUrl: "/Projects/NewAmenhokitApp/Views/home.html",
             controller: "HomeController",
             controllerAs: "vm"
-        })
+            })
+                .state("stats",
+                    {
+                        url: "/stats",
+                        templateUrl: "/Projects/NewAmenhokitApp/Views/stats.html",
+                        controller: "StatsController",
+                        controllerAs: "ss"
+                    })
         .state("sessions",
         {
             url: "/sessions/:sessionId",

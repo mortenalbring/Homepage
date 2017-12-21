@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Homepage.Models.Amenhokit.Database;
+﻿using Homepage.Models.Amenhokit.Database;
 
 namespace Homepage.Models.Amenhokit.JsonModels
 {
@@ -15,5 +11,7 @@ namespace Homepage.Models.Amenhokit.JsonModels
         public int TotalNumberOfStrikes { get; set; }
         public int NumberOfGames { get; set; }
         public float StrikesPerGame { get; set; }
+        public int TotalNumberOfSpares { get; set; }
+        public int TotalNumberOfTurkeys { get; set; }
     }
 }

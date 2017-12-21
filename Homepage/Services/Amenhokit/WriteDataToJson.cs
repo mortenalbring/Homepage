@@ -49,7 +49,16 @@ namespace Homepage.Services.Amenhokit
             {
                 var teamReport = new TeamReport();
 
-                var playerCount = game.Select(e => e.Player.Name).Distinct().Count();
+
+
+                var playerCount = game.Count();
+
+                if (playerCount == 1)
+                {
+                    continue;
+                }
+                
+
                 var teamScore = 0;
 
                 foreach (var s in game)
@@ -99,6 +108,8 @@ namespace Homepage.Services.Amenhokit
                 var scoreSum = 0;
                 var highestScore = 0;
                 var totalStrikes = 0;
+                var totalSpares = 0;
+                var totalTurkeys = 0;
                 var highestScoreSession = new PlayerScore();
                 foreach (var score in playerData)
                 {
@@ -108,9 +119,17 @@ namespace Homepage.Services.Amenhokit
                         highestScore = score.PlayerScore.Score;
                         highestScoreSession = score.PlayerScore;
                     }
+                    
+                    totalStrikes = totalStrikes + score.PlayerScore.Scorestring.Count(e => e == 'X');
+                    if (score.PlayerScore.Scorestring.Contains("XXX"))
+                    {
+                        var numturks = CountStringOccurrences(score.PlayerScore.Scorestring, "XXX");
+                        var xx = 42;
+                    }
+                    
 
-                    var strikes = score.PlayerScore.Scorestring.Count(e => e == 'X');
-                    totalStrikes = totalStrikes + strikes;
+                    totalTurkeys = totalTurkeys + CountStringOccurrences(score.PlayerScore.Scorestring, "XXX");                    
+                    totalSpares = totalSpares + score.PlayerScore.Scorestring.Count(e => e == '/');                                        
                 }
 
                 float averageScore = (float)scoreSum / playerData.Count;
@@ -119,11 +138,28 @@ namespace Homepage.Services.Amenhokit
                 playerReport.HighestScore = highestScore;
                 playerReport.HighestSessionScore = highestScoreSession;
                 playerReport.TotalNumberOfStrikes = totalStrikes;
+                playerReport.TotalNumberOfSpares = totalSpares;
+                playerReport.TotalNumberOfTurkeys = totalTurkeys;
+
                 playerReport.StrikesPerGame = (float)playerReport.TotalNumberOfStrikes / playerReport.NumberOfGames;
                 output.Add(playerReport);
             }
 
             WriteToFile(output,"playerReports.json");
+        }
+
+
+        private static int CountStringOccurrences(string text, string pattern)
+        {
+            // Loop through all instances of the string 'text'.
+            int count = 0;
+            int i = 0;
+            while ((i = text.IndexOf(pattern, i)) != -1)
+            {
+                i += pattern.Length;
+                count++;
+            }
+            return count;
         }
 
         private static void WriteToFile2(string filename, List<PlayerReport> playerReports)
@@ -215,6 +251,8 @@ namespace Homepage.Services.Amenhokit
                 }
                 System.IO.File.WriteAllText(graphFile, JsonConvert.SerializeObject(pscs.Select(p => new GraphDisplay
                 {
+                    SessionId = p.session.ID,
+                    ScoreString = p.playerscore.Scorestring,
                     SessionDate = p.session.Date,
                     Score = p.playerscore.Score,
                     Name = p.player.Name,

@@ -1,21 +1,11 @@
-﻿
-<div class="container-fluid">
-    <div class="col-md-12">
-        <div id="chart_div" style="width: 100%; height: 800px;"></div>
-    </div>
-</div>
-
-
-
-
-<div class="container-fluid">
+﻿<div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="#stats">
+                   
                         Individual stats
-                    </a>
+                   
 
                 </div>
                 <div class="panel-body">
@@ -30,12 +20,14 @@
                                 <th>Games</th>
                                 <th>Total strikes</th>
                                 <th>Strikes / game</th>
+                                <th>Total spares</th>
+                                <th>Spares / game</th>
 
                             </tr>
                         </thead>
 
                         <tbody>
-                            <tr ng-repeat="p in vm.playerReports" ng-if="p.NumberOfGames > 3">
+                            <tr ng-repeat="p in ss.playerReports">
                                 <td>
                                     <a ng-href="#/player/{{p.Player.ID}}">
                                         {{p.Player.Name | titlecase}}
@@ -58,12 +50,18 @@
                                 <td>
                                     {{p.StrikesPerGame | number : 2}}
                                 </td>
+                                <td>
+                                    {{p.TotalNumberOfSpares}}
+                                </td>
+                                <td>
+                                    {{(p.TotalNumberOfSpares / p.NumberOfGames) | number : 2 }}
+                                </td>
+                                <td>
+                                    {{p.TotalNumberOfTurkeys}}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    <a href="#stats">
-                       See more
-                    </a>
 
                 </div>
             </div>
@@ -89,7 +87,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="t in vm.teamReport">
+                            <tr ng-repeat="t in ss.teamReport">
                                 <td>
                                     <a href="#sessions/{{t.BestGame.Session}}">
                                         {{t.BestTeamScore}}
@@ -125,26 +123,26 @@
                     </tr>
                     <tr>
                         <td>
-                            <input class="form-control" placeholder="Filter date" ng-model="vm.dateFilter" />
+                            <input class="form-control" placeholder="Filter date" ng-model="ss.dateFilter" />
                         </td>
                         <td>
-                            <input class="form-control" placeholder="Filter name" ng-model="vm.nameFilter" />
+                            <input class="form-control" placeholder="Filter name" ng-model="ss.nameFilter" />
                         </td>
                         <td>
-                            <input class="form-control" placeholder="Filter score" ng-model="vm.scoreFilter" />
+                            <input class="form-control" placeholder="Filter score" ng-model="ss.scoreFilter" />
                         </td>
                         <td>
-                            <input class="form-control" placeholder="Filter score string" ng-model="vm.scoreStringFilter" />
+                            <input class="form-control" placeholder="Filter score string" ng-model="ss.scoreStringFilter" />
                         </td>
 
                     </tr>
 
                 </thead>
                 <tbody>
-                    <tr ng-repeat="s in vm.allScores
-                    | filter:{'DateString': vm.dateFilter,'Name': vm.nameFilter, 'Score' : vm.scoreFilter, 'ScoreString' : vm.scoreStringFilter}
+                    <tr ng-repeat="s in ss.allScores
+                    | filter:{'DateString': ss.dateFilter,'Name': ss.nameFilter, 'Score' : ss.scoreFilter, 'ScoreString' : ss.scoreStringFilter}
                     | orderBy: '-SessionDate'
-                    | limitTo:vm.viewOptions.allScoresDisplayLimit">
+                    | limitTo:ss.viewOptions.allScoresDisplayLimit">
                         <td>
                             <a href="#sessions/{{s.SessionId}}">
                                 {{s.SessionDate | date : 'yyyy-MM-dd' }}
@@ -163,7 +161,7 @@
                     </tr>
                     <tr>
                         <td colspan="42">
-                            <button class="btn btn-default btn-sm" ng-click="vm.viewOptions.allScoresDisplayLimit = null">View all</button>
+                            <button class="btn btn-default btn-sm" ng-click="ss.viewOptions.allScoresDisplayLimit = null">View all</button>
                         </td>
                     </tr>
                 </tbody>
@@ -176,60 +174,3 @@
 
 </div>
 
-
-
-
-<!--
-<div ng-repeat="playerScore in vm.playerScores">
-    {{playerScore}}
-</div>
--->
-
-<div class="container-fluid">
-
-    <div class="col-md-6 col-md-offset-2">
-
-        <div ng-repeat="session in vm.sessions | orderBy:'-DateParsed'" class="am-sessions">
-            <a ng-href="#/sessions/{{session.ID}}">
-
-
-                <span>
-                    <strong>{{session.DateParsed | date:'d MMM yyyy'}}</strong>
-                    - {{session.Games.length}} games
-                </span>
-            </a>
-
-            <div ng-repeat="game in session.Games">
-                <!-- {{game}}-->
-
-                <table class="table table-bordered table-condensed">
-                    <thead>
-
-                    <thead>
-                        <tr>
-                            <th colspan="3">
-
-                                Game {{game.GameNumber}}
-
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Player</th>
-                            <th>Score string</th>
-                            <th>Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="playerScore in game.PlayerScores">
-                            <td><a ng-href="#/player/{{playerScore.Player.ID}}">{{playerScore.Player.Name}}</a></td>
-                            <td>{{playerScore.Scorestring}}</td>
-                            <td>{{playerScore.Score}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-    </div>
-</div>

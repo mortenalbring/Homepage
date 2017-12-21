@@ -384,6 +384,7 @@
     <Content Include="Projects\NewAmenhokitApp\Controllers\HomeController.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\PlayerController.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\SessionsController.js" />
+    <Content Include="Projects\NewAmenhokitApp\Controllers\StatsController.js" />
     <Content Include="Projects\NewAmenhokitApp\Services\BowlingService.js" />
     <Content Include="Projects\NewAmenhokitApp\Styles\newAmenhokit.css" />
     <Content Include="Projects\NewAmenhokitApp\newAmenhokitApp.js" />
@@ -392,6 +393,7 @@
     <Content Include="Projects\NewAmenhokitApp\Views\home.html" />
     <Content Include="Projects\NewAmenhokitApp\Views\player.html" />
     <Content Include="Projects\NewAmenhokitApp\Views\sessions.html" />
+    <Content Include="Projects\NewAmenhokitApp\Views\stats.html" />
     <Content Include="Projects\PennyGame\PennyGame.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -30946,6 +30948,7 @@
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
     <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
     <Content Include="tempfiles\playerReports.json" />
+    <Content Include="tempfiles\teamreport.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,3 +5,36 @@
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+.table-playerReport th.clickable {
+    cursor: pointer;
+    background: #ededff;
+}
+.table-playerReport th.clickable.selected {
+    background: #4646ff;
+    color: #fff;
+}
+
+.team-report-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    transition: 1s;
+    
+}
+
+.team-report-container .item {
+    width:  600px;
+    margin: auto;
+    
+}
+
+.team-report-container .see-more {
+    font-weight: normal;
+    cursor: pointer;
+    color: blue;
+    font-size: 0.8em;
+}

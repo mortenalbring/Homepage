@@ -380,8 +380,11 @@ namespace Homepage.Controllers
             {
                 var playerScores = db.PlayerScore.ToList();
                 var removed = 0;
+                var p = 0;
                 foreach (var ps in playerScores)
                 {
+                    p++;
+                    Debug.WriteLine("Checking for dupes " + p + "/" + playerScores.Count);
                     var dupes =
                         db.PlayerScore.Where(
                             e =>
@@ -394,6 +397,7 @@ namespace Homepage.Controllers
                         var first = dupes.First();
                         var others = dupes.Where(e => e.ID != first.ID).ToList();
 
+                        
                         foreach (var other in others)
                         {
                             db.PlayerScore.Attach(other);
@@ -402,6 +406,7 @@ namespace Homepage.Controllers
                             Debug.WriteLine(removed);
                             db.SaveChanges();
                         }
+                        
 
                         var zz = 42;
 

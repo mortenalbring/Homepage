@@ -1,9 +1,10 @@
-﻿var HomeController = function () {
-    HomeController.$inject = ["$rootScope", "$scope", "$state", "$window","$timeout", "DataService", "BowlingService"];
+﻿var GraphController = function () {
+    GraphController.$inject = ["$rootScope", "$scope", "$state", "$window", "$timeout", "DataService", "BowlingService"];
 
-    function HomeController($rootScope, $scope, $state, $window, $timeout, DataService, BowlingService) {
+    function GraphController($rootScope, $scope, $state, $window, $timeout, DataService, BowlingService) {
         try {
-            google.charts.load('current', { 'packages': ['scatter'] });
+            google.charts.load('current', { 'packages': ['scatter', 'line'] });
+            google.charts.load('current', { 'packages': ['corechart', 'scatter'] });
         } catch (err) {
             console.log("Unable to load google charts package");
         }
@@ -12,8 +13,35 @@
 
 
         this.viewOptions = {
-            allScoresDisplayLimit: 10
+            allScoresDisplayLimit: 10,
+            chartType: 'line'
         }
+
+        this.graphOptions = {
+            lineChart: {
+                hAxis: {
+                    title: 'Date',
+                    
+                    gridlines: { count: 15 }
+
+                },
+                vAxis: {
+                    title: 'Score',
+                    viewWindowMode: 'pretty'                
+                    
+
+                },
+                curveType: 'function',
+                interpolateNulls: true,
+
+                theme: 'maximized',
+                pointsVisible: true,
+                pointSize: 8
+
+            },
+
+        }
+
         this.$rootScope = $rootScope;
         this.$scope = $scope;
         this.$state = $state;
@@ -31,9 +59,9 @@
         this.width = this.$window.innerWidth;
 
         angular.element($window).bind('resize',
-            function() {
+            function () {
 
-              //  renderChart();
+                self.renderChart();
             });
 
 
@@ -42,19 +70,33 @@
         this.sessions = this.dataService.sessions;
         this.playerScores = this.dataService.playerScores;
 
-        DataService.getPlayersFromFile().then(function(result) {
+        DataService.getPlayersFromFile().then(function (result) {
             self.players = result.data;
         });
 
-        DataService.getTeamReport().then(function(result) {
+        DataService.getTeamReport().then(function (result) {
             self.teamReport = result.data;
         })
-        DataService.getPlayerReports().then(function(result) {
+        DataService.getPlayerReports().then(function (result) {
             for (var i = 0; i < result.data.length; i++) {
                 self.playerReports.push(result.data[i]);
-            }            
+            }
         });
 
+        DataService.getLineChartData().then(function (result) {
+
+            self.lineChartData = result.data;
+
+            try {
+                google.charts.setOnLoadCallback(drawLineChart);
+            } catch (err) {
+                console.log("Unable to load google charts");
+            }
+
+
+
+            var xx = 42;
+        });
         DataService.getGraphDataFromFile().then(function (result) {
             var graphData = result.data;
             self.makeDateObjects(graphData);
@@ -67,25 +109,87 @@
             self.bowlingDataTable = tableRows;
 
             self.allScores = graphData;
-             try {
-             //    google.charts.setOnLoadCallback(drawChart);
-             } catch(err) {
-                 console.log("Unable to load google charts");
-             }
+            try {
+                google.charts.setOnLoadCallback(drawChart);
+            } catch (err) {
+                console.log("Unable to load google charts");
+            }
 
         });
 
+        function drawLineChart() {
 
-        function renderChart() {
-            try {
-                var chart = new google.charts.Scatter(document.getElementById('chart_div'));
+            var lineChartData = [];
+            var datalines = self.lineChartData.split('\n');
 
-                chart.draw(self.multiTable, google.charts.Scatter.convertOptions(self.options));
-            } catch (err) {
-                console.log("Unable to render chart");
+            var headers = datalines[0];
+            var headerData = headers.split('\t');
+            lineChartData.push(headerData);
+
+            for (var i = 1; i < datalines.length; i++) {
+                var ddata = datalines[i].split('\t');
+                lineChartData.push(ddata);
             }
+
+            var lineChartTable = new google.visualization.DataTable();
+
+            lineChartTable.addColumn('date', 'Date');
+
+            for (var j = 1; j < headerData.length; j++) {
+                lineChartTable.addColumn('number', headerData[j]);
+            }
+            for (var i = 1; i < datalines.length; i++) {
+                var outputRow = [];
+                var ddata = datalines[i].split('\t');
+                if (ddata.length < 2) {
+                    continue;
+                }
+                var dateElement = ddata[0];
+
+                var dateObj = makeDateObj(dateElement);
+                outputRow.push(dateObj);
+                for (var k = 1; k < (ddata.length - 1); k++) {
+                    var rowdata = ddata[k];
+                    if (rowdata == "") {
+                        outputRow.push(null);
+                    } else {
+                        outputRow.push(parseInt(rowdata));
+                    }
+
+                }
+                try {
+                    lineChartTable.addRow(outputRow);
+                } catch (error) {
+                    var zz = 42;
+                }
+            }
+
+            self.lineChartTable = lineChartTable;
+
+
+
+
+
         }
 
+        function makeDateObj(dateString) {
+            var dateSplit = dateString.split("-");
+
+            if (dateSplit.length <= 2) {
+                return null;
+            }
+
+            var year = parseInt(dateSplit[0]);
+            var month = parseInt(dateSplit[1]);
+            var day = parseInt(dateSplit[2]);
+            var dateObj = new Date(year, month - 1, day);
+
+            return dateObj;
+
+        }
+
+
+    
         function drawChart() {
             var bowlingTable = self.bowlingDataTable;
 
@@ -124,6 +228,8 @@
             dataTable.addColumn('number', 'Score');
 
             var options = {
+                curveType: 'function',
+                interpolateNulls: true,
                 title: 'All scores',
                 hAxis: {
                     format: 'MM/yyyy',
@@ -133,8 +239,8 @@
                     viewWindowMode: 'pretty',
                     textPosition: 'in'
                 },
-                chartArea: {width:'90%', height:'90%'},
-            
+                chartArea: { width: '90%', height: '90%' },
+              
                 legend: { position: 'top' },
                 trendlines: {}
             };
@@ -142,7 +248,7 @@
 
             var trendObjs = [];
             for (var i = 0; i < self.uniquePlayers.length; i++) {
-                var trendObj = {}            
+                var trendObj = {}
                 trendObj = { type: 'linear', opacity: 0.25 }
                 trendObjs.push(trendObj);
             }
@@ -156,18 +262,55 @@
 
             self.multiTable = multiTable;
             self.options = options;
-            renderChart();
+            self.renderChart();
         }
 
     }
 
-    HomeController.prototype.filterByPlayerCount = function(outputArray, minCount) {
+
+    GraphController.prototype.renderChart = function () {
+        var self = this;
+        try {
+            if (!self.linechart) {
+                self.linechart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+            }
+            if (!self.classicChart) {
+                self.classicChart = new google.visualization.LineChart(document.getElementById('classic_chart_div'));
+            }
+            if (!self.materialChart) {
+                self.materialChart = new google.charts.Scatter(document.getElementById('chart_div'));
+            }
+
+
+            if (self.viewOptions.chartType == 'line') {
+                self.linechart.draw(self.lineChartTable, self.graphOptions.lineChart);
+            }
+
+            if (self.viewOptions.chartType == 'scatter') {
+                self.classicChart.draw(self.multiTable, self.options);
+            }
+            if (self.viewOptions.chartType == 'scatter-material') {
+                self.materialChart.draw(self.multiTable, google.charts.Scatter.convertOptions(self.options));
+            }
+
+
+
+        } catch (err) {
+            console.log("Unable to render chart");
+        }
+
+    }
+    GraphController.prototype.setChartType = function (type) {
+        this.viewOptions.chartType = type;
+        this.renderChart();
+    }
+    GraphController.prototype.filterByPlayerCount = function (outputArray, minCount) {
         var filteredArray = [];
         for (var i = 0; i < this.uniquePlayers.length; i++) {
 
             var playerName = this.uniquePlayers[i];
-            
-            var playerScores = outputArray.filter(function(e) {
+
+            var playerScores = outputArray.filter(function (e) {
                 return e.Name == playerName;
             });
 
@@ -180,12 +323,12 @@
                     filteredArray.push(playerScores[j]);
 
                 }
-            }            
+            }
         }
 
         return filteredArray;
     }
-    HomeController.prototype.findUniquePlayers = function(outputArray) {
+    GraphController.prototype.findUniquePlayers = function (outputArray) {
         var uniquePlayers = [];
         for (var k = 0; k < outputArray.length; k++) {
 
@@ -196,9 +339,9 @@
         return uniquePlayers;
     }
 
-    HomeController.prototype.makeTableRows = function (outputArray) {
+    GraphController.prototype.makeTableRows = function (outputArray) {
         var t0 = performance.now();
-        
+
         var self = this;
         var tableRows = [];
 
@@ -210,9 +353,9 @@
                 uniqueDates.push(outputArray[j].DateString);
             }
         }
-     
 
-       
+
+
         var tableHeaders = ["Score"];
         for (var i = 0; i < uniquePlayers.length; i++) {
             tableHeaders.push(uniquePlayers[i]);
@@ -232,12 +375,12 @@
                     return e.Name == playerName && e.DateString == dateString;
                 });
 
-                if (matchingScores.length > 0) {                  
+                if (matchingScores.length > 0) {
                     var highestGameScore = 0;
                     for (var m = 0; m < matchingScores.length; m++) {
                         if (matchingScores[m].Score > highestGameScore) {
                             highestGameScore = matchingScores[m].Score;
-                        }                      
+                        }
                     }
 
                     tableRow.push(highestGameScore);
@@ -253,7 +396,7 @@
         return tableRows;
     }
 
-    HomeController.prototype.makeDateObjects = function(data) {
+    GraphController.prototype.makeDateObjects = function (data) {
 
         for (var i = 0; i < data.length; i++) {
             var sessionDate = data[i].DateString;
@@ -263,13 +406,13 @@
                 var year = parseInt(dateSplit[0]);
                 var month = parseInt(dateSplit[1]);
                 var day = parseInt(dateSplit[2]);
-                data[i].Date = new Date(year, month - 1, day);                
+                data[i].Date = new Date(year, month - 1, day);
             }
         }
 
     }
 
-   
-    return HomeController;
+
+    return GraphController;
 
 }();

@@ -9,8 +9,10 @@ namespace Homepage.Models.Amenhokit.JsonModels
     public class TeamReport
     {
         public Game BestGame { get; set; }
+        public Session BestSession { get; set; }
         public int BestTeamScore { get; set; }        
         public int PlayerCount { get; set; }
+        public List<Player> Players { get; set; }
         public float ScorePerPlayer { get; set; }
     }
 }

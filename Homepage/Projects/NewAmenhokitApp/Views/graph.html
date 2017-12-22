@@ -1,0 +1,30 @@
+﻿<div class="container-fluid">
+    <div class="row" ng-show="gc.viewOptions.chartType == 'line'">
+        <div class="col-md-12">
+            <div id="line_chart_div" style="width: 80%; height: 800px;"></div>
+
+        </div>
+    </div>
+    <div class="row" ng-show="gc.viewOptions.chartType == 'scatter'">
+        <div class="col-md-12">
+            <h2>Classic chart</h2>
+            <div id="classic_chart_div" style="width: 80%; height: 800px;"></div>
+        </div>
+    </div>
+    <div class="row" ng-show="gc.viewOptions.chartType == 'scatter-material'">
+        <div class="col-md-12">
+            <h2>Material chart</h2>
+            <div id="chart_div" style="width: 80%; height: 800px;"></div>
+            
+        </div>
+    </div>
+    
+    <div class="btn-group">
+        <div class="btn btn-default" ng-click="gc.setChartType('line')">Draw line chart</div>
+        <div class="btn btn-default" ng-click="gc.setChartType('scatter')">Draw scatter plot</div>
+        <div class="btn btn-default" ng-click="gc.setChartType('scatter-material')">Draw scatter plot (material design)</div>
+    </div>
+    <br/>
+
+    <span><small>Sometimes you have to click these buttons twice to get them to change properly. Not sure why that is yet.</small></span>
+</div>

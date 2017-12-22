@@ -32,32 +32,86 @@ namespace Homepage.Services.Amenhokit
             return output;
         }
 
+
+        public static void WriteTeamReportsByPlayerCount()
+        {
+            var allData = GetAllData();
+
+            var playerCountSearches = new int[] {2,3,4,5,6,7};
+
+            var output = new Dictionary<int,List<TeamReport>>();
+            foreach (var s in playerCountSearches)
+            {
+                var result = GetTeamReport(allData,s, 50);
+                output.Add(s,result);
+            }
+
+            WriteToFile(output,"teamreportByPlayerCount.txt");
+
+        }
+
+
+        private static List<TeamReport> GetTeamReport(List<PlayerSessionScore> allData, int playerCountSearch, int maxRecords)
+        {            
+
+            var groupedByGame = allData.GroupBy(e => e.Game);
+
+
+            var teamReports = new List<TeamReport>();
+
+            foreach (var game in groupedByGame)
+            {
+                var teamReport = new TeamReport();
+                var playerCount = game.Count();
+
+                if (playerCount != playerCountSearch)
+                {
+                    continue;
+                }
+
+                var teamScore = 0;
+
+                foreach (var s in game)
+                {
+                    teamScore = teamScore + s.PlayerScore.Score;
+                }
+
+                var scorePerPlayer = (float)teamScore / playerCount;
+                teamReport.Players = game.Select(e => e.Player).Distinct().OrderBy(e => e.ID).ToList();
+                teamReport.BestGame = game.Key;
+                teamReport.BestSession = game.Select(e => e.Session).FirstOrDefault();
+                teamReport.BestTeamScore = teamScore;
+                teamReport.PlayerCount = playerCount;
+                teamReport.ScorePerPlayer = scorePerPlayer;
+
+                teamReports.Add(teamReport);
+
+            }
+
+            var orderedReports = teamReports.OrderByDescending(e => e.BestTeamScore).Take(maxRecords).ToList();
+
+            return orderedReports;            
+        }
+
+
         public static void WriteTeamReports()
         {
-            
             var allData = GetAllData();
 
             var groupedByGame = allData.GroupBy(e => e.Game);
 
-            float highestTeamScore = 0;
-            
-            var bestGame = new Game();
 
             var teamReports = new List<TeamReport>();
-            
+
             foreach (var game in groupedByGame)
             {
                 var teamReport = new TeamReport();
-
-
-
                 var playerCount = game.Count();
 
                 if (playerCount == 1)
                 {
                     continue;
                 }
-                
 
                 var teamScore = 0;
 
@@ -68,13 +122,11 @@ namespace Homepage.Services.Amenhokit
 
                 var scorePerPlayer = (float)teamScore / playerCount;
 
+                teamReport.BestGame = game.Key;
+                teamReport.BestTeamScore = teamScore;
+                teamReport.PlayerCount = playerCount;
+                teamReport.ScorePerPlayer = scorePerPlayer;
 
-
-                    teamReport.BestGame = game.Key;
-                    teamReport.BestTeamScore = teamScore;
-                    teamReport.PlayerCount = playerCount;
-                    teamReport.ScorePerPlayer = scorePerPlayer;
-                    
                 teamReports.Add(teamReport);
 
             }
@@ -82,9 +134,7 @@ namespace Homepage.Services.Amenhokit
             var orderedReports = teamReports.OrderByDescending(e => e.ScorePerPlayer).Take(10).ToList();
 
 
-          
             WriteToFile(orderedReports, "teamreport.txt");
-
         }
 
         public static void WritePlayerReports()
@@ -97,10 +147,7 @@ namespace Homepage.Services.Amenhokit
 
             foreach (var player in players)
             {
-                var playerReport = new PlayerReport {Player = player};
-                
-                
-                
+                var playerReport = new PlayerReport { Player = player };
 
                 var playerData = allData.Where(e => e.Player.ID == player.ID).ToList();
                 playerReport.NumberOfGames = playerData.Count;
@@ -125,25 +172,39 @@ namespace Homepage.Services.Amenhokit
                         highestScore = score.PlayerScore.Score;
                         highestScoreSession = score.PlayerScore;
                     }
-                    
+
                     totalStrikes = totalStrikes + scoreString.Count(e => e == 'x');
                     totalGutters = totalGutters + scoreString.Count(e => e == '-');
-                  
+
                     totalNineNineNines = totalNineNineNines + CountStringOccurrences(scoreString, "9-9-9-");
+                    totalNineNineNines = totalNineNineNines + CountStringOccurrences(scoreString, "9/9/9/");
 
-                    if (totalNineNineNines > 0)
-                    {
-                        var xx = 42;
-                    }
 
-                    totalTurkeys = totalTurkeys + CountStringOccurrences(scoreString, "xxx");                    
-                    totalSpares = totalSpares + score.PlayerScore.Scorestring.Count(e => e == '/');                                        
+                    totalTurkeys = totalTurkeys + CountStringOccurrences(scoreString, "xxx");
+                    totalSpares = totalSpares + score.PlayerScore.Scorestring.Count(e => e == '/');
                 }
+
+                var playerSessions = playerData.GroupBy(e => e.Session);
+                var totalBest = 0;
+                var sessions = 0;
+                foreach (var psesh in playerSessions)
+                {
+                    sessions++;
+                    var sessionScores = psesh.Select(e => e.PlayerScore.Score).ToList();
+                    var ordered = sessionScores.OrderByDescending(e => e);
+                    var bestScore = ordered.First();
+                    totalBest = totalBest + bestScore;
+                }
+
+                float averageBest = (float) totalBest / sessions;
 
                 float averageScore = (float)scoreSum / playerData.Count;
 
                 playerReport.AverageScore = averageScore;
+                playerReport.AverageBestScore = averageBest;
                 playerReport.HighestScore = highestScore;
+
+                playerReport.NumberOfSessions = sessions;
                 playerReport.HighestSessionScore = highestScoreSession;
                 playerReport.TotalNumberOfStrikes = totalStrikes;
                 playerReport.TotalNumberOfSpares = totalSpares;
@@ -155,9 +216,68 @@ namespace Homepage.Services.Amenhokit
                 output.Add(playerReport);
             }
 
-            WriteToFile(output,"playerReports.txt");
+            WriteToFile(output, "playerReports.txt");
         }
 
+
+        public static void WriteLineChartData()
+        {
+            var allData = GetAllData();
+
+            var uniqueSessionDates = allData.Select(e => e.Session.Date).Distinct().OrderBy(e => e).ToList();
+
+           
+
+            var uniquePlayers = allData.Select(e => e.Player.Name).Distinct().OrderBy(e => e).ToList();
+
+            var allowedPlayers = new List<string>();
+            foreach (var p in uniquePlayers)
+            {
+                var scoreCount = allData.Count(e => e.Player.Name == p);
+                if (scoreCount > 50)
+                {
+                    allowedPlayers.Add(p);
+                }
+            }
+
+            var output = "Date";
+
+            foreach (var p in allowedPlayers)
+            {
+                output = output + "\t" + p;
+            }
+            output = output + "\n";
+
+            foreach (var session in uniqueSessionDates)
+            {
+                output = output + session.ToString("yyyy-MM-dd") + "\t";
+
+                foreach (var p in allowedPlayers)
+                {
+                    var r = "";
+                    var scores = allData.Where(e => e.Session.Date == session && e.Player.Name == p).ToList();
+                    if (scores.Count > 0)
+                    {
+                        var hscore = 0;
+                        foreach (var s in scores)
+                        {
+                            if (s.PlayerScore.Score > hscore)
+                            {
+                                hscore = s.PlayerScore.Score;
+                            }                            
+                        }
+                        r = hscore.ToString();
+                   }
+                    output = output + r + "\t";
+                }
+                output = output + "\n";
+            }
+
+            var filepath = HttpContext.Current.Server.MapPath("~/Content/datafiles/linechartdata.txt");
+
+            File.WriteAllText(filepath,output);
+
+        }        
 
         private static int CountStringOccurrences(string text, string pattern)
         {
@@ -172,7 +292,17 @@ namespace Homepage.Services.Amenhokit
             return count;
         }
 
-    
+
+
+        private static void WriteToFile<T>(Dictionary<int,T> objects, string filename)
+        {
+            var filePath = HttpContext.Current.Server.MapPath("~/Content/datafiles/" + filename);
+            RemoveFile(filePath);
+
+            var json = JsonConvert.SerializeObject(objects.ToArray());
+
+            System.IO.File.WriteAllText(filePath, json);
+        }
 
         private static void WriteToFile<T>(List<T> objects, string filename)
         {
@@ -182,16 +312,18 @@ namespace Homepage.Services.Amenhokit
             var json = JsonConvert.SerializeObject(objects.ToArray());
 
             System.IO.File.WriteAllText(filePath, json);
-
         }
 
 
         public static void WriteAll()
         {
+            WriteTeamReportsByPlayerCount();
+
             WriteAllScores();
             WriteTeamReports();
             WritePlayerReports();
             WriteUniquePlayers();
+            WriteLineChartData();
         }
 
 
@@ -199,8 +331,8 @@ namespace Homepage.Services.Amenhokit
         {
             using (var db = new DataContext())
             {
-                var players = db.Player.ToList();                
-                WriteToFile(players,"uniquePlayers.txt");
+                var players = db.Player.ToList();
+                WriteToFile(players, "uniquePlayers.txt");
             }
 
         }
@@ -212,7 +344,7 @@ namespace Homepage.Services.Amenhokit
                 File.SetAttributes(filePath, FileAttributes.Normal);
                 System.IO.File.Delete(filePath);
             }
-            
+
         }
 
         public static void WriteAllScores()
@@ -227,18 +359,19 @@ namespace Homepage.Services.Amenhokit
                             select new { player = p, playerscore = ps, session = s, game = g }
                 ).ToList();
 
-             
+
+
                 var obj = pscs.Select(p => new GraphDisplay
                 {
                     SessionId = p.session.ID,
-                    ScoreString = p.playerscore.Scorestring.ToLower().Replace(p.player.Name.ToLower(),"").Replace(" ","").ToUpper(),
+                    ScoreString = p.playerscore.Scorestring.ToLower().Replace(p.player.Name.ToLower(), "").Replace(" ", "").ToUpper(),
                     SessionDate = p.session.Date,
                     Score = p.playerscore.Score,
                     Name = p.player.Name,
                     DateString = p.session.Date.ToString("yyyy-MM-dd")
-                }).ToList();
+                }).OrderByDescending(e => e.SessionDate).ToList();
 
-                WriteToFile(obj,"graphOutput.txt");
+                WriteToFile(obj, "graphOutput.txt");
 
 
             }

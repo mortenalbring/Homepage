@@ -7,7 +7,11 @@
 
 
         this.viewOptions = {
-            allScoresDisplayLimit: 10
+            allScoresDisplayLimit: 10,
+            playerReport: {
+                orderBy: 'AverageBestScore',
+                desc: true
+            }
         }
         this.$rootScope = $rootScope;
         this.$scope = $scope;
@@ -25,7 +29,8 @@
 
         this.width = this.$window.innerWidth;
 
-      
+        this.teamReportByPlayerCount = [];
+
 
 
         this.players = this.dataService.players;
@@ -36,9 +41,29 @@
             self.players = result.data;
         });
 
-        DataService.getTeamReport().then(function (result) {
+        DataService.getTeamReport().then(function(result) {
             self.teamReport = result.data;
-        })
+        });
+
+        DataService.getTeamReportByPlayerCount().then(function (result) {
+            var xx = 42;
+            for (var i = 0; i < result.data.length; i++) {
+                var obj = result.data[i];
+                var key = obj.Key;
+                var teamReports = obj.Value;
+
+                var res = {
+                    Players: key,
+                    TeamReports: teamReports,
+                    viewLimit: 3
+                };
+                self.teamReportByPlayerCount.push(res);
+
+            }
+            
+        });
+
+
         DataService.getPlayerReports().then(function (result) {
             for (var i = 0; i < result.data.length; i++) {
                 self.playerReports.push(result.data[i]);
@@ -170,7 +195,15 @@
                 data[i].Date = new Date(year, month - 1, day);
             }
         }
+    }
 
+    StatsController.prototype.orderTableBy = function(prop) {
+        if (this.viewOptions.playerReport.orderBy == prop) {
+            this.viewOptions.playerReport.desc = !this.viewOptions.playerReport.desc;
+        } else {
+            this.viewOptions.playerReport.orderBy = prop;
+            this.viewOptions.playerReport.desc = true;
+        }
     }
 
 

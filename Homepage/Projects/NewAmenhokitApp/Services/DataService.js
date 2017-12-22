@@ -20,14 +20,18 @@
                 newScore: newscore
             });
     }
-
+    DataService.prototype.getTeamReportByPlayerCount = function () {
+        return this.$http.get('/Content/datafiles/teamreportByPlayerCount.txt');
+    }
     DataService.prototype.getTeamReport = function () {
         return this.$http.get('/Content/datafiles/teamReport.txt');
     }
     DataService.prototype.getPlayerReports = function () {
         return this.$http.get('/Content/datafiles/playerReports.txt');
     }
-
+    DataService.prototype.getLineChartData = function () {
+        return this.$http.get('/Content/datafiles/linechartdata.txt');
+    }
     DataService.prototype.getGraphDataFromFile = function () {
         return this.$http.get('/Content/datafiles/graphOutput.txt');
     }

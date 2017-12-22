@@ -15,7 +15,9 @@ namespace Homepage.Controllers
         public ActionResult Index()
         {
     
-          WriteDataToJson.WriteAll();
+        //  WriteDataToJson.WriteAll();
+
+         //   WriteDataToJson.WriteLineChartData();
         //    return RedirectToAction("ProjectAmenhokit", "Projects");
 
             return View("Index");

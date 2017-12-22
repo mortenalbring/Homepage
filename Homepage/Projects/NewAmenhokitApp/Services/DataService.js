@@ -22,17 +22,17 @@
     }
 
     DataService.prototype.getTeamReport = function () {
-        return this.$http.get('/tempfiles/teamReport.json');
+        return this.$http.get('/Content/datafiles/teamReport.txt');
     }
     DataService.prototype.getPlayerReports = function () {
-        return this.$http.get('/tempfiles/playerReports.json');
+        return this.$http.get('/Content/datafiles/playerReports.txt');
     }
 
     DataService.prototype.getGraphDataFromFile = function () {
-        return this.$http.get('/tempfiles/graphOutput.txt');
+        return this.$http.get('/Content/datafiles/graphOutput.txt');
     }
     DataService.prototype.getPlayersFromFile = function() {
-        return this.$http.get('/tempfiles/uniquePlayers.txt');
+        return this.$http.get('/Content/datafiles/uniquePlayers.txt');
     }
     DataService.prototype.getAllPlayers = function() {
         return this.$http.post('/Amenhokit/GetPlayers');

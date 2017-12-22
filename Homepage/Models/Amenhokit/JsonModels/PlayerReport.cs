@@ -13,5 +13,7 @@ namespace Homepage.Models.Amenhokit.JsonModels
         public float StrikesPerGame { get; set; }
         public int TotalNumberOfSpares { get; set; }
         public int TotalNumberOfTurkeys { get; set; }
+        public int TotalNumberOfGutterballs { get; set; }
+        public int Total999s { get; set; }
     }
 }

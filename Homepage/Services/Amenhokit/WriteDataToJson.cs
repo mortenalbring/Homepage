@@ -83,7 +83,7 @@ namespace Homepage.Services.Amenhokit
 
 
           
-            WriteToFile(orderedReports, "teamreport.json");
+            WriteToFile(orderedReports, "teamreport.txt");
 
         }
 
@@ -110,9 +110,15 @@ namespace Homepage.Services.Amenhokit
                 var totalStrikes = 0;
                 var totalSpares = 0;
                 var totalTurkeys = 0;
+                var totalGutters = 0;
+                var totalNineNineNines = 0;
                 var highestScoreSession = new PlayerScore();
                 foreach (var score in playerData)
                 {
+                    var scoreString = score.PlayerScore.Scorestring.Replace(" ", "").ToLower();
+                    scoreString = scoreString.Replace(score.Player.Name.ToLower(), "");
+
+
                     scoreSum = scoreSum + score.PlayerScore.Score;
                     if (score.PlayerScore.Score > highestScore)
                     {
@@ -120,15 +126,17 @@ namespace Homepage.Services.Amenhokit
                         highestScoreSession = score.PlayerScore;
                     }
                     
-                    totalStrikes = totalStrikes + score.PlayerScore.Scorestring.Count(e => e == 'X');
-                    if (score.PlayerScore.Scorestring.Contains("XXX"))
+                    totalStrikes = totalStrikes + scoreString.Count(e => e == 'x');
+                    totalGutters = totalGutters + scoreString.Count(e => e == '-');
+                  
+                    totalNineNineNines = totalNineNineNines + CountStringOccurrences(scoreString, "9-9-9-");
+
+                    if (totalNineNineNines > 0)
                     {
-                        var numturks = CountStringOccurrences(score.PlayerScore.Scorestring, "XXX");
                         var xx = 42;
                     }
-                    
 
-                    totalTurkeys = totalTurkeys + CountStringOccurrences(score.PlayerScore.Scorestring, "XXX");                    
+                    totalTurkeys = totalTurkeys + CountStringOccurrences(scoreString, "xxx");                    
                     totalSpares = totalSpares + score.PlayerScore.Scorestring.Count(e => e == '/');                                        
                 }
 
@@ -140,12 +148,14 @@ namespace Homepage.Services.Amenhokit
                 playerReport.TotalNumberOfStrikes = totalStrikes;
                 playerReport.TotalNumberOfSpares = totalSpares;
                 playerReport.TotalNumberOfTurkeys = totalTurkeys;
+                playerReport.TotalNumberOfGutterballs = totalGutters;
+                playerReport.Total999s = totalNineNineNines;
 
                 playerReport.StrikesPerGame = (float)playerReport.TotalNumberOfStrikes / playerReport.NumberOfGames;
                 output.Add(playerReport);
             }
 
-            WriteToFile(output,"playerReports.json");
+            WriteToFile(output,"playerReports.txt");
         }
 
 
@@ -162,37 +172,13 @@ namespace Homepage.Services.Amenhokit
             return count;
         }
 
-        private static void WriteToFile2(string filename, List<PlayerReport> playerReports)
-        {
-            var filePath = HttpContext.Current.Server.MapPath("~/tempfiles/" + filename);
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
-            var json = JsonConvert.SerializeObject(playerReports.ToArray());
+    
 
-            System.IO.File.WriteAllText(filePath, json);
-        }
-
-        private static void WriteToFile<T>(T obj, string filename)
-        {
-            var filePath = HttpContext.Current.Server.MapPath("~/tempfiles/" + filename);
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
-            var json = JsonConvert.SerializeObject(obj);
-
-            System.IO.File.WriteAllText(filePath, json);
-
-        }
         private static void WriteToFile<T>(List<T> objects, string filename)
         {
-            var filePath = HttpContext.Current.Server.MapPath("~/tempfiles/" + filename);
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
+            var filePath = HttpContext.Current.Server.MapPath("~/Content/datafiles/" + filename);
+            RemoveFile(filePath);
+
             var json = JsonConvert.SerializeObject(objects.ToArray());
 
             System.IO.File.WriteAllText(filePath, json);
@@ -213,22 +199,20 @@ namespace Homepage.Services.Amenhokit
         {
             using (var db = new DataContext())
             {
-                var players = db.Player.ToList();
-
-                var filePath = HttpContext.Current.Server.MapPath("~/tempfiles/uniquePlayers.txt");
-
-                if (System.IO.File.Exists(filePath))
-                {
-                    System.IO.File.Delete(filePath);
-                }
-
-                var json = JsonConvert.SerializeObject(players.ToArray());
-
-                System.IO.File.WriteAllText(filePath, json);
-
-
+                var players = db.Player.ToList();                
+                WriteToFile(players,"uniquePlayers.txt");
             }
 
+        }
+
+        private static void RemoveFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                File.SetAttributes(filePath, FileAttributes.Normal);
+                System.IO.File.Delete(filePath);
+            }
+            
         }
 
         public static void WriteAllScores()
@@ -243,21 +227,20 @@ namespace Homepage.Services.Amenhokit
                             select new { player = p, playerscore = ps, session = s, game = g }
                 ).ToList();
 
-                var graphFile = HttpContext.Current.Server.MapPath("~/tempfiles/graphOutput.txt");
-
-                if (System.IO.File.Exists(graphFile))
-                {
-                    System.IO.File.Delete(graphFile);
-                }
-                System.IO.File.WriteAllText(graphFile, JsonConvert.SerializeObject(pscs.Select(p => new GraphDisplay
+             
+                var obj = pscs.Select(p => new GraphDisplay
                 {
                     SessionId = p.session.ID,
-                    ScoreString = p.playerscore.Scorestring,
+                    ScoreString = p.playerscore.Scorestring.ToLower().Replace(p.player.Name.ToLower(),"").Replace(" ","").ToUpper(),
                     SessionDate = p.session.Date,
                     Score = p.playerscore.Score,
                     Name = p.player.Name,
                     DateString = p.session.Date.ToString("yyyy-MM-dd")
-                }).ToArray()));
+                }).ToList();
+
+                WriteToFile(obj,"graphOutput.txt");
+
+
             }
 
 

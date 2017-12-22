@@ -353,10 +353,10 @@ namespace Homepage.Controllers
 
         }
 
-        public void WriteAllScoresToFile()
+        
+        public void WriteAllJsonFiles()
         {
-            WriteDataToJson.WriteAllScores();
-
+            WriteDataToJson.WriteAll();
         }
 
 

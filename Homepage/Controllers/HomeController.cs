@@ -14,9 +14,8 @@ namespace Homepage.Controllers
     {
         public ActionResult Index()
         {
-          //  WriteDataToJson.WriteTeamReports();
-          //  WriteDataToJson.WritePlayerReports();
-        //  WriteDataToJson.WriteAll();
+    
+          WriteDataToJson.WriteAll();
         //    return RedirectToAction("ProjectAmenhokit", "Projects");
 
             return View("Index");

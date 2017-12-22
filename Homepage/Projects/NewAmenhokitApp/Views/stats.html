@@ -1,27 +1,65 @@
 ﻿<div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   
-                        Individual stats
-                   
+
+                    Individual stats
+
 
                 </div>
                 <div class="panel-body">
+                    <div class="btn btn-default"
+                         ng-class="{'btn-primary' : ss.divideByGames}"
+                         ng-click="ss.divideByGames = !ss.divideByGames">Divide totals by amount of game</div>
+
+
 
                     <table class="table table-bordered table-striped table-condensed">
                         <thead>
                             <tr>
-                                <th>Player</th>
+                                <th>
+                                    Player
+                                </th>
 
-                                <th>Average Score</th>
+                                <th ng-click="ss.orderGraphBy('AverageScore')">
+                                    Average Score
+                                </th>
                                 <th>Highest Score</th>
                                 <th>Games</th>
-                                <th>Total strikes</th>
-                                <th>Strikes / game</th>
-                                <th>Total spares</th>
-                                <th>Spares / game</th>
+                                <th>
+                                    <span ng-if="ss.divideByGames">
+                                        Strikes per game
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        Total strikes
+                                    </span>
+                                </th>
+                                <th>
+                                    <span ng-if="ss.divideByGames">
+                                        Spares per game
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        Total spares
+                                    </span>
+                                </th>
+                                <th>
+                                    <span ng-if="ss.divideByGames">
+                                        Turkeys per game
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        Total turkeys
+                                    </span>
+                                </th>
+                                <th>
+                                    <span ng-if="ss.divideByGames">
+                                        Gutterballs per game
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        Total gutterballs
+                                    </span>
+                                </th>
+                                <th>Total 999s</th>
 
                             </tr>
                         </thead>
@@ -32,8 +70,6 @@
                                     <a ng-href="#/player/{{p.Player.ID}}">
                                         {{p.Player.Name | titlecase}}
                                     </a>
-
-
                                 </td>
                                 <td>
                                     {{p.AverageScore | number : 2}}
@@ -45,19 +81,41 @@
                                     {{p.NumberOfGames}}
                                 </td>
                                 <td>
-                                    {{p.TotalNumberOfStrikes}}
+                                    <span ng-if="ss.divideByGames">
+                                        {{(p.TotalNumberOfStrikes / p.NumberOfGames) | number : 2 }}
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        {{p.TotalNumberOfStrikes}}
+                                    </span>
                                 </td>
                                 <td>
-                                    {{p.StrikesPerGame | number : 2}}
+                                    <span ng-if="ss.divideByGames">
+                                        {{(p.TotalNumberOfSpares / p.NumberOfGames) | number : 2 }}
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        {{p.TotalNumberOfSpares}}
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <span ng-if="ss.divideByGames">
+                                        {{(p.TotalNumberOfTurkeys / p.NumberOfGames) | number : 2 }}
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        {{p.TotalNumberOfTurkeys}}
+                                    </span>
                                 </td>
                                 <td>
-                                    {{p.TotalNumberOfSpares}}
+                                    <span ng-if="ss.divideByGames">
+                                        {{(p.TotalNumberOfGutterballs / p.NumberOfGames) | number : 2 }}
+                                    </span>
+                                    <span ng-if="!ss.divideByGames">
+                                        {{p.TotalNumberOfGutterballs}}
+                                    </span>
                                 </td>
                                 <td>
-                                    {{(p.TotalNumberOfSpares / p.NumberOfGames) | number : 2 }}
-                                </td>
-                                <td>
-                                    {{p.TotalNumberOfTurkeys}}
+                                    {{p.Total999s}}
                                 </td>
                             </tr>
                         </tbody>

@@ -251,6 +251,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datafiles\graphOutput.txt" />
+    <Content Include="Content\datafiles\playerReports.txt" />
+    <Content Include="Content\datafiles\teamreport.txt" />
+    <Content Include="Content\datafiles\uniquePlayers.txt" />
     <Content Include="Content\images\angularD3\AngularD3-cover.png" />
     <Content Include="Content\images\angularD3\AngularD3-preview.png" />
     <Content Include="Content\images\anyons.jpg" />
@@ -30347,8 +30351,6 @@
     <Content Include="Scripts\ng-file-upload-shim.min.js" />
     <Content Include="Scripts\ng-file-upload.js" />
     <Content Include="Scripts\ng-file-upload.min.js" />
-    <Content Include="tempfiles\graphOutput.txt" />
-    <Content Include="tempfiles\uniquePlayers.txt" />
     <Content Include="Views\Home\Redesign.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -30947,12 +30949,11 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
     <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
-    <Content Include="tempfiles\playerReports.json" />
-    <Content Include="tempfiles\teamreport.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\less\" />
+    <Folder Include="tempfiles\" />
     <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>

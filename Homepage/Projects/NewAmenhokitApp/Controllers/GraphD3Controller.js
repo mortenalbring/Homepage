@@ -36,6 +36,15 @@
                 };
             });
 
+            var seriesNames = d3.keys(data[0])
+                .filter(function (d) { return d !== "date"; })
+                .sort();
+            var series = seriesNames.map(function (series) {
+                return data.map(function (d) {
+                    return { date: d.date, temperature: d[series] };
+                });
+            });
+
             x.domain(d3.extent(data, function (d) { return d.date; }));
 
             y.domain([
@@ -60,16 +69,71 @@
                 .attr("fill", "#000")
                 .text("Temperature, ºF");
 
+
+            g.selectAll(".legend")
+                .data(seriesNames)
+                .enter()
+                
+                .append("text")
+                .attr("y", function(d, i) {
+                    return i * 15;
+                })
+                .attr("x",200)
+                .attr("class", "legend")
+                .style("fill", function(d, i) { return z(i) })                
+                
+                .text(function(d) {
+                    return d;
+                });
+
+            
+
+            g.selectAll("dot")
+                .data(series)
+                .enter().append("g")
+                .attr("class", "series")
+                .style("fill", function(d, i) { return z(i) })
+                .selectAll(".point")
+                .data(function(d) { return d; })
+                .enter()
+                .append("circle")
+                .attr("class", "point")
+                .attr("r", function(d) {
+                    if (d.temperature > 0) {
+                        return 5;
+                    }
+                        return 0;
+
+                    }
+                )
+                .attr("cx", function (d) {
+                    var zz = 42;
+
+                    return x(d.date);
+                })
+                .attr("cy", function (d) {
+                   
+                        return y(d.temperature);    
+                    
+                  
+                });
+
+             
+
+        
             var city = g.selectAll(".city")
                 .data(cities)
                 .enter().append("g")
                 .attr("class", "city");
 
+
+            /*
             city.append("path")
                 .attr("class", "line")
                 .attr("d", function (d) { return line(d.values); })
                 .style("stroke", function (d) { return z(d.id); });
 
+            */
             city.append("text")
                 .datum(function (d) { return { id: d.id, value: d.values[d.values.length - 1] }; })
                 .attr("transform", function (d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })

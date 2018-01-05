@@ -40,12 +40,29 @@
 }
 
 
+
+#graph {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+
 #graph-container .tooltip {
     border: 1px solid #ccc;
+    font-size: 12px;    
+    color: #fff;    
+    padding: 5px;
+    text-align: center;
 }
 #graph-container .point {
     cursor: pointer;    
 }
 #graph-container .legend {
     cursor: pointer;
+}
+
+#graph-container .grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
 }

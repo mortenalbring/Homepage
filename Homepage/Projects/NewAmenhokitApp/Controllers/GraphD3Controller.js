@@ -72,7 +72,17 @@
     }
     GraphD3Controller.prototype.renderChart = function (data) {
         var self = this;
-        
+
+        function makeXGridlines() {
+            return d3.axisBottom(self.x)
+                .ticks(15);
+        }
+     
+        function makeYGridlines() {
+            return d3.axisLeft(self.y)
+                .ticks(15);
+        }
+
         var seriesNames = d3.keys(data[0])
             .filter(function (d) { return d !== "date"; })
             .sort();
@@ -95,14 +105,26 @@
 
         self.g.append("g")
             .attr("class", "axis axis--y")
-            .call(d3.axisLeft(self.y))
-            .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
-            .attr("dy", "0.71em")
-            .attr("fill", "#000")
-            .text("Score");
+            .call(d3.axisLeft(self.y));
+         
 
+        // add the X gridlines
+        self.g.append("g")
+            .attr("class", "grid")
+            .attr("transform", "translate(0," + self.height + ")")
+            
+            .call(makeXGridlines()
+                .tickSize(-self.height)
+                .tickFormat("")
+            );
+
+        // add the Y gridlines
+        self.g.append("g")
+            .attr("class", "grid")
+            .call(makeYGridlines()
+                .tickSize(-self.width)
+                .tickFormat("")
+            );
 
         self.g.selectAll(".legend")
             .data(seriesNames)
@@ -110,7 +132,7 @@
 
             .append("text")
             .attr("y", function (d, i) {
-                return i * 18;
+                return (i * 18)+20;
             })
             .style("font", "14px sans-serif")
             .attr("x", 20)
@@ -142,11 +164,17 @@
                 self.setSelectedSeries(d.series);
             })
             .on("mouseover", function (d) {
-                
+                var niceDate = d.date.getDate() + "/" + (d.date.getMonth() + 1) + "/" + d.date.getFullYear();
+
+                var indx = seriesNames.indexOf(d.series);
+                var color = self.z(indx);
                 self.tooltip.transition().duration(200).style("opacity", .9);
-                self.tooltip.html(d.series + "<br/>" + d.score)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
+                self.tooltip.html(
+                        niceDate + "<br/>" +
+                    d.series + "<br/>" + d.score)
+                    .style("left", "40%")
+                    .style("background",color)
+                    .style("top", "40px");
             })
             .on("mouseout", function (d) {
                 self.tooltip.transition()

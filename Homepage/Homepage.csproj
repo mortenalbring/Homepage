@@ -253,6 +253,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\datafiles\graphOutput.txt" />
     <Content Include="Content\datafiles\linechartdata.txt" />
+    <Content Include="Content\datafiles\linechartdata2.txt" />
     <Content Include="Content\datafiles\playerReports.txt" />
     <Content Include="Content\datafiles\teamreport.txt" />
     <Content Include="Content\datafiles\teamreportByPlayerCount.txt" />

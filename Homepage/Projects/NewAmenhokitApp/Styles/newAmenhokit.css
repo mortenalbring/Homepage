@@ -38,3 +38,11 @@
     color: blue;
     font-size: 0.8em;
 }
+
+
+#graph-container .tooltip {
+    border: 1px solid #ccc;
+}
+#graph-container .point {
+    cursor: pointer;    
+}

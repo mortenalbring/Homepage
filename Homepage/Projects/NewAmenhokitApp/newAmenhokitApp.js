@@ -1,6 +1,7 @@
 ﻿var app = angular.module("NewAmenhokit", ['ui.router']);
 app.controller("HomeController", HomeController);
 app.controller("GraphController", GraphController);
+app.controller("GraphD3Controller", GraphD3Controller);
 app.controller("SessionsController", SessionsController);
 app.controller("PlayerController", PlayerController);
 app.controller("StatsController", StatsController);

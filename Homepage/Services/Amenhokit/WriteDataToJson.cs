@@ -137,6 +137,35 @@ namespace Homepage.Services.Amenhokit
             WriteToFile(orderedReports, "teamreport.txt");
         }
 
+        public static void WriteWinReport()
+        {
+            var allData = GetAllData();
+
+            var allGames = allData.GroupBy(e => e.Game.ID);
+
+            var output = new Dictionary<int,int>();
+
+            foreach (var game in allGames)
+            {
+
+                var winner = game.OrderByDescending(e => e.PlayerScore.Score).First();
+                var winningPlayer = winner.Player;
+
+                if (output.ContainsKey(winningPlayer.ID))
+                {
+                    output[winningPlayer.ID] = output[winningPlayer.ID] + 1;
+                }
+                else
+                {
+                    output.Add(winningPlayer.ID,1);
+                }
+            }
+
+            
+            WriteToFile(output,"winnnerReport.txt");
+
+        }
+
         public static void WritePlayerReports()
         {
             var allData = GetAllData();
@@ -293,6 +322,15 @@ namespace Homepage.Services.Amenhokit
         }
 
 
+
+        private static void WriteToFile<T>(Dictionary<T, T> objects, string filename)
+        {
+            var filePath = HttpContext.Current.Server.MapPath("~/Content/datafiles/" + filename);
+            RemoveFile(filePath);
+            var json = JsonConvert.SerializeObject(objects.ToArray());
+
+            System.IO.File.WriteAllText(filePath, json);
+        }
 
         private static void WriteToFile<T>(Dictionary<int,T> objects, string filename)
         {

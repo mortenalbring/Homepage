@@ -19,6 +19,14 @@
                 controller: "GraphController",
                 controllerAs: "gc"
             })
+            .state("home.d3",
+                {
+                url: "d3",
+            templateUrl: "/Projects/NewAmenhokitApp/Views/graphd3.html",
+            controller: "GraphD3Controller",
+            controllerAs: "gdt"
+                }
+        )
 
             .state("home.stats",
             {

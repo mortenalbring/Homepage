@@ -1,4 +1,4 @@
-Date	bern	george	mort	seona	simon	tom
+date	bern	george	mort	seona	simon	tom
 2014-09-30		149	132	124			
 2014-10-07		129	127	115			
 2014-10-14		129	116	151		110	

@@ -12,7 +12,7 @@
 
         this.width = this.svg.attr("width") - this.margin.left - this.margin.right;
         this.height = this.svg.attr("height") - this.margin.top - this.margin.bottom;
-            this.g = this.svg.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+        this.g = this.svg.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
 
 
         this.parseTime = d3.timeParse("%Y%m%d");
@@ -28,13 +28,16 @@
             .x(function (d) { return x(d.date); })
             .y(function (d) { return y(d.score); });
 
-        var selectedSeries = null;
+        this.selectedSeries = null;
 
+        this.data = null;
 
         var self = this;
 
         d3.tsv("/Content/datafiles/linechartdata2.txt", type, function (error, data) {
             if (error) throw error;
+
+            self.data = data;
 
             self.renderChart(data);
 
@@ -49,9 +52,27 @@
 
     }
 
-    GraphD3Controller.prototype.renderChart = function (data) {
-        var self = this; 
+    GraphD3Controller.prototype.clearChart = function() {
+        var self = this;
 
+        self.g.remove();
+
+        this.g = this.svg.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+
+    }
+    GraphD3Controller.prototype.setSelectedSeries = function(series) {
+        if (this.selectedSeries === series) {
+            this.selectedSeries = null;
+        } else {
+            this.selectedSeries = series;
+        }
+        this.clearChart();
+        this.renderChart(this.data);
+
+    }
+    GraphD3Controller.prototype.renderChart = function (data) {
+        var self = this;
+        
         var seriesNames = d3.keys(data[0])
             .filter(function (d) { return d !== "date"; })
             .sort();
@@ -89,14 +110,19 @@
 
             .append("text")
             .attr("y", function (d, i) {
-                return i * 15;
+                return i * 18;
             })
-            .style("font", "10px sans-serif")
+            .style("font", "14px sans-serif")
             .attr("x", 20)
             .attr("class", "legend")
             .style("fill", function (d, i) { return self.z(i) })
-
+            .on("click", function (d) {
+                self.setSelectedSeries(d);
+            })
             .text(function (d) {
+                if (self.selectedSeries && self.selectedSeries === d) {
+                    return d + "*";
+                }
                 return d;
             });
 
@@ -111,12 +137,12 @@
             .data(function (d) { return d; })
             .enter()
             .append("circle")
-            .style("opacity", 0.5)
-            .attr("class", function (d) {
-                return d.series;
+            .style("opacity", 0.9)
+            .on("click", function (d) {
+                self.setSelectedSeries(d.series);
             })
             .on("mouseover", function (d) {
-                self.selectedSeries = d.series;
+                
                 self.tooltip.transition().duration(200).style("opacity", .9);
                 self.tooltip.html(d.series + "<br/>" + d.score)
                     .style("left", (d3.event.pageX) + "px")
@@ -129,7 +155,9 @@
             })
             .attr("class", "point")
             .attr("r", function (d) {
-
+                if (self.selectedSeries && self.selectedSeries !== d.series) {
+                    return 0;
+                }
                 return 5;
             })
             .attr("cx", function (d) {

@@ -46,3 +46,6 @@
 #graph-container .point {
     cursor: pointer;    
 }
+#graph-container .legend {
+    cursor: pointer;
+}

@@ -8,7 +8,7 @@
         this.dataService = DataService;
 
         var svg = d3.select("#graph-container"),
-            margin = { top: 20, right: 80, bottom: 30, left: 50 },
+            margin = { top: 20, right: 80, bottom: 50, left: 50 },
             width = svg.attr("width") - margin.left - margin.right,
             height = svg.attr("height") - margin.top - margin.bottom,
             g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -22,38 +22,30 @@
         var line = d3.line()
             .curve(d3.curveBasis)
             .x(function (d) { return x(d.date); })
-            .y(function (d) { return y(d.temperature); });
+            .y(function (d) { return y(d.score); });
 
         d3.tsv("/Content/datafiles/linechartdata2.txt", type, function (error, data) {
             if (error) throw error;
 
-            var cities = data.columns.slice(1).map(function (id) {
-                return {
-                    id: id,
-                    values: data.map(function (d) {
-                        return { date: d.date, temperature: d[id] };
-                    })
-                };
-            });
+          
 
             var seriesNames = d3.keys(data[0])
                 .filter(function (d) { return d !== "date"; })
                 .sort();
             var series = seriesNames.map(function (series) {
                 return data.map(function (d) {
-                    return { date: d.date, temperature: d[series] };
+                    return { date: d.date, score: d[series] };
+                }).filter(function(v) {
+                    return v.score > 0;
                 });
             });
 
-            x.domain(d3.extent(data, function (d) { return d.date; }));
+            
+            x.domain(d3.extent(d3.merge(series), function (d) { return d.date; })).nice();
+            y.domain(d3.extent(d3.merge(series), function (d) { return d.score; })).nice();
 
-            y.domain([
-                d3.min(cities, function (c) { return d3.min(c.values, function (d) { return d.temperature; }); }),
-                d3.max(cities, function (c) { return d3.max(c.values, function (d) { return d.temperature; }); })
-            ]);
 
-            z.domain(cities.map(function (c) { return c.id; }));
-
+          
             g.append("g")
                 .attr("class", "axis axis--x")
                 .attr("transform", "translate(0," + height + ")")
@@ -67,7 +59,7 @@
                 .attr("y", 6)
                 .attr("dy", "0.71em")
                 .attr("fill", "#000")
-                .text("Temperature, ºF");
+                .text("Score");
 
 
             g.selectAll(".legend")
@@ -78,7 +70,8 @@
                 .attr("y", function(d, i) {
                     return i * 15;
                 })
-                .attr("x",200)
+                .style("font", "10px sans-serif")
+                .attr("x",20)
                 .attr("class", "legend")
                 .style("fill", function(d, i) { return z(i) })                
                 
@@ -99,7 +92,7 @@
                 .append("circle")
                 .attr("class", "point")
                 .attr("r", function(d) {
-                    if (d.temperature > 0) {
+                    if (d.score > 0) {
                         return 5;
                     }
                         return 0;
@@ -113,7 +106,7 @@
                 })
                 .attr("cy", function (d) {
                    
-                        return y(d.temperature);    
+                        return y(d.score);    
                     
                   
                 });
@@ -121,26 +114,6 @@
              
 
         
-            var city = g.selectAll(".city")
-                .data(cities)
-                .enter().append("g")
-                .attr("class", "city");
-
-
-            /*
-            city.append("path")
-                .attr("class", "line")
-                .attr("d", function (d) { return line(d.values); })
-                .style("stroke", function (d) { return z(d.id); });
-
-            */
-            city.append("text")
-                .datum(function (d) { return { id: d.id, value: d.values[d.values.length - 1] }; })
-                .attr("transform", function (d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
-                .attr("x", 3)
-                .attr("dy", "0.35em")
-                .style("font", "10px sans-serif")
-                .text(function (d) { return d.id; });
         });
 
         function type(d, _, columns) {

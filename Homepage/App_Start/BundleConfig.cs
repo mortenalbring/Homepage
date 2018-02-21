@@ -82,7 +82,7 @@ namespace Homepage
                 .IncludeDirectory("~/Projects/NewAmenhokitApp/Styles","*.css")
                 );
 
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }
 
 

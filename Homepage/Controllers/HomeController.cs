@@ -14,11 +14,12 @@ namespace Homepage.Controllers
     {
         public ActionResult Index()
         {
-    
+
+          //  WriteDataToJson.WriteLineChartDataFull();
         //  WriteDataToJson.WriteAll();
 
-         //   WriteDataToJson.WriteLineChartData();
-        //    return RedirectToAction("ProjectAmenhokit", "Projects");
+            //   WriteDataToJson.WriteLineChartData();
+            //    return RedirectToAction("ProjectAmenhokit", "Projects");
 
             return View("Index");
         }

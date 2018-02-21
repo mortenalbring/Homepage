@@ -34,14 +34,19 @@
 
         var self = this;
 
-        d3.tsv("/Content/datafiles/linechartdata2.txt", type, function (error, data) {
+        this.allScoreFile = "/Content/datafiles/linechartdata2.txt";
+        this.bestScoreFile = "/Content/datafiles/linechartdataall.txt";
+
+        this.loadFileAndDraw(this.bestScoreFile);
+         
+    }
+
+    GraphD3Controller.prototype.loadFileAndDraw = function (file) {
+        var self = this;
+        d3.tsv(file, type, function (error, data) {
             if (error) throw error;
-
             self.data = data;
-
             self.renderChart(data);
-
-
         });
 
         function type(d, _, columns) {
@@ -49,7 +54,17 @@
             for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
             return d;
         }
+    }
+ 
 
+
+    GraphD3Controller.prototype.setAllScoreFile = function() {
+        this.clearChart();
+        this.loadFileAndDraw(this.allScoreFile);
+    }
+    GraphD3Controller.prototype.setBestScoreFile = function () {
+        this.clearChart();
+        this.loadFileAndDraw(this.bestScoreFile);
     }
 
     GraphD3Controller.prototype.clearChart = function () {
@@ -70,6 +85,7 @@
         this.renderChart(this.data);
 
     }
+ 
     GraphD3Controller.prototype.renderChart = function (data) {
         var self = this;
 
@@ -226,12 +242,13 @@
             .data(function (d) { return d; })
             .enter()
             .append("circle")
+          
             .style("opacity", 0.9)
             .on("click", function (d) {
                 self.setSelectedSeries(d.series);
             })
             .on("mouseover", function (d) {
-                var niceDate = d.date.getDate() + "/" + (d.date.getMonth() + 1) + "/" + d.date.getFullYear();
+                var niceDate = d.date.getFullYear() + "-" + (d.date.getMonth() + 1) + "-" + d.date.getDate();
 
                 var indx = seriesNames.indexOf(d.series);
                 var color = self.z(indx);

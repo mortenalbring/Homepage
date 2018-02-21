@@ -249,6 +249,78 @@ namespace Homepage.Services.Amenhokit
         }
 
 
+        public static void WriteLineChartDataFull()
+        {
+            var allData = GetAllData();
+
+            var uniqueSessionDates = allData.Select(e => e.Session.Date).Distinct().OrderBy(e => e).ToList();
+
+
+
+            var uniquePlayers = allData.Select(e => e.Player.Name).Distinct().OrderBy(e => e).ToList();
+
+            var allowedPlayers = new List<string>();
+            foreach (var p in uniquePlayers)
+            {
+                var scoreCount = allData.Count(e => e.Player.Name == p);
+                if (scoreCount > 50)
+                {
+                    allowedPlayers.Add(p);
+                }
+            }
+
+            var output = "date";
+
+            foreach (var p in allowedPlayers)
+            {
+                output = output + "\t" + p;
+            }
+            output = output + "\n";
+
+
+            var multiples = new List<PlayerSessionScore>();
+
+            foreach (var session in uniqueSessionDates)
+            {
+                var sessionDate = session.ToString("yyyy-MM-dd");
+
+                
+
+                var games = allData.Where(e => e.Session.Date == session).Select(e => e.Game.GameNumber).Distinct().ToList();
+
+                foreach (var game in games)
+                {
+                    output = output + session.ToString("yyyyMMdd") + "\t";
+                    foreach (var p in allowedPlayers)
+                    {
+                        var r = "";
+                        var scores = allData
+                            .Where(e => e.Session.Date == session && e.Game.GameNumber == game && e.Player.Name == p).ToList();
+                        
+                        if (scores.Count > 1)
+                        {
+                            multiples.AddRange(scores);                            
+                        }
+
+                        if (scores.Count > 0)
+                        {
+                            var score = scores.First().PlayerScore.Score;
+                            r = score.ToString();
+                        }
+                        output = output + r + "\t";
+                    }
+
+                    output = output + "\n";
+                }
+                         
+            }
+
+            var filepath = HttpContext.Current.Server.MapPath("~/Content/datafiles/linechartdataall.txt");
+
+            File.WriteAllText(filepath, output);
+
+        }
+
         public static void WriteLineChartData()
         {
             var allData = GetAllData();

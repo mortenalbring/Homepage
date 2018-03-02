@@ -41,5 +41,10 @@ namespace Homepage.Controllers
             return View();
         }
 
+        public ActionResult FractalChaos()
+        {
+            return View();
+        }
+
     }
 }

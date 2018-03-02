@@ -30961,6 +30961,7 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
     <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
+    <Content Include="Views\Posts\FractalChaos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

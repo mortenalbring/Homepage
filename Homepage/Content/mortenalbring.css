@@ -217,7 +217,7 @@ h1, h2, h3 {
 .post-title {
     padding-top: 0px;
     position: relative;
-    background: #5faefb;
+    background: #007fee;
     padding-bottom: 40px;
     margin-bottom: 20px;   
     min-height:100px;    
@@ -230,20 +230,19 @@ h1, h2, h3 {
     }
 
     .post-title h1 {                                
-        text-align: center ;
+        text-align: center;
         font-family: 'Open Sans', sans-serif;
         font-weight: 800;
         color: #fff;
         text-shadow: 1px 4px #808080, 4px 4px 0px rgba(0, 0, 0, 0.15);
     }
-    .post-title-text {
-        background: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), white);
-        
-        width:100%;
-        position: absolute;
-        bottom:0;
-
-    }
+.post-title-text {
+    background: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), white);
+    width: 100%;
+    position: absolute;
+    padding-bottom: 2em;
+    bottom: 0;
+}
    
 
     .post-title-tsucs {

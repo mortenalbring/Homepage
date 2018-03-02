@@ -9,150 +9,322 @@
 
                 </div>
                 <div class="panel-body">
+                <table class="table table-bordered table-striped table-condensed table-playerReport">
+                    <thead>
+                    <tr>
+                        <th>
+                            Player
+                        </th>
+
+                        <th class="clickable"
+                            title="Average score across all games"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'AverageScore' }"
+                            ng-click="ss.orderTableBy('AverageScore')">
+                            Average Score
+                        </th>
+                        <th class="clickable"
+                            title="Average score across the best game per session"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'AverageBestScore' }"
+                            ng-click="ss.orderTableBy('AverageBestScore')">
+                            Average Best Score
+                        </th>
+
+                        <th class="clickable"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'HighestScore' }"
+                            ng-click="ss.orderTableBy('HighestScore')">
+
+                            Highest Score
+                        </th>
+                       
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="p in ss.playerReports | orderBy: ss.viewOptions.playerReport.orderBy:ss.viewOptions.playerReport.desc ">
+                        <td>
+                            <a ng-href="#/player/{{p.Player.ID}}">
+                                {{p.Player.Name | titlecase}}
+                            </a>
+                        </td>
+                        <td>
+                            {{p.AverageScore | number : 2}}
+                        </td>
+                        <td>
+                            {{p.AverageBestScore | number : 2}}
+                        </td>
+                        <td>
+                            {{p.HighestScore}}
+                        </td>
+                        
+                    </tr>
+                    </tbody>
+                </table>
 
 
                     <table class="table table-bordered table-striped table-condensed table-playerReport">
                         <thead>
-                            <tr>
-                                <th>
-                                    Player
-                                </th>
+                        <tr>
+                            <th>
+                                Player
+                            </th>
 
-                                <th class="clickable"
-                                    title="Average score across all games"
-                                    ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'AverageScore' }"
-                                    ng-click="ss.orderTableBy('AverageScore')">
-                                    Average Score
-                                </th>
-                                <th class="clickable"
-                                    title="Average score across the best game per session"
-                                    ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'AverageBestScore' }"
-                                    ng-click="ss.orderTableBy('AverageBestScore')">
-                                    Average Best Score
-                                </th>
+                           
+                            <th class="clickable"
+                                ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'NumberOfGames' }"
+                                ng-click="ss.orderTableBy('NumberOfGames')">
 
-                                <th class="clickable"
-                                    ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'HighestScore' }"
-                                    ng-click="ss.orderTableBy('HighestScore')">
+                                Games
+                            </th>
+                            <th class="clickable"
+                                ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'NumberOfSessions' }"
+                                ng-click="ss.orderTableBy('NumberOfSessions')">
 
-                                    Highest Score
-                                </th>
-                                <th class="clickable"
-                                    ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'NumberOfGames' }"
-                                    ng-click="ss.orderTableBy('NumberOfGames')">
+                                Sessions
+                            </th>
+                            <th class="clickable"
+                                ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'TotalNumberOfStrikes' }"
+                                ng-click="ss.orderTableBy('TotalNumberOfStrikes')">
+                                <span ng-if="ss.divideByGames">
+                                    Strikes per game
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    Total strikes
+                                </span>
+                            </th>
+                            <th class="clickable"
+                                ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'TotalNumberOfSpares' }"
+                                ng-click="ss.orderTableBy('TotalNumberOfSpares')">
 
-                                    Games
-                                </th>
-                                <th class="clickable"
-                                    ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'NumberOfSessions' }"
-                                    ng-click="ss.orderTableBy('NumberOfSessions')">
+                                <span ng-if="ss.divideByGames">
+                                    Spares per game
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    Total spares
+                                </span>
+                            </th>
+                            <th>
+                                <span ng-if="ss.divideByGames">
+                                    Turkeys per game
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    Total turkeys
+                                </span>
+                            </th>
+                            <th>
+                                <span ng-if="ss.divideByGames">
+                                    Gutterballs per game
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    Total gutterballs
+                                </span>
+                            </th>
+                            <th>Total 999s</th>
 
-                                    Sessions
-                                </th>
-                                <th class="clickable"
-                                    ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'TotalNumberOfStrikes' }"
-                                    ng-click="ss.orderTableBy('TotalNumberOfStrikes')">
-                                    <span ng-if="ss.divideByGames">
-                                        Strikes per game
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        Total strikes
-                                    </span>
-                                </th>
-                                <th class="clickable"
-                                    ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'TotalNumberOfSpares' }"
-                                    ng-click="ss.orderTableBy('TotalNumberOfSpares')">
-
-                                    <span ng-if="ss.divideByGames">
-                                        Spares per game
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        Total spares
-                                    </span>
-                                </th>
-                                <th>
-                                    <span ng-if="ss.divideByGames">
-                                        Turkeys per game
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        Total turkeys
-                                    </span>
-                                </th>
-                                <th>
-                                    <span ng-if="ss.divideByGames">
-                                        Gutterballs per game
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        Total gutterballs
-                                    </span>
-                                </th>
-                                <th>Total 999s</th>
-
-                            </tr>
+                        </tr>
                         </thead>
 
                         <tbody>
-                            <tr ng-repeat="p in ss.playerReports | orderBy: ss.viewOptions.playerReport.orderBy:ss.viewOptions.playerReport.desc ">
-                                <td>
-                                    <a ng-href="#/player/{{p.Player.ID}}">
-                                        {{p.Player.Name | titlecase}}
-                                    </a>
-                                </td>
-                                <td>
-                                    {{p.AverageScore | number : 2}}
-                                </td>
-                                <td>
-                                    {{p.AverageBestScore | number : 2}}
-                                </td>
-                                <td>
-                                    {{p.HighestScore}}
-                                </td>
-                                <td>
-                                    {{p.NumberOfGames}}
-                                </td>
-                                <td>
-                                    {{p.NumberOfSessions}}
-                                </td>
-                                <td>
-                                    <span ng-if="ss.divideByGames">
-                                        {{(p.TotalNumberOfStrikes / p.NumberOfGames) | number : 2 }}
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        {{p.TotalNumberOfStrikes}}
-                                    </span>
-                                </td>
-                                <td>
-                                    <span ng-if="ss.divideByGames">
-                                        {{(p.TotalNumberOfSpares / p.NumberOfGames) | number : 2 }}
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        {{p.TotalNumberOfSpares}}
-                                    </span>
-                                </td>
+                        <tr ng-repeat="p in ss.playerReports | orderBy: ss.viewOptions.playerReport.orderBy:ss.viewOptions.playerReport.desc ">
+                            <td>
+                                <a ng-href="#/player/{{p.Player.ID}}">
+                                    {{p.Player.Name | titlecase}}
+                                </a>
+                            </td>
+                          
+                          
+                           
+                            <td>
+                                {{p.NumberOfGames}}
+                            </td>
+                            <td>
+                                {{p.NumberOfSessions}}
+                            </td>
+                            <td>
+                                <span ng-if="ss.divideByGames">
+                                    {{(p.TotalNumberOfStrikes / p.NumberOfGames) | number : 2 }}
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    {{p.TotalNumberOfStrikes}}
+                                </span>
+                            </td>
+                            <td>
+                                <span ng-if="ss.divideByGames">
+                                    {{(p.TotalNumberOfSpares / p.NumberOfGames) | number : 2 }}
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    {{p.TotalNumberOfSpares}}
+                                </span>
+                            </td>
 
-                                <td>
+                            <td>
 
-                                    <span ng-if="ss.divideByGames">
-                                        {{(p.TotalNumberOfTurkeys / p.NumberOfGames) | number : 2 }}
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        {{p.TotalNumberOfTurkeys}}
-                                    </span>
-                                </td>
-                                <td>
-                                    <span ng-if="ss.divideByGames">
-                                        {{(p.TotalNumberOfGutterballs / p.NumberOfGames) | number : 2 }}
-                                    </span>
-                                    <span ng-if="!ss.divideByGames">
-                                        {{p.TotalNumberOfGutterballs}}
-                                    </span>
-                                </td>
-                                <td>
-                                    {{p.Total999s}}
-                                </td>
-                            </tr>
+                                <span ng-if="ss.divideByGames">
+                                    {{(p.TotalNumberOfTurkeys / p.NumberOfGames) | number : 2 }}
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    {{p.TotalNumberOfTurkeys}}
+                                </span>
+                            </td>
+                            <td>
+                                <span ng-if="ss.divideByGames">
+                                    {{(p.TotalNumberOfGutterballs / p.NumberOfGames) | number : 2 }}
+                                </span>
+                                <span ng-if="!ss.divideByGames">
+                                    {{p.TotalNumberOfGutterballs}}
+                                </span>
+                            </td>
+                            <td>
+                                {{p.Total999s}}
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
+                  
+                    <!-- 
+                <table class="table table-bordered table-striped table-condensed table-playerReport">
+                    <thead>
+                    <tr>
+                        <th>
+                            Player
+                        </th>
+
+                        <th class="clickable"
+                            title="Average score across all games"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'AverageScore' }"
+                            ng-click="ss.orderTableBy('AverageScore')">
+                            Average Score
+                        </th>
+                        <th class="clickable"
+                            title="Average score across the best game per session"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'AverageBestScore' }"
+                            ng-click="ss.orderTableBy('AverageBestScore')">
+                            Average Best Score
+                        </th>
+
+                        <th class="clickable"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'HighestScore' }"
+                            ng-click="ss.orderTableBy('HighestScore')">
+
+                            Highest Score
+                        </th>
+                        <th class="clickable"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'NumberOfGames' }"
+                            ng-click="ss.orderTableBy('NumberOfGames')">
+
+                            Games
+                        </th>
+                        <th class="clickable"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'NumberOfSessions' }"
+                            ng-click="ss.orderTableBy('NumberOfSessions')">
+
+                            Sessions
+                        </th>
+                        <th class="clickable"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'TotalNumberOfStrikes' }"
+                            ng-click="ss.orderTableBy('TotalNumberOfStrikes')">
+                            <span ng-if="ss.divideByGames">
+                                Strikes per game
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                Total strikes
+                            </span>
+                        </th>
+                        <th class="clickable"
+                            ng-class="{'selected' : ss.viewOptions.playerReport.orderBy == 'TotalNumberOfSpares' }"
+                            ng-click="ss.orderTableBy('TotalNumberOfSpares')">
+
+                            <span ng-if="ss.divideByGames">
+                                Spares per game
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                Total spares
+                            </span>
+                        </th>
+                        <th>
+                            <span ng-if="ss.divideByGames">
+                                Turkeys per game
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                Total turkeys
+                            </span>
+                        </th>
+                        <th>
+                            <span ng-if="ss.divideByGames">
+                                Gutterballs per game
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                Total gutterballs
+                            </span>
+                        </th>
+                        <th>Total 999s</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="p in ss.playerReports | orderBy: ss.viewOptions.playerReport.orderBy:ss.viewOptions.playerReport.desc ">
+                        <td>
+                            <a ng-href="#/player/{{p.Player.ID}}">
+                                {{p.Player.Name | titlecase}}
+                            </a>
+                        </td>
+                        <td>
+                            {{p.AverageScore | number : 2}}
+                        </td>
+                        <td>
+                            {{p.AverageBestScore | number : 2}}
+                        </td>
+                        <td>
+                            {{p.HighestScore}}
+                        </td>
+                        <td>
+                            {{p.NumberOfGames}}
+                        </td>
+                        <td>
+                            {{p.NumberOfSessions}}
+                        </td>
+                        <td>
+                            <span ng-if="ss.divideByGames">
+                                {{(p.TotalNumberOfStrikes / p.NumberOfGames) | number : 2 }}
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                {{p.TotalNumberOfStrikes}}
+                            </span>
+                        </td>
+                        <td>
+                            <span ng-if="ss.divideByGames">
+                                {{(p.TotalNumberOfSpares / p.NumberOfGames) | number : 2 }}
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                {{p.TotalNumberOfSpares}}
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <span ng-if="ss.divideByGames">
+                                {{(p.TotalNumberOfTurkeys / p.NumberOfGames) | number : 2 }}
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                {{p.TotalNumberOfTurkeys}}
+                            </span>
+                        </td>
+                        <td>
+                            <span ng-if="ss.divideByGames">
+                                {{(p.TotalNumberOfGutterballs / p.NumberOfGames) | number : 2 }}
+                            </span>
+                            <span ng-if="!ss.divideByGames">
+                                {{p.TotalNumberOfGutterballs}}
+                            </span>
+                        </td>
+                        <td>
+                            {{p.Total999s}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                    -->
                     <div class="btn btn-default"
                          ng-class="{'btn-primary' : ss.divideByGames}"
                          ng-click="ss.divideByGames = !ss.divideByGames">Divide totals by amount of games</div>

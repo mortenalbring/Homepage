@@ -193,10 +193,10 @@
 
         self.g.selectAll(".legend")
             .data(seriesNames)
-            .enter()
+            .enter()    
             .append("text")
-            .attr("y", function (d, i) {return (i * 18) + 20;})
-            .style("font", "14px sans-serif")
+            .attr("y", function (d, i) {return (i * 20) + 20;})
+          
             .attr("x", 20)
             .attr("class", "legend")
             .style("fill", function (d, i) { return self.z(i) })

@@ -264,6 +264,11 @@
     <Content Include="Content\images\angularD3\AngularD3-preview.png" />
     <Content Include="Content\images\anyons.jpg" />
     <Content Include="Content\images\dimerschematic.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00001.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00002.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00003.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00004.png" />
+    <Content Include="Content\images\fractalChaos\triangle.png" />
     <Content Include="Content\images\me.png" />
     <Content Include="Content\images\menger\menger-layers-loop.gif" />
     <Content Include="Content\images\menger\menger-level-0-sm.png" />

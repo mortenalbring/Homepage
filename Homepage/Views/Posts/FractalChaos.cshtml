@@ -2,13 +2,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="post-title post-title-menger">
+<div class="post-title post-title-fc">
     <div class="post-title-text">
         <h1>Fractal Chaos</h1>
     </div>
 </div>
 
 
-<div class="container">
- 
+<div class="container fractal-chaos-container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+            The chaos game is a game that starts with a series of anchor points. We'll start with three anchor points, and place a point somewhere on the canvas between these anchor points.
+            <br />
+            <img class="fc-image" src="~/Content/images/fractalChaos/fc-triangle_f00002.png" />
+            <br />
+            We'll randomly choose one of these anchor points, and then draw a new point halfway between that point and the chosen anchor point.
+
+            <br />
+            <img class="fc-image" src="~/Content/images/fractalChaos/fc-triangle_f00003.png" />
+            <br />
+            In this case, we've chosen the blue anchor point. We've drawn a new point halfway between the first point and the blue anchor.
+            This is now the start point for the next iteration. Now we randomly choose another anchor point and draw a new point halfway between this start point and the anchor point.
+            <br />
+            <img class="fc-image" src="~/Content/images/fractalChaos/fc-triangle_f00004.png"  />
+            <br />
+            Now we've chosen the green anchor point and drawn a point halfway towards that.
+            We'll keep doing this over and over again; randomly choosing one of the anchor points, and then drawing a new point halfway between the previous point and the anchor point.
+            
+            After enough iterations, a familiar pattern emerges.
+            <a href="~/Content/images/fractalChaos/triangle.png">
+                
+            
+            <img class="fc-image-big" src="~/Content/images/fractalChaos/triangle.png" />
+            </a>
+        </div>
+    </div>
+
 </div>

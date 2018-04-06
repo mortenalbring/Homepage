@@ -29,7 +29,7 @@
                         </p>
 
                         <p>
-                            Now we'll take a regular die and colour in two of the faces red, two of them blue and two of them green.                             
+                            Now we'll take a regular die and colour in two of the faces red, two of them blue and two of them green.
                         </p>
                         <p>
                             We'll roll this die to select one of the anchor points.
@@ -93,7 +93,7 @@
                             We can keep doing this over and over again, randomly selecting one of the three anchor points, and drawing a point halfway between that anchor and the point we drew previously.
                         </p>
                         <p>
-                            But why? You may well think this will just result in a random collection of points across the canvas. 
+                            But why? You may well think this will just result in a random collection of points across the canvas.
                         </p>
                         <p>
                             The result is anything but a random collection.
@@ -126,24 +126,75 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    Here is the final image after about 1,000,000 iterations, with slightly smaller data points.
+                    <div class="fc-image-text">
+                        <p>
+                            Here is the final image after about 1,000,000 iterations, with slightly smaller data points.
+                        </p>
+                        <p>A note on the colouring; when a new point is drawn, I also select the r,g,b values that are halfway between those of the start point and the anchor point. This results in a nice colour gradient on the structure. </p>
+                    </div>
 
-                    <br />
                     <a href="~/Content/images/fractalChaos/triangle.png">
-
-
                         <img class="fc-image-big" src="~/Content/images/fractalChaos/fcTriangleBig.png" />
                     </a>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-sm-12">
-                    What if we had more anchor points? Does every shape produce a fractal? 
+                    <p>
+                        What if we had more anchor points? Does every shape produce a fractal?
+                    </p>
+
+
                 </div>
             </div>
-            
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <a href="~/Content/images/fractalChaos/fcSquareBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSquareSmall.png" />
+                    </a>
 
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="fc-image-text">
+                        <p>
+                            Unfortunately not. If we have four anchor points, a square, we do simply get a random collection across a canvas.
+                        </p>
+                        <p>
+                            This is because the points are free to move anywhere on the canvas with equal probability. They're not constrained to move away from any particular area.
+                        </p>
+                        <p>
+                            Other polygons are more interesting though.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="~/Content/images/fractalChaos/fcPentagonBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcPentagonSmall.png" />
+                    </a>
+                    
+
+                </div>
+                <div class="col-md-6">
+                    <a href="~/Content/images/fractalChaos/fcHexagonBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcHexagonSmall.png" />
+                    </a>                   
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="~/Content/images/fractalChaos/fcSeptagonBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSeptagonSmall.png" />
+                    </a>
+                    
+
+                </div>
+             
+
+            </div>
 
 
 

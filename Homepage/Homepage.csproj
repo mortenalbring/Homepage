@@ -268,9 +268,15 @@
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001_2.gif" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001_4.gif" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001_5_white.gif" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00001_5_white_slow.gif" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00002.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00003.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00004.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle1B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle2B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle3B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle4B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleBig.png" />
     <Content Include="Content\images\fractalChaos\triangle.png" />
     <Content Include="Content\images\me.png" />
     <Content Include="Content\images\menger\menger-layers-loop.gif" />

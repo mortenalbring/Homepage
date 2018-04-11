@@ -288,7 +288,7 @@ h1, h2, h3 {
     height: 350px;
 }
 .post-title-fc {
-    background-image: url('../Content/images/fractalChaos/triangle.png');
+    background-image: url('../Content/images/fractalChaos/background.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

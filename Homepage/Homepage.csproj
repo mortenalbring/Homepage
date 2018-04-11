@@ -272,6 +272,7 @@
     <Content Include="Content\images\fractalChaos\fc-triangle_f00002.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00003.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00004.png" />
+    <Content Include="Content\images\fractalChaos\fcTetra1.gif" />
     <Content Include="Content\images\fractalChaos\fcTriangle1B.png" />
     <Content Include="Content\images\fractalChaos\fcTriangle2B.png" />
     <Content Include="Content\images\fractalChaos\fcTriangle3B.png" />

@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="post-title post-title-fc">
+    <div class="post-title-text">
+        <h1>Fractal Chaos</h1>
+    </div>
+</div>
+
+
+<div class="container fractal-chaos-container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <ul class="nav nav-tabs">
+                <li><a href="@Url.Action("FractalChaos")">Introduction</a> </li>
+                <li><a href="@Url.Action("FractalChaos2")">Polygons</a> </li>
+                <li class="active"><a href="@Url.Action("FractalChaos3")">Varying ratio</a> </li>
+                <li><a href="@Url.Action("FractalChaos4")">Adding rotation</a> </li>
+            </ul>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        We don't necessarily have to only go precisely halfway to the new point, we can vary that ratio. The images above have all been generated with a ratio of 0.5.
+                    </p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="https://youtu.be/Rz9FoV9YAQI" target="_blank">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/triangle_VaryRatio.gif" />
+                    </a>
+
+                </div>
+                <div class="col-md-5">
+                    <p>
+                        This shows varying the ratio smoothly from 0.01 up to 0.8. At values above 0.5, then the structure escapes the bounds of the anchor points.
+                    </p>
+                    <p>
+                        If we had enough data points, we would still see the Sierpinski triangle. The render time increases dramatically with more points, though.
+                    </p>
+
+                </div>
+            </div>
+           
+          
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Resources:</strong>
+                    <br />
+                    <ul>
+                        <li>
+                            <a href="https://en.wikipedia.org/wiki/Chaos_game">Wikipedia article on Chaos Game</a>
+                        </li>
+                        <li>
+                            <a href="http://math.bu.edu/DYSYS/chaos-game/chaos-game.html">Boston Univeristy article on Chaos Game</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">Numberphile video explaining the Chaos Game</a>
+                        </li>
+                        <li>
+                            <a href="http://www.povray.org/">Persistence of Vision Raytracer software</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mortenalbring/FractalChaos">Repository for code for generating data points</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</div>

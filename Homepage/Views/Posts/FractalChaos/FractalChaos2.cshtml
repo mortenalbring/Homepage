@@ -1,0 +1,168 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="post-title post-title-fc">
+    <div class="post-title-text">
+        <h1>Fractal Chaos</h1>
+    </div>
+</div>
+
+
+<div class="container fractal-chaos-container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <ul class="nav nav-tabs">
+                <li><a href="@Url.Action("FractalChaos")">Introduction</a> </li>
+                <li class="active"><a href="@Url.Action("FractalChaos2")">Polygons</a> </li>
+                <li><a href="@Url.Action("FractalChaos3")">Varying ratio</a> </li>
+                <li><a href="@Url.Action("FractalChaos4")">Adding rotation</a> </li>
+            </ul>
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>
+                        What if we had more anchor points? Does every shape produce a fractal?
+                    </p>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <a href="~/Content/images/fractalChaos/fcSquareBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSquareSmall.png" />
+                    </a>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="fc-image-text">
+                        <p>
+                            Unfortunately not. If we have four anchor points, a square, we do simply get a random collection across a canvas.
+                        </p>
+                        <p>
+                            This is because the points are free to move anywhere on the canvas with equal probability. They're not constrained to move away from any particular area.
+                        </p>
+                        <p>
+                            We can see what happens with other polygons.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="~/Content/images/fractalChaos/fcPentagonBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcPentagonSmall.png" />
+                    </a>
+                    <div class="fc-image-text">
+                        Drawing points half the distance towards a randomly chosen anchor with five anchor points.
+                    </div>
+
+
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <a href="~/Content/images/fractalChaos/fcHexagonBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcHexagonSmall.png" />
+                    </a>
+                    Drawing points half the distance towards a randomly chosen anchor with six anchor points.
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="~/Content/images/fractalChaos/fcSeptagonBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSeptagonSmall.png" />
+                    </a>
+                    <div class="fc-image-text">
+                        Drawing points half the distance towards a randomly chosen anchor with seven anchor points.
+                    </div>
+
+
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <a href="~/Content/images/fractalChaos/fcOctagonBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcOctagonSmall.png" />
+                    </a>
+                    <div class="fc-image-text">
+                        Drawing points half the distance towards a randomly chosen anchor with eight anchor points.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        As we increase the number of anchor points, it doesn't seem to produce any especially interesting fractal structures.
+                    </p>
+                    <p>
+                        However, we can put an additional constraint to the rules. At the moment, we roll a die to select which anchor point we move towards. We may end up rolling the same anchor point over and over again.
+                    </p>
+                    <p>
+                        So let's add the constraint that if we roll the same anchor point as we had on the last iteration, we roll again until we select a different one.
+                    </p>
+                    
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="~/Content/images/fractalChaos/fcSquareNoRepeatBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSquareNoRepeatSmall.png" />
+                    </a>
+                    
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        This simple change to the rules transforms the random collection to this remarkable fractal structure.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="~/Content/images/fractalChaos/fcPentagonNoRepeatBig.png">
+                        <img class="fc-image" src="~/Content/images/fractalChaos/fcPentagonNoRepeatSmall.png" />
+                    </a>
+
+                </div>
+            </div>
+
+
+            
+          
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Resources:</strong>
+                    <br />
+                    <ul>
+                        <li>
+                            <a href="https://en.wikipedia.org/wiki/Chaos_game">Wikipedia article on Chaos Game</a>
+                        </li>
+                        <li>
+                            <a href="http://math.bu.edu/DYSYS/chaos-game/chaos-game.html">Boston Univeristy article on Chaos Game</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">Numberphile video explaining the Chaos Game</a>
+                        </li>
+                        <li>
+                            <a href="http://www.povray.org/">Persistence of Vision Raytracer software</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mortenalbring/FractalChaos">Repository for code for generating data points</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</div>

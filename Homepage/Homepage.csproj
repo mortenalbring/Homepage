@@ -30991,9 +30991,10 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
     <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
-    <Content Include="Views\Posts\FractalChaos.cshtml" />
-    <Content Include="Views\Posts\FractalChaos2.cshtml" />
-    <Content Include="Views\Posts\FractalChaos3.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos2.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos3.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

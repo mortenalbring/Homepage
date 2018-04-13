@@ -43,16 +43,21 @@ namespace Homepage.Controllers
 
         public ActionResult FractalChaos()
         {
-            return View();
+            return View("FractalChaos/FractalChaos");
         }
 
         public ActionResult FractalChaos2()
         {
-            return View();
+            return View("FractalChaos/FractalChaos2");
         }
         public ActionResult FractalChaos3()
         {
-            return View();
+            return View("FractalChaos/FractalChaos3");
         }
+        public ActionResult FractalChaos4()
+        {
+            return View("FractalChaos/FractalChaos4");
+        }
+
     }
 }

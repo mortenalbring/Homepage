@@ -58,6 +58,10 @@ namespace Homepage.Controllers
         {
             return View("FractalChaos/FractalChaos4");
         }
+        public ActionResult FractalChaos5()
+        {
+            return View("FractalChaos/FractalChaos5");
+        }
 
     }
 }

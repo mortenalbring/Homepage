@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="post-title post-title-fc">
+<div class="post-title post-title-fc4">
     <div class="post-title-text">
         <h1>Fractal Chaos</h1>
     </div>
@@ -14,9 +14,10 @@
         <div class="col-md-10 col-md-offset-1">
             <ul class="nav nav-tabs">
                 <li><a href="@Url.Action("FractalChaos")">Introduction</a> </li>
-                <li><a href="@Url.Action("FractalChaos2")">Other Polygons</a> </li>
+                <li><a href="@Url.Action("FractalChaos2")">Polygons</a> </li>
                 <li><a href="@Url.Action("FractalChaos3")">Varying ratio</a> </li>
                 <li class="active"><a href="@Url.Action("FractalChaos4")">Adding rotation</a> </li>
+                <li><a href="@Url.Action("FractalChaos5")">Barnsley Fern</a> </li>
             </ul>
 
        
@@ -51,41 +52,63 @@
                     <img class="fc-image pull-right" src="~/Content/images/fractalChaos/fcTriangleRotate.png" />
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-1">
-                    <a href="https://youtu.be/Xyr979Mq_I4" target="_blank">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/triangle_VaryAngle6.gif" />
-                    </a>
-
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Resources:</strong>
-                    <br />
-                    <ul>
-                        <li>
-                            <a href="https://en.wikipedia.org/wiki/Chaos_game">Wikipedia article on Chaos Game</a>
-                        </li>
-                        <li>
-                            <a href="http://math.bu.edu/DYSYS/chaos-game/chaos-game.html">Boston Univeristy article on Chaos Game</a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">Numberphile video explaining the Chaos Game</a>
-                        </li>
-                        <li>
-                            <a href="http://www.povray.org/">Persistence of Vision Raytracer software</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/mortenalbring/FractalChaos">Repository for code for generating data points</a>
-                        </li>
+                    Doing this with three anchor points, the Sierpiński triangle is transformed into this structure:
 
-                    </ul>
+
                 </div>
             </div>
-
+            
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcTriangleRotate1Big.png">
+                            <img src="~/Content/images/fractalChaos/fcTriangleRotate1Small.png"/>    
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with three anchor points going half-way towards the anchor point, and rotating about an angle of 90 degrees if the blue point is selected.
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcTriangleRotate2Big.png">
+                            <img src="~/Content/images/fractalChaos/fcTriangleRotate2Small.png"/>    
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with three anchor points going half-way towards the anchor point, and rotating about an angle of 180 degrees if the blue point is selected.
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Why is this happening? This fractal structure doesn't seem to resemble the Sierpiński triangle at all. </p>
+                    <p>The behaviour is more obvious if we vary the angle smoothly from 0 to 360 degrees.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-1">
+                    <div class="fc-image-container">
+                        
+                    
+                    <a href="https://youtu.be/Xyr979Mq_I4" target="_blank">
+                        <img src="~/Content/images/fractalChaos/triangle_VaryAngle6.gif"/>
+                    </a>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderPage("References.cshtml")
+                </div>
+            </div>
+     
 
 
 

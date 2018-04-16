@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="post-title post-title-fc">
+<div class="post-title post-title-fc2">
     <div class="post-title-text">
         <h1>Fractal Chaos</h1>
     </div>
@@ -17,6 +17,7 @@
                 <li class="active"><a href="@Url.Action("FractalChaos2")">Polygons</a> </li>
                 <li><a href="@Url.Action("FractalChaos3")">Varying ratio</a> </li>
                 <li><a href="@Url.Action("FractalChaos4")">Adding rotation</a> </li>
+                <li><a href="@Url.Action("FractalChaos5")">Barnsley Fern</a> </li>
             </ul>
 
 
@@ -32,15 +33,25 @@
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <a href="~/Content/images/fractalChaos/fcSquareBig.png">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSquareSmall.png" />
-                    </a>
+                    <div class="fc-image-container">
 
+
+                        <a href="~/Content/images/fractalChaos/fcSquareBig.png">
+                            <img src="~/Content/images/fractalChaos/fcSquareSmall.png" />
+                        </a>
+
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with four anchor points, going halfway towards a random anchor at every iteration.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="fc-image-text">
                         <p>
-                            Unfortunately not. If we have four anchor points, a square, we do simply get a random collection across a canvas.
+                            Unfortunately not.
+                        </p>
+                        <p>
+                            If we have four anchor points, a square, we do simply get a random collection across a canvas.
                         </p>
                         <p>
                             This is because the points are free to move anywhere on the canvas with equal probability. They're not constrained to move away from any particular area.
@@ -53,112 +64,126 @@
             </div>
             <div class="row">
                 <div class="col-md-5">
-                    <a href="~/Content/images/fractalChaos/fcPentagonBig.png">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/fcPentagonSmall.png" />
-                    </a>
-                    <div class="fc-image-text">
-                        Drawing points half the distance towards a randomly chosen anchor with five anchor points.
-                    </div>
+                    <div class="fc-image-container">
 
+
+                        <a href="~/Content/images/fractalChaos/fcPentagonBig.png">
+                            <img src="~/Content/images/fractalChaos/fcPentagonSmall.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration.
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-md-5 col-md-offset-1">
-                    <a href="~/Content/images/fractalChaos/fcHexagonBig.png">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/fcHexagonSmall.png" />
-                    </a>
-                    Drawing points half the distance towards a randomly chosen anchor with six anchor points.
+                    <div class="fc-image-container">
+
+
+                        <a href="~/Content/images/fractalChaos/fcHexagonBig.png">
+                            <img src="~/Content/images/fractalChaos/fcHexagonSmall.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with six anchor points, going halfway towards a random anchor at every iteration.
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-md-5">
-                    <a href="~/Content/images/fractalChaos/fcSeptagonBig.png">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSeptagonSmall.png" />
-                    </a>
-                    <div class="fc-image-text">
-                        Drawing points half the distance towards a randomly chosen anchor with seven anchor points.
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcSeptagonBig.png">
+                            <img src="~/Content/images/fractalChaos/fcSeptagonSmall.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with seven anchor points, going halfway towards a random anchor at every iteration.
+                        </div>
                     </div>
-
 
                 </div>
                 <div class="col-md-5 col-md-offset-1">
-                    <a href="~/Content/images/fractalChaos/fcOctagonBig.png">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/fcOctagonSmall.png" />
-                    </a>
-                    <div class="fc-image-text">
-                        Drawing points half the distance towards a randomly chosen anchor with eight anchor points.
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcOctagonBig.png">
+                            <img src="~/Content/images/fractalChaos/fcOctagonSmall.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with eight anchor points, going halfway towards a random anchor at every iteration.
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <p>
-                        As we increase the number of anchor points, it doesn't seem to produce any especially interesting fractal structures.
-                    </p>
-                    <p>
-                        However, we can put an additional constraint to the rules. At the moment, we roll a die to select which anchor point we move towards. We may end up rolling the same anchor point over and over again.
-                    </p>
-                    <p>
-                        So let's add the constraint that if we roll the same anchor point as we had on the last iteration, we roll again until we select a different one.
-                    </p>
-                    
-                    
+                    <div class="fc-image-text">
+                        <p>
+                            As we increase the number of anchor points, it doesn't seem to produce any especially interesting fractal structures.
+                        </p>
+                        <p>
+                            However, we can put an additional constraint to the rules. At the moment, we roll a die to select which anchor point we move towards. We may end up rolling the same anchor point over and over again.
+                        </p>
+                        <p>
+                            So let's add the constraint:
+                        </p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                If we roll the same anchor point as we had on the last iteration, we roll again until we select a different one.
+                            </li>
+                        </ul>
+
+                        <p>
+                            When playing the chaos game with the square, this simple change to the rules transforms the random collection to this remarkable fractal structure.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <a href="~/Content/images/fractalChaos/fcSquareNoRepeatBig.png">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/fcSquareNoRepeatSmall.png" />
-                    </a>
-                    
-                </div>
-                <div class="col-md-6">
-                    <p>
-                        This simple change to the rules transforms the random collection to this remarkable fractal structure.
-                    </p>
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcSquareNoRepeatBig2.png">
+                            <img src="~/Content/images/fractalChaos/fcSquareNoRepeatSmall2.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with four anchor points, going halfway towards a random anchor at every iteration but with constraint that the same anchor point is different at every iteration.
+                        </div>
+                        
+                    </div>
 
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>I've omitted rendering the anchor points for these images because the interesting structure is some distance within the anchor points.</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <a href="~/Content/images/fractalChaos/fcPentagonNoRepeatBig.png">
-                        <img class="fc-image" src="~/Content/images/fractalChaos/fcPentagonNoRepeatSmall.png" />
-                    </a>
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcPentagonNoRepeatBig.png">
+                            <img src="~/Content/images/fractalChaos/fcPentagonNoRepeatSmall.png" />
+                        </a>
+                        
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration but with constraint that the same anchor point is different at every iteration.
+                        </div>
+                        
+                    </div>
 
                 </div>
             </div>
 
 
-            
-          
+
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Resources:</strong>
-                    <br />
-                    <ul>
-                        <li>
-                            <a href="https://en.wikipedia.org/wiki/Chaos_game">Wikipedia article on Chaos Game</a>
-                        </li>
-                        <li>
-                            <a href="http://math.bu.edu/DYSYS/chaos-game/chaos-game.html">Boston Univeristy article on Chaos Game</a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">Numberphile video explaining the Chaos Game</a>
-                        </li>
-                        <li>
-                            <a href="http://www.povray.org/">Persistence of Vision Raytracer software</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/mortenalbring/FractalChaos">Repository for code for generating data points</a>
-                        </li>
-
-                    </ul>
+                    @RenderPage("References.cshtml")
                 </div>
             </div>
-
-
+     
 
 
 

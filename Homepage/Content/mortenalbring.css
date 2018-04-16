@@ -148,7 +148,7 @@ h1, h2, h3 {
 }
 
 
-.section-posts {    
+.section-posts {
     padding-bottom: 80px;
     font-family: 'Open Sans', sans-serif;
 }
@@ -188,7 +188,7 @@ h1, h2, h3 {
     .container-post a h1 {
         padding-top: 0;
         text-align: center;
-        text-shadow:none;
+        text-shadow: none;
     }
 
 .container-post a {
@@ -210,7 +210,7 @@ h1, h2, h3 {
     .container-post a:hover {
         outline: none;
         color: #fff;
-        text-decoration: none;        
+        text-decoration: none;
         background: #1976D2;
     }
 
@@ -219,8 +219,8 @@ h1, h2, h3 {
     position: relative;
     background: #007fee;
     padding-bottom: 40px;
-    margin-bottom: 20px;   
-    min-height:100px;    
+    margin-bottom: 20px;
+    min-height: 100px;
 }
 
     .post-title img {
@@ -229,13 +229,14 @@ h1, h2, h3 {
         margin-right: auto;
     }
 
-    .post-title h1 {                                
+    .post-title h1 {
         text-align: center;
         font-family: 'Open Sans', sans-serif;
         font-weight: 800;
         color: #fff;
         text-shadow: 1px 4px #808080, 4px 4px 0px rgba(0, 0, 0, 0.15);
     }
+
 .post-title-text {
     background: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), white);
     width: 100%;
@@ -243,23 +244,23 @@ h1, h2, h3 {
     padding-bottom: 2em;
     bottom: 0;
 }
-   
 
-    .post-title-tsucs {
+
+.post-title-tsucs {
     background-image: url('/Content/images/tsucs/tsucs-cover.png');
     background-position: center;
     background-repeat: no-repeat;
     height: 350px;
 }
 
-        .post-title-angulard3 {
+.post-title-angulard3 {
     background-image: url('/Content/images/angularD3/AngularD3-cover.png');
     background-position: center;
     background-repeat: no-repeat;
     height: 350px;
 }
 
-        .post-title-peterdejong {
+.post-title-peterdejong {
     background-image: url('/Content/images/peterdejong/peterdejong-cover.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -282,11 +283,12 @@ h1, h2, h3 {
 
 .post-title-menger {
     background-image: url('../Content/images/menger/menger-level-5.png');
-    background-size:contain;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     height: 350px;
 }
+
 .post-title-fc {
     background-image: url('../Content/images/fractalChaos/background.png');
     background-size: contain;
@@ -294,32 +296,63 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     height: 350px;
 }
+.post-title-fc2 {
+    background-image: url('../Content/images/fractalChaos/background2.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+.post-title-fc4 {
+    background-image: url('../Content/images/fractalChaos/background4.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+}
 
 .fractal-chaos-container {
-    
-    
-}
-.fractal-chaos-container .row {
-    margin-top: 10px;
 }
 
-.fractal-chaos-container .fc-image {
-    border: 2px solid #ececec;
-    background: #f7f7f7;
+    .fractal-chaos-container .row {
+        margin-top: 10px;
+    }
 
-    border-radius: 5px;
-    
-}
+    .fractal-chaos-container .fc-image {
+        border: 2px solid #ececec;
+        background: #f7f7f7;
+        border-radius: 5px;
+    }
 
-.fractal-chaos-container .fc-image-text {        
-    text-align: justify;
-}
+    .fractal-chaos-container .fc-image-text {
+        text-align: justify;
+    }
 
     .fractal-chaos-container .fc-image-big {
         width: 100%;
         height: 100%;
-        border: 2px solid #ececec;
-        border-radius: 10px;
-        background: #f9f9f9;
-    
+    }
+
+.fc-image-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ececec;
+    border-radius: 2px;
+}
+
+    .fc-image-container img {
+        width: 100%;
+        height: 100%;
+        background: rgba(247, 247, 247, 0.49);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 10px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .fc-image-container .caption {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 0.9em;
+        text-align: center;
     }

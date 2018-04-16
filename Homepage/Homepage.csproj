@@ -265,6 +265,8 @@
     <Content Include="Content\images\anyons.jpg" />
     <Content Include="Content\images\dimerschematic.png" />
     <Content Include="Content\images\fractalChaos\background.png" />
+    <Content Include="Content\images\fractalChaos\background2.png" />
+    <Content Include="Content\images\fractalChaos\background4.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001_2.gif" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001_4.gif" />
@@ -278,18 +280,33 @@
     <Content Include="Content\images\fractalChaos\fcOctagonBig.png" />
     <Content Include="Content\images\fractalChaos\fcOctagonSmall.png" />
     <Content Include="Content\images\fractalChaos\fcPentagonBig.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonNoRepeatBig.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonNoRepeatSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonr0-35Big.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonr0-35Small.png" />
     <Content Include="Content\images\fractalChaos\fcPentagonSmall.png" />
     <Content Include="Content\images\fractalChaos\fcSeptagonBig.png" />
     <Content Include="Content\images\fractalChaos\fcSeptagonSmall.png" />
     <Content Include="Content\images\fractalChaos\fcSquareBig.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatBig.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatBig2.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatSmall2.png" />
     <Content Include="Content\images\fractalChaos\fcSquareSmall.png" />
     <Content Include="Content\images\fractalChaos\fcTetra1.gif" />
+    <Content Include="Content\images\fractalChaos\fcTriangle1.png" />
     <Content Include="Content\images\fractalChaos\fcTriangle1B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle2.png" />
     <Content Include="Content\images\fractalChaos\fcTriangle2B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle3.png" />
     <Content Include="Content\images\fractalChaos\fcTriangle3B.png" />
     <Content Include="Content\images\fractalChaos\fcTriangle4B.png" />
     <Content Include="Content\images\fractalChaos\fcTriangleBig.png" />
     <Content Include="Content\images\fractalChaos\fcTriangleRotate.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate1Big.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate1Small.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate2Big.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate2Small.png" />
     <Content Include="Content\images\fractalChaos\triangle.png" />
     <Content Include="Content\images\fractalChaos\triangle_VaryAngle.gif" />
     <Content Include="Content\images\fractalChaos\triangle_VaryAngle6.gif" />
@@ -30995,6 +31012,8 @@
     <Content Include="Views\Posts\FractalChaos\FractalChaos2.cshtml" />
     <Content Include="Views\Posts\FractalChaos\FractalChaos3.cshtml" />
     <Content Include="Views\Posts\FractalChaos\FractalChaos4.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\References.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+</script>
+<script src="/Scripts/MathJax/MathJax.js"></script>
+<div class="post-title post-title-fc4">
+    <div class="post-title-text">
+        <h1>Fractal Chaos</h1>
+    </div>
+</div>
+
+
+<div class="container fractal-chaos-container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            @RenderPage("Navigation.cshtml")
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderPage("References.cshtml")
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</div>

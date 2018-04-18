@@ -12,13 +12,7 @@
 <div class="container fractal-chaos-container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <ul class="nav nav-tabs">
-                <li><a href="@Url.Action("FractalChaos")">Introduction</a> </li>
-                <li class="active"><a href="@Url.Action("FractalChaos2")">Polygons</a> </li>
-                <li><a href="@Url.Action("FractalChaos3")">Varying ratio</a> </li>
-                <li><a href="@Url.Action("FractalChaos4")">Adding rotation</a> </li>
-                <li><a href="@Url.Action("FractalChaos5")">Barnsley Fern</a> </li>
-            </ul>
+            @RenderPage("Navigation.cshtml")
 
 
 
@@ -148,7 +142,7 @@
                         <div class="caption">
                             Chaos game played over 10,000,000 iterations with four anchor points, going halfway towards a random anchor at every iteration but with constraint that the same anchor point is different at every iteration.
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -166,11 +160,11 @@
                         <a href="~/Content/images/fractalChaos/fcPentagonNoRepeatBig.png">
                             <img src="~/Content/images/fractalChaos/fcPentagonNoRepeatSmall.png" />
                         </a>
-                        
+
                         <div class="caption">
                             Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration but with constraint that the same anchor point is different at every iteration.
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -183,7 +177,7 @@
                     @RenderPage("References.cshtml")
                 </div>
             </div>
-     
+
 
 
 

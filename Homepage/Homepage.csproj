@@ -30,6 +30,7 @@
     <UseGlobalApplicationHostFile />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31014,6 +31015,9 @@
     <Content Include="Views\Posts\FractalChaos\FractalChaos4.cshtml" />
     <Content Include="Views\Posts\FractalChaos\References.cshtml" />
     <Content Include="Views\Posts\FractalChaos\FractalChaos5.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos6.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos7.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

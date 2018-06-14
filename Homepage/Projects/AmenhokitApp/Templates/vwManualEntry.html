@@ -7,9 +7,24 @@
                 <div class="col-md-3">
                     <strong>Date (yyyy-mm-dd) </strong>
                     <br />
-                    <input ng-model="gameDate" class="form-control"/>
+                    <input ng-model="gameDate" class="form-control" ng-change="sessionsWithDate.length = 0" ng-blur="findSessions(gameDate)"/>
                     <br/>
                     ({{gameDate | date:"fullDate"}})
+
+                    
+                    
+                    <div ng-if="sessionsWithDate.length > 0">
+
+                        <a class="label label-danger" target="_blank" ng-repeat="s in sessionsWithDate" href="/Projects/ProjectAmenhokit#/sessions/{{s.ID}}">
+                            A session with this date already exists! 
+                        </a>
+                        
+
+                        
+                    </div>                    
+
+                    
+
                 </div>
                 <div class="col-md-3">
                     <strong>Game:</strong>

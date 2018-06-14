@@ -296,6 +296,7 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     height: 350px;
 }
+
 .post-title-fc2 {
     background-image: url('../Content/images/fractalChaos/background2.png');
     background-size: contain;
@@ -303,6 +304,7 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     height: 350px;
 }
+
 .post-title-fc4 {
     background-image: url('../Content/images/fractalChaos/background4.png');
     background-size: contain;
@@ -310,6 +312,19 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     height: 350px;
 }
+
+    .post-title-fc4 span {
+        display: block;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 3em;
+        font-weight: 800;
+        color: white;
+          text-shadow: 0 0 4px #222; /* horizontal-offset vertical-offset 'blur' colour */
+  -moz-text-shadow: 0 0 4px #222;
+  -webkit-text-shadow: 0 0 4px #222;
+    }
+
 
 .fractal-chaos-container {
 }

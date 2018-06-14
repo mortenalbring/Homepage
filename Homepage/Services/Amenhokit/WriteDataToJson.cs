@@ -341,7 +341,7 @@ namespace Homepage.Services.Amenhokit
                 }
             }
 
-            var output = "Date";
+            var output = "date";
 
             foreach (var p in allowedPlayers)
             {
@@ -351,7 +351,7 @@ namespace Homepage.Services.Amenhokit
 
             foreach (var session in uniqueSessionDates)
             {
-                output = output + session.ToString("yyyy-MM-dd") + "\t";
+                output = output + session.ToString("yyyyMMdd") + "\t";
 
                 foreach (var p in allowedPlayers)
                 {
@@ -434,6 +434,7 @@ namespace Homepage.Services.Amenhokit
             WritePlayerReports();
             WriteUniquePlayers();
             WriteLineChartData();
+            WriteLineChartDataFull();
         }
 
 

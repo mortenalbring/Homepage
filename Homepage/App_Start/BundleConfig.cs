@@ -59,7 +59,7 @@ namespace Homepage
 
 
             bundles.Add(new StyleBundle("~/bundles/css")
-                .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/animate.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css")
+                .Include("~/Content/mortenalbring.css", "~/Content/mortenalbring-charts.css", "~/Content/bootstrap.css", "~/Content/animate.css", "~/Content/bootstrap-responsive.css", "~/Content/css/font-awesome.css","~/Content/responsiveTable.css")
                 );
             bundles.Add(new LessBundle("~/bundles/less")
                 .IncludeDirectory("~/Content/styles/", "*.less"));

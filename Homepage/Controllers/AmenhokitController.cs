@@ -20,6 +20,32 @@ namespace Homepage.Controllers
     {
 
         [HttpPost]
+        public JsonResult FindSessionByDate(string gameDate)
+        {
+            var output = new List<Session>();
+            try
+            {
+                var gameDateObj = DateTime.Parse(gameDate);
+
+                using (var db = new DataContext())
+                {                    
+                    var sessions =
+                       db.Session.Where(
+                           e =>
+                               e.Date.Year == gameDateObj.Year && e.Date.Month == gameDateObj.Month &&
+                               e.Date.Day == gameDateObj.Day).ToList();
+                    output = sessions;
+                    
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("Problem parsing date " + gameDate);
+            }
+            return Json(output, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
         public void AddNewScore(int playerId, string gameDate, int gameNumber, int lane, string scoreString, int finalScore)
         {
             try

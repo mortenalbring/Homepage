@@ -30,6 +30,7 @@
     <UseGlobalApplicationHostFile />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -264,6 +265,58 @@
     <Content Include="Content\images\angularD3\AngularD3-preview.png" />
     <Content Include="Content\images\anyons.jpg" />
     <Content Include="Content\images\dimerschematic.png" />
+    <Content Include="Content\images\fractalChaos\background.png" />
+    <Content Include="Content\images\fractalChaos\background2.png" />
+    <Content Include="Content\images\fractalChaos\background4.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00001.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00001_2.gif" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00001_4.gif" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00001_5_white.gif" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00001_5_white_slow.gif" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00002.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00003.png" />
+    <Content Include="Content\images\fractalChaos\fc-triangle_f00004.png" />
+    <Content Include="Content\images\fractalChaos\fcBarnsBig.png" />
+    <Content Include="Content\images\fractalChaos\fcBarnsSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcHexagonBig.png" />
+    <Content Include="Content\images\fractalChaos\fcHexagonr-0-3Big.png" />
+    <Content Include="Content\images\fractalChaos\fcHexagonr-0-3Small.png" />
+    <Content Include="Content\images\fractalChaos\fcHexagonSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcOctagonBig.png" />
+    <Content Include="Content\images\fractalChaos\fcOctagonSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonBig.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonNoRepeatBig.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonNoRepeatSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonr0-35Big.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonr0-35Small.png" />
+    <Content Include="Content\images\fractalChaos\fcPentagonSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcSeptagonBig.png" />
+    <Content Include="Content\images\fractalChaos\fcSeptagonSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareBig.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatBig.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatBig2.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareNoRepeatSmall2.png" />
+    <Content Include="Content\images\fractalChaos\fcSquareSmall.png" />
+    <Content Include="Content\images\fractalChaos\fcTetra1.gif" />
+    <Content Include="Content\images\fractalChaos\fcTriangle1.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle1B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle2.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle2B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle3.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle3B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangle4B.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleBig.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate1Big.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate1Small.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate2Big.png" />
+    <Content Include="Content\images\fractalChaos\fcTriangleRotate2Small.png" />
+    <Content Include="Content\images\fractalChaos\polyhedra\tetraPostA.png" />
+    <Content Include="Content\images\fractalChaos\triangle.png" />
+    <Content Include="Content\images\fractalChaos\triangle_VaryAngle.gif" />
+    <Content Include="Content\images\fractalChaos\triangle_VaryAngle6.gif" />
+    <Content Include="Content\images\fractalChaos\triangle_VaryRatio.gif" />
     <Content Include="Content\images\me.png" />
     <Content Include="Content\images\menger\menger-layers-loop.gif" />
     <Content Include="Content\images\menger\menger-level-0-sm.png" />
@@ -294,6 +347,7 @@
     <Content Include="Content\images\tsucs\tsucs3407_sm.png" />
     <Content Include="Content\mortenalbring-charts.css" />
     <Content Include="Content\mortenalbring.css" />
+    <Content Include="Content\responsiveTable.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -30961,6 +31015,15 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Projects\ProjectPennyGame.cshtml" />
     <Content Include="Views\Projects\ProjectAmenhokitOld.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos2.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos3.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos4.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\References.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos5.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos6.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\FractalChaos7.cshtml" />
+    <Content Include="Views\Posts\FractalChaos\Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

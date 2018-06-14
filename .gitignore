@@ -190,3 +190,5 @@ ModelManifest.xml
 .vs/config/applicationhost.config
 Homepage/tempfiles/
 Homepage/ConnectionStrings.config
+*.lock
+.vs/

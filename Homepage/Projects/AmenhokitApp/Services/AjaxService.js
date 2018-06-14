@@ -70,6 +70,12 @@
             url: '/Amenhokit/GetPlayers'
         });
     }
-
+    axj.GetSessionByDate = function (gameDate) {
+        return $http({
+            method: 'POST',
+            url: '/Amenhokit/FindSessionByDate',
+            data: { gameDate: gameDate }
+        });
+    }
     return axj;
 }

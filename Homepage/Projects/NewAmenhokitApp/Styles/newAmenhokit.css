@@ -63,9 +63,7 @@
     font-size: 16px;
     
 }
-#graph-container .legend-container {
-    fill: red;    
-}
+
 
 #graph-container .grid line {
     stroke: lightgrey;

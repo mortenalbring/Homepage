@@ -34,9 +34,9 @@
 
         var self = this;
 
-        this.allScoreFile = "/Content/datafiles/linechartdata2.txt";
-        this.bestScoreFile = "/Content/datafiles/linechartdataall.txt";
-
+        this.allScoreFile = "/Content/datafiles/linechartdataall.txt";
+        this.bestScoreFile = "/Content/datafiles/linechartdata.txt";
+        
         this.loadFileAndDraw(this.bestScoreFile);
          
     }
@@ -144,6 +144,8 @@
                 ySeries.push(d.score);
             }           
 
+          
+            
             var leastSquaresCoeff = leastSquares(xSeries, ySeries);
 
             var x1 = seriesData[0].date;
@@ -155,7 +157,7 @@
             var trendData = [[x1, y1, x2, y2, seriesName]];
 
             trendLines.push(trendData);
-
+            
          
         }
 

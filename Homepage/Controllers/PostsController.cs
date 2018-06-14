@@ -41,5 +41,41 @@ namespace Homepage.Controllers
             return View();
         }
 
+        public ActionResult FractalChaos()
+        {
+            ViewBag.Section = 1;
+            return View("FractalChaos/FractalChaos");
+        }
+
+        public ActionResult FractalChaos2()
+        {
+            ViewBag.Section = 2;
+            return View("FractalChaos/FractalChaos2");
+        }
+        public ActionResult FractalChaos3()
+        {
+            ViewBag.Section = 3;
+            return View("FractalChaos/FractalChaos3");
+        }
+        public ActionResult FractalChaos4()
+        {
+            ViewBag.Section = 4;
+            return View("FractalChaos/FractalChaos4");
+        }
+        public ActionResult FractalChaos5()
+        {
+            ViewBag.Section = 5;
+            return View("FractalChaos/FractalChaos5");
+        }
+        public ActionResult FractalChaos6()
+        {
+            ViewBag.Section = 6;
+            return View("FractalChaos/FractalChaos6");
+        }
+        public ActionResult FractalChaos7()
+        {
+            ViewBag.Section = 7;
+            return View("FractalChaos/FractalChaos7");
+        }
     }
 }

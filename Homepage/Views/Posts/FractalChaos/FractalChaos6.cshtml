@@ -1,19 +1,14 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-    });
-</script>
+
 <script src="/Scripts/MathJax/MathJax.js"></script>
 <div class="post-title post-title-fc4">
     <div class="post-title-text">
-        <h1>Fractal Chaos</h1>
+        <span>Fractal Chaos</span>
     </div>
 </div>
+
 
 
 <div class="container fractal-chaos-container">
@@ -21,7 +16,22 @@
         <div class="col-md-10 col-md-offset-1">
             @RenderPage("Navigation.cshtml")
 
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Of course we're not limited to simply two dimensions. The chaos game works precisely the same in three dimensions as well.</p>
 
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/polyhedra/tetraPostA.png">
+                            <img src="~/Content/images/fractalChaos/polyhedra/tetraPostA.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 terations with four anchor points to form a tetrahedron
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
 
             <div class="row">
                 <div class="col-md-12">

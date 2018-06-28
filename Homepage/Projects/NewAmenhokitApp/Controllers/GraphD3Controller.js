@@ -8,37 +8,69 @@
         this.dataService = DataService;
 
         this.svg = d3.select("#graph");
-        this.margin = { top: 20, right: 80, bottom: 50, left: 50 };
 
-        this.width = this.svg.attr("width") - this.margin.left - this.margin.right;
-        this.height = this.svg.attr("height") - this.margin.top - this.margin.bottom;
-        this.g = this.svg.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+          
+        this.redraw(this);
+
+        var self = this;
+
+        //   redraw(this);
+        angular.element($window).bind('resize', function () {
+            self.redraw();
+            $scope.$digest();
+        })
+        
+    }
+
+    GraphD3Controller.prototype.redraw = function (self) {        
+
+        if (!self) {
+            self = this;
+        }
+
+        self.margin = { top: 20, right: 80, bottom: 50, left: 50 };
+
+        // self.width = self.svg.attr("width") - self.margin.left - self.margin.right;
+        //   self.height = self.svg.attr("height") - self.margin.top - self.margin.bottom;
+
+        var chartDiv = document.getElementById("graph-container");
+        var width = chartDiv.clientWidth;
+        var height = chartDiv.clientHeight;
+
+        //var height = width;
+
+        self.width = width - self.margin.left - self.margin.right;
+        self.height = height - self.margin.top - self.margin.bottom;
+        console.log(self.width);
+        console.log(self.height);
+        self.svg.selectAll("*").remove();
+        self.g = self.svg.append("g").attr("transform", "translate(" + self.margin.left + "," + self.margin.top + ")");
+        
 
 
-        this.parseTime = d3.timeParse("%Y%m%d");
+        self.parseTime = d3.timeParse("%Y%m%d");
 
-        this.x = d3.scaleTime().range([0, this.width]);
-        this.y = d3.scaleLinear().range([this.height, 0]);
-        this.z = d3.scaleOrdinal(d3.schemeCategory10);
+        self.x = d3.scaleTime().range([0, self.width]);
+        self.y = d3.scaleLinear().range([self.height, 0]);
+        self.z = d3.scaleOrdinal(d3.schemeCategory10);
 
-        this.tooltip = d3.select("#graph-container").append("div").attr("class", "tooltip").style("opacity", 0);
+        self.tooltip = d3.select("#graph-container").append("div").attr("class", "tooltip").style("opacity", 0);
 
         var line = d3.line()
             .curve(d3.curveBasis)
             .x(function (d) { return x(d.date); })
             .y(function (d) { return y(d.score); });
 
-        this.selectedSeries = null;
+        self.selectedSeries = null;
 
-        this.data = null;
+        self.data = null;
 
-        var self = this;
+        var self = self;
 
-        this.allScoreFile = "/Content/datafiles/linechartdataall.txt";
-        this.bestScoreFile = "/Content/datafiles/linechartdata.txt";
-        
-        this.loadFileAndDraw(this.bestScoreFile);
-         
+        self.allScoreFile = "/Content/datafiles/linechartdataall.txt";
+        self.bestScoreFile = "/Content/datafiles/linechartdata.txt";
+
+        self.loadFileAndDraw(self.bestScoreFile);
     }
 
     GraphD3Controller.prototype.loadFileAndDraw = function (file) {
@@ -245,13 +277,37 @@
             .enter()
             .append("circle")
           
-            .style("opacity", 0.9)
+            //.style("opacity", 0.9)
             .on("click", function (d) {
                 self.setSelectedSeries(d.series);
             })
             .on("mouseover", function (d) {
                 var niceDate = d.date.getFullYear() + "-" + (d.date.getMonth() + 1) + "-" + d.date.getDate();
 
+                console.log(d);
+
+                
+                var names = [];
+
+                var blarg = d3.selectAll("circle").each(function (h) {
+
+                    if (h.date == d.date) {
+                        names.push(h.series);
+                        var b = d3.select(this);
+
+                        var xx = 42;
+                    }
+                    
+                });
+                    
+                         
+
+                for (var i = 0; i < seriesNames.length; i++) {
+                    var series = seriesNames[i];
+
+                    var xx = 42;
+
+                }
                 var indx = seriesNames.indexOf(d.series);
                 var color = self.z(indx);
                 self.tooltip.transition().duration(200).style("opacity", .9);
@@ -280,6 +336,10 @@
             .attr("cy", function (d) {
                 return self.y(d.score);
             });
+
+
+  
+        
 
 
     }

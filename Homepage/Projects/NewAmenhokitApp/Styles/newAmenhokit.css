@@ -43,7 +43,17 @@
 
 #graph {
     background: #fff;
-    border: 1px solid #ccc;
+}
+
+
+#graph-container svg {
+    width:100%;
+    height:100%;
+}
+
+#graph-container {   
+    width: 100%;
+    height:80vh;
 }
 
 
@@ -56,17 +66,36 @@
 }
 #graph-container .point {
     cursor: pointer;    
+    opacity:0.9;
+}
+
+#graph-container .point:hover {
+    opacity:1.0;
 }
 #graph-container .legend {
     cursor: pointer;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 16px;
-    
-}
 
+    text-transform:capitalize; 
+}
+#graph-container .legend:hover {
+    font-weight:bold;
+}
 
 #graph-container .grid line {
     stroke: lightgrey;
     stroke-opacity: 0.7;
     shape-rendering: crispEdges;
 }
+
+#graph-container .axis { 
+font-size:12px;
+
+}
+
+#graph-container .axis text {
+    fill:#666;
+}
+
+

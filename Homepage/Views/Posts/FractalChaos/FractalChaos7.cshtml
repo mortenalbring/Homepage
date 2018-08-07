@@ -1,0 +1,116 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="post-title post-title-fc7">
+    <div class="post-title-text">
+        <span>Fractal Chaos</span>
+    </div>
+</div>
+
+
+<div class="container fractal-chaos-container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            @RenderPage("Navigation.cshtml")
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p>The code for producing all of these renders is <a href="https://github.com/mortenalbring/FractalChaos">available on GitHub</a>.</p>
+                    <p>The rendering of the images is done using <a href="http://www.povray.org/">POV-Ray</a>. In previous simulations of chaotic attractors, I have performed the calculations directly in POV-Ray. For this project, however, I separated out the calculation of the data points from the rendering of the image. This allowed me to be able to make small changes to the render settings without having to recalculate 10,000,000 data points. </p>
+                    <p>
+                        I wrote a small C# console application that plays the chaos game over many iterations and outputs two text files:
+                        <ul>
+                            <li>A small text file with co-ordinates and colours of all the anchor points</li>
+                            <li>A big text file with co-ordinates and colours of all the calculated data points</li>
+                        </ul>
+                    </p>
+                    <p>
+                        The files contain a series of vectors in the form:
+                        <pre><-1,-1,0>,<1,0,0>,<1,-1,0>,<0,1,0>,<0,1,0>,<0,0,1></pre>
+
+                        For each data point, there is a pair of vectors.
+                        The first vector is the 'x,y,z' position of the point, while the second vector is the 'r,g,b' value of the colour.
+                    </p>
+                    <p>
+                        This example is for the anchor points of a triangle, coloured red, green and blue respectively. The data points file is exactly the same logic, but for a much bigger set of points.
+                    </p>
+
+                    <p>
+                        This format was chosen because it was simple to read in to POV-Ray. However, if one can configure a different rendering engine to read these same files, one could swap out POV-Ray entirely.
+                    </p>
+
+                    <p>
+                        The POV-Ray file simply contains a camera and some lights, and reads the anchors file to render the anchors as coloured spheres and then reads the data points and renders each one as a tiny sphere. There are numerous settings associated with both the render and the calculation, which we'll get to later.
+                    </p>
+
+                    <strong>Code</strong>
+
+                    <p>
+                        The code is executed from <a href="https://github.com/mortenalbring/FractalChaos/blob/master/GeneratePoints/GeneratePoints/Program.cs">Program.cs</a>, where you can set up your shapes.
+                    </p>
+
+                    As a simple example,
+                    <pre>
+private static void Main(string[] args)
+{          
+    var p = new Polygon(3);  
+    p.StartRender();
+}
+					</pre>
+                    This will create a regular <a href="https://github.com/mortenalbring/FractalChaos/blob/master/GeneratePoints/GeneratePoints/Models/Polygon.cs">polygon</a> with 3 anchor points (a triangle) and then play the chaos game using all the default settings.
+
+                    <p>
+                        Executing this should create a folder within the <code>/bin/Debug</code> folder called '3-gon' within which there should be four files:                        
+                        
+                        <dl>
+                            <dt>
+                                3-gon_r0.5_p10-datapoints.txt
+                            </dt>
+                            <dd>
+                                The series of XYZ co-ordinates and RGB values of the calculated points from playing the chaos game
+                            </dd>
+                            <dt>
+                                3-gon-anchors.txt
+                            </dt>
+                            <dd>
+                                The series of XYZ co-ordinates and RGB values of the initial anchor points
+                            </dd>
+                            
+                            <dt>
+                                3-gon_r0.5_p10-datapoints.txt.pov
+                            </dt>
+                            <dd>
+                                The scene setup
+                            </dd>
+                            <dt>
+                                3-gon_r0.5_p10-datapoints.txt.pov.ini
+                            </dt>
+                            <dd>
+                                The animation setup
+                            </dd>
+                        </dl>                      
+                    </p>
+                    
+                    
+                    <p>
+                        The program will only output these files. You will need to open the .pov or the .ini file in POV-Ray and execute to start the render. 
+                    </p>
+                    
+                    <p>
+
+                    </p>
+                    
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderPage("References.cshtml")
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

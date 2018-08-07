@@ -7,14 +7,44 @@ using System.Web;
 using System.Web.Mvc;
 using Homepage.Models;
 using Homepage.Models.Amenhokit.Database;
+using Homepage.Models.Amenhokit.JsonModels;
 using Homepage.Models.Amenhokit.ViewModels;
 using Homepage.Repository;
+using Homepage.Services.Amenhokit;
+using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
 
 namespace Homepage.Controllers
 {
     public class AmenhokitController : Controller
     {
-      
+
+        [HttpPost]
+        public JsonResult FindSessionByDate(string gameDate)
+        {
+            var output = new List<Session>();
+            try
+            {
+                var gameDateObj = DateTime.Parse(gameDate);
+
+                using (var db = new DataContext())
+                {                    
+                    var sessions =
+                       db.Session.Where(
+                           e =>
+                               e.Date.Year == gameDateObj.Year && e.Date.Month == gameDateObj.Month &&
+                               e.Date.Day == gameDateObj.Day).ToList();
+                    output = sessions;
+                    
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("Problem parsing date " + gameDate);
+            }
+            return Json(output, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         public void AddNewScore(int playerId, string gameDate, int gameNumber, int lane, string scoreString, int finalScore)
         {
@@ -38,7 +68,7 @@ namespace Homepage.Controllers
 
                     if (session == null)
                     {
-                        session = new Session {Date = gameDateObj};
+                        session = new Session { Date = gameDateObj };
                         db.Session.Add(session);
                         db.SaveChanges();
                     }
@@ -54,7 +84,7 @@ namespace Homepage.Controllers
                         };
                         db.Game.Add(game);
                         db.SaveChanges();
-                    }                    
+                    }
 
                     var playerScore = new PlayerScore
                     {
@@ -65,7 +95,21 @@ namespace Homepage.Controllers
                         Scorestring = scoreString
                     };
 
-                    db.PlayerScore.Add(playerScore);
+                    var existing =
+                        db.PlayerScore.FirstOrDefault(e => e.Player == playerScore.ID && e.Game == playerScore.Game &&
+                                                           e.Session == playerScore.Game &&
+                                                           e.Score == playerScore.Score);
+
+                    if (existing == null)
+                    {
+                        db.PlayerScore.Add(playerScore);
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Player score already inserted " + playerScore.Scorestring);
+                    }
+
+
                     db.SaveChanges();
 
                 }
@@ -92,7 +136,7 @@ namespace Homepage.Controllers
                     score.Score = newScore;
 
                     db.SaveChanges();
-                    
+
 
                     return Json(new { success = true, score = score }, JsonRequestBehavior.AllowGet);
                 }
@@ -317,25 +361,32 @@ namespace Homepage.Controllers
             using (var db = new DataContext())
             {
                 var pscs = (from ps in db.PlayerScore
-                    join p in db.Player on ps.Player equals p.ID
-                    join g in db.Game on ps.Game equals g.ID
-                    join s in db.Session on ps.Session equals s.ID
-                    select new {player = p, playerscore = ps, session = s, game = g}
+                            join p in db.Player on ps.Player equals p.ID
+                            join g in db.Game on ps.Game equals g.ID
+                            join s in db.Session on ps.Session equals s.ID
+                            select new { player = p, playerscore = ps, session = s, game = g }
                     ).ToList();
 
                 var output = new List<PlayerSessionScore>();
                 foreach (var psc in pscs)
                 {
-                    output.Add(new PlayerSessionScore(psc.player,psc.playerscore,psc.session,psc.game));
+                    output.Add(new PlayerSessionScore(psc.player, psc.playerscore, psc.session, psc.game));
                 }
-                
+
 
                 return Json(output, JsonRequestBehavior.AllowGet);
             }
 
         }
 
-     
+        
+        public void WriteAllJsonFiles()
+        {
+            WriteDataToJson.WriteAll();
+        }
+
+
+
 
         public string GetVirtualPath(string physicalPath)
         {
@@ -355,8 +406,11 @@ namespace Homepage.Controllers
             {
                 var playerScores = db.PlayerScore.ToList();
                 var removed = 0;
+                var p = 0;
                 foreach (var ps in playerScores)
                 {
+                    p++;
+                    Debug.WriteLine("Checking for dupes " + p + "/" + playerScores.Count);
                     var dupes =
                         db.PlayerScore.Where(
                             e =>
@@ -369,6 +423,7 @@ namespace Homepage.Controllers
                         var first = dupes.First();
                         var others = dupes.Where(e => e.ID != first.ID).ToList();
 
+                        
                         foreach (var other in others)
                         {
                             db.PlayerScore.Attach(other);
@@ -377,6 +432,7 @@ namespace Homepage.Controllers
                             Debug.WriteLine(removed);
                             db.SaveChanges();
                         }
+                        
 
                         var zz = 42;
 

@@ -104,4 +104,14 @@
         $scope.scoreStringCalculated = score;
 
     }
+
+    $scope.findSessions = function (date) {
+        $scope.sessionsWithDate = [];
+
+        AjaxService.GetSessionByDate(date).then(function (result) {
+            for (var i = 0; i < result.data.length; i++) {
+                $scope.sessionsWithDate.push(result.data[i]);
+            }            
+        })
+    }
 }

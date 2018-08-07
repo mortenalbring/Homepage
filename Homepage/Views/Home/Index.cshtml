@@ -59,10 +59,20 @@
 
 
 
-<div class="container section-posts">
-    <h1>Recent posts</h1>
-
+<div class="container section-posts">  
     <div class="flex-row-container">
+
+        <div class="post-summary-container" style="background-image:url(/Content/images/fractalChaos/fc-cover.png)">
+            <a href="@Url.Action("FractalChaos","Posts")">
+                <h1>
+                    Fractal Chaos
+                </h1>
+                <p>
+                The chaos game is a game of very simple rules that produces remarkable fractal structures. This post explores a variety of different structures and the code used to generate them.
+                </p>
+            </a>
+        </div>
+
         <div class="post-summary-container post-summary-menger">
             <a href="@Url.Action("MengerSponge", "Posts")">
                 <h1>Menger Sponge</h1>

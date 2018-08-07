@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="post-title post-title-fc4">
+    <div class="post-title-text">
+        <span>Fractal Chaos</span>
+    </div>
+</div>
+
+
+<div class="container fractal-chaos-container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            @RenderPage("Navigation.cshtml")
+
+
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="fc-image-text">
+                        <p>
+                            We can add more complexity to the rules of what we do when we roll the die.
+                        </p>
+                        <p>
+                            To recap, the rules are currently:
+                            <ul class="list-group">
+                                <li class="list-group-item">If we roll red, we move halfway towards the red anchor point</li>
+                                <li class="list-group-item">If we roll green, we move halfway towards the green anchor point</li>
+                                <li class="list-group-item">If we roll blue, we move halfway towards the blue anchor point</li>
+                            </ul>
+                        </p>
+                        <p>
+                            We'll keep the first two rules the same, but we'll make a small addition to the last rule:
+                            <ul class="list-group">
+                                <li class="list-group-item">If we roll blue, we move halfway towards the blue anchor point <strong>and</strong> we rotate the point about an angle θ around the blue anchor point.</li>
+                            </ul>
+                        </p>
+                        <p>This means that in 2/3 of the cases, we'll produce the same structure.</p>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <img class="fc-image pull-right" src="~/Content/images/fractalChaos/fcTriangleRotate.png" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    Doing this with three anchor points, the Sierpiński triangle is transformed into this structure:
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcTriangleRotate1Big.png">
+                            <img src="~/Content/images/fractalChaos/fcTriangleRotate1Small.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with three anchor points going half-way towards the anchor point, and rotating about an angle of 90 degrees if the blue point is selected.
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="fc-image-container">
+                        <a href="~/Content/images/fractalChaos/fcTriangleRotate2Big.png">
+                            <img src="~/Content/images/fractalChaos/fcTriangleRotate2Small.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with three anchor points going half-way towards the anchor point, and rotating about an angle of 180 degrees if the blue point is selected.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Why is this happening? This fractal structure doesn't seem to resemble the Sierpiński triangle at all. </p>
+                    <p>The behaviour is more obvious if we vary the angle smoothly from 0 to 360 degrees.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-1">
+                    <div class="fc-image-container">
+
+
+                        <a href="https://youtu.be/Xyr979Mq_I4" target="_blank">
+                            <img src="~/Content/images/fractalChaos/triangle_VaryAngle6.gif" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderPage("References.cshtml")
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</div>

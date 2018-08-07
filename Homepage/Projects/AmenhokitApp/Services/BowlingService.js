@@ -41,7 +41,11 @@
 
                 var fs2 = parseScore(fc2);
                 var fs3 = parseScore(fc3);                
-                
+
+                if (fc3 == '/') {
+                    return 10;
+                }
+
                 return fs2 + fs3;
             }
             var total = 0;
@@ -97,6 +101,7 @@
                 if (c3 == "X") {
                     return 10;
                 }
+             
                 var s3 = 0;
                 if (isNumeric(c3)) {
                     s3 = parseInt(c3);

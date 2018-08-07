@@ -1,0 +1,99 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="post-title post-title-fc">
+    <div class="post-title-text">
+        <span>Fractal Chaos</span>
+    </div>
+</div>
+
+
+<div class="container fractal-chaos-container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            @RenderPage("Navigation.cshtml")
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        When playing the chaos game normally, we roll a die and select an anchor point and go halfway between the previous point and the random anchor point.
+                    </p>
+                    <p>
+                        But we don't have to only go precisely halfway to the new point. We can vary that ratio.
+                    </p>
+                    <p>
+                        The images in the <a href="@Url.Action("FractalChaos2")">previous section</a> were all generated with a ratio of 0.5.
+                    </p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="fc-image-container">
+
+
+                        <a href="https://youtu.be/Rz9FoV9YAQI" target="_blank">
+                            <img src="~/Content/images/fractalChaos/triangle_VaryRatio.gif" />
+                        </a>
+
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with three anchor points, varying the distance to which we go towards the anchor point - from a ratio of 0.01 up to 0.8 (where 0.5 is halfway).
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <p>
+                        This shows varying the ratio smoothly from 0.01 up to 0.8. At values above 0.5, then the structure escapes the bounds of the anchor points.
+                    </p>
+                    <p>
+                        If we had enough data points, we would still see the Sierpinski triangle. The render time increases dramatically with more points, though.
+                    </p>
+                    <p>
+                        We can see if the other polygons produce more interesting structures with different ratios.
+                    </p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="fc-image-container">
+
+
+                        <a href="~/Content/images/fractalChaos/fcPentagonr0-35Big.png" target="_blank">
+                            <img src="~/Content/images/fractalChaos/fcPentagonr0-35Small.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with five anchor points, moving the towards the a randomly selected anchor point with a ratio of 0.35.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="fc-image-container">
+
+
+                        <a href="~/Content/images/fractalChaos/fcHexagonr0-3Small.png" target="_blank">
+                            <img src="~/Content/images/fractalChaos/fcHexagonr-0-3Small.png" />
+                        </a>
+                        <div class="caption">
+                            Chaos game played over 10,000,000 iterations with six anchor points, moving the towards the a randomly selected anchor point with a ratio of 0.35.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderPage("References.cshtml")
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>

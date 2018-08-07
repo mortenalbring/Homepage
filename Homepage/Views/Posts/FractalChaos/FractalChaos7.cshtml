@@ -60,22 +60,47 @@ private static void Main(string[] args)
                     This will create a regular <a href="https://github.com/mortenalbring/FractalChaos/blob/master/GeneratePoints/GeneratePoints/Models/Polygon.cs">polygon</a> with 3 anchor points (a triangle) and then play the chaos game using all the default settings.
 
                     <p>
-                        Executing this should create a folder within the <code>/bin/Debug</code> folder called '3-gon' within which there should be four files:
-                        <ul>
-                            <li>
+                        Executing this should create a folder within the <code>/bin/Debug</code> folder called '3-gon' within which there should be four files:                        
+                        
+                        <dl>
+                            <dt>
                                 3-gon_r0.5_p10-datapoints.txt
-                            </li>
-                            <li>
-                                3-gon_r0.5_p10-datapoints.txt.pov
-                            </li>
-                            <li>
-                                3-gon_r0.5_p10-datapoints.txt.pov.ini
-                            </li>
-                            <li>
+                            </dt>
+                            <dd>
+                                The series of XYZ co-ordinates and RGB values of the calculated points from playing the chaos game
+                            </dd>
+                            <dt>
                                 3-gon-anchors.txt
-                            </li>
-                        </ul>
+                            </dt>
+                            <dd>
+                                The series of XYZ co-ordinates and RGB values of the initial anchor points
+                            </dd>
+                            
+                            <dt>
+                                3-gon_r0.5_p10-datapoints.txt.pov
+                            </dt>
+                            <dd>
+                                The scene setup
+                            </dd>
+                            <dt>
+                                3-gon_r0.5_p10-datapoints.txt.pov.ini
+                            </dt>
+                            <dd>
+                                The animation setup
+                            </dd>
+                        </dl>                      
                     </p>
+                    
+                    
+                    <p>
+                        The program will only output these files. You will need to open the .pov or the .ini file in POV-Ray and execute to start the render. 
+                    </p>
+                    
+                    <p>
+
+                    </p>
+                    
+
                 </div>
             </div>
 

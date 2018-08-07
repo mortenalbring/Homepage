@@ -313,14 +313,22 @@ h1, h2, h3 {
     height: 350px;
 }
 
-    .post-title-fc4 span {
+.post-title-fc7 {
+    background-image: url('../Content/images/fractalChaos/background7.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
+    .post-title span {
         display: block;
         text-align: center;
         font-family: 'Open Sans', sans-serif;
         font-size: 3em;
         font-weight: 800;
         color: white;
-        text-shadow: 0 0 4px #222; /* horizontal-offset vertical-offset 'blur' colour */
+        text-shadow: 0 0 4px #222;         
         -moz-text-shadow: 0 0 4px #222;
         -webkit-text-shadow: 0 0 4px #222;
     }

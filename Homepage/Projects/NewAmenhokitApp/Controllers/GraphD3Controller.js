@@ -9,7 +9,7 @@
 
         this.svg = d3.select("#graph");
 
-          
+
         this.redraw(this);
 
         var self = this;
@@ -19,10 +19,10 @@
             self.redraw();
             $scope.$digest();
         })
-        
+
     }
 
-    GraphD3Controller.prototype.redraw = function (self) {        
+    GraphD3Controller.prototype.redraw = function (self) {
 
         if (!self) {
             self = this;
@@ -45,7 +45,7 @@
         console.log(self.height);
         self.svg.selectAll("*").remove();
         self.g = self.svg.append("g").attr("transform", "translate(" + self.margin.left + "," + self.margin.top + ")");
-        
+
 
 
         self.parseTime = d3.timeParse("%Y%m%d");
@@ -87,10 +87,10 @@
             return d;
         }
     }
- 
 
 
-    GraphD3Controller.prototype.setAllScoreFile = function() {
+
+    GraphD3Controller.prototype.setAllScoreFile = function () {
         this.clearChart();
         this.loadFileAndDraw(this.allScoreFile);
     }
@@ -117,7 +117,7 @@
         this.renderChart(this.data);
 
     }
- 
+
     GraphD3Controller.prototype.renderChart = function (data) {
         var self = this;
 
@@ -174,26 +174,26 @@
                 var d = seriesData[k];
                 xSeries.push(k);
                 ySeries.push(d.score);
-            }           
+            }
 
-          
-            
+
+
             var leastSquaresCoeff = leastSquares(xSeries, ySeries);
 
             var x1 = seriesData[0].date;
             var y1 = leastSquaresCoeff[0] + leastSquaresCoeff[1];
-            var x2 = seriesData[seriesData.length-1].date;
+            var x2 = seriesData[seriesData.length - 1].date;
             var y2 = leastSquaresCoeff[0] * xSeries.length + leastSquaresCoeff[1];
             var seriesName = seriesData[0].series;
 
             var trendData = [[x1, y1, x2, y2, seriesName]];
 
             trendLines.push(trendData);
-            
-         
+
+
         }
 
-       
+
         self.x.domain(d3.extent(d3.merge(series), function (d) { return d.date; })).nice();
         self.y.domain(d3.extent(d3.merge(series), function (d) { return d.score; })).nice();
 
@@ -227,14 +227,14 @@
 
         self.g.selectAll(".legend")
             .data(seriesNames)
-            .enter()    
+            .enter()
             .append("text")
-            .attr("y", function (d, i) {return (i * 20) + 20;})
-          
+            .attr("y", function (d, i) { return (i * 20) + 20; })
+
             .attr("x", 20)
             .attr("class", "legend")
             .style("fill", function (d, i) { return self.z(i) })
-            .on("click", function (d) {self.setSelectedSeries(d);})
+            .on("click", function (d) { self.setSelectedSeries(d); })
             .text(function (d) {
                 if (self.selectedSeries && self.selectedSeries === d) {
                     return d + "*";
@@ -255,11 +255,11 @@
             .attr("y1", function (d) { return self.y(d[1]); })
             .attr("x2", function (d) { return self.x(d[2]); })
             .attr("y2", function (d) { return self.y(d[3]); })
-            .attr("opacity",0.5)
-            .attr("stroke-width", function(d) {
+            .attr("opacity", 0.5)
+            .attr("stroke-width", function (d) {
                 if (self.selectedSeries && self.selectedSeries === d[4]) {
                     return 2;
-                }       
+                }
                 if (!self.selectedSeries) {
                     return 2;
                 }
@@ -276,7 +276,7 @@
             .data(function (d) { return d; })
             .enter()
             .append("circle")
-          
+
             //.style("opacity", 0.9)
             .on("click", function (d) {
                 self.setSelectedSeries(d.series);
@@ -286,39 +286,45 @@
 
                 console.log(d);
 
-                
+
                 var names = [];
+                nameString = "";
 
-                var blarg = d3.selectAll("circle").each(function (h) {
-
+                d3.selectAll("circle").each(function (h) {
+                    var b = d3.select(this);
                     if (h.date == d.date) {
                         names.push(h.series);
-                        var b = d3.select(this);
-
-                        var xx = 42;
+                        nameString = h.series + ","
+                        b.classed("related", true);
+                        b.classed("other", false);
                     }
-                    
+                    else {
+                        b.classed("related", false);
+                        b.classed("other", true);
+                    }
                 });
-                    
-                         
 
-                for (var i = 0; i < seriesNames.length; i++) {
-                    var series = seriesNames[i];
-
-                    var xx = 42;
-
-                }
                 var indx = seriesNames.indexOf(d.series);
                 var color = self.z(indx);
                 self.tooltip.transition().duration(200).style("opacity", .9);
                 self.tooltip.html(
                     niceDate + "<br/>" +
+                    "with: " + nameString +
+                    "<br/>" +
                     d.series + "<br/>" + d.score)
                     .style("left", "40%")
                     .style("background", color)
                     .style("top", "40px");
             })
             .on("mouseout", function (d) {
+                d3.selectAll("circle").each(function (h) {
+
+                    var b = d3.select(this);
+                    b.classed("related", false);
+                    b.classed("other", false);
+
+                });
+
                 self.tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
@@ -338,8 +344,8 @@
             });
 
 
-  
-        
+
+
 
 
     }

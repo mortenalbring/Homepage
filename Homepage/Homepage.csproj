@@ -277,6 +277,7 @@
     <Content Include="Content\images\fractalChaos\fc-triangle_f00004.png" />
     <Content Include="Content\images\fractalChaos\fcBarnsBig.png" />
     <Content Include="Content\images\fractalChaos\fcBarnsSmall.png" />
+    <Content Include="Content\images\fractalChaos\background7.png" />
     <Content Include="Content\images\fractalChaos\fcHexagonBig.png" />
     <Content Include="Content\images\fractalChaos\fcHexagonr-0-3Big.png" />
     <Content Include="Content\images\fractalChaos\fcHexagonr-0-3Small.png" />
@@ -311,7 +312,9 @@
     <Content Include="Content\images\fractalChaos\fcTriangleRotate1Small.png" />
     <Content Include="Content\images\fractalChaos\fcTriangleRotate2Big.png" />
     <Content Include="Content\images\fractalChaos\fcTriangleRotate2Small.png" />
+    <Content Include="Content\images\fractalChaos\polyhedra\fcpCubePost.png" />
     <Content Include="Content\images\fractalChaos\polyhedra\tetraPostA.png" />
+    <Content Include="Content\images\fractalChaos\polyhedra\tetraPost_Big.png" />
     <Content Include="Content\images\fractalChaos\triangle.png" />
     <Content Include="Content\images\fractalChaos\triangle_VaryAngle.gif" />
     <Content Include="Content\images\fractalChaos\triangle_VaryAngle6.gif" />

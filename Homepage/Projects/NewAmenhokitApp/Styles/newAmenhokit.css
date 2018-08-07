@@ -69,6 +69,16 @@
     opacity:0.9;
 }
 
+#graph-container .related {
+    stroke-width:2px;
+    stroke:black;
+}
+
+#graph-container .other {
+    transition:0.2s;
+    opacity:0.4;
+}
+
 #graph-container .point:hover {
     opacity:1.0;
 }

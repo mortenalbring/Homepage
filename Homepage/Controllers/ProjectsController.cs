@@ -1,19 +1,18 @@
 ﻿using Homepage.Repository;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Homepage.Models.Amenhokit;
 using Homepage.Models.Amenhokit.PdfScan;
-using Newtonsoft.Json;
-using WebMatrix.WebData;
 
 namespace Homepage.Controllers
 {
     public class ProjectsController : Controller
     {
+        public ActionResult ProjectKnightsTour()
+        {
+            return View();
+        }
+
         public ActionResult ProjectAngularD3()
         {
             return View();

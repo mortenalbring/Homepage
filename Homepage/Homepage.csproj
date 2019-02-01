@@ -448,6 +448,8 @@
     <Content Include="Projects\AngularD3\styles\nodestyles.css" />
     <Content Include="Projects\AngularD3\styles\pagestyles.css" />
     <Content Include="Projects\index.txt" />
+    <Content Include="Projects\KnightsTour\GridElement.js" />
+    <Content Include="Projects\KnightsTour\knightsTour.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\GraphController.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\GraphD3Controller.js" />
     <Content Include="Projects\NewAmenhokitApp\Controllers\HomeController.js" />
@@ -31028,6 +31030,7 @@
     <Content Include="Views\Posts\FractalChaos\FractalChaos6.cshtml" />
     <Content Include="Views\Posts\FractalChaos\FractalChaos7.cshtml" />
     <Content Include="Views\Posts\FractalChaos\Navigation.cshtml" />
+    <Content Include="Views\Projects\ProjectKnightsTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

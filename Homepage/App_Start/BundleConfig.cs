@@ -82,6 +82,10 @@ namespace Homepage
                 .IncludeDirectory("~/Projects/NewAmenhokitApp/Styles","*.css")
                 );
 
+            bundles.Add(new ScriptBundle("~/bundles/knightsTour")
+                .IncludeDirectory("~/Projects/KnightsTour", "*.js")
+                );
+
             BundleTable.EnableOptimizations = false;
         }
 

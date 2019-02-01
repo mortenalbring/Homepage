@@ -267,6 +267,7 @@
     <Content Include="Content\images\fractalChaos\background.png" />
     <Content Include="Content\images\fractalChaos\background2.png" />
     <Content Include="Content\images\fractalChaos\background4.png" />
+    <Content Include="Content\images\fractalChaos\background_parallax.png" />
     <Content Include="Content\images\fractalChaos\fc-cover.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001_2.gif" />

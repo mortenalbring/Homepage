@@ -70,3 +70,12 @@
 .node-yellow {
     fill:#a99204;
 }
+
+.node-words-english {
+    fill:red;
+    opacity:0.5;
+}
+.node-words-norwegian {
+    fill:blue;
+    opacity:0.5;
+}

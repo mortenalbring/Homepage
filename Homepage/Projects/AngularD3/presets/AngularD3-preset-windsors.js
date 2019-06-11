@@ -137,7 +137,7 @@ windsors.settings.linkClass = function (edge) {
         return "link-couple";
     }
     return "link-children";
-}
+};
 
 windsors.settings.nodeClass = function (d) { return 'node-container-windsor'; },
 

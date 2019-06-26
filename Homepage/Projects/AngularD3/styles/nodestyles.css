@@ -71,11 +71,29 @@
     fill:#a99204;
 }
 
-.node-words-english {
-    fill:red;
+.node-words:hover {
+    font-size:12px;
+    font-weight:bold;
+    opacity:1;
+}
+
+.node-words {
+    font-size:10px;
+    cursor: pointer;
     opacity:0.5;
 }
+.node-words-english {    
+    fill:purple;    
+}
 .node-words-norwegian {
-    fill:blue;
-    opacity:0.5;
+    fill:blue;    
+}
+.node-words-danish {
+    fill: red;    
+}
+.node-words-german {
+    fill: green;    
+}
+.node-words-swiss {
+    fill: darkgreen;    
 }

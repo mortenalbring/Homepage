@@ -14,6 +14,11 @@ namespace Homepage.Controllers
 {
     public class ProjectsController : Controller
     {
+
+        public ActionResult ProjectWordsWithinWordsVis()
+        {
+            return View();
+        }
         public ActionResult ProjectWordsWithinWords()
         {
             return View();

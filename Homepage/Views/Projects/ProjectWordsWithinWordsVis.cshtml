@@ -7,8 +7,8 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-    var width = 960,
-        height = 500;
+    var width = 1920,
+        height = 1080;
 
     var canvas = d3.select("#vis").append("canvas")
         .attr("width", width)
@@ -19,6 +19,12 @@
 
     var nodeRadius = 4.5;
 
+    d3.json("/Projects/Json1")
+        .response(function (xhr) { return d3.csvParse(xhr.responseText); })
+        .get(function(data) {
+            console.log(data);
+        });
+
     d3.json("graph.json", function (error, graph) {
         if (error) throw error;
 
@@ -27,6 +33,9 @@
         force
             .nodes(graph.nodes)
             .links(graph.links)
+            .charge("-150")
+            .linkStrength("10")
+            .gravity("0.1")
             .on("tick", tick)
             .start();
 
@@ -48,7 +57,7 @@
             graph.nodes.forEach(function (d) {
                 context.moveTo(d.x, d.y);
                 context.arc(d.x, d.y, nodeRadius, 0, 2 * Math.PI);
-                context.font = "20px Arial";
+                context.font = "12px Arial";
                 context.fillText(d.name, d.x + nodeRadius, d.y);
             });
             context.fill();

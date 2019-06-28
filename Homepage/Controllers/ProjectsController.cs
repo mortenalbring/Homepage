@@ -48,6 +48,11 @@ namespace Homepage.Controllers
             return View();
         }
 
+        public JsonResult Json1()
+        {
+            return Json(new { test = "yes" });
+        }
+
         [HttpGet]
         public JsonResult GetGameInfo()
         {

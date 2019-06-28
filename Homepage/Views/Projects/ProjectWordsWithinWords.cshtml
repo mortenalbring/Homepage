@@ -1,4 +1,8 @@
-﻿@{
+﻿@using System.Collections
+@using System.Collections.Generic
+@using System.Linq
+@using System.Runtime.CompilerServices
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -51,29 +55,9 @@
 
                 <ul>
                     @{
-                        var words = new List<string>()
-{"dearns: earns darns derns deans dears dearn",
-"heards: eards hards herds heads hears heard",
-"spared: pared sared spred spaed spard spare",
-"yeards: eards yards yerds yeads years yeard"};
+                        var words = new List<string>() { "dearns: earns darns derns deans dears dearn", "heards: eards hards herds heads hears heard", "spared: pared sared spred spaed spard spare", "yeards: eards yards yerds yeads years yeard" };
 
-                        foreach (var word in words)
-                        {
-                            <li>
-                                <code>
-                                    @{
-                                        var wordsSpl = word.Split(' ').ToList();
-
-                                        foreach (var sp in wordsSpl)
-                                        {
-                                            <a href="https://en.wiktionary.org/wiki/@sp.Replace(":","")">
-                                                <span>@sp</span>
-                                            </a>
-                                        }
-                                    }
-                                </code>
-                            </li>
-                        }
+                        @DisplayWordsWithinWords(words, "https://en.wiktionary.org/wiki/");
                     }
                 </ul>
             </p>
@@ -92,33 +76,9 @@
                 Norwegian has seven words with five subwords
                 <ul>
                     @{
-                        var nwords = new List<string>()
-{"grein: rein gein grin gren grei",
-"leide: eide lide lede leie leid",
-"leike: eike like leke leie leik",
-"meine: eine mine mene meie mein",
-"skure: kure sure skre skue skur",
-"tåren: åren tren tåen tårn tåre",
-"veike: eike vike veke veie veik"
-                        };
-
-                        foreach (var word in nwords)
-                        {
-                            <li>
-                                <code>
-                                    @{
-                                        var wordsSpl = word.Split(' ').ToList();
-
-                                        foreach (var sp in wordsSpl)
-                                        {
-                                            <a href="https://no.wiktionary.org/wiki/@sp.Replace(":","")">
-                                                <span>@sp</span>
-                                            </a>
-                                        }
-                                    }
-                                </code>
-                            </li>
-                        }
+                        var nwords = new List<string>() {"grein: rein gein grin gren grei", "leide: eide lide lede leie leid", "leike: eike like leke leie leik", "meine: eine mine mene meie mein", "skure: kure sure skre skue skur", "tåren: åren tren tåen tårn tåre", "veike: eike vike veke veie veik"
+                };
+                        @DisplayWordsWithinWords(nwords, "https://no.wiktionary.org/wiki/");
                     }
                 </ul>
             </p>
@@ -247,7 +207,45 @@
             <p>I will update this table if I can find more comprehensive word lists for these languages.</p>
             <p>The final row takes all of the other dictionaries and combines them together in one single list.</p>
 
+
+            <p>
+                As an aside, a slight variation of this code can also find all words with the letters in alphabetical order. Of the 267,753 words in this English dictionary, 861 words contain all the letters in alphabetical order.
+
+                The longest ones are 7 characters long:
+                <br />
+                @{
+                    var alphabetWords = new List<string>() { "addeems", "beefily", "billowy", "chikors", "dikkops", "gimmors" };
+                    @DisplayWordsInline(alphabetWords, "https://en.wiktionary.org/wiki/")
+                }
+
+                The 8 letter word 'aegilops' is often reported as the longest word with all letters in alphabetical order, but this is <a href="https://1word.ws/aegilops">not a valid scrabble word</a>.
+            </p>
+
+            <p>
+                As an aside to the aside, we can also find the longest words with no repeating characters. There are two, each with 16 letters: @DisplayWordsInline(new List<string>() { "dermatoglyphics", "uncopyrightable" }, "https://en.wiktionary.org/wiki/")
+            </p>
+
+            <hr />
+
+            <p>This question of words within words led me to a related question. </p>
+            <ul>
+                <li>Let's start with a word, and remove a character to make another word (as before).  </li>
+                <li>From this new word, see if we can remove a character and make yet another word</li>
+                <li>Repeat for as long as possible</li>
+            </ul>
+            <br />
+            For example:
+            @DisplayWordChain(new List<string>() { "boarder", "borer", "bore", "ore" })
+
+
+
+            <p>
+                But what is the longest chain we can make?
+            </p>
+
+
         </div>
+
     </div>
 
     <strong>Resources:</strong>
@@ -264,3 +262,55 @@
     </ul>
 
 </div>
+
+
+@helper DisplayWordChain(List<string> wordChain)
+{
+    for (int i = 0; i < wordChain.Count(); i++)
+    {
+
+        <code>@wordChain[i]</code>
+
+        if (i < wordChain.Count)
+        {
+            <span>→</span>
+        }
+
+    }
+
+}
+
+@helper DisplayWordsInline(IEnumerable<string> words, string urlPrefix)
+{
+    foreach (var word in words)
+    {
+        <code>
+            <a href="@string.Concat(urlPrefix,word)">
+                <span>@word.Trim()</span>
+            </a>
+        </code>
+    }
+
+}
+
+@helper DisplayWordsWithinWords(IEnumerable<string> words, string urlPrefix)
+{
+    foreach (var word in words)
+    {
+        <li>
+            <code>
+                @{
+                    var wordsSpl = word.Split(' ').ToList();
+
+                    foreach (var sp in wordsSpl)
+                    {
+                        <a href="@string.Concat(urlPrefix,@sp.Replace(":",""))">
+                            <span>@sp.Trim()</span>
+                        </a>
+                    }
+                }
+            </code>
+        </li>
+    }
+
+}

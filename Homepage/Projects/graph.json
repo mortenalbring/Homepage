@@ -1,828 +1,5666 @@
-﻿{"nodes":[{ "ID": 1, "name":"choreologies", "languages": "EnglishGeneral"}, 
-{ "ID": 2, "name":"chorologies", "languages": "EnglishGeneral"}, 
-{ "ID": 3, "name":"austringers", "languages": "EnglishGeneral"}, 
-{ "ID": 4, "name":"astringers", "languages": "EnglishGeneral"}, 
-{ "ID": 5, "name":"austringer", "languages": "EnglishGeneral"}, 
-{ "ID": 6, "name":"breastfeeds", "languages": "EnglishGeneral"}, 
-{ "ID": 7, "name":"breastfeed", "languages": "EnglishGeneral"}, 
-{ "ID": 8, "name":"carabineers", "languages": "EnglishGeneral"}, 
-{ "ID": 9, "name":"carbineers", "languages": "EnglishGeneral"}, 
-{ "ID": 10, "name":"carabiners", "languages": "EnglishGeneral"}, 
-{ "ID": 11, "name":"carabineer", "languages": "EnglishGeneral"}, 
-{ "ID": 12, "name":"carabineros", "languages": "EnglishGeneral"}, 
-{ "ID": 13, "name":"carabinero", "languages": "EnglishGeneral"}, 
-{ "ID": 14, "name":"carabiniers", "languages": "EnglishGeneral,French"}, 
-{ "ID": 15, "name":"carbiniers", "languages": "EnglishGeneral"}, 
-{ "ID": 16, "name":"carabinier", "languages": "EnglishGeneral,French"}, 
-{ "ID": 17, "name":"horologies", "languages": "EnglishGeneral"}, 
-{ "ID": 18, "name":"complecting", "languages": "EnglishGeneral"}, 
-{ "ID": 19, "name":"completing", "languages": "EnglishGeneral"}, 
-{ "ID": 20, "name":"housellings", "languages": "EnglishGeneral"}, 
-{ "ID": 21, "name":"houselling", "languages": "EnglishGeneral"}, 
-{ "ID": 22, "name":"nostologies", "languages": "EnglishGeneral"}, 
-{ "ID": 23, "name":"nosologies", "languages": "EnglishGeneral"}, 
-{ "ID": 24, "name":"scratchiest", "languages": "EnglishGeneral"}, 
-{ "ID": 25, "name":"scratchies", "languages": "EnglishGeneral"}, 
-{ "ID": 26, "name":"streamlings", "languages": "EnglishGeneral"}, 
-{ "ID": 27, "name":"streamings", "languages": "EnglishGeneral"}, 
-{ "ID": 28, "name":"streamling", "languages": "EnglishGeneral"}, 
-{ "ID": 29, "name":"unpreaching", "languages": "EnglishGeneral"}, 
-{ "ID": 30, "name":"upreaching", "languages": "EnglishGeneral"}, 
-{ "ID": 31, "name":"anorectics", "languages": "EnglishGeneral"}, 
-{ "ID": 32, "name":"anoretics", "languages": "EnglishGeneral"}, 
-{ "ID": 33, "name":"anorectic", "languages": "EnglishGeneral"}, 
-{ "ID": 34, "name":"astounding", "languages": "EnglishGeneral"}, 
-{ "ID": 35, "name":"stounding", "languages": "EnglishGeneral"}, 
-{ "ID": 36, "name":"stringers", "languages": "EnglishGeneral"}, 
-{ "ID": 37, "name":"astringes", "languages": "EnglishGeneral"}, 
-{ "ID": 38, "name":"astringer", "languages": "EnglishGeneral"}, 
-{ "ID": 39, "name":"balustered", "languages": "EnglishGeneral"}, 
-{ "ID": 40, "name":"blustered", "languages": "EnglishGeneral"}, 
-{ "ID": 41, "name":"barrelling", "languages": "EnglishGeneral"}, 
-{ "ID": 42, "name":"barreling", "languages": "EnglishGeneral"}, 
-{ "ID": 43, "name":"bleachings", "languages": "EnglishGeneral"}, 
-{ "ID": 44, "name":"leachings", "languages": "EnglishGeneral"}, 
-{ "ID": 45, "name":"bleaching", "languages": "EnglishGeneral"}, 
-{ "ID": 46, "name":"bramblings", "languages": "EnglishGeneral"}, 
-{ "ID": 47, "name":"ramblings", "languages": "EnglishGeneral"}, 
-{ "ID": 48, "name":"brambling", "languages": "EnglishGeneral"}, 
-{ "ID": 49, "name":"brassieres", "languages": "EnglishGeneral"}, 
-{ "ID": 50, "name":"brassiere", "languages": "EnglishGeneral"}, 
-{ "ID": 51, "name":"breastfed", "languages": "EnglishGeneral"}, 
-{ "ID": 52, "name":"breathings", "languages": "EnglishGeneral"}, 
-{ "ID": 53, "name":"breathing", "languages": "EnglishGeneral"}, 
-{ "ID": 54, "name":"breechings", "languages": "EnglishGeneral"}, 
-{ "ID": 55, "name":"breeching", "languages": "EnglishGeneral"}, 
-{ "ID": 56, "name":"canvassers", "languages": "EnglishGeneral"}, 
-{ "ID": 57, "name":"canvasers", "languages": "EnglishGeneral"}, 
-{ "ID": 58, "name":"canvasses", "languages": "EnglishGeneral"}, 
-{ "ID": 59, "name":"canvasser", "languages": "EnglishGeneral"}, 
-{ "ID": 60, "name":"carabines", "languages": "EnglishGeneral,French"}, 
-{ "ID": 61, "name":"carabiner", "languages": "EnglishGeneral"}, 
-{ "ID": 62, "name":"carrousels", "languages": "EnglishGeneral,French"}, 
-{ "ID": 63, "name":"carousels", "languages": "EnglishGeneral"}, 
-{ "ID": 64, "name":"carrousel", "languages": "EnglishGeneral,French"}, 
-{ "ID": 65, "name":"choreguses", "languages": "EnglishGeneral"}, 
-{ "ID": 66, "name":"choreuses", "languages": "EnglishGeneral"}, 
-{ "ID": 67, "name":"choreology", "languages": "EnglishGeneral"}, 
-{ "ID": 68, "name":"chorology", "languages": "EnglishGeneral"}, 
-{ "ID": 69, "name":"chorussing", "languages": "EnglishGeneral"}, 
-{ "ID": 70, "name":"chorusing", "languages": "EnglishGeneral"}, 
-{ "ID": 71, "name":"clearwings", "languages": "EnglishGeneral"}, 
-{ "ID": 72, "name":"clearings", "languages": "EnglishGeneral"}, 
-{ "ID": 73, "name":"clearwing", "languages": "EnglishGeneral"}, 
-{ "ID": 74, "name":"cohousings", "languages": "EnglishGeneral"}, 
-{ "ID": 75, "name":"cohousing", "languages": "EnglishGeneral"}, 
-{ "ID": 76, "name":"colonisers", "languages": "EnglishGeneral"}, 
-{ "ID": 77, "name":"colonises", "languages": "EnglishGeneral,French"}, 
-{ "ID": 78, "name":"coloniser", "languages": "EnglishGeneral,French"}, 
-{ "ID": 79, "name":"colonizers", "languages": "EnglishGeneral"}, 
-{ "ID": 80, "name":"colonizes", "languages": "EnglishGeneral"}, 
-{ "ID": 81, "name":"colonizer", "languages": "EnglishGeneral"}, 
-{ "ID": 82, "name":"complected", "languages": "EnglishGeneral"}, 
-{ "ID": 83, "name":"completed", "languages": "EnglishGeneral"}, 
-{ "ID": 84, "name":"competing", "languages": "EnglishGeneral"}, 
-{ "ID": 85, "name":"composited", "languages": "EnglishGeneral"}, 
-{ "ID": 86, "name":"composted", "languages": "EnglishGeneral"}, 
-{ "ID": 87, "name":"composite", "languages": "EnglishGeneral,French"}, 
-{ "ID": 88, "name":"composters", "languages": "EnglishGeneral"}, 
-{ "ID": 89, "name":"composers", "languages": "EnglishGeneral"}, 
-{ "ID": 90, "name":"composter", "languages": "EnglishGeneral"}, 
-{ "ID": 91, "name":"concreated", "languages": "EnglishGeneral"}, 
-{ "ID": 92, "name":"cocreated", "languages": "EnglishGeneral"}, 
-{ "ID": 93, "name":"concreted", "languages": "EnglishGeneral"}, 
-{ "ID": 94, "name":"concreate", "languages": "EnglishGeneral"}, 
-{ "ID": 95, "name":"concreates", "languages": "EnglishGeneral"}, 
-{ "ID": 96, "name":"cocreates", "languages": "EnglishGeneral"}, 
-{ "ID": 97, "name":"concretes", "languages": "EnglishGeneral"}, 
-{ "ID": 98, "name":"consigning", "languages": "EnglishGeneral"}, 
-{ "ID": 99, "name":"cosigning", "languages": "EnglishGeneral"}, 
-{ "ID": 100, "name":"cracklings", "languages": "EnglishGeneral"}, 
-{ "ID": 101, "name":"crackings", "languages": "EnglishGeneral,French"}, 
-{ "ID": 102, "name":"crackling", "languages": "EnglishGeneral"}, 
-{ "ID": 103, "name":"crumbliest", "languages": "EnglishGeneral"}, 
-{ "ID": 104, "name":"rumbliest", "languages": "EnglishGeneral"}, 
-{ "ID": 105, "name":"crumbiest", "languages": "EnglishGeneral"}, 
-{ "ID": 106, "name":"crumblies", "languages": "EnglishGeneral"}, 
-{ "ID": 107, "name":"describers", "languages": "EnglishGeneral"}, 
-{ "ID": 108, "name":"descriers", "languages": "EnglishGeneral"}, 
-{ "ID": 109, "name":"describes", "languages": "EnglishGeneral"}, 
-{ "ID": 110, "name":"describer", "languages": "EnglishGeneral"}, 
-{ "ID": 111, "name":"discussers", "languages": "EnglishGeneral"}, 
-{ "ID": 112, "name":"discusses", "languages": "EnglishGeneral"}, 
-{ "ID": 113, "name":"discusser", "languages": "EnglishGeneral"}, 
-{ "ID": 114, "name":"ecommerces", "languages": "EnglishGeneral"}, 
-{ "ID": 115, "name":"commerces", "languages": "EnglishGeneral,French"}, 
-{ "ID": 116, "name":"ecommerce", "languages": "EnglishGeneral"}, 
-{ "ID": 117, "name":"emperished", "languages": "EnglishGeneral"}, 
-{ "ID": 118, "name":"emperised", "languages": "EnglishGeneral"}, 
-{ "ID": 119, "name":"emperishes", "languages": "EnglishGeneral"}, 
-{ "ID": 120, "name":"emperises", "languages": "EnglishGeneral"}, 
-{ "ID": 121, "name":"escaladers", "languages": "EnglishGeneral"}, 
-{ "ID": 122, "name":"escalades", "languages": "EnglishGeneral,French"}, 
-{ "ID": 123, "name":"escalader", "languages": "EnglishGeneral,French"}, 
-{ "ID": 124, "name":"escaladoes", "languages": "EnglishGeneral"}, 
-{ "ID": 125, "name":"estrangers", "languages": "EnglishGeneral"}, 
-{ "ID": 126, "name":"strangers", "languages": "EnglishGeneral"}, 
-{ "ID": 127, "name":"etrangers", "languages": "EnglishGeneral"}, 
-{ "ID": 128, "name":"estranges", "languages": "EnglishGeneral"}, 
-{ "ID": 129, "name":"estranger", "languages": "EnglishGeneral"}, 
-{ "ID": 130, "name":"eulogisers", "languages": "EnglishGeneral"}, 
-{ "ID": 131, "name":"eulogises", "languages": "EnglishGeneral"}, 
-{ "ID": 132, "name":"eulogiser", "languages": "EnglishGeneral"}, 
-{ "ID": 133, "name":"eulogizers", "languages": "EnglishGeneral"}, 
-{ "ID": 134, "name":"eulogizes", "languages": "EnglishGeneral"}, 
-{ "ID": 135, "name":"eulogizer", "languages": "EnglishGeneral"}, 
-{ "ID": 136, "name":"fleechings", "languages": "EnglishGeneral"}, 
-{ "ID": 137, "name":"fleeching", "languages": "EnglishGeneral"}, 
-{ "ID": 138, "name":"fletchings", "languages": "EnglishGeneral"}, 
-{ "ID": 139, "name":"letchings", "languages": "EnglishGeneral"}, 
-{ "ID": 140, "name":"fletching", "languages": "EnglishGeneral"}, 
-{ "ID": 141, "name":"fracturers", "languages": "EnglishGeneral"}, 
-{ "ID": 142, "name":"fractures", "languages": "EnglishGeneral,French"}, 
-{ "ID": 143, "name":"fracturer", "languages": "EnglishGeneral,French"}, 
-{ "ID": 144, "name":"frecklings", "languages": "EnglishGeneral"}, 
-{ "ID": 145, "name":"recklings", "languages": "EnglishGeneral"}, 
-{ "ID": 146, "name":"freckling", "languages": "EnglishGeneral"}, 
-{ "ID": 147, "name":"gambolling", "languages": "EnglishGeneral"}, 
-{ "ID": 148, "name":"gamboling", "languages": "EnglishGeneral"}, 
-{ "ID": 149, "name":"garnishees", "languages": "EnglishGeneral"}, 
-{ "ID": 150, "name":"garnishes", "languages": "EnglishGeneral"}, 
-{ "ID": 151, "name":"garnishee", "languages": "EnglishGeneral"}, 
-{ "ID": 152, "name":"garnishers", "languages": "EnglishGeneral"}, 
-{ "ID": 153, "name":"garnisher", "languages": "EnglishGeneral"}, 
-{ "ID": 154, "name":"glassiness", "languages": "EnglishGeneral"}, 
-{ "ID": 155, "name":"gassiness", "languages": "EnglishGeneral"}, 
-{ "ID": 156, "name":"glassines", "languages": "EnglishGeneral"}, 
-{ "ID": 157, "name":"graunchers", "languages": "EnglishGeneral"}, 
-{ "ID": 158, "name":"graunches", "languages": "EnglishGeneral"}, 
-{ "ID": 159, "name":"grauncher", "languages": "EnglishGeneral"}, 
-{ "ID": 160, "name":"gruellings", "languages": "EnglishGeneral"}, 
-{ "ID": 161, "name":"gruelings", "languages": "EnglishGeneral"}, 
-{ "ID": 162, "name":"gruelling", "languages": "EnglishGeneral"}, 
-{ "ID": 163, "name":"heartlings", "languages": "EnglishGeneral"}, 
-{ "ID": 164, "name":"heartling", "languages": "EnglishGeneral"}, 
-{ "ID": 165, "name":"hirselling", "languages": "EnglishGeneral"}, 
-{ "ID": 166, "name":"hirseling", "languages": "EnglishGeneral"}, 
-{ "ID": 167, "name":"orologies", "languages": "EnglishGeneral"}, 
-{ "ID": 168, "name":"horologes", "languages": "EnglishGeneral"}, 
-{ "ID": 169, "name":"houseling", "languages": "EnglishGeneral"}, 
-{ "ID": 170, "name":"insolating", "languages": "EnglishGeneral"}, 
-{ "ID": 171, "name":"isolating", "languages": "EnglishGeneral"}, 
-{ "ID": 172, "name":"khalifates", "languages": "EnglishGeneral"}, 
-{ "ID": 173, "name":"kalifates", "languages": "EnglishGeneral"}, 
-{ "ID": 174, "name":"khalifats", "languages": "EnglishGeneral"}, 
-{ "ID": 175, "name":"khalifate", "languages": "EnglishGeneral"}, 
-{ "ID": 176, "name":"lawyerings", "languages": "EnglishGeneral"}, 
-{ "ID": 177, "name":"layerings", "languages": "EnglishGeneral"}, 
-{ "ID": 178, "name":"lawyering", "languages": "EnglishGeneral"}, 
-{ "ID": 179, "name":"lingulated", "languages": "EnglishGeneral"}, 
-{ "ID": 180, "name":"ligulated", "languages": "EnglishGeneral"}, 
-{ "ID": 181, "name":"lingulate", "languages": "EnglishGeneral"}, 
-{ "ID": 182, "name":"maceraters", "languages": "EnglishGeneral"}, 
-{ "ID": 183, "name":"macerates", "languages": "EnglishGeneral"}, 
-{ "ID": 184, "name":"macerater", "languages": "EnglishGeneral"}, 
-{ "ID": 185, "name":"madrassahs", "languages": "EnglishGeneral"}, 
-{ "ID": 186, "name":"madrasahs", "languages": "EnglishGeneral"}, 
-{ "ID": 187, "name":"madrassas", "languages": "EnglishGeneral"}, 
-{ "ID": 188, "name":"madrassah", "languages": "EnglishGeneral"}, 
-{ "ID": 189, "name":"magnetrons", "languages": "EnglishGeneral"}, 
-{ "ID": 190, "name":"magnetons", "languages": "EnglishGeneral"}, 
-{ "ID": 191, "name":"magnetron", "languages": "EnglishGeneral"}, 
-{ "ID": 192, "name":"maistering", "languages": "EnglishGeneral"}, 
-{ "ID": 193, "name":"mistering", "languages": "EnglishGeneral"}, 
-{ "ID": 194, "name":"mastering", "languages": "EnglishGeneral"}, 
-{ "ID": 195, "name":"maistring", "languages": "EnglishGeneral"}, 
-{ "ID": 196, "name":"mandioccas", "languages": "EnglishGeneral"}, 
-{ "ID": 197, "name":"mandiocas", "languages": "EnglishGeneral"}, 
-{ "ID": 198, "name":"mandiocca", "languages": "EnglishGeneral"}, 
-{ "ID": 199, "name":"misterming", "languages": "EnglishGeneral"}, 
-{ "ID": 200, "name":"moithering", "languages": "EnglishGeneral"}, 
-{ "ID": 201, "name":"mithering", "languages": "EnglishGeneral"}, 
-{ "ID": 202, "name":"mothering", "languages": "EnglishGeneral"}, 
-{ "ID": 203, "name":"nomologies", "languages": "EnglishGeneral"}, 
-{ "ID": 204, "name":"noologies", "languages": "EnglishGeneral"}, 
-{ "ID": 205, "name":"ontologies", "languages": "EnglishGeneral"}, 
-{ "ID": 206, "name":"otologies", "languages": "EnglishGeneral"}, 
-{ "ID": 207, "name":"optologies", "languages": "EnglishGeneral"}, 
-{ "ID": 208, "name":"oreologies", "languages": "EnglishGeneral"}, 
-{ "ID": 209, "name":"ourologies", "languages": "EnglishGeneral"}, 
-{ "ID": 210, "name":"urologies", "languages": "EnglishGeneral"}, 
-{ "ID": 211, "name":"parcheesis", "languages": "EnglishGeneral"}, 
-{ "ID": 212, "name":"parchesis", "languages": "EnglishGeneral"}, 
-{ "ID": 213, "name":"parcheesi", "languages": "EnglishGeneral"}, 
-{ "ID": 214, "name":"pedallings", "languages": "EnglishGeneral"}, 
-{ "ID": 215, "name":"pedalling", "languages": "EnglishGeneral"}, 
-{ "ID": 216, "name":"preachings", "languages": "EnglishGeneral"}, 
-{ "ID": 217, "name":"preaching", "languages": "EnglishGeneral"}, 
-{ "ID": 218, "name":"prelatises", "languages": "EnglishGeneral"}, 
-{ "ID": 219, "name":"prelaties", "languages": "EnglishGeneral"}, 
-{ "ID": 220, "name":"prelatise", "languages": "EnglishGeneral"}, 
-{ "ID": 221, "name":"prelatizes", "languages": "EnglishGeneral"}, 
-{ "ID": 222, "name":"prelatize", "languages": "EnglishGeneral"}, 
-{ "ID": 223, "name":"presenters", "languages": "EnglishGeneral"}, 
-{ "ID": 224, "name":"resenters", "languages": "EnglishGeneral"}, 
-{ "ID": 225, "name":"presenter", "languages": "EnglishGeneral"}, 
-{ "ID": 226, "name":"prewarming", "languages": "EnglishGeneral"}, 
-{ "ID": 227, "name":"rewarming", "languages": "EnglishGeneral"}, 
-{ "ID": 228, "name":"prearming", "languages": "EnglishGeneral"}, 
-{ "ID": 229, "name":"pricklings", "languages": "EnglishGeneral"}, 
-{ "ID": 230, "name":"prickings", "languages": "EnglishGeneral"}, 
-{ "ID": 231, "name":"prickling", "languages": "EnglishGeneral"}, 
-{ "ID": 232, "name":"princesses", "languages": "EnglishGeneral,French"}, 
-{ "ID": 233, "name":"princesse", "languages": "EnglishGeneral,French"}, 
-{ "ID": 234, "name":"pulpiteers", "languages": "EnglishGeneral"}, 
-{ "ID": 235, "name":"pulpiters", "languages": "EnglishGeneral"}, 
-{ "ID": 236, "name":"pulpiteer", "languages": "EnglishGeneral"}, 
-{ "ID": 237, "name":"quartettes", "languages": "EnglishGeneral,French"}, 
-{ "ID": 238, "name":"quartetts", "languages": "EnglishGeneral"}, 
-{ "ID": 239, "name":"quartette", "languages": "EnglishGeneral,French"}, 
-{ "ID": 240, "name":"reemerging", "languages": "EnglishGeneral"}, 
-{ "ID": 241, "name":"remerging", "languages": "EnglishGeneral"}, 
-{ "ID": 242, "name":"restacking", "languages": "EnglishGeneral"}, 
-{ "ID": 243, "name":"retacking", "languages": "EnglishGeneral"}, 
-{ "ID": 244, "name":"restarting", "languages": "EnglishGeneral"}, 
-{ "ID": 245, "name":"restating", "languages": "EnglishGeneral"}, 
-{ "ID": 246, "name":"retackling", "languages": "EnglishGeneral"}, 
-{ "ID": 247, "name":"retracking", "languages": "EnglishGeneral"}, 
-{ "ID": 248, "name":"reracking", "languages": "EnglishGeneral"}, 
-{ "ID": 249, "name":"retracing", "languages": "EnglishGeneral"}, 
-{ "ID": 250, "name":"schoolings", "languages": "EnglishGeneral"}, 
-{ "ID": 251, "name":"schooling", "languages": "EnglishGeneral"}, 
-{ "ID": 252, "name":"scratchers", "languages": "EnglishGeneral"}, 
-{ "ID": 253, "name":"scratches", "languages": "EnglishGeneral"}, 
-{ "ID": 254, "name":"scratcher", "languages": "EnglishGeneral"}, 
-{ "ID": 255, "name":"scratchie", "languages": "EnglishGeneral"}, 
-{ "ID": 256, "name":"scrootches", "languages": "EnglishGeneral"}, 
-{ "ID": 257, "name":"scootches", "languages": "EnglishGeneral"}, 
-{ "ID": 258, "name":"scrooches", "languages": "EnglishGeneral"}, 
-{ "ID": 259, "name":"shamblings", "languages": "EnglishGeneral"}, 
-{ "ID": 260, "name":"shambling", "languages": "EnglishGeneral"}, 
-{ "ID": 261, "name":"shearlings", "languages": "EnglishGeneral"}, 
-{ "ID": 262, "name":"shealings", "languages": "EnglishGeneral"}, 
-{ "ID": 263, "name":"shearings", "languages": "EnglishGeneral"}, 
-{ "ID": 264, "name":"shearling", "languages": "EnglishGeneral"}, 
-{ "ID": 265, "name":"showerings", "languages": "EnglishGeneral"}, 
-{ "ID": 266, "name":"showrings", "languages": "EnglishGeneral"}, 
-{ "ID": 267, "name":"showering", "languages": "EnglishGeneral"}, 
-{ "ID": 268, "name":"spanglings", "languages": "EnglishGeneral"}, 
-{ "ID": 269, "name":"spangling", "languages": "EnglishGeneral"}, 
-{ "ID": 270, "name":"sparkliest", "languages": "EnglishGeneral"}, 
-{ "ID": 271, "name":"sparkiest", "languages": "EnglishGeneral"}, 
-{ "ID": 272, "name":"sparklies", "languages": "EnglishGeneral"}, 
-{ "ID": 273, "name":"sparklings", "languages": "EnglishGeneral"}, 
-{ "ID": 274, "name":"sparlings", "languages": "EnglishGeneral"}, 
-{ "ID": 275, "name":"sparkling", "languages": "EnglishGeneral"}, 
-{ "ID": 276, "name":"spiralling", "languages": "EnglishGeneral"}, 
-{ "ID": 277, "name":"spiraling", "languages": "EnglishGeneral"}, 
-{ "ID": 278, "name":"spiritings", "languages": "EnglishGeneral"}, 
-{ "ID": 279, "name":"spiriting", "languages": "EnglishGeneral"}, 
-{ "ID": 280, "name":"spirituous", "languages": "EnglishGeneral"}, 
-{ "ID": 281, "name":"spiritous", "languages": "EnglishGeneral"}, 
-{ "ID": 282, "name":"splashings", "languages": "EnglishGeneral"}, 
-{ "ID": 283, "name":"plashings", "languages": "EnglishGeneral"}, 
-{ "ID": 284, "name":"slashings", "languages": "EnglishGeneral"}, 
-{ "ID": 285, "name":"splashing", "languages": "EnglishGeneral"}, 
-{ "ID": 286, "name":"splattings", "languages": "EnglishGeneral"}, 
-{ "ID": 287, "name":"plattings", "languages": "EnglishGeneral"}, 
-{ "ID": 288, "name":"slattings", "languages": "EnglishGeneral"}, 
-{ "ID": 289, "name":"splatting", "languages": "EnglishGeneral"}, 
-{ "ID": 290, "name":"sprangling", "languages": "EnglishGeneral"}, 
-{ "ID": 291, "name":"springless", "languages": "EnglishGeneral"}, 
-{ "ID": 292, "name":"springles", "languages": "EnglishGeneral"}, 
-{ "ID": 293, "name":"springlets", "languages": "EnglishGeneral"}, 
-{ "ID": 294, "name":"springlet", "languages": "EnglishGeneral"}, 
-{ "ID": 295, "name":"stampeders", "languages": "EnglishGeneral"}, 
-{ "ID": 296, "name":"stampedes", "languages": "EnglishGeneral"}, 
-{ "ID": 297, "name":"stampeder", "languages": "EnglishGeneral"}, 
-{ "ID": 298, "name":"stampedoed", "languages": "EnglishGeneral"}, 
-{ "ID": 299, "name":"stampeded", "languages": "EnglishGeneral"}, 
-{ "ID": 300, "name":"startlings", "languages": "EnglishGeneral"}, 
-{ "ID": 301, "name":"starlings", "languages": "EnglishGeneral"}, 
-{ "ID": 302, "name":"startings", "languages": "EnglishGeneral"}, 
-{ "ID": 303, "name":"startling", "languages": "EnglishGeneral"}, 
-{ "ID": 304, "name":"staunchers", "languages": "EnglishGeneral"}, 
-{ "ID": 305, "name":"stanchers", "languages": "EnglishGeneral"}, 
-{ "ID": 306, "name":"staunches", "languages": "EnglishGeneral"}, 
-{ "ID": 307, "name":"stauncher", "languages": "EnglishGeneral"}, 
-{ "ID": 308, "name":"staunchest", "languages": "EnglishGeneral"}, 
-{ "ID": 309, "name":"stanchest", "languages": "EnglishGeneral"}, 
-{ "ID": 310, "name":"stranglers", "languages": "EnglishGeneral"}, 
-{ "ID": 311, "name":"strangles", "languages": "EnglishGeneral"}, 
-{ "ID": 312, "name":"strangler", "languages": "EnglishGeneral"}, 
-{ "ID": 313, "name":"strappings", "languages": "EnglishGeneral"}, 
-{ "ID": 314, "name":"trappings", "languages": "EnglishGeneral"}, 
-{ "ID": 315, "name":"strapping", "languages": "EnglishGeneral"}, 
-{ "ID": 316, "name":"straylings", "languages": "EnglishGeneral"}, 
-{ "ID": 317, "name":"strayings", "languages": "EnglishGeneral"}, 
-{ "ID": 318, "name":"strayling", "languages": "EnglishGeneral"}, 
-{ "ID": 319, "name":"streambeds", "languages": "EnglishGeneral"}, 
-{ "ID": 320, "name":"streambed", "languages": "EnglishGeneral"}, 
-{ "ID": 321, "name":"steamings", "languages": "EnglishGeneral"}, 
-{ "ID": 322, "name":"streaming", "languages": "EnglishGeneral"}, 
-{ "ID": 323, "name":"strollings", "languages": "EnglishGeneral"}, 
-{ "ID": 324, "name":"trollings", "languages": "EnglishGeneral"}, 
-{ "ID": 325, "name":"strolling", "languages": "EnglishGeneral"}, 
-{ "ID": 326, "name":"switchiest", "languages": "EnglishGeneral"}, 
-{ "ID": 327, "name":"witchiest", "languages": "EnglishGeneral"}, 
-{ "ID": 328, "name":"thrashings", "languages": "EnglishGeneral"}, 
-{ "ID": 329, "name":"thrashing", "languages": "EnglishGeneral"}, 
-{ "ID": 330, "name":"thwackings", "languages": "EnglishGeneral"}, 
-{ "ID": 331, "name":"thwacking", "languages": "EnglishGeneral"}, 
-{ "ID": 332, "name":"torchieres", "languages": "EnglishGeneral"}, 
-{ "ID": 333, "name":"torcheres", "languages": "EnglishGeneral"}, 
-{ "ID": 334, "name":"torchiers", "languages": "EnglishGeneral"}, 
-{ "ID": 335, "name":"torchiere", "languages": "EnglishGeneral"}, 
-{ "ID": 336, "name":"tramplings", "languages": "EnglishGeneral"}, 
-{ "ID": 337, "name":"trampings", "languages": "EnglishGeneral"}, 
-{ "ID": 338, "name":"trampling", "languages": "EnglishGeneral"}, 
-{ "ID": 339, "name":"trolleying", "languages": "EnglishGeneral"}, 
-{ "ID": 340, "name":"trollying", "languages": "EnglishGeneral"}, 
-{ "ID": 341, "name":"troutlings", "languages": "EnglishGeneral"}, 
-{ "ID": 342, "name":"troutings", "languages": "EnglishGeneral"}, 
-{ "ID": 343, "name":"troutling", "languages": "EnglishGeneral"}, 
-{ "ID": 344, "name":"trucklings", "languages": "EnglishGeneral"}, 
-{ "ID": 345, "name":"truckings", "languages": "EnglishGeneral"}, 
-{ "ID": 346, "name":"truckling", "languages": "EnglishGeneral"}, 
-{ "ID": 347, "name":"twiddliest", "languages": "EnglishGeneral"}, 
-{ "ID": 348, "name":"tiddliest", "languages": "EnglishGeneral"}, 
-{ "ID": 349, "name":"twitchiest", "languages": "EnglishGeneral"}, 
-{ "ID": 350, "name":"titchiest", "languages": "EnglishGeneral"}, 
-{ "ID": 351, "name":"unpreached", "languages": "EnglishGeneral"}, 
-{ "ID": 352, "name":"upreached", "languages": "EnglishGeneral"}, 
-{ "ID": 353, "name":"unreached", "languages": "EnglishGeneral"}, 
-{ "ID": 354, "name":"unpreaches", "languages": "EnglishGeneral"}, 
-{ "ID": 355, "name":"upreaches", "languages": "EnglishGeneral"}, 
-{ "ID": 356, "name":"uplinkings", "languages": "EnglishGeneral"}, 
-{ "ID": 357, "name":"plinkings", "languages": "EnglishGeneral"}, 
-{ "ID": 358, "name":"uplinking", "languages": "EnglishGeneral"}, 
-{ "ID": 359, "name":"wranglings", "languages": "EnglishGeneral"}, 
-{ "ID": 360, "name":"wanglings", "languages": "EnglishGeneral"}, 
-{ "ID": 361, "name":"wrangling", "languages": "EnglishGeneral"}, 
-{ "ID": 362, "name":"abounding", "languages": "EnglishGeneral"}, 
-{ "ID": 363, "name":"bounding", "languages": "EnglishGeneral"}, 
-{ "ID": 364, "name":"abridgers", "languages": "EnglishGeneral"}, 
-{ "ID": 365, "name":"abridges", "languages": "EnglishGeneral"}, 
-{ "ID": 366, "name":"abridger", "languages": "EnglishGeneral"}, 
-{ "ID": 367, "name":"abrooking", "languages": "EnglishGeneral"}, 
-{ "ID": 368, "name":"brooking", "languages": "EnglishGeneral"}, 
-{ "ID": 369, "name":"acanthous", "languages": "EnglishGeneral"}, 
-{ "ID": 370, "name":"acanthus", "languages": "EnglishGeneral"}, 
-{ "ID": 371, "name":"acerbated", "languages": "EnglishGeneral"}, 
-{ "ID": 372, "name":"acerated", "languages": "EnglishGeneral"}, 
-{ "ID": 373, "name":"acerbate", "languages": "EnglishGeneral"}, 
-{ "ID": 374, "name":"acerbates", "languages": "EnglishGeneral"}, 
-{ "ID": 375, "name":"acierated", "languages": "EnglishGeneral"}, 
-{ "ID": 376, "name":"acierate", "languages": "EnglishGeneral"}, 
-{ "ID": 377, "name":"acierates", "languages": "EnglishGeneral"}, 
-{ "ID": 378, "name":"adwarding", "languages": "EnglishGeneral"}, 
-{ "ID": 379, "name":"awarding", "languages": "EnglishGeneral"}, 
-{ "ID": 380, "name":"affearing", "languages": "EnglishGeneral"}, 
-{ "ID": 381, "name":"afearing", "languages": "EnglishGeneral"}, 
-{ "ID": 382, "name":"affronted", "languages": "EnglishGeneral"}, 
-{ "ID": 383, "name":"affronte", "languages": "EnglishGeneral,French"}, 
-{ "ID": 384, "name":"affrontee", "languages": "EnglishGeneral"}, 
-{ "ID": 385, "name":"agonistes", "languages": "EnglishGeneral"}, 
-{ "ID": 386, "name":"agonises", "languages": "EnglishGeneral,French"}, 
-{ "ID": 387, "name":"agonists", "languages": "EnglishGeneral"}, 
-{ "ID": 388, "name":"allayings", "languages": "EnglishGeneral"}, 
-{ "ID": 389, "name":"allaying", "languages": "EnglishGeneral"}, 
-{ "ID": 390, "name":"anastases", "languages": "EnglishGeneral"}, 
-{ "ID": 391, "name":"anatases", "languages": "EnglishGeneral"}, 
-{ "ID": 392, "name":"anoretic", "languages": "EnglishGeneral"}, 
-{ "ID": 393, "name":"ascarides", "languages": "EnglishGeneral"}, 
-{ "ID": 394, "name":"ascarids", "languages": "EnglishGeneral"}, 
-{ "ID": 395, "name":"asmoulder", "languages": "EnglishGeneral"}, 
-{ "ID": 396, "name":"smoulder", "languages": "EnglishGeneral"}, 
-{ "ID": 397, "name":"aspersers", "languages": "EnglishGeneral"}, 
-{ "ID": 398, "name":"asperses", "languages": "EnglishGeneral"}, 
-{ "ID": 399, "name":"asperser", "languages": "EnglishGeneral"}, 
-{ "ID": 400, "name":"aspirated", "languages": "EnglishGeneral"}, 
-{ "ID": 401, "name":"spirated", "languages": "EnglishGeneral"}, 
-{ "ID": 402, "name":"aspirate", "languages": "EnglishGeneral"}, 
-{ "ID": 403, "name":"asporting", "languages": "EnglishGeneral"}, 
-{ "ID": 404, "name":"sporting", "languages": "EnglishGeneral"}, 
-{ "ID": 405, "name":"astarting", "languages": "EnglishGeneral"}, 
-{ "ID": 406, "name":"starting", "languages": "EnglishGeneral,Norwegian"}, 
-{ "ID": 407, "name":"astonying", "languages": "EnglishGeneral"}, 
-{ "ID": 408, "name":"stonying", "languages": "EnglishGeneral"}, 
-{ "ID": 409, "name":"astoning", "languages": "EnglishGeneral"}, 
-{ "ID": 410, "name":"astringed", "languages": "EnglishGeneral"}, 
-{ "ID": 411, "name":"stringed", "languages": "EnglishGeneral"}, 
-{ "ID": 412, "name":"astringe", "languages": "EnglishGeneral"}, 
-{ "ID": 413, "name":"stringer", "languages": "EnglishGeneral"}, 
-{ "ID": 414, "name":"avouchers", "languages": "EnglishGeneral"}, 
-{ "ID": 415, "name":"vouchers", "languages": "EnglishGeneral"}, 
-{ "ID": 416, "name":"avouches", "languages": "EnglishGeneral"}, 
-{ "ID": 417, "name":"avoucher", "languages": "EnglishGeneral"}, 
-{ "ID": 418, "name":"balusters", "languages": "EnglishGeneral"}, 
-{ "ID": 419, "name":"blusters", "languages": "EnglishGeneral"}, 
-{ "ID": 420, "name":"baluster", "languages": "EnglishGeneral,Danish"}, 
-{ "ID": 421, "name":"bandannas", "languages": "EnglishGeneral"}, 
-{ "ID": 422, "name":"bandanas", "languages": "EnglishGeneral"}, 
-{ "ID": 423, "name":"bandanna", "languages": "EnglishGeneral"}, 
-{ "ID": 424, "name":"bardlings", "languages": "EnglishGeneral"}, 
-{ "ID": 425, "name":"bardling", "languages": "EnglishGeneral"}, 
-{ "ID": 426, "name":"barghests", "languages": "EnglishGeneral"}, 
-{ "ID": 427, "name":"bargests", "languages": "EnglishGeneral"}, 
-{ "ID": 428, "name":"barghest", "languages": "EnglishGeneral"}, 
-{ "ID": 429, "name":"barguests", "languages": "EnglishGeneral"}, 
-{ "ID": 430, "name":"barguest", "languages": "EnglishGeneral"}, 
-{ "ID": 431, "name":"barreing", "languages": "EnglishGeneral"}, 
-{ "ID": 432, "name":"barrelled", "languages": "EnglishGeneral"}, 
-{ "ID": 433, "name":"barreled", "languages": "EnglishGeneral"}, 
-{ "ID": 434, "name":"barytones", "languages": "EnglishGeneral"}, 
-{ "ID": 435, "name":"barytons", "languages": "EnglishGeneral,French"}, 
-{ "ID": 436, "name":"barytone", "languages": "EnglishGeneral"}, 
-{ "ID": 437, "name":"bastilles", "languages": "EnglishGeneral,French"}, 
-{ "ID": 438, "name":"bastiles", "languages": "EnglishGeneral"}, 
-{ "ID": 439, "name":"bastille", "languages": "EnglishGeneral,German,Swiss,French"}, 
-{ "ID": 440, "name":"batchings", "languages": "EnglishGeneral"}, 
-{ "ID": 441, "name":"batching", "languages": "EnglishGeneral"}, 
-{ "ID": 442, "name":"batooning", "languages": "EnglishGeneral"}, 
-{ "ID": 443, "name":"batoning", "languages": "EnglishGeneral"}, 
-{ "ID": 444, "name":"battelers", "languages": "EnglishGeneral"}, 
-{ "ID": 445, "name":"battlers", "languages": "EnglishGeneral"}, 
-{ "ID": 446, "name":"batteler", "languages": "EnglishGeneral"}, 
-{ "ID": 447, "name":"battelled", "languages": "EnglishGeneral"}, 
-{ "ID": 448, "name":"batteled", "languages": "EnglishGeneral"}, 
-{ "ID": 449, "name":"beardiest", "languages": "EnglishGeneral"}, 
-{ "ID": 450, "name":"bardiest", "languages": "EnglishGeneral"}, 
-{ "ID": 451, "name":"beadiest", "languages": "EnglishGeneral"}, 
-{ "ID": 452, "name":"beardies", "languages": "EnglishGeneral"}, 
-{ "ID": 453, "name":"beastings", "languages": "EnglishGeneral"}, 
-{ "ID": 454, "name":"eastings", "languages": "EnglishGeneral"}, 
-{ "ID": 455, "name":"bastings", "languages": "EnglishGeneral"}, 
-{ "ID": 456, "name":"beatings", "languages": "EnglishGeneral"}, 
-{ "ID": 457, "name":"bedsteads", "languages": "EnglishGeneral"}, 
-{ "ID": 458, "name":"besteads", "languages": "EnglishGeneral"}, 
-{ "ID": 459, "name":"bedstead", "languages": "EnglishGeneral"}, 
-{ "ID": 460, "name":"begrimmed", "languages": "EnglishGeneral"}, 
-{ "ID": 461, "name":"begrimed", "languages": "EnglishGeneral"}, 
-{ "ID": 462, "name":"believers", "languages": "EnglishGeneral"}, 
-{ "ID": 463, "name":"believes", "languages": "EnglishGeneral"}, 
-{ "ID": 464, "name":"believer", "languages": "EnglishGeneral"}, 
-{ "ID": 465, "name":"bespoused", "languages": "EnglishGeneral"}, 
-{ "ID": 466, "name":"espoused", "languages": "EnglishGeneral"}, 
-{ "ID": 467, "name":"bespouse", "languages": "EnglishGeneral"}, 
-{ "ID": 468, "name":"bespouses", "languages": "EnglishGeneral"}, 
-{ "ID": 469, "name":"espouses", "languages": "EnglishGeneral"}, 
-{ "ID": 470, "name":"bilanders", "languages": "EnglishGeneral"}, 
-{ "ID": 471, "name":"bilander", "languages": "EnglishGeneral"}, 
-{ "ID": 472, "name":"blackings", "languages": "EnglishGeneral"}, 
-{ "ID": 473, "name":"backings", "languages": "EnglishGeneral"}, 
-{ "ID": 474, "name":"blacking", "languages": "EnglishGeneral"}, 
-{ "ID": 475, "name":"blanchers", "languages": "EnglishGeneral"}, 
-{ "ID": 476, "name":"blanches", "languages": "EnglishGeneral,French"}, 
-{ "ID": 477, "name":"blancher", "languages": "EnglishGeneral"}, 
-{ "ID": 478, "name":"blankings", "languages": "EnglishGeneral"}, 
-{ "ID": 479, "name":"bankings", "languages": "EnglishGeneral"}, 
-{ "ID": 480, "name":"blanking", "languages": "EnglishGeneral"}, 
-{ "ID": 481, "name":"bleachers", "languages": "EnglishGeneral"}, 
-{ "ID": 482, "name":"leachers", "languages": "EnglishGeneral"}, 
-{ "ID": 483, "name":"bleaches", "languages": "EnglishGeneral"}, 
-{ "ID": 484, "name":"bleacher", "languages": "EnglishGeneral"}, 
-{ "ID": 485, "name":"leaching", "languages": "EnglishGeneral"}, 
-{ "ID": 486, "name":"beaching", "languages": "EnglishGeneral"}, 
-{ "ID": 487, "name":"bleatings", "languages": "EnglishGeneral"}, 
-{ "ID": 488, "name":"bleating", "languages": "EnglishGeneral"}
-],
-"links":[{"source":0,"target":1}, 
-{"source":2,"target":3}, 
-{"source":2,"target":4}, 
-{"source":5,"target":6}, 
-{"source":7,"target":8}, 
-{"source":7,"target":9}, 
-{"source":7,"target":10}, 
-{"source":11,"target":9}, 
-{"source":11,"target":12}, 
-{"source":13,"target":14}, 
-{"source":13,"target":9}, 
-{"source":13,"target":15}, 
-{"source":1,"target":16}, 
-{"source":17,"target":18}, 
-{"source":19,"target":20}, 
-{"source":21,"target":22}, 
-{"source":23,"target":24}, 
-{"source":25,"target":26}, 
-{"source":25,"target":27}, 
-{"source":28,"target":29}, 
-{"source":30,"target":31}, 
-{"source":30,"target":32}, 
-{"source":33,"target":34}, 
-{"source":3,"target":35}, 
-{"source":3,"target":36}, 
-{"source":3,"target":37}, 
-{"source":4,"target":37}, 
-{"source":38,"target":39}, 
-{"source":40,"target":41}, 
-{"source":42,"target":43}, 
-{"source":42,"target":44}, 
-{"source":45,"target":46}, 
-{"source":45,"target":47}, 
-{"source":48,"target":49}, 
-{"source":6,"target":50}, 
-{"source":51,"target":52}, 
-{"source":53,"target":54}, 
-{"source":55,"target":56}, 
-{"source":55,"target":57}, 
-{"source":55,"target":58}, 
-{"source":9,"target":59}, 
-{"source":9,"target":60}, 
-{"source":61,"target":62}, 
-{"source":61,"target":63}, 
-{"source":64,"target":65}, 
-{"source":66,"target":67}, 
-{"source":68,"target":69}, 
-{"source":70,"target":71}, 
-{"source":70,"target":72}, 
-{"source":73,"target":74}, 
-{"source":75,"target":76}, 
-{"source":75,"target":77}, 
-{"source":78,"target":79}, 
-{"source":78,"target":80}, 
-{"source":81,"target":82}, 
-{"source":18,"target":83}, 
-{"source":84,"target":85}, 
-{"source":84,"target":86}, 
-{"source":87,"target":88}, 
-{"source":87,"target":89}, 
-{"source":90,"target":91}, 
-{"source":90,"target":92}, 
-{"source":90,"target":93}, 
-{"source":94,"target":95}, 
-{"source":94,"target":96}, 
-{"source":94,"target":93}, 
-{"source":97,"target":98}, 
-{"source":99,"target":100}, 
-{"source":99,"target":101}, 
-{"source":102,"target":103}, 
-{"source":102,"target":104}, 
-{"source":102,"target":105}, 
-{"source":106,"target":107}, 
-{"source":106,"target":108}, 
-{"source":106,"target":109}, 
-{"source":110,"target":111}, 
-{"source":110,"target":112}, 
-{"source":113,"target":114}, 
-{"source":113,"target":115}, 
-{"source":116,"target":117}, 
-{"source":118,"target":119}, 
-{"source":120,"target":121}, 
-{"source":120,"target":122}, 
-{"source":123,"target":121}, 
-{"source":124,"target":125}, 
-{"source":124,"target":126}, 
-{"source":124,"target":127}, 
-{"source":124,"target":128}, 
-{"source":129,"target":130}, 
-{"source":129,"target":131}, 
-{"source":132,"target":133}, 
-{"source":132,"target":134}, 
-{"source":135,"target":136}, 
-{"source":137,"target":138}, 
-{"source":137,"target":139}, 
-{"source":140,"target":141}, 
-{"source":140,"target":142}, 
-{"source":143,"target":144}, 
-{"source":143,"target":145}, 
-{"source":146,"target":147}, 
-{"source":148,"target":149}, 
-{"source":148,"target":150}, 
-{"source":151,"target":149}, 
-{"source":151,"target":152}, 
-{"source":153,"target":154}, 
-{"source":153,"target":155}, 
-{"source":156,"target":157}, 
-{"source":156,"target":158}, 
-{"source":159,"target":160}, 
-{"source":159,"target":161}, 
-{"source":162,"target":163}, 
-{"source":164,"target":165}, 
-{"source":16,"target":166}, 
-{"source":16,"target":167}, 
-{"source":20,"target":168}, 
-{"source":169,"target":170}, 
-{"source":171,"target":172}, 
-{"source":171,"target":173}, 
-{"source":171,"target":174}, 
-{"source":175,"target":176}, 
-{"source":175,"target":177}, 
-{"source":178,"target":179}, 
-{"source":178,"target":180}, 
-{"source":181,"target":182}, 
-{"source":181,"target":183}, 
-{"source":184,"target":185}, 
-{"source":184,"target":186}, 
-{"source":184,"target":187}, 
-{"source":188,"target":189}, 
-{"source":188,"target":190}, 
-{"source":191,"target":192}, 
-{"source":191,"target":193}, 
-{"source":191,"target":194}, 
-{"source":195,"target":196}, 
-{"source":195,"target":197}, 
-{"source":198,"target":192}, 
-{"source":199,"target":200}, 
-{"source":199,"target":201}, 
-{"source":202,"target":203}, 
-{"source":22,"target":203}, 
-{"source":204,"target":205}, 
-{"source":206,"target":205}, 
-{"source":207,"target":166}, 
-{"source":208,"target":209}, 
-{"source":208,"target":166}, 
-{"source":210,"target":211}, 
-{"source":210,"target":212}, 
-{"source":213,"target":214}, 
-{"source":215,"target":216}, 
-{"source":217,"target":218}, 
-{"source":217,"target":219}, 
-{"source":220,"target":218}, 
-{"source":220,"target":221}, 
-{"source":222,"target":223}, 
-{"source":222,"target":224}, 
-{"source":225,"target":226}, 
-{"source":225,"target":227}, 
-{"source":228,"target":229}, 
-{"source":228,"target":230}, 
-{"source":231,"target":232}, 
-{"source":233,"target":234}, 
-{"source":233,"target":235}, 
-{"source":236,"target":237}, 
-{"source":236,"target":238}, 
-{"source":239,"target":240}, 
-{"source":241,"target":242}, 
-{"source":243,"target":244}, 
-{"source":245,"target":242}, 
-{"source":246,"target":247}, 
-{"source":246,"target":242}, 
-{"source":246,"target":248}, 
-{"source":249,"target":250}, 
-{"source":251,"target":252}, 
-{"source":251,"target":253}, 
-{"source":24,"target":252}, 
-{"source":24,"target":254}, 
-{"source":255,"target":256}, 
-{"source":255,"target":257}, 
-{"source":258,"target":259}, 
-{"source":260,"target":261}, 
-{"source":260,"target":262}, 
-{"source":260,"target":263}, 
-{"source":264,"target":265}, 
-{"source":264,"target":266}, 
-{"source":267,"target":268}, 
-{"source":269,"target":270}, 
-{"source":269,"target":271}, 
-{"source":272,"target":273}, 
-{"source":272,"target":274}, 
-{"source":275,"target":276}, 
-{"source":277,"target":278}, 
-{"source":279,"target":280}, 
-{"source":281,"target":282}, 
-{"source":281,"target":283}, 
-{"source":281,"target":284}, 
-{"source":285,"target":286}, 
-{"source":285,"target":287}, 
-{"source":285,"target":288}, 
-{"source":289,"target":268}, 
-{"source":290,"target":291}, 
-{"source":292,"target":291}, 
-{"source":292,"target":293}, 
-{"source":294,"target":295}, 
-{"source":294,"target":296}, 
-{"source":297,"target":298}, 
-{"source":299,"target":300}, 
-{"source":299,"target":301}, 
-{"source":299,"target":302}, 
-{"source":303,"target":304}, 
-{"source":303,"target":305}, 
-{"source":303,"target":306}, 
-{"source":307,"target":308}, 
-{"source":307,"target":305}, 
-{"source":309,"target":125}, 
-{"source":309,"target":310}, 
-{"source":309,"target":311}, 
-{"source":312,"target":313}, 
-{"source":312,"target":314}, 
-{"source":315,"target":316}, 
-{"source":315,"target":317}, 
-{"source":318,"target":319}, 
-{"source":26,"target":320}, 
-{"source":26,"target":321}, 
-{"source":27,"target":321}, 
-{"source":322,"target":323}, 
-{"source":322,"target":324}, 
-{"source":325,"target":326}, 
-{"source":327,"target":328}, 
-{"source":329,"target":330}, 
-{"source":331,"target":332}, 
-{"source":331,"target":333}, 
-{"source":331,"target":334}, 
-{"source":335,"target":336}, 
-{"source":335,"target":337}, 
-{"source":338,"target":339}, 
-{"source":340,"target":341}, 
-{"source":340,"target":342}, 
-{"source":343,"target":344}, 
-{"source":343,"target":345}, 
-{"source":346,"target":347}, 
-{"source":348,"target":326}, 
-{"source":348,"target":349}, 
-{"source":350,"target":351}, 
-{"source":350,"target":352}, 
-{"source":353,"target":354}, 
-{"source":355,"target":356}, 
-{"source":355,"target":357}, 
-{"source":29,"target":216}, 
-{"source":358,"target":359}, 
-{"source":358,"target":360}, 
-{"source":361,"target":362}, 
-{"source":363,"target":364}, 
-{"source":363,"target":365}, 
-{"source":366,"target":367}, 
-{"source":368,"target":369}, 
-{"source":370,"target":371}, 
-{"source":370,"target":372}, 
-{"source":373,"target":372}, 
-{"source":374,"target":371}, 
-{"source":374,"target":375}, 
-{"source":376,"target":375}, 
-{"source":377,"target":378}, 
-{"source":379,"target":380}, 
-{"source":381,"target":382}, 
-{"source":383,"target":382}, 
-{"source":384,"target":385}, 
-{"source":384,"target":386}, 
-{"source":387,"target":388}, 
-{"source":389,"target":390}, 
-{"source":32,"target":391}, 
-{"source":31,"target":391}, 
-{"source":392,"target":393}, 
-{"source":394,"target":395}, 
-{"source":396,"target":397}, 
-{"source":396,"target":398}, 
-{"source":399,"target":400}, 
-{"source":399,"target":401}, 
-{"source":402,"target":403}, 
-{"source":404,"target":405}, 
-{"source":406,"target":407}, 
-{"source":406,"target":408}, 
-{"source":409,"target":410}, 
-{"source":409,"target":411}, 
-{"source":37,"target":412}, 
-{"source":37,"target":411}, 
-{"source":413,"target":414}, 
-{"source":413,"target":415}, 
-{"source":413,"target":416}, 
-{"source":417,"target":418}, 
-{"source":417,"target":419}, 
-{"source":420,"target":421}, 
-{"source":420,"target":422}, 
-{"source":423,"target":424}, 
-{"source":425,"target":426}, 
-{"source":425,"target":427}, 
-{"source":428,"target":426}, 
-{"source":428,"target":429}, 
-{"source":41,"target":430}, 
-{"source":431,"target":432}, 
-{"source":433,"target":434}, 
-{"source":433,"target":435}, 
-{"source":436,"target":437}, 
-{"source":436,"target":438}, 
-{"source":439,"target":440}, 
-{"source":441,"target":442}, 
-{"source":443,"target":444}, 
-{"source":443,"target":445}, 
-{"source":446,"target":447}, 
-{"source":448,"target":449}, 
-{"source":448,"target":450}, 
-{"source":448,"target":451}, 
-{"source":452,"target":453}, 
-{"source":452,"target":454}, 
-{"source":452,"target":455}, 
-{"source":456,"target":457}, 
-{"source":456,"target":458}, 
-{"source":459,"target":460}, 
-{"source":461,"target":462}, 
-{"source":461,"target":463}, 
-{"source":464,"target":465}, 
-{"source":464,"target":466}, 
-{"source":467,"target":468}, 
-{"source":467,"target":466}, 
-{"source":469,"target":470}, 
-{"source":471,"target":472}, 
-{"source":471,"target":473}, 
-{"source":474,"target":475}, 
-{"source":474,"target":476}, 
-{"source":477,"target":478}, 
-{"source":477,"target":479}, 
-{"source":480,"target":481}, 
-{"source":480,"target":482}, 
-{"source":480,"target":483}, 
-{"source":44,"target":484}, 
-{"source":44,"target":485}, 
-{"source":486,"target":455}, 
-{"source":486,"target":487}
-]
- }
+﻿{
+  "nodes": [
+    {
+      "id": "bearing",
+      "index": "2307",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "abearing",
+      "index": "2306",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bearding",
+      "index": "2670",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bearings",
+      "index": "2673",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bewaring",
+      "index": "2731",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "blearing",
+      "index": "2784",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "earing",
+      "index": "9546",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "baring",
+      "index": "9447",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "dearing",
+      "index": "4086",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "deairing",
+      "index": "4085",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dearling",
+      "index": "844",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "drearing",
+      "index": "891",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "daring",
+      "index": "11534",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dering",
+      "index": "11578",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "earding",
+      "index": "2671",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yearding",
+      "index": "8839",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "earings",
+      "index": "2674",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "earnings",
+      "index": "1177",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "earrings",
+      "index": "4339",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gearings",
+      "index": "4751",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hearings",
+      "index": "1099",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "searings",
+      "index": "1677",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "wearings",
+      "index": "2073",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "earning",
+      "index": "4338",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "learning",
+      "index": "1179",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yearning",
+      "index": "2295",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "erning",
+      "index": "10583",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "eaning",
+      "index": "12083",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "earring",
+      "index": "4341",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "erring",
+      "index": "12084",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "fearing",
+      "index": "2354",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "afearing",
+      "index": "381",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "faring",
+      "index": "12307",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "gearing",
+      "index": "4752",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hearing",
+      "index": "5055",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "headring",
+      "index": "1102",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hearsing",
+      "index": "5060",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hearting",
+      "index": "1105",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shearing",
+      "index": "1678",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "haring",
+      "index": "13340",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "learing",
+      "index": "2785",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "clearing",
+      "index": "695",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "lering",
+      "index": "13808",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mearing",
+      "index": "7326",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "smearing",
+      "index": "7325",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mering",
+      "index": "14383",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "nearing",
+      "index": "2440",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "anearing",
+      "index": "2439",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rearing",
+      "index": "4279",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rearming",
+      "index": "1415",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "raring",
+      "index": "15993",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "searing",
+      "index": "6972",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "searcing",
+      "index": "1649",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "skearing",
+      "index": "7216",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "spearing",
+      "index": "7537",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stearing",
+      "index": "7803",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "swearing",
+      "index": "2074",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "saring",
+      "index": "16371",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sering",
+      "index": "16769",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tearing",
+      "index": "7804",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "taring",
+      "index": "17831",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "teaing",
+      "index": "18481",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "wearing",
+      "index": "8105",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "wearying",
+      "index": "8702",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "waring",
+      "index": "19226",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "aswing",
+      "index": "20167",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "swing",
+      "index": "20168",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,German,Swiss"
+    },
+    {
+      "id": "awing",
+      "index": "20169",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "aweing",
+      "index": "20249",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "awning",
+      "index": "9378",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "awnings",
+      "index": "4083",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dawning",
+      "index": "4084",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "fawning",
+      "index": "4448",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "pawning",
+      "index": "6202",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yawning",
+      "index": "8832",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cawing",
+      "index": "10564",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cawings",
+      "index": "10563",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "chawing",
+      "index": "10683",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "clawing",
+      "index": "10887",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dawing",
+      "index": "8957",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "adawing",
+      "index": "8956",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dawding",
+      "index": "4081",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dawting",
+      "index": "11571",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "drawing",
+      "index": "4269",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hawing",
+      "index": "10684",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hawking",
+      "index": "5052",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hawming",
+      "index": "13388",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hawsing",
+      "index": "13393",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shawing",
+      "index": "6386",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "thawing",
+      "index": "8271",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "jawing",
+      "index": "13666",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "jawings",
+      "index": "13665",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "kawing",
+      "index": "25210",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "kaing",
+      "index": "25157",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "lawing",
+      "index": "9765",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "blawing",
+      "index": "9764",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "flawing",
+      "index": "12474",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lapwing",
+      "index": "5236",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lawings",
+      "index": "5235",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lawin",
+      "index": "25470",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mawing",
+      "index": "25921",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "pawing",
+      "index": "15160",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rawing",
+      "index": "11963",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rawings",
+      "index": "4268",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rawin",
+      "index": "27622",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sawing",
+      "index": "16525",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sawings",
+      "index": "16523",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "snawing",
+      "index": "17400",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stawing",
+      "index": "7970",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tawing",
+      "index": "17861",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tawings",
+      "index": "8270",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tawsing",
+      "index": "18465",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tawting",
+      "index": "18468",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yawing",
+      "index": "19480",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yawling",
+      "index": "19479",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yawping",
+      "index": "8834",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "arcking",
+      "index": "2468",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "arckings",
+      "index": "2467",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "arking",
+      "index": "9217",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "arcing",
+      "index": "9216",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "barking",
+      "index": "9462",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "baking",
+      "index": "9389",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "carking",
+      "index": "3379",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "charking",
+      "index": "3377",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "caking",
+      "index": "10391",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "caring",
+      "index": "10505",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "darking",
+      "index": "4077",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "darkling",
+      "index": "841",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "harking",
+      "index": "3378",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "sharking",
+      "index": "1670",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "karking",
+      "index": "13718",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "larking",
+      "index": "13863",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "laking",
+      "index": "12448",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "marking",
+      "index": "5415",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "markings",
+      "index": "5413",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "making",
+      "index": "14208",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "narking",
+      "index": "14813",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "parking",
+      "index": "5793",
+      "group": 1,
+      "languages": "EnglishGeneral,French"
+    },
+    {
+      "id": "parkings",
+      "index": "5791",
+      "group": 1,
+      "languages": "EnglishGeneral,French"
+    },
+    {
+      "id": "sparking",
+      "index": "1813",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "paring",
+      "index": "14984",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "parkin",
+      "index": "15075",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rarking",
+      "index": "15992",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "raking",
+      "index": "10082",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "sarking",
+      "index": "6736",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sarkings",
+      "index": "1667",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "starking",
+      "index": "7748",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "warking",
+      "index": "19267",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "waking",
+      "index": "9369",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yarking",
+      "index": "19471",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "ashets",
+      "index": "20107",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shets",
+      "index": "20108",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "ashes",
+      "index": "20109",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "ashet",
+      "index": "20110",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bashes",
+      "index": "8871",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "abashes",
+      "index": "8870",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bashers",
+      "index": "9492",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "blashes",
+      "index": "9750",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "brashes",
+      "index": "3022",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bases",
+      "index": "19536",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,French"
+    },
+    {
+      "id": "cashes",
+      "index": "10541",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "cashews",
+      "index": "10540",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "clashes",
+      "index": "3189",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "crashes",
+      "index": "3918",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cases",
+      "index": "21477",
+      "group": 1,
+      "languages": "EnglishGeneral,French"
+    },
+    {
+      "id": "dashes",
+      "index": "11551",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dashers",
+      "index": "11550",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "deashes",
+      "index": "11589",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "fashes",
+      "index": "12465",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "flashes",
+      "index": "4503",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "gashes",
+      "index": "12840",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gashest",
+      "index": "12839",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gnashes",
+      "index": "4824",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gases",
+      "index": "24080",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,German,Swiss"
+    },
+    {
+      "id": "hashes",
+      "index": "16931",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shashes",
+      "index": "16930",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lashes",
+      "index": "9751",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lashers",
+      "index": "3578",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "leashes",
+      "index": "13912",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "plashes",
+      "index": "6013",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "slashes",
+      "index": "7251",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lases",
+      "index": "25431",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mashes",
+      "index": "14331",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "marshes",
+      "index": "5412",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mashers",
+      "index": "7315",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mashies",
+      "index": "5433",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "smashes",
+      "index": "7316",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "mases",
+      "index": "25744",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "pashes",
+      "index": "15458",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "pases",
+      "index": "26762",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rashes",
+      "index": "10100",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rashers",
+      "index": "3917",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rashest",
+      "index": "3021",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rashies",
+      "index": "15994",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "trashes",
+      "index": "8296",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "rases",
+      "index": "21027",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,French"
+    },
+    {
+      "id": "sashes",
+      "index": "16932",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "snashes",
+      "index": "17397",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stashes",
+      "index": "7767",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "swashes",
+      "index": "7206",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tashes",
+      "index": "17849",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "taishes",
+      "index": "8181",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "washes",
+      "index": "18251",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "washers",
+      "index": "8090",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "wases",
+      "index": "31141",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bowing",
+      "index": "9836",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "blowing",
+      "index": "9834",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bowings",
+      "index": "2980",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bowling",
+      "index": "2973",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,German,Swiss"
+    },
+    {
+      "id": "bowning",
+      "index": "3127",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bowsing",
+      "index": "3133",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "owing",
+      "index": "20949",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "boing",
+      "index": "20833",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,German,Swiss"
+    },
+    {
+      "id": "cowing",
+      "index": "10825",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "chowing",
+      "index": "3533",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cowking",
+      "index": "11294",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cowling",
+      "index": "3868",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cowping",
+      "index": "6901",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "crowing",
+      "index": "4019",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "scowing",
+      "index": "6899",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dowing",
+      "index": "11928",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "downing",
+      "index": "4312",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dowsing",
+      "index": "4315",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "doing",
+      "index": "22838",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "jowing",
+      "index": "13688",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "jowling",
+      "index": "13686",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lowing",
+      "index": "9835",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "flowing",
+      "index": "12538",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "glowing",
+      "index": "12996",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lowings",
+      "index": "7302",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lowning",
+      "index": "3652",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lowping",
+      "index": "14140",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lowsing",
+      "index": "14145",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lowting",
+      "index": "14147",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "plowing",
+      "index": "15512",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "slowing",
+      "index": "7303",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mowing",
+      "index": "14425",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "meowing",
+      "index": "14424",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mowings",
+      "index": "14720",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "owling",
+      "index": "10031",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "fowling",
+      "index": "4624",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gowling",
+      "index": "4987",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "howling",
+      "index": "5121",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sowling",
+      "index": "6898",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yowling",
+      "index": "8861",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "owning",
+      "index": "10032",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gowning",
+      "index": "13074",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rowing",
+      "index": "11411",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "growing",
+      "index": "4981",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rowings",
+      "index": "4980",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rowting",
+      "index": "16338",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "trowing",
+      "index": "8019",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sowing",
+      "index": "16670",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "showing",
+      "index": "7166",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "snowing",
+      "index": "7431",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sowcing",
+      "index": "17526",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sowfing",
+      "index": "7465",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sowings",
+      "index": "7167",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sowming",
+      "index": "17529",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sowsing",
+      "index": "7468",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stowing",
+      "index": "7945",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "towing",
+      "index": "18061",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "towings",
+      "index": "7944",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "towsing",
+      "index": "18800",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "towting",
+      "index": "18801",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "towzing",
+      "index": "18803",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "toing",
+      "index": "30484",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "vowing",
+      "index": "9361",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "avowing",
+      "index": "9360",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "wowing",
+      "index": "31362",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yowing",
+      "index": "19508",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bashing",
+      "index": "2304",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "abashing",
+      "index": "2303",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bashings",
+      "index": "2626",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "brashing",
+      "index": "3026",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "ashing",
+      "index": "9494",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "basing",
+      "index": "9495",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "cashing",
+      "index": "3581",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "clashing",
+      "index": "680",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "crashing",
+      "index": "3920",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "casing",
+      "index": "10544",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "dashing",
+      "index": "4095",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "deashing",
+      "index": "4094",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "fashing",
+      "index": "4506",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "flashing",
+      "index": "953",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "gashing",
+      "index": "4827",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gnashing",
+      "index": "4826",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hashing",
+      "index": "7070",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shashing",
+      "index": "7069",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lashing",
+      "index": "3580",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lashings",
+      "index": "679",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "leashing",
+      "index": "5267",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "plashing",
+      "index": "1361",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "slashing",
+      "index": "1733",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "lasing",
+      "index": "13865",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mashing",
+      "index": "5434",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mashings",
+      "index": "1744",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "smashing",
+      "index": "1745",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "masing",
+      "index": "14344",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "pashing",
+      "index": "6017",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rashing",
+      "index": "3027",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "trashing",
+      "index": "2121",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "rahing",
+      "index": "15996",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rasing",
+      "index": "15997",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "sashing",
+      "index": "7071",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "snashing",
+      "index": "7398",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stashing",
+      "index": "7769",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "swashing",
+      "index": "1725",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tashing",
+      "index": "7770",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "washing",
+      "index": "8094",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "washings",
+      "index": "2071",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "washin",
+      "index": "19275",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "arcked",
+      "index": "20029",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "arked",
+      "index": "20030",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "arced",
+      "index": "20027",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "barked",
+      "index": "20351",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "baked",
+      "index": "20282",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bared",
+      "index": "20338",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "carked",
+      "index": "10653",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "charked",
+      "index": "10651",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "caked",
+      "index": "21363",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cared",
+      "index": "21448",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "darked",
+      "index": "11536",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "darkled",
+      "index": "11535",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dared",
+      "index": "22513",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "harked",
+      "index": "10652",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sharked",
+      "index": "16920",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hared",
+      "index": "21590",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "karked",
+      "index": "25194",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "larked",
+      "index": "25437",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "laked",
+      "index": "23611",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "marked",
+      "index": "25882",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,Danish"
+    },
+    {
+      "id": "narked",
+      "index": "26372",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "naked",
+      "index": "26373",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "parked",
+      "index": "17571",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sparked",
+      "index": "7511",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "pared",
+      "index": "26674",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rarked",
+      "index": "27603",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "raked",
+      "index": "21003",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rared",
+      "index": "27604",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "warked",
+      "index": "31133",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "waked",
+      "index": "20238",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "wared",
+      "index": "31103",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "yarked",
+      "index": "31416",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "bashed",
+      "index": "8868",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "abashed",
+      "index": "8867",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "brashed",
+      "index": "10097",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "ashed",
+      "index": "20366",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "based",
+      "index": "19533",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cashed",
+      "index": "10874",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "clashed",
+      "index": "10872",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "crashed",
+      "index": "11328",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cased",
+      "index": "21486",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "dashed",
+      "index": "11588",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "deashed",
+      "index": "11587",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "fashed",
+      "index": "12464",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "flashed",
+      "index": "12463",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gashed",
+      "index": "13011",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "gnashed",
+      "index": "13010",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "hashed",
+      "index": "16928",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shashed",
+      "index": "16927",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lashed",
+      "index": "10873",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "leashed",
+      "index": "13910",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "plashed",
+      "index": "7608",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "slashed",
+      "index": "7609",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "lased",
+      "index": "25429",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mashed",
+      "index": "17332",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "smashed",
+      "index": "17331",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mased",
+      "index": "25892",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "pashed",
+      "index": "15457",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rashed",
+      "index": "10098",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "trashed",
+      "index": "8294",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rahed",
+      "index": "27605",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "rased",
+      "index": "23261",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sashed",
+      "index": "16929",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "snashed",
+      "index": "17396",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stashed",
+      "index": "17847",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "swashed",
+      "index": "7204",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tashed",
+      "index": "17848",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "washed",
+      "index": "18250",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "ceases",
+      "index": "11350",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "creases",
+      "index": "3939",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "eases",
+      "index": "21498",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cease",
+      "index": "21497",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easels",
+      "index": "18483",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "teasels",
+      "index": "18482",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "weasels",
+      "index": "19297",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easel",
+      "index": "23129",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easers",
+      "index": "12093",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easters",
+      "index": "4450",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "erasers",
+      "index": "12190",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "leasers",
+      "index": "6032",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "teasers",
+      "index": "18486",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easer",
+      "index": "23130",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easies",
+      "index": "12087",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easiest",
+      "index": "12086",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easles",
+      "index": "14389",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "measles",
+      "index": "14388",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "eales",
+      "index": "23127",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "easle",
+      "index": "23133",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "erases",
+      "index": "12192",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "erses",
+      "index": "23264",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "erase",
+      "index": "23262",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "eyases",
+      "index": "12272",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "eyasses",
+      "index": "12271",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "eyass",
+      "index": "23342",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "feases",
+      "index": "23466",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "fease",
+      "index": "23465",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "leases",
+      "index": "13908",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "pleases",
+      "index": "6033",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "leses",
+      "index": "25490",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "lease",
+      "index": "25489",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "meases",
+      "index": "14390",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "meses",
+      "index": "23208",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mease",
+      "index": "25945",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "peases",
+      "index": "15477",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "preases",
+      "index": "6215",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "pease",
+      "index": "26823",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "seases",
+      "index": "28348",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sease",
+      "index": "28347",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "teases",
+      "index": "18484",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "texases",
+      "index": "18548",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tease",
+      "index": "30231",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "scores",
+      "index": "16648",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,French"
+    },
+    {
+      "id": "scorers",
+      "index": "6864",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "scorses",
+      "index": "6872",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "cores",
+      "index": "21780",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sores",
+      "index": "28236",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "score",
+      "index": "28234",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,Danish,French"
+    },
+    {
+      "id": "shores",
+      "index": "17064",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shorers",
+      "index": "17063",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shoes",
+      "index": "28596",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "shore",
+      "index": "20113",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "smores",
+      "index": "29027",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "mores",
+      "index": "26140",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,German,Swiss"
+    },
+    {
+      "id": "smore",
+      "index": "29026",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "snores",
+      "index": "16815",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "senores",
+      "index": "6991",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "snorers",
+      "index": "7426",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "snore",
+      "index": "29124",
+      "group": 1,
+      "languages": "EnglishGeneral,Danish"
+    },
+    {
+      "id": "soares",
+      "index": "17436",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "soarers",
+      "index": "17435",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "soars",
+      "index": "29143",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "soare",
+      "index": "29142",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "sordes",
+      "index": "29207",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian"
+    },
+    {
+      "id": "sords",
+      "index": "29208",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorees",
+      "index": "17447",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "soirees",
+      "index": "17446",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorexes",
+      "index": "17498",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "soree",
+      "index": "29161",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorels",
+      "index": "17496",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorells",
+      "index": "17495",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorrels",
+      "index": "17500",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorel",
+      "index": "29210",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorest",
+      "index": "17521",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sourest",
+      "index": "17519",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sortes",
+      "index": "17499",
+      "group": 1,
+      "languages": "EnglishGeneral,Danish,French"
+    },
+    {
+      "id": "sorites",
+      "index": "7451",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorters",
+      "index": "7425",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "sorties",
+      "index": "7158",
+      "group": 1,
+      "languages": "EnglishGeneral,French"
+    },
+    {
+      "id": "sorts",
+      "index": "28627",
+      "group": 1,
+      "languages": "EnglishGeneral,French"
+    },
+    {
+      "id": "spores",
+      "index": "17708",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,Danish,French"
+    },
+    {
+      "id": "splores",
+      "index": "17707",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "pores",
+      "index": "27216",
+      "group": 1,
+      "languages": "EnglishGeneral,French"
+    },
+    {
+      "id": "spore",
+      "index": "29377",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,German,Swiss,French"
+    },
+    {
+      "id": "stores",
+      "index": "18034",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,Danish,French"
+    },
+    {
+      "id": "storers",
+      "index": "7932",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "storeys",
+      "index": "18036",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "storges",
+      "index": "7929",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stories",
+      "index": "18040",
+      "group": 1,
+      "languages": "EnglishGeneral,German,Swiss"
+    },
+    {
+      "id": "stoures",
+      "index": "18051",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "stowres",
+      "index": "18065",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    },
+    {
+      "id": "tores",
+      "index": "29743",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,German,Swiss,French"
+    },
+    {
+      "id": "store",
+      "index": "29742",
+      "group": 1,
+      "languages": "EnglishGeneral,Norwegian,Danish,French"
+    },
+    {
+      "id": "tsores",
+      "index": "30719",
+      "group": 1,
+      "languages": "EnglishGeneral"
+    }
+  ],
+  "links": [
+    {
+      "source": "abearing",
+      "target": "bearing",
+      "value": 1
+    },
+    {
+      "source": "bearding",
+      "target": "bearing",
+      "value": 1
+    },
+    {
+      "source": "bearings",
+      "target": "bearing",
+      "value": 1
+    },
+    {
+      "source": "bewaring",
+      "target": "bearing",
+      "value": 1
+    },
+    {
+      "source": "blearing",
+      "target": "bearing",
+      "value": 1
+    },
+    {
+      "source": "bearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "bearing",
+      "target": "baring",
+      "value": 1
+    },
+    {
+      "source": "deairing",
+      "target": "dearing",
+      "value": 1
+    },
+    {
+      "source": "dearling",
+      "target": "dearing",
+      "value": 1
+    },
+    {
+      "source": "drearing",
+      "target": "dearing",
+      "value": 1
+    },
+    {
+      "source": "dearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "dearing",
+      "target": "daring",
+      "value": 1
+    },
+    {
+      "source": "dearing",
+      "target": "dering",
+      "value": 1
+    },
+    {
+      "source": "bearding",
+      "target": "earding",
+      "value": 1
+    },
+    {
+      "source": "yearding",
+      "target": "earding",
+      "value": 1
+    },
+    {
+      "source": "earding",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "bearings",
+      "target": "earings",
+      "value": 1
+    },
+    {
+      "source": "earnings",
+      "target": "earings",
+      "value": 1
+    },
+    {
+      "source": "earrings",
+      "target": "earings",
+      "value": 1
+    },
+    {
+      "source": "gearings",
+      "target": "earings",
+      "value": 1
+    },
+    {
+      "source": "hearings",
+      "target": "earings",
+      "value": 1
+    },
+    {
+      "source": "searings",
+      "target": "earings",
+      "value": 1
+    },
+    {
+      "source": "wearings",
+      "target": "earings",
+      "value": 1
+    },
+    {
+      "source": "earings",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "earnings",
+      "target": "earning",
+      "value": 1
+    },
+    {
+      "source": "learning",
+      "target": "earning",
+      "value": 1
+    },
+    {
+      "source": "yearning",
+      "target": "earning",
+      "value": 1
+    },
+    {
+      "source": "earning",
+      "target": "erning",
+      "value": 1
+    },
+    {
+      "source": "earning",
+      "target": "eaning",
+      "value": 1
+    },
+    {
+      "source": "earning",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "earrings",
+      "target": "earring",
+      "value": 1
+    },
+    {
+      "source": "earring",
+      "target": "erring",
+      "value": 1
+    },
+    {
+      "source": "earring",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "afearing",
+      "target": "fearing",
+      "value": 1
+    },
+    {
+      "source": "fearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "fearing",
+      "target": "faring",
+      "value": 1
+    },
+    {
+      "source": "gearings",
+      "target": "gearing",
+      "value": 1
+    },
+    {
+      "source": "gearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "headring",
+      "target": "hearing",
+      "value": 1
+    },
+    {
+      "source": "hearings",
+      "target": "hearing",
+      "value": 1
+    },
+    {
+      "source": "hearsing",
+      "target": "hearing",
+      "value": 1
+    },
+    {
+      "source": "hearting",
+      "target": "hearing",
+      "value": 1
+    },
+    {
+      "source": "shearing",
+      "target": "hearing",
+      "value": 1
+    },
+    {
+      "source": "hearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "hearing",
+      "target": "haring",
+      "value": 1
+    },
+    {
+      "source": "blearing",
+      "target": "learing",
+      "value": 1
+    },
+    {
+      "source": "clearing",
+      "target": "learing",
+      "value": 1
+    },
+    {
+      "source": "learning",
+      "target": "learing",
+      "value": 1
+    },
+    {
+      "source": "learing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "learing",
+      "target": "lering",
+      "value": 1
+    },
+    {
+      "source": "smearing",
+      "target": "mearing",
+      "value": 1
+    },
+    {
+      "source": "mearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "mearing",
+      "target": "mering",
+      "value": 1
+    },
+    {
+      "source": "anearing",
+      "target": "nearing",
+      "value": 1
+    },
+    {
+      "source": "nearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "drearing",
+      "target": "rearing",
+      "value": 1
+    },
+    {
+      "source": "rearming",
+      "target": "rearing",
+      "value": 1
+    },
+    {
+      "source": "rearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "rearing",
+      "target": "raring",
+      "value": 1
+    },
+    {
+      "source": "searcing",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "searings",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "shearing",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "skearing",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "smearing",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "spearing",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "stearing",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "swearing",
+      "target": "searing",
+      "value": 1
+    },
+    {
+      "source": "searing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "searing",
+      "target": "saring",
+      "value": 1
+    },
+    {
+      "source": "searing",
+      "target": "sering",
+      "value": 1
+    },
+    {
+      "source": "stearing",
+      "target": "tearing",
+      "value": 1
+    },
+    {
+      "source": "tearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "tearing",
+      "target": "taring",
+      "value": 1
+    },
+    {
+      "source": "tearing",
+      "target": "teaing",
+      "value": 1
+    },
+    {
+      "source": "swearing",
+      "target": "wearing",
+      "value": 1
+    },
+    {
+      "source": "wearings",
+      "target": "wearing",
+      "value": 1
+    },
+    {
+      "source": "wearying",
+      "target": "wearing",
+      "value": 1
+    },
+    {
+      "source": "wearing",
+      "target": "earing",
+      "value": 1
+    },
+    {
+      "source": "wearing",
+      "target": "waring",
+      "value": 1
+    },
+    {
+      "source": "aswing",
+      "target": "swing",
+      "value": 1
+    },
+    {
+      "source": "aswing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "aweing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "awnings",
+      "target": "awning",
+      "value": 1
+    },
+    {
+      "source": "dawning",
+      "target": "awning",
+      "value": 1
+    },
+    {
+      "source": "fawning",
+      "target": "awning",
+      "value": 1
+    },
+    {
+      "source": "pawning",
+      "target": "awning",
+      "value": 1
+    },
+    {
+      "source": "yawning",
+      "target": "awning",
+      "value": 1
+    },
+    {
+      "source": "awning",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "cawings",
+      "target": "cawing",
+      "value": 1
+    },
+    {
+      "source": "chawing",
+      "target": "cawing",
+      "value": 1
+    },
+    {
+      "source": "clawing",
+      "target": "cawing",
+      "value": 1
+    },
+    {
+      "source": "cawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "adawing",
+      "target": "dawing",
+      "value": 1
+    },
+    {
+      "source": "dawding",
+      "target": "dawing",
+      "value": 1
+    },
+    {
+      "source": "dawning",
+      "target": "dawing",
+      "value": 1
+    },
+    {
+      "source": "dawting",
+      "target": "dawing",
+      "value": 1
+    },
+    {
+      "source": "drawing",
+      "target": "dawing",
+      "value": 1
+    },
+    {
+      "source": "dawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "chawing",
+      "target": "hawing",
+      "value": 1
+    },
+    {
+      "source": "hawking",
+      "target": "hawing",
+      "value": 1
+    },
+    {
+      "source": "hawming",
+      "target": "hawing",
+      "value": 1
+    },
+    {
+      "source": "hawsing",
+      "target": "hawing",
+      "value": 1
+    },
+    {
+      "source": "shawing",
+      "target": "hawing",
+      "value": 1
+    },
+    {
+      "source": "thawing",
+      "target": "hawing",
+      "value": 1
+    },
+    {
+      "source": "hawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "jawings",
+      "target": "jawing",
+      "value": 1
+    },
+    {
+      "source": "jawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "kawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "kawing",
+      "target": "kaing",
+      "value": 1
+    },
+    {
+      "source": "blawing",
+      "target": "lawing",
+      "value": 1
+    },
+    {
+      "source": "clawing",
+      "target": "lawing",
+      "value": 1
+    },
+    {
+      "source": "flawing",
+      "target": "lawing",
+      "value": 1
+    },
+    {
+      "source": "lapwing",
+      "target": "lawing",
+      "value": 1
+    },
+    {
+      "source": "lawings",
+      "target": "lawing",
+      "value": 1
+    },
+    {
+      "source": "lawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "lawing",
+      "target": "lawin",
+      "value": 1
+    },
+    {
+      "source": "mawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "pawning",
+      "target": "pawing",
+      "value": 1
+    },
+    {
+      "source": "pawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "drawing",
+      "target": "rawing",
+      "value": 1
+    },
+    {
+      "source": "rawings",
+      "target": "rawing",
+      "value": 1
+    },
+    {
+      "source": "rawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "rawing",
+      "target": "rawin",
+      "value": 1
+    },
+    {
+      "source": "sawings",
+      "target": "sawing",
+      "value": 1
+    },
+    {
+      "source": "shawing",
+      "target": "sawing",
+      "value": 1
+    },
+    {
+      "source": "snawing",
+      "target": "sawing",
+      "value": 1
+    },
+    {
+      "source": "stawing",
+      "target": "sawing",
+      "value": 1
+    },
+    {
+      "source": "sawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "sawing",
+      "target": "swing",
+      "value": 1
+    },
+    {
+      "source": "stawing",
+      "target": "tawing",
+      "value": 1
+    },
+    {
+      "source": "tawings",
+      "target": "tawing",
+      "value": 1
+    },
+    {
+      "source": "tawsing",
+      "target": "tawing",
+      "value": 1
+    },
+    {
+      "source": "tawting",
+      "target": "tawing",
+      "value": 1
+    },
+    {
+      "source": "thawing",
+      "target": "tawing",
+      "value": 1
+    },
+    {
+      "source": "tawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "yawling",
+      "target": "yawing",
+      "value": 1
+    },
+    {
+      "source": "yawning",
+      "target": "yawing",
+      "value": 1
+    },
+    {
+      "source": "yawping",
+      "target": "yawing",
+      "value": 1
+    },
+    {
+      "source": "yawing",
+      "target": "awing",
+      "value": 1
+    },
+    {
+      "source": "arckings",
+      "target": "arcking",
+      "value": 1
+    },
+    {
+      "source": "arcking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "arcking",
+      "target": "arcing",
+      "value": 1
+    },
+    {
+      "source": "barking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "barking",
+      "target": "baking",
+      "value": 1
+    },
+    {
+      "source": "barking",
+      "target": "baring",
+      "value": 1
+    },
+    {
+      "source": "charking",
+      "target": "carking",
+      "value": 1
+    },
+    {
+      "source": "carking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "carking",
+      "target": "caking",
+      "value": 1
+    },
+    {
+      "source": "carking",
+      "target": "caring",
+      "value": 1
+    },
+    {
+      "source": "darkling",
+      "target": "darking",
+      "value": 1
+    },
+    {
+      "source": "darking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "darking",
+      "target": "daring",
+      "value": 1
+    },
+    {
+      "source": "charking",
+      "target": "harking",
+      "value": 1
+    },
+    {
+      "source": "sharking",
+      "target": "harking",
+      "value": 1
+    },
+    {
+      "source": "harking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "harking",
+      "target": "haring",
+      "value": 1
+    },
+    {
+      "source": "karking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "larking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "larking",
+      "target": "laking",
+      "value": 1
+    },
+    {
+      "source": "markings",
+      "target": "marking",
+      "value": 1
+    },
+    {
+      "source": "marking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "marking",
+      "target": "making",
+      "value": 1
+    },
+    {
+      "source": "narking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "parkings",
+      "target": "parking",
+      "value": 1
+    },
+    {
+      "source": "sparking",
+      "target": "parking",
+      "value": 1
+    },
+    {
+      "source": "parking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "parking",
+      "target": "paring",
+      "value": 1
+    },
+    {
+      "source": "parking",
+      "target": "parkin",
+      "value": 1
+    },
+    {
+      "source": "rarking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "rarking",
+      "target": "raking",
+      "value": 1
+    },
+    {
+      "source": "rarking",
+      "target": "raring",
+      "value": 1
+    },
+    {
+      "source": "sarkings",
+      "target": "sarking",
+      "value": 1
+    },
+    {
+      "source": "sharking",
+      "target": "sarking",
+      "value": 1
+    },
+    {
+      "source": "sparking",
+      "target": "sarking",
+      "value": 1
+    },
+    {
+      "source": "starking",
+      "target": "sarking",
+      "value": 1
+    },
+    {
+      "source": "sarking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "sarking",
+      "target": "saring",
+      "value": 1
+    },
+    {
+      "source": "warking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "warking",
+      "target": "waking",
+      "value": 1
+    },
+    {
+      "source": "warking",
+      "target": "waring",
+      "value": 1
+    },
+    {
+      "source": "yarking",
+      "target": "arking",
+      "value": 1
+    },
+    {
+      "source": "ashets",
+      "target": "shets",
+      "value": 1
+    },
+    {
+      "source": "ashets",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "ashets",
+      "target": "ashet",
+      "value": 1
+    },
+    {
+      "source": "abashes",
+      "target": "bashes",
+      "value": 1
+    },
+    {
+      "source": "bashers",
+      "target": "bashes",
+      "value": 1
+    },
+    {
+      "source": "blashes",
+      "target": "bashes",
+      "value": 1
+    },
+    {
+      "source": "brashes",
+      "target": "bashes",
+      "value": 1
+    },
+    {
+      "source": "bashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "bashes",
+      "target": "bases",
+      "value": 1
+    },
+    {
+      "source": "cashews",
+      "target": "cashes",
+      "value": 1
+    },
+    {
+      "source": "clashes",
+      "target": "cashes",
+      "value": 1
+    },
+    {
+      "source": "crashes",
+      "target": "cashes",
+      "value": 1
+    },
+    {
+      "source": "cashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "cashes",
+      "target": "cases",
+      "value": 1
+    },
+    {
+      "source": "dashers",
+      "target": "dashes",
+      "value": 1
+    },
+    {
+      "source": "deashes",
+      "target": "dashes",
+      "value": 1
+    },
+    {
+      "source": "dashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "flashes",
+      "target": "fashes",
+      "value": 1
+    },
+    {
+      "source": "fashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "gashest",
+      "target": "gashes",
+      "value": 1
+    },
+    {
+      "source": "gnashes",
+      "target": "gashes",
+      "value": 1
+    },
+    {
+      "source": "gashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "gashes",
+      "target": "gases",
+      "value": 1
+    },
+    {
+      "source": "shashes",
+      "target": "hashes",
+      "value": 1
+    },
+    {
+      "source": "hashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "blashes",
+      "target": "lashes",
+      "value": 1
+    },
+    {
+      "source": "clashes",
+      "target": "lashes",
+      "value": 1
+    },
+    {
+      "source": "flashes",
+      "target": "lashes",
+      "value": 1
+    },
+    {
+      "source": "lashers",
+      "target": "lashes",
+      "value": 1
+    },
+    {
+      "source": "leashes",
+      "target": "lashes",
+      "value": 1
+    },
+    {
+      "source": "plashes",
+      "target": "lashes",
+      "value": 1
+    },
+    {
+      "source": "slashes",
+      "target": "lashes",
+      "value": 1
+    },
+    {
+      "source": "lashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "lashes",
+      "target": "lases",
+      "value": 1
+    },
+    {
+      "source": "marshes",
+      "target": "mashes",
+      "value": 1
+    },
+    {
+      "source": "mashers",
+      "target": "mashes",
+      "value": 1
+    },
+    {
+      "source": "mashies",
+      "target": "mashes",
+      "value": 1
+    },
+    {
+      "source": "smashes",
+      "target": "mashes",
+      "value": 1
+    },
+    {
+      "source": "mashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "mashes",
+      "target": "mases",
+      "value": 1
+    },
+    {
+      "source": "plashes",
+      "target": "pashes",
+      "value": 1
+    },
+    {
+      "source": "pashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "pashes",
+      "target": "pases",
+      "value": 1
+    },
+    {
+      "source": "brashes",
+      "target": "rashes",
+      "value": 1
+    },
+    {
+      "source": "crashes",
+      "target": "rashes",
+      "value": 1
+    },
+    {
+      "source": "rashers",
+      "target": "rashes",
+      "value": 1
+    },
+    {
+      "source": "rashest",
+      "target": "rashes",
+      "value": 1
+    },
+    {
+      "source": "rashies",
+      "target": "rashes",
+      "value": 1
+    },
+    {
+      "source": "trashes",
+      "target": "rashes",
+      "value": 1
+    },
+    {
+      "source": "rashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "rashes",
+      "target": "rases",
+      "value": 1
+    },
+    {
+      "source": "shashes",
+      "target": "sashes",
+      "value": 1
+    },
+    {
+      "source": "slashes",
+      "target": "sashes",
+      "value": 1
+    },
+    {
+      "source": "smashes",
+      "target": "sashes",
+      "value": 1
+    },
+    {
+      "source": "snashes",
+      "target": "sashes",
+      "value": 1
+    },
+    {
+      "source": "stashes",
+      "target": "sashes",
+      "value": 1
+    },
+    {
+      "source": "swashes",
+      "target": "sashes",
+      "value": 1
+    },
+    {
+      "source": "sashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "stashes",
+      "target": "tashes",
+      "value": 1
+    },
+    {
+      "source": "taishes",
+      "target": "tashes",
+      "value": 1
+    },
+    {
+      "source": "trashes",
+      "target": "tashes",
+      "value": 1
+    },
+    {
+      "source": "tashes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "swashes",
+      "target": "washes",
+      "value": 1
+    },
+    {
+      "source": "washers",
+      "target": "washes",
+      "value": 1
+    },
+    {
+      "source": "washes",
+      "target": "ashes",
+      "value": 1
+    },
+    {
+      "source": "washes",
+      "target": "wases",
+      "value": 1
+    },
+    {
+      "source": "blowing",
+      "target": "bowing",
+      "value": 1
+    },
+    {
+      "source": "bowings",
+      "target": "bowing",
+      "value": 1
+    },
+    {
+      "source": "bowling",
+      "target": "bowing",
+      "value": 1
+    },
+    {
+      "source": "bowning",
+      "target": "bowing",
+      "value": 1
+    },
+    {
+      "source": "bowsing",
+      "target": "bowing",
+      "value": 1
+    },
+    {
+      "source": "bowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "bowing",
+      "target": "boing",
+      "value": 1
+    },
+    {
+      "source": "chowing",
+      "target": "cowing",
+      "value": 1
+    },
+    {
+      "source": "cowking",
+      "target": "cowing",
+      "value": 1
+    },
+    {
+      "source": "cowling",
+      "target": "cowing",
+      "value": 1
+    },
+    {
+      "source": "cowping",
+      "target": "cowing",
+      "value": 1
+    },
+    {
+      "source": "crowing",
+      "target": "cowing",
+      "value": 1
+    },
+    {
+      "source": "scowing",
+      "target": "cowing",
+      "value": 1
+    },
+    {
+      "source": "cowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "downing",
+      "target": "dowing",
+      "value": 1
+    },
+    {
+      "source": "dowsing",
+      "target": "dowing",
+      "value": 1
+    },
+    {
+      "source": "dowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "dowing",
+      "target": "doing",
+      "value": 1
+    },
+    {
+      "source": "jowling",
+      "target": "jowing",
+      "value": 1
+    },
+    {
+      "source": "jowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "blowing",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "flowing",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "glowing",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "lowings",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "lowning",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "lowping",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "lowsing",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "lowting",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "plowing",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "slowing",
+      "target": "lowing",
+      "value": 1
+    },
+    {
+      "source": "lowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "meowing",
+      "target": "mowing",
+      "value": 1
+    },
+    {
+      "source": "mowings",
+      "target": "mowing",
+      "value": 1
+    },
+    {
+      "source": "mowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "bowling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "cowling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "fowling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "gowling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "howling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "jowling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "sowling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "yowling",
+      "target": "owling",
+      "value": 1
+    },
+    {
+      "source": "owling",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "bowning",
+      "target": "owning",
+      "value": 1
+    },
+    {
+      "source": "downing",
+      "target": "owning",
+      "value": 1
+    },
+    {
+      "source": "gowning",
+      "target": "owning",
+      "value": 1
+    },
+    {
+      "source": "lowning",
+      "target": "owning",
+      "value": 1
+    },
+    {
+      "source": "owning",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "crowing",
+      "target": "rowing",
+      "value": 1
+    },
+    {
+      "source": "growing",
+      "target": "rowing",
+      "value": 1
+    },
+    {
+      "source": "rowings",
+      "target": "rowing",
+      "value": 1
+    },
+    {
+      "source": "rowting",
+      "target": "rowing",
+      "value": 1
+    },
+    {
+      "source": "trowing",
+      "target": "rowing",
+      "value": 1
+    },
+    {
+      "source": "rowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "scowing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "showing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "slowing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "snowing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "sowcing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "sowfing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "sowings",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "sowling",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "sowming",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "sowsing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "stowing",
+      "target": "sowing",
+      "value": 1
+    },
+    {
+      "source": "sowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "sowing",
+      "target": "swing",
+      "value": 1
+    },
+    {
+      "source": "stowing",
+      "target": "towing",
+      "value": 1
+    },
+    {
+      "source": "towings",
+      "target": "towing",
+      "value": 1
+    },
+    {
+      "source": "towsing",
+      "target": "towing",
+      "value": 1
+    },
+    {
+      "source": "towting",
+      "target": "towing",
+      "value": 1
+    },
+    {
+      "source": "towzing",
+      "target": "towing",
+      "value": 1
+    },
+    {
+      "source": "trowing",
+      "target": "towing",
+      "value": 1
+    },
+    {
+      "source": "towing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "towing",
+      "target": "toing",
+      "value": 1
+    },
+    {
+      "source": "avowing",
+      "target": "vowing",
+      "value": 1
+    },
+    {
+      "source": "vowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "wowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "yowling",
+      "target": "yowing",
+      "value": 1
+    },
+    {
+      "source": "yowing",
+      "target": "owing",
+      "value": 1
+    },
+    {
+      "source": "abashing",
+      "target": "bashing",
+      "value": 1
+    },
+    {
+      "source": "bashings",
+      "target": "bashing",
+      "value": 1
+    },
+    {
+      "source": "brashing",
+      "target": "bashing",
+      "value": 1
+    },
+    {
+      "source": "bashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "bashing",
+      "target": "basing",
+      "value": 1
+    },
+    {
+      "source": "clashing",
+      "target": "cashing",
+      "value": 1
+    },
+    {
+      "source": "crashing",
+      "target": "cashing",
+      "value": 1
+    },
+    {
+      "source": "cashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "cashing",
+      "target": "casing",
+      "value": 1
+    },
+    {
+      "source": "deashing",
+      "target": "dashing",
+      "value": 1
+    },
+    {
+      "source": "dashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "flashing",
+      "target": "fashing",
+      "value": 1
+    },
+    {
+      "source": "fashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "gnashing",
+      "target": "gashing",
+      "value": 1
+    },
+    {
+      "source": "gashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "shashing",
+      "target": "hashing",
+      "value": 1
+    },
+    {
+      "source": "hashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "clashing",
+      "target": "lashing",
+      "value": 1
+    },
+    {
+      "source": "flashing",
+      "target": "lashing",
+      "value": 1
+    },
+    {
+      "source": "lashings",
+      "target": "lashing",
+      "value": 1
+    },
+    {
+      "source": "leashing",
+      "target": "lashing",
+      "value": 1
+    },
+    {
+      "source": "plashing",
+      "target": "lashing",
+      "value": 1
+    },
+    {
+      "source": "slashing",
+      "target": "lashing",
+      "value": 1
+    },
+    {
+      "source": "lashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "lashing",
+      "target": "lasing",
+      "value": 1
+    },
+    {
+      "source": "mashings",
+      "target": "mashing",
+      "value": 1
+    },
+    {
+      "source": "smashing",
+      "target": "mashing",
+      "value": 1
+    },
+    {
+      "source": "mashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "mashing",
+      "target": "masing",
+      "value": 1
+    },
+    {
+      "source": "plashing",
+      "target": "pashing",
+      "value": 1
+    },
+    {
+      "source": "pashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "brashing",
+      "target": "rashing",
+      "value": 1
+    },
+    {
+      "source": "crashing",
+      "target": "rashing",
+      "value": 1
+    },
+    {
+      "source": "trashing",
+      "target": "rashing",
+      "value": 1
+    },
+    {
+      "source": "rashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "rashing",
+      "target": "rahing",
+      "value": 1
+    },
+    {
+      "source": "rashing",
+      "target": "rasing",
+      "value": 1
+    },
+    {
+      "source": "shashing",
+      "target": "sashing",
+      "value": 1
+    },
+    {
+      "source": "slashing",
+      "target": "sashing",
+      "value": 1
+    },
+    {
+      "source": "smashing",
+      "target": "sashing",
+      "value": 1
+    },
+    {
+      "source": "snashing",
+      "target": "sashing",
+      "value": 1
+    },
+    {
+      "source": "stashing",
+      "target": "sashing",
+      "value": 1
+    },
+    {
+      "source": "swashing",
+      "target": "sashing",
+      "value": 1
+    },
+    {
+      "source": "sashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "stashing",
+      "target": "tashing",
+      "value": 1
+    },
+    {
+      "source": "trashing",
+      "target": "tashing",
+      "value": 1
+    },
+    {
+      "source": "tashing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "swashing",
+      "target": "washing",
+      "value": 1
+    },
+    {
+      "source": "washings",
+      "target": "washing",
+      "value": 1
+    },
+    {
+      "source": "washing",
+      "target": "ashing",
+      "value": 1
+    },
+    {
+      "source": "washing",
+      "target": "washin",
+      "value": 1
+    },
+    {
+      "source": "arcked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "arcked",
+      "target": "arced",
+      "value": 1
+    },
+    {
+      "source": "barked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "barked",
+      "target": "baked",
+      "value": 1
+    },
+    {
+      "source": "barked",
+      "target": "bared",
+      "value": 1
+    },
+    {
+      "source": "charked",
+      "target": "carked",
+      "value": 1
+    },
+    {
+      "source": "carked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "carked",
+      "target": "caked",
+      "value": 1
+    },
+    {
+      "source": "carked",
+      "target": "cared",
+      "value": 1
+    },
+    {
+      "source": "darkled",
+      "target": "darked",
+      "value": 1
+    },
+    {
+      "source": "darked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "darked",
+      "target": "dared",
+      "value": 1
+    },
+    {
+      "source": "charked",
+      "target": "harked",
+      "value": 1
+    },
+    {
+      "source": "sharked",
+      "target": "harked",
+      "value": 1
+    },
+    {
+      "source": "harked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "harked",
+      "target": "hared",
+      "value": 1
+    },
+    {
+      "source": "karked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "larked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "larked",
+      "target": "laked",
+      "value": 1
+    },
+    {
+      "source": "marked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "narked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "narked",
+      "target": "naked",
+      "value": 1
+    },
+    {
+      "source": "sparked",
+      "target": "parked",
+      "value": 1
+    },
+    {
+      "source": "parked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "parked",
+      "target": "pared",
+      "value": 1
+    },
+    {
+      "source": "rarked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "rarked",
+      "target": "raked",
+      "value": 1
+    },
+    {
+      "source": "rarked",
+      "target": "rared",
+      "value": 1
+    },
+    {
+      "source": "warked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "warked",
+      "target": "waked",
+      "value": 1
+    },
+    {
+      "source": "warked",
+      "target": "wared",
+      "value": 1
+    },
+    {
+      "source": "yarked",
+      "target": "arked",
+      "value": 1
+    },
+    {
+      "source": "abashed",
+      "target": "bashed",
+      "value": 1
+    },
+    {
+      "source": "brashed",
+      "target": "bashed",
+      "value": 1
+    },
+    {
+      "source": "bashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "bashed",
+      "target": "based",
+      "value": 1
+    },
+    {
+      "source": "clashed",
+      "target": "cashed",
+      "value": 1
+    },
+    {
+      "source": "crashed",
+      "target": "cashed",
+      "value": 1
+    },
+    {
+      "source": "cashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "cashed",
+      "target": "cased",
+      "value": 1
+    },
+    {
+      "source": "deashed",
+      "target": "dashed",
+      "value": 1
+    },
+    {
+      "source": "dashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "flashed",
+      "target": "fashed",
+      "value": 1
+    },
+    {
+      "source": "fashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "gnashed",
+      "target": "gashed",
+      "value": 1
+    },
+    {
+      "source": "gashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "shashed",
+      "target": "hashed",
+      "value": 1
+    },
+    {
+      "source": "hashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "clashed",
+      "target": "lashed",
+      "value": 1
+    },
+    {
+      "source": "flashed",
+      "target": "lashed",
+      "value": 1
+    },
+    {
+      "source": "leashed",
+      "target": "lashed",
+      "value": 1
+    },
+    {
+      "source": "plashed",
+      "target": "lashed",
+      "value": 1
+    },
+    {
+      "source": "slashed",
+      "target": "lashed",
+      "value": 1
+    },
+    {
+      "source": "lashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "lashed",
+      "target": "lased",
+      "value": 1
+    },
+    {
+      "source": "smashed",
+      "target": "mashed",
+      "value": 1
+    },
+    {
+      "source": "mashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "mashed",
+      "target": "mased",
+      "value": 1
+    },
+    {
+      "source": "plashed",
+      "target": "pashed",
+      "value": 1
+    },
+    {
+      "source": "pashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "brashed",
+      "target": "rashed",
+      "value": 1
+    },
+    {
+      "source": "crashed",
+      "target": "rashed",
+      "value": 1
+    },
+    {
+      "source": "trashed",
+      "target": "rashed",
+      "value": 1
+    },
+    {
+      "source": "rashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "rashed",
+      "target": "rahed",
+      "value": 1
+    },
+    {
+      "source": "rashed",
+      "target": "rased",
+      "value": 1
+    },
+    {
+      "source": "shashed",
+      "target": "sashed",
+      "value": 1
+    },
+    {
+      "source": "slashed",
+      "target": "sashed",
+      "value": 1
+    },
+    {
+      "source": "smashed",
+      "target": "sashed",
+      "value": 1
+    },
+    {
+      "source": "snashed",
+      "target": "sashed",
+      "value": 1
+    },
+    {
+      "source": "stashed",
+      "target": "sashed",
+      "value": 1
+    },
+    {
+      "source": "swashed",
+      "target": "sashed",
+      "value": 1
+    },
+    {
+      "source": "sashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "stashed",
+      "target": "tashed",
+      "value": 1
+    },
+    {
+      "source": "trashed",
+      "target": "tashed",
+      "value": 1
+    },
+    {
+      "source": "tashed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "swashed",
+      "target": "washed",
+      "value": 1
+    },
+    {
+      "source": "washed",
+      "target": "ashed",
+      "value": 1
+    },
+    {
+      "source": "creases",
+      "target": "ceases",
+      "value": 1
+    },
+    {
+      "source": "ceases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "ceases",
+      "target": "cases",
+      "value": 1
+    },
+    {
+      "source": "ceases",
+      "target": "cease",
+      "value": 1
+    },
+    {
+      "source": "teasels",
+      "target": "easels",
+      "value": 1
+    },
+    {
+      "source": "weasels",
+      "target": "easels",
+      "value": 1
+    },
+    {
+      "source": "easels",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "easels",
+      "target": "easel",
+      "value": 1
+    },
+    {
+      "source": "easters",
+      "target": "easers",
+      "value": 1
+    },
+    {
+      "source": "erasers",
+      "target": "easers",
+      "value": 1
+    },
+    {
+      "source": "leasers",
+      "target": "easers",
+      "value": 1
+    },
+    {
+      "source": "teasers",
+      "target": "easers",
+      "value": 1
+    },
+    {
+      "source": "easers",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "easers",
+      "target": "easer",
+      "value": 1
+    },
+    {
+      "source": "easiest",
+      "target": "easies",
+      "value": 1
+    },
+    {
+      "source": "easies",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "measles",
+      "target": "easles",
+      "value": 1
+    },
+    {
+      "source": "easles",
+      "target": "eales",
+      "value": 1
+    },
+    {
+      "source": "easles",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "easles",
+      "target": "easle",
+      "value": 1
+    },
+    {
+      "source": "erasers",
+      "target": "erases",
+      "value": 1
+    },
+    {
+      "source": "erases",
+      "target": "rases",
+      "value": 1
+    },
+    {
+      "source": "erases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "erases",
+      "target": "erses",
+      "value": 1
+    },
+    {
+      "source": "erases",
+      "target": "erase",
+      "value": 1
+    },
+    {
+      "source": "eyasses",
+      "target": "eyases",
+      "value": 1
+    },
+    {
+      "source": "eyases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "eyases",
+      "target": "eyass",
+      "value": 1
+    },
+    {
+      "source": "feases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "feases",
+      "target": "fease",
+      "value": 1
+    },
+    {
+      "source": "leasers",
+      "target": "leases",
+      "value": 1
+    },
+    {
+      "source": "leashes",
+      "target": "leases",
+      "value": 1
+    },
+    {
+      "source": "pleases",
+      "target": "leases",
+      "value": 1
+    },
+    {
+      "source": "leases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "leases",
+      "target": "lases",
+      "value": 1
+    },
+    {
+      "source": "leases",
+      "target": "leses",
+      "value": 1
+    },
+    {
+      "source": "leases",
+      "target": "lease",
+      "value": 1
+    },
+    {
+      "source": "measles",
+      "target": "meases",
+      "value": 1
+    },
+    {
+      "source": "meases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "meases",
+      "target": "mases",
+      "value": 1
+    },
+    {
+      "source": "meases",
+      "target": "meses",
+      "value": 1
+    },
+    {
+      "source": "meases",
+      "target": "mease",
+      "value": 1
+    },
+    {
+      "source": "pleases",
+      "target": "peases",
+      "value": 1
+    },
+    {
+      "source": "preases",
+      "target": "peases",
+      "value": 1
+    },
+    {
+      "source": "peases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "peases",
+      "target": "pases",
+      "value": 1
+    },
+    {
+      "source": "peases",
+      "target": "pease",
+      "value": 1
+    },
+    {
+      "source": "seases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "seases",
+      "target": "sease",
+      "value": 1
+    },
+    {
+      "source": "teasels",
+      "target": "teases",
+      "value": 1
+    },
+    {
+      "source": "teasers",
+      "target": "teases",
+      "value": 1
+    },
+    {
+      "source": "texases",
+      "target": "teases",
+      "value": 1
+    },
+    {
+      "source": "teases",
+      "target": "eases",
+      "value": 1
+    },
+    {
+      "source": "teases",
+      "target": "tease",
+      "value": 1
+    },
+    {
+      "source": "scorers",
+      "target": "scores",
+      "value": 1
+    },
+    {
+      "source": "scorses",
+      "target": "scores",
+      "value": 1
+    },
+    {
+      "source": "scores",
+      "target": "cores",
+      "value": 1
+    },
+    {
+      "source": "scores",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "scores",
+      "target": "score",
+      "value": 1
+    },
+    {
+      "source": "shorers",
+      "target": "shores",
+      "value": 1
+    },
+    {
+      "source": "shores",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "shores",
+      "target": "shoes",
+      "value": 1
+    },
+    {
+      "source": "shores",
+      "target": "shore",
+      "value": 1
+    },
+    {
+      "source": "smores",
+      "target": "mores",
+      "value": 1
+    },
+    {
+      "source": "smores",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "smores",
+      "target": "smore",
+      "value": 1
+    },
+    {
+      "source": "senores",
+      "target": "snores",
+      "value": 1
+    },
+    {
+      "source": "snorers",
+      "target": "snores",
+      "value": 1
+    },
+    {
+      "source": "snores",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "snores",
+      "target": "snore",
+      "value": 1
+    },
+    {
+      "source": "soarers",
+      "target": "soares",
+      "value": 1
+    },
+    {
+      "source": "soares",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "soares",
+      "target": "soars",
+      "value": 1
+    },
+    {
+      "source": "soares",
+      "target": "soare",
+      "value": 1
+    },
+    {
+      "source": "sordes",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "sordes",
+      "target": "sords",
+      "value": 1
+    },
+    {
+      "source": "soirees",
+      "target": "sorees",
+      "value": 1
+    },
+    {
+      "source": "sorexes",
+      "target": "sorees",
+      "value": 1
+    },
+    {
+      "source": "sorees",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "sorees",
+      "target": "soree",
+      "value": 1
+    },
+    {
+      "source": "sorells",
+      "target": "sorels",
+      "value": 1
+    },
+    {
+      "source": "sorrels",
+      "target": "sorels",
+      "value": 1
+    },
+    {
+      "source": "sorels",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "sorels",
+      "target": "sorel",
+      "value": 1
+    },
+    {
+      "source": "sourest",
+      "target": "sorest",
+      "value": 1
+    },
+    {
+      "source": "sorest",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "sorites",
+      "target": "sortes",
+      "value": 1
+    },
+    {
+      "source": "sorters",
+      "target": "sortes",
+      "value": 1
+    },
+    {
+      "source": "sorties",
+      "target": "sortes",
+      "value": 1
+    },
+    {
+      "source": "sortes",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "sortes",
+      "target": "sorts",
+      "value": 1
+    },
+    {
+      "source": "splores",
+      "target": "spores",
+      "value": 1
+    },
+    {
+      "source": "spores",
+      "target": "pores",
+      "value": 1
+    },
+    {
+      "source": "spores",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "spores",
+      "target": "spore",
+      "value": 1
+    },
+    {
+      "source": "storers",
+      "target": "stores",
+      "value": 1
+    },
+    {
+      "source": "storeys",
+      "target": "stores",
+      "value": 1
+    },
+    {
+      "source": "storges",
+      "target": "stores",
+      "value": 1
+    },
+    {
+      "source": "stories",
+      "target": "stores",
+      "value": 1
+    },
+    {
+      "source": "stoures",
+      "target": "stores",
+      "value": 1
+    },
+    {
+      "source": "stowres",
+      "target": "stores",
+      "value": 1
+    },
+    {
+      "source": "stores",
+      "target": "tores",
+      "value": 1
+    },
+    {
+      "source": "stores",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "stores",
+      "target": "store",
+      "value": 1
+    },
+    {
+      "source": "tsores",
+      "target": "sores",
+      "value": 1
+    },
+    {
+      "source": "tsores",
+      "target": "tores",
+      "value": 1
+    }
+  ]
+}

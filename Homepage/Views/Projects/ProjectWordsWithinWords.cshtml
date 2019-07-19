@@ -1,4 +1,5 @@
 ﻿@using System.Linq
+@using System.Text.RegularExpressions
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -78,7 +79,7 @@
 
 
                 @{
-                    var words = new List<string>() { "dearns: earns darns derns deans dears dearn", "heards: eards hards herds heads hears heard", "spared: pared sared spred spaed spard spare", "yeards: eards yards yerds yeads years yeard" };
+                    var words = new List<string>() { "dearns	 earns[d] darns[e] derns[a] deans[r] dears[n] dearn[s]", "heards	 eards[h] hards[e] herds[a] heads[r] hears[d] heard[s]", "spared	 pared[s] sared[p] spred[a] spaed[r] spard[e] spare[d]", "yeards	 eards[y] yards[e] yerds[a] yeads[r] years[d] yeard[s]" };
 
                     @DisplayWordsWithinWords(words, "https://en.wiktionary.org/wiki/");
                 }
@@ -98,7 +99,7 @@
             </p>
 
             @{
-                var words2 = new List<string>() { "adread: dread aread adead adrad adred adrea","theins: heins teins thins thens theis thein","troads: roads toads trads trods troas troad","pearle: earle parle perle peale peare pearl"
+                var words2 = new List<string>() { "adread	 dread[a] aread[d] adead[r] adrad[e] adred[a] adrea[d]","theins	 heins[t] teins[h] thins[e] thens[i] theis[n] thein[s]","troads	 roads[t] toads[r] trads[o] trods[a] troas[d] troad[s]","pearle	 earle[p] parle[e] perle[a] peale[r] peare[l] pearl[e]"
  };
 
     @DisplayWordsWithinWords(words2, "https://en.wiktionary.org/wiki/");
@@ -120,8 +121,10 @@
 
                     @{
                         var nwords = new List<string>()
-                                                                                    {
-                            "baulte: aulte bulte balte baute baule bault","bauste: auste buste baste baute bause baust","gaulet: aulet gulet galet gauet gault gaule","greina: reina geina grina grena greia grein","greine: reine geine grine grene greie grein","greint: reint geint grint grent greit grein","meiste: eiste miste meste meite meise meist","paulte: aulte pulte palte paute paule pault","rauste: auste ruste raste raute rause raust","seigne: eigne signe segne seine seige seign","skurer: kurer surer skrer skuer skurr skure","steing: teing seing sting steng steig stein","veiken: eiken viken veken veien veikn veike"
+                                                                                                                        {
+"baulte	 aulte[b] bulte[a] balte[u] baute[l] baule[t] bault[e]","bauste	 auste[b] buste[a] baste[u] baute[s] bause[t] baust[e]","gaulet	 aulet[g] gulet[a] galet[u] gauet[l] gault[e] gaule[t]","greina	 reina[g] geina[r] grina[e] grena[i] greia[n] grein[a]","greine	 reine[g] geine[r] grine[e] grene[i] greie[n] grein[e]","greint	 reint[g] geint[r] grint[e] grent[i] greit[n] grein[t]","meiste	 eiste[m] miste[e] meste[i] meite[s] meise[t] meist[e]","paulte	 aulte[p] pulte[a] palte[u] paute[l] paule[t] pault[e]","rauste	 auste[r] ruste[a] raste[u] raute[s] rause[t] raust[e]","seigne	 eigne[s] signe[e] segne[i] seine[g] seige[n] seign[e]","skurer	 kurer[s] surer[k] skrer[u] skuer[r] skurr[e] skure[r]","steing	 teing[s] seing[t] sting[e] steng[i] steig[n] stein[g]","veiken	 eiken[v] viken[e] veken[i] veien[k] veikn[e] veike[n]"
+
+
                         };
                         @DisplayWordsWithinWords(nwords, "https://no.wiktionary.org/wiki/")
                     }
@@ -141,33 +144,46 @@
                     <tr>
                         <th>Language</th>
                         <th>Dictionary length</th>
-                        <th title="Number of words that have at least one word within it when removing one character">Words with any</th>
-                        <th>Words with all</th>
-                        <th>Percentage</th>
+                        <th title="Number of words that have at least one word within it when removing one character" colspan="2">Words with any</th>
+                        <th title="Number of words that where removing any character will result in a word ">Words with all</th>
                         <th>Most subwords</th>
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        English (Scrabble)
-                    </td>
-                    <td>
-                        267,753
-                    </td>
-                    <td>
-                        129,677
-                    </td>
-                    <td>
-                        48.43%
-                    </td>
-                    <td>
-                        6
-                    </td>
-                </tr>
-                <tr>
-
-                </tr>
+                    <tr>
+                        <td>
+                            English (Scrabble)
+                        </td>
+                        <td>
+                            267,753
+                        </td>
+                        <td>
+                            129,677
+                        </td>
+                        <td>
+                            48.43%
+                        </td>
+                        <td>
+                            6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            English (Combined)
+                        </td>
+                        <td>
+                            548,420
+                        </td>
+                        <td>
+                            222,351
+                        </td>
+                        <td>
+                            8,003
+                        </td>
+                        <td>
+                            1.46%
+                        </td>
+                    </tr>
 
                     <tr>
                         <td>
@@ -355,44 +371,75 @@
 
 @helper DisplayWordsWithinWords(IEnumerable<string> words, string urlPrefix)
 {
-    <ul>
 
+    var n = 0;
+    foreach (var word in words)
+    {
+        n++;
 
-        @foreach (var word in words)
+        var wordsSpl = word.Split(' ').ToList();
+        var firstWord = wordsSpl[0];
+
+        var pattern = @"\[(.*?)\]";
+
+        var letters = new List<string>();
+        var subwords = new List<string>();
+
+        for (int i = 1; i < wordsSpl.Count; i++)
         {
-            <li style="padding-bottom: 1em;">
+            var match = Regex.Match(wordsSpl[i], pattern);
+            if (match.Groups.Count > 0 && match.Value.Length > 0)
+            {
+                letters.Add(match.Groups[1].Value);
+                var remword = wordsSpl[i].Replace(match.Value, "");
+                subwords.Add(remword);
+            }
+            else
+            {
+                letters.Add("?");
+                subwords.Add(wordsSpl[i]);
+            }
 
-                @{
-
-                    var wordsSpl = word.Split(' ').ToList();
-                    var firstWord = wordsSpl[0];
-
-                    <a href="@string.Concat(urlPrefix,@wordsSpl[0].Replace(":",""))">@wordsSpl[0].Replace(":", "").Trim()</a>
-                    <span>:</span>
-
-
-                    <ul class="list-inline">
-
-                        @for (int i = 1; i < wordsSpl.Count; i++)
-                        {
-                            <li>
-                                <span>
-                                    <a href="@string.Concat(urlPrefix,@wordsSpl[i])"><code>@wordsSpl[i].Trim()</code></a>
-                                </span>
-                            </li>
-                        }
-
-                    </ul>
-
-                    @*foreach (var sp in wordsSpl)
-                            {
-                                <a href="@string.Concat(urlPrefix,@sp.Replace(":",""))">
-                                    @sp.Trim()
-                                </a>
-                            }
-                        }*@
-                }
-            </li>
         }
-    </ul>
+
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+            <tr>
+                <th colspan="@letters.Count">
+                    <span>[@n]</span>
+                    <a href="@string.Concat(urlPrefix, @firstWord)">@firstWord</a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (var letter in letters)
+                    {
+                        <td>
+                            <span>
+                                <code>
+                                    -@letter
+                                </code>
+
+                            </span>
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    @foreach (var subword in subwords)
+                    {
+                        <td>
+                            <span>
+                                <a href="@string.Concat(urlPrefix, subword)">@subword</a>
+                                
+                            </span>
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    }
 }

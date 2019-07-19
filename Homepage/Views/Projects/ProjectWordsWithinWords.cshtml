@@ -8,15 +8,21 @@
         overflow: hidden;
     }
 
+        .big-list.big-list-collapsed ul:after {
+            content: "...";
+        }
+
     .big-list-toggle {
-        
+        font-style: italic;
         cursor: pointer;
     }
-    .big-list-toggle:after {
-        content: "Show less";
-    }
+
+        .big-list-toggle:after {
+            content: "Show fewer";
+        }
+
     div.big-list-collapsed .big-list-toggle:after {
-        content: "Show more";
+        content: "... Show all";
     }
 </style>
 
@@ -35,7 +41,7 @@
                 In this case, yes, of course: <code>hoot</code>. In fact, I can make three other words as well: <code>soot, shot, shoo</code>. So how many words do themselves contain words? And which word contains the most words within it?
             </p>
             <p>
-                To answer these questions, we must decide on what counts as a 'word'. Do we include place names, proper nouns, etc.? Fortunately, <a href="https://en.wikipedia.org/wiki/Official_Scrabble_Players_Dictionary">some-one else</a> has done their level best to answer that question, so I'll just take the so-known 'SOWPODS' English word list containing a total of  267,753 words.
+                To answer these questions, we must decide on what counts as a 'word'. Do we include place names, proper nouns, etc.? Fortunately, <a href="https://en.wikipedia.org/wiki/Official_Scrabble_Players_Dictionary">someone else</a> has done their level best to answer that question, so I'll just take the so-known 'SOWPODS' English word list containing a total of  267,753 words.
             </p>
             <p>
                 The algorithm for this is remarkably simple:
@@ -63,23 +69,41 @@
                 The code for this, and other questions, is available on <a href="https://github.com/mortenalbring/WordsWithinWords">GitHub</a>.
             </p>
             <p>
-                The result of running this finds that 129,677 (48.43%) words in the English dictionary contain other words.
+                The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one character. There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
             </p>
+
+
             <p>
-                As for the word with the most number of words within it, there are four joint winners each with 6 subwords
+                As for the word with the most number of words within it: there are four joint winners, each with 6 subwords
 
-                <ul>
-                    @{
-                        var words = new List<string>() { "dearns: earns darns derns deans dears dearn", "heards: eards hards herds heads hears heard", "spared: pared sared spred spaed spard spare", "yeards: eards yards yerds yeads years yeard" };
 
-                        @DisplayWordsWithinWords(words, "https://en.wiktionary.org/wiki/");
-                    }
-                </ul>
+                @{
+                    var words = new List<string>() { "dearns: earns darns derns deans dears dearn", "heards: eards hards herds heads hears heard", "spared: pared sared spred spaed spard spare", "yeards: eards yards yerds yeads years yeard" };
+
+                    @DisplayWordsWithinWords(words, "https://en.wiktionary.org/wiki/");
+                }
+
             </p>
 
             <p>
                 This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words.
             </p>
+
+            <p>Of course, we can eschew the rules and regulations on the Official Scrabble word list and look at an even bigger word list. I've taken <a href="https://github.com/dwyl/english-words" target="_blank">this list</a>, combined it with any additional words in the SOWPODs list, resulting in a whopping word list of 548,420 English words. </p>
+
+            <p>Running the same analysis on this embiggened list finds 222,351 words (40.5%) containing at least one other word when a character is removed, and 8003 (1.46%) words when any character is removed.</p>
+
+            <p>
+                The maximum number of words within a word is still at 6, though there are a few additional joint winners.
+            </p>
+
+            @{
+                var words2 = new List<string>() { "adread: dread aread adead adrad adred adrea","theins: heins teins thins thens theis thein","troads: roads toads trads trods troas troad","pearle: earle parle perle peale peare pearl"
+ };
+
+    @DisplayWordsWithinWords(words2, "https://en.wiktionary.org/wiki/");
+            }
+
 
             <p>
                 We can of course run this for other languages, provided we can find comprehensive dictionaries in plain text form. This is surprisingly difficult.
@@ -91,27 +115,25 @@
 
             <p>
                 Norwegian also the most number of words within a word at 6, although here there's thirteen joint winners:
-                
-                
-          
 
                 <div id="big-list-1" class="big-list big-list-collapsed">
 
+                    @{
+                        var nwords = new List<string>()
+                                                                                    {
+                            "baulte: aulte bulte balte baute baule bault","bauste: auste buste baste baute bause baust","gaulet: aulet gulet galet gauet gault gaule","greina: reina geina grina grena greia grein","greine: reine geine grine grene greie grein","greint: reint geint grint grent greit grein","meiste: eiste miste meste meite meise meist","paulte: aulte pulte palte paute paule pault","rauste: auste ruste raste raute rause raust","seigne: eigne signe segne seine seige seign","skurer: kurer surer skrer skuer skurr skure","steing: teing seing sting steng steig stein","veiken: eiken viken veken veien veikn veike"
+                        };
+                        @DisplayWordsWithinWords(nwords, "https://no.wiktionary.org/wiki/")
+                    }
 
-                    <ul>
-                        @{
-                            var nwords = new List<string>()
-                                            {
-                                "greipende: reipende geipende gripende greiende greipede greipene", "knaskende: naskende kaskende knakende knasende knaskede knaskene", "kvinkende: vinkende kinkende kvikende kvinende kvinkede kvinkene", "skarvende: karvende sarvende skavende skarende skarvede skarvene", "slurkende: lurkende surkende slukende slurende slurkede slurkene", "stankende: tankende sankende stakende stanende stankede stankene", "traslende: raslende taslende tralende trasende traslede traslene", "gaulende: aulende gulende galende gauende gaulede gaulene", "greinene: reinene geinene grinene grenene greiene greinen", "kveikene: veikene keikene kvikene kvekene kveikne kveiken", "geisten: eisten gisten gesten geiten geisen geiste", "grauset: rauset gauset gruset graset graust grause", "greiner: reiner geiner griner grener greier greine", "greinet: geinet grinet grenet greiet greint greine", "knasker: nasker kasker knaker knaser knaskr knaske", "kneiste: neiste keiste kniste kneste kneise kneist", "kranket: ranket kanket kraket kranet krankt kranke", "kveiken: veiken keiken kviken kveken kveikn kveike", "kveilte: keilte kvilte kvelte kveite kveile kveilt", "leikene: eikene likene lekene leiene leikne leiken", "snauset: sauset snuset snaset snauet snaust snause", "speilet: peilet seilet spilet spelet speilt speile", "speilte: peilte seilte spilte spelte speile speilt", "steinga: teinga seinga stinga stenga steina steing", "veikene: eikene vikene vekene veiene veikne veiken", "baulte: aulte bulte balte baute baule bault", "bauste: auste buste baste baute bause baust", "gaulet: aulet gulet galet gauet gault gaule", "greina: reina geina grina grena greia grein", "greine: reine geine grine grene greie grein", "greint: reint geint grint grent greit grein", "meiste: eiste miste meste meite meise meist", "paulte: aulte pulte palte paute paule pault", "rauste: auste ruste raste raute rause raust", "seigne: eigne signe segne seine seige seign", "skurer: kurer surer skrer skuer skurr skure", "steing: teing seing sting steng steig stein", "veiken: eiken viken veken veien veikn veike"
-
-                            };
-                            @DisplayWordsWithinWords(nwords, "https://no.wiktionary.org/wiki/")
-                        }
-                    </ul>
 
                     <span class="big-list-toggle" onclick="document.getElementById('big-list-1').classList.toggle('big-list-collapsed');"></span>
 
                 </div>
+            </p>
+
+            <p>
+                This also spits up some pretty unusual words, though all I've checked do appear in some obscure word list or scrabble dictionary! It's interesting that the Norwegian list has some very long words, but the top number of words within a word is the same for English.
             </p>
 
             <table class="table">
@@ -119,45 +141,49 @@
                     <tr>
                         <th>Language</th>
                         <th>Dictionary length</th>
-                        <th>Words within words</th>
+                        <th title="Number of words that have at least one word within it when removing one character">Words with any</th>
+                        <th>Words with all</th>
                         <th>Percentage</th>
                         <th>Most subwords</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            English
-                        </td>
-                        <td>
-                            267,753
-                        </td>
-                        <td>
-                            129,677
-                        </td>
-                        <td>
-                            48.43%
-                        </td>
-                        <td>
-                            6
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        English (Scrabble)
+                    </td>
+                    <td>
+                        267,753
+                    </td>
+                    <td>
+                        129,677
+                    </td>
+                    <td>
+                        48.43%
+                    </td>
+                    <td>
+                        6
+                    </td>
+                </tr>
+                <tr>
+
+                </tr>
 
                     <tr>
                         <td>
                             Norwegian
                         </td>
                         <td>
-                            61,414
+                            692,872
                         </td>
                         <td>
-                            25,447
+                            347,760
                         </td>
                         <td>
-                            41.43%
+                            50.19%
                         </td>
                         <td>
-                            5
+                            6
                         </td>
                     </tr>
                     <tr>
@@ -329,22 +355,44 @@
 
 @helper DisplayWordsWithinWords(IEnumerable<string> words, string urlPrefix)
 {
-    foreach (var word in words)
-    {
-        <li>
-            <code>
+    <ul>
+
+
+        @foreach (var word in words)
+        {
+            <li style="padding-bottom: 1em;">
+
                 @{
+
                     var wordsSpl = word.Split(' ').ToList();
+                    var firstWord = wordsSpl[0];
 
-                    foreach (var sp in wordsSpl)
-                    {
-                        <a href="@string.Concat(urlPrefix,@sp.Replace(":",""))">
-                            <span>@sp.Trim()</span>
-                        </a>
-                    }
+                    <a href="@string.Concat(urlPrefix,@wordsSpl[0].Replace(":",""))">@wordsSpl[0].Replace(":", "").Trim()</a>
+                    <span>:</span>
+
+
+                    <ul class="list-inline">
+
+                        @for (int i = 1; i < wordsSpl.Count; i++)
+                        {
+                            <li>
+                                <span>
+                                    <a href="@string.Concat(urlPrefix,@wordsSpl[i])"><code>@wordsSpl[i].Trim()</code></a>
+                                </span>
+                            </li>
+                        }
+
+                    </ul>
+
+                    @*foreach (var sp in wordsSpl)
+                            {
+                                <a href="@string.Concat(urlPrefix,@sp.Replace(":",""))">
+                                    @sp.Trim()
+                                </a>
+                            }
+                        }*@
                 }
-            </code>
-        </li>
-    }
-
+            </li>
+        }
+    </ul>
 }

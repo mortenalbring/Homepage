@@ -1,10 +1,25 @@
-﻿@using System.Collections
-@using System.Collections.Generic
-@using System.Linq
-@using System.Runtime.CompilerServices
+﻿@using System.Linq
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .big-list.big-list-collapsed ul {
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .big-list-toggle {
+        
+        cursor: pointer;
+    }
+    .big-list-toggle:after {
+        content: "Show less";
+    }
+    div.big-list-collapsed .big-list-toggle:after {
+        content: "Show more";
+    }
+</style>
+
 
 <div class="post-title">
     <div class="post-title-text">
@@ -67,20 +82,36 @@
             </p>
 
             <p>
-                We can of course run this for other languages, provided we can find comprehensive dictionaries in plain text form. This is surprisingly difficult. For Norwegian, the only list I could find contains only 61,414 words despite the 'Norsk Ordbok' supposedly containing 500,000 words.
+                We can of course run this for other languages, provided we can find comprehensive dictionaries in plain text form. This is surprisingly difficult.
+
+                For Norwegian, the largest list I could find contains 692,872 words - though I cannot be sure it applies the same standards and rules as the scrabble dictionary.
             </p>
 
-            <p>Running this list finds 25,447 (41.44 %) Norwegian words with other Norwegian words within them.</p>
+            <p>Running this list finds 347,760 (50.19 %) Norwegian words with other Norwegian words within them.</p>
 
             <p>
-                Norwegian has seven words with five subwords
-                <ul>
-                    @{
-                        var nwords = new List<string>() {"grein: rein gein grin gren grei", "leide: eide lide lede leie leid", "leike: eike like leke leie leik", "meine: eine mine mene meie mein", "skure: kure sure skre skue skur", "tåren: åren tren tåen tårn tåre", "veike: eike vike veke veie veik"
-                };
-                        @DisplayWordsWithinWords(nwords, "https://no.wiktionary.org/wiki/");
-                    }
-                </ul>
+                Norwegian also the most number of words within a word at 6, although here there's thirteen joint winners:
+                
+                
+          
+
+                <div id="big-list-1" class="big-list big-list-collapsed">
+
+
+                    <ul>
+                        @{
+                            var nwords = new List<string>()
+                                            {
+                                "greipende: reipende geipende gripende greiende greipede greipene", "knaskende: naskende kaskende knakende knasende knaskede knaskene", "kvinkende: vinkende kinkende kvikende kvinende kvinkede kvinkene", "skarvende: karvende sarvende skavende skarende skarvede skarvene", "slurkende: lurkende surkende slukende slurende slurkede slurkene", "stankende: tankende sankende stakende stanende stankede stankene", "traslende: raslende taslende tralende trasende traslede traslene", "gaulende: aulende gulende galende gauende gaulede gaulene", "greinene: reinene geinene grinene grenene greiene greinen", "kveikene: veikene keikene kvikene kvekene kveikne kveiken", "geisten: eisten gisten gesten geiten geisen geiste", "grauset: rauset gauset gruset graset graust grause", "greiner: reiner geiner griner grener greier greine", "greinet: geinet grinet grenet greiet greint greine", "knasker: nasker kasker knaker knaser knaskr knaske", "kneiste: neiste keiste kniste kneste kneise kneist", "kranket: ranket kanket kraket kranet krankt kranke", "kveiken: veiken keiken kviken kveken kveikn kveike", "kveilte: keilte kvilte kvelte kveite kveile kveilt", "leikene: eikene likene lekene leiene leikne leiken", "snauset: sauset snuset snaset snauet snaust snause", "speilet: peilet seilet spilet spelet speilt speile", "speilte: peilte seilte spilte spelte speile speilt", "steinga: teinga seinga stinga stenga steina steing", "veikene: eikene vikene vekene veiene veikne veiken", "baulte: aulte bulte balte baute baule bault", "bauste: auste buste baste baute bause baust", "gaulet: aulet gulet galet gauet gault gaule", "greina: reina geina grina grena greia grein", "greine: reine geine grine grene greie grein", "greint: reint geint grint grent greit grein", "meiste: eiste miste meste meite meise meist", "paulte: aulte pulte palte paute paule pault", "rauste: auste ruste raste raute rause raust", "seigne: eigne signe segne seine seige seign", "skurer: kurer surer skrer skuer skurr skure", "steing: teing seing sting steng steig stein", "veiken: eiken viken veken veien veikn veike"
+
+                            };
+                            @DisplayWordsWithinWords(nwords, "https://no.wiktionary.org/wiki/")
+                        }
+                    </ul>
+
+                    <span class="big-list-toggle" onclick="document.getElementById('big-list-1').classList.toggle('big-list-collapsed');"></span>
+
+                </div>
             </p>
 
             <table class="table">
@@ -239,12 +270,12 @@
 
 
 
-        <p>
-            But what is the longest chain we can make?
-        </p>
+            <p>
+                But what is the longest chain we can make?
+            </p>
 
-        
-        @Html.Action("ProjectWordsWithinWordsVis")
+
+            @Html.Action("ProjectWordsWithinWordsVis")
 
 
         </div>

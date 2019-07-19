@@ -102,7 +102,7 @@
                 var words2 = new List<string>() { "adread	 dread[a] aread[d] adead[r] adrad[e] adred[a] adrea[d]","theins	 heins[t] teins[h] thins[e] thens[i] theis[n] thein[s]","troads	 roads[t] toads[r] trads[o] trods[a] troas[d] troad[s]","pearle	 earle[p] parle[e] perle[a] peale[r] peare[l] pearl[e]"
  };
 
-    @DisplayWordsWithinWords(words2, "https://en.wiktionary.org/wiki/");
+        @DisplayWordsWithinWords(words2, "https://en.wiktionary.org/wiki/");
             }
 
 
@@ -121,7 +121,7 @@
 
                     @{
                         var nwords = new List<string>()
-                                                                                                                        {
+                                                                                                                                    {
 "baulte	 aulte[b] bulte[a] balte[u] baute[l] baule[t] bault[e]","bauste	 auste[b] buste[a] baste[u] baute[s] bause[t] baust[e]","gaulet	 aulet[g] gulet[a] galet[u] gauet[l] gault[e] gaule[t]","greina	 reina[g] geina[r] grina[e] grena[i] greia[n] grein[a]","greine	 reine[g] geine[r] grine[e] grene[i] greie[n] grein[e]","greint	 reint[g] geint[r] grint[e] grent[i] greit[n] grein[t]","meiste	 eiste[m] miste[e] meste[i] meite[s] meise[t] meist[e]","paulte	 aulte[p] pulte[a] palte[u] paute[l] paule[t] pault[e]","rauste	 auste[r] ruste[a] raste[u] raute[s] rause[t] raust[e]","seigne	 eigne[s] signe[e] segne[i] seine[g] seige[n] seign[e]","skurer	 kurer[s] surer[k] skrer[u] skuer[r] skurr[e] skure[r]","steing	 teing[s] seing[t] sting[e] steng[i] steig[n] stein[g]","veiken	 eiken[v] viken[e] veken[i] veien[k] veikn[e] veike[n]"
 
 
@@ -294,9 +294,83 @@
                 The 8 letter word 'aegilops' is often reported as the longest word with all letters in alphabetical order, but this is <a href="https://1word.ws/aegilops">not a valid scrabble word</a>.
             </p>
 
-            <p>
-                As an aside to the aside, we can also find the longest words with no repeating characters. There are two, each with 16 letters: @DisplayWordsInline(new List<string>() { "dermatoglyphics", "uncopyrightable" }, "https://en.wiktionary.org/wiki/")
-            </p>
+        <p>
+            As an aside to the aside, we can also find the longest words with no repeating characters. There are two, each with 16 letters: @DisplayWordsInline(new List<string>() { "dermatoglyphics", "uncopyrightable" }, "https://en.wiktionary.org/wiki/")
+        </p>
+
+            English:
+            @DisplayWordDistribution(new List<string>()
+            {
+                "1,27,0.004923243",
+                "2,637,0.1161521",
+                "3,4801,0.8754255",
+                "4,11991,2.186467",
+                "5,25491,4.648088",
+                "6,44197,8.058984",
+                "7,59657,10.878",
+                "8,70355,12.8287",
+                "9,72596,13.23732",
+                "10,67451,12.29917",
+                "11,57322,10.45223",
+                "12,45900,8.369514",
+                "13,34011,6.201645",
+                "14,23654,4.313126",
+                "15,15229,2.776891",
+                "16,7119,1.298095",
+                "17,3985,0.7266342",
+                "18,2005,0.3655964",
+                "19,1055,0.1923712",
+                "20,506,0.09226522",
+                "21,239,0.04357982",
+                "22,103,0.01878126",
+                "23,50,0.009117116",
+                "24,19,0.003464504",
+                "25,8,0.001458739",
+                "26,2,0.0003646847",
+                "27,3,0.000547027",
+                "28,2,0.0003646847",
+                "29,2,0.0003646847",
+
+            })
+        Norwegian:
+        @DisplayWordDistribution(new List<string>()
+        {
+            "1,5,0.000721634",
+            "2,181,0.02612315",
+            "3,1374,0.198305",
+            "4,5816,0.8394047",
+            "5,13816,1.994019",
+            "6,27105,3.911978",
+            "7,44818,6.468439",
+            "8,65643,9.474044",
+            "9,80645,11.63923",
+            "10,83528,12.05533",
+            "11,77103,11.12803",
+            "12,61770,8.915067",
+            "13,49740,7.178815",
+            "14,40719,5.876843",
+            "15,33066,4.77231",
+            "16,29684,4.284197",
+            "17,23320,3.365701",
+            "18,17758,2.562955",
+            "19,13080,1.887795",
+            "20,8982,1.296343",
+            "21,5944,0.8578785",
+            "22,3811,0.5500295",
+            "23,2309,0.3332506",
+            "24,1284,0.1853156",
+            "25,710,0.102472",
+            "26,372,0.05368957",
+            "27,165,0.02381392",
+            "28,71,0.0102472",
+            "29,28,0.004041151",
+            "30,17,0.002453556",
+            "31,5,0.000721634",
+            "32,2,0.0002886536",
+            "33,1,0.0001443268"
+        })
+
+
 
             <hr />
 
@@ -339,6 +413,35 @@
 
 </div>
 
+@helper DisplayWordDistribution(List<string> lengths )
+{
+
+    <div width="100%" style="background: grey;">
+
+    
+
+    @foreach (var length in lengths)
+    {
+        var split = length.Split(',');
+
+        var width = split[2] + "%";
+        var height = "2em";
+        var text = split[0] + " " + split[1];
+        <div style="width: @width; height: @height; background: red">
+            <small>
+                @text
+            </small>
+            
+        </div>
+
+
+    }
+
+    </div>
+
+
+
+}
 
 @helper DisplayWordChain(List<string> wordChain)
 {

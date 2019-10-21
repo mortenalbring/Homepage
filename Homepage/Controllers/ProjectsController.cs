@@ -1,12 +1,14 @@
 ﻿using Homepage.Repository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Homepage.Models.Amenhokit;
 using Homepage.Models.Amenhokit.PdfScan;
+using Homepage.Projects.Words;
 using Newtonsoft.Json;
 using WebMatrix.WebData;
 
@@ -20,14 +22,29 @@ namespace Homepage.Controllers
             return View();
         }
 
+        private static char GetLetter()
+        {
+            string chars = "abcdefghijklmnopqrstuvwxyz";
+            Random rand = new Random();
+            int num = rand.Next(0, chars.Length -1);
+            return chars[num];
+        }
+        
+        [OutputCache(NoStore = true, Duration = 0)]
         public JsonResult GetWordsData()
         {
-            var teststr = "id:\"test\"";
-
-            var testJson = System.IO.File.ReadAllText("C:\\temp\\hp\\Homepage\\Projects\\graph.json");
+            var sw = new Stopwatch();
+            sw.Start();
+            var ws = new WordsService();
+            var search = GetLetter();
+            //search = 'c';
             
-            var jsonResult = Json(testJson,JsonRequestBehavior.AllowGet);
-            return jsonResult;
+            var testObj = ws.GetWordOutput(search.ToString());
+
+            var json2 = Json(testObj, JsonRequestBehavior.AllowGet);
+            sw.Stop();
+            Debug.WriteLine(sw.ElapsedMilliseconds);
+            return json2;
         } 
         public ActionResult ProjectWordsWithinWords()
         {

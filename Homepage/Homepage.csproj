@@ -239,6 +239,7 @@
     <Compile Include="Models\Amenhokit\Database\UploadFile.cs" />
     <Compile Include="Models\Amenhokit\ViewModels\PlayerSessionScore.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Projects\Words\WordsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AmenhokitRepository.cs" />
     <Compile Include="Services\Amenhokit\BowlingCalc.cs" />
@@ -259,6 +260,7 @@
     <Content Include="Content\datafiles\teamreport.txt" />
     <Content Include="Content\datafiles\teamreportByPlayerCount.txt" />
     <Content Include="Content\datafiles\uniquePlayers.txt" />
+    <Content Include="Content\EnglishGeneralClusterJsonSerial.xml" />
     <Content Include="Content\images\angularD3\AngularD3-cover.png" />
     <Content Include="Content\images\angularD3\AngularD3-preview.png" />
     <Content Include="Content\images\anyons.jpg" />

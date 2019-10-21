@@ -46,9 +46,8 @@
       
     d3.json("/Projects/GetWordsData", function (error, data) {
         if (error) throw error;
-        var graph = JSON.parse(data);
-console.log(graph);
-       
+        console.log(data);
+        var graph = data;      
         
         var link = svg.append("g")
             .attr("class", "links")

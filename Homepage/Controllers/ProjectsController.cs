@@ -19,6 +19,16 @@ namespace Homepage.Controllers
         {
             return View();
         }
+
+        public JsonResult GetWordsData()
+        {
+            var teststr = "id:\"test\"";
+
+            var testJson = System.IO.File.ReadAllText("C:\\temp\\hp\\Homepage\\Projects\\graph.json");
+            
+            var jsonResult = Json(testJson,JsonRequestBehavior.AllowGet);
+            return jsonResult;
+        } 
         public ActionResult ProjectWordsWithinWords()
         {
             return View();

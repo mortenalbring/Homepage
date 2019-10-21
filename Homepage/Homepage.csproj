@@ -246,7 +246,6 @@
     <Compile Include="Services\Amenhokit\WriteDataToJson.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConnectionStrings.config" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -31030,6 +31029,8 @@
     <Content Include="Views\Posts\FractalChaos\FractalChaos7.cshtml" />
     <Content Include="Views\Posts\FractalChaos\Navigation.cshtml" />
     <Content Include="Views\Projects\ProjectWordsWithinWords.cshtml" />
+    <Content Include="Views\Projects\ProjectWordsWithinWordsVis.cshtml" />
+    <Content Include="Projects\graph.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

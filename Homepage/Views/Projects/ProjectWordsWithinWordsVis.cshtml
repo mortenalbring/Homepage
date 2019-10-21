@@ -44,9 +44,12 @@
         .force("r",d3.forceRadial( function(d) { return d.id.length * 100 }));
     
       
-    d3.json("graph.json", function (error, graph) {
+    d3.json("/Projects/GetWordsData", function (error, data) {
         if (error) throw error;
-
+        var graph = JSON.parse(data);
+console.log(graph);
+       
+        
         var link = svg.append("g")
             .attr("class", "links")
             .selectAll("line")

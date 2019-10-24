@@ -3,18 +3,20 @@
     height = +svg.attr("height");
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
+var radius = 3;
 
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink()
-        .id(function(d) { return d.id; }).distance(60).iterations(1))
+    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(60).iterations(1))
     .force("charge", d3.forceManyBody().distanceMax(90).strength(-55))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .force("r",d3.forceRadial( function(d) { return d.id.length * 100 }));
 
 
+
 d3.json("/Projects/GetWordsData", function (error, data) {
     if (error) throw error;
     console.log(data);
+    simulation.on("tick", tickActions );
     var graph = data;
 
     var link = svg.append("g")
@@ -56,16 +58,21 @@ d3.json("/Projects/GetWordsData", function (error, data) {
         .links(graph.links);
 
     function ticked() {
-        link
-            .attr("x1", function (d) { return d.source.x; })
-            .attr("y1", function (d) { return d.source.y; })
-            .attr("x2", function (d) { return d.target.x; })
-            .attr("y2", function (d) { return d.target.y; });
 
         node
             .attr("transform", function (d) {
                 return "translate(" + d.x + "," + d.y + ")";
             })
+
+        node
+            .attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
+            .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
+
+        link
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
     }
 });
 
@@ -85,3 +92,8 @@ function dragended(d) {
     d.fx = null;
     d.fy = null;
 }
+
+function tickActions() {
+    //constrains the nodes to be within a box
+   
+} 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -11,13 +12,20 @@ namespace Homepage.Projects.Words
     {
         public WordOutput GetWordOutput(string search)
         {
-            var result = DeSerializeObject<WordOutput>("C:\\temp\\hp\\Homepage\\Content\\EnglishGeneralClusterJsonSerial.xml");
             var filteredResult = new WordOutput();
-filteredResult.nodes = new HashSet<WordNode>();
-filteredResult.links = new HashSet<WordEdge>();
             try
             {
-                var matchLinks = result.links.Where(e => e.source.Contains(search) || e.target.Contains(search)).ToList();
+                var result = DeSerializeObject<WordOutput>("C:\\temp\\hp\\Homepage\\Content\\EnglishSowpodsClusterJsonSerial.xml");
+
+              
+                filteredResult.nodes = new HashSet<WordNode>();
+                filteredResult.links = new HashSet<WordEdge>();
+                var matchLinks = result.links.ToList();
+                if (!string.IsNullOrEmpty(search))
+                {
+                     matchLinks = result.links.Where(e => e.source.Contains(search) || e.target.Contains(search)).ToList();    
+                }
+                
 
                 foreach (var l in matchLinks)
                 {
@@ -77,6 +85,7 @@ filteredResult.links = new HashSet<WordEdge>();
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex);
                 //Log exception here
             }
 

@@ -38,8 +38,9 @@ namespace Homepage.Controllers
             var ws = new WordsService();
             var search = GetLetter();
             //search = 'c';
+
             
-            var testObj = ws.GetWordOutput(search.ToString());
+            var testObj = ws.GetWordOutput(null);
 
             var json2 = Json(testObj, JsonRequestBehavior.AllowGet);
             sw.Stop();

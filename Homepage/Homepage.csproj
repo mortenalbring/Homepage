@@ -239,6 +239,7 @@
     <Compile Include="Models\Amenhokit\Database\UploadFile.cs" />
     <Compile Include="Models\Amenhokit\ViewModels\PlayerSessionScore.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Words\WordVisViewModel.cs" />
     <Compile Include="Projects\Words\WordsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AmenhokitRepository.cs" />
@@ -30425,6 +30426,7 @@
     <Content Include="Scripts\ng-file-upload.js" />
     <Content Include="Scripts\ng-file-upload.min.js" />
     <Content Include="Scripts\Words\wordsVisv1.js" />
+    <Content Include="Scripts\Words\wordVisv2.js" />
     <Content Include="Views\Home\Redesign.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

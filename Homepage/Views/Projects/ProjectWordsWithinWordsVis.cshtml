@@ -1,7 +1,5 @@
-﻿
-<div id="vis">
+﻿@model Homepage.Models.Words.WordVisViewModel
 
-</div>
 <style>
 
     .links line {
@@ -27,8 +25,28 @@
     }
 
 </style>
+
+<div class="container">
+    <br/>
+    <br/>
+    <br/>
+    
+
+@using (Html.BeginForm("ProjectWordsWithinWordsVis", "Projects", FormMethod.Post))
+ {
+     @Html.TextBoxFor(m => m.Search)
+
+     <input type="submit" value="Submit"/>
+ }
+
+
+
+<div id="vis">
+
+</div>
 <svg width="960" height="600"></svg>
+
+</div>
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="~/Scripts/Words/wordsVisv1.js">
- 
-</script>
+<script src="~/Scripts/Words/wordsVisv1.js"></script>

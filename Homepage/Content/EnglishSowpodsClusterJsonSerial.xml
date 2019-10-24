@@ -1,957 +1,334 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <WordOutput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <nodes>
     <WordNode>
-      <id>panaesthesias</id>
+      <id>antaphrodisiacs</id>
+      <Group>0</Group>
     </WordNode>
     <WordNode>
-      <id>anaesthesias</id>
+      <id>anaphrodisiacs</id>
     </WordNode>
     <WordNode>
-      <id>panesthesias</id>
+      <id>antaphrodisiac</id>
     </WordNode>
     <WordNode>
-      <id>panaesthesia</id>
+      <id>anaphrodisias</id>
     </WordNode>
     <WordNode>
-      <id>anesthesias</id>
+      <id>anaphrodisiac</id>
     </WordNode>
     <WordNode>
-      <id>anaesthesis</id>
+      <id>anaphrodisia</id>
     </WordNode>
     <WordNode>
-      <id>anaesthesia</id>
+      <id>antiaphrodisiac</id>
+      <Group>0</Group>
     </WordNode>
     <WordNode>
-      <id>aesthesias</id>
+      <id>antihelminthics</id>
+      <Group>1</Group>
     </WordNode>
     <WordNode>
-      <id>anesthesia</id>
+      <id>anthelminthics</id>
     </WordNode>
     <WordNode>
-      <id>esthesias</id>
+      <id>antihelminthic</id>
     </WordNode>
     <WordNode>
-      <id>aesthesis</id>
+      <id>anthelmintics</id>
     </WordNode>
     <WordNode>
-      <id>aesthesia</id>
+      <id>anthelminthic</id>
     </WordNode>
     <WordNode>
-      <id>esthesis</id>
+      <id>anthelmintic</id>
     </WordNode>
     <WordNode>
-      <id>esthesia</id>
+      <id>chemoautotrophs</id>
+      <Group>2</Group>
     </WordNode>
     <WordNode>
-      <id>panesthesia</id>
+      <id>chemautotrophs</id>
     </WordNode>
     <WordNode>
-      <id>choreologists</id>
+      <id>chemoautotroph</id>
     </WordNode>
     <WordNode>
-      <id>chorologists</id>
+      <id>chemautotroph</id>
     </WordNode>
     <WordNode>
-      <id>choreologist</id>
+      <id>chemoautotrophy</id>
+      <Group>2</Group>
     </WordNode>
     <WordNode>
-      <id>horologists</id>
+      <id>anaesthetically</id>
+      <Group>3</Group>
     </WordNode>
     <WordNode>
-      <id>chorologist</id>
+      <id>anesthetically</id>
     </WordNode>
     <WordNode>
-      <id>orologists</id>
+      <id>aesthetically</id>
     </WordNode>
     <WordNode>
-      <id>horologist</id>
+      <id>esthetically</id>
     </WordNode>
     <WordNode>
-      <id>oologists</id>
+      <id>beautifications</id>
+      <Group>4</Group>
     </WordNode>
     <WordNode>
-      <id>orologist</id>
+      <id>beatifications</id>
     </WordNode>
     <WordNode>
-      <id>ologists</id>
+      <id>beautification</id>
     </WordNode>
     <WordNode>
-      <id>oologist</id>
+      <id>beatification</id>
     </WordNode>
     <WordNode>
-      <id>ologist</id>
+      <id>bougainvillaeas</id>
+      <Group>5</Group>
     </WordNode>
     <WordNode>
-      <id>choreologies</id>
+      <id>bougainvilleas</id>
     </WordNode>
     <WordNode>
-      <id>chorologies</id>
+      <id>bougainvillaea</id>
     </WordNode>
     <WordNode>
-      <id>horologies</id>
+      <id>bougainvillea</id>
     </WordNode>
     <WordNode>
-      <id>orologies</id>
+      <id>canthaxanthines</id>
+      <Group>6</Group>
     </WordNode>
     <WordNode>
-      <id>horologes</id>
+      <id>canthaxanthins</id>
     </WordNode>
     <WordNode>
-      <id>oologies</id>
+      <id>canthaxanthine</id>
     </WordNode>
     <WordNode>
-      <id>ologies</id>
+      <id>canthaxanthin</id>
     </WordNode>
     <WordNode>
-      <id>logies</id>
+      <id>cercopithecoids</id>
+      <Group>7</Group>
     </WordNode>
     <WordNode>
-      <id>loges</id>
+      <id>cercopithecids</id>
     </WordNode>
     <WordNode>
-      <id>logie</id>
+      <id>cercopithecoid</id>
     </WordNode>
     <WordNode>
-      <id>horologe</id>
+      <id>cercopithecid</id>
     </WordNode>
     <WordNode>
-      <id>tranquillisers</id>
+      <id>conceptualisers</id>
+      <Group>8</Group>
     </WordNode>
     <WordNode>
-      <id>tranquilisers</id>
+      <id>conceptualises</id>
     </WordNode>
     <WordNode>
-      <id>tranquillises</id>
+      <id>conceptualiser</id>
     </WordNode>
     <WordNode>
-      <id>tranquilliser</id>
+      <id>conceptualise</id>
     </WordNode>
     <WordNode>
-      <id>tranquilises</id>
+      <id>adiathermancies</id>
+      <Group>9</Group>
     </WordNode>
     <WordNode>
-      <id>tranquiliser</id>
+      <id>diathermancies</id>
     </WordNode>
     <WordNode>
-      <id>tranquilise</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquillise</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquillised</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquilised</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquillizers</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquilizers</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquillizes</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquillizer</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquilizes</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquilizer</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquilize</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquillize</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquillized</id>
-    </WordNode>
-    <WordNode>
-      <id>tranquilized</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallisers</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalisers</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallises</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalliser</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalises</id>
-    </WordNode>
-    <WordNode>
-      <id>crystaliser</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalise</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallise</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallised</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalised</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallizers</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalizers</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallizes</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallizer</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalizes</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalizer</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalize</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallize</id>
-    </WordNode>
-    <WordNode>
-      <id>crystallized</id>
-    </WordNode>
-    <WordNode>
-      <id>crystalized</id>
-    </WordNode>
-    <WordNode>
-      <id>haemophiliacs</id>
-    </WordNode>
-    <WordNode>
-      <id>hemophiliacs</id>
-    </WordNode>
-    <WordNode>
-      <id>haemophilias</id>
-    </WordNode>
-    <WordNode>
-      <id>haemophiliac</id>
-    </WordNode>
-    <WordNode>
-      <id>hemophilics</id>
-    </WordNode>
-    <WordNode>
-      <id>hemophilias</id>
-    </WordNode>
-    <WordNode>
-      <id>hemophiliac</id>
-    </WordNode>
-    <WordNode>
-      <id>hemophilic</id>
-    </WordNode>
-    <WordNode>
-      <id>hemophilia</id>
-    </WordNode>
-    <WordNode>
-      <id>haemophilia</id>
-    </WordNode>
-    <WordNode>
-      <id>haemophilic</id>
-    </WordNode>
-    <WordNode>
-      <id>paedophiliacs</id>
-    </WordNode>
-    <WordNode>
-      <id>pedophiliacs</id>
-    </WordNode>
-    <WordNode>
-      <id>paedophilics</id>
-    </WordNode>
-    <WordNode>
-      <id>paedophilias</id>
-    </WordNode>
-    <WordNode>
-      <id>paedophiliac</id>
-    </WordNode>
-    <WordNode>
-      <id>pedophilias</id>
-    </WordNode>
-    <WordNode>
-      <id>pedophiliac</id>
-    </WordNode>
-    <WordNode>
-      <id>pedophilia</id>
-    </WordNode>
-    <WordNode>
-      <id>pedophilic</id>
-    </WordNode>
-    <WordNode>
-      <id>paedophilic</id>
-    </WordNode>
-    <WordNode>
-      <id>paedophilia</id>
-    </WordNode>
-    <WordNode>
-      <id>choreographers</id>
-    </WordNode>
-    <WordNode>
-      <id>chorographers</id>
-    </WordNode>
-    <WordNode>
-      <id>choregraphers</id>
-    </WordNode>
-    <WordNode>
-      <id>choreographer</id>
-    </WordNode>
-    <WordNode>
-      <id>horographers</id>
-    </WordNode>
-    <WordNode>
-      <id>chorographer</id>
-    </WordNode>
-    <WordNode>
-      <id>orographers</id>
-    </WordNode>
-    <WordNode>
-      <id>horographer</id>
-    </WordNode>
-    <WordNode>
-      <id>orographer</id>
-    </WordNode>
-    <WordNode>
-      <id>choregrapher</id>
+      <id>diathermacies</id>
     </WordNode>
   </nodes>
   <links>
     <WordEdge>
-      <source>panaesthesias</source>
-      <target>anaesthesias</target>
+      <source>antaphrodisiacs</source>
+      <target>anaphrodisiacs</target>
     </WordEdge>
     <WordEdge>
-      <source>panaesthesias</source>
-      <target>panesthesias</target>
+      <source>antaphrodisiacs</source>
+      <target>antaphrodisiac</target>
     </WordEdge>
     <WordEdge>
-      <source>panaesthesias</source>
-      <target>panaesthesia</target>
+      <source>anaphrodisiacs</source>
+      <target>anaphrodisias</target>
     </WordEdge>
     <WordEdge>
-      <source>anaesthesias</source>
-      <target>anesthesias</target>
+      <source>anaphrodisiacs</source>
+      <target>anaphrodisiac</target>
     </WordEdge>
     <WordEdge>
-      <source>anaesthesias</source>
-      <target>anaesthesis</target>
+      <source>anaphrodisias</source>
+      <target>anaphrodisia</target>
     </WordEdge>
     <WordEdge>
-      <source>anaesthesias</source>
-      <target>anaesthesia</target>
+      <source>anaphrodisiac</source>
+      <target>anaphrodisia</target>
     </WordEdge>
     <WordEdge>
-      <source>anesthesias</source>
-      <target>aesthesias</target>
+      <source>antaphrodisiac</source>
+      <target>anaphrodisiac</target>
     </WordEdge>
     <WordEdge>
-      <source>anesthesias</source>
-      <target>anesthesia</target>
+      <source>antiaphrodisiac</source>
+      <target>antaphrodisiac</target>
     </WordEdge>
     <WordEdge>
-      <source>aesthesias</source>
-      <target>esthesias</target>
+      <source>antihelminthics</source>
+      <target>anthelminthics</target>
     </WordEdge>
     <WordEdge>
-      <source>aesthesias</source>
-      <target>aesthesis</target>
+      <source>antihelminthics</source>
+      <target>antihelminthic</target>
     </WordEdge>
     <WordEdge>
-      <source>aesthesias</source>
-      <target>aesthesia</target>
+      <source>anthelminthics</source>
+      <target>anthelmintics</target>
     </WordEdge>
     <WordEdge>
-      <source>esthesias</source>
-      <target>esthesis</target>
+      <source>anthelminthics</source>
+      <target>anthelminthic</target>
     </WordEdge>
     <WordEdge>
-      <source>esthesias</source>
-      <target>esthesia</target>
+      <source>anthelmintics</source>
+      <target>anthelmintic</target>
     </WordEdge>
     <WordEdge>
-      <source>aesthesis</source>
-      <target>esthesis</target>
+      <source>anthelminthic</source>
+      <target>anthelmintic</target>
     </WordEdge>
     <WordEdge>
-      <source>aesthesia</source>
-      <target>esthesia</target>
+      <source>antihelminthic</source>
+      <target>anthelminthic</target>
     </WordEdge>
     <WordEdge>
-      <source>anesthesia</source>
-      <target>aesthesia</target>
+      <source>chemoautotrophs</source>
+      <target>chemautotrophs</target>
     </WordEdge>
     <WordEdge>
-      <source>anaesthesia</source>
-      <target>anesthesia</target>
+      <source>chemoautotrophs</source>
+      <target>chemoautotroph</target>
     </WordEdge>
     <WordEdge>
-      <source>panesthesias</source>
-      <target>anesthesias</target>
+      <source>chemautotrophs</source>
+      <target>chemautotroph</target>
     </WordEdge>
     <WordEdge>
-      <source>panesthesias</source>
-      <target>panesthesia</target>
+      <source>chemoautotroph</source>
+      <target>chemautotroph</target>
     </WordEdge>
     <WordEdge>
-      <source>panesthesia</source>
-      <target>anesthesia</target>
+      <source>chemoautotrophy</source>
+      <target>chemoautotroph</target>
     </WordEdge>
     <WordEdge>
-      <source>panaesthesia</source>
-      <target>anaesthesia</target>
+      <source>anaesthetically</source>
+      <target>anesthetically</target>
     </WordEdge>
     <WordEdge>
-      <source>panaesthesia</source>
-      <target>panesthesia</target>
+      <source>anesthetically</source>
+      <target>aesthetically</target>
     </WordEdge>
     <WordEdge>
-      <source>choreologists</source>
-      <target>chorologists</target>
+      <source>aesthetically</source>
+      <target>esthetically</target>
     </WordEdge>
     <WordEdge>
-      <source>choreologists</source>
-      <target>choreologist</target>
+      <source>beautifications</source>
+      <target>beatifications</target>
     </WordEdge>
     <WordEdge>
-      <source>chorologists</source>
-      <target>horologists</target>
+      <source>beautifications</source>
+      <target>beautification</target>
     </WordEdge>
     <WordEdge>
-      <source>chorologists</source>
-      <target>chorologist</target>
+      <source>beatifications</source>
+      <target>beatification</target>
     </WordEdge>
     <WordEdge>
-      <source>horologists</source>
-      <target>orologists</target>
+      <source>beautification</source>
+      <target>beatification</target>
     </WordEdge>
     <WordEdge>
-      <source>horologists</source>
-      <target>horologist</target>
+      <source>bougainvillaeas</source>
+      <target>bougainvilleas</target>
     </WordEdge>
     <WordEdge>
-      <source>orologists</source>
-      <target>oologists</target>
+      <source>bougainvillaeas</source>
+      <target>bougainvillaea</target>
     </WordEdge>
     <WordEdge>
-      <source>orologists</source>
-      <target>orologist</target>
+      <source>bougainvilleas</source>
+      <target>bougainvillea</target>
     </WordEdge>
     <WordEdge>
-      <source>oologists</source>
-      <target>ologists</target>
+      <source>bougainvillaea</source>
+      <target>bougainvillea</target>
     </WordEdge>
     <WordEdge>
-      <source>oologists</source>
-      <target>oologist</target>
+      <source>canthaxanthines</source>
+      <target>canthaxanthins</target>
     </WordEdge>
     <WordEdge>
-      <source>ologists</source>
-      <target>ologist</target>
+      <source>canthaxanthines</source>
+      <target>canthaxanthine</target>
     </WordEdge>
     <WordEdge>
-      <source>oologist</source>
-      <target>ologist</target>
+      <source>canthaxanthins</source>
+      <target>canthaxanthin</target>
     </WordEdge>
     <WordEdge>
-      <source>orologist</source>
-      <target>oologist</target>
+      <source>canthaxanthine</source>
+      <target>canthaxanthin</target>
     </WordEdge>
     <WordEdge>
-      <source>horologist</source>
-      <target>orologist</target>
+      <source>cercopithecoids</source>
+      <target>cercopithecids</target>
     </WordEdge>
     <WordEdge>
-      <source>chorologist</source>
-      <target>horologist</target>
+      <source>cercopithecoids</source>
+      <target>cercopithecoid</target>
     </WordEdge>
     <WordEdge>
-      <source>choreologist</source>
-      <target>chorologist</target>
+      <source>cercopithecids</source>
+      <target>cercopithecid</target>
     </WordEdge>
     <WordEdge>
-      <source>choreologies</source>
-      <target>chorologies</target>
+      <source>cercopithecoid</source>
+      <target>cercopithecid</target>
     </WordEdge>
     <WordEdge>
-      <source>chorologies</source>
-      <target>horologies</target>
+      <source>conceptualisers</source>
+      <target>conceptualises</target>
     </WordEdge>
     <WordEdge>
-      <source>horologies</source>
-      <target>orologies</target>
+      <source>conceptualisers</source>
+      <target>conceptualiser</target>
     </WordEdge>
     <WordEdge>
-      <source>horologies</source>
-      <target>horologes</target>
+      <source>conceptualises</source>
+      <target>conceptualise</target>
     </WordEdge>
     <WordEdge>
-      <source>orologies</source>
-      <target>oologies</target>
+      <source>conceptualiser</source>
+      <target>conceptualise</target>
     </WordEdge>
     <WordEdge>
-      <source>oologies</source>
-      <target>ologies</target>
+      <source>adiathermancies</source>
+      <target>diathermancies</target>
     </WordEdge>
     <WordEdge>
-      <source>ologies</source>
-      <target>logies</target>
-    </WordEdge>
-    <WordEdge>
-      <source>logies</source>
-      <target>loges</target>
-    </WordEdge>
-    <WordEdge>
-      <source>logies</source>
-      <target>logie</target>
-    </WordEdge>
-    <WordEdge>
-      <source>horologes</source>
-      <target>horologe</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillisers</source>
-      <target>tranquilisers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillisers</source>
-      <target>tranquillises</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillisers</source>
-      <target>tranquilliser</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilisers</source>
-      <target>tranquilises</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilisers</source>
-      <target>tranquiliser</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilises</source>
-      <target>tranquilise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquiliser</source>
-      <target>tranquilise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillises</source>
-      <target>tranquilises</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillises</source>
-      <target>tranquillise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillise</source>
-      <target>tranquilise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilliser</source>
-      <target>tranquiliser</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilliser</source>
-      <target>tranquillise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillised</source>
-      <target>tranquilised</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillised</source>
-      <target>tranquillise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilised</source>
-      <target>tranquilise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillizers</source>
-      <target>tranquilizers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillizers</source>
-      <target>tranquillizes</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillizers</source>
-      <target>tranquillizer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilizers</source>
-      <target>tranquilizes</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilizers</source>
-      <target>tranquilizer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilizes</source>
-      <target>tranquilize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilizer</source>
-      <target>tranquilize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillizes</source>
-      <target>tranquilizes</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillizes</source>
-      <target>tranquillize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillize</source>
-      <target>tranquilize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillizer</source>
-      <target>tranquilizer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillizer</source>
-      <target>tranquillize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillized</source>
-      <target>tranquilized</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquillized</source>
-      <target>tranquillize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>tranquilized</source>
-      <target>tranquilize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallisers</source>
-      <target>crystalisers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallisers</source>
-      <target>crystallises</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallisers</source>
-      <target>crystalliser</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalisers</source>
-      <target>crystalises</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalisers</source>
-      <target>crystaliser</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalises</source>
-      <target>crystalise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystaliser</source>
-      <target>crystalise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallises</source>
-      <target>crystalises</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallises</source>
-      <target>crystallise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallise</source>
-      <target>crystalise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalliser</source>
-      <target>crystaliser</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalliser</source>
-      <target>crystallise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallised</source>
-      <target>crystalised</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallised</source>
-      <target>crystallise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalised</source>
-      <target>crystalise</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallizers</source>
-      <target>crystalizers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallizers</source>
-      <target>crystallizes</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallizers</source>
-      <target>crystallizer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalizers</source>
-      <target>crystalizes</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalizers</source>
-      <target>crystalizer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalizes</source>
-      <target>crystalize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalizer</source>
-      <target>crystalize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallizes</source>
-      <target>crystalizes</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallizes</source>
-      <target>crystallize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallize</source>
-      <target>crystalize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallizer</source>
-      <target>crystalizer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallizer</source>
-      <target>crystallize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallized</source>
-      <target>crystalized</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystallized</source>
-      <target>crystallize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>crystalized</source>
-      <target>crystalize</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophiliacs</source>
-      <target>hemophiliacs</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophiliacs</source>
-      <target>haemophilias</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophiliacs</source>
-      <target>haemophiliac</target>
-    </WordEdge>
-    <WordEdge>
-      <source>hemophiliacs</source>
-      <target>hemophilics</target>
-    </WordEdge>
-    <WordEdge>
-      <source>hemophiliacs</source>
-      <target>hemophilias</target>
-    </WordEdge>
-    <WordEdge>
-      <source>hemophiliacs</source>
-      <target>hemophiliac</target>
-    </WordEdge>
-    <WordEdge>
-      <source>hemophilics</source>
-      <target>hemophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>hemophilias</source>
-      <target>hemophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>hemophiliac</source>
-      <target>hemophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>hemophiliac</source>
-      <target>hemophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophilias</source>
-      <target>hemophilias</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophilias</source>
-      <target>haemophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophilia</source>
-      <target>hemophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophiliac</source>
-      <target>hemophiliac</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophiliac</source>
-      <target>haemophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophiliac</source>
-      <target>haemophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>haemophilic</source>
-      <target>hemophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophiliacs</source>
-      <target>pedophiliacs</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophiliacs</source>
-      <target>paedophilics</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophiliacs</source>
-      <target>paedophilias</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophiliacs</source>
-      <target>paedophiliac</target>
-    </WordEdge>
-    <WordEdge>
-      <source>pedophiliacs</source>
-      <target>pedophilias</target>
-    </WordEdge>
-    <WordEdge>
-      <source>pedophiliacs</source>
-      <target>pedophiliac</target>
-    </WordEdge>
-    <WordEdge>
-      <source>pedophilias</source>
-      <target>pedophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>pedophiliac</source>
-      <target>pedophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>pedophiliac</source>
-      <target>pedophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophilics</source>
-      <target>paedophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophilic</source>
-      <target>pedophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophilias</source>
-      <target>pedophilias</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophilias</source>
-      <target>paedophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophilia</source>
-      <target>pedophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophiliac</source>
-      <target>pedophiliac</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophiliac</source>
-      <target>paedophilic</target>
-    </WordEdge>
-    <WordEdge>
-      <source>paedophiliac</source>
-      <target>paedophilia</target>
-    </WordEdge>
-    <WordEdge>
-      <source>choreographers</source>
-      <target>chorographers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>choreographers</source>
-      <target>choregraphers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>choreographers</source>
-      <target>choreographer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>chorographers</source>
-      <target>horographers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>chorographers</source>
-      <target>chorographer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>horographers</source>
-      <target>orographers</target>
-    </WordEdge>
-    <WordEdge>
-      <source>horographers</source>
-      <target>horographer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>orographers</source>
-      <target>orographer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>horographer</source>
-      <target>orographer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>chorographer</source>
-      <target>horographer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>choregraphers</source>
-      <target>choregrapher</target>
-    </WordEdge>
-    <WordEdge>
-      <source>choreographer</source>
-      <target>chorographer</target>
-    </WordEdge>
-    <WordEdge>
-      <source>choreographer</source>
-      <target>choregrapher</target>
+      <source>diathermancies</source>
+      <target>diathermacies</target>
     </WordEdge>
   </links>
 </WordOutput>

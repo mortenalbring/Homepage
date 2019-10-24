@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Homepage.Models.Amenhokit;
 using Homepage.Models.Amenhokit.PdfScan;
+using Homepage.Models.Words;
 using Homepage.Projects.Words;
 using Newtonsoft.Json;
 using WebMatrix.WebData;
@@ -17,30 +18,32 @@ namespace Homepage.Controllers
     public class ProjectsController : Controller
     {
 
+        [HttpGet]
         public ActionResult ProjectWordsWithinWordsVis()
         {
-            return View();
-        }
-
-        private static char GetLetter()
-        {
-            string chars = "abcdefghijklmnopqrstuvwxyz";
-            Random rand = new Random();
-            int num = rand.Next(0, chars.Length -1);
-            return chars[num];
+            var vm = new WordVisViewModel();
+            vm.Search = "test";
+            TempData["wordSearch"] = vm.Search;
+            return View(vm);
         }
         
+        [HttpPost]
+        public ActionResult ProjectWordsWithinWordsVis(WordVisViewModel vm)
+        {
+            TempData["wordSearch"] = vm.Search;
+            return View(vm);
+        }
+
         [OutputCache(NoStore = true, Duration = 0)]
         public JsonResult GetWordsData()
         {
             var sw = new Stopwatch();
             sw.Start();
             var ws = new WordsService();
-            var search = GetLetter();
-            //search = 'c';
+            var search = TempData["wordSearch"];
 
             
-            var testObj = ws.GetWordOutput(null);
+            var testObj = ws.GetWordOutput(search.ToString());
 
             var json2 = Json(testObj, JsonRequestBehavior.AllowGet);
             sw.Stop();

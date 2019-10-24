@@ -4,22 +4,18 @@
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 var radius = 3;
-var forceX = d3.forceX(width / 2).strength(0.0015);
-var forceY = d3.forceY(height / 2).strength(0.0015);
+var forceX = d3.forceX(width / 2).strength(0.015);
+var forceY = d3.forceY(height / 2).strength(0.015);
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(20).iterations(1))
     .force("charge", d3.forceManyBody().distanceMax(90).strength(-90))
     .force('x', forceX)
-    .force('y',  forceY)
-    .force("r",d3.forceRadial( function(d) { return d.id.length * 20 }));
+    .force('y', forceY);
 
-
-
-d3.json("/Projects/GetWordsData", function (error, data) {
+d3.json("/Words/GetWordsData", function (error, data) {
     if (error) throw error;
     console.log(data);
-    simulation.on("tick", tickActions );
     var graph = data;
 
     var link = svg.append("g")

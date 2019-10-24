@@ -2,6 +2,9 @@
 
 <style>
 
+#vis {
+border:2px solid black;
+}
     .links line {
         stroke: #999;
         stroke-opacity: 0.6;
@@ -32,7 +35,7 @@
     <br/>
     
 
-@using (Html.BeginForm("ProjectWordsWithinWordsVis", "Projects", FormMethod.Post))
+@using (Html.BeginForm("WordsVisualise", "Words", FormMethod.Post))
  {
      @Html.TextBoxFor(m => m.Search)
 
@@ -41,10 +44,7 @@
 
 
 
-<div id="vis">
-
-</div>
-<svg width="960" height="600"></svg>
+<svg id="vis" width="960" height="600"></svg>
 
 </div>
 

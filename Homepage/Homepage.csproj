@@ -216,6 +216,7 @@
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\WordsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -30428,6 +30429,8 @@
     <Content Include="Scripts\Words\wordsVisv1.js" />
     <Content Include="Scripts\Words\wordVisv2.js" />
     <Content Include="Views\Home\Redesign.cshtml" />
+    <Content Include="Views\Words\Index.cshtml" />
+    <Content Include="Views\Words\WordsVisualise.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -31034,8 +31037,6 @@
     <Content Include="Views\Posts\FractalChaos\FractalChaos6.cshtml" />
     <Content Include="Views\Posts\FractalChaos\FractalChaos7.cshtml" />
     <Content Include="Views\Posts\FractalChaos\Navigation.cshtml" />
-    <Content Include="Views\Projects\ProjectWordsWithinWords.cshtml" />
-    <Content Include="Views\Projects\ProjectWordsWithinWordsVis.cshtml" />
     <Content Include="Projects\graph.json" />
   </ItemGroup>
   <ItemGroup>

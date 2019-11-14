@@ -17,21 +17,21 @@
     {"id": "heard", "group": 2},
 
 
-    {"id": "spared", "group": 5},
-    {"id": "pared", "group": 6},
-    {"id": "sared", "group": 6},
-    {"id": "spred", "group": 6},
-    {"id": "spaed", "group": 6},
-    {"id": "spard", "group": 6},
-    {"id": "spare", "group": 6},
+    {"id": "spared", "group": 3},
+    {"id": "pared", "group": 3},
+    {"id": "sared", "group": 3},
+    {"id": "spred", "group": 3},
+    {"id": "spaed", "group": 3},
+    {"id": "spard", "group": 3},
+    {"id": "spare", "group": 3},
 
-    {"id": "yeards", "group": 5},
-    
-    {"id": "yards", "group": 6},
-    {"id": "yerds", "group": 6},
-    {"id": "yeads", "group": 6},
-    {"id": "years", "group": 6},
-    {"id": "yeard", "group": 6}
+    {"id": "yeards", "group": 4},
+    {"id": "yards", "group": 4},
+    {"id": "eards", "group": 4},
+    {"id": "yerds", "group": 4},
+    {"id": "yeads", "group": 4},
+    {"id": "years", "group": 4},
+    {"id": "yeard", "group": 4}
   ],
   "links": [
     {"source": "dearns", "target": "earns", "value": 2},

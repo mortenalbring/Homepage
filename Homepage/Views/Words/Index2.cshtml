@@ -5,6 +5,9 @@
 }
 <style>
 
+svg {
+border:1px solid #ccc;
+}
 .links line {
   stroke: #999;
   stroke-opacity: 0.6;
@@ -24,18 +27,73 @@ text {
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
+<div class="post-title">
+    <div class="post-title-text">
+        <h1> </h1>
+    </div>
+</div>
 
 <div class="container">
-    
+
     <div class="row">
-        <div class="col-md-12">
-            
-            <svg width="960" height="600"></svg>
-            
-            
+        <div class="col-md-10 col-md-offset-1">
+            <p>
+                I was interested in a question about words and letter replacement. If I take a word, such as <code>shoot</code>, can I remove a letter and still make a word?
+                In this case, yes, of course: <code>hoot</code>. In fact, I can make three other words as well: <code>soot, shot, shoo</code>. So how many words do themselves contain words? And which word contains the most words within it?
+            </p>
+
+            <p>
+                To answer these questions, we must decide on what counts as a 'word'. Do we include place names, proper nouns, etc.? Fortunately, <a href="https://en.wikipedia.org/wiki/Official_Scrabble_Players_Dictionary">someone else</a> has done their level best to answer that question, so I'll just take the so-known 'SOWPODS' English word list containing a total of 267,753 words.
+            </p>
+
+            <div>
+                The algorithm for this is remarkably simple:
+                <ul>
+                    <li>
+                        Go through every word in the dictionary:
+                        <ul>
+                            <li>
+                                Go through every letter in the word:
+                                <ul>
+                                    <li>
+                                        Remove that letter from the word, check if the result is in the dictionary
+                                        <ul>
+                                            <li>If it is, store it alongside the origin (parent) word</li>
+                                            <li>If it isn't, skip it</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p>
+                    The code for this, and other questions, is available on <a href="https://github.com/mortenalbring/WordsWithinWords">GitHub</a>.
+                </p>
+                <p>
+                    The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one character. There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
+                </p>
+
+                <p>
+                    As for the words with the most number of words within it: there are four joint winners, each with 6 subwords
+                </p>
+
+            </div>
+
+
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-1">
+            <svg group="1" width="600" height="200"></svg>
+        </div>
+
+        <div class="col-md-4 col-md-offset-1">
+            <svg group="2" width="600" height="200"></svg>
+        </div>
+
     </div>
 </div>
 
 <script src="/Scripts/Words/simpleWords.js"></script>
-

@@ -6,7 +6,32 @@
     {"id": "derns", "group": 2},
     {"id": "deans", "group": 2},
     {"id": "dears", "group": 2},
-    {"id": "dearn", "group": 2}
+    {"id": "dearn", "group": 2},
+    
+    {"id": "heards", "group": 3},
+    {"id": "eards", "group": 4},
+    {"id": "hards", "group": 4},
+    {"id": "herds", "group": 4},
+    {"id": "heads", "group": 4},
+    {"id": "hears", "group": 4},
+    {"id": "heard", "group": 4},
+
+
+    {"id": "spared", "group": 5},
+    {"id": "pared", "group": 6},
+    {"id": "sared", "group": 6},
+    {"id": "spred", "group": 6},
+    {"id": "spaed", "group": 6},
+    {"id": "spard", "group": 6},
+    {"id": "spare", "group": 6},
+
+    {"id": "yeards", "group": 5},
+    
+    {"id": "yards", "group": 6},
+    {"id": "yerds", "group": 6},
+    {"id": "yeads", "group": 6},
+    {"id": "years", "group": 6},
+    {"id": "yeard", "group": 6}
   ],
   "links": [
     {"source": "dearns", "target": "earns", "value": 2},
@@ -14,6 +39,27 @@
     {"source": "dearns", "target": "deans", "value": 2},
     {"source": "dearns", "target": "derns", "value": 2},
     {"source": "dearns", "target": "dears", "value": 2},
-    {"source": "dearns", "target": "dearn", "value": 2}
+    {"source": "dearns", "target": "dearn", "value": 2},
+
+    {"source": "heards", "target": "eards", "value": 2},
+    {"source": "heards", "target": "hards", "value": 2},
+    {"source": "heards", "target": "herds", "value": 2},
+    {"source": "heards", "target": "heads", "value": 2},
+    {"source": "heards", "target": "hears", "value": 2},
+    {"source": "heards", "target": "heard", "value": 2},
+
+    {"source": "spared", "target": "pared", "value": 2},
+    {"source": "spared", "target": "sared", "value": 2},
+    {"source": "spared", "target": "spred", "value": 2},
+    {"source": "spared", "target": "spaed", "value": 2},
+    {"source": "spared", "target": "spard", "value": 2},
+    {"source": "spared", "target": "spare", "value": 2},
+
+    {"source": "yeards", "target": "eards", "value": 2},
+    {"source": "yeards", "target": "yards", "value": 2},
+    {"source": "yeards", "target": "yerds", "value": 2},
+    {"source": "yeards", "target": "yeads", "value": 2},
+    {"source": "yeards", "target": "years", "value": 2},
+    {"source": "yeards", "target": "yeard", "value": 2}
   ]
 }

@@ -30426,10 +30426,13 @@
     <Content Include="Scripts\ng-file-upload-shim.min.js" />
     <Content Include="Scripts\ng-file-upload.js" />
     <Content Include="Scripts\ng-file-upload.min.js" />
+    <Content Include="Scripts\Words\simpleWords.js" />
+    <Content Include="Scripts\Words\wordSet1.json" />
     <Content Include="Scripts\Words\wordsVisv1.js" />
     <Content Include="Scripts\Words\wordVisv2.js" />
     <Content Include="Views\Home\Redesign.cshtml" />
     <Content Include="Views\Words\Index.cshtml" />
+    <Content Include="Views\Words\Index2.cshtml" />
     <Content Include="Views\Words\WordsVisualise.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -16,6 +16,7 @@ namespace Homepage.Controllers
             return View(vm);
         }
         
+        
         [HttpPost]
         public ActionResult WordsVisualise(WordVisViewModel vm)
         {
@@ -41,7 +42,7 @@ namespace Homepage.Controllers
         } 
         public ActionResult Index()
         {
-            return View();
+            return View("Index2");
         }
     }
 }

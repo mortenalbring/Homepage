@@ -44,28 +44,28 @@
             <p>
                 To answer these questions, we must decide on what counts as a 'word'. Do we include place names, proper nouns, etc.? Fortunately, <a href="https://en.wikipedia.org/wiki/Official_Scrabble_Players_Dictionary">someone else</a> has done their level best to answer that question, so I'll just take the so-known 'SOWPODS' English word list containing a total of  267,753 words.
             </p>
-            <p>
-                The algorithm for this is remarkably simple:
-                <ul>
-                    <li>
-                        Go through every word in the dictionary:
-                        <ul>
-                            <li>
-                                Go through every letter in the word:
-                                <ul>
-                                    <li>
-                                        Remove that letter from the word, check if the result is in the dictionary
-                                        <ul>
-                                            <li>If it is, store it alongside the origin (parent) word</li>
-                                            <li>If it isn't, skip it</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
+        <p>
+            The algorithm for this is remarkably simple:
+            <ul>
+                <li>
+                    Go through every word in the dictionary:
+                    <ul>
+                        <li>
+                            Go through every letter in the word:
+                            <ul>
+                                <li>
+                                    Remove that letter from the word, check if the result is in the dictionary
+                                    <ul>
+                                        <li>If it is, store it alongside the origin (parent) word</li>
+                                        <li>If it isn't, skip it</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        
             <p>
                 The code for this, and other questions, is available on <a href="https://github.com/mortenalbring/WordsWithinWords">GitHub</a>.
             </p>
@@ -74,19 +74,20 @@
             </p>
 
 
-            <p>
-                As for the word with the most number of words within it: there are four joint winners, each with 6 subwords
+        <p>
+            As for the word with the most number of words within it: there are four joint winners, each with 6 subwords
+                
 
+            @{
+                var words = new List<string>() { "dearns	 earns[d] darns[e] derns[a] deans[r] dears[n] dearn[s]", "heards	 eards[h] hards[e] herds[a] heads[r] hears[d] heard[s]", "spared	 pared[s] sared[p] spred[a] spaed[r] spard[e] spare[d]", "yeards	 eards[y] yards[e] yerds[a] yeads[r] years[d] yeard[s]" };
 
-                @{
-                    var words = new List<string>() { "dearns	 earns[d] darns[e] derns[a] deans[r] dears[n] dearn[s]", "heards	 eards[h] hards[e] herds[a] heads[r] hears[d] heard[s]", "spared	 pared[s] sared[p] spred[a] spaed[r] spard[e] spare[d]", "yeards	 eards[y] yards[e] yerds[a] yeads[r] years[d] yeard[s]" };
+                @DisplayWordsWithinWords(words, "https://en.wiktionary.org/wiki/");
+            }
 
-                    @DisplayWordsWithinWords(words, "https://en.wiktionary.org/wiki/");
-                }
+        </p>
+        
 
-            </p>
-
-            <p>
+        <p>
                 This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words.
             </p>
 
@@ -389,10 +390,7 @@
             <p>
                 But what is the longest chain we can make?
             </p>
-
-
-            
-
+          
 
         </div>
 
@@ -474,7 +472,6 @@
 
 @helper DisplayWordsWithinWords(IEnumerable<string> words, string urlPrefix)
 {
-
     var n = 0;
     foreach (var word in words)
     {
@@ -505,6 +502,11 @@
 
         }
 
+        <svg id="vis" width="960" height="600">
+            
+        </svg>
+        
+        
         <table class="table table-condensed table-bordered table-striped">
             <thead>
             <tr>

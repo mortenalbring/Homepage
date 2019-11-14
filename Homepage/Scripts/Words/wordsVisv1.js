@@ -39,7 +39,7 @@ d3.json("/Words/GetWordsData", function (error, data) {
             .on("drag", dragged)
             .on("end", dragended));
 
-    var lables = node.append("text")
+    var labels = node.append("text")
         .text(function (d) {
             return d.id;
         })
@@ -56,12 +56,19 @@ d3.json("/Words/GetWordsData", function (error, data) {
     simulation.force("link")
         .links(graph.links);
 
+    simulation.start();
+    // var n = 10;
+    // for (var i = 0; i < n; ++i) {
+    //     simulation.tick();  
+    // } 
+    simulation.stop();
+    
     function ticked() {
 
         node
             .attr("transform", function (d) {
                 return "translate(" + d.x + "," + d.y + ")";
-            })
+            });
 
         node
             .attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })

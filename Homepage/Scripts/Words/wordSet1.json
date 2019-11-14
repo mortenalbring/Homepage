@@ -1,6 +1,6 @@
 ﻿{
   "nodes": [
-    {"id": "dearns", "group": 1},
+    {"id": "dearns", "group": 1, "type" : 1},
     {"id": "earns", "group": 1},
     {"id": "darns", "group": 1},
     {"id": "derns", "group": 1},
@@ -8,7 +8,7 @@
     {"id": "dears", "group": 1},
     {"id": "dearn", "group": 1},
     
-    {"id": "heards", "group": 2},
+    {"id": "heards", "group": 2, "type" : 1},
     {"id": "eards", "group": 2},
     {"id": "hards", "group": 2},
     {"id": "herds", "group": 2},
@@ -16,8 +16,7 @@
     {"id": "hears", "group": 2},
     {"id": "heard", "group": 2},
 
-
-    {"id": "spared", "group": 3},
+    {"id": "spared", "group": 3, "type" : 1},
     {"id": "pared", "group": 3},
     {"id": "sared", "group": 3},
     {"id": "spred", "group": 3},
@@ -25,15 +24,38 @@
     {"id": "spard", "group": 3},
     {"id": "spare", "group": 3},
 
-    {"id": "yeards", "group": 4},
+    {"id": "yeards", "group": 4, "type" : 1},
     {"id": "yards", "group": 4},
     {"id": "eards", "group": 4},
     {"id": "yerds", "group": 4},
     {"id": "yeads", "group": 4},
     {"id": "years", "group": 4},
-    {"id": "yeard", "group": 4}
+    {"id": "yeard", "group": 4},
+
+    {"id": "adread", "group": 5, "type" : 1},
+    {"id": "dread", "group": 5},
+    {"id": "aread", "group": 5},
+    {"id": "adead", "group": 5},
+    {"id": "adrad", "group": 5},
+    {"id": "adred", "group": 5},
+    {"id": "adrea", "group": 5},
+
+    {"id": "theins", "group": 6, "type" : 1},
+    {"id": "heins", "group": 6},
+    {"id": "teins", "group": 6},
+    {"id": "thins", "group": 6},
+    {"id": "thens", "group": 6},
+    {"id": "theis", "group": 6},
+    {"id": "thein", "group": 6}
   ],
   "links": [
+    {"source": "theins", "target": "heins", "value": 2},
+    {"source": "theins", "target": "teins", "value": 2},
+    {"source": "theins", "target": "thins", "value": 2},
+    {"source": "theins", "target": "thens", "value": 2},
+    {"source": "theins", "target": "theis", "value": 2},
+    {"source": "theins", "target": "thein", "value": 2},
+
     {"source": "dearns", "target": "earns", "value": 2},
     {"source": "dearns", "target": "darns", "value": 2},
     {"source": "dearns", "target": "deans", "value": 2},
@@ -60,6 +82,13 @@
     {"source": "yeards", "target": "yerds", "value": 2},
     {"source": "yeards", "target": "yeads", "value": 2},
     {"source": "yeards", "target": "years", "value": 2},
-    {"source": "yeards", "target": "yeard", "value": 2}
+    {"source": "yeards", "target": "yeard", "value": 2},
+    
+    {"source": "adread", "target": "dread", "value": 2},
+    {"source": "adread", "target": "aread", "value": 2},
+    {"source": "adread", "target": "adead", "value": 2},
+    {"source": "adread", "target": "adrad", "value": 2},
+    {"source": "adread", "target": "adred", "value": 2},
+    {"source": "adread", "target": "adrea", "value": 2}
   ]
 }

@@ -20,8 +20,16 @@ border:1px solid #ccc;
 
 text {
   font-family: sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
+.nodes .bold {
+font-weight:bold;
+font-size: 10px;
+}
+.nodes circle {
+cursor:pointer;
+}
+ 
 
 </style>
 
@@ -38,7 +46,7 @@ text {
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <p>
-                I was interested in a question about words and letter replacement. If I take a word, such as <code>shoot</code>, can I remove a letter and still make a word?
+                I was interested in a question about words and letter replacement. If I take a word, such as <code>shoot</code>, can I remove a single letter and still make a word?
                 In this case, yes, of course: <code>hoot</code>. In fact, I can make three other words as well: <code>soot, shot, shoo</code>. So how many words do themselves contain words? And which word contains the most words within it?
             </p>
 
@@ -72,10 +80,11 @@ text {
                     The code for this, and other questions, is available on <a href="https://github.com/mortenalbring/WordsWithinWords">GitHub</a>.
                 </p>
                 <p>
-                    The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one character. There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
+                    The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one letter. There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
                 </p>
 
                 <p>
+                    As for those words that contain the most number of different words within it
                     As for the words with the most number of words within it: there are four joint winners, each with 6 subwords
                 </p>
 
@@ -101,6 +110,39 @@ text {
             <svg id="simpleWords1d" group="4" width="150" height="150"></svg>
         </div>
 
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <p>
+                This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. Also worth noting that 'eards' is in two of the lists, we'll come back to that later!
+            </p>
+            <p>Of course, we can eschew the rules and regulations on the Official Scrabble word list and look at an even bigger word list. I've taken <a href="https://github.com/dwyl/english-words" target="_blank">this list</a>, combined it with any additional words in the SOWPODs list, resulting in a whopping word list of 548,420 English words. </p>
+
+            <p>Running the same analysis on this embiggened list finds 222,351 words (40.5%) containing at least one other word when a character is removed, and 8003 (1.46%) words when any character is removed.</p>
+
+            <p>
+                The maximum number of words within a word is still at 6, though there are a few additional joint winners.
+            </p>
+
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <svg id="simpleWords1e" group="5" width="150" height="150"></svg>
+        </div>
+    
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <svg id="simpleWords1f" group="6" width="150" height="150"></svg>
+        </div>
+    
+     
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="simpleWords1pt">
+            <svg id="simpleWords1t" group="-1" width="1050" height="250"></svg>
+        </div>
     </div>
 </div>
 

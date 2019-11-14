@@ -1,20 +1,20 @@
 ﻿{
   "nodes": [
     {"id": "dearns", "group": 1},
-    {"id": "earns", "group": 2},
-    {"id": "darns", "group": 2},
-    {"id": "derns", "group": 2},
-    {"id": "deans", "group": 2},
-    {"id": "dears", "group": 2},
-    {"id": "dearn", "group": 2},
+    {"id": "earns", "group": 1},
+    {"id": "darns", "group": 1},
+    {"id": "derns", "group": 1},
+    {"id": "deans", "group": 1},
+    {"id": "dears", "group": 1},
+    {"id": "dearn", "group": 1},
     
-    {"id": "heards", "group": 3},
-    {"id": "eards", "group": 4},
-    {"id": "hards", "group": 4},
-    {"id": "herds", "group": 4},
-    {"id": "heads", "group": 4},
-    {"id": "hears", "group": 4},
-    {"id": "heard", "group": 4},
+    {"id": "heards", "group": 2},
+    {"id": "eards", "group": 2},
+    {"id": "hards", "group": 2},
+    {"id": "herds", "group": 2},
+    {"id": "heads", "group": 2},
+    {"id": "hears", "group": 2},
+    {"id": "heard", "group": 2},
 
 
     {"id": "spared", "group": 5},

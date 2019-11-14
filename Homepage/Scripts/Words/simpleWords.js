@@ -11,7 +11,8 @@ var simulation = d3.forceSimulation()
 
 d3.json("/Scripts/Words/wordSet1.json", function(error, graph) {
     if (error) throw error;
-
+    
+    
     var link = svg.append("g")
         .attr("class", "links")
         .selectAll("line")
@@ -23,7 +24,7 @@ d3.json("/Scripts/Words/wordSet1.json", function(error, graph) {
         .attr("class", "nodes")
         .selectAll("g")
         .data(graph.nodes)
-        .enter().append("g")
+        .enter().append("g");
 
     var circles = node.append("circle")
         .attr("r", 5)

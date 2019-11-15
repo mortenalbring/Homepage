@@ -4,6 +4,8 @@
     //     elemwidth = +svg.attr("width"),
     //     elemheight = +svg.attr("height");
     //
+
+    
     var svgElems = d3.selectAll(".simpleWords1");
 
     var svgElem = d3.select("#simpleWords1a");
@@ -93,11 +95,11 @@
             //   .force('y', forceY)
             .force("center", d3.forceCenter(width / 2, height / 2));
 
+   
         var radius = 5;
 
-        d3.json("/Scripts/Words/wordSet1.json", function (error, graph) {
-            if (error) throw error;
-
+        d3.json("/Scripts/Words/wordSet1.json").then(function(graph) {
+           
             filterDataOnGroup(graph, group);
 
             var link = svg.append("g")

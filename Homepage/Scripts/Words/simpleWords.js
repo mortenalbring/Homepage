@@ -86,8 +86,6 @@
     }
 
     function initSvg(svg, containerId) {
-
-
         var parentElement = document.getElementById(containerId);
 
         var parentWidth = parentElement.clientWidth;
@@ -119,7 +117,7 @@
             .force("center", d3.forceCenter(width / 2, height / 2));
 
    
-        var radius = 5;
+        var radius = 15;
 
         d3.json("/Scripts/Words/wordSet1.json").then(function(graph) {
            
@@ -148,38 +146,15 @@
                         return "";
                     }
                 });
-
-            /*
-            var link =
-                svg.append("g")
-                .attr("class", "links")
-                .selectAll("line")
-                .data(graph.links)
-                .enter()
-                .append("g")
-                .attr("class","link-group")
-                .append("line")
-                .attr("stroke-width", function (d) {
-                    return Math.sqrt(d.value);
-                });
-
-            var linkText = svg.selectAll(".link-group")
-                .append("text")
-                .attr("class", "link-label")
-                .attr("font-family", "Arial, Helvetica, sans-serif")
-                .attr("fill", "Black")
-                .style("font", "normal 12px Arial")
-                .attr("dy", ".35em")
-                .attr("text-anchor", "middle")
-                .text(function(d) {
-                    return "moop";
-                });
-*/
+           
             var node = svg.append("g")
                 .attr("class", "nodes")
                 .selectAll("g")
                 .data(graph.nodes)
-                .enter().append("g");
+                .enter()
+                .append("g")
+                .attr("class","node-group")
+            ;
 
             var circles = node.append("circle")
                 .attr("r", radius)
@@ -193,6 +168,10 @@
                 .text(function (d) {
                     return d.id;
                 })
+                .attr("text-anchor","middle")
+                .attr("fill", function (d) {
+                    return color(d.group);
+                })
                 .attr('class',function(d) {
                     var className = "node-text";
                     if (d.type && d.type === 1) {
@@ -201,7 +180,7 @@
                     return className;
                 })
                 .attr('x', function(d) {
-                    return (d.id.length) * -1;
+                    return 2;
                 })
                 .attr('y', 3)
                 .call(d3.drag()

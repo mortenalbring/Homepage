@@ -15,7 +15,6 @@
     initSvg(d3.select("#simpleWords1c"), "simpleWords1p");
     initSvg(d3.select("#simpleWords1d"), "simpleWords1p");
     initSvg(d3.select("#simpleWords1e"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1f"), "simpleWords1p");
     initSvg(d3.select("#simpleWords1t"), "simpleWords1pt");
 
 
@@ -111,7 +110,7 @@
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function (d) {
                 return d.id;
-            }).distance(40).iterations(1))
+            }).distance(50).iterations(1))
             .force("charge", d3.forceManyBody().distanceMax(40).strength(-30))
             //   .force('y', forceY)
             .force("center", d3.forceCenter(width / 2, height / 2));
@@ -180,7 +179,7 @@
                     return className;
                 })
                 .attr('x', function(d) {
-                    return 2;
+                    return 0;
                 })
                 .attr('y', 3)
                 .call(d3.drag()

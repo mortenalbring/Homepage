@@ -187,24 +187,27 @@
                     return color(d.group);
                 })
                 .attr("opacity", 0.1)
-                .call(d3.drag()
-                    .on("start", dragstarted)
-                    .on("drag", dragged)
-                    .on("end", dragended));
+                ;
 
-            var lables = node.append("text")
+            var nodelabels = node.append("text")
                 .text(function (d) {
                     return d.id;
                 })
                 .attr('class',function(d) {
+                    var className = "node-text";
                     if (d.type && d.type === 1) {
-                        return "bold"
+                        className = className + " bold";
                     }
+                    return className;
                 })
                 .attr('x', function(d) {
                     return (d.id.length) * -1;
                 })
-                .attr('y', 3);
+                .attr('y', 3)
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
             
         
 

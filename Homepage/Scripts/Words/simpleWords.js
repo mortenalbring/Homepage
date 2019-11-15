@@ -1,21 +1,14 @@
 ﻿function init() {
-    // var elemsvg = d3.select("svg"),
-    //     elemgroup = +svg.attr("group"),
-    //     elemwidth = +svg.attr("width"),
-    //     elemheight = +svg.attr("height");
-    //
+  
+ 
+    initSvg("simpleWordDataEnglish.json", d3.select("#simpleWords1a"), "simpleWords1p");
+    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1b"), "simpleWords1p");
+    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1c"), "simpleWords1p");
+    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1d"), "simpleWords1p");
+    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1e"), "simpleWords1p");
+    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1t"), "simpleWords1pt");
 
-    
-    var svgElems = d3.selectAll(".simpleWords1");
-
-    var svgElem = d3.select("#simpleWords1a");
-
-    initSvg(d3.select("#simpleWords1a"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1b"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1c"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1d"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1e"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1t"), "simpleWords1pt");
+    initSvg("simpleWordDataNorsk.json",d3.select("#simpleWordsnorsk"), "simpleWords1pt");
 
 
     function getDiffCharacter(source, target) {
@@ -84,7 +77,7 @@
         graph.links = filteredLinks;
     }
 
-    function initSvg(svg, containerId) {
+    function initSvg(jsonPath,svg, containerId) {
         var parentElement = document.getElementById(containerId);
 
         var parentWidth = parentElement.clientWidth;
@@ -102,23 +95,28 @@
         //var color = d3.scaleSequential().domain([1,10])(d3.schemeCategory20);
         //var color = d3.scaleSequential(d3.schemeCategory20);
         var color = d3.scaleLinear()
-            .domain([1, 6])
+            .domain([1, 36])
             .range(["red", "orange", "green", "blue", "violet"]);
+
+        var attractForce = d3.forceManyBody().strength(50).distanceMax(400).distanceMin(60);
+        var repelForce = d3.forceManyBody().strength(-200).distanceMax(100).distanceMin(10);
 
         var forceY = d3.forceY(height / 2).strength(0.85);
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function (d) {
                 return d.id;
-            }).distance(50).iterations(1))
-            .force("charge", d3.forceManyBody().distanceMax(40).strength(-30))
+            }).distance(40).iterations(1))
+            .force("charge", d3.forceManyBody().strength(-30))
             //   .force('y', forceY)
-            .force("center", d3.forceCenter(width / 2, height / 2));
-
+            .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("attractForce",attractForce)
+            .force("repelForce",repelForce)
+        ;
    
         var radius = 15;
 
-        d3.json("/Scripts/Words/wordSet1.json").then(function(graph) {
+        d3.json("/Scripts/Words/" + jsonPath).then(function(graph) {
            
             filterDataOnGroup(graph, group);
 

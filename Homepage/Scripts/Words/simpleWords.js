@@ -1,14 +1,14 @@
 ﻿function init() {
   
  
-    initSvg("simpleWordDataEnglish.json", d3.select("#simpleWords1a"), "simpleWords1p");
-    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1b"), "simpleWords1p");
-    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1c"), "simpleWords1p");
-    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1d"), "simpleWords1p");
-    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1e"), "simpleWords1p");
-    initSvg("simpleWordDataEnglish.json",d3.select("#simpleWords1t"), "simpleWords1pt");
+    initSvg(d3.select("#simpleWords1a"), "simpleWords1p");
+    initSvg(d3.select("#simpleWords1b"), "simpleWords1p");
+    initSvg(d3.select("#simpleWords1c"), "simpleWords1p");
+    initSvg(d3.select("#simpleWords1d"), "simpleWords1p");
+    initSvg(d3.select("#simpleWords1e"), "simpleWords1p");
+    initSvg(d3.select("#simpleWords1t"), "simpleWords1pt");
 
-    initSvg("simpleWordDataNorsk.json",d3.select("#simpleWordsnorsk"), "simpleWords1pt");
+    initSvg(d3.select("#simpleWordsnorsk"), "simpleWords1pt");
 
 
     function getDiffCharacter(source, target) {
@@ -77,7 +77,7 @@
         graph.links = filteredLinks;
     }
 
-    function initSvg(jsonPath,svg, containerId) {
+    function initSvg(svg, containerId) {
         var parentElement = document.getElementById(containerId);
 
         var parentWidth = parentElement.clientWidth;
@@ -87,6 +87,7 @@
         var group = parseInt(svg.attr("group"));
         var height = svg.attr("height");
         var width = svg.attr("width");
+        var jsonPath = svg.attr("json");
         if (width > parentWidth) {
             width = parentWidth;
             svg.attr("width", width);

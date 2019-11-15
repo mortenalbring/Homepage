@@ -19,6 +19,24 @@
     initSvg(d3.select("#simpleWords1t"), "simpleWords1pt");
 
 
+    function getDiffCharacter(source, target) {
+        var diffChar = "";
+        for (var oo = 0; oo < source.length; oo++) {
+            var charats = source.charAt(oo);
+            if (oo < target.length) {
+                var charatt = target.charAt(oo);
+                if (charats != charatt) {
+                    diffChar = charats;
+                    break;
+                }
+            } else {
+                diffChar = charats;
+            }
+        }
+       
+        return diffChar;
+    }
+
     function filterDataOnGroup(graph, group) {
         var filteredNodes = [];
         for (var i = 0; i < graph.nodes.length; i++) {
@@ -56,6 +74,11 @@
                 }
             }
             if (founds && foundt) {
+
+                var diffChar = getDiffCharacter(source, target);
+
+                console.log(source + " " + target + " " + diffChar);
+                searchLink.diffChar = diffChar;
                 filteredLinks.push(searchLink);
             }
         }
@@ -102,15 +125,56 @@
            
             filterDataOnGroup(graph, group);
 
-            var link = svg.append("g")
+            var linkGroup = svg.append("g")
                 .attr("class", "links")
                 .selectAll("line")
                 .data(graph.links)
-                .enter().append("line")
+                .enter()
+                .append("g")
+                .attr("class","link-group");
+            
+             
+            var linkLine = linkGroup.append("line")
                 .attr("stroke-width", function (d) {
                     return Math.sqrt(d.value);
                 });
 
+           var linkText = linkGroup.append("text")
+                .text(function(d) {
+                    if (d.diffChar) {
+                        return d.diffChar
+                    }
+                    else {
+                        return "";
+                    }
+                });
+
+            /*
+            var link =
+                svg.append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(graph.links)
+                .enter()
+                .append("g")
+                .attr("class","link-group")
+                .append("line")
+                .attr("stroke-width", function (d) {
+                    return Math.sqrt(d.value);
+                });
+
+            var linkText = svg.selectAll(".link-group")
+                .append("text")
+                .attr("class", "link-label")
+                .attr("font-family", "Arial, Helvetica, sans-serif")
+                .attr("fill", "Black")
+                .style("font", "normal 12px Arial")
+                .attr("dy", ".35em")
+                .attr("text-anchor", "middle")
+                .text(function(d) {
+                    return "moop";
+                });
+*/
             var node = svg.append("g")
                 .attr("class", "nodes")
                 .selectAll("g")
@@ -122,6 +186,7 @@
                 .attr("fill", function (d) {
                     return color(d.group);
                 })
+                .attr("opacity", 0.1)
                 .call(d3.drag()
                     .on("start", dragstarted)
                     .on("drag", dragged)
@@ -136,8 +201,12 @@
                         return "bold"
                     }
                 })
-                .attr('x', 6)
+                .attr('x', function(d) {
+                    return (d.id.length) * -1;
+                })
                 .attr('y', 3);
+            
+        
 
             node.append("title")
                 .text(function (d) {
@@ -152,7 +221,7 @@
                 .links(graph.links);
 
             function ticked() {
-                link
+                linkLine
                     .attr("x1", function (d) {
                         return d.source.x;
                     })
@@ -165,6 +234,13 @@
                     .attr("y2", function (d) {
                         return d.target.y;
                     });
+
+                linkText.attr("transform", function(d) {
+                    var resX = (d.source.x + d.target.x) /2;
+                    var resY = (d.source.y + d.target.y) /2;
+
+                    return "translate(" + resX + "," + resY + ")";
+                });
 
                 node
                     .attr("transform", function (d) {

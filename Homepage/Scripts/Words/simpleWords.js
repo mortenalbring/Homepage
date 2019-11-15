@@ -8,7 +8,9 @@
     initSvg(d3.select("#simpleWords1e"), "simpleWords1p");
     initSvg(d3.select("#simpleWords1t"), "simpleWords1pt");
 
-    initSvg(d3.select("#simpleWordsnorsk"), "simpleWords1pt");
+    initSvg(d3.select("#simpleWords1wc"), "simpleWords1pt");
+
+    //   initSvg(d3.select("#simpleWordsnorsk"), "simpleWords1pt");
 
 
     function getDiffCharacter(source, target) {

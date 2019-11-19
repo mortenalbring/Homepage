@@ -94,6 +94,12 @@
         if (mgroup != null) {
             mgroup = parseInt(mgroup);
         }
+        
+        var linkDistance = 40;
+        
+        if (svg.attr("linkdistance") != null) {
+            linkDistance = parseInt(svg.attr("linkdistance"));
+        }
 
         var height = svg.attr("height");
         var width = svg.attr("width");
@@ -109,16 +115,16 @@
             .domain([1, mgroup])
             .range(["red", "orange", "yellow", "green","blue","indigo", "violet"]);
 
-        var attractForce = d3.forceManyBody().strength(50).distanceMax(400).distanceMin(60);
-        var repelForce = d3.forceManyBody().strength(-200).distanceMax(100).distanceMin(10);
+        var attractForce = d3.forceManyBody().strength(5).distanceMax(400).distanceMin(60);
+        var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
 
         var forceY = d3.forceY(height / 2).strength(0.85);
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function (d) {
                 return d.id;
-            }).distance(40).iterations(1))
-            .force("charge", d3.forceManyBody().strength(-30))
+            }).distance(linkDistance).iterations(1))
+            .force("charge", d3.forceManyBody().strength(-80))
             //   .force('y', forceY)
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force("attractForce", attractForce)

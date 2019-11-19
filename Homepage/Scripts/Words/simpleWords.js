@@ -1,12 +1,19 @@
 ﻿function init() {
-  
- 
-    initSvg(d3.select("#simpleWords1a"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1b"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1c"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1d"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1e"), "simpleWords1p");
-    initSvg(d3.select("#simpleWords1t"), "simpleWords1pt");
+
+    $('.simpleWords').each(function (d) {
+        var svgId = "#" + this.id;
+        initSvg(d3.select(svgId), "simpleWords1p");
+    });
+    $('.simpleWordsBig').each(function (d) {
+        var svgId = "#" + this.id;
+        initSvg(d3.select(svgId), "simpleWords1pt");
+    });
+
+    $('.wordsChain').each(function (d) {
+        var svgId = "#" + this.id;
+        initSvg(d3.select(svgId), "wordsChainp");
+    });
+
 
     initSvg(d3.select("#simpleWords1wc"), "simpleWords1pt");
 
@@ -27,7 +34,7 @@
                 diffChar = charats;
             }
         }
-       
+
         return diffChar;
     }
 
@@ -35,17 +42,17 @@
         var filteredNodes = [];
         for (var i = 0; i < graph.nodes.length; i++) {
             var n = graph.nodes[i];
-             
+
             if (n.group === group || group === -1) {
                 var exists = false;
-                for (var b = 0; b < filteredNodes.length ; b++) {
+                for (var b = 0; b < filteredNodes.length; b++) {
                     if (filteredNodes[b].id === n.id) {
                         exists = true;
                         break;
                     }
                 }
                 if (!exists) {
-                    filteredNodes.push(n);    
+                    filteredNodes.push(n);
                 }
             }
         }
@@ -68,11 +75,7 @@
                 }
             }
             if (founds && foundt) {
-
-                var diffChar = getDiffCharacter(source, target);
-
-                console.log(source + " " + target + " " + diffChar);
-                searchLink.diffChar = diffChar;
+                searchLink.diffChar = getDiffCharacter(source, target);
                 filteredLinks.push(searchLink);
             }
         }
@@ -84,9 +87,14 @@
 
         var parentWidth = parentElement.clientWidth;
         var pheight = parentElement.clientHeight;
-        
+
 
         var group = parseInt(svg.attr("group"));
+        var mgroup = svg.attr("maxgroup");
+        if (mgroup != null) {
+            mgroup = parseInt(mgroup);
+        }
+
         var height = svg.attr("height");
         var width = svg.attr("width");
         var jsonPath = svg.attr("json");
@@ -98,8 +106,8 @@
         //var color = d3.scaleSequential().domain([1,10])(d3.schemeCategory20);
         //var color = d3.scaleSequential(d3.schemeCategory20);
         var color = d3.scaleLinear()
-            .domain([1, 36])
-            .range(["red", "orange", "green", "blue", "violet"]);
+            .domain([1, mgroup])
+            .range(["red", "orange", "yellow", "green","blue","indigo", "violet"]);
 
         var attractForce = d3.forceManyBody().strength(50).distanceMax(400).distanceMin(60);
         var repelForce = d3.forceManyBody().strength(-200).distanceMax(100).distanceMin(10);
@@ -113,14 +121,14 @@
             .force("charge", d3.forceManyBody().strength(-30))
             //   .force('y', forceY)
             .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("attractForce",attractForce)
-            .force("repelForce",repelForce)
+            .force("attractForce", attractForce)
+            .force("repelForce", repelForce)
         ;
-   
+
         var radius = 15;
 
-        d3.json("/Scripts/Words/" + jsonPath).then(function(graph) {
-           
+        d3.json("/Scripts/Words/" + jsonPath).then(function (graph) {
+
             filterDataOnGroup(graph, group);
 
             var linkGroup = svg.append("g")
@@ -129,31 +137,30 @@
                 .data(graph.links)
                 .enter()
                 .append("g")
-                .attr("class","link-group");
-            
-             
+                .attr("class", "link-group");
+
+
             var linkLine = linkGroup.append("line")
                 .attr("stroke-width", function (d) {
                     return Math.sqrt(d.value);
                 });
 
-           var linkText = linkGroup.append("text")
-                .text(function(d) {
+            var linkText = linkGroup.append("text")
+                .text(function (d) {
                     if (d.diffChar) {
                         return d.diffChar
-                    }
-                    else {
+                    } else {
                         return "";
                     }
                 });
-           
+
             var node = svg.append("g")
                 .attr("class", "nodes")
                 .selectAll("g")
                 .data(graph.nodes)
                 .enter()
                 .append("g")
-                .attr("class","node-group")
+                .attr("class", "node-group")
             ;
 
             var circles = node.append("circle")
@@ -162,24 +169,24 @@
                     return color(d.group);
                 })
                 .attr("opacity", 0.1)
-                ;
+            ;
 
             var nodelabels = node.append("text")
                 .text(function (d) {
                     return d.id;
                 })
-                .attr("text-anchor","middle")
+                .attr("text-anchor", "middle")
                 .attr("fill", function (d) {
-                    return color(d.group);
+                    return "#111";
                 })
-                .attr('class',function(d) {
+                .attr('class', function (d) {
                     var className = "node-text";
                     if (d.type && d.type === 1) {
                         className = className + " bold";
                     }
                     return className;
                 })
-                .attr('x', function(d) {
+                .attr('x', function (d) {
                     return 0;
                 })
                 .attr('y', 3)
@@ -187,8 +194,7 @@
                     .on("start", dragstarted)
                     .on("drag", dragged)
                     .on("end", dragended));
-            
-        
+
 
             node.append("title")
                 .text(function (d) {
@@ -217,9 +223,9 @@
                         return d.target.y;
                     });
 
-                linkText.attr("transform", function(d) {
-                    var resX = (d.source.x + d.target.x) /2;
-                    var resY = (d.source.y + d.target.y) /2;
+                linkText.attr("transform", function (d) {
+                    var resX = (d.source.x + d.target.x) / 2;
+                    var resY = (d.source.y + d.target.y) / 2;
 
                     return "translate(" + resX + "," + resY + ")";
                 });

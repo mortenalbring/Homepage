@@ -4,9 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="~/Content/Words/word-styles.css" rel="stylesheet" type="text/css" />
-
-
+<link href="~/Content/Words/word-styles.css" rel="stylesheet" type="text/css"/>
 
 
 <div class="post-title">
@@ -62,74 +60,72 @@
                 </p>
 
             </div>
-            
+
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-md-11 col-md-offset-1">
             <div class="graph-container">
-                
+
             </div>
         </div>
     </div>
-    
-    
-    
+
+
     <div class="row">
         <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-6" id="simpleWords1p">
-            <svg id="simpleWords1a" group="1" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
+            <svg id="simpleWords1a" class="simpleWords" group="1" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
         </div>
 
         <div class="col-md-2 col-sm-6 col-xs-6">
-            <svg id="simpleWords1b" group="2" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
+            <svg id="simpleWords1b" class="simpleWords" group="2" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
         </div>
 
         <div class="col-md-2 col-sm-6 col-xs-6">
-            <svg id="simpleWords1c" group="3" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
+            <svg id="simpleWords1c" class="simpleWords" group="3" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
         </div>
 
         <div class="col-md-2 col-sm-6 col-xs-6">
-            <svg id="simpleWords1d" group="4" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
+            <svg id="simpleWords1d" class="simpleWords" group="4" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
         </div>
-        
+
         <div class="col-md-2 col-sm-6 col-xs-6">
-             <svg id="simpleWords1e" group="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
-         </div>
-       
+            <svg id="simpleWords1e" class="simpleWords" group="5" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
+        </div>
     </div>
-    
- 
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <p>
                 This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. Also worth noting that 'eards' is in two of the lists, we'll come back to that later!
             </p>
-            <p>Of course, we can eschew the rules and regulations on the Official Scrabble word list and look at an even bigger word list. I've taken <a href="https://github.com/dwyl/english-words" target="_blank">this list</a>, combined it with any additional words in the SOWPODs list, resulting in a whopping word list of 548,420 English words. </p>
-
-            <p>Running the same analysis on this embiggened list finds 222,351 words (40.5%) containing at least one other word when a character is removed, and 8003 (1.46%) words when any character is removed.</p>
-
-            <p>
-                The maximum number of words within a word is still at 6, though there are a few additional joint winners.
-            </p>
-
         </div>
     </div>
-    
+
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 col-sm-6 col-xs-6" id="wordsChainp">
+            <svg id="wordChain1" class="wordsChain" group="1" maxgroup="5" width="550" height="150" json="wordChainEnglish.json"></svg>
+        </div>
+
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <svg id="simpleWords1wc" group="1" width="1050" height="250" json="wordChainEnglish.json"></svg>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1" id="simpleWords1pt">
-            <svg id="simpleWords1t" group="-1" width="1050" height="250" json="simpleWordDataEnglish.json"></svg>
+            <svg id="simpleWords1t" class="simpleWordsBig" group="-1" maxgroup="5" width="1050" height="250" json="simpleWordDataEnglish.json"></svg>
         </div>
     </div>
-    
-    <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-              <svg id="simpleWords1wc" group="-1" width="1050" height="250" json="wordChainEnglish.json"></svg>
-          </div>
-      </div>
-      
+
+
 </div>
 
 <script src="~/Scripts/d3v5/d3.js"></script>

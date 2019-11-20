@@ -1,12 +1,8 @@
 ﻿function init() {
-
-    $('.simpleWords').each(function (d) {
+    
+    $('.wordsChain').each(function (d) {
         var svgId = "#" + this.id;
-        initSvg(d3.select(svgId), "simpleWords1p");
-    });
-    $('.simpleWordsBig').each(function (d) {
-        var svgId = "#" + this.id;
-        initSvg(d3.select(svgId), "simpleWords1pt");
+        initSvg(d3.select(svgId), "wordsChainp");
     });
     
     initSvg(d3.select("#simpleWords1wc"), "simpleWords1pt");

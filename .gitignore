@@ -192,3 +192,4 @@ Homepage/tempfiles/
 Homepage/ConnectionStrings.config
 *.lock
 .vs/
+Homepage/packages/*

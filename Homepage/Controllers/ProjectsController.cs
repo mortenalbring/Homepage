@@ -1,12 +1,15 @@
 ﻿using Homepage.Repository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Homepage.Models.Amenhokit;
 using Homepage.Models.Amenhokit.PdfScan;
+using Homepage.Models.Words;
+using Homepage.Projects.Words;
 using Newtonsoft.Json;
 using WebMatrix.WebData;
 
@@ -14,6 +17,8 @@ namespace Homepage.Controllers
 {
     public class ProjectsController : Controller
     {
+
+      
         public ActionResult ProjectAngularD3()
         {
             return View();
@@ -37,6 +42,11 @@ namespace Homepage.Controllers
         public ActionResult ProjectPennyGame()
         {
             return View();
+        }
+
+        public JsonResult Json1()
+        {
+            return Json(new { test = "yes" });
         }
 
         [HttpGet]

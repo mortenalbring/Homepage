@@ -159,6 +159,14 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
             }
         },
 
+        {
+            ID: 12,
+            Title: "Words",
+            RunFunction: function () {
+                $scope.drawPreset(words);
+            }
+        },
+
     ]
 
     $scope.preset.select = $scope.preset.options[0];

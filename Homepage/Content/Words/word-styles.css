@@ -1,0 +1,44 @@
+﻿
+svg {
+    border:1px solid #ccc;
+}
+.links line {
+    stroke: #999;
+    stroke-opacity: 0.3;
+}
+
+.nodes circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+.nodes circle:hover {
+    opacity:0.0;
+}
+
+text {
+    font-family: sans-serif;
+    font-size: 10px;
+}
+.nodes .bold {
+    font-weight:bold;
+    font-size: 10px;
+}
+.nodes circle {
+    cursor:pointer;
+}
+.nodes .node-text {
+    cursor:pointer;
+}
+
+.node-group:hover circle {
+    opacity:0.2;
+}
+.node-group:hover .node-text {
+    fill:#000;
+}
+
+.link-group text {
+    font-size:8px;
+}
+ 

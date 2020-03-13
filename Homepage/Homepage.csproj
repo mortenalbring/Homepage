@@ -498,6 +498,7 @@
     <Content Include="Scripts\d3\README.md" />
     <Content Include="Scripts\d3\CHANGES.md" />
     <Content Include="Scripts\d3\API.md" />
+    <None Include="Properties\PublishProfiles\SmarterAspNet2020.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\FileAPI.flash.swf" />
     <Content Include="Scripts\FileAPI.js" />

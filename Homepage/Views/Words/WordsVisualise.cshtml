@@ -33,18 +33,17 @@ border:2px solid black;
     <br/>
     <br/>
     <br/>
-    
-
-@using (Html.BeginForm("WordsVisualise", "Words", FormMethod.Post))
- {
-     @Html.TextBoxFor(m => m.Search)
-
-     <input type="submit" value="Submit"/>
- }
 
 
+    @using (Html.BeginForm("WordsVisualise", "Words", FormMethod.Post))
+    {
+        @Html.TextBoxFor(m => m.Search)
 
-<svg id="vis" width="960" height="600"></svg>
+        <input type="submit" value="Submit"/>
+    }
+
+
+    <svg id="vis" width="960" height="600"></svg>
 
 </div>
 

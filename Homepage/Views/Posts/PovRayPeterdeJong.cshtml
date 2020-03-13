@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @section Scripts {
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 }
@@ -16,7 +17,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            
+
 
             <p>Chaotic attractors are mathematical systems that evolve over time. The Peter de Jong attractors are systems that are especially beautiful, following the underlying equations: </p>
             <div lang="latex">
@@ -25,7 +26,7 @@
             <div lang="latex">
                 y_{n+1} = \sin(c x_n) - \cos(d y_n)
             </div>
-            <br />
+            <br/>
             <p>The choice of the constants <span lang="latex">a, b, c, d</span> produces radically different attractors. </p>
             <p>
                 My personal favourite coefficients are:
@@ -93,7 +94,9 @@ plane {
 } 
 </pre>
             <p>This results in this beautiful render of the attractor</p>
-            <a href="~/Content/images/peterDeJongattactor.png"><img class="img-thumbnail" src="~/Content/images/peterDeJongattactor_small.png" /></a>
+            <a href="~/Content/images/peterDeJongattactor.png">
+                <img class="img-thumbnail" src="~/Content/images/peterDeJongattactor_small.png"/>
+            </a>
 
         </div>
 
@@ -102,8 +105,12 @@ plane {
         <div class="col-md-12">
             <h3>Links</h3>
             <ul class="list-group">
-                <li class="list-group-item"><a href="http://paulbourke.net/fractals/peterdejong/">Paul Bourke's illustrations of Peter de Jong Attractors</a></li>
-                <li class="list-group-item"><a href="http://www.povray.org/">POV-RAY software</a></li>
+                <li class="list-group-item">
+                    <a href="http://paulbourke.net/fractals/peterdejong/">Paul Bourke's illustrations of Peter de Jong Attractors</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="http://www.povray.org/">POV-RAY software</a>
+                </li>
             </ul>
 
 

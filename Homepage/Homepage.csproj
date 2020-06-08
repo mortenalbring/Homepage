@@ -434,6 +434,7 @@
     <Content Include="Projects\AngularD3\packages\angular.min.js" />
     <Content Include="Projects\AngularD3\packages\d3.js" />
     <Content Include="Projects\AngularD3\packages\d3.min.js" />
+    <Content Include="Projects\AngularD3\presets\AngularD3-preset-countryNodes.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-cube.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-words.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-custom-charge.js" />

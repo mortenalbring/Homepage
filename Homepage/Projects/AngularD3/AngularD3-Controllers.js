@@ -166,7 +166,13 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
                 $scope.drawPreset(words);
             }
         },
-
+        {
+            ID: 13,
+            Title: "Countries",
+            RunFunction: function () {
+                $scope.drawPreset(countryNodes);
+            }
+        },
     ]
 
     $scope.preset.select = $scope.preset.options[0];

@@ -44,5 +44,9 @@ namespace Homepage.Controllers
         {
             return View("Index2");
         }
+        public ActionResult IndexOld()
+        {
+            return View("Index");
+        }
     }
 }

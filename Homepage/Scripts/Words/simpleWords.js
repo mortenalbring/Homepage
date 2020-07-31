@@ -1,5 +1,5 @@
 ﻿function init() {
-
+//This is for d3 v5 word chains and generates a static force graph
     $('.simpleWords').each(function (d) {
         var svgId = "#" + this.id;
         initSvgStatic(d3.select(svgId), "simpleWords1p");
@@ -38,7 +38,7 @@
                     .range(["red", "orange", "yellow", "green", "blue", "indigo", "violet"]);
 
                 var attractForce = d3.forceManyBody().strength(5).distanceMax(400).distanceMin(60);
-                var repelForce = d3.forceManyBody().strength(-80).distanceMax(80).distanceMin(10);
+                var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
 
 
 
@@ -49,6 +49,7 @@
                     .force("charge", d3.forceManyBody().strength(-80))
                     //        .force('y', forceY)
                     .force("center", d3.forceCenter(domVariables.Width / 2, domVariables.Height / 2))
+                    
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
                 ;
@@ -153,7 +154,10 @@
                 });
                 
                 var circles = node.append("circle")
-                    .attr("r", radius)
+                    .attr("r", function(d) {
+                        
+                      return d.id.length * 2.5;  
+                    } )
                     .attr("cx", function(d) { return d.x; })
                     .attr("cy", function(d) { return d.y; })
                     .attr("fill", function (d) {

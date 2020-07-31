@@ -1,5 +1,5 @@
 ﻿function init() {
-    
+    //This is for the d3 v5 word chains and generates a dynamic force graph (not static)
     $('.wordsChain').each(function (d) {
         var svgId = "#" + this.id;
         initSvg(d3.select(svgId), "wordsChainp");
@@ -168,4 +168,4 @@
 
 }
 
-//init();
+init();

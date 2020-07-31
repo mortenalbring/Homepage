@@ -68,7 +68,8 @@
                     simulation.tick();
                 }
 
-                var node = g.append("g")
+                //Group containing circle and text
+                var nodeGroup = g.append("g")
                         .attr("class", "nodes")
                         .selectAll("g")
                     .data(nodes)
@@ -78,65 +79,11 @@
                 ;
 
 
-                var linkGroup = g.append("g")
-                    .attr("class", "links")
-                    .selectAll("g")
-                    .data(graph.links)
-                    .enter()
-                    .append("g")
-                    
-                    .attr("class", "link-group");
-
-
-                var linkLine = linkGroup.append("line")
-                    .attr("x1", function(d) { return d.source.x; })
-                    .attr("y1", function(d) { return d.source.y; })
-                    .attr("x2", function(d) { return d.target.x; })
-                    .attr("y2", function(d) { return d.target.y; })
-                    .attr("stroke-width", function (d) {
-                        return Math.sqrt(d.value);
-                    });
-
-                var linkText = linkGroup.append("text")
-                    .attr('x', function (d) {
-                        return d.x;
-                    })
-                    .attr('y', function(d) {return d.y})
-                    .text(function (d) {
-                        if (d.diffChar) {
-                            return d.diffChar
-                        } else {
-                            return "";
-                        }
-                    });
-
-
-
-                linkLine
-                    .attr("x1", function (d) {
-                        return d.source.x;
-                    })
-                    .attr("y1", function (d) {
-                        return d.source.y;
-                    })
-                    .attr("x2", function (d) {
-                        return d.target.x;
-                    })
-                    .attr("y2", function (d) {
-                        return d.target.y;
-                    });
-
-                linkText.attr("transform", function (d) {
-                    var resX = (d.source.x + d.target.x) / 2;
-                    var resY = (d.source.y + d.target.y) / 2;
-
-                    return "translate(" + resX + "," + resY + ")";
-                });
-                
-                var circles = node.append("circle")
+                //Circles around nodes
+                nodeGroup.append("circle")
                     .attr("r", function(d) {
-                        
-                      return d.id.length * 2.5;  
+
+                        return d.id.length * 2.5;
                     } )
                     .attr("cx", function(d) { return d.x; })
                     .attr("cy", function(d) { return d.y; })
@@ -146,7 +93,8 @@
                     .attr("opacity", 0.1)
                 ;
 
-                var nodelabels = node.append("text")
+                //Node text labels
+                nodeGroup.append("text")
                     .text(function (d) {
                         return d.id;
                     })
@@ -165,17 +113,60 @@
                         return d.x;
                     })
                     .attr('y', function(d) {return d.y})
-                    ///.call(d3.drag()
-                       // .on("start", dragstarted)
-                       // .on("drag", dragged)
-                       // .on("end", dragended))
+                ///.call(d3.drag()
+                // .on("start", dragstarted)
+                // .on("drag", dragged)
+                // .on("end", dragended))
                 ;
 
 
-                node.append("title")
+                nodeGroup.append("title")
                     .text(function (d) {
                         return d.id;
                     });
+
+                //Group containing link line and link text
+                var linkGroup = g.append("g")
+                    .attr("class", "links")
+                    .selectAll("g")
+                    .data(graph.links)
+                    .enter()
+                    .append("g")
+                    
+                    .attr("class", "link-group");
+
+
+                //Lines connecting nodes
+                linkGroup.append("line")
+                    .attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; })
+                    .attr("stroke-width", function (d) {
+                        return Math.sqrt(d.value);
+                    });
+
+                //Tiny text along link lines
+                linkGroup.append("text")
+                    .attr('x', function (d) {
+                        return d.x;
+                    })
+                    .attr('y', function(d) {return d.y})
+                    .attr("transform", function (d) {
+                        var resX = (d.source.x + d.target.x) / 2;
+                        var resY = (d.source.y + d.target.y) / 2;
+
+                        return "translate(" + resX + "," + resY + ")";
+                    })
+                    .text(function (d) {
+                        if (d.diffChar) {
+                            return d.diffChar
+                        } else {
+                            return "";
+                        }
+                    });
+
+                
             });
 
         });

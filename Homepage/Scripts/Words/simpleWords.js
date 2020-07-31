@@ -8,8 +8,65 @@
         var svgId = "#" + this.id;
         initSvg(d3.select(svgId), "simpleWords1pt");
     });
+
+    initSvg2(d3.select("#simpleWords1wc"), "simpleWords1pt");
     
-    initSvg(d3.select("#simpleWords1wc"), "simpleWords1pt");
+    
+    function initSvg2(svg, containerId) {
+
+// Use a timeout to allow the rest of the page to load first.
+        d3.timeout(function() {
+            var domVariables = WordsGeneral.ParseDomVariables(svg, containerId);
+            d3.json("/Scripts/Words/Json/" + domVariables.JsonPath).then(function (graph) {
+
+                
+                var width = domVariables.Width;
+                var height = domVariables.Height;
+
+                var g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+                var n = 100,
+                    nodes = d3.range(n).map(function(i) { return {index: i}; }),
+                    links = d3.range(n).map(function(i) { return {source: i, target: (i + 3) % n}; });
+
+                var simulation = d3.forceSimulation(nodes)
+                    .force("charge", d3.forceManyBody().strength(-80))
+                    .force("link", d3.forceLink(links).distance(20).strength(1).iterations(10))
+                    .force("x", d3.forceX())
+                    .force("y", d3.forceY())
+                    .stop();
+
+
+                // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
+                for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
+                    simulation.tick();
+                }
+
+                g.append("g")
+                    .attr("stroke", "#000")
+                    .attr("stroke-width", 1.5)
+                    .selectAll("line")
+                    .data(links)
+                    .enter().append("line")
+                    .attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+
+                g.append("g")
+                    .attr("stroke", "#fff")
+                    .attr("stroke-width", 1.5)
+                    .selectAll("circle")
+                    .data(nodes)
+                    .enter().append("circle")
+                    .attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; })
+                    .attr("r", 4.5);
+            });
+
+        });
+        
+    }
     
     function initSvg(svg, containerId) {
 

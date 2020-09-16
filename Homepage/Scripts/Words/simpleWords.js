@@ -29,8 +29,8 @@
                 var nodes = graph.nodes;
                 var links = graph.links;
                 
-                console.log(nodes);
-                console.log(links);
+                // console.log(nodes);
+                // console.log(links);
                 var n = 100;
                 var radius = 14;
                 var color = d3.scaleLinear()
@@ -56,10 +56,9 @@
                     .force("link", d3.forceLink().id(function (d) {
                         return d.id;
                     }).distance(domVars.LinkDistance).iterations(1))
-                    .force("charge", d3.forceManyBody().strength(-80))
+                    .force("charge", d3.forceManyBody().strength(domVars.Charge))
                     //        .force('y', forceY)
                     .force("center", d3.forceCenter(domVars.Width / 2, domVars.Height / 2))
-                    
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
                 ;
@@ -76,6 +75,21 @@
                 // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
                     simulation.tick();
+
+                    //
+                    // if (i < (n-1)) {
+                    //     for (var j = 0; j< graph.nodes.length; j++) {
+                    //         if (graph.nodes[j].x > width) {
+                    //             graph.nodes[j].x = graph.nodes[j].x = width /2;
+                    //         }
+                    //
+                    //         if (graph.nodes[j].y > height) {
+                    //             graph.nodes[j].y = height / 2;
+                    //         }
+                    //     }
+                    //    
+                    // }
+                    
                 }
 
                 //Group containing circle and text
@@ -175,6 +189,10 @@
                             return "";
                         }
                     });
+                
+                simulation.on('tick', function(e) {
+                    console.log("tick");
+                })
 
                 
             });

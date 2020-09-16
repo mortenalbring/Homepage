@@ -115,9 +115,36 @@
             <p>
                 This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. Also worth noting that 'eards' is in two of the lists, we'll come back to that later!
             </p>
+            
+            <p>
+                We can of course run this for other languages, provided we can find comprehensive dictionaries in plain text form. This is surprisingly difficult.
+            
+                For Norwegian, the largest list I could find contains 692,872 words - though I cannot be sure it applies the same standards and rules as the scrabble dictionary.
+            </p>
+<p>Running this list finds 347,760 (50.19 %) Norwegian words with other Norwegian words within them.</p>
+
         </div>
     </div>
     
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="simpleWords1pt">
+            <svg id="simpleWords1t" class="simpleWordsBig" 
+                 group="-1" 
+                 maxgroup="5" 
+                 width="1050" 
+                 height="1050"
+                 linkdistance="30"
+                 attractforce-strength="-20"
+                 attractforce-distancemax="5"
+                 attractforce-distancemin="10"
+                 repelforce-strength="30"
+                 repelforce-distancemin="5"
+                 repelforce-distancemax="10"
+                 charge="-10"
+                 json="simpleWordDataNorsk.json"></svg>
+        </div>
+    </div>
+
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -128,23 +155,8 @@
                  linkdistance="60" 
                  repelforce-strength="-100"
                  attractforce-strength="0"
-                 repelforce-maxdistance="160"
+                 repelforce-maxdistance="60"
                  json="wordChainEnglish.json"></svg>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1" id="simpleWords1pt">
-            <svg id="simpleWords1t" class="simpleWordsBig" 
-                 group="-1" 
-                 maxgroup="5" 
-                 width="1050" 
-                 height="350"
-                 linkdistance="10"
-                 attractforce-strength="20"
-                 repelforce-strength="0"
-                 repelforce-distancemax="10"
-                 json="simpleWordDataEnglish.json"></svg>
         </div>
     </div>
 

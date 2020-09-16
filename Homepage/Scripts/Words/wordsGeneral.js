@@ -81,6 +81,8 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.RepelForce.Strength = -40;
     output.RepelForce.DistanceMax = 80;
     output.RepelForce.DistanceMin = 10;
+    
+    output.Charge = -80;
 
 
     output.Height = 50;
@@ -126,7 +128,10 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     if (svg.attr("repelforce-distancemin") != null) {
         output.RepelForce.DistanceMin = svg.attr("repelforce-distancemin");
     }
-
+    
+    if (svg.attr("charge") != null) {
+        output.Charge = svg.attr("charge");
+    }
 
     if (svg.attr("json") != null) {
         output.JsonPath = svg.attr("json");

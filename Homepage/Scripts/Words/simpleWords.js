@@ -41,7 +41,14 @@
                     .strength(domVars.AttractForce.Strength)
                     .distanceMax(domVars.AttractForce.DistanceMax)
                     .distanceMin(domVars.AttractForce.DistanceMin);
-                var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
+
+                var repelForce = d3.forceManyBody()
+                    .strength(domVars.RepelForce.Strength)
+                    .distanceMax(domVars.RepelForce.DistanceMax)
+                    .distanceMin(domVars.RepelForce.DistanceMin);
+
+
+                //var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
 
 
 

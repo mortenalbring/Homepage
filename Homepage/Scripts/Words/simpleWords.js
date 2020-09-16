@@ -58,9 +58,10 @@
                     }).distance(domVars.LinkDistance).iterations(1))
                     .force("charge", d3.forceManyBody().strength(domVars.Charge))
                     //        .force('y', forceY)
-                    .force("center", d3.forceCenter(domVars.Width / 2, domVars.Height / 2))
+                    .force("center", d3.forceCenter(domVars.Width / 2, domVars.Height / 2).strength(1.0))
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
+                    .force("collide", d3.forceCollide(20))
                 ;
 
                 simulation
@@ -69,14 +70,15 @@
                 simulation.force("link")
                     .links(graph.links);
 
-                simulation.stop();
+                //simulation.start();
+             //   simulation.stop();
 
 
                 // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
                     simulation.tick();
 
-                    //
+
                     // if (i < (n-1)) {
                     //     for (var j = 0; j< graph.nodes.length; j++) {
                     //         if (graph.nodes[j].x > width) {
@@ -87,7 +89,7 @@
                     //             graph.nodes[j].y = height / 2;
                     //         }
                     //     }
-                    //    
+                    //
                     // }
                     
                 }

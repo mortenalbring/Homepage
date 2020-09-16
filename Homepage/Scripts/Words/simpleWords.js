@@ -16,15 +16,15 @@
 
 // Use a timeout to allow the rest of the page to load first.
         d3.timeout(function() {
-            var domVariables = WordsGeneral.ParseDomVariables(svg, containerId);
-            d3.json("/Scripts/Words/Json/" + domVariables.JsonPath).then(function (graph) {
+            var domVars = WordsGeneral.ParseDomVariables(svg, containerId);
+            d3.json("/Scripts/Words/Json/" + domVars.JsonPath).then(function (graph) {
 
                 
-                var width = domVariables.Width;
-                var height = domVariables.Height;
+                var width = domVars.Width;
+                var height = domVars.Height;
 
                 var g = svg.append("g");
-                WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
+                WordsGeneral.FilterDataOnGroup(graph, domVars.Group);
 
                 var nodes = graph.nodes;
                 var links = graph.links;
@@ -34,10 +34,13 @@
                 var n = 100;
                 var radius = 14;
                 var color = d3.scaleLinear()
-                    .domain([1, domVariables.MaxGroup])
+                    .domain([1, domVars.MaxGroup])
                     .range(["red", "orange", "yellow", "green", "blue", "indigo", "violet"]);
 
-                var attractForce = d3.forceManyBody().strength(5).distanceMax(400).distanceMin(60);
+                var attractForce = d3.forceManyBody()
+                    .strength(domVars.AttractForce.Strength)
+                    .distanceMax(domVars.AttractForce.DistanceMax)
+                    .distanceMin(domVars.AttractForce.DistanceMin);
                 var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
 
 
@@ -45,10 +48,10 @@
                 var simulation = d3.forceSimulation()
                     .force("link", d3.forceLink().id(function (d) {
                         return d.id;
-                    }).distance(domVariables.LinkDistance).iterations(1))
+                    }).distance(domVars.LinkDistance).iterations(1))
                     .force("charge", d3.forceManyBody().strength(-80))
                     //        .force('y', forceY)
-                    .force("center", d3.forceCenter(domVariables.Width / 2, domVariables.Height / 2))
+                    .force("center", d3.forceCenter(domVars.Width / 2, domVars.Height / 2))
                     
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)

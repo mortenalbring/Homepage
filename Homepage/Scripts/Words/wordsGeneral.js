@@ -72,6 +72,11 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.MaxGroup = 1;
     output.Group = 1;
     output.JsonPath = "";
+    output.AttractForce = {}
+    output.AttractForce.Strength = 50;
+    output.AttractForce.DistanceMax = 200;
+    output.AttractForce.DistanceMin = 60;
+
 
     output.Height = 50;
     output.Width = 50;

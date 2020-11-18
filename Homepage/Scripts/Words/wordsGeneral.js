@@ -72,10 +72,15 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.MaxGroup = 1;
     output.Group = 1;
     output.JsonPath = "";
-output.AttractForce = { };
-output.AttractForce.Strength = 5;
-    output.AttractForce.DistanceMax= 400;
-    output.AttractForce.DistanceMin= 60;
+    output.AttractForce = {};
+    output.AttractForce.Strength = 5;
+    output.AttractForce.DistanceMax = 400;
+    output.AttractForce.DistanceMin = 60;
+
+    output.RepelForce = {};
+    output.RepelForce.Strength = -40;
+    output.RepelForce.DistanceMax = 80;
+    output.RepelForce.DistanceMin = 10;
 
     output.Height = 50;
     output.Width = 50;
@@ -109,7 +114,15 @@ output.AttractForce.Strength = 5;
     if (svg.attr("attractforce-distancemin") != null) {
         output.AttractForce.DistanceMin = svg.attr("attractforce-distancemin");
     }
-
+    if (svg.attr("repelforce-strength") != null) {
+        output.RepelForce.Strength = svg.attr("repelforce-strength");
+    }
+    if (svg.attr("repelforce-distancemax") != null) {
+        output.RepelForce.DistanceMax = svg.attr("repelforce-distancemax");
+    }
+    if (svg.attr("repelforce-distancemin") != null) {
+        output.RepelForce.DistanceMin = svg.attr("repelforce-distancemin");
+    }
 
     if (svg.attr("json") != null) {
         output.JsonPath = svg.attr("json");

@@ -41,10 +41,11 @@
                     .strength(domVariables.AttractForce.Strength)
                     .distanceMax(domVariables.AttractForce.DistanceMax)
                     .distanceMin(domVariables.AttractForce.DistanceMin);
-                var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
-
-
-
+                var repelForce = d3.forceManyBody()
+                    .strength(domVariables.RepelForce.Strength)
+                    .distanceMax(domVariables.RepelForce.DistanceMax)
+                    .distanceMin(domVariables.RepelForce.DistanceMin);
+                
                 var simulation = d3.forceSimulation()
                     .force("link", d3.forceLink().id(function (d) {
                         return d.id;

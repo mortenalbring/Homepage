@@ -10,8 +10,9 @@
     });
 
     initSvgStatic(d3.select("#simpleWords1wc"), "simpleWords1pt");
-    
-    
+    initSvgStatic(d3.select("#simpleWords2wc"), "simpleWords1pt");
+
+
     function initSvgStatic(svg, containerId) {
 
         function PutNodes(g, nodes, color) {

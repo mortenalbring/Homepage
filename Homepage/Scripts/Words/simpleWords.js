@@ -183,8 +183,8 @@
                     }))
                     
                 ;
-                if (domVariables.UseForceYByGroup) {
-                simulation.force('y',d3.forceY().y(function(d) { return centreGroup[d.group]; }))
+                if (domVariables.UseForceYByHeight) {
+                simulation.force('y',d3.forceY().y(function(d) { return domVariables.Height /2  }))
                 }
                 if (domVariables.UseForceXByGroup) {
                     simulation.force('x',d3.forceX().x(function(d) {console.log(d.group); console.log(centreGroup[d.group]); return centreGroup[d.group]; }));

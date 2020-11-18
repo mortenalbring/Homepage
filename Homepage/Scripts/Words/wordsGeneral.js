@@ -95,7 +95,7 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.RepelForce.Strength = -40;
     output.RepelForce.DistanceMax = 80;
     output.RepelForce.DistanceMin = 10;
-    output.UseForceYByGroup = false;
+    output.UseForceYByHeight = false;
     output.UseForceXByGroup = false;
     
 output.Charge = -80;
@@ -146,8 +146,8 @@ output.Charge = -80;
         output.RepelForce.DistanceMin = parseInt(svg.attr("charge"));
     }
 
-    if (svg.attr("useforceybygroup") != null) {
-        output.UseForceYByGroup = true;
+    if (svg.attr("useforceybyheight") != null) {
+        output.UseForceYByHeight = true;
     }
     if (svg.attr("useforcexbygroup") != null) {
         output.UseForceXByGroup = true;

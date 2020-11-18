@@ -57,7 +57,9 @@
                     .force('center', d3.forceCenter().x((domVariables.Width/2)).y((domVariables.Height/2)))
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
-                    
+                    .force('collision', d3.forceCollide().radius(function(d) {
+                        return d.id.length * 2.5
+                    }))
                     .force('y',d3.forceY().y(function(d) { return d.group; }))
                 ;
                 

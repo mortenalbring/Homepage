@@ -66,6 +66,10 @@ WordsGeneral.FilterDataOnGroup = function (graph, group) {
 
 };
 
+WordsGeneral.MakeCenterGroup = function(maxGroup) {
+    
+}
+
 WordsGeneral.ParseDomVariables = function (svg, containerId) {
     var output = {};
     output.LinkDistance = 40;
@@ -81,6 +85,8 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.RepelForce.Strength = -40;
     output.RepelForce.DistanceMax = 80;
     output.RepelForce.DistanceMin = 10;
+    output.UseForceX = false;
+    
 output.Charge = -80;
 
     output.Height = 50;

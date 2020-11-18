@@ -53,13 +53,17 @@
                     }).distance(domVariables.LinkDistance).iterations(1))
                     .force("charge", d3.forceManyBody().strength(domVariables.Charge))
                     //        .force('y', forceY)
-                    .force("center", d3.forceCenter(domVariables.Width / 2, domVariables.Height / 2))
-                    
+                    //.force("center", d3.forceCenter(domVariables.Width / 2, domVariables.Height / 2))
+                    .force('center', d3.forceCenter().x((domVariables.Width/2)).y((domVariables.Height/2)))
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
-                    .force('x',d3.forceX().x(function(d) { return d.group; }))
+                    
                     .force('y',d3.forceY().y(function(d) { return d.group; }))
                 ;
+                
+                if (domVariables.UseForceX) {
+                    simulation.force('x',d3.forceX().x(function(d) { return d.group; }));
+                }
 
                 simulation
                     .nodes(graph.nodes);

@@ -81,6 +81,7 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.RepelForce.Strength = -40;
     output.RepelForce.DistanceMax = 80;
     output.RepelForce.DistanceMin = 10;
+output.Charge = -80;
 
     output.Height = 50;
     output.Width = 50;
@@ -103,26 +104,31 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
         output.MaxGroup = parseInt(svg.attr("maxgroup"));
     }
     if (svg.attr("linkdistance") != null) {
-        output.LinkDistance = svg.attr("linkdistance");
+        output.LinkDistance = parseInt(svg.attr("linkdistance"));
     }
-    if (svg.attr("attractforce-strength") != null) {
-        output.AttractForce.Strength = svg.attr("attractforce-strength");
+    if (svg.attr("attractforcestrength") != null) {
+        output.AttractForce.Strength = parseInt(svg.attr("attractforcestrength"));
     }
-    if (svg.attr("attractforce-distancemax") != null) {
-        output.AttractForce.DistanceMax = svg.attr("attractforce-distancemax");
+    if (svg.attr("attractforcedistancemax") != null) {
+        output.AttractForce.DistanceMax = parseInt(svg.attr("attractforcedistancemax"));
     }
-    if (svg.attr("attractforce-distancemin") != null) {
-        output.AttractForce.DistanceMin = svg.attr("attractforce-distancemin");
+    if (svg.attr("attractforcedistancemin") != null) {
+        output.AttractForce.DistanceMin = parseInt(svg.attr("attractforcedistancemin"));
     }
-    if (svg.attr("repelforce-strength") != null) {
-        output.RepelForce.Strength = svg.attr("repelforce-strength");
+    if (svg.attr("repelforcestrength") != null) {
+        output.RepelForce.Strength = parseInt(svg.attr("repelforcestrength"));
     }
-    if (svg.attr("repelforce-distancemax") != null) {
-        output.RepelForce.DistanceMax = svg.attr("repelforce-distancemax");
+    if (svg.attr("repelforcedistancemax") != null) {
+        output.RepelForce.DistanceMax = parseInt(svg.attr("repelforcedistancemax"));
     }
-    if (svg.attr("repelforce-distancemin") != null) {
-        output.RepelForce.DistanceMin = svg.attr("repelforce-distancemin");
+    if (svg.attr("repelforcedistancemin") != null) {
+        output.RepelForce.DistanceMin = parseInt(svg.attr("repelforcedistancemin"));
     }
+    
+    if (svg.attr("charge") != null) {
+        output.RepelForce.DistanceMin = parseInt(svg.attr("charge"));
+    }
+    console.log(output);
 
     if (svg.attr("json") != null) {
         output.JsonPath = svg.attr("json");

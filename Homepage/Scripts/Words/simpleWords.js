@@ -17,6 +17,7 @@
 // Use a timeout to allow the rest of the page to load first.
         d3.timeout(function() {
             var domVariables = WordsGeneral.ParseDomVariables(svg, containerId);
+            
             d3.json("/Scripts/Words/Json/" + domVariables.JsonPath).then(function (graph) {
 
                 
@@ -29,8 +30,8 @@
                 var nodes = graph.nodes;
                 var links = graph.links;
                 
-                console.log(nodes);
-                console.log(links);
+                // console.log(nodes);
+                // console.log(links);
                 var n = 100;
                 var radius = 14;
                 var color = d3.scaleLinear()
@@ -50,12 +51,15 @@
                     .force("link", d3.forceLink().id(function (d) {
                         return d.id;
                     }).distance(domVariables.LinkDistance).iterations(1))
-                    .force("charge", d3.forceManyBody().strength(-80))
+                    .force("charge", d3.forceManyBody().strength(domVariables.Charge))
                     //        .force('y', forceY)
                     .force("center", d3.forceCenter(domVariables.Width / 2, domVariables.Height / 2))
                     
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
+                    .force('x',d3.forceX().x(function(d) {
+                        return 2;
+                }))
                 ;
 
                 simulation

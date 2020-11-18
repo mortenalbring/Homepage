@@ -24,8 +24,7 @@
                 .append("g")
                 .attr("class", "node-group")
             ;
-
-
+            
             //Circles around nodes
             nodeGroup.append("circle")
                 .attr("r", function (d) {
@@ -76,6 +75,59 @@
             nodeGroup.append("title")
                 .text(function (d) {
                     return d.id;
+                });
+        }
+
+        function PutLinks(g, graph) {
+            //Group containing link line and link text
+            var linkGroup = g.append("g")
+                .attr("class", "links")
+                .selectAll("g")
+                .data(graph.links)
+                .enter()
+                .append("g")
+
+                .attr("class", "link-group");
+
+
+            //Lines connecting nodes
+            linkGroup.append("line")
+                .attr("x1", function (d) {
+                    return d.source.x;
+                })
+                .attr("y1", function (d) {
+                    return d.source.y;
+                })
+                .attr("x2", function (d) {
+                    return d.target.x;
+                })
+                .attr("y2", function (d) {
+                    return d.target.y;
+                })
+                .attr("stroke-width", function (d) {
+                    return 10;
+                });
+
+            //Tiny text along link lines
+            linkGroup.append("text")
+                .attr('x', function (d) {
+                    return d.x;
+                })
+                .attr('y', function (d) {
+                    return d.y
+                })
+                .attr("transform", function (d) {
+                    var resX = (d.source.x + d.target.x) / 2;
+                    var resY = (d.source.y + d.target.y) / 2;
+
+                    return "translate(" + resX + "," + resY + ")";
+                })
+                .text(function (d) {
+                    if (d.diffChar) {
+                        return d.diffChar
+                    } else {
+                        return "";
+                    }
                 });
         }
 
@@ -145,49 +197,9 @@
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
                     simulation.tick();
                 }
-
-
-                //Group containing link line and link text
-                var linkGroup = g.append("g")
-                    .attr("class", "links")
-                    .selectAll("g")
-                    .data(graph.links)
-                    .enter()
-                    .append("g")
-                    
-                    .attr("class", "link-group");
-
-
-                //Lines connecting nodes
-                linkGroup.append("line")
-                    .attr("x1", function(d) { return d.source.x; })
-                    .attr("y1", function(d) { return d.source.y; })
-                    .attr("x2", function(d) { return d.target.x; })
-                    .attr("y2", function(d) { return d.target.y; })
-                    .attr("stroke-width", function (d) {
-                        return 10;
-                    });
-
-                //Tiny text along link lines
-                linkGroup.append("text")
-                    .attr('x', function (d) {
-                        return d.x;
-                    })
-                    .attr('y', function(d) {return d.y})
-                    .attr("transform", function (d) {
-                        var resX = (d.source.x + d.target.x) / 2;
-                        var resY = (d.source.y + d.target.y) / 2;
-
-                        return "translate(" + resX + "," + resY + ")";
-                    })
-                    .text(function (d) {
-                        if (d.diffChar) {
-                            return d.diffChar
-                        } else {
-                            return "";
-                        }
-                    });
                 
+                PutLinks(g, graph);
+
                 PutNodes(g, nodes, color);
             });
 

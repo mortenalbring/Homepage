@@ -37,7 +37,10 @@
                     .domain([1, domVariables.MaxGroup])
                     .range(["red", "orange", "yellow", "green", "blue", "indigo", "violet"]);
 
-                var attractForce = d3.forceManyBody().strength(5).distanceMax(400).distanceMin(60);
+                var attractForce = d3.forceManyBody()
+                    .strength(domVariables.AttractForce.Strength)
+                    .distanceMax(domVariables.AttractForce.DistanceMax)
+                    .distanceMin(domVariables.AttractForce.DistanceMin);
                 var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
 
 

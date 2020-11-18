@@ -14,6 +14,71 @@
     
     function initSvgStatic(svg, containerId) {
 
+        function PutNodes(g, nodes, color) {
+            //Group containing circle and text
+            var nodeGroup = g.append("g")
+                .attr("class", "nodes")
+                .selectAll("g")
+                .data(nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node-group")
+            ;
+
+
+            //Circles around nodes
+            nodeGroup.append("circle")
+                .attr("r", function (d) {
+
+                    return d.id.length * 3;
+                })
+                .attr("cx", function (d) {
+                    return d.x;
+                })
+                .attr("cy", function (d) {
+                    return d.y;
+                })
+                .attr("fill", function (d) {
+                    return color(d.group);
+                })
+                .attr("opacity", 0.2)
+            ;
+
+            //Node text labels
+            nodeGroup.append("text")
+                .text(function (d) {
+                    return d.id;
+                })
+                .attr("text-anchor", "middle")
+                .attr("fill", function (d) {
+                    return "#111";
+                })
+                .attr('class', function (d) {
+                    var className = "node-text";
+                    if (d.type && d.type === 1) {
+                        className = className + " bold";
+                    }
+                    return className;
+                })
+                .attr('x', function (d) {
+                    return d.x;
+                })
+                .attr('y', function (d) {
+                    return d.y
+                })
+            ///.call(d3.drag()
+            // .on("start", dragstarted)
+            // .on("drag", dragged)
+            // .on("end", dragended))
+            ;
+
+
+            nodeGroup.append("title")
+                .text(function (d) {
+                    return d.id;
+                });
+        }
+
 // Use a timeout to allow the rest of the page to load first.
         d3.timeout(function() {
             var domVariables = WordsGeneral.ParseDomVariables(svg, containerId);
@@ -122,64 +187,8 @@
                             return "";
                         }
                     });
-
-
-                //Group containing circle and text
-                var nodeGroup = g.append("g")
-                    .attr("class", "nodes")
-                    .selectAll("g")
-                    .data(nodes)
-                    .enter()
-                    .append("g")
-                    .attr("class", "node-group")
-                ;
-
-
-                //Circles around nodes
-                nodeGroup.append("circle")
-                    .attr("r", function(d) {
-
-                        return d.id.length * 3;
-                    } )
-                    .attr("cx", function(d) { return d.x; })
-                    .attr("cy", function(d) { return d.y; })
-                    .attr("fill", function (d) {
-                        return color(d.group);
-                    })
-                    .attr("opacity", 0.2)
-                ;
-
-                //Node text labels
-                nodeGroup.append("text")
-                    .text(function (d) {
-                        return d.id;
-                    })
-                    .attr("text-anchor", "middle")
-                    .attr("fill", function (d) {
-                        return "#111";
-                    })
-                    .attr('class', function (d) {
-                        var className = "node-text";
-                        if (d.type && d.type === 1) {
-                            className = className + " bold";
-                        }
-                        return className;
-                    })
-                    .attr('x', function (d) {
-                        return d.x;
-                    })
-                    .attr('y', function(d) {return d.y})
-                ///.call(d3.drag()
-                // .on("start", dragstarted)
-                // .on("drag", dragged)
-                // .on("end", dragended))
-                ;
-
-
-                nodeGroup.append("title")
-                    .text(function (d) {
-                        return d.id;
-                    });
+                
+                PutNodes(g, nodes, color);
             });
 
         });

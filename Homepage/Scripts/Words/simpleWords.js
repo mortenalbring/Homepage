@@ -57,9 +57,8 @@
                     
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
-                    .force('x',d3.forceX().x(function(d) {
-                        return 2;
-                }))
+                    .force('x',d3.forceX().x(function(d) { return d.group; }))
+                    .force('y',d3.forceY().y(function(d) { return d.group; }))
                 ;
 
                 simulation

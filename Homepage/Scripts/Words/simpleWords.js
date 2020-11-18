@@ -142,9 +142,9 @@
                 var width = domVariables.Width;
                 var height = domVariables.Height;
 
-                var centreGroup = WordsGeneral.MakeCenterGroup(0,domVariables.Width,domVariables.MaxGroup);
+                var centreGroupX = WordsGeneral.MakeCenterGroup(0,domVariables.Width,domVariables.MaxGroup);
+                var centreGroupY = WordsGeneral.MakeCenterGroup(0,domVariables.Height,domVariables.MaxGroup);
                 
-                console.log(centreGroup);
                 
                 var g = svg.append("g");
                 WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
@@ -185,8 +185,11 @@
                 if (domVariables.UseForceYByHeight) {
                 simulation.force('y',d3.forceY().y(function(d) { return domVariables.Height /2  }))
                 }
+                if (domVariables.UseForceYByGroup) {
+                    simulation.force('y',d3.forceY().y(function(d) { return centreGroupY[d.group]  }))
+                }
                 if (domVariables.UseForceXByGroup) {
-                    simulation.force('x',d3.forceX().x(function(d) {console.log(d.group); console.log(centreGroup[d.group]); return centreGroup[d.group]; }));
+                    simulation.force('x',d3.forceX().x(function(d) {return centreGroupX[d.group]; }));
                 }
 
                 simulation

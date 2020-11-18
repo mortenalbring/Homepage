@@ -36,7 +36,7 @@
                 var radius = 14;
                 var color = d3.scaleLinear()
                     .domain([1, domVariables.MaxGroup])
-                    .range(["red", "orange", "yellow", "green", "blue", "indigo", "violet"]);
+                    .range(["red", "blue", "green"]);
 
                 var attractForce = d3.forceManyBody()
                     .strength(domVariables.AttractForce.Strength)
@@ -58,7 +58,7 @@
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
                     .force('collision', d3.forceCollide().radius(function(d) {
-                        return d.id.length * 2.5
+                        return d.id.length * 2.9
                     }))
                     .force('y',d3.forceY().y(function(d) { return d.group; }))
                 ;
@@ -96,14 +96,14 @@
                 nodeGroup.append("circle")
                     .attr("r", function(d) {
 
-                        return d.id.length * 2.5;
+                        return d.id.length * 3;
                     } )
                     .attr("cx", function(d) { return d.x; })
                     .attr("cy", function(d) { return d.y; })
                     .attr("fill", function (d) {
                         return color(d.group);
                     })
-                    .attr("opacity", 0.1)
+                    .attr("opacity", 0.2)
                 ;
 
                 //Node text labels

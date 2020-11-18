@@ -156,7 +156,7 @@
                     .attr("x2", function(d) { return d.target.x; })
                     .attr("y2", function(d) { return d.target.y; })
                     .attr("stroke-width", function (d) {
-                        return Math.sqrt(d.value);
+                        return 10;
                     });
 
                 //Tiny text along link lines

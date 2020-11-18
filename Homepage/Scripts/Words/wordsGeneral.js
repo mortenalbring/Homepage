@@ -66,12 +66,22 @@ WordsGeneral.FilterDataOnGroup = function (graph, group) {
 
 };
 
-WordsGeneral.MakeCenterGroup = function(maxGroup) {
+WordsGeneral.MakeCenterGroup = function(start,end,maxGroup) {
+    var arr = [];
+    var steps = (end - start) / maxGroup;
     
+    for (var i=0;i<=maxGroup;i++) {
+        var elem = i * steps;
+        arr.push(elem);
+    }
+    console.log("centregroup")
+    console.log(arr);
+    return arr;
 }
 
 WordsGeneral.ParseDomVariables = function (svg, containerId) {
-    var output = {};
+    var output = {
+    };
     output.LinkDistance = 40;
     output.MaxGroup = 1;
     output.Group = 1;
@@ -85,7 +95,8 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.RepelForce.Strength = -40;
     output.RepelForce.DistanceMax = 80;
     output.RepelForce.DistanceMin = 10;
-    output.UseForceX = false;
+    output.UseForceYByGroup = false;
+    output.UseForceXByGroup = false;
     
 output.Charge = -80;
 
@@ -134,7 +145,14 @@ output.Charge = -80;
     if (svg.attr("charge") != null) {
         output.RepelForce.DistanceMin = parseInt(svg.attr("charge"));
     }
-    console.log(output);
+
+    if (svg.attr("useforceybygroup") != null) {
+        output.UseForceYByGroup = true;
+    }
+    if (svg.attr("useforcexbygroup") != null) {
+        output.UseForceXByGroup = true;
+    }
+
 
     if (svg.attr("json") != null) {
         output.JsonPath = svg.attr("json");

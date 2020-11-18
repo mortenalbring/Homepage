@@ -141,6 +141,10 @@
                 var width = domVariables.Width;
                 var height = domVariables.Height;
 
+                var centreGroup = WordsGeneral.MakeCenterGroup(0,domVariables.Width,domVariables.MaxGroup);
+                
+                console.log(centreGroup);
+                
                 var g = svg.append("g");
                 WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
 
@@ -177,11 +181,13 @@
                     .force('collision', d3.forceCollide().radius(function(d) {
                         return d.id.length * 2.9
                     }))
-                    .force('y',d3.forceY().y(function(d) { return d.group; }))
+                    
                 ;
-                
-                if (domVariables.UseForceX) {
-                    simulation.force('x',d3.forceX().x(function(d) { return d.group; }));
+                if (domVariables.UseForceYByGroup) {
+                simulation.force('y',d3.forceY().y(function(d) { return centreGroup[d.group]; }))
+                }
+                if (domVariables.UseForceXByGroup) {
+                    simulation.force('x',d3.forceX().x(function(d) {console.log(d.group); console.log(centreGroup[d.group]); return centreGroup[d.group]; }));
                 }
 
                 simulation

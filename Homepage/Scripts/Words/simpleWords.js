@@ -18,7 +18,7 @@
 
     function initSvgStatic(svg, containerId) {
 
-        function PutNodes(g, nodes, color) {
+        function PutNodes(g, graph, lines, nodes, color) {
             //Group containing circle and text
             var nodeGroup = g.append("g")
                 .attr("class", "nodes")
@@ -80,6 +80,19 @@
                 .text(function (d) {
                     return d.id;
                 });
+            
+            nodeGroup.on('mouseover', function(d) {
+                lines.attr('stroke-width', function(ld) {
+                    console.log(ld);
+                    return 20;
+                });
+                
+            })
+            nodeGroup.on('mouseout', function(d) {
+                lines.attr('stroke-width', function(ld) {
+                    return 7;
+                });
+            })
         }
 
         function PutLinks(g, graph) {
@@ -95,7 +108,7 @@
 
 
             //Lines connecting nodes
-            linkGroup.append("line")
+           var lines = linkGroup.append("line")
                 .attr("x1", function (d) {
                     return d.source.x;
                 })
@@ -133,6 +146,8 @@
                         return "";
                     }
                 });
+            
+            return lines;
         }
 
 // Use a timeout to allow the rest of the page to load first.
@@ -146,7 +161,7 @@
                 var height = domVariables.Height;
 
                 var centreGroupX = WordsGeneral.MakeCenterGroup(0,domVariables.Width,domVariables.MaxGroup,100);
-                var centreGroupY = WordsGeneral.MakeCenterGroup(0,domVariables.Height,domVariables.MaxGroup);
+                var centreGroupY = WordsGeneral.MakeCenterGroup(0,domVariables.Height,domVariables.MaxGroup,50);
                 
                 
                 var g = svg.append("g");
@@ -209,9 +224,9 @@
                     simulation.tick();
                 }
                 
-                PutLinks(g, graph);
+                var lines = PutLinks(g, graph);
 
-                PutNodes(g, nodes, color);
+                PutNodes(g, graph, lines, nodes, color);
             });
 
         });

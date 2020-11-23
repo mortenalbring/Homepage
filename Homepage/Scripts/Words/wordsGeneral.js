@@ -77,8 +77,6 @@ WordsGeneral.MakeCenterGroup = function(start,end,maxGroup, margin) {
         var elem = i * steps + margin;
         arr.push(elem);
     }
-    console.log("centregroup")
-    console.log(arr);
     return arr;
 }
 

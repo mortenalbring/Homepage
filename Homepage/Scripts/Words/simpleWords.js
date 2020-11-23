@@ -12,6 +12,9 @@
     initSvgStatic(d3.select("#simpleWords1wc"), "simpleWords1pt");
     initSvgStatic(d3.select("#simpleWords2wc"), "simpleWords1pt");
 
+    initSvgStatic(d3.select("#simpleWords1no"), "simpleWords1ptno");
+    
+
 
     function initSvgStatic(svg, containerId) {
 
@@ -142,7 +145,7 @@
                 var width = domVariables.Width;
                 var height = domVariables.Height;
 
-                var centreGroupX = WordsGeneral.MakeCenterGroup(0,domVariables.Width,domVariables.MaxGroup);
+                var centreGroupX = WordsGeneral.MakeCenterGroup(0,domVariables.Width,domVariables.MaxGroup,100);
                 var centreGroupY = WordsGeneral.MakeCenterGroup(0,domVariables.Height,domVariables.MaxGroup);
                 
                 

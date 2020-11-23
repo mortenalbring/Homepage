@@ -80,7 +80,7 @@
 
             nodeGroup.append("title")
                 .text(function (d) {
-                    return d.id;
+                    return "[" + d.group + "] " + d.id;
                 });
             
             nodeGroup.on('mouseover', function(d) {
@@ -193,8 +193,8 @@
                 var width = domVariables.Width;
                 var height = domVariables.Height;
 
-                var centreGroupX = WordsGeneral.MakeCenterGroup(0,domVariables.Width,domVariables.MaxGroup,100);
-                var centreGroupY = WordsGeneral.MakeCenterGroup(0,domVariables.Height,domVariables.MaxGroup,50);
+                var centreGroupX = WordsGeneral.MakeCenterGroup(50,domVariables.Width-50,domVariables.MaxGroup,100);
+                var centreGroupY = WordsGeneral.MakeCenterGroup(50,domVariables.Height-50,domVariables.MaxGroup,50);
                 
                 
                 var g = svg.append("g");
@@ -239,6 +239,7 @@
                 if (domVariables.UseForceYByGroup) {
                     simulation.force('y',d3.forceY().y(function(d) { return centreGroupY[d.group]  }))
                 }
+
                 if (domVariables.UseForceXByGroup) {
                     simulation.force('x',d3.forceX().x(function(d) {return centreGroupX[d.group]; }));
                 }

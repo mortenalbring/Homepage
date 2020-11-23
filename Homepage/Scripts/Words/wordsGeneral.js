@@ -66,16 +66,18 @@ WordsGeneral.FilterDataOnGroup = function (graph, group) {
 
 };
 
-WordsGeneral.MakeCenterGroup = function(start,end,maxGroup, margin) {
+WordsGeneral.MakeCenterGroup = function(start,end,maxGroup) {
     var arr = [];
-    if (!margin) {
-        margin = 0;
-    }
-    var steps = (end - start - margin) / maxGroup ;
+    var steps = (end - start) / maxGroup ;
+    
+     
     
     for (var i=0;i<=maxGroup;i++) {
-        var elem = i * steps + margin;
+        var elem = i * steps;
         arr.push(elem);
+    }
+    if (maxGroup == 10) {
+        console.log(arr);
     }
     return arr;
 }

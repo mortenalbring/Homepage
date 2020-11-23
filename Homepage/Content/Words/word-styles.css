@@ -12,9 +12,6 @@ svg {
     stroke-width: 1.5px;
 }
 
-.nodes circle:hover {
-    opacity:0.0;
-}
 
 text {
     font-family: sans-serif;
@@ -31,9 +28,7 @@ text {
     cursor:pointer;
 }
 
-.node-group:hover circle {
-    opacity:0.5;
-}
+
 .node-group:hover .node-text {
     fill:#000;
 }

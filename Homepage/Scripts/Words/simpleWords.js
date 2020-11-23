@@ -19,6 +19,9 @@
     function initSvgStatic(svg, containerId) {
 
         function PutNodes(g, graph, lines, nodes, color) {
+            
+            var defaultNodeCircleOpacity = 0.2;
+            
             //Group containing circle and text
             var nodeGroup = g.append("g")
                 .attr("class", "nodes")
@@ -30,9 +33,8 @@
             ;
             
             //Circles around nodes
-            nodeGroup.append("circle")
+            var nodeCircles = nodeGroup.append("circle")
                 .attr("r", function (d) {
-
                     return d.id.length * 3;
                 })
                 .attr("cx", function (d) {
@@ -44,7 +46,7 @@
                 .attr("fill", function (d) {
                     return color(d.group);
                 })
-                .attr("opacity", 0.2)
+                .attr("opacity", defaultNodeCircleOpacity)
             ;
 
             //Node text labels
@@ -82,16 +84,47 @@
                 });
             
             nodeGroup.on('mouseover', function(d) {
+                var nodeIds = [];
+                nodeIds.push(d.id);
                 lines.attr('stroke-width', function(ld) {
-                    console.log(ld);
-                    return 20;
+                    
+                    if (ld.source.id === d.id) {
+                        nodeIds.push(ld.target.id);
+                        
+                        return 20;    
+                    }
+                    if (ld.target.id === d.id) {
+                        nodeIds.push(ld.source.id);
+                        
+                        return 20;
+                    }
+                    return 10;
+                    
                 });
-                
+
+                nodeCircles.attr('opacity', function(dd) {
+                    if (nodeIds.includes(dd.id)) {
+                        return 0.5;
+                    }
+
+                    return defaultNodeCircleOpacity;
+                })
+
+
             })
             nodeGroup.on('mouseout', function(d) {
                 lines.attr('stroke-width', function(ld) {
-                    return 7;
+                    return 10;
                 });
+
+                nodeCircles.attr('fill', function(dd) {
+                    return color(dd.group);
+                })
+
+                nodeCircles.attr('opacity', function(dd) {
+                    return defaultNodeCircleOpacity;
+                })
+           
             })
         }
 

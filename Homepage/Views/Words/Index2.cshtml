@@ -13,181 +13,212 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <p>
+            I was interested in a question about words and letter replacement. If I take a word, such as <code>shoot</code>, can I remove a single letter and still make a word?
+            In this case, yes, of course: <code>hoot</code>. In fact, I can make three other words as well: <code>soot, shot, shoo</code>. So how many words do themselves contain words? And which word contains the most words within it?
+        </p>
+
+        <p>
+            To answer these questions, we must decide on what counts as a 'word'. Do we include place names, proper nouns, etc.? Fortunately, <a href="https://en.wikipedia.org/wiki/Official_Scrabble_Players_Dictionary">someone else</a> has done their level best to answer that question, so I'll just take the so-known 'SOWPODS' English word list containing a total of 267,753 words.
+        </p>
+
+        <div>
+            The algorithm for this is remarkably simple:
+            <ul>
+                <li>
+                    Go through every word in the dictionary:
+                    <ul>
+                        <li>
+                            Go through every letter in the word:
+                            <ul>
+                                <li>
+                                    Remove that letter from the word, check if the result is in the dictionary
+                                    <ul>
+                                        <li>If it is, store it alongside the origin (parent) word</li>
+                                        <li>If it isn't, skip it</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
             <p>
-                I was interested in a question about words and letter replacement. If I take a word, such as <code>shoot</code>, can I remove a single letter and still make a word?
-                In this case, yes, of course: <code>hoot</code>. In fact, I can make three other words as well: <code>soot, shot, shoo</code>. So how many words do themselves contain words? And which word contains the most words within it?
+                The code for this, and other questions, is available on <a href="https://github.com/mortenalbring/WordsWithinWords">GitHub</a>.
+            </p>
+
+            <h2>Words within words</h2>
+            <p>
+
+                The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one letter. There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
             </p>
 
             <p>
-                To answer these questions, we must decide on what counts as a 'word'. Do we include place names, proper nouns, etc.? Fortunately, <a href="https://en.wikipedia.org/wiki/Official_Scrabble_Players_Dictionary">someone else</a> has done their level best to answer that question, so I'll just take the so-known 'SOWPODS' English word list containing a total of 267,753 words.
+                As for the words with the most number of words within it: there are five joint winners, each with six words connected to it:
+                '<a target="_blank" href="https://1word.ws/dearns">dearns</a>', '<a target="_blank" href="https://1word.ws/drabblers">drabblers</a>', '<a target="_blank" href="https://1word.ws/heards">heards</a>', '<a target="_blank" href="https://1word.ws/yeards">yeards</a>', and '<a target="_blank" href="https://1word.ws/spared">spared</a>'
             </p>
 
-            <div>
-                The algorithm for this is remarkably simple:
-                <ul>
-                    <li>
-                        Go through every word in the dictionary:
-                        <ul>
-                            <li>
-                                Go through every letter in the word:
-                                <ul>
-                                    <li>
-                                        Remove that letter from the word, check if the result is in the dictionary
-                                        <ul>
-                                            <li>If it is, store it alongside the origin (parent) word</li>
-                                            <li>If it isn't, skip it</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <p>
-                    The code for this, and other questions, is available on <a href="https://github.com/mortenalbring/WordsWithinWords">GitHub</a>.
-                </p>
-                <p>
-                    The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one letter. There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
-                </p>
-
-                <p>
-                    As for the words with the most number of words within it: there are five joint winners, each with 6 subwords
-                </p>
-
-            </div>
-
         </div>
+
     </div>
+</div>
+@* *@
+@* <div class="row"> *@
+@*     <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-6" id="simpleWords1p"> *@
+@*         <svg id="simpleWords1a" class="simpleWords" group="1" *@
+@*              maxgroup="5" *@
+@*              width="150" *@
+@*              height="150" *@
+@*              linkdistance="50" *@
+@*              json="simpleWordDataEnglish.json"> *@
+@*         </svg> *@
+@*     </div> *@
+@* *@
+@*     <div class="col-md-2 col-sm-6 col-xs-6"> *@
+@*         <svg id="simpleWords1b" class="simpleWords" *@
+@*              group="2" *@
+@*              maxgroup="5" *@
+@*              width="150" *@
+@*              height="150" *@
+@*              linkdistance="50" *@
+@*              json="simpleWordDataEnglish.json"> *@
+@*         </svg> *@
+@*     </div> *@
+@* *@
+@*     <div class="col-md-2 col-sm-6 col-xs-6"> *@
+@*         <svg id="simpleWords1c" class="simpleWords" *@
+@*              group="3" *@
+@*              maxgroup="5" *@
+@*              width="150" *@
+@*              height="150" *@
+@*              linkdistance="40" *@
+@*              json="simpleWordDataEnglish.json"> *@
+@*         </svg> *@
+@*     </div> *@
+@* *@
+@*     <div class="col-md-2 col-sm-6 col-xs-6"> *@
+@*         <svg id="simpleWords1d" class="simpleWords" group="4" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg> *@
+@*     </div> *@
+@* *@
+@*     <div class="col-md-2 col-sm-6 col-xs-6"> *@
+@*         <svg id="simpleWords1e" class="simpleWords" group="5" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg> *@
+@*     </div> *@
+@* </div> *@
 
-    <div class="row">
-        <div class="col-md-11 col-md-offset-1">
-            <div class="graph-container">
-
-            </div>
-        </div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1" id="simpleWords1pt">
+        <svg id="simpleWords1t" class="simpleWordsBig"
+             group="-1"
+             maxgroup="5"
+             width="1050"
+             height="250"
+             linkdistance="60"
+             attractforcestrength="40"
+             attractforcedistancemin="40"
+             attractforcedistancemax="2000"
+             repelforcestrength="-20"
+             repelforcedistancemin="0"
+             repelforcedistancemax="40"
+             useforcexbygroup="true"
+             useforceybyheight="true"
+             charge="-10"
+             json="simpleWordDataEnglish.json">
+        </svg>
     </div>
+</div>
 
-
-    <div class="row">
-        <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-6" id="simpleWords1p">
-            <svg id="simpleWords1a" class="simpleWords" group="1" 
-                 maxgroup="5" 
-                 width="150" 
-                 height="150" 
-                 linkdistance="50"
-                 json="simpleWordDataEnglish.json"></svg>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-xs-6">
-            <svg id="simpleWords1b" class="simpleWords" 
-                 group="2" 
-                 maxgroup="5" 
-                 width="150" 
-                 height="150"
-                 linkdistance="50"
-                 json="simpleWordDataEnglish.json"></svg>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-xs-6">
-            <svg id="simpleWords1c" class="simpleWords" 
-                 group="3" 
-                 maxgroup="5" 
-                 width="150" 
-                 height="150" 
-                                  linkdistance="40"
-                 json="simpleWordDataEnglish.json"></svg>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-xs-6">
-            <svg id="simpleWords1d" class="simpleWords" group="4" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-xs-6">
-            <svg id="simpleWords1e" class="simpleWords" group="5" maxgroup="5" width="150" height="150" json="simpleWordDataEnglish.json"></svg>
-        </div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <p>
+            This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. It's also notable that 'eards' is connected to two of the words. 
+        </p>
+        <p>
+            This made me curious about what is the longest chain of words I can make, where removing one letter at a time produces a new word. 
+        </p>
     </div>
+</div>
 
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <p>
-                This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. Also worth noting that 'eards' is in two of the lists, we'll come back to that later!
-            </p>
-            
-            <p>
-                We can of course run this for other languages, provided we can find comprehensive dictionaries in plain text form. This is surprisingly difficult.
-            
-                For Norwegian, the largest list I could find contains 692,872 words - though I cannot be sure it applies the same standards and rules as the scrabble dictionary.
-            </p>
-<p>Running this list finds 347,760 (50.19 %) Norwegian words with other Norwegian words within them.</p>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <svg id="simpleWords1wc"
+             group="1"
+             width="1050"
+             height="250"
+             linkdistance="80"
+             useforceybyheight="true"
+             charge="-80"
+             repelforcestrength="-200"
+             repelforcedistancemin="0"
+             repelforcedistancemax="200"
 
-        </div>
+             json="wordChainEnglish.json">
+        </svg>
     </div>
-    
+</div>
 
 
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1" id="simpleWords1pt">
-            <svg id="simpleWords1t" class="simpleWordsBig" 
-                 group="-1" 
-                 maxgroup="5" 
-                 width="1050"
-                 height="250" 
-                 linkdistance="60"
-                 attractforcestrength="40"
-                 attractforcedistancemin="40"
-                 attractforcedistancemax="2000"
-                 repelforcestrength="-20"
-                 repelforcedistancemin="0"
-                 repelforcedistancemax="40"
-                 useforcexbygroup="true"
-                 useforceybyheight="true"
-                 charge="-10"
-                 json="simpleWordDataEnglish.json"></svg>
-        </div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <svg id="simpleWords2wc"
+             group="2"
+             maxgroup="10"
+             width="1050"
+             height="1050"
+             linkdistance="10"
+             attractforcestrength="100"
+             attractforcedistancemin="4"
+             attractforcedistancemax="2000"
+             repelforcestrength="-2"
+             repelforcedistancemin="0"
+             repelforcedistancemax="4"
+             useforcexbygroup="true"
+             useforceybygroup="true"
+             charge="-1"
+             json="wordChainEnglish.json">
+        </svg>
     </div>
-    
-    
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <svg id="simpleWords1wc" 
-                 group="1" 
-                 width="1050" 
-                 height="250"
-                 linkdistance="80" 
-                 useforceybyheight="true"
-                 charge="-80"
-                 repelforcestrength="-200"
-                 repelforcedistancemin="0"
-                 repelforcedistancemax="200"
+</div>
 
-                 json="wordChainEnglish.json"></svg>
-        </div>
-    </div>
 
-   
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <svg id="simpleWords2wc" 
-                 group="-1" 
-                 maxgroup="10"
-                 width="1050" 
-                 height="1050"
-                linkdistance="10"
-                 attractforcestrength="100"
-                 attractforcedistancemin="4"
-                 attractforcedistancemax="2000"
-                 repelforcestrength="-2"
-                 repelforcedistancemin="0"
-                 repelforcedistancemax="4"
-                 useforcexbygroup="true"
-                 useforceybygroup="true"
-                 charge="-1"
-                 json="wordChainEnglish.json"></svg>
-        </div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+        <h2>Ord innenfor ord</h2>
+        <p>
+            We can of course run this for other languages, provided we can find comprehensive dictionaries in plain text form. This is surprisingly difficult.
+
+            For Norwegian, the largest list I could find contains 692,872 words - though I cannot be sure it applies the same standards and rules as the scrabble dictionary.
+        </p>
+        <p>Running this list finds 347,760 (50.19 %) Norwegian words with other Norwegian words within them.</p>
+
     </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1" id="simpleWords1ptno">
+        <svg id="simpleWords1no" class="simpleWordsBig"
+             group="-1"
+             maxgroup="38"
+             width="1050"
+             height="1050"
+             linkdistance="60"
+             attractforcestrength="40"
+             attractforcedistancemin="40"
+             attractforcedistancemax="2000"
+             repelforcestrength="-20"
+             repelforcedistancemin="0"
+             repelforcedistancemax="40"
+             useforcexbygroup="true"
+             useforceybyheight="true"
+             charge="-10"
+             json="simpleWordDataNorsk.json">
+        </svg>
+    </div>
+</div>
+
 
 </div>
 

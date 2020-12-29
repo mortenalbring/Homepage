@@ -62,10 +62,12 @@
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
                     .force("collide", d3.forceCollide(20))
+                    //.force("forceRadial", d3.forceRadial(150,domVars.Width/2,domVars.Height/2).strength(0.1))
                 ;
 
                 simulation
                     .nodes(graph.nodes);
+
 
                 simulation.force("link")
                     .links(graph.links);
@@ -97,11 +99,15 @@
                 //Group containing circle and text
                 var nodeGroup = g.append("g")
                         .attr("class", "nodes")
+                    
                         .selectAll("g")
                     .data(nodes)
                     .enter()
+                    
                     .append("g")
                     .attr("class", "node-group")
+                    
+                    
                 ;
 
 
@@ -117,6 +123,7 @@
                         return color(d.group);
                     })
                     .attr("opacity", 0.1)
+                    
                 ;
 
                 //Node text labels
@@ -135,10 +142,10 @@
                         }
                         return className;
                     })
-                    .attr('x', function (d) {
-                        return d.x;
-                    })
+                    
+                    .attr('x', function (d) {return d.x;})
                     .attr('y', function(d) {return d.y})
+                    .on("mouseover", function(d) { console.log(d);})
                 ///.call(d3.drag()
                 // .on("start", dragstarted)
                 // .on("drag", dragged)

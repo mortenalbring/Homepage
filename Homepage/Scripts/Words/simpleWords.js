@@ -10,21 +10,195 @@
     });
 
     initSvgStatic(d3.select("#simpleWords1wc"), "simpleWords1pt");
+    initSvgStatic(d3.select("#simpleWords2wc"), "simpleWords1pt");
+
+    initSvgStatic(d3.select("#simpleWords1no"), "simpleWords1ptno");
     
-    
+
+
     function initSvgStatic(svg, containerId) {
+
+        function PutNodes(g, graph, lines, nodes, color) {
+            
+            var defaultNodeCircleOpacity = 0.2;
+            
+            //Group containing circle and text
+            var nodeGroup = g.append("g")
+                .attr("class", "nodes")
+                .selectAll("g")
+                .data(nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node-group")
+            ;
+            
+            //Circles around nodes
+            var nodeCircles = nodeGroup.append("circle")
+                .attr("r", function (d) {
+                    return d.id.length * 3;
+                })
+                .attr("cx", function (d) {
+                    return d.x;
+                })
+                .attr("cy", function (d) {
+                    return d.y;
+                })
+                .attr("fill", function (d) {
+                    return color(d.group);
+                })
+                .attr("opacity", defaultNodeCircleOpacity)
+            ;
+
+            //Node text labels
+            nodeGroup.append("text")
+                .text(function (d) {
+                    return d.id;
+                })
+                .attr("text-anchor", "middle")
+                .attr("fill", function (d) {
+                    return "#111";
+                })
+                .attr('class', function (d) {
+                    var className = "node-text";
+                    if (d.type && d.type === 1) {
+                        className = className + " bold";
+                    }
+                    return className;
+                })
+                .attr('x', function (d) {
+                    return d.x;
+                })
+                .attr('y', function (d) {
+                    return d.y
+                })
+            ///.call(d3.drag()
+            // .on("start", dragstarted)
+            // .on("drag", dragged)
+            // .on("end", dragended))
+            ;
+
+
+            nodeGroup.append("title")
+                .text(function (d) {
+                    return "[" + d.group + "] " + d.id;
+                });
+            
+            nodeGroup.on('mouseover', function(d) {
+                var nodeIds = [];
+                nodeIds.push(d.id);
+                lines.attr('stroke-width', function(ld) {
+                    
+                    if (ld.source.id === d.id) {
+                        nodeIds.push(ld.target.id);
+                        
+                        return 20;    
+                    }
+                    if (ld.target.id === d.id) {
+                        nodeIds.push(ld.source.id);
+                        
+                        return 20;
+                    }
+                    return 10;
+                    
+                });
+
+                nodeCircles.attr('opacity', function(dd) {
+                    if (nodeIds.includes(dd.id)) {
+                        return 0.5;
+                    }
+
+                    return defaultNodeCircleOpacity;
+                })
+
+
+            })
+            nodeGroup.on('mouseout', function(d) {
+                lines.attr('stroke-width', function(ld) {
+                    return 10;
+                });
+
+                nodeCircles.attr('fill', function(dd) {
+                    return color(dd.group);
+                })
+
+                nodeCircles.attr('opacity', function(dd) {
+                    return defaultNodeCircleOpacity;
+                })
+           
+            })
+        }
+
+        function PutLinks(g, graph) {
+            //Group containing link line and link text
+            var linkGroup = g.append("g")
+                .attr("class", "links")
+                .selectAll("g")
+                .data(graph.links)
+                .enter()
+                .append("g")
+
+                .attr("class", "link-group");
+
+
+            //Lines connecting nodes
+           var lines = linkGroup.append("line")
+                .attr("x1", function (d) {
+                    return d.source.x;
+                })
+                .attr("y1", function (d) {
+                    return d.source.y;
+                })
+                .attr("x2", function (d) {
+                    return d.target.x;
+                })
+                .attr("y2", function (d) {
+                    return d.target.y;
+                })
+                .attr("stroke-width", function (d) {
+                    return 10;
+                });
+
+            //Tiny text along link lines
+            linkGroup.append("text")
+                .attr('x', function (d) {
+                    return d.x;
+                })
+                .attr('y', function (d) {
+                    return d.y
+                })
+                .attr("transform", function (d) {
+                    var resX = (d.source.x + d.target.x) / 2;
+                    var resY = (d.source.y + d.target.y) / 2;
+
+                    return "translate(" + resX + "," + resY + ")";
+                })
+                .text(function (d) {
+                    if (d.diffChar) {
+                        return d.diffChar
+                    } else {
+                        return "";
+                    }
+                });
+            
+            return lines;
+        }
 
 // Use a timeout to allow the rest of the page to load first.
         d3.timeout(function() {
-            var domVars = WordsGeneral.ParseDomVariables(svg, containerId);
-            d3.json("/Scripts/Words/Json/" + domVars.JsonPath).then(function (graph) {
+            var domVariables = WordsGeneral.ParseDomVariables(svg, containerId);
+            
+            d3.json("/Scripts/Words/Json/" + domVariables.JsonPath).then(function (graph) {
 
                 
-                var width = domVars.Width;
-                var height = domVars.Height;
+                var width = domVariables.Width;
+                var height = domVariables.Height;
 
+                var centreGroupX = WordsGeneral.MakeCenterGroup(50,domVariables.Width-50,domVariables.MaxGroup,100);
+                var centreGroupY = WordsGeneral.MakeCenterGroup(50,domVariables.Height-50,domVariables.MaxGroup,50);
+                
+                
                 var g = svg.append("g");
-                WordsGeneral.FilterDataOnGroup(graph, domVars.Group);
+                WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
 
                 var nodes = graph.nodes;
                 var links = graph.links;
@@ -34,176 +208,59 @@
                 var n = 100;
                 var radius = 14;
                 var color = d3.scaleLinear()
-                    .domain([1, domVars.MaxGroup])
-                    .range(["red", "orange", "yellow", "green", "blue", "indigo", "violet"]);
+                    .domain([1, domVariables.MaxGroup])
+                    .range(["red", "blue", "green"]);
 
                 var attractForce = d3.forceManyBody()
-                    .strength(domVars.AttractForce.Strength)
-                    .distanceMax(domVars.AttractForce.DistanceMax)
-                    .distanceMin(domVars.AttractForce.DistanceMin);
-
+                    .strength(domVariables.AttractForce.Strength)
+                    .distanceMax(domVariables.AttractForce.DistanceMax)
+                    .distanceMin(domVariables.AttractForce.DistanceMin);
                 var repelForce = d3.forceManyBody()
-                    .strength(domVars.RepelForce.Strength)
-                    .distanceMax(domVars.RepelForce.DistanceMax)
-                    .distanceMin(domVars.RepelForce.DistanceMin);
-
-
-                //var repelForce = d3.forceManyBody().strength(-40).distanceMax(80).distanceMin(10);
-
-
-
+                    .strength(domVariables.RepelForce.Strength)
+                    .distanceMax(domVariables.RepelForce.DistanceMax)
+                    .distanceMin(domVariables.RepelForce.DistanceMin);
+                
                 var simulation = d3.forceSimulation()
                     .force("link", d3.forceLink().id(function (d) {
                         return d.id;
-                    }).distance(domVars.LinkDistance).iterations(1))
-                    .force("charge", d3.forceManyBody().strength(domVars.Charge))
-                    //        .force('y', forceY)
-                    .force("center", d3.forceCenter(domVars.Width / 2, domVars.Height / 2).strength(1.0))
+                    }).distance(domVariables.LinkDistance).iterations(1))
+                    .force("charge", d3.forceManyBody().strength(domVariables.Charge))
+                    .force('center', d3.forceCenter().x((domVariables.Width/2)).y((domVariables.Height/2)))
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
-                    .force("collide", d3.forceCollide(20))
-                    //.force("forceRadial", d3.forceRadial(150,domVars.Width/2,domVars.Height/2).strength(0.1))
+                    .force('collision', d3.forceCollide().radius(function(d) {
+                        return d.id.length * 2.9
+                    }))
+                    
                 ;
+                if (domVariables.UseForceYByHeight) {
+                simulation.force('y',d3.forceY().y(function(d) { return domVariables.Height /2  }))
+                }
+                if (domVariables.UseForceYByGroup) {
+                    simulation.force('y',d3.forceY().y(function(d) { return centreGroupY[d.group]  }))
+                }
+
+                if (domVariables.UseForceXByGroup) {
+                    simulation.force('x',d3.forceX().x(function(d) {return centreGroupX[d.group]; }));
+                }
 
                 simulation
                     .nodes(graph.nodes);
 
-
                 simulation.force("link")
                     .links(graph.links);
 
-                //simulation.start();
-             //   simulation.stop();
+                simulation.stop();
 
 
                 // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
                     simulation.tick();
-
-
-                    // if (i < (n-1)) {
-                    //     for (var j = 0; j< graph.nodes.length; j++) {
-                    //         if (graph.nodes[j].x > width) {
-                    //             graph.nodes[j].x = graph.nodes[j].x = width /2;
-                    //         }
-                    //
-                    //         if (graph.nodes[j].y > height) {
-                    //             graph.nodes[j].y = height / 2;
-                    //         }
-                    //     }
-                    //
-                    // }
-                    
                 }
-
-                //Group containing circle and text
-                var nodeGroup = g.append("g")
-                        .attr("class", "nodes")
-                    
-                        .selectAll("g")
-                    .data(nodes)
-                    .enter()
-                    
-                    .append("g")
-                    .attr("class", "node-group")
-                    
-                    
-                ;
-
-
-                //Circles around nodes
-                nodeGroup.append("circle")
-                    .attr("r", function(d) {
-
-                        return d.id.length * 2.5;
-                    } )
-                    .attr("cx", function(d) { return d.x; })
-                    .attr("cy", function(d) { return d.y; })
-                    .attr("fill", function (d) {
-                        return color(d.group);
-                    })
-                    .attr("opacity", 0.1)
-                    
-                ;
-
-                //Node text labels
-                nodeGroup.append("text")
-                    .text(function (d) {
-                        return d.id;
-                    })
-                    .attr("text-anchor", "middle")
-                    .attr("fill", function (d) {
-                        return "#111";
-                    })
-                    .attr('class', function (d) {
-                        var className = "node-text";
-                        if (d.type && d.type === 1) {
-                            className = className + " bold";
-                        }
-                        return className;
-                    })
-                    
-                    .attr('x', function (d) {return d.x;})
-                    .attr('y', function(d) {return d.y})
-                    .on("mouseover", function(d) { console.log(d);})
-                ///.call(d3.drag()
-                // .on("start", dragstarted)
-                // .on("drag", dragged)
-                // .on("end", dragended))
-                ;
-
-
-                nodeGroup.append("title")
-                    .text(function (d) {
-                        return d.id;
-                    });
-
-                //Group containing link line and link text
-                var linkGroup = g.append("g")
-                    .attr("class", "links")
-                    .selectAll("g")
-                    .data(graph.links)
-                    .enter()
-                    .append("g")
-                    
-                    .attr("class", "link-group");
-
-
-                //Lines connecting nodes
-                linkGroup.append("line")
-                    .attr("x1", function(d) { return d.source.x; })
-                    .attr("y1", function(d) { return d.source.y; })
-                    .attr("x2", function(d) { return d.target.x; })
-                    .attr("y2", function(d) { return d.target.y; })
-                    .attr("stroke-width", function (d) {
-                        return Math.sqrt(d.value);
-                    });
-
-                //Tiny text along link lines
-                linkGroup.append("text")
-                    .attr('x', function (d) {
-                        return d.x;
-                    })
-                    .attr('y', function(d) {return d.y})
-                    .attr("transform", function (d) {
-                        var resX = (d.source.x + d.target.x) / 2;
-                        var resY = (d.source.y + d.target.y) / 2;
-
-                        return "translate(" + resX + "," + resY + ")";
-                    })
-                    .text(function (d) {
-                        if (d.diffChar) {
-                            return d.diffChar
-                        } else {
-                            return "";
-                        }
-                    });
                 
-                simulation.on('tick', function(e) {
-                    console.log("tick");
-                })
+                var lines = PutLinks(g, graph);
 
-                
+                PutNodes(g, graph, lines, nodes, color);
             });
 
         });

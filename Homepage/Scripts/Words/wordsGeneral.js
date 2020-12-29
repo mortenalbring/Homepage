@@ -66,24 +66,43 @@ WordsGeneral.FilterDataOnGroup = function (graph, group) {
 
 };
 
+WordsGeneral.MakeCenterGroup = function(start,end,maxGroup) {
+    var arr = [];
+    var steps = (end - start) / maxGroup ;
+    
+     
+    
+    for (var i=0;i<=maxGroup;i++) {
+        var elem = i * steps;
+        arr.push(elem);
+    }
+    if (maxGroup == 10) {
+        console.log(arr);
+    }
+    return arr;
+}
+
 WordsGeneral.ParseDomVariables = function (svg, containerId) {
-    var output = {};
+    var output = {
+    };
     output.LinkDistance = 40;
     output.MaxGroup = 1;
     output.Group = 1;
     output.JsonPath = "";
-    output.AttractForce = {}
-    output.AttractForce.Strength = 50;
-    output.AttractForce.DistanceMax = 200;
+    output.AttractForce = {};
+    output.AttractForce.Strength = 5;
+    output.AttractForce.DistanceMax = 400;
     output.AttractForce.DistanceMin = 60;
 
-    output.RepelForce = {}
+    output.RepelForce = {};
     output.RepelForce.Strength = -40;
     output.RepelForce.DistanceMax = 80;
     output.RepelForce.DistanceMin = 10;
+    output.UseForceYByHeight = false;
+    output.UseForceYByGroup = false;
+    output.UseForceXByGroup = false;
     
-    output.Charge = -80;
-
+output.Charge = -80;
 
     output.Height = 50;
     output.Width = 50;
@@ -106,32 +125,41 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
         output.MaxGroup = parseInt(svg.attr("maxgroup"));
     }
     if (svg.attr("linkdistance") != null) {
-        output.LinkDistance = svg.attr("linkdistance");
+        output.LinkDistance = parseInt(svg.attr("linkdistance"));
     }
-
-    if (svg.attr("attractforce-strength") != null) {
-        output.AttractForce.Strength = svg.attr("attractforce-strength");
+    if (svg.attr("attractforcestrength") != null) {
+        output.AttractForce.Strength = parseInt(svg.attr("attractforcestrength"));
     }
-    if (svg.attr("attractforce-distancemax") != null) {
-        output.AttractForce.DistanceMax = svg.attr("attractforce-distancemax");
+    if (svg.attr("attractforcedistancemax") != null) {
+        output.AttractForce.DistanceMax = parseInt(svg.attr("attractforcedistancemax"));
     }
-    if (svg.attr("attractforce-distancemin") != null) {
-        output.AttractForce.DistanceMin = svg.attr("attractforce-distancemin");
+    if (svg.attr("attractforcedistancemin") != null) {
+        output.AttractForce.DistanceMin = parseInt(svg.attr("attractforcedistancemin"));
     }
-
-    if (svg.attr("repelforce-strength") != null) {
-        output.RepelForce.Strength = svg.attr("repelforce-strength");
+    if (svg.attr("repelforcestrength") != null) {
+        output.RepelForce.Strength = parseInt(svg.attr("repelforcestrength"));
     }
-    if (svg.attr("repelforce-distancemax") != null) {
-        output.RepelForce.DistanceMax = svg.attr("repelforce-distancemax");
+    if (svg.attr("repelforcedistancemax") != null) {
+        output.RepelForce.DistanceMax = parseInt(svg.attr("repelforcedistancemax"));
     }
-    if (svg.attr("repelforce-distancemin") != null) {
-        output.RepelForce.DistanceMin = svg.attr("repelforce-distancemin");
+    if (svg.attr("repelforcedistancemin") != null) {
+        output.RepelForce.DistanceMin = parseInt(svg.attr("repelforcedistancemin"));
     }
     
     if (svg.attr("charge") != null) {
-        output.Charge = svg.attr("charge");
+        output.RepelForce.DistanceMin = parseInt(svg.attr("charge"));
     }
+
+    if (svg.attr("useforceybyheight") != null) {
+        output.UseForceYByHeight = true;
+    }
+    if (svg.attr("useforcexbygroup") != null) {
+        output.UseForceXByGroup = true;
+    }
+    if (svg.attr("useforceybygroup") != null) {
+        output.UseForceYByGroup = true;
+    }
+
 
     if (svg.attr("json") != null) {
         output.JsonPath = svg.attr("json");

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -15,7 +16,8 @@ namespace Homepage.Projects.Words
             var filteredResult = new WordOutput();
             try
             {
-                var result = DeSerializeObject<WordOutput>("C:\\temp\\hp\\Homepage\\Content\\EnglishSowpodsClusterJsonSerial.xml");
+                var filePath =  HttpContext.Current.Server.MapPath("~/Content/EnglishSowpodsClusterJsonSerial.xml");
+                var result = DeSerializeObject<WordOutput>(filePath);
 
               
                 filteredResult.nodes = new HashSet<WordNode>();

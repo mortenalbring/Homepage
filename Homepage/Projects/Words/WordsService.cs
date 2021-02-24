@@ -16,7 +16,7 @@ namespace Homepage.Projects.Words
             var filteredResult = new WordOutput();
             try
             {
-                var filePath =  HttpContext.Current.Server.MapPath("~/Content/EnglishSowpodsClusterJsonSerial.xml");
+                var filePath =  HttpContext.Current.Server.MapPath("~/Content/EnglishSowpodsdeepwordchainSerial.xml");
                 var result = DeSerializeObject<WordOutput>(filePath);
 
               

@@ -194,3 +194,4 @@ Homepage/ConnectionStrings.config
 .vs/
 Homepage/packages/*
 *.pubxml
+.merge_file_*

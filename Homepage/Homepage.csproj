@@ -326,6 +326,7 @@
     <Content Include="Content\images\fractalChaos\triangle_VaryAngle6.gif" />
     <Content Include="Content\images\fractalChaos\triangle_VaryRatio.gif" />
     <Content Include="Content\images\me.png" />
+    <Content Include="Content\images\me2.png" />
     <Content Include="Content\images\menger\menger-layers-loop.gif" />
     <Content Include="Content\images\menger\menger-level-0-sm.png" />
     <Content Include="Content\images\menger\menger-level-0.png" />

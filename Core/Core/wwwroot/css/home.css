@@ -13,6 +13,8 @@
 .ma-img-container {
     position:relative;
     display:inline-block;
+    border:2px solid rgba(184, 218, 255, 0.07);
+    border-radius: 10px;
 }
 
 .ma-img-container .ma-overlay{
@@ -23,13 +25,19 @@
     height:100%;
     background:rgb(0,170,170);
     opacity:0;
-    border:10px solid #b8daff;
+    border:10px solid rgb(0,170,170);
     border-radius:5px;
 
-    transition:opacity 500ms ease-in-out, border-radius 500ms, border-width 500ms;
+    transition:opacity 500ms ease-in-out, 
+    border-radius 500ms ease-in-out, 
+    border-width 500ms ease-in-out, 
+    border-top-color 500ms ease-in-out,
+    border-right-color 500ms ease-in-out,
+    border-left-color 500ms ease-in-out,
+    border-bottom-color 500ms ease-in-out;
 }
 .ma-img-container:hover .ma-overlay{
-    border:1px solid #3b3b3b;
+    border:10px solid #3b3b3b;
     border-radius:15px;
     opacity:0.8;
 }

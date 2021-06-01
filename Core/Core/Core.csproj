@@ -8,4 +8,46 @@
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
     </ItemGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Controllers\HomeController\Home.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Home.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Controllers\HomeController\Home.no.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Home.no.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Home\Index.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Home\Index.no.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.no.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Controllers\HomeController\Home.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Home.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Controllers\HomeController\Home.no.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Home.no.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Home\Index.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Home\Index.no.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.no.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

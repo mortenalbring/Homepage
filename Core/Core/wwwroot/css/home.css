@@ -5,9 +5,12 @@
 }
 .ma-overlay span{
     position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+    padding-left:5px;
+    padding-right:5px;
+    text-align: center;
+    /*top:50%;*/
+    /*left:50%;*/
+    /*transform:translate(-50%,-50%);*/
     color:#000;
 }
 .ma-img-container {

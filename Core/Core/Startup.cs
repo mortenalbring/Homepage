@@ -30,7 +30,7 @@ namespace Core
             builder.AddRazorRuntimeCompilation();
             
             services.AddLocalization(options => options.ResourcesPath = "Resources");
-            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder);
+            
             
             services.Configure<RequestLocalizationOptions>(
                 opts =>
@@ -38,13 +38,22 @@ namespace Core
                     var supportedCultures = new[]
                     {
                         new CultureInfo("en-GB"),
+                        new CultureInfo("nb-NO"),
                     };
                     opts.DefaultRequestCulture = new RequestCulture("nb-NO");
                     // Formatting numbers, dates, etc.
                     opts.SupportedCultures = supportedCultures;
                     // UI strings that we have localized.
                     opts.SupportedUICultures = supportedCultures;
+                    opts.RequestCultureProviders = new List<IRequestCultureProvider>
+                    {
+                        new QueryStringRequestCultureProvider(),
+                        new CookieRequestCultureProvider()
+                    };
+                 
                 });
+            
+            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +70,8 @@ namespace Core
                 app.UseHsts();
             }
 
+            app.UseRequestLocalization();
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

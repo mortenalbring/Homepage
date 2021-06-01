@@ -21,9 +21,9 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Index.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Views\Home\Index.no.resx">
+      <EmbeddedResource Update="Resources\Views\Home\Index.nb.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Index.no.Designer.cs</LastGenOutput>
+        <LastGenOutput>Index.nb.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
@@ -43,7 +43,7 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>Index.resx</DependentUpon>
       </Compile>
-      <Compile Update="Resources\Views\Home\Index.no.Designer.cs">
+      <Compile Update="Resources\Views\Home\Index.nb.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>Index.no.resx</DependentUpon>

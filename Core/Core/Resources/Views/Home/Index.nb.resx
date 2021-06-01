@@ -21,4 +21,7 @@
     <data name="test" xml:space="preserve">
         <value>bbbb</value>
     </data>
+    <data name="Language:" xml:space="preserve">
+        <value>Språk:</value>
+    </data>
 </root>

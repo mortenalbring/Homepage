@@ -61,6 +61,15 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language:.
+        /// </summary>
+        internal static string Language_ {
+            get {
+                return ResourceManager.GetString("Language:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to aaaa.
         /// </summary>
         internal static string test {

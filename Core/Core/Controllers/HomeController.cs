@@ -46,14 +46,7 @@ namespace Core.Controllers
             
             var currentCulture = CultureInfo.CurrentCulture;
 
-            if (currentCulture.Name == "en-GB")
-            {
-                culture = "nb-NO";
-            }
-            else
-            {
-                culture = "en-GB";
-            }
+            culture = currentCulture.Name == "en-GB" ? "nb-NO" : "en-GB";
             
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,

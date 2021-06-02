@@ -3,34 +3,31 @@
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.Extensions.Options
+@using System.Globalization
 
 @inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
 
 @{
-    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
-    var cultureItems = LocOptions.Value.SupportedUICultures
-        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
-        .ToList();
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
 }
+<div>
 
-<div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
-    <form id="selectLanguage" asp-controller="Home"
-          asp-action="SetLanguage" asp-route-returnUrl="@returnUrl"
-          method="post" class="form-horizontal" role="form">
-        <select name="culture"
-                onchange="this.form.submit();"
-                asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
-        </select>
-
-
-    </form>
     
     <form id="toggleLanguage" asp-controller="Home" asp-action="ToggleLanguage" asp-route-returnUrl="@returnUrl"       method="post" class="form-horizontal" role="form">
-        <button type="submit">
-            toggle
-        </button>
+        <button type="submit" class="btn">
             
+        
+        @if (CultureInfo.CurrentCulture.Name == "en-GB")
+        {
+            <img src="/images/home/langtoggle-gb.png" height="30" width="30">
+        }
+        else
+        {
+            <img src="/images/home/langtoggle-no.png" height="30" width="30">
+        }
+        </button>                              
+            
+
     </form>
 </div>

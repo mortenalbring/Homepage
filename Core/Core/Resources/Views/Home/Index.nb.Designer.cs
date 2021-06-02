@@ -61,6 +61,15 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hallo! jeg er Morten. Jeg er en programmerer med en interesse i datavisualisering. .
+        /// </summary>
+        internal static string IntroPart1 {
+            get {
+                return ResourceManager.GetString("IntroPart1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Språk:.
         /// </summary>
         internal static string Language_ {

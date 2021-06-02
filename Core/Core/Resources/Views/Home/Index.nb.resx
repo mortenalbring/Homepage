@@ -24,4 +24,7 @@
     <data name="Language:" xml:space="preserve">
         <value>Språk:</value>
     </data>
+    <data name="IntroPart1" xml:space="preserve">
+        <value>Hallo! jeg er Morten. Jeg er en programmerer med en interesse i datavisualisering. </value>
+    </data>
 </root>

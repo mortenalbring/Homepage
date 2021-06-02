@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -37,6 +38,31 @@ namespace Core.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult ToggleLanguage(string returnUrl)
+        {
+            var culture = "";
+            
+            var currentCulture = CultureInfo.CurrentCulture;
+
+            if (currentCulture.Name == "en-GB")
+            {
+                culture = "nb-NO";
+            }
+            else
+            {
+                culture = "en-GB";
+            }
+            
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+            return LocalRedirect(returnUrl);
+        }
+        
         [AllowAnonymous]
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)

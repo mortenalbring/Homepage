@@ -22,7 +22,7 @@ namespace Core.Resources.Views.Home {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Index {
+    public class Index {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Core.Resources.Views.Home {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Core.Resources.Views.Home.Index", typeof(Index).Assembly);
@@ -51,7 +51,7 @@ namespace Core.Resources.Views.Home {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,27 +61,54 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Fractal Chaos.
         /// </summary>
-        internal static string hello {
+        public static string FractalChaos {
             get {
-                return ResourceManager.GetString("hello", resourceCulture);
+                return ResourceManager.GetString("FractalChaos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The chaos game is a game of very simple rules that produces remarkable fractal structures. This post explores a variety of different structures and the code used to generate them..
+        /// </summary>
+        public static string FractalChaosTextLong {
+            get {
+                return ResourceManager.GetString("FractalChaosTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hello! I&apos;m Morten. I&apos;m a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. .
         /// </summary>
-        internal static string IntroPart1 {
+        public static string IntroPart1 {
             get {
                 return ResourceManager.GetString("IntroPart1", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I have a background in Theoretical Physics and I have a particular interest in Quantum Computing..
+        /// </summary>
+        public static string IntroPart2 {
+            get {
+                return ResourceManager.GetString("IntroPart2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language:.
         /// </summary>
-        internal static string Language_ {
+        public static string Language_ {
             get {
                 return ResourceManager.GetString("Language:", resourceCulture);
             }
@@ -90,7 +117,7 @@ namespace Core.Resources.Views.Home {
         /// <summary>
         ///   Looks up a localized string similar to aaaa.
         /// </summary>
-        internal static string test {
+        public static string test {
             get {
                 return ResourceManager.GetString("test", resourceCulture);
             }

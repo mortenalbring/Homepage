@@ -25,6 +25,18 @@
         <value>Språk:</value>
     </data>
     <data name="IntroPart1" xml:space="preserve">
-        <value>Hallo! jeg er Morten. Jeg er en programmerer med en interesse i datavisualisering. </value>
+        <value>Hallo! Jeg er Morten. Jeg er en programmerer med en interesse i datavisualisering. Jeg elsker å bygge raske og responsive webapplikasjoner.</value>
+    </data>
+    <data name="IntroPart2" xml:space="preserve">
+        <value>Jeg studerte teoretisk fysikk og jeg er særlig interessert i kaotiske systemer.</value>
+    </data>
+    <data name="FractalChaos" xml:space="preserve">
+        <value>Fraktalkaos</value>
+    </data>
+    <data name="FractalChaosTextLong" xml:space="preserve">
+        <value>Kaos spillet er et matematisk spill med veldig enkle regler som lager bemerkelsesverdige fraktalstrukturer. </value>
+    </data>
+    <data name="Home" xml:space="preserve">
+        <value>Hjem</value>
     </data>
 </root>

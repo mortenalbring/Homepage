@@ -24,10 +24,19 @@
     <data name="Language:" xml:space="preserve">
         <value>Language:</value>
     </data>
-    <data name="hello" xml:space="preserve">
-        <value />
-    </data>
     <data name="IntroPart1" xml:space="preserve">
         <value>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </value>
+    </data>
+    <data name="IntroPart2" xml:space="preserve">
+        <value>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</value>
+    </data>
+    <data name="FractalChaos" xml:space="preserve">
+        <value>Fractal Chaos</value>
+    </data>
+    <data name="FractalChaosTextLong" xml:space="preserve">
+        <value>The chaos game is a game of very simple rules that produces remarkable fractal structures. This post explores a variety of different structures and the code used to generate them.</value>
+    </data>
+    <data name="Home" xml:space="preserve">
+        <value>Home</value>
     </data>
 </root>

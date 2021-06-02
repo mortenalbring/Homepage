@@ -1,10 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
-@using Core.Controllers
 @{
     ViewData["Title"] = "Morten Albring - Personal Homepage";
     
-@inject IViewLocalizer Localizer
-
+    @inject IViewLocalizer Localizer
+        
     }
 
 <div class="text-center">
@@ -19,8 +18,7 @@
         </div>
         <div class="col-sm text-secondary">
             <p>@Localizer["IntroPart1"]</p>
-            <p>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </p>
-            <p>I have a background in Theoretical Physics and I have a particular interest in Quantum Computing.</p>
+            <p>@Localizer["IntroPart2"]</p>
         </div>
 
     </div>
@@ -32,10 +30,10 @@
                     <img src="images/home/cover-fractalchaos.png" class="img-fluid" alt="Fractal Chaos">
                     <div class="ma-overlay">
                         <span>
-                            <strong>Fractal Chaos</strong>
+                            <strong>@Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaos)]</strong>
                             <br/>
                             <p class="d-none d-xl-block d-lg-block">
-                                The chaos game is a game of very simple rules that produces remarkable fractal structures. This post explores a variety of different structures and the code used to generate them.
+                                @Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)]
                             </p>
                             <p class="d-xl-none d-lg-none">
                                 Rendering fractal structures using the chaos game

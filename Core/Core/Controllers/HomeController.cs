@@ -53,6 +53,8 @@ namespace Core.Controllers
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
+
+            returnUrl = returnUrl + "?culture=" + culture;
             return LocalRedirect(returnUrl);
         }
         
@@ -66,6 +68,7 @@ namespace Core.Controllers
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
 
+             
             return LocalRedirect(returnUrl);
         }
         public IActionResult Privacy()

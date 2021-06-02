@@ -22,7 +22,7 @@ namespace Core.Resources.Views.Home {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Index_nb {
+    public class Index_nb {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Core.Resources.Views.Home {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Core.Resources.Views.Home.Index.nb", typeof(Index_nb).Assembly);
@@ -51,7 +51,7 @@ namespace Core.Resources.Views.Home {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,18 +61,54 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hallo! jeg er Morten. Jeg er en programmerer med en interesse i datavisualisering. .
+        ///   Looks up a localized string similar to Fraktalkaos.
         /// </summary>
-        internal static string IntroPart1 {
+        public static string FractalChaos {
+            get {
+                return ResourceManager.GetString("FractalChaos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kaos spillet er et matematisk spill med veldig enkle regler som lager bemerkelsesverdige fraktalstrukturer. .
+        /// </summary>
+        public static string FractalChaosTextLong {
+            get {
+                return ResourceManager.GetString("FractalChaosTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hjem.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hallo! Jeg er Morten. Jeg er en programmerer med en interesse i datavisualisering. Jeg elsker å bygge raske og responsive webapplikasjoner..
+        /// </summary>
+        public static string IntroPart1 {
             get {
                 return ResourceManager.GetString("IntroPart1", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jeg studerte teoretisk fysikk og jeg er særlig interessert i kaotiske systemer..
+        /// </summary>
+        public static string IntroPart2 {
+            get {
+                return ResourceManager.GetString("IntroPart2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Språk:.
         /// </summary>
-        internal static string Language_ {
+        public static string Language_ {
             get {
                 return ResourceManager.GetString("Language:", resourceCulture);
             }
@@ -81,7 +117,7 @@ namespace Core.Resources.Views.Home {
         /// <summary>
         ///   Looks up a localized string similar to bbbb.
         /// </summary>
-        internal static string test {
+        public static string test {
             get {
                 return ResourceManager.GetString("test", resourceCulture);
             }

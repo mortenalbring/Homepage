@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core {
+namespace Core.Resources.Views.Shared {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Core {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Home {
+    internal class _Layout_nb {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Home() {
+        internal _Layout_nb() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Core {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Core.Resources.Home", typeof(Home).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Core.Resources.Views.Shared._Layout.nb", typeof(_Layout_nb).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,11 @@ namespace Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to en-GB.
+        ///   Looks up a localized string similar to Hjem.
         /// </summary>
-        internal static string test {
+        internal static string Home {
             get {
-                return ResourceManager.GetString("test", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to en-GB.
-        /// </summary>
-        internal static string test2 {
-            get {
-                return ResourceManager.GetString("test2", resourceCulture);
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
     }

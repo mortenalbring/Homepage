@@ -7,18 +7,17 @@
     }
 
 <div class="text-center">
-    <h1 class="display-4 text-light">Morten Alexander Albring</h1>
+    <h1 class="display-3 text-light ma-title">Morten Alexander Albring</h1>
 </div>
 
 <div class="container ">
     <div class="row">
         <div class="col-sm">
-            @System.DateTime.Now.Year - Localization
-             @await Html.PartialAsync("_SelectLanguagePartial")
+            @await Html.PartialAsync("_SelectLanguagePartial")
         </div>
         <div class="col-sm text-secondary">
-            <p>@Localizer["IntroPart1"]</p>
-            <p>@Localizer["IntroPart2"]</p>
+            <p class="ma-blurb">@Localizer["IntroPart1"]</p>
+            <p class="ma-blurb">@Localizer["IntroPart2"]</p>
         </div>
 
     </div>

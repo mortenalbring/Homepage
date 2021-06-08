@@ -30,8 +30,7 @@ namespace Core
             builder.AddRazorRuntimeCompilation();
             
             services.AddLocalization(options => options.ResourcesPath = "Resources");
-            
-            
+
             services.Configure<RequestLocalizationOptions>(
                 opts =>
                 {

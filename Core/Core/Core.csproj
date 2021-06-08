@@ -51,7 +51,29 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Pages" />
       <Folder Include="Resources\Controllers\HomeController" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-Black.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-BlackItalic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-Bold.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-BoldItalic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-ExtraBold.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-ExtraBoldItalic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-ExtraLight.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-ExtraLightItalic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-Italic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-Light.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-LightItalic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-Medium.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-MediumItalic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-Regular.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-SemiBold.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-SemiBoldItalic.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-Thin.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\fonts\Montserrat-ThinItalic.ttf" />
     </ItemGroup>
 
 </Project>

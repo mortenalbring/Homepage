@@ -22,7 +22,7 @@ namespace Core.Controllers
         private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
 
         public HomeController(IStringLocalizer<HomeController> localizer,
-            IStringLocalizer<SharedResource> sharedLocalizer, ILogger<HomeController> logger, IStringLocalizerFactory factory)
+            IStringLocalizer<SharedResource> sharedLocalizer, ILogger<HomeController> logger)
         {
             
             _localizer = localizer;

@@ -1,0 +1,251 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@{
+    ViewBag.Title = "Menger Sponge";
+@inject IViewLocalizer Localizer
+    }
+
+<div class="post-title-menger">
+    <h1>POV-Ray rendering of Menger Sponge</h1>
+</div>
+
+
+<small>2015/09/24</small>
+
+<p>
+    Karl Menger var en østerriksk-amerikansk matematiker som jobbet med algebra av geometri og dimensjonsteori.
+    Menger ble født i Wien i 1902 av økonom Carl Menger og romanforfatter Hermione Andermann.
+    Hans far, Carl Menger, var en grunnlegger av den østerrikske skolen for økonomisk tankegang og utviklet teorien om marginalisme.
+</p>
+<p>
+    I 1920 meldte Karl Menger seg på Universitetet i Wien for å studere fysikk. Etter bare noen få måneder byttet han til matematikk og deltok på et sentralt foredrag av Hans Hahn.
+    Hahn foreleste om et problem med å definere begrepet kurve, som den gang ble ansett som uløselig.
+</p>
+<p>
+    Delvis gjennom studiene ble Menger i 1921 diagnostisert med tuberkulose og sendt til et sanitorium i Aflenz. Mens han var innesperret i Aflenz, gikk både faren og moren bort.
+    Da Karl kom tilbake til universitetet hadde han utviklet en full teori om kurver og oppnådd doktorgrad med Hahn.
+</p>
+<p>
+    Menger tenkte på geometri i sin mest grunnleggende forstand, på en måte som moderne matematikere ville beskrive som <em> generell topologi </em>.
+    Han utviklet en helt ny tilnærming til euklidisk geomtry, en tilnærming som spilte en viktig rolle i John von Neumanns matematiske grunnlag for kvantemekanikk.
+
+    Et av hans viktige bidrag til geometri var oppdagelsen av en 'universell kurve' i et tredimensjonalt rom.
+    Denne kurven har den egenskapen at hver oppnåelig kurve kan legges inn i den.
+</p>
+
+<p>
+    Man konstruerer en Menger-svamp ved å starte med en vanlig terning.
+</p>
+<a href="/images/menger/menger-level-0.png">
+    <img src="/images/menger/menger-level-0-sm.png"/>
+</a>
+
+<p>
+    Gjør deretter iterativt følgende:
+</p>
+
+<ol>
+    <li>Del hvert ansikt i ni like firkanter, og del kuben i 27 mindre terninger.</li>
+    <li>Fjern den mindre kuben i midten av hvert ansikt.</li>
+    <li>Fjern den mindre kuben fra midten av den store kuben</li>
+</ol>
+
+<p>
+    Etter en iterasjon har vi en nivå-1 Menger-svamp.
+</p>
+<a href="/images/menger/menger-level-1.png">
+    <img src="/images/menger/menger-level-1-sm.png"/>
+</a>
+<p>
+    Etter to iterasjoner har vi en nivå-2 Menger-svamp.
+</p>
+<a href="/images/menger/menger-level-2.png">
+    <img src="/images/menger/menger-level-2-sm.png"/>
+</a>
+<p>
+    Etter tre iterasjoner har vi en nivå-3 Menger-svamp.
+</p>
+<a href="/images/menger/menger-level-3.png">
+    <img src="/images/menger/menger-level-3-sm.png"/>
+</a>
+
+<p>
+    Etter fire iterasjoner har vi en nivå-4 Menger-svamp.
+</p>
+<a href="/images/menger/menger-level-4.png">
+    <img src="/images/menger/menger-level-4-sm.png"/>
+</a>
+<p>
+    Etter fem iterasjoner har vi en nivå-5 Menger-svamp.
+</p>
+<a href="/images/menger/menger-level-5.png">
+    <img src="/images/menger/menger-level-5-sm.png"/>
+</a>
+
+<p>Og så videre..</p>
+<a href="/images/menger/menger-level-5.png">
+    <img src="/images/menger/menger-layers-loop.gif"/>
+</a>
+
+<p>
+    Den beregningsenergien som kreves for å gjengi denne svampen øker raskt med hver iterasjon. Menger-svampen er resultatet av denne prosessen etter et <em> uendelig </em> sett med iterasjoner. Bildene du ser ovenfor er en grov tilnærming av strukturen.
+</p>
+<p>Vi kan beregne overflateareal og volum for hver iterasjon og se noen interessante resultater. Overflatearealet beregnes i multipler av det opprinnelige overflaten, og volumet beregnes som en prosentandel av det opprinnelige volumet.</p>
+
+
+<table class="table table-condensed">
+    <thead>
+    <tr>
+        <th> Iterasjoner </th>
+        <th> Overflateareal </th>
+        <th> Volum </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>0</td>
+        <td>6</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>8</td>
+        <td>0.740740741</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>13.03703704</td>
+        <td>0.548696845</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>24.75720165</td>
+        <td>0.406442107</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>51.2702332</td>
+        <td>0.301068228</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>110.6042778</td>
+        <td>0.223013502</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>242.8276629</td>
+        <td>0.165195187</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>536.9862544</td>
+        <td>0.122366805</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<p>For hver iterasjon skyter overflaten raskt opp, mens volumet raskt avtar. Etter et uendelig antall iterasjoner har Menger-svampen et uendelig overflateareal og også null volum.</p>
+
+<h2>POV-Ray kode</h2>
+
+<p>De første gjentagelsene av Menger-svampen kan gjengis i raytracing-programvaren POV-Ray. <a href="https://github.com/mortenalbring/MengerSponge"> Du kan se hele koden på GitHub her </a>. </p>
+<p>Som med konstruksjonen ovenfor, begynner vi med en enkel terning </p>
+
+<pre>
+                box {  &lt;0, 0, 0>    &lt;1,1,1>  }
+</pre>
+<p>
+    Vi trenger da en metode for å generere strukturen som skal fjernes fra denne kuben for å produsere svampen
+</p>
+<pre>
+#macro voidCubes(dim)    
+    #declare y1 = (1/3)/(pow(3,dim));
+    #declare z1 = (1/3)/(pow(3,dim));    
+    #declare prod1 = -0.1;
+    #declare prod2 = 1.1;    
+    #declare psize = (1/3)/(pow(3,dim));                    
+    #while (z1&lt;=1)
+            #declare y1 = (1/3)/(pow(3,dim));
+            #while (y1&lt;=1)
+                    box {  &lt;prod1,y1,z1> &lt;prod2,y1+psize,z1+psize> pigment { color rgb &lt;1,0.2,0> } } 
+                    box { &lt;y1,z1,prod1> &lt;y1+psize,z1+psize,prod2> pigment { color rgb &lt;1,0.2,0> } } 
+                    box { &lt;y1,prod1,z1> &lt;y1+psize,prod2,z1+psize> pigment { color rgb &lt;1,0.2,0> } }  
+                                                                 
+                    #declare y1=y1+pow((1/3),dim);
+            #end
+            #declare z1=z1+pow((1/3),dim);
+       #end             
+#end
+</pre>
+<p>
+    Dette produserer en serie rektangulære bokser som strekker seg over området som skal fjernes, for en gitt dimensjon. For å produsere ugyldige kuber for nivå-1-svampen, kaller vi ganske enkelt <em> voidCubes (0) </em>. Å lage en forening av flere dimensjoner produserer tomrumsstrukturen for menger-svamper på høyere nivå, for eksempel:
+</p>
+<pre>
+    union {
+          voidCubes(0)
+          voidCubes(1)
+          voidCubes(2)
+          voidCubes(3)
+          voidCubes(4)                                          
+}
+</pre>
+<a href="/images/menger/menger-void.gif">
+    <img src="/images/menger/menger-void-sm.gif"/>
+</a>
+<p>
+    Vi kan også sette en lyskilde i midten av hulrommene, bare for å få den til å se pen ut. Inne i # while uttalelsen setter vi inn
+</p>
+<pre>
+                #if (dim < 2 )
+                    light_source { &lt;(prod1+prod2)/2,y1,z1> color rgb &lt;1,1,1> }                
+                #end</pre>
+<p>
+    Å øke denne svake grensen gjør at den ser mer spektakulær ut, men øker gjengivelsestiden drastisk.
+</p>
+
+<p>
+    For å generere menger-svampen, må vi bare gjengi boksen og deretter forskjellen mellom boksen og disse ugyldige kubene, opp til det nivået vi vil begrense den til
+</p>
+<pre>
+#declare menger = 
+    difference {
+           box {  &lt;0, 0, 0>    &lt;1,1,1>  }
+          voidCubes(0)
+          voidCubes(1)
+          voidCubes(2)
+          voidCubes(3)
+          voidCubes(4)                                          
+}
+</pre>
+<p> Over 4 er gjengivelsestiden helt latterlig. POV-Ray er CPU-begrenset, og det er derfor ikke mye i veien for parallellitet som kan gjøres for å øke gjengivelseshastighetene. Hvis du har tilgang til en latterlig kraftig rigg og kan gjengi en nivå 5 eller nivå 6 svamp, gi meg beskjed! </p>
+
+<p>
+    <a href="https://github.com/mortenalbring/MengerSponge">The whole code is available on GitHub.</a>
+</p>
+
+
+<p>Referanser:</p>
+
+<p>
+    <a href="https://en.wikipedia.org/wiki/Karl_Menger#Contributions_to_mathematics">
+        Wikipedia
+    </a>
+</p>
+<p>
+    <a href="http://www.wolframalpha.com/input/?i=Menger+sponge&a=*C.Menger+sponge-_*Formula.dflt-&f2=5&f=MengerSponge.n_5">
+        Wolfram Alpha
+    </a>
+</p>
+
+<p>
+    <a href="https://books.google.co.uk/books?id=oakkBgAAQBAJ&pg=PA7&lpg=PA7&dq=Hermione+Andermann&source=bl&ots=cYEHFVypZ5&sig=UTt9YR1Qmz3gNXPbHbhner_89Nw&hl=en&sa=X&ved=0CDIQ6AEwBWoVChMIwfaG1a-OyAIVhlwUCh3wygAQ#v=onepage&q&f=false">
+        Karl Menger: Ergebnisse eines Mathematischen Kolloquiums
+    </a>
+</p>
+
+<p>
+    <a href="https://science.iit.edu/applied-mathematics/about/about-karl-menger">
+        Illinois Institute of Technology - About Karl Menger
+    </a>
+</p>

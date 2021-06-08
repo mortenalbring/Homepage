@@ -1,3 +1,11 @@
+.post-title-menger {
+    background-image: url('../images/menger/menger-level-5.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
 .ma-title {
     font-family: dosis,"HelveticaNeue-CondensedBold","trebuchet ms",sans-serif;
     font-weight:700;

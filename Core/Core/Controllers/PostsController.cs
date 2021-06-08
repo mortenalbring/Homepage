@@ -17,6 +17,11 @@ namespace Core.Controllers
             _sharedLocalizer = sharedLocalizer;
         }
 
+        public IActionResult MengerSponge()
+        {
+            return View();
+        }
+        
         public IActionResult Localisation()
         {
             return View();

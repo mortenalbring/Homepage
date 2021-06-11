@@ -43,9 +43,11 @@
         </div>
     </nav>
 </header>
+
+@await RenderSectionAsync("Jumbo", required:false)
 <div class="container">
     <main role="main" class="pb-3">
-        @RenderBody()
+        @RenderSection("Content", required:true)
     </main>
 </div>
 

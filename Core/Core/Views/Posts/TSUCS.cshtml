@@ -1,4 +1,6 @@
-﻿<script type="text/x-mathjax-config">
+﻿@section Scripts
+{
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
@@ -7,6 +9,7 @@
 </script>
 
 <script src="/js/MathJax/MathJax.js"></script>
+}
 
 <div class="post-title post-title-tsucs">
     <div class="post-title-text">
@@ -14,6 +17,18 @@
     </div>
 </div>
 
+@section Jumbo {
+    <div class="parallax parallax-tsucs">
+        <div class="parallax-title">
+            <span>
+                Three-Scroll Unified Chaotic System
+            </span>
+        </div>
+    </div>
+}
+
+@section Content
+{
 <div class="container text-light">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -157,10 +172,7 @@ sky_sphere {
             <p>
                 <a class="btn btn-default" href="https://github.com/mortenalbring/ThreeScrollUnifiedChaoticSystem">You can view the full code for this render on GitHub.</a>
             </p>
-
-
         </div>
-
     </div>
-
-</div>
+</div>    
+}

@@ -4,159 +4,166 @@
 @inject IViewLocalizer Localizer
     }
 
-<div class="post-title post-title-menger">
-    <h1 class="text-light">POV-Ray rendering of Menger Sponge</h1>
-</div>
+@section Jumbo {
+    <div class="parallax parallax-menger">
+        <div class="parallax-title">
+            <span>
+                Menger Sponge
+            </span>
+        </div>
+    </div>
+}
+
+@section Content
+{
+    <small>2015/09/24</small>
+    <div class="text-light">
+    <p>
+        Karl Menger was an Austrian-American mathematician working on the algebra of geometries, curve and dimension theory.
+        Menger was born in Vienna in 1902 to economist Carl Menger and novelist Hermione Andermann.
+        His father, Carl Menger, was a founder of the Austrian school of economic thought and developed the theory of marginalism.
+    </p>
+    <p>
+        In 1920, Karl Menger enrolled at the University of Vienna to study Physics. After only a few months, he switched to mathematics and attended a pivotal lecture by Hans Hahn.
+        Hahn lectured on a problem of defining the concept of a curve, at the time considered unsolvable.
+    </p>
+    <p>
+        Part-way through his studies, in 1921 Menger was diagnosed with tuberculosis and sent to a sanitorium in Aflenz. While he was confined in Aflenz, both his father and mother passed away.
+        When Karl returned to University, he had developed a full theory of curves and earned his doctorate with Hahn.
+    </p>
+    <p>
+        Menger thought about geometry in its most fundamental sense, in a way that modern mathematicians would describe as <em>general topology</em>.
+        He devised a completely new approach to Euclidean geomtry, an approach that played a significant role in John von Neumann's mathematical foundation of quantum mechanics.
+
+        One of his important contributions to geometry was the discovery of a 'universal curve' in three-dimensional space.
+        This curve has the property that every concievable curve can be embedded within it.
+    </p>
+
+    <p>
+        One constructs a Menger sponge by starting with a regular cube.
+    </p>
+    <a href="/images/menger/menger-level-0.png">
+        <img src="/images/menger/menger-level-0-sm.png"/>
+    </a>
+
+    <p>
+        Then iteratively doing the following:
+    </p>
+
+    <ol>
+        <li>Divide every face into nine equal squares, and subdivide the cube into 27 smaller cubes. </li>
+        <li>Remove the smaller cube in the centre of each face.</li>
+        <li>Remove the smaller cube from the centre of the large cube</li>
+    </ol>
+
+    <p>
+        After one iteration, we have a level-1 Menger sponge.
+    </p>
+    <a href="/images/menger/menger-level-1.png">
+        <img src="/images/menger/menger-level-1-sm.png"/>
+    </a>
+    <p>
+        After two iterations, we have a level-2 Menger sponge.
+    </p>
+    <a href="/images/menger/menger-level-2.png">
+        <img src="/images/menger/menger-level-2-sm.png"/>
+    </a>
+    <p>
+        After three iterations, we have a level-3 Menger sponge.
+    </p>
+    <a href="/images/menger/menger-level-3.png">
+        <img src="/images/menger/menger-level-3-sm.png"/>
+    </a>
+
+    <p>
+        After four iterations, we have a level-4 Menger sponge.
+    </p>
+    <a href="/images/menger/menger-level-4.png">
+        <img src="/images/menger/menger-level-4-sm.png"/>
+    </a>
+    <p>
+        After five iterations, we have a level-5 Menger sponge.
+    </p>
+    <a href="/images/menger/menger-level-5.png">
+        <img src="/images/menger/menger-level-5-sm.png"/>
+    </a>
+
+    <p>And so on..</p>
+    <a href="/images/menger/menger-level-5.png">
+        <img src="/images/menger/menger-layers-loop.gif"/>
+    </a>
+
+    <p>The computational energy required to render this sponge increases rapidly with each iteration. The Menger sponge is the result of this process after an <em>infinite</em> set of iterations. The images you see above are a crude approximation of the structure.</p>
+    <p>We can calculate the surface area and volume for each iteration and see some interesting results. The surface area is calculated in multiples of the initial face area, and the volume is calculated as a percentage of the initial volume.</p>
 
 
-<small>2015/09/24</small>
-<div class="text-light">
-<p>
-    Karl Menger was an Austrian-American mathematician working on the algebra of geometries, curve and dimension theory.
-    Menger was born in Vienna in 1902 to economist Carl Menger and novelist Hermione Andermann.
-    His father, Carl Menger, was a founder of the Austrian school of economic thought and developed the theory of marginalism.
-</p>
-<p>
-    In 1920, Karl Menger enrolled at the University of Vienna to study Physics. After only a few months, he switched to mathematics and attended a pivotal lecture by Hans Hahn.
-    Hahn lectured on a problem of defining the concept of a curve, at the time considered unsolvable.
-</p>
-<p>
-    Part-way through his studies, in 1921 Menger was diagnosed with tuberculosis and sent to a sanitorium in Aflenz. While he was confined in Aflenz, both his father and mother passed away.
-    When Karl returned to University, he had developed a full theory of curves and earned his doctorate with Hahn.
-</p>
-<p>
-    Menger thought about geometry in its most fundamental sense, in a way that modern mathematicians would describe as <em>general topology</em>.
-    He devised a completely new approach to Euclidean geomtry, an approach that played a significant role in John von Neumann's mathematical foundation of quantum mechanics.
-
-    One of his important contributions to geometry was the discovery of a 'universal curve' in three-dimensional space.
-    This curve has the property that every concievable curve can be embedded within it.
-</p>
-
-<p>
-    One constructs a Menger sponge by starting with a regular cube.
-</p>
-<a href="/images/menger/menger-level-0.png">
-    <img src="/images/menger/menger-level-0-sm.png"/>
-</a>
-
-<p>
-    Then iteratively doing the following:
-</p>
-
-<ol>
-    <li>Divide every face into nine equal squares, and subdivide the cube into 27 smaller cubes. </li>
-    <li>Remove the smaller cube in the centre of each face.</li>
-    <li>Remove the smaller cube from the centre of the large cube</li>
-</ol>
-
-<p>
-    After one iteration, we have a level-1 Menger sponge.
-</p>
-<a href="/images/menger/menger-level-1.png">
-    <img src="/images/menger/menger-level-1-sm.png"/>
-</a>
-<p>
-    After two iterations, we have a level-2 Menger sponge.
-</p>
-<a href="/images/menger/menger-level-2.png">
-    <img src="/images/menger/menger-level-2-sm.png"/>
-</a>
-<p>
-    After three iterations, we have a level-3 Menger sponge.
-</p>
-<a href="/images/menger/menger-level-3.png">
-    <img src="/images/menger/menger-level-3-sm.png"/>
-</a>
-
-<p>
-    After four iterations, we have a level-4 Menger sponge.
-</p>
-<a href="/images/menger/menger-level-4.png">
-    <img src="/images/menger/menger-level-4-sm.png"/>
-</a>
-<p>
-    After five iterations, we have a level-5 Menger sponge.
-</p>
-<a href="/images/menger/menger-level-5.png">
-    <img src="/images/menger/menger-level-5-sm.png"/>
-</a>
-
-<p>And so on..</p>
-<a href="/images/menger/menger-level-5.png">
-    <img src="/images/menger/menger-layers-loop.gif"/>
-</a>
-
-<p>The computational energy required to render this sponge increases rapidly with each iteration. The Menger sponge is the result of this process after an <em>infinite</em> set of iterations. The images you see above are a crude approximation of the structure.</p>
-<p>We can calculate the surface area and volume for each iteration and see some interesting results. The surface area is calculated in multiples of the initial face area, and the volume is calculated as a percentage of the initial volume.</p>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th>Iterations</th>
+            <th>Surface area</th>
+            <th>Volume</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0</td>
+            <td>6</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>8</td>
+            <td>0.740740741</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>13.03703704</td>
+            <td>0.548696845</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>24.75720165</td>
+            <td>0.406442107</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>51.2702332</td>
+            <td>0.301068228</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>110.6042778</td>
+            <td>0.223013502</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>242.8276629</td>
+            <td>0.165195187</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>536.9862544</td>
+            <td>0.122366805</td>
+        </tr>
+        </tbody>
+    </table>
 
 
-<table class="table table-dark">
-    <thead>
-    <tr>
-        <th>Iterations</th>
-        <th>Surface area</th>
-        <th>Volume</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>0</td>
-        <td>6</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>8</td>
-        <td>0.740740741</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>13.03703704</td>
-        <td>0.548696845</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>24.75720165</td>
-        <td>0.406442107</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>51.2702332</td>
-        <td>0.301068228</td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>110.6042778</td>
-        <td>0.223013502</td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td>242.8276629</td>
-        <td>0.165195187</td>
-    </tr>
-    <tr>
-        <td>7</td>
-        <td>536.9862544</td>
-        <td>0.122366805</td>
-    </tr>
-    </tbody>
-</table>
+    <p>With every iteration, the surface area rapidly shoots up, while the volume rapidly decreases. After an infinite number of iterations, the Menger sponge has an infinite surface area and also zero volume. </p>
 
+    <h2>POV-Ray code</h2>
 
-<p>With every iteration, the surface area rapidly shoots up, while the volume rapidly decreases. After an infinite number of iterations, the Menger sponge has an infinite surface area and also zero volume. </p>
+    <p>The first few iterations of the Menger sponge can be rendered in the raytracing software POV-Ray. <a href="https://github.com/mortenalbring/MengerSponge">You can see the complete code on GitHub here</a>. </p>
+    <p>As with the construction above, we begin with a simple cube</p>
 
-<h2>POV-Ray code</h2>
-
-<p>The first few iterations of the Menger sponge can be rendered in the raytracing software POV-Ray. <a href="https://github.com/mortenalbring/MengerSponge">You can see the complete code on GitHub here</a>. </p>
-<p>As with the construction above, we begin with a simple cube</p>
-
-<pre class="text-light">
+    <pre class="text-light">
                 box {  &lt;0, 0, 0>    &lt;1,1,1>  }
 </pre>
-<p>
-    We then need a method to generate the structure that are going to be removed from this cube to produce the sponge
-</p>
-<pre class="text-light">
+    <p>
+        We then need a method to generate the structure that are going to be removed from this cube to produce the sponge
+    </p>
+    <pre class="text-light">
 #macro voidCubes(dim)    
     #declare y1 = (1/3)/(pow(3,dim));
     #declare z1 = (1/3)/(pow(3,dim));    
@@ -176,10 +183,10 @@
        #end             
 #end
 </pre>
-<p>
-    This produces a series of rectangular boxes that span the area that is going to be removed, for a given dimension. To produce the void cubes for the level-1 sponge, we simply call <em>voidCubes(0)</em>. Making a union of several dimensions produces the void cube structure for the higher level menger sponges, such as:
-</p>
-<pre class="text-light">
+    <p>
+        This produces a series of rectangular boxes that span the area that is going to be removed, for a given dimension. To produce the void cubes for the level-1 sponge, we simply call <em>voidCubes(0)</em>. Making a union of several dimensions produces the void cube structure for the higher level menger sponges, such as:
+    </p>
+    <pre class="text-light">
     union {
           voidCubes(0)
           voidCubes(1)
@@ -188,24 +195,24 @@
           voidCubes(4)                                          
 }
 </pre>
-<a href="/images/menger/menger-void.gif">
-    <img src="/images/menger/menger-void-sm.gif"/>
-</a>
-<p>
-    We can also put a light source inside the centre of the voids, just to make it look pretty. Inside the #while statement, we insert
-</p>
-<pre class="text-light">
+    <a href="/images/menger/menger-void.gif">
+        <img src="/images/menger/menger-void-sm.gif"/>
+    </a>
+    <p>
+        We can also put a light source inside the centre of the voids, just to make it look pretty. Inside the #while statement, we insert
+    </p>
+    <pre class="text-light">
                 #if (dim < 2 )
                     light_source { &lt;(prod1+prod2)/2,y1,z1> color rgb &lt;1,1,1> }                
                 #end</pre>
-<p>
-    Increasing this dim limit makes it look more spectacular, but drastically increases render time.
-</p>
+    <p>
+        Increasing this dim limit makes it look more spectacular, but drastically increases render time.
+    </p>
 
-<p>
-    In order to generate the menger sponge, we just have to render the box and then the difference between the box and these voidCubes, up to the level we want to limit it to
-</p>
-<pre class="text-light">
+    <p>
+        In order to generate the menger sponge, we just have to render the box and then the difference between the box and these voidCubes, up to the level we want to limit it to
+    </p>
+    <pre class="text-light">
 #declare menger = 
     difference {
            box {  &lt;0, 0, 0>    &lt;1,1,1>  }
@@ -216,35 +223,36 @@
           voidCubes(4)                                          
 }
 </pre>
-<p>Above 4, the rendering time is absolutely ridiculous. POV-Ray is CPU-limited, and so there isn't much in the way of parallelism that can be done to speed up rendering speeds. If you have access to some ridiculously powerful rig and can render a level-5 or level-6 sponge, let me know!</p>
+    <p>Above 4, the rendering time is absolutely ridiculous. POV-Ray is CPU-limited, and so there isn't much in the way of parallelism that can be done to speed up rendering speeds. If you have access to some ridiculously powerful rig and can render a level-5 or level-6 sponge, let me know!</p>
 
-<p>
-    <a href="https://github.com/mortenalbring/MengerSponge">The whole code is available on GitHub.</a>
-</p>
+    <p>
+        <a href="https://github.com/mortenalbring/MengerSponge">The whole code is available on GitHub.</a>
+    </p>
 
 
-<p>References:</p>
+    <p>References:</p>
 
-<p>
-    <a href="https://en.wikipedia.org/wiki/Karl_Menger#Contributions_to_mathematics">
-        Wikipedia
-    </a>
-</p>
-<p>
-    <a href="http://www.wolframalpha.com/input/?i=Menger+sponge&a=*C.Menger+sponge-_*Formula.dflt-&f2=5&f=MengerSponge.n_5">
-        Wolfram Alpha
-    </a>
-</p>
+    <p>
+        <a href="https://en.wikipedia.org/wiki/Karl_Menger#Contributions_to_mathematics">
+            Wikipedia
+        </a>
+    </p>
+    <p>
+        <a href="http://www.wolframalpha.com/input/?i=Menger+sponge&a=*C.Menger+sponge-_*Formula.dflt-&f2=5&f=MengerSponge.n_5">
+            Wolfram Alpha
+        </a>
+    </p>
 
-<p>
-    <a href="https://books.google.co.uk/books?id=oakkBgAAQBAJ&pg=PA7&lpg=PA7&dq=Hermione+Andermann&source=bl&ots=cYEHFVypZ5&sig=UTt9YR1Qmz3gNXPbHbhner_89Nw&hl=en&sa=X&ved=0CDIQ6AEwBWoVChMIwfaG1a-OyAIVhlwUCh3wygAQ#v=onepage&q&f=false">
-        Karl Menger: Ergebnisse eines Mathematischen Kolloquiums
-    </a>
-</p>
+    <p>
+        <a href="https://books.google.co.uk/books?id=oakkBgAAQBAJ&pg=PA7&lpg=PA7&dq=Hermione+Andermann&source=bl&ots=cYEHFVypZ5&sig=UTt9YR1Qmz3gNXPbHbhner_89Nw&hl=en&sa=X&ved=0CDIQ6AEwBWoVChMIwfaG1a-OyAIVhlwUCh3wygAQ#v=onepage&q&f=false">
+            Karl Menger: Ergebnisse eines Mathematischen Kolloquiums
+        </a>
+    </p>
 
-<p>
-    <a href="https://science.iit.edu/applied-mathematics/about/about-karl-menger">
-        Illinois Institute of Technology - About Karl Menger
-    </a>
-</p>
-</div>
+    <p>
+        <a href="https://science.iit.edu/applied-mathematics/about/about-karl-menger">
+            Illinois Institute of Technology - About Karl Menger
+        </a>
+    </p>
+    </div>
+}

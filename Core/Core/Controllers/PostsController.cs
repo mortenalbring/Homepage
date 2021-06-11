@@ -21,6 +21,11 @@ namespace Core.Controllers
         {
             return View();
         }
+
+        public IActionResult TSUCS()
+        {
+            return View();
+        }
         
         public IActionResult Localisation()
         {

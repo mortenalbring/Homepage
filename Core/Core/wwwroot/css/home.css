@@ -1,8 +1,23 @@
-.post-title-menger {
-    background-image: url('../images/menger/menger-level-5.png');
+.post-title {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+} 
+.post-title h1 {
+    padding-top: 10%;
+    text-align: center;
+    text-shadow: 
+            10px 0 0 #393939, 
+            -2px 0 0 #393939, 
+            0 2px 0 #393939, 
+            0 -2px 0 #393939, 
+            1px 1px #393939, 
+            -1px -1px 0 #393939, 
+            1px -1px 0 #393939, 
+            -1px 1px 0 #393939;
+}
+.post-title-menger {
+    background-image: url('../images/menger/menger - 4k trans dim4 crop trans 400h.png');
     height: 350px;
 }
 

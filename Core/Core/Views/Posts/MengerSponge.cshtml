@@ -5,12 +5,12 @@
     }
 
 <div class="post-title post-title-menger">
-    <h1>POV-Ray rendering of Menger Sponge</h1>
+    <h1 class="text-light">POV-Ray rendering of Menger Sponge</h1>
 </div>
 
 
 <small>2015/09/24</small>
-
+<div class="text-light">
 <p>
     Karl Menger was an Austrian-American mathematician working on the algebra of geometries, curve and dimension theory.
     Menger was born in Vienna in 1902 to economist Carl Menger and novelist Hermione Andermann.
@@ -90,7 +90,7 @@
 <p>We can calculate the surface area and volume for each iteration and see some interesting results. The surface area is calculated in multiples of the initial face area, and the volume is calculated as a percentage of the initial volume.</p>
 
 
-<table class="table table-condensed">
+<table class="table table-dark">
     <thead>
     <tr>
         <th>Iterations</th>
@@ -150,13 +150,13 @@
 <p>The first few iterations of the Menger sponge can be rendered in the raytracing software POV-Ray. <a href="https://github.com/mortenalbring/MengerSponge">You can see the complete code on GitHub here</a>. </p>
 <p>As with the construction above, we begin with a simple cube</p>
 
-<pre>
+<pre class="text-light">
                 box {  &lt;0, 0, 0>    &lt;1,1,1>  }
 </pre>
 <p>
     We then need a method to generate the structure that are going to be removed from this cube to produce the sponge
 </p>
-<pre>
+<pre class="text-light">
 #macro voidCubes(dim)    
     #declare y1 = (1/3)/(pow(3,dim));
     #declare z1 = (1/3)/(pow(3,dim));    
@@ -179,7 +179,7 @@
 <p>
     This produces a series of rectangular boxes that span the area that is going to be removed, for a given dimension. To produce the void cubes for the level-1 sponge, we simply call <em>voidCubes(0)</em>. Making a union of several dimensions produces the void cube structure for the higher level menger sponges, such as:
 </p>
-<pre>
+<pre class="text-light">
     union {
           voidCubes(0)
           voidCubes(1)
@@ -194,7 +194,7 @@
 <p>
     We can also put a light source inside the centre of the voids, just to make it look pretty. Inside the #while statement, we insert
 </p>
-<pre>
+<pre class="text-light">
                 #if (dim < 2 )
                     light_source { &lt;(prod1+prod2)/2,y1,z1> color rgb &lt;1,1,1> }                
                 #end</pre>
@@ -205,7 +205,7 @@
 <p>
     In order to generate the menger sponge, we just have to render the box and then the difference between the box and these voidCubes, up to the level we want to limit it to
 </p>
-<pre>
+<pre class="text-light">
 #declare menger = 
     difference {
            box {  &lt;0, 0, 0>    &lt;1,1,1>  }
@@ -247,3 +247,4 @@
         Illinois Institute of Technology - About Karl Menger
     </a>
 </p>
+</div>

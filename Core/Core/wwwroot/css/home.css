@@ -1,6 +1,11 @@
+.navbar-ma {
+    margin-bottom: 0 !important;
+}
+
 .parallax {
     border-bottom: 1px solid #fff;
     min-height: 80vh;
+    margin-bottom: 20px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -10,7 +15,6 @@
     background-position-y:top;
     position:relative;
 }
-
 
 .parallax-title {
     font-family: 'Open Sans', sans-serif;
@@ -35,19 +39,28 @@
 
 @media (min-width:575px) and (max-width: 767px) {
     .parallax.parallax-menger {
+        min-height: 20vh !important;
+    }
+    .parallax.parallax-about {
         min-height: 10vh !important;
+        max-height: 100px;
     }
 }
 @media (max-width:575px)  {
     .parallax.parallax-menger {
+        min-height: 20vh !important;
+    }
+    .parallax.parallax-about {
         min-height: 10vh !important;
+        max-height: 100px;
     }
 }
 
-
-
-
 .parallax.parallax-menger {
+    min-height: 80vh;
+    max-height: 500px;
+}
+.parallax.parallax-about {
     min-height: 50vh;
     max-height: 500px;
 }
@@ -55,21 +68,8 @@
 .parallax-menger {
     background-image: url("../images/menger/menger-paracover.png");
 }
-
-.post-title {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-} 
-.post-title h1 {
-    padding-top: 10%;
-    text-align: center;
-    text-shadow: 10px 10px 10px #1b1e21, 5px 5px 5px #1b1e21; 
-            
-}
-.post-title-menger {
-    background-image: url('../images/menger/menger - 4k trans dim4 crop trans 400h.png');
-    height: 350px;
+.parallax-about {
+    background-image: url("../images/about/about_cover.jpg");
 }
 
 .ma-title {

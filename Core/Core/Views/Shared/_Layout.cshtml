@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css"/>
     <link rel="stylesheet" href="~/css/home.css"/>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>    
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 </head>
 <body class="bg-dark">
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-ma navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
         <div class="container">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                 @await Html.PartialAsync("_SelectLanguagePartial")
@@ -36,18 +36,26 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">Posts</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-@await RenderSectionAsync("Jumbo", required:false)
+@await RenderSectionAsync("Jumbo", required: false)
 <div class="container">
     <main role="main" class="pb-3">
-        @RenderSection("Content", required:true)
+        @RenderSection("Content", required: true)
     </main>
 </div>
 

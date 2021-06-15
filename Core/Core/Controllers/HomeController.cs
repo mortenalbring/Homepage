@@ -30,6 +30,16 @@ namespace Core.Controllers
             _logger = logger;
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        
         public IActionResult Index()
         {
             var msg = _sharedLocalizer["test"];

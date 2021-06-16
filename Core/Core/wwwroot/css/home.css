@@ -102,6 +102,8 @@
     border-radius: 10px;
 }
 
+
+
 .ma-img-container .ma-overlay{
     position:absolute;
     top:0;
@@ -130,4 +132,14 @@
 .ma-nav {
     background: #2d2d2d;
     color: #b8daff;
+}
+
+.ma-section-lighter {
+    margin-top:0;
+    background: #0c5460;
+    border-top:1px solid #07363d;
+}
+
+.ma-section-lighter a {
+    color: #bdbdbd;
 }

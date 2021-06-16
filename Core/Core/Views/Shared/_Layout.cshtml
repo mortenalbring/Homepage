@@ -53,11 +53,10 @@
 </header>
 
 @await RenderSectionAsync("Jumbo", required: false)
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderSection("Content", required: true)
-    </main>
-</div>
+
+<main role="main" class="pb-3">
+    @RenderSection("Content", required: true)
+</main>
 
 <footer class="border-top footer text-muted">
     <div class="container">

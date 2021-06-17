@@ -17,6 +17,11 @@ namespace Core.Controllers
             _sharedLocalizer = sharedLocalizer;
         }
 
+        public IActionResult FractalChaos()
+        {
+            return View("FractalChaos/FractalChaos");
+        }
+        
         public IActionResult MengerSponge()
         {
             return View();

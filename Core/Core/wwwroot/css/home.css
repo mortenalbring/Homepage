@@ -45,12 +45,20 @@
         min-height: 10vh !important;
         max-height: 100px;
     }
+    .parallax {
+        min-height: 10vh !important;
+        max-height: 100px;
+    }
 }
 @media (max-width:575px)  {
     .parallax.parallax-menger {
         min-height: 20vh !important;
     }
     .parallax.parallax-about {
+        min-height: 10vh !important;
+        max-height: 100px;
+    }
+    .parallax {
         min-height: 10vh !important;
         max-height: 100px;
     }
@@ -67,6 +75,11 @@
 
 .parallax-menger {
     background-image: url("../images/menger/menger-paracover.png");
+}
+.parallax-fc1 {
+    max-height: 60vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/background_parallax.png");
 }
 .parallax-about {
     background-image: url("../images/about/about_cover.jpg");

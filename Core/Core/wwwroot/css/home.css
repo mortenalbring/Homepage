@@ -143,3 +143,13 @@
 .ma-section-lighter a {
     color: #bdbdbd;
 }
+.scrollspy-list {
+    position: fixed;
+    z-index: 100;
+}
+.scrollspy-example {
+    position: relative;
+    margin-top: .5rem;
+    overflow: auto;
+}
+

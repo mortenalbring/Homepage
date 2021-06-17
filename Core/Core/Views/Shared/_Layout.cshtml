@@ -47,13 +47,15 @@
                     </li>
   <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            About
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" asp-controller="Home" asp-action="About">About me</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Education">Education</a></li>
+              <li><a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Employment">Employment</a></li>
+              
+
           </ul>
         </li>
                 </ul>
@@ -74,7 +76,6 @@
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/bootstrap.bundle.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)

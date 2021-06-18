@@ -19,17 +19,16 @@
 </head>
 <body class="bg-dark">
 <header>
-    <nav class="navbar navbar-ma navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-        <div class="container">
+    <nav class="navbar navbar-ma navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                 @await Html.PartialAsync("_SelectLanguagePartial")
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
                             @Localizer["Home"]
@@ -45,19 +44,25 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                     </li>
-  <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            About
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" asp-controller="Home" asp-action="About">About me</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Education">Education</a></li>
-              <li><a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Employment">Employment</a></li>
-              
-
-          </ul>
-        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About">About me</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Education">Education</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Employment">Employment</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -31,11 +31,12 @@
     -webkit-text-shadow: 0 0 4px #222;
 }
 .parallax.parallax-tsucs {
-    min-height: 50vh;
+    min-height: 80vh;
     margin-left:-300px;
 }
 .parallax-tsucs {
-    background-image: url("../images/tsucs/tsucs3407.png");
+    background-image: url("../images/tsucs/tsucs34072.png");
+    background-size: cover;
 }
 
 @media (min-width:575px) and (max-width: 767px) {
@@ -46,10 +47,7 @@
         min-height: 10vh !important;
         max-height: 100px;
     }
-    .parallax {
-        min-height: 10vh !important;
-        max-height: 100px;
-    }
+
 }
 @media (max-width:575px)  {
     .parallax.parallax-menger {
@@ -60,7 +58,7 @@
         max-height: 100px;
     }
     .parallax.parallax-tsucs {
-        min-height: 30vh !important;
+        min-height: 80vh !important;
         max-height: 100px;
     }
 }

@@ -1,38 +1,215 @@
-﻿
-@section Jumbo
+﻿@section Jumbo
 {
-      <div class="parallax parallax-fc1">
-            <div class="parallax-title">
-                <span>
-                    Fractal Chaos
-                </span>
-            </div>
+    <div class="parallax parallax-fc1">
+        <div class="parallax-title">
+            <span>
+                Fractal Chaos
+            </span>
         </div>
+    </div>
 }
 
 @section Content
-{ 
-    <div class="container-fluid">
+{
+
+    <div class="fractal-chaos-container">
+        <div class="container text-light">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    @Html.Partial("FractalChaos/Navigation")
+
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <svg width="100%" height="100%" viewBox="0 0 100 100" style="border: 1px solid white">
+                                <circle cx="10%" cy="90%" r="4" stroke="white" stroke-width="1" fill="green"/>
+                                <text x="12%" y="82%" class="text-light" style="font-size: 4px; fill: white">Anchor G</text>
+                                
+                                <circle cx="90%" cy="90%" r="4" stroke="white" stroke-width="1" fill="red"/>
+                                <text x="82%" y="82%" class="text-light" style="font-size: 4px; fill: white">Anchor R</text>
+                                
+                                <circle cx="50%" cy="10%" r="4" stroke="white" stroke-width="1" fill="blue"/>
+                                <text x="42%" y="22%" class="text-light" style="font-size: 4px; fill: white">Anchor B</text>
+                                
+                                <circle cx="70%" cy="70%" r="2" stroke="white" stroke-width="0.5" fill="purple"/>
+                                <text x="72%" y="72%" class="text-light" style="font-size: 2px; fill: white">1. Start point</text>
+                            </svg>
+
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+
+                            <img class="fc-image" src="~/images/fractalChaos/fcTriangle1B.png"/>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="fc-image-text">
+
+                                <p>
+                                    The chaos game is a game that starts with a series of anchor points.
+                                    There could be any number of anchor points in any orientation. We'll start with three points, marked as <strong>Anchor R</strong>, <strong>G</strong> and <strong>B</strong> respectively.
+                                </p>
+                                <p>
+                                    We'll also place a point somewhere on this canvas within these three anchors. This point is labelled 1.
+                                </p>
+
+                                <p>
+                                    Now we'll take a regular die and colour in two of the faces red, two of them blue and two of them green.
+                                </p>
+                                <p>
+                                    We'll roll this die to select one of the anchor points.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+
+                            <img class="fc-image" src="~/Content/images/fractalChaos/fcTriangle2B.png"/>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="fc-image-text">
+
+                                <p>
+                                    We've rolled the die, and it's come up green. We've chosen <strong>Anchor G</strong>.
+                                </p>
+                                <p>
+                                    We'll draw a line from the start point 1. to the Anchor G and then draw a new point, labelled '2', halfway along this line.
+                                </p>
+                                <p>
+                                    This is now the start point for the next iteration.
+                                </p>
+                                <p>
+                                    Now we randomly choose another anchor point.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <img class="fc-image" src="~/Content/images/fractalChaos/fcTriangle3B.png"/>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="fc-image-text">
+
+
+                                <p>
+                                    This time it's come up red, we've chosen Anchor R.
+                                </p>
+                                <p>
+                                    We'll draw a line from the point 2 to the red anchor and then draw a new point halfway along that line.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <img class="fc-image" src="~/Content/images/fractalChaos/fcTriangle4B.png"/>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="fc-image-text">
+                                <p>Let's roll the die again. It's come up green again.</p>
+                                <p>We draw the line from point 3 to the green anchor and draw a new point halfway between them again.</p>
+
+                                <p>
+                                    We can keep doing this over and over again, randomly selecting one of the three anchor points, and drawing a point halfway between that anchor and the point we drew previously.
+                                </p>
+                                <p>
+                                    But why? You may well think this will just result in a random collection of points across the canvas.
+                                </p>
+                                <p>
+                                    The result is anything but a random collection.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <a href="https://youtu.be/lgXAM23g7-U" target="_blank">
+
+
+                                <img class="fc-image" src="~/Content/images/fractalChaos/fc-triangle_f00001_5_white_slow.gif"/>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="fc-image-text">
+                                <p>
+                                    If we perform enough iterations, a remarkable structure emerges out of the random chaos.
+                                </p>
+                                <p>
+                                    The points form the <strong>Sierpiński triangle</strong>. This is one of the most basic geometric fractals.
+                                </p>
+                                <p>
+                                    The animation shows 6,000 iterations of the chaos game. The more iterations we perform, the more defined this structure becomes.
+                                </p>
+                                <p>It doesn't matter where we placed that initial point, it could even have been far outside the three anchors. This game will always produce the same structure.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="fc-image-text">
+                                <p>
+                                    Here is the final image after about 1,000,000 iterations, with slightly smaller data points.
+                                </p>
+                                <p>A note on the colouring; when a new point is drawn, I also select the r,g,b values that are halfway between those of the start point and the anchor point. This results in a nice colour gradient on the structure. </p>
+                            </div>
+
+                            <a href="~/Content/images/fractalChaos/triangle.png">
+                                <img class="fc-image-big" src="~/Content/images/fractalChaos/fcTriangleBig.png"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>
+                                We're not limited to only three anchor points. The <a href="@Url.Action("FractalChaos2")">next section</a> explores a few other polygons.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.Partial("FractalChaos/References")
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid text-light">
         <div class="row">
             <div class="col">
-                
-                            <p>
-                                                The chaos game is a game that starts with a series of anchor points.
-                                                There could be any number of anchor points in any orientation. We'll start with three points, marked as <strong>Anchor R</strong>, <strong>G</strong> and <strong>B</strong> respectively.
-                                            </p>
-                                            <p>
-                                                We'll also place a point somewhere on this canvas within these three anchors. This point is labelled 1.
-                                            </p>
-                
-                                            <p>
-                                                Now we'll take a regular die and colour in two of the faces red, two of them blue and two of them green.
-                                            </p>
-                                            <p>
-                                                We'll roll this die to select one of the anchor points.
-                                            </p>
+
+                <p>
+                    The chaos game is a game that starts with a series of anchor points.
+                    There could be any number of anchor points in any orientation. We'll start with three points, marked as <strong>Anchor R</strong>, <strong>G</strong> and <strong>B</strong> respectively.
+                </p>
+                <p>
+                    We'll also place a point somewhere on this canvas within these three anchors. This point is labelled 1.
+                </p>
+
+                <p>
+                    Now we'll take a regular die and colour in two of the faces red, two of them blue and two of them green.
+                </p>
+                <p>
+                    We'll roll this die to select one of the anchor points.
+                </p>
             </div>
         </div>
-        
+
     </div>
 
 }

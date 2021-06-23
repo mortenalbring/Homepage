@@ -19,8 +19,45 @@ namespace Core.Controllers
 
         public IActionResult FractalChaos()
         {
+            ViewBag.Section = 1;
             return View("FractalChaos/FractalChaos");
         }
+        public IActionResult FractalChaos2()
+        {
+            ViewBag.Section = 2;
+            return View("FractalChaos/FractalChaos");
+        }
+        public IActionResult FractalChaos3()
+        {
+            ViewBag.Section = 3;
+            return View("FractalChaos/FractalChaos");
+        }
+        public IActionResult FractalChaos4()
+        {
+            ViewBag.Section = 4;
+            return View("FractalChaos/FractalChaos");
+        }
+
+        public IActionResult FractalChaos5()
+        {
+            ViewBag.Section = 5;
+            return View("FractalChaos/FractalChaos");
+        }
+        public IActionResult FractalChaos6()
+        {
+            ViewBag.Section = 6;
+            return View("FractalChaos/FractalChaos");
+        }
+        
+        public IActionResult FractalChaos7()
+        {
+            ViewBag.Section = 7;
+            return View("FractalChaos/FractalChaos");
+        }
+
+
+
+
         
         public IActionResult MengerSponge()
         {

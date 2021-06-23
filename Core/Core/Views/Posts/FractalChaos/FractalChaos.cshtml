@@ -20,29 +20,24 @@
 
 
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <svg width="100%" height="100%" viewBox="0 0 100 100" style="border: 1px solid white">
+                        <div class="col-4">
+                            <svg viewBox="0 0 100 100" style="border: 1px solid white">
                                 <circle cx="10%" cy="90%" r="4" stroke="white" stroke-width="1" fill="green"/>
                                 <text x="12%" y="82%" class="text-light" style="font-size: 4px; fill: white">Anchor G</text>
-                                
+
                                 <circle cx="90%" cy="90%" r="4" stroke="white" stroke-width="1" fill="red"/>
                                 <text x="82%" y="82%" class="text-light" style="font-size: 4px; fill: white">Anchor R</text>
-                                
+
                                 <circle cx="50%" cy="10%" r="4" stroke="white" stroke-width="1" fill="blue"/>
                                 <text x="42%" y="22%" class="text-light" style="font-size: 4px; fill: white">Anchor B</text>
-                                
+
                                 <circle cx="70%" cy="70%" r="2" stroke="white" stroke-width="0.5" fill="purple"/>
                                 <text x="72%" y="72%" class="text-light" style="font-size: 2px; fill: white">1. Start point</text>
                             </svg>
-
                         </div>
-                        <div class="col-md-6 col-sm-12">
 
-                            <img class="fc-image" src="~/images/fractalChaos/fcTriangle1B.png"/>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col">
                             <div class="fc-image-text">
-
                                 <p>
                                     The chaos game is a game that starts with a series of anchor points.
                                     There could be any number of anchor points in any orientation. We'll start with three points, marked as <strong>Anchor R</strong>, <strong>G</strong> and <strong>B</strong> respectively.
@@ -57,18 +52,38 @@
                                 <p>
                                     We'll roll this die to select one of the anchor points.
                                 </p>
+                                <p>
+                                    <img src="/images/fractalChaos/cube-g.png"/>
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-4">
 
-                            <img class="fc-image" src="~/Content/images/fractalChaos/fcTriangle2B.png"/>
+                            <svg viewBox="0 0 100 100" style="border: 1px solid white">
+                                <circle cx="10%" cy="90%" r="4" stroke="white" stroke-width="1" fill="green"/>
+                                <text x="12%" y="82%" class="text-light" style="font-size: 4px; fill: white">Anchor G</text>
+
+                                <circle cx="90%" cy="90%" r="4" stroke="white" stroke-width="1" fill="red"/>
+                                <text x="82%" y="82%" class="text-light" style="font-size: 4px; fill: white">Anchor R</text>
+
+                                <circle cx="50%" cy="10%" r="4" stroke="white" stroke-width="1" fill="blue"/>
+                                <text x="42%" y="22%" class="text-light" style="font-size: 4px; fill: white">Anchor B</text>
+
+                                <circle cx="70%" cy="70%" r="2" stroke="white" stroke-width="0.5" fill="purple"/>
+                                <text x="72%" y="72%" class="text-light" style="font-size: 2px; fill: white">1.</text>
+
+                                <line x1="10%" y1="90%" x2="70%" y2="70%" stroke="white" stroke-width="0.5"/>
+                                <circle cx="40%" cy="80%" r="2" stroke="white" stroke-width="0.5" fill="green"/>
+                                <text x="42%" y="82%" class="text-light" style="font-size: 2px; fill: white">2. New start point</text>
+                            </svg>
+
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="fc-image-text">
 
+                        <div class="col">
+                            <div class="fc-image-text">
                                 <p>
                                     We've rolled the die, and it's come up green. We've chosen <strong>Anchor G</strong>.
                                 </p>
@@ -80,6 +95,9 @@
                                 </p>
                                 <p>
                                     Now we randomly choose another anchor point.
+                                </p>
+                                <p>
+                                    <img src="/images/fractalChaos/cube-r.png"/>
                                 </p>
                             </div>
                         </div>

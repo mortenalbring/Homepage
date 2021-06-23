@@ -86,7 +86,14 @@ function calc() {
 
 
   function drawUpTo(max) {
-    node = svg.selectAll("circle").data(nodes)
+  
+  var subsetNodes = [];
+  
+  for (var i=0;i<max;i++) {
+    subsetNodes[i] = nodes[i];
+    }
+  
+    node = svg.selectAll("circle").data(subsetNodes)
   
     node.enter().insert("circle")                                  
   
@@ -101,7 +108,14 @@ function calc() {
   
 function restart() {
 calc();
-drawUpTo(iterations);
+var i = 1;
+setInterval(function () {  
+  if (i < iterations) {
+    i++;
+    }
+drawUpTo(i);  
+},100);
+
 
 }
 

@@ -35,7 +35,7 @@
 .fc-image-container {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ececec;
+    border: 1px solid #9a9a9a;
     border-radius: 2px;
 }
 
@@ -46,7 +46,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     padding: 10px;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #9a9a9a;
 }
 
 .fc-image-container .caption {

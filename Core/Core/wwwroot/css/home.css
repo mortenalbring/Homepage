@@ -85,6 +85,12 @@
     background-color: #050506;
     background-image: url("../images/fractalChaos/backgrounds/background_fc2c2.png");
 }
+.parallax-fc3 {
+    height: 90vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/backgrounds/background_fc3.png");
+}
+
 .parallax-about {
     background-image: url("../images/about/about_cover.jpg");
 }

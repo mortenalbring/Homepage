@@ -6,29 +6,27 @@ circle {
 }
     </style>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">
-            <div id="fractal">
 
-            </div>
+<div id="fractal">
 
-        </div>
-        <div class="col-md-6">
-            <div id="fractalgui" class="btn-group">
+</div>
 
+<div>
+    <div class="input-group input-group-sm">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Iterations</span>
+        <input id="iterMaxCount" type="text" class="form-control">
+    </div>
+    <div class="input-group input-group-sm">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Radius</span>
+        <input id="dataRadius" type="text" class="form-control">
+        <span class="input-group-text">Speed</span>
+        <input id="dataSpeed" type="text" class="form-control">
 
-                <button role="fractal" class="btn btn-primary" id="regen" onclick="restart()">Start</button>
-                <button role="fractal" class="btn btn-primary" onclick="stop()">Stop</button>
-                <span class="btn btn-outline-primary text-light" id="iter"></span>
-
-            </div>
-
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Iterations</span>
-                <input id="iterMaxCount" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            </div>
-        </div>
+    </div>
+    <div class="btn-group btn-group-sm">
+        <button role="fractal" class="btn btn-primary" id="regen" onclick="restart()">Start</button>
+        <button role="fractal" class="btn btn-primary" onclick="stop()">Stop</button>
+        <span class="btn btn-outline-primary text-light" id="iter"></span>
     </div>
 </div>
 

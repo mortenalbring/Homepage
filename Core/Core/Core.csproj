@@ -53,6 +53,7 @@
     <ItemGroup>
       <Folder Include="Pages" />
       <Folder Include="Resources\Controllers\HomeController" />
+      <Folder Include="wwwroot\images\fractalChaos\polygons\lg" />
     </ItemGroup>
 
     <ItemGroup>

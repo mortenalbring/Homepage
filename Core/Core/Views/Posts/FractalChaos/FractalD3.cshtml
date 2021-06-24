@@ -1,28 +1,36 @@
-﻿
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/2.10.0/d3.v2.min.js"></script>
-    
-  <style type="text/css">
+﻿<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/2.10.0/d3.v2.min.js"></script>
+
+<style type="text/css">
 circle {
   
 }
     </style>
 
-    <div class="container">
-      <div class="row">
+<div class="container-fluid">
+    <div class="row">
         <div class="col-md-6">
-          <div id="fractal" style="border:1px solid white">
-      
-          </div>
-          
+            <div id="fractal">
+
+            </div>
+
         </div>
         <div class="col-md-6">
-          <div id="fractalgui">
-            <button id="regen" onclick="restart()">Regen</button>
-            <button id="regen" onclick="stop()">Stop</button>
-          </div>
+            <div id="fractalgui" class="btn-group">
+
+
+                <button role="fractal" class="btn btn-primary" id="regen" onclick="restart()">Start</button>
+                <button role="fractal" class="btn btn-primary" onclick="stop()">Stop</button>
+                <span class="btn btn-outline-primary text-light" id="iter"></span>
+
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Iterations</span>
+                <input id="iterMaxCount" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
 
-    <script type="text/javascript" src="/js/fractalChaos/fractalChaos.js"></script>
+<script type="text/javascript" src="/js/fractalChaos/fractalChaos.js"></script>

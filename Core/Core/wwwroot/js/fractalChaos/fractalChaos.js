@@ -1,25 +1,44 @@
-var width = window.innerWidth / 2;
-var height = width;
+//var width = window.innerWidth / 2;
+//var height = width;
+
+var width = 400;
+var height = 400;
 var nodes = [];
-var x = 0;
-var y = 0;
-var iterations = 1000;
+var x = 400;
+var y = 400;
+var iterations = 100;
 var radius = 2;
-
-var svg = d3.select("#fractal").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
 
 var marginLeft = 10;
 var marginTop = 10;
 
 var anchorRadius = 4;
 
+document.getElementById('iterMaxCount').value = iterations;
 
-restart();
+var svg = d3.select("#fractal").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("style","border: 1px solid white")
+//    .attr("viewBox","0 0 100 100")
+;
 
+
+
+//restart();
+function drawAnchors() {
+    calc();
+    drawUpTo(3);
+}
+drawAnchors();
 function calc() {
+    
+    var iterTextVal = document.getElementById('iterMaxCount').value;
+    var parsedInt = parseInt(iterTextVal,10);
+    if (parsedInt > 0) {
+        iterations = parsedInt;
+    }
+    
     nodes[0] = {x: width - anchorRadius, y: height - anchorRadius, r: 255, g: 0, b: 0, radius: anchorRadius};
     nodes[1] = {x: anchorRadius, y: height - anchorRadius, r: 0, g: 255, b: 0, radius: anchorRadius};
     nodes[2] = {x: (width / 2), y: anchorRadius, r: 0, g: 0, b: 255, radius: anchorRadius};
@@ -58,14 +77,20 @@ function calc() {
 }
 
 function stop() {
-    d3.selectAll("svg > *").remove();
+    var highestTimeoutId = setInterval(";",1);
+    for (var i = 0 ; i < highestTimeoutId ; i++) {
+        clearInterval(i);
+    }
+   // svg.selectAll("*").remove();
 }
 
 
 function drawUpTo(max) {
-
+    if (max >= nodes.length) {
+        stop();
+    }
     var subsetNodes = [];
-
+    document.getElementById('iter').textContent = max + "/" + nodes.length;
     for (var i = 0; i < max; i++) {
         subsetNodes[i] = nodes[i];
     }
@@ -91,22 +116,18 @@ function drawUpTo(max) {
     node.exit().remove()
 }
 
-var interValId = 0;
 
 function restart() {
+    stop();
     calc();
-    console.log(interValId);
-    if (interValId && interValId !== 0) {
-        clearInterval(interValId);
-    }
+ 
 
     var i = 1;
-    interValId = setInterval(function () {
+    setInterval(function () {
         if (i < iterations) {
             i++;
         }
         drawUpTo(i);
-    }, 100);
-    console.log(interValId);
+    }, 10);
 
 }

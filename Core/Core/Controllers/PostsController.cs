@@ -35,7 +35,7 @@ namespace Core.Controllers
         public IActionResult FractalChaos4()
         {
             ViewBag.Section = 4;
-            return View("FractalChaos/FractalChaos");
+            return View("FractalChaos/FractalChaos4");
         }
 
         public IActionResult FractalChaos5()

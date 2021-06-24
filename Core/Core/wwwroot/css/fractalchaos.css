@@ -48,6 +48,10 @@
     padding: 10px;
     border-bottom: 1px solid #9a9a9a;
 }
+.fc-image-container a img:hover {
+    transition: 1s;
+    background: rgba(0, 0, 0, 1);
+}
 
 .fc-image-container .caption {
     padding-left: 5px;

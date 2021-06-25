@@ -1,3 +1,30 @@
+.parallax-fc1 {
+    height: 90vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/backgrounds/background_fc1.png");
+}
+.parallax-fc2 {
+    height: 90vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/backgrounds/background_fc2c2.png");
+}
+.parallax-fc3 {
+    height: 90vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/backgrounds/background_fc3.png");
+}
+.parallax-fc4 {
+    height: 90vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/backgrounds/background_fc4c1.png");
+}
+.parallax-fc5 {
+    height: 90vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/backgrounds/background_fc5c1.png");
+}
+
+
 .fractal-chaos-nav li {
     display:inline-block;
 }

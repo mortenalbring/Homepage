@@ -41,18 +41,18 @@ namespace Core.Controllers
         public IActionResult FractalChaos5()
         {
             ViewBag.Section = 5;
-            return View("FractalChaos/FractalChaos");
+            return View("FractalChaos/FractalChaos5");
         }
         public IActionResult FractalChaos6()
         {
             ViewBag.Section = 6;
-            return View("FractalChaos/FractalChaos");
+            return View("FractalChaos/FractalChaos6");
         }
         
         public IActionResult FractalChaos7()
         {
             ViewBag.Section = 7;
-            return View("FractalChaos/FractalChaos");
+            return View("FractalChaos/FractalChaos7");
         }
 
 

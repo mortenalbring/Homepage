@@ -4,7 +4,7 @@
 
 @section Jumbo
 {
-    <div class="parallax parallax-fc4">
+    <div class="parallax parallax-fc6">
         <div class="parallax-title">
             <span>
                 Fractal Chaos
@@ -16,74 +16,85 @@
 @section Content
 {
     <div class="container text-light">
-    <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-    @Html.Partial("FractalChaos/Navigation")
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                @Html.Partial("FractalChaos/Navigation")
 
-    <div class="row">
-        <div class="col-md-12">
-            <p>Of course we're not limited to simply two dimensions. The chaos game works precisely the same in three dimensions as well.</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Of course we're not limited to simply two dimensions. The chaos game works precisely the same in three dimensions as well.</p>
 
-            <p>We simply introduce a <i>z-axis</i> to the game and position the anchors. </p>
+                        <p>We simply introduce a <i>z-axis</i> to the game and position the anchors. </p>
 
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="fc-image-container">
+                            <a href="/images/fractalChaos/polyhedra/lg/tetra1.00e+007-dp.txt.png">
+                                <img src="/images/fractalChaos/polyhedra/lg/tetra1.00e+007-dp2.txt.png"/>
+                            </a>
+                            <div class="caption">
+                                Chaos game played over 10,000,000 terations with four anchor points to form a tetrahedron
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="fc-image-container">
+                            <a href="/images/fractalChaos/polyhedra/lg/octahedron2.00e+007-dp.txt.png">
+                                <img src="/images/fractalChaos/polyhedra/octahedron2.00e+007-dp.sm.png"/>
+                            </a>
+                            <div class="caption">
+                                Chaos game played over 20,000,000 terations with eight anchor points to form an octohedron
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="fc-image-container">
+                                <a href="/images/fractalChaos/polyhedra/lg/tetra1.00e+007-norepeat.png">
+                                    <img src="/images/fractalChaos/polyhedra/tetra1.00e+007-norepeat.sm.png"/>
+                                </a>
+                                <div class="caption">
+                                    Chaos game played over 10,000,000 terations for tetrahedron but not repeating any anchor points.
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="fc-image-container">
+                                <a href="/images/fractalChaos/polyhedra/lg/dodeca1.00e+007-dp.txt.png">
+                                    <img src="/images/fractalChaos/polyhedra/dodeca1.00e+007-dp.sm.txt.png"/>
+                                </a>
+                                <div class="caption">
+                                    Chaos game played over 10,000,000 terations with twenty anchor points to form a regular dodecahedron
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="fc-image-container">
-                <a href="/images/fractalChaos/polyhedra/lg/tetra1.00e+007-dp.txt.png">
-                    <img src="/images/fractalChaos/polyhedra/lg/tetra1.00e+007-dp2.txt.png"/>
-                </a>
-                <div class="caption">
-                    Chaos game played over 10,000,000 terations with four anchor points to form a tetrahedron
-                </div>
 
-            </div>
-        </div>
+    <div class="container-fluid  text-light">
 
-        <div class="col">
-            <div class="fc-image-container">
-                <a href="/images/fractalChaos/polyhedra/lg/octahedron2.00e+007-dp.txt.png">
-                    <img src="/images/fractalChaos/polyhedra/octahedron2.00e+007-dp.sm.png"/>
-                </a>
-                <div class="caption">
-                    Chaos game played over 20,000,000 terations with eight anchor points to form an octohedron
-                </div>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="fc-image-container">
-                    <a href="/images/fractalChaos/polyhedra/lg/dodeca1.00e+007-dp.txt.png">
-                        <img src="/images/fractalChaos/polyhedra/dodeca1.00e+007-dp.sm.txt.png"/>
-                    </a>
-                    <div class="caption">
-                        Chaos game played over 10,000,000 terations with twenty anchor points to form a regular dodecahedron
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="fc-image-container">
-                    <a href="/images/fractalChaos/polyhedra/lg/tetra1.00e+007-norepeat.png">
-                        <img src="/images/fractalChaos/polyhedra/tetra1.00e+007-norepeat.sm.png"/>
-                    </a>
-                    <div class="caption">
-                        Chaos game played over 10,000,000 terations for tetrahedron but not repeating any anchor points.
-                    </div>
-
-                </div>
+        <div class="row m-4">
+            <div class="col">
+                <p>Below is all the regular polyhedra with the chaos game rendered for 10,000,000 iterations for different variations of the game.</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <table>
+                <table class="ma-fc-table">
                     <thead>
                     <tr>
                         <th scope="col">
@@ -169,19 +180,27 @@
                             </a>
 
                         </td>
+                        <td>
+                            <a href="/images/fractalChaos/polyhedra/lg/ico1.00e+007norepeat-dp.txt.png">
+                                <img class="img-fluid" src="/images/fractalChaos/polyhedra/table/ico-norepeat.png"></img>
+                            </a>
+
+                        </td>
                     </tr>
                     <tr>
                         <th scope="row">
                             No Repeat Nearest
                         </th>
                         <td>
+                            <a href="/images/fractalChaos/polyhedra/lg/tetra1.00e+007norepeatnearest-dp.txt.png">
+                                <img class="img-fluid" src="/images/fractalChaos/polyhedra/table/tetra-norepeatnearest.png"></img>
+                            </a>
+
                         </td>
                         <td>
                             <a href="/images/fractalChaos/polyhedra/lg/cube1.00e+007norepeatnearest-dp.txt.png">
                                 <img class="img-fluid" src="/images/fractalChaos/polyhedra/table/cube-norepeatnearest.png"></img>
                             </a>
-
-
                         </td>
                         <td>
                             <a href="/images/fractalChaos/polyhedra/lg/octahedron2.00e+007-norepeatnearest.png">
@@ -197,6 +216,12 @@
 
 
                         </td>
+                        <td>
+                            <a href="/images/fractalChaos/polyhedra/lg/ico1.00e+007norepeatnearest-dp.txt.png">
+                                <img class="img-fluid" src="/images/fractalChaos/polyhedra/table/ico-norepeatnearest.png"></img>
+                            </a>
+
+                        </td>
                     </tr>
 
                     </tbody>
@@ -204,33 +229,27 @@
             </div>
 
         </div>
-        
+
+
+    </div>
+
+
+    <div class="container text-light">
+        <div class="row">
+            <div class="col">
+                <p>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=DlozA4810A4&list=PLf5XkPT_UDJuKLNN82ghOZ18EtMss_B6Z">
+                        See a playlist here for a few different videos I've rendered
+                    </a>
+
+                </p>
+            </div>
+        </div>
 
         <div class="row">
-
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Rendering these takes a very long time, so I don't have a lot of examples here yet. The code can run all the different game styles on polyhedra, and I will add more variants as I add them.</p>
-
-                    <p>
-                        <a target="_blank" href="https://www.youtube.com/watch?v=DlozA4810A4&list=PLf5XkPT_UDJuKLNN82ghOZ18EtMss_B6Z">
-                            See a playlist here for a few different videos I've rendered
-                        </a>
-
-                    </p>
-                </div>
+            <div class="col-md-12">
+                @Html.Partial("FractalChaos/References")
             </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    @Html.Partial("FractalChaos/References")
-                </div>
-            </div>
-
         </div>
-    </div>
-
-    </div>
-    </div>
     </div>
 }

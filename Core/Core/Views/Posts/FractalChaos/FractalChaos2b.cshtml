@@ -1,0 +1,398 @@
+﻿@section Styles {
+    <link rel="stylesheet" href="/css/fractalchaos.css"/>
+}
+
+@section Jumbo
+{
+    <div class="parallax parallax-fc2">
+        <div class="parallax-title">
+            <span>
+                Fractal Chaos
+            </span>
+        </div>
+    </div>
+}
+
+@section Content {
+    <div class="container text-light">
+        <div class="row">
+            <div class="col">
+                @Html.Partial("FractalChaos/Navigation")
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-light">
+    <div class="row">
+
+        <p>
+            At the moment, we roll a die to select which anchor point we move towards. We may end up rolling the same anchor point over and over again.
+        </p>
+        <table class="fc-dice-table">
+            <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <img src="/images/fractalChaos/cube-r.png"/>
+                </td>
+                <td>
+                    <img src="/images/fractalChaos/cube-r.png"/>
+                </td>
+                <td>
+                    <img src="/images/fractalChaos/cube-r.png"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <p>
+            So let's add the constraint:
+        </p>
+        <ul class="list-group">
+            <li class="list-group-item">
+                If we roll the same anchor point as we had on the last iteration, we roll again until we select a different one.
+                <br>
+
+                <table class="fc-dice-table">
+                    <thead>
+                    <tr>
+                        <th>1</th>
+                        <th></th>
+                        <th>2</th>
+                        <th>3</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src="/images/fractalChaos/cube-r.png"/>
+                        </td>
+                        <td>
+                            <img src="/images/fractalChaos/cube-r-no.png"/> <img src="/images/fractalChaos/cube-r-no.png"/>
+                        </td>
+                        <td>
+                            <img src="/images/fractalChaos/cube-g.png"/>
+                        </td>
+                        <td>
+                            <img src="/images/fractalChaos/cube-b.png"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </li>
+        </ul>
+
+        <p>
+            When playing the chaos game with the square, this simple change to the rules transforms the random collection to this remarkable fractal structure.
+        </p>
+
+
+    </div>
+
+    <div class="row">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="fc-image-container">
+                <a href="/images/fractalChaos/polygons/lg/fcSquareNoRepeatBig2.png">
+                    <img src="/images/fractalChaos/polygons/fcSquareNoRepeatSmall2.png"/>
+                </a>
+                <div class="caption">
+                    Chaos game played over 10,000,000 iterations with four anchor points, going halfway towards a random anchor at every iteration but with constraint that the same anchor point is different at every iteration.
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="fc-image-container">
+                <a href="/images/fractalChaos/polygons/lg/fcPentagonNoRepeatBig.png">
+                    <img src="/images/fractalChaos/polygons/fcPentagonNoRepeatSmall.png"/>
+                </a>
+
+                <div class="caption">
+                    Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration but with constraint that the same anchor point is different at every iteration.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex10normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10normal1.00e+006-dp.txt.png"/>
+            </a>
+        </div>
+    </div>
+    <div class="container-fluid text-light">
+    <div class="row">
+    <div class="col">
+    <table class="ma-fc-table">
+    <thead>
+    <tr>
+        <th scope="col">
+            Polygons
+        </th>
+        <th scope="col">
+            Triangle
+        </th>
+        <th scope="col">
+            Square
+        </th>
+        <th scope="col">
+            Pentagon
+        </th>
+        <th scope="col">
+            Hexagon
+        </th>
+        <th scope="col">
+            Heptagon
+        </th>
+        <th scope="col">
+            Octagon
+        </th>
+        <th scope="col">
+            Nonagon
+        </th>
+        <th scope="col">
+            Decagon
+        </th>
+
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">
+            Normal
+        </th>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex3normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex4normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex5normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex6normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex7normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex8normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex9normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex10normal1.00e+006-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "vertex10normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+
+    </tr>
+    <tr>
+        <th scope="row">
+            No Repeat
+        </th>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex3norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex4norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex5norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex6norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex7norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex8norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex9norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex10norepeat1.00e+006norepeat-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+
+    </tr>
+    <tr>
+        <th scope="row">
+            No Repeat Nearest
+        </th>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex3norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex4norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex5norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex6norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex7norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex8norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex9norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex10norepeatnearest1.00e+006norepeatnearest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+
+    </tr>
+    <tr>
+        <th scope="row">
+            No Repeat Furthest
+        </th>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex3norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex4norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex5norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex6norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex7norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex8norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex9norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="/images/fractalChaos/polygons/table/vertex10norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+
+    </tr>
+
+    </tbody>
+    </table>
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+}

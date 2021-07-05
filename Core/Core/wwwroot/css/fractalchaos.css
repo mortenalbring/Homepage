@@ -24,6 +24,25 @@
     background-image: url("../images/fractalChaos/backgrounds/background_fc5c1.png");
 }
 
+.parallax-fc6 {
+    height: 90vh !important;
+    background-color: #050506;
+    background-image: url("../images/fractalChaos/backgrounds/background_fc6.png");
+}
+@media (max-width:575px)  {
+    .parallax-fc6 {
+        min-height: 20vh !important;
+        height: 20vh !important;
+    }
+}
+
+@media (min-width:575px) and (max-width: 767px) {
+    .parallax-fc6 {
+        min-height: 20vh !important;
+        height: 20vh !important;
+    }
+}
+
 
 .fractal-chaos-nav li {
     display:inline-block;
@@ -91,3 +110,40 @@
     background: rgba(0,0,0,0.0) !important;
 }
 
+.ma-fc-table {
+    background: rgba(0, 26, 19, 0.14);
+}
+.ma-fc-table td a img {
+    
+}
+.ma-fc-table td {
+    width:18%;
+    border-left:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.ma-fc-table {
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+}
+.ma-fc-table th {
+    text-align: center;
+    border-left:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+
+.ma-fc-table td a:hover img {
+    background: #323236;
+}
+
+.fc-dice-table {
+    width: 1%;
+}
+
+.fc-dice-table td {
+    width:1%;
+    white-space: nowrap;
+}
+.fc-dice-table th {
+    font-size: smaller;
+    text-align: center;
+}

@@ -27,6 +27,18 @@ namespace Core.Controllers
             ViewBag.Section = 2;
             return View("FractalChaos/FractalChaos2");
         }
+        public IActionResult FractalChaos2b()
+        {
+            ViewBag.Section = 2.1;
+            return View("FractalChaos/FractalChaos2b");
+        }
+
+        public IActionResult RenderBig(string imageLoc)
+        {
+            ViewBag.ImageLocation = imageLoc;
+            return View("FractalChaos/RenderBig");
+        }
+
         public IActionResult FractalChaos3()
         {
             ViewBag.Section = 3;

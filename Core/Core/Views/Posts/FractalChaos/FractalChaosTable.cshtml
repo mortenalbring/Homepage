@@ -1,2 +1,242 @@
-﻿@model TModel
+﻿ <div class="container-fluid text-light">
+    <div class="row">
+    <div class="col">
+    <table class="ma-fc-table">
+    <thead>
+    <tr>
+        <th scope="col">
+            
+        </th>
+        <th scope="col">
+            Triangle
+        </th>
+        <th scope="col">
+            Square
+        </th>
+        <th scope="col">
+            Pentagon
+        </th>
+        <th scope="col">
+            Hexagon
+        </th>
+        <th scope="col">
+            Heptagon
+        </th>
+        <th scope="col">
+            Octagon
+        </th>
+        <th scope="col">
+            Nonagon
+        </th>
+        <th scope="col">
+            Decagon
+        </th>
 
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">
+            Normal
+        </th>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex3normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex4normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex5normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex6normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex7normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex8normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex9normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex10normal1.00e+006-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10normal1.00e+006-dp.txt.png"/>
+            </a>
+        </td>
+ 
+    </tr>
+    <tr>
+        <th scope="row">
+            No Repeat
+        </th>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex3norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex4norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex5norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex6norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex7norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex8norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex9norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex10norepeat1.00e+006norepeat-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10norepeat1.00e+006norepeat-dp.txt.png"/>
+            </a>
+        </td>
+
+
+    </tr>
+    <tr>
+        <th scope="row">
+            No Repeat Nearest
+        </th>
+
+        <td>
+
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex4norepeatnearest1.00e+006norepeatnearest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex5norepeatnearest1.00e+006norepeatnearest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex6norepeatnearest1.00e+006norepeatnearest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex7norepeatnearest1.00e+006norepeatnearest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex8norepeatnearest1.00e+006norepeatnearest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex9norepeatnearest1.00e+006norepeatnearest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex10norepeatnearest1.00e+006norepeatnearest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10norepeatnearest1.00e+006norepeatnearest-dp.txt.png"/>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            No Repeat Furthest
+        </th>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex3norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex4norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex5norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex6norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex7norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex8norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex9norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex10norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"})">
+                <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10norepeatfurthest1.00e+006norepeatfurthest-dp.txt.png"/>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+
+    </div>
+
+    </div>

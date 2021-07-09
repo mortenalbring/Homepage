@@ -78,10 +78,11 @@
     text-decoration:underline;
 }
 
+
 .fc-image-container {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid #9a9a9a;
+    border: 1px solid #6d6d6d;
     border-radius: 2px;
 }
 
@@ -93,10 +94,10 @@
     border-top-right-radius: 5px;
     padding: 10px;
     border-bottom: 1px solid #9a9a9a;
+    transition: background-color 2s linear;
 }
 .fc-image-container a img:hover {
-    transition: 1s;
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 1) !important;
 }
 
 .fc-image-container .caption {
@@ -117,7 +118,7 @@
     
 }
 .ma-fc-table td {
-    width:18%;
+    width:11%;
     border-left:1px solid #ccc;
     border-bottom:1px solid #ccc;
 }

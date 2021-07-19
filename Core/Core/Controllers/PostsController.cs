@@ -69,7 +69,10 @@ namespace Core.Controllers
 
 
 
-
+        public IActionResult PeterDeJong()
+        {
+            return View();
+        }
         
         public IActionResult MengerSponge()
         {

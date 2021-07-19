@@ -38,6 +38,10 @@
     background-image: url("../images/tsucs/tsucs34072.png");
     background-size: cover;
 }
+.parallax-peterdejong {
+    background-image: url("../images/peterdejong/peterdejong.png");
+    background-size: cover;
+}
 
 @media (min-width:575px) and (max-width: 767px) {
     .parallax.parallax-menger {

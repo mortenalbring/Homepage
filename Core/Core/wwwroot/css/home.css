@@ -42,6 +42,10 @@
     background-image: url("../images/peterdejong/peterdejong.png");
     background-size: cover;
 }
+.parallax-lorenz {
+    background-image: url("../images/lorenz/LorenzTransBig2.png");
+    background-size: cover;
+}
 
 @media (min-width:575px) and (max-width: 767px) {
     .parallax.parallax-menger {

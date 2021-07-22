@@ -1,16 +1,15 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @{
     ViewData["Title"] = "Morten Albring - Personal Homepage";
-    
-    @inject IViewLocalizer Localizer
-        
+
+@inject IViewLocalizer Localizer
     }
 
 @section Content
-{ 
-<div class="text-center">
-    <h1 class="display-3 text-light ma-title">Morten Alexander Albring</h1>
-</div>
+{
+    <div class="text-center">
+        <h1 class="display-3 text-light ma-title">Morten Alexander Albring</h1>
+    </div>
 
     <div class="container">
         <div class="row">
@@ -22,7 +21,7 @@
                 <p class="ma-blurb">@Localizer["IntroPart2"]</p>
             </div>
         </div>
-    
+
     </div>
     <div class="container-fluid p-5">
 
@@ -76,24 +75,37 @@
             </div>
 
         </div>
-        
+
         <div class="row">
-             <div class="col-sm">
-                            <div class="ma-img-container">
-                                <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="PeterDeJong">
-                                    <img src="images/home/cover-peterdejong.png" class="img-fluid" alt="Peter De Jong">
-                                    <div class="ma-overlay">
-                                        <span>
-                                            <strong>Peter De Jong attractor</strong> <br/>
-                                            <p>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</p>
-                                        </span>
-            
-                                    </div>
-                                </a>
-                            </div>
+            <div class="col-sm">
+                <div class="ma-img-container">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="PeterDeJong">
+                        <img src="images/home/cover-peterdejong.png" class="img-fluid" alt="Peter De Jong">
+                        <div class="ma-overlay">
+                            <span>
+                                <strong>Peter De Jong attractor</strong> <br/>
+                                <p>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</p>
+                            </span>
+
                         </div>
+                    </a>
+                </div>
+            </div>
+    <div class="col-sm">
+                <div class="ma-img-container">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="Lorenz">
+                        <img src="images/home/cover-lorenz.png" class="img-fluid" alt="Lorenz Attractor">
+                        <div class="ma-overlay">
+                            <span>
+                                <strong>Lorenz attractor</strong> <br/>
+                                <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
+                            </span>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
 
         </div>
     </div>
 }
-

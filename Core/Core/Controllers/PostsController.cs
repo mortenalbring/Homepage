@@ -68,6 +68,10 @@ namespace Core.Controllers
         }
 
 
+        public IActionResult Lorenz()
+        {
+            return View();
+        }
 
         public IActionResult PeterDeJong()
         {

@@ -46,6 +46,10 @@
     background-image: url("../images/lorenz/LorenzTransBig2.png");
     background-size: cover;
 }
+.parallax-angulard3 {
+    background-image: url("../angularD3/AngularD3-preview.png");
+    background-size: contain;
+}
 
 @media (min-width:575px) and (max-width: 767px) {
     .parallax.parallax-menger {

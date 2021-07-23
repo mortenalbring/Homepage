@@ -67,6 +67,11 @@ namespace Core.Controllers
             return View("FractalChaos/FractalChaos7");
         }
 
+        public IActionResult AngularD3()
+        {
+            return View("AngularD3/AngularD3");
+        }
+
 
         public IActionResult Lorenz()
         {

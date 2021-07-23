@@ -13366,4 +13366,36 @@
       <_ContentIncludedByDefault Remove="wwwroot\js\MathJax\MathJax.js" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="wwwroot\angularD3\AngularD3-Controllers.js" />
+      <None Include="wwwroot\angularD3\AngularD3-GraphService.js" />
+      <None Include="wwwroot\angularD3\AngularD3-SettingsService.js" />
+      <None Include="wwwroot\angularD3\AngularD3.html" />
+      <None Include="wwwroot\angularD3\AngularD3.js" />
+      <None Include="wwwroot\angularD3\packages\angular.min.js" />
+      <None Include="wwwroot\angularD3\packages\d3.js" />
+      <None Include="wwwroot\angularD3\packages\d3.min.js" />
+      <None Include="wwwroot\angularD3\packages\LICENSE" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-countryNodes.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-cube.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-custom-charge.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-DNA.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-graphene-auto.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-graphene.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-home.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-multiplecubes.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-multiplespheres.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-norskekongehuset.css" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-norskekongehuset.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-orbit.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-sphere.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-square-lattice.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-windsors.css" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-windsors.js" />
+      <None Include="wwwroot\angularD3\presets\AngularD3-preset-words.js" />
+      <None Include="wwwroot\angularD3\styles\containers.css" />
+      <None Include="wwwroot\angularD3\styles\nodestyles.css" />
+      <None Include="wwwroot\angularD3\styles\pagestyles.css" />
+    </ItemGroup>
+
 </Project>

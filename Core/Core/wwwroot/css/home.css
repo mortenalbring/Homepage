@@ -2,6 +2,11 @@
     margin-bottom: 0 !important;
 }
 
+.navbar-trans {
+    background-color: rgba(12, 84, 96, 0);
+    opacity: 0.5;
+}
+
 .parallax {
     border-bottom: 1px solid #fff;
     min-height: 80vh;
@@ -218,3 +223,16 @@
     overflow: auto;
 }
 
+.navbar-ma-trans {
+    position: absolute;
+    width:100%;
+    z-index: 1;
+    background: transparent;
+}
+
+.navbar-ma-semi-trans {
+    position: absolute;
+    width:100%;
+    z-index: 1;
+    background: rgba(0,0,0,0.4);
+}

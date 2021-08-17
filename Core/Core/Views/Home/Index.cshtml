@@ -30,51 +30,47 @@
 
 
         <div class="row p-3">
-            <div class="col-sm">
+            <div class="col-sm-6 col-md-4">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="FractalChaos">
                         @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
                            {
-                               Title = @Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaos)],
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaos)],
                                CoverImagePath = "images/home/cover-fractalchaos.png",
-                               TextLong = @Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)],
-                               TextShort = @Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)]
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)]
                            }); }
                     </a>
                 </div>
             </div>
 
-            <div class="col-sm">
+            <div class="col-sm-6 col-md-4">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="MengerSponge">
                         @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
                            {
-                               Title = @Localizer[nameof(Core.Resources.Views.Home.Index.Menger)],
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Menger)],
                                CoverImagePath = "images/home/cover-menger.png",
-                               TextLong = @Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextLong)],
-                               TextShort = @Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextShort)]
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextShort)]
                            }); }
                     </a>
                 </div>
-
-
             </div>
-            
+
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="TSUCS">
-                        <img src="images/home/cover-tsucs.png" class="img-fluid" alt="Three Scroll Unified Chaotic System">
-                        <div class="ma-overlay">
-                            <span>
-                                <strong>Three-Scroll Unified Chaotic System</strong> <br/>
-                                The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.
-                            </span>
-
-                        </div>
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCS)],
+                               CoverImagePath = "images/home/cover-tsucs.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCSTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCSTextShort)]
+                           }); }
                     </a>
                 </div>
             </div>
-
         </div>
 
         <div class="row p-3">

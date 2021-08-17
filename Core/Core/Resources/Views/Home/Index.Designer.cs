@@ -149,5 +149,32 @@ namespace Core.Resources.Views.Home {
                 return ResourceManager.GetString("test", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Three-Scroll Unified Chaotic System.
+        /// </summary>
+        public static string TSUCS {
+            get {
+                return ResourceManager.GetString("TSUCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes..
+        /// </summary>
+        public static string TSUCSTextLong {
+            get {
+                return ResourceManager.GetString("TSUCSTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes..
+        /// </summary>
+        public static string TSUCSTextShort {
+            get {
+                return ResourceManager.GetString("TSUCSTextShort", resourceCulture);
+            }
+        }
     }
 }

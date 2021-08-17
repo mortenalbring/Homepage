@@ -57,4 +57,37 @@
     <data name="TSUCSTextShort" xml:space="preserve">
         <value>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</value>
     </data>
+    <data name="PeterDeJong" xml:space="preserve">
+        <value>Peter De Jong </value>
+    </data>
+    <data name="PeterDeJongTextLong" xml:space="preserve">
+        <value>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</value>
+    </data>
+    <data name="PeterDeJongTextShort" xml:space="preserve">
+        <value>The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</value>
+    </data>
+    <data name="Lorenz" xml:space="preserve">
+        <value>Lorenz Attractor</value>
+    </data>
+    <data name="LorenzTextShort" xml:space="preserve">
+        <value>The Lorenz attractor is a chaotic system that arises out of three simple differential equations.</value>
+    </data>
+    <data name="LorenzTextLong" xml:space="preserve">
+        <value>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </value>
+    </data>
+    <data name="AngularD3" xml:space="preserve">
+        <value>Angular D3</value>
+    </data>
+    <data name="AngularD3TextLong" xml:space="preserve">
+        <value>Combining D3.js with AngularJS</value>
+    </data>
+    <data name="AngularD3TextShort" xml:space="preserve">
+        <value>Combining D3.js with AngularJS</value>
+    </data>
+    <data name="Computations" xml:space="preserve">
+        <value>Thermodynamics, Computation and Irreversibility</value>
+    </data>
+    <data name="ComputationsTextLong" xml:space="preserve">
+        <value>Thermodynamics, Computation and Irreversibility</value>
+    </data>
 </root>

@@ -71,71 +71,73 @@
                     </a>
                 </div>
             </div>
+
+
         </div>
 
         <div class="row p-3">
+
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="PeterDeJong">
-                        <img src="images/home/cover-peterdejong.png" class="img-fluid" alt="Peter De Jong">
-                        <div class="ma-overlay">
-                            <span>
-                                <strong>Peter De Jong attractor</strong> <br/>
-                                <p>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</p>
-                            </span>
-
-                        </div>
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJong)],
+                               CoverImagePath = "images/home/cover-peterdejong.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJongTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJongTextShort)]
+                           }); }
                     </a>
                 </div>
             </div>
+
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="Lorenz">
-                        <img src="images/home/cover-lorenz.png" class="img-fluid" alt="Lorenz Attractor">
-                        <div class="ma-overlay">
-                            <span>
-                                <strong>Lorenz attractor</strong> <br/>
-                                <p>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </p>
-                            </span>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row p-3">
-            <div class="col-sm">
-                <div class="ma-img-container d-flex justify-content-center">
-                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="AngularD3">
-                        <img src="images/home/cover-angulard3.png" class="img-fluid" alt="Angular D3">
-                        <div class="ma-overlay">
-                            <span>
-                                <strong>Angular with D3.js</strong> <br/>
-                                <p>Combining D3.js with AngularJS</p>
-                            </span>
-
-                        </div>
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Lorenz)],
+                               CoverImagePath = "images/home/cover-lorenz.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.LorenzTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.LorenzTextShort)]
+                           }); }
                     </a>
                 </div>
             </div>
         </div>
 
         <div class="row p-3">
+
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="AngularD3">
-                        <img src="images/home/cover-demon-sm-trans.png" class="img-fluid" alt="Angular D3">
-                        <div class="ma-overlay">
-                            <span>
-                                <strong>Thermodynamics, Computation and Irreversibility</strong> <br/>
-                            </span>
-
-                        </div>
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3)],
+                               CoverImagePath = "images/home/cover-angulard3.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3TextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3TextShort)]
+                           }); }
                     </a>
                 </div>
             </div>
+
+            
+            <div class="col-sm">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="ComputationsIrreversibility">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Computations)],
+                               CoverImagePath = "images/home/cover-demon-sm-trans.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.ComputationsTextLong)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+            
+            
         </div>
+
     </div>
 }

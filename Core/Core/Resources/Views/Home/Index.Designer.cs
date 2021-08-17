@@ -61,6 +61,51 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Angular D3.
+        /// </summary>
+        public static string AngularD3 {
+            get {
+                return ResourceManager.GetString("AngularD3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combining D3.js with AngularJS.
+        /// </summary>
+        public static string AngularD3TextLong {
+            get {
+                return ResourceManager.GetString("AngularD3TextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combining D3.js with AngularJS.
+        /// </summary>
+        public static string AngularD3TextShort {
+            get {
+                return ResourceManager.GetString("AngularD3TextShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thermodynamics, Computation and Irreversibility.
+        /// </summary>
+        public static string Computations {
+            get {
+                return ResourceManager.GetString("Computations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thermodynamics, Computation and Irreversibility.
+        /// </summary>
+        public static string ComputationsTextLong {
+            get {
+                return ResourceManager.GetString("ComputationsTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fractal Chaos.
         /// </summary>
         public static string FractalChaos {
@@ -115,6 +160,33 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lorenz Attractor.
+        /// </summary>
+        public static string Lorenz {
+            get {
+                return ResourceManager.GetString("Lorenz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. .
+        /// </summary>
+        public static string LorenzTextLong {
+            get {
+                return ResourceManager.GetString("LorenzTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Lorenz attractor is a chaotic system that arises out of three simple differential equations..
+        /// </summary>
+        public static string LorenzTextShort {
+            get {
+                return ResourceManager.GetString("LorenzTextShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menger Sponge.
         /// </summary>
         public static string Menger {
@@ -138,6 +210,33 @@ namespace Core.Resources.Views.Home {
         public static string MengerTextShort {
             get {
                 return ResourceManager.GetString("MengerTextShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Peter De Jong .
+        /// </summary>
+        public static string PeterDeJong {
+            get {
+                return ResourceManager.GetString("PeterDeJong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry..
+        /// </summary>
+        public static string PeterDeJongTextLong {
+            get {
+                return ResourceManager.GetString("PeterDeJongTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry..
+        /// </summary>
+        public static string PeterDeJongTextShort {
+            get {
+                return ResourceManager.GetString("PeterDeJongTextShort", resourceCulture);
             }
         }
         

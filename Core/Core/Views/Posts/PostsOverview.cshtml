@@ -16,33 +16,7 @@
 @section Content {
     <div class="container text-light">
         <div class="row">
-            
-            @foreach (var vm in Model.PostsInfos)
-            {
-                
-                <div class="row p-3">
-                    <div class="col-sm">
-                        <div class="ma-img-container d-flex justify-content-center">
-                            <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="@vm.ActionResult">
-                                <img src="images/home/cover-fractalchaos.png" class="img-fluid" alt="Fractal Chaos">
-                                <div class="ma-overlay">
-                                    <span>
-                                        <p class="d-none d-xl-block d-lg-block">
-                                            @Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)]
-                                        </p>
-                                        <p class="d-xl-none d-lg-none">
-                                            Rendering fractal structures using the chaos game
-                                        </p>
-                                    </span>
-                                </div>
-                                <div class="ma-underlay">
-                                    @vm.Title
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    </div>
-                    }
+      
 
         </div>
     </div>

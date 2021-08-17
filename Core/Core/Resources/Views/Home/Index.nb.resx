@@ -39,4 +39,7 @@
     <data name="Home" xml:space="preserve">
         <value>Hjem</value>
     </data>
+    <data name="Menger" xml:space="preserve">
+        <value>Menger Svampe</value>
+    </data>
 </root>

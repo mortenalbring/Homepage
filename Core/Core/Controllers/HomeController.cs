@@ -59,6 +59,7 @@ namespace Core.Controllers
             vm.BlurbText1 = _localizer[nameof(Resources.Controllers.HomeController.BlurbText1)];
             vm.BlurbText2 = _localizer[nameof(Resources.Controllers.HomeController.BlurbText2)];
 
+         
             return View(vm);
         }
 

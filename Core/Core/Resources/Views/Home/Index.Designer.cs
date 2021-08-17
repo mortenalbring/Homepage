@@ -115,6 +115,33 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Menger Sponge.
+        /// </summary>
+        public static string Menger {
+            get {
+                return ResourceManager.GetString("Menger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Menger sponge is a three-dimensional fractal curve that exhibits infinite surface area and zero volume. This shows the POV-Ray code to render this mathematical structure.
+        /// </summary>
+        public static string MengerTextLong {
+            get {
+                return ResourceManager.GetString("MengerTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Menger sponge is a three-dimensional fractal curve with infinite surface area.
+        /// </summary>
+        public static string MengerTextShort {
+            get {
+                return ResourceManager.GetString("MengerTextShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to aaaa.
         /// </summary>
         public static string test {

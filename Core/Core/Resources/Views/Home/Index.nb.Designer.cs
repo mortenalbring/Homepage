@@ -115,6 +115,15 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Menger Svampe.
+        /// </summary>
+        public static string Menger {
+            get {
+                return ResourceManager.GetString("Menger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bbbb.
         /// </summary>
         public static string test {

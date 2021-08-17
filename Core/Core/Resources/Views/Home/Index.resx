@@ -39,4 +39,13 @@
     <data name="Home" xml:space="preserve">
         <value>Home</value>
     </data>
+    <data name="Menger" xml:space="preserve">
+        <value>Menger Sponge</value>
+    </data>
+    <data name="MengerTextLong" xml:space="preserve">
+        <value>The Menger sponge is a three-dimensional fractal curve that exhibits infinite surface area and zero volume. This shows the POV-Ray code to render this mathematical structure</value>
+    </data>
+    <data name="MengerTextShort" xml:space="preserve">
+        <value>The Menger sponge is a three-dimensional fractal curve with infinite surface area</value>
+    </data>
 </root>

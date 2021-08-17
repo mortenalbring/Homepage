@@ -1,0 +1,19 @@
+﻿@model PostInfoBox
+
+
+
+
+        <img src="@Model.CoverImagePath" class="img-fluid" alt="@Model.Title">
+        <div class="ma-overlay">
+            <span>
+                <p class="d-none d-xl-block d-lg-block">
+                    @Model.TextLong
+                </p>
+                <p class="d-xl-none d-lg-none">
+                    @Model.TextShort
+                </p>
+            </span>
+        </div>
+        <div class="ma-underlay">
+            @Model.Title
+        </div>

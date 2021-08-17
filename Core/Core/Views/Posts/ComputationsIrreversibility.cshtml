@@ -7,16 +7,16 @@
 
 @section Scripts
 {
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 }
 
 @section Jumbo
 {
-    <div class="parallax parallax-lorenz">
+    <div class="parallax parallax-computations">
         <div class="parallax-title">
             <span>
-Thermodynamics, Computation and Irreversibility
+                Thermodynamics, Computation and Irreversibility
             </span>
         </div>
     </div>
@@ -24,13 +24,138 @@ Thermodynamics, Computation and Irreversibility
 
 @section Content {
     <div class="container text-light">
-        <div class="row">
-        <p>This post is about the fundamental link between thermodynamics and computations. This is not on the practical level, about the heat dissipation of circuitry - though of course that is a very important concern when building computer compontents. This is about a fundamental and unavoidable mathematical link between the very concept of computation and our understanding of thermodynamics. </p>
 
-              <img style="float:right" src="/images/computations/feynman-bongos.png"/>
-                    <p>
-                        There is a profound difference between how the real world behaves, and how computers simulate processes.
-                    </p>
+        <div class="row">
+            <div class="col">
+                <p>This post is about the fundamental link between thermodynamics and computations. This is not on the practical level, about the heat dissipation of circuitry - though of course that is a very important concern when building computer compontents. This is about a fundamental and unavoidable mathematical link between the very concept of computation and our understanding of thermodynamics. </p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-10">
+
+                <p>
+                    There is a profound difference between how the real world behaves, and how computers simulate processes.
+                    This was identified in <a href="http://www.cs.berkeley.edu/~christos/classics/Feynman.pdf">a keynote speech in 1981 by Richard Feynman</a>, making one simple observation:
+                </p>
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-10">
+                <blockquote class="blockquote">
+                    <p class="mb-0">Physics is reversible, but a classical computer is irreversible</p>
+                    <footer class="blockquote-footer">Richard Feymann</footer>
+                </blockquote>
+
+            </div>
+            <div class="col-2">
+                <img class="img-thumbnail rounded float-end" src="/images/computations/feynman-bongos.png" alt=""/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>
+                    A process is physically reversible if the initial state can be recovered from the initial state without changing the system.
+                    That is so say, if there is no preferred <i>arrow of time</i>.
+                </p>
+                <p>
+                    This is a concept introduced by Arthur Eddington, an astronomer and mathematician. Eddington was also a Quaker, and declared himself a pacifist during World War 1. His religious beliefs were expressed in his writings on the philosophy of science in his work <a href="https://archive.org/details/scienceunseenwor00eddi">Science and the unseen world</a>, published 1929. Eddington wrote that the unseen world could not be discovered from science alone but must also be sought through the understanding of spiritual reality.
+                </p>
+                <p>The arrow of time is itself a philosophical concept as much as it is a mathematical one.</p>
+                <p>Consider the dynamics of a collection of <em>j</em> particles with mass <em>m</em> governed by Newtonian equations of motion</p>
+                <p>
+                    \[m\frac{d^2}{dt^2}q_{j}(t) = F_{j}(q_{1}(t),...,q_{N}(t))\]
+                </p>
+                <br/>
+                <p>This equation is <em>invariant</em> under a time reversal. If we substitute <em>t</em> for <em>-t</em>, this equation remains the same. </p>
+                <p>If we were to use a very tiny video recorder to record the motion of these particles and then play it back, we would have no idea whether the video was being played forward or in reverse. There is no experiment we could do or calculation we could perform to deduce the arrow of time from the video recording of the motions of these particles. </p>
+                <p>However, let's now consider the case of an expanding gas. At the microscopic level, the motion of the atoms of this gas satisfies the equation above. However, if we were to zoom out and film the expanding gas it would be obvious whether the video recording were being played forwards or backwards. When being played forwards, we see the gas expanding. When being played backwards, it would appear the gas is spontaneously condensing. </p>
+                <p>The physical properties of low density gases were described by Ludwig Boltzmann, Austrian physicist and philosopher. Boltzmann developed his theory of gases on the assumption that matter was made of atoms and molecules, a theory that was heavily disputed at the end of the 19th century and dismissed by German philosophers such as Mach and Ostwald. Boltzmann managed to develop a model that would satisfy both camps, discussing atoms as 'models' of reality that the anti-atomists could consider as a useful - though unrealistic - mathematical fabrication. A similar discussion would arise a century later over the concept of Feynmann diagrams, outlining the interactions of subatomic particles. </p>
+                <p>Bolztmann introduced the distribution function <span>\(f(\vec{r},\vec{v},t)\)</span> to count the number of molecules within the volume element <span>\(d^3r\)</span> at a position <span>\(\vec{r}\)</span> and the velocity volume element <span>\(d^3v\)</span> at <span>\(\vec{v}\)</span> at a time <em>t</em>. This gives us the <em>Bolztmann equation</em> </p>
+                <div>
+                    \[\frac{d}{dt}f(t) = -\vec{v} \cdot \Delta_{r}f(t) + Q(f(t),f(t))\]
+                </div>
+                <br/>
+                <p>The first term in this equation describes the free motion of particles, while the second term describes the binary collisions between pairs of particles. </p>
+                <p>In this equation, if we substitute <em>t</em> for <em>-t</em>, the equation does <strong>not</strong> remain unchanged. As we also have to change the sign of the velocity <em>v</em>, the second term ends up with a negative sign.</p>
+                <p>This is our first indication of an irreversible process arising entirely out of reversible fundamental physics</p>
+
+            </div>
+        </div>
+
+        <div class="row mb-0">
+            <div class="col">
+                <h3>The Excorcism of Maxwell's Demon</h3>
+
+                <p>This concept of irreversibility is inseparable from the Second Law of Thermodynamics, which may well be the only fundamental law of physics that exhibits an intrinsic arrow of time. Historically, this law has been stated in many different but equivalent ways, combining heat and work to the conceptual meaning of time. The variable entropy was introduced to quantify this relation. </p>
+                <p>One statement of the Second Law of Thermodynamics is it is never possible for a cyclic process to convert heat entirely into work, so that in a closed system the overall entropy must always increase.</p>
+                <p>The possibility of violating this law is encapsulated by Maxwell's Demon thought experiment. This formulation shows how thermodynamic irreversibility is linked to the act of measurement and introduces the link between entropy and information.</p>
+                <img class="img-thumbnail center-block" src="/images/computations/slizardbennet.jpg" alt=""/>
+
+                <p>
+                    The image above shows a single molecule <em>Slizard engine</em>.. A Slizard engine is the simplest possible steam engine, consisting of a cylinder with a single molecule inside it. The cylinder is is contact with a heat reservoir to maintain constant thermal conditions. There is, however, a demon outside this cylinder that controls a partition that can either open or close the partition at will.
+                </p>
+
+                <p>
+                    The phase space representing what the demon 'knows' about the position of the molecule.
+                    This phase space has three states:
+                </p>
+                <ul>
+                    <li>
+                        S meaning the demon knows nothing
+                    </li>
+                    <li>
+                        L if the demon knows the particle is at the left side
+                    </li>
+                    <li>
+                        R if the demon knows it is on the right side.
+                    </li>
+                </ul>
+
+
+                <p>
+                    The engine goes through six steps in the procedure:
+                </p>
+                <ol>
+                    <li>The molecule is in the thermal path and moves randomly throughout this box</li>
+                    <li>The demon inserts a diving wall into the box to hold the molecule on the left side or the right side</li>
+                    <li>The demon carries out a reversible measurement to determine whether the molecule is on the left or the right</li>
+                    <li>
+                        The demon inserts a piston the side <em>not</em> containing the molecule and uses this to extract work from the molecule bouncing against the partition.
+                        <br/>
+                        The amount of work extracted can be calculated using the ideal gas equation <span>\(pV = NkT\)</span> where in this case <em>N=1</em>. The maximum work extracted is <span>\(W = kT ln(2)\)</span>
+
+                    </li>
+                    <li>The piston has moved to fill the box again</li>
+                    <li>The system is reset and both the demon and the box are at the same state as when it started</li>
+
+                </ol>
+
+                        <p>
+                            The molecule is always in thermal contact with the reservoir so the kinetic energy of the molecule is always <span>\(\frac{3}{2} kT\)</span>. This process makes it <em>appear</em> that the demon can extract heat from the closed system and convert it into userful work. The demon could repeat this process cyclically, in clear violation of the Second Law of Thermodynamics.
+                
+                        </p>
+                        <p>The only way to avoid this violation is if the acquisition of knowledge causes a corresponding entropy cost.</p>
+                        <p>But where does this cost occur?</p>
+                        <p>The entropy cost occurs from steps <strong>5</strong> to <strong>6</strong>, when the demon <em>resets</em> its mind. It is this process of <em>resetting</em> that compresses the phase state. This phase state compression corresponds to an inavoidable entropy increase</p>
+                        <div>
+                            \[E_{l} = kT ln(2)\]
+                        </div>
+                        <p>This limit is the <em>Landauer limit</em>, first discovered in 1961 by Rolf Landauer of IBM. Landauer's principle states that any logically irreversible operation that manipulates information, such as erasing information (or resetting the demon's mind), requires an unavoidable entropy increase. Consequently, the corresponding amount of energy is dissipated as heat. </p>
+                
+                        <p>This is approximately <span>\(3 \times 10^{-21}\)</span> Joules at room temperature. A 100 MHz processor with 100,000 gates erasing one bit at every cycle will dissipate about 28 nanowatts, due to the Landauer limit </p>
+                        <p>In 2012, physicists from the Ecole Normale Supérieure de Lyon, University of Augsburg and the University of Kaiserslautern <a href="http://www.nature.com/nature/journal/v483/n7388/full/nature10872.html">published an article in Nature</a> describing that they have indeed measured the minute amount of energy dissipated when an individual bit is increased</p>
+                
+                        <p>In reality, this processor dissipates approximately 100 million times this amount, so this limit may seem unimportant. However, this limit is a fundamental consequence of the Second Law of Thermodynamics, so cannot be avoided by engineering current reversible architechture.</p>
+
+
+            </div>
         </div>
     </div>
 }

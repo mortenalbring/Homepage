@@ -40,12 +40,26 @@ namespace Core.Controllers
             return View();
         }
         
+        
         public IActionResult Index()
         {
             var msg = _sharedLocalizer["test"];
             var msg2 = _localizer["test"];
 
-            return View();
+            var vm = new HomeViewModel();
+            vm.BlurbText1 = _localizer["IntroPart1"];
+            vm.BlurbText1 = _sharedLocalizer["IntroPart1"];
+
+            var test = Resources.Controllers.SharedResource.IntroPart1;
+            
+            var test2 = nameof(Resources.Controllers.SharedResource.IntroPart1);
+
+            var test3 = _sharedLocalizer[nameof(Resources.Controllers.SharedResource.IntroPart1)];
+
+            vm.BlurbText1 = _localizer[nameof(Resources.Controllers.HomeController.BlurbText1)];
+            vm.BlurbText2 = _localizer[nameof(Resources.Controllers.HomeController.BlurbText2)];
+
+            return View(vm);
         }
 
         [AllowAnonymous]

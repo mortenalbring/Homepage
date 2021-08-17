@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = "";
+}
+
+@section Scripts
+{
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+}
+
+@section Jumbo
+{
+    <div class="parallax parallax-lorenz">
+        <div class="parallax-title">
+            <span>
+Thermodynamics, Computation and Irreversibility
+            </span>
+        </div>
+    </div>
+}
+
+@section Content {
+    <div class="container text-light">
+        <div class="row">
+        <p>This post is about the fundamental link between thermodynamics and computations. This is not on the practical level, about the heat dissipation of circuitry - though of course that is a very important concern when building computer compontents. This is about a fundamental and unavoidable mathematical link between the very concept of computation and our understanding of thermodynamics. </p>
+
+              <img style="float:right" src="/images/computations/feynman-bongos.png"/>
+                    <p>
+                        There is a profound difference between how the real world behaves, and how computers simulate processes.
+                    </p>
+        </div>
+    </div>
+}

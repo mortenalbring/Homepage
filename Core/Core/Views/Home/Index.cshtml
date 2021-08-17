@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Mvc.Localization
+﻿@model HomeViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
 @{
     ViewData["Title"] = "Morten Albring - Personal Homepage";
 
@@ -19,12 +20,14 @@
             <div class="col-sm text-secondary">
                 <p class="ma-blurb">@Localizer["IntroPart1"]</p>
                 <p class="ma-blurb">@Localizer["IntroPart2"]</p>
+                
+                <p class="ma-blurb">@Model.BlurbText1</p>
             </div>
         </div>
 
     </div>
     <div class="container-fluid p-5">
-
+        
         <div class="row p-3">
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
@@ -32,7 +35,9 @@
                         <img src="images/home/cover-fractalchaos.png" class="img-fluid" alt="Fractal Chaos">
                         <div class="ma-overlay">
                             <span>
-                                <strong>@Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaos)]</strong>
+                            <!--
+                            <strong>@Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaos)]</strong>
+                            -->
                                 <br/>
                                 <p class="d-none d-xl-block d-lg-block">
                                     @Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)]
@@ -41,6 +46,9 @@
                                     Rendering fractal structures using the chaos game
                                 </p>
                             </span>
+                        </div>
+                        <div class="ma-underlay">
+                            Fractal Chaos
                         </div>
                     </a>
                 </div>
@@ -122,6 +130,22 @@
                         </div>
                     </a>
                 </div>
+            </div>
+        </div>
+        
+        <div class="row p-3">
+            <div class="col-sm">
+                                <div class="ma-img-container d-flex justify-content-center">
+                                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="AngularD3">
+                                        <img src="images/home/cover-demon-sm-trans.png" class="img-fluid" alt="Angular D3">
+                                        <div class="ma-overlay">
+                                            <span>
+                                                <strong>Thermodynamics, Computation and Irreversibility</strong> <br/>
+                                            </span>
+                
+                                        </div>
+                                    </a>
+                                </div>
             </div>
         </div>
     </div>

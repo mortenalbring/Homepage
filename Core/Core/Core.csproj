@@ -25,6 +25,14 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>_Layout.nb.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Controllers\SharedResource.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>SharedResource.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Controllers\HomeController.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>HomeController.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -48,11 +56,20 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>_Layout.nb.resx</DependentUpon>
       </Compile>
+      <Compile Update="Resources\Controllers\SharedResource.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SharedResource.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Controllers\HomeController.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>HomeController.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Pages" />
-      <Folder Include="Resources\Controllers\HomeController" />
       <Folder Include="wwwroot\images\fractalChaos\polygons\lg" />
     </ItemGroup>
 

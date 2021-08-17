@@ -122,8 +122,28 @@
     border-radius: 10px;
 }
 
+.ma-overlay-color-0 {
+    border:6px solid #ffaa00 !important;
+}
 
-
+.ma-overlay-color-1 {
+    border:6px solid #0090ff !important;
+}
+.ma-overlay-color-2 {
+    border:6px solid rgb(50, 50, 0) !important;
+}
+.ma-overlay-color-3 {
+    border:6px solid rgb(80, 50, 0) !important;
+}
+.ma-overlay-color-4 {
+    border:6px solid rgb(120, 50, 0) !important;
+}
+.ma-overlay-color-5 {
+    border:6px solid rgb(50, 50, 120) !important;
+}
+.ma-overlay-color-6 {
+    border:6px solid rgb(50, 50, 90) !important;
+}
 
 .ma-img-container .ma-overlay{
     position:absolute;
@@ -139,7 +159,7 @@
     background:#212529;
     text-shadow: 0 0 1px #ffffff;
     opacity:0;
-    border:6px solid rgb(0,170,170);
+    border:6px solid rgb(0,170,170); 
     border-radius:50px;
 
     transition:opacity 500ms ease-in-out, 

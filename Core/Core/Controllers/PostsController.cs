@@ -17,8 +17,13 @@ namespace Core.Controllers
             _localizer = localizer;
             _sharedLocalizer = sharedLocalizer;
         }
-        
 
+
+        public IActionResult Words()
+        {
+            return View();
+        }
+        
         public IActionResult FractalChaos()
         {
             ViewBag.Section = 1;

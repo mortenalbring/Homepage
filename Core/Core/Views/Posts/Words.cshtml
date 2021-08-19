@@ -1,0 +1,101 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = "";
+}
+
+@section Scripts
+{
+    <script src="/lib/d3/dist/d3.js"></script>
+    <script src="/words/simpleWords.js"></script>
+    <script src="/words/wordsGeneral.js"></script>
+}
+
+@section Jumbo
+{
+    <div class="parallax parallax-words">
+        <div class="parallax-title">
+            <span>
+Words within words
+            </span>
+        </div>
+    </div>
+}
+
+@section Content {
+    <div class="container text-light">
+        <div class="row">
+            <p>
+                I was interested in a question about words and letter replacement. If I take a word, such as <code>shoot</code>, can I remove a single letter and still make a word?
+                In this case, yes, of course: <code>hoot</code>. In fact, I can make three other words as well: <code>soot, shot, shoo</code>. So how many words do themselves contain words? And which word contains the most words within it?
+            </p>
+
+            <p>
+                To answer these questions, we must decide on what counts as a 'word'. Do we include place names, proper nouns, etc.? Fortunately, <a href="https://en.wikipedia.org/wiki/Official_Scrabble_Players_Dictionary">someone else</a> has done their level best to answer that question, so I'll just take the so-known 'SOWPODS' English word list containing a total of 267,753 words.
+            </p>
+
+            <div>
+                The algorithm for this is remarkably simple:
+                <ul>
+                    <li>
+                        Go through every word in the dictionary:
+                        <ul>
+                            <li>
+                                Go through every letter in the word:
+                                <ul>
+                                    <li>
+                                        Remove that letter from the word, check if the result is in the dictionary
+                                        <ul>
+                                            <li>If it is, store it alongside the origin (parent) word</li>
+                                            <li>If it isn't, skip it</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p>
+                    The code for this, and other questions, is available on <a href="https://github.com/mortenalbring/WordsWithinWords">GitHub</a>.
+                </p>
+
+                <h2>Words within words</h2>
+                <p>
+
+                    The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one letter. There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
+                </p>
+
+                <p>
+                    As for the words with the most number of words within it: there are five joint winners, each with six words connected to it:
+                    '<a target="_blank" href="https://1word.ws/dearns">dearns</a>', '<a target="_blank" href="https://1word.ws/drabblers">drabblers</a>', '<a target="_blank" href="https://1word.ws/heards">heards</a>', '<a target="_blank" href="https://1word.ws/yeards">yeards</a>', and '<a target="_blank" href="https://1word.ws/spared">spared</a>'
+                </p>
+
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1" id="simpleWords1pt">
+                <svg id="simpleWords1t" class="simpleWordsBig"
+                     group="-1"
+                     maxgroup="5"
+                     width="1050"
+                     height="250"
+                     linkdistance="60"
+                     attractforcestrength="40"
+                     attractforcedistancemin="40"
+                     attractforcedistancemax="2000"
+                     repelforcestrength="-20"
+                     repelforcedistancemin="0"
+                     repelforcedistancemax="40"
+                     useforcexbygroup="true"
+                     useforceybyheight="true"
+                     charge="-10"
+                     json="simpleWordDataEnglish.json">
+                </svg>
+            </div>
+        </div>
+
+    </div>
+}

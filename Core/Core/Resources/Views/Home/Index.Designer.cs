@@ -142,7 +142,7 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I have a background in Theoretical Physics and I have a particular interest in Quantum Computing..
+        ///   Looks up a localized string similar to I studied Theoretical Physics at University and I have a particular interest in Quantum Computing..
         /// </summary>
         public static string IntroPart2 {
             get {

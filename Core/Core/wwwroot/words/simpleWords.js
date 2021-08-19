@@ -186,7 +186,9 @@
 // Use a timeout to allow the rest of the page to load first.
         d3.timeout(function() {
             var domVariables = WordsGeneral.ParseDomVariables(svg, containerId);
-            
+            if (domVariables == null) {
+                return;
+            }
             d3.json("/words/Json/" + domVariables.JsonPath).then(function (graph) {
 
                 

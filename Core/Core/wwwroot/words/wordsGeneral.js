@@ -108,6 +108,9 @@ output.Charge = -80;
     output.Width = 50;
 
     var parentElement = document.getElementById(containerId);
+    if (parentElement === null) {
+        return;
+    }
     var parentWidth = parentElement.clientWidth;
     var pheight = parentElement.clientHeight;
 

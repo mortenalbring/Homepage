@@ -1,5 +1,5 @@
 var svg = d3.select("#wordBar1"),
-    margin = 200,
+    margin = 120,
     width = svg.attr("width") - margin,
     height = svg.attr("height") - margin;
 
@@ -8,7 +8,7 @@ var xScale = d3.scaleBand().range ([0, width]).padding(0.4),
     yScale = d3.scaleLinear().range ([height, 0]);
 
 var g = svg.append("g")
-    .attr("transform", "translate(" + 100 + "," + 100 + ")");
+    .attr("transform", "translate(" + 70 + "," + 50 + ")");
 
 d3.csv("/words/bar-data.csv").then(function(flatData) {
     console.log(flatData);
@@ -33,21 +33,27 @@ d3.csv("/words/bar-data.csv").then(function(flatData) {
         .call(d3.axisLeft(yScale).tickFormat(function(d){
             return d;
         }).ticks(10))
-        .append("text")
-        .attr("y", 6)
-        .attr("x", 6)
+        
+    g.append("text")
+        .attr("y", -20)
+        .attr("x", (width/2))
         .attr("dy", "0.71em")
-        .attr("text-anchor", "end")
-        .text("Number of words");
+        .attr("text-anchor", "middle")
+        .text("Number of words that contain at least one word of a given length");
+
 
     g.selectAll(".bar")
         .data(flatData)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("fill","orange")
         .attr("x", function(d) { return xScale(d.wordlength); })
         .attr("y", function(d) { return yScale(parseInt(d.words)); })
         .attr("width", xScale.bandwidth())
-        .attr("height", function(d) { return height - yScale(parseInt(d.words)); });
+        .attr("height", function(d) { return height - yScale(parseInt(d.words)); })
+        .append("title")
+        .text(function(d) { return "There are " + d.words + " that contain words of length " + d.wordlength;})
+        
+        
+    ;
     
 });

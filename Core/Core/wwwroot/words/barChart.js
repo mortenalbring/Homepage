@@ -1,7 +1,16 @@
-var svg = d3.select("#wordBar1"),
-    margin = 120,
-    width = svg.attr("width") - margin,
-    height = svg.attr("height") - margin;
+
+var parentElement = document.getElementById("wordsBarContainer");
+var parentWidth = parentElement.clientWidth;
+var pheight = parentElement.clientHeight;
+
+
+var svg = d3.select("#wordBar1");
+svg.attr("width",parentWidth);
+svg.attr("height",parentWidth);
+var margin = 120;
+var width = svg.attr("width") - margin;
+var height = svg.attr("height") - margin;
+
 
 
 var xScale = d3.scaleBand().range ([0, width]).padding(0.4),

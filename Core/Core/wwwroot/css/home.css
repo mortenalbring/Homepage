@@ -240,7 +240,8 @@
 .ma-particles {
     position:relative;
     border: 1px solid;
-    border-bottom-color: #474747;
+    border-top-color: #2a2f34;
+    border-bottom-color: #2a2f34;
 }
 
 .mortface {

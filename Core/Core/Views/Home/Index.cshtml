@@ -6,6 +6,12 @@
 @inject IViewLocalizer Localizer
     }
 
+@section Scripts
+{
+    <script src="lib/particles.js-master/particles.js"></script>
+    <script src="/home/homeparticles.js"></script>
+}
+
 @section Content
 {
     <div class="text-center">
@@ -21,7 +27,7 @@
                 <p class="ma-blurb">@Localizer["IntroPart1"]</p>
                 <p class="ma-blurb">@Localizer["IntroPart2"]</p>
 
-                
+                <div id="particles-js"></div>
             </div>
         </div>
 

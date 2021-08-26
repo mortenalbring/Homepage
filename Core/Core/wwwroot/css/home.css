@@ -236,3 +236,19 @@
     z-index: 1;
     background: rgba(0,0,0,0.4);
 }
+
+.ma-particles {
+    position:relative;
+    border: 1px solid;
+    border-bottom-color: #474747;
+}
+
+.mortface {
+    vertical-align: middle;
+}
+
+canvas {
+    max-height:100%;
+position:absolute;
+    z-index: 1;
+}

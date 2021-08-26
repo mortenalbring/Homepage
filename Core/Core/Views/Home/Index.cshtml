@@ -14,25 +14,31 @@
 
 @section Content
 {
-    <div class="text-center">
-        <h1 class="display-3 text-light ma-title">Morten Alexander Albring</h1>
-    </div>
+    <div class="ma-particles">
+        <div id="particles-js"></div>
+   
 
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <img src="images/home/mortcoverface.png" class="img-fluid">
-            </div>
-            <div class="col-sm text-secondary">
-                <p class="ma-blurb">@Localizer["IntroPart1"]</p>
-                <p class="ma-blurb">@Localizer["IntroPart2"]</p>
+        <div class="container p-5">
 
-                <div id="particles-js"></div>
+            <div class="row">
+                <div class="col-9 offset-1 col-md-4 col-lg-2 col-xl-2 offset-md-0 offset-lg-0 offset-xl-0">
+                    <img src="images/home/mortcoverface.png" class="img-fluid mortface align-middle">
+                </div>
+                <div class="col-12 col-md-8 col-lg-10 col-xl-10 text-secondary">
+                         <div class="text-center">
+                                <h1 class="display-3 text-light ma-title">Morten Alexander Albring</h1>
+                            </div>
+
+                    <p class="ma-blurb">@Localizer["IntroPart1"]</p>
+                    <p class="ma-blurb">@Localizer["IntroPart2"]</p>
+
+
+                </div>
             </div>
+
         </div>
-
     </div>
-    <div class="container-fluid p-5">
+    <div class="container-fluid p-3">
         <div class="row p-3">
             <div class="col-sm-6 col-md-4">
                 <div class="ma-img-container d-flex justify-content-center">
@@ -121,7 +127,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="ComputationsIrreversibility">

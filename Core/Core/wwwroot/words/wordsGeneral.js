@@ -1,8 +1,6 @@
 ﻿var WordsGeneral = {};
 
-/**
- * @return {string}
- */
+
 WordsGeneral.GetDiffChar = function (source, target) {
     var diffChar = "";
     for (var oo = 0; oo < source.length; oo++) {

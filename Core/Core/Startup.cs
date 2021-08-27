@@ -39,7 +39,7 @@ namespace Core
                         new CultureInfo("en-GB"),
                         new CultureInfo("nb-NO"),
                     };
-                    opts.DefaultRequestCulture = new RequestCulture("nb-NO");
+                    opts.DefaultRequestCulture = new RequestCulture("en-GB");
                     // Formatting numbers, dates, etc.
                     opts.SupportedCultures = supportedCultures;
                     // UI strings that we have localized.

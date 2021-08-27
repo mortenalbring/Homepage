@@ -5,8 +5,8 @@ var pheight = parentElement.clientHeight;
 
 
 var svg = d3.select("#wordBar1");
-svg.attr("width",parentWidth);
-svg.attr("height",parentWidth);
+svg.attr("width",parentWidth - 50);
+svg.attr("height",parentWidth / 2);
 var margin = 120;
 var width = svg.attr("width") - margin;
 var height = svg.attr("height") - margin;
@@ -31,7 +31,7 @@ d3.csv("/words/bar-data.csv").then(function(flatData) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(xScale))
         .append("text")
-        .attr("y", 20)
+        .attr("y", 40)
         .attr("x", (width/2))
         .attr("dy", "0.71em")
         .attr("text-anchor", "middle")
@@ -41,7 +41,7 @@ d3.csv("/words/bar-data.csv").then(function(flatData) {
     g.append("g")
         .call(d3.axisLeft(yScale).tickFormat(function(d){
             return d;
-        }).ticks(10))
+        }).ticks(5))
         
     g.append("text")
         .attr("y", -20)

@@ -18,14 +18,14 @@
     <div class="parallax parallax-words">
         <div class="parallax-title">
             <span>
-Words within words
+                Words within words
             </span>
         </div>
     </div>
 }
 
 @section Content {
-    <link rel="stylesheet" href="/words/word-styles.css"/> 
+    <link rel="stylesheet" href="/words/word-styles.css"/>
     <div class="container text-light">
         <div class="row">
             <p>
@@ -66,35 +66,34 @@ Words within words
                 <h2>Words within words</h2>
                 <p>
 
-                    The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one letter. 
+                    The result of running this finds that 129,677 (48.43%) words in the English dictionary contain at least one other word, when removing one letter.
                 </p>
 
             </div>
         </div>
-        
+
         <div class="row">
-            <div class="col-md-6 col-12" id="wordsBarContainer">
-                       <svg id="wordBar1" width="600" height="500">
-                                        
-                                </svg>
-                                
+            <div class="col-md-6 col-12 offset-md-2" id="wordsBarContainer">
+                <svg id="wordBar1">
+
+                </svg>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-12">
-                    <p>
-                                    There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
-                                </p>
-                                
-                                <p>
-                                    As for the words with the most number of words within it: there are five joint winners, each with six words connected to it:
-                                    '<a target="_blank" href="https://1word.ws/dearns">dearns</a>', '<a target="_blank" href="https://1word.ws/drabblers">drabblers</a>', '<a target="_blank" href="https://1word.ws/heards">heards</a>', '<a target="_blank" href="https://1word.ws/yeards">yeards</a>', and '<a target="_blank" href="https://1word.ws/spared">spared</a>'
-                                </p>
+                <p>
+                    There are 339 (0.12%) words in this English dictionary where removing <em>any</em> character will give you a word.
+                </p>
+
+                <p>
+                    As for the words with the most number of words within it: there are five joint winners, each with six words connected to it:
+                    '<a target="_blank" href="https://1word.ws/dearns">dearns</a>', '<a target="_blank" href="https://1word.ws/drabblers">drabblers</a>', '<a target="_blank" href="https://1word.ws/heards">heards</a>', '<a target="_blank" href="https://1word.ws/yeards">yeards</a>', and '<a target="_blank" href="https://1word.ws/spared">spared</a>'
+                </p>
 
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-12" id="simpleWords1pt">
                 <svg id="simpleWords1t" class="simpleWordsBig"
@@ -120,15 +119,15 @@ Words within words
         <div class="row">
             <div class="col-md-12">
                 <p>
-                    This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. It's also notable that 'eards' is connected to two of the words. 
+                    This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. It's also notable that 'eards' is connected to two of the words.
                 </p>
                 <h2>Word chains</h2>
                 <p>
-                    This made me curious about what is the longest chain of words I can make, where removing one letter at a time produces a new word. I first found one such chain of 8 words, starting at '<a target="_blank" href="https://1word.ws/choreologies">choreologies</a>' and ending at '<a target="_blank" href="https://1word.ws/loges">loges</a>'    
+                    This made me curious about what is the longest chain of words I can make, where removing one letter at a time produces a new word. I first found one such chain of 8 words, starting at '<a target="_blank" href="https://1word.ws/choreologies">choreologies</a>' and ending at '<a target="_blank" href="https://1word.ws/loges">loges</a>'
                 </p>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-12">
                 <svg id="simpleWords1wc"
@@ -141,15 +140,15 @@ Words within words
                      repelforcestrength="-250"
                      repelforcedistancemin="0"
                      repelforcedistancemax="1050"
-        
+
                      json="wordChainEnglish.json">
                 </svg>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                However this was not the only chain that I found, there were several chains of the same length. Some of them are also interconnected. 
+                However this was not the only chain that I found, there were several chains of the same length. Some of them are also interconnected.
             </div>
         </div>
         <div class="row">
@@ -167,31 +166,28 @@ Words within words
                      repelforcedistancemin="0"
                      repelforcedistancemax="100"
                      useforcexbygroup="true"
-        
+
                      charge="-9"
                      json="wordChainEnglish.json">
                 </svg>
             </div>
         </div>
-        
-        
+
+
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-        
+
                 <h2>Ord innenfor ord</h2>
                 <p>
                     We can of course run this for other languages, provided we can find comprehensive dictionaries in plain text form. This is surprisingly difficult.
-        
+
                     For Norwegian, the largest list I could find contains 692,872 words - though I cannot be sure it applies the same standards and rules as the scrabble dictionary.
                 </p>
                 <p>Running this list finds 347,760 (50.19 %) Norwegian words with other Norwegian words within them.</p>
-        
+
             </div>
         </div>
-            
-    
-    
-        
-        
+
+
     </div>
 }

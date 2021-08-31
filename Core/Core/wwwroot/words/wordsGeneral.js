@@ -18,13 +18,16 @@ WordsGeneral.GetDiffChar = function (source, target) {
     return diffChar;
 };
 
-WordsGeneral.FilterDataOnTerm = function (graph, term) {
+WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
 
+    
+    var newGraph = {};
+    
     console.log("filtering to term " + term);
-    var maxresults = 100;
+    var maxresults = 1000;
     var filteredNodes = [];
-    for (var i = 0; i < graph.nodes.length; i++) {
-        var n = graph.nodes[i];
+    for (var i = 0; i < inputGraph.nodes.length; i++) {
+        var n = inputGraph.nodes[i];
 
         if (term != null && term.length > 1 && n.id.includes(term) && filteredNodes.length < maxresults) {
             var exists = false;
@@ -40,17 +43,24 @@ WordsGeneral.FilterDataOnTerm = function (graph, term) {
         }
     }
     
-    graph.nodes = filteredNodes;
+    newGraph.nodes = filteredNodes;
+    console.log("ngnlength:" + newGraph.nodes.length);
+    console.log("ngnlength:" + inputGraph.links.length);
+    console.log(newGraph.nodes);
     var filteredLinks = [];
-    for (var j = 0; j < graph.links.length; j++) {
-        var searchLink = graph.links[j];
+    for (var j = 0; j < inputGraph.links.length; j++) {
+        var searchLink = inputGraph.links[j];
         var source = searchLink.source;
         var target = searchLink.target;
 
         var founds = false;
         var foundt = false;
-        for (var l = 0; l < graph.nodes.length; l++) {
-            var searchNode = graph.nodes[l];
+        for (var l = 0; l < newGraph.nodes.length; l++) {
+            var searchNode = newGraph.nodes[l];
+            
+            if (l === 0 && j === 0) {
+                console.log(searchNode);    
+            }
             if (searchNode.id === source) {
                 founds = true;
             }
@@ -62,9 +72,11 @@ WordsGeneral.FilterDataOnTerm = function (graph, term) {
             searchLink.diffChar = WordsGeneral.GetDiffChar(source, target);
             filteredLinks.push(searchLink);
         }
+   
     }
-    graph.links = filteredLinks;
-    console.log("done");
+    newGraph.links = filteredLinks;
+    
+    return newGraph;
 };
 
 

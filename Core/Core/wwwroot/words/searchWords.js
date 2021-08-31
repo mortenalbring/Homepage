@@ -120,6 +120,7 @@ function init() {
         }
 
         function PutLinks(g, graph) {
+            console.log("putlinks " + graph.links.length);
             //Group containing link line and link text
             var linkGroup = g.append("g")
                 .attr("class", "links")
@@ -182,48 +183,51 @@ function init() {
             }
             console.log("calling d3 json.." + domVariables.JsonPath);
             
-            d3.json("/words/Json/" + domVariables.JsonPath).then(function (graph) {
+            d3.json("/words/Json/" + domVariables.JsonPath).then(function (jsonData) {
                 console.log("d3 json recieved!");
 
-                console.log(graph);
+                
+                var origData = jsonData;
+                
 
                 $('#btnSearchWord').click(function() {
                     svg.selectAll("*").remove();
+                    for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
+                        simulation.tick();
+                    }
                     simulation.restart();
+                    
                     var newterm = "test";
-                    WordsGeneral.FilterDataOnTerm(graph, newterm);
-                    drawGraph();
+                    var newGraph = WordsGeneral.FilterDataOnTerm(origData, newterm);
+                    
+                    console.log("click!")
+                    console.log(newGraph);
+                    drawGraph(newGraph);
                 })
                 
-                var width = domVariables.Width;
-                var height = domVariables.Height;
-
                 var centreGroupX = WordsGeneral.MakeCenterGroup(50, domVariables.Width - 50, domVariables.MaxGroup, 100);
                 var centreGroupY = WordsGeneral.MakeCenterGroup(50, domVariables.Height - 50, domVariables.MaxGroup, 50);
 
 
                 
-                WordsGeneral.FilterDataOnTerm(graph, "tester");
+                var graphData = WordsGeneral.FilterDataOnTerm(origData, "test");
 
+                console.log(graphData);
+                
                 var simulation;
 
-                function drawGraph() {
+                function drawGraph(graphData) {
 
                     var g = svg.append("g");
-                    var nodes = graph.nodes;
-                    var links = graph.links;
+                    var nodes = graphData.nodes;
+                    var links = graphData.links;
 
+                    console.log("drawGraph links length: " +links.length);
 
-                    console.log(nodes);
-                    var groups = nodes.map(function(e) {
-                        return e.group
-                    });
 
                     var maxval = Math.max.apply(Math, nodes.map(function(o) { return o.group; }))
                     var minval = Math.min.apply(Math, nodes.map(function(o) { return o.group; }))
 
-                    console.log(groups);
-                    console.log(links);
 
                     var color = d3.scaleLinear()
                         .domain([minval, maxval])
@@ -270,10 +274,10 @@ function init() {
                     }
 
                     simulation
-                        .nodes(graph.nodes);
+                        .nodes(graphData.nodes);
 
                     simulation.force("link")
-                        .links(graph.links);
+                        .links(graphData.links);
 
                     simulation.stop();
 
@@ -283,13 +287,13 @@ function init() {
                         simulation.tick();
                     }
 
-                    var lines = PutLinks(g, graph);
+                    var lines = PutLinks(g, graphData);
 
-                    PutNodes(g, graph, lines, nodes, color);
+                    PutNodes(g, graphData, lines, nodes, color);
                 }
 
                 
-                drawGraph();
+                drawGraph(graphData);
             });
 
         });

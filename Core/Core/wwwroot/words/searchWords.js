@@ -1,4 +1,10 @@
-﻿function init() {
+﻿
+
+
+function init() {
+    
+  
+    
     initSvgStatic(d3.select("#simpleWords2wd"), "simpleWords1pt");
 
     function initSvgStatic(svg, containerId) {
@@ -181,6 +187,12 @@
 
                 console.log(graph);
 
+                $('#btnSearchWord').click(function() {
+                    svg.selectAll("*").remove();
+                    simulation.restart();
+                    drawGraph();
+                })
+                
                 var width = domVariables.Width;
                 var height = domVariables.Height;
 
@@ -188,84 +200,93 @@
                 var centreGroupY = WordsGeneral.MakeCenterGroup(50, domVariables.Height - 50, domVariables.MaxGroup, 50);
 
 
-                var g = svg.append("g");
+                
                 WordsGeneral.FilterDataOnTerm(graph, "tester");
 
-                var nodes = graph.nodes;
-                var links = graph.links;
+                var simulation;
+
+                function drawGraph() {
+
+                    var g = svg.append("g");
+                    var nodes = graph.nodes;
+                    var links = graph.links;
+
+
+                    console.log(nodes);
+                    var groups = nodes.map(function(e) {
+                        return e.group
+                    });
+
+                    var maxval = Math.max.apply(Math, nodes.map(function(o) { return o.group; }))
+                    var minval = Math.min.apply(Math, nodes.map(function(o) { return o.group; }))
+
+                    console.log(groups);
+                    console.log(links);
+
+                    var color = d3.scaleLinear()
+                        .domain([minval, maxval])
+                        .range(["red", "blue", "green"]);
+
+                    var attractForce = d3.forceManyBody()
+                        .strength(domVariables.AttractForce.Strength)
+                        .distanceMax(domVariables.AttractForce.DistanceMax)
+                        .distanceMin(domVariables.AttractForce.DistanceMin);
+                    var repelForce = d3.forceManyBody()
+                        .strength(domVariables.RepelForce.Strength)
+                        .distanceMax(domVariables.RepelForce.DistanceMax)
+                        .distanceMin(domVariables.RepelForce.DistanceMin);
+
+                    simulation = d3.forceSimulation()
+                        .force("link", d3.forceLink().id(function (d) {
+                            return d.id;
+                        }).distance(domVariables.LinkDistance).iterations(1))
+                        .force("charge", d3.forceManyBody().strength(domVariables.Charge))
+                        .force('center', d3.forceCenter().x((domVariables.Width / 2)).y((domVariables.Height / 2)))
+                        .force("attractForce", attractForce)
+                        .force("repelForce", repelForce)
+                        .force('collision', d3.forceCollide().radius(function (d) {
+                            return d.id.length * 2.9
+                        }))
+
+                    ;
+                    if (domVariables.UseForceYByHeight) {
+                        simulation.force('y', d3.forceY().y(function (d) {
+                            return domVariables.Height / 2
+                        }))
+                    }
+                    if (domVariables.UseForceYByGroup) {
+                        simulation.force('y', d3.forceY().y(function (d) {
+                            return centreGroupY[d.group]
+                        }))
+                    }
+
+                    if (domVariables.UseForceXByGroup) {
+                        simulation.force('x', d3.forceX().x(function (d) {
+                            return centreGroupX[d.group];
+                        }));
+                    }
+
+                    simulation
+                        .nodes(graph.nodes);
+
+                    simulation.force("link")
+                        .links(graph.links);
+
+                    simulation.stop();
+
+
+                    // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
+                    for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
+                        simulation.tick();
+                    }
+
+                    var lines = PutLinks(g, graph);
+
+                    PutNodes(g, graph, lines, nodes, color);
+                }
 
                 
-                 console.log(nodes);
-                 var groups = nodes.map(function(e) {
-                     return e.group
-                 });
-                
-                 var maxval = Math.max.apply(Math, nodes.map(function(o) { return o.group; }))
-                var minval = Math.min.apply(Math, nodes.map(function(o) { return o.group; }))
-                
-                 console.log(groups);
-                 console.log(links);
-
-                var color = d3.scaleLinear()
-                    .domain([minval, maxval])
-                    .range(["red", "blue", "green"]);
-
-                var attractForce = d3.forceManyBody()
-                    .strength(domVariables.AttractForce.Strength)
-                    .distanceMax(domVariables.AttractForce.DistanceMax)
-                    .distanceMin(domVariables.AttractForce.DistanceMin);
-                var repelForce = d3.forceManyBody()
-                    .strength(domVariables.RepelForce.Strength)
-                    .distanceMax(domVariables.RepelForce.DistanceMax)
-                    .distanceMin(domVariables.RepelForce.DistanceMin);
-
-                var simulation = d3.forceSimulation()
-                    .force("link", d3.forceLink().id(function (d) {
-                        return d.id;
-                    }).distance(domVariables.LinkDistance).iterations(1))
-                    .force("charge", d3.forceManyBody().strength(domVariables.Charge))
-                    .force('center', d3.forceCenter().x((domVariables.Width / 2)).y((domVariables.Height / 2)))
-                    .force("attractForce", attractForce)
-                    .force("repelForce", repelForce)
-                    .force('collision', d3.forceCollide().radius(function (d) {
-                        return d.id.length * 2.9
-                    }))
-
-                ;
-                if (domVariables.UseForceYByHeight) {
-                    simulation.force('y', d3.forceY().y(function (d) {
-                        return domVariables.Height / 2
-                    }))
-                }
-                if (domVariables.UseForceYByGroup) {
-                    simulation.force('y', d3.forceY().y(function (d) {
-                        return centreGroupY[d.group]
-                    }))
-                }
-
-                if (domVariables.UseForceXByGroup) {
-                    simulation.force('x', d3.forceX().x(function (d) {
-                        return centreGroupX[d.group];
-                    }));
-                }
-
-                simulation
-                    .nodes(graph.nodes);
-
-                simulation.force("link")
-                    .links(graph.links);
-
-                simulation.stop();
-
-
-                // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
-                for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
-                    simulation.tick();
-                }
-
-                var lines = PutLinks(g, graph);
-
-                PutNodes(g, graph, lines, nodes, color);
+                drawGraph();
             });
 
         });

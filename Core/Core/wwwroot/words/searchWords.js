@@ -190,6 +190,8 @@ function init() {
                 $('#btnSearchWord').click(function() {
                     svg.selectAll("*").remove();
                     simulation.restart();
+                    var newterm = "test";
+                    WordsGeneral.FilterDataOnTerm(graph, newterm);
                     drawGraph();
                 })
                 
@@ -235,7 +237,8 @@ function init() {
                         .strength(domVariables.RepelForce.Strength)
                         .distanceMax(domVariables.RepelForce.DistanceMax)
                         .distanceMin(domVariables.RepelForce.DistanceMin);
-
+                    
+                    
                     simulation = d3.forceSimulation()
                         .force("link", d3.forceLink().id(function (d) {
                             return d.id;

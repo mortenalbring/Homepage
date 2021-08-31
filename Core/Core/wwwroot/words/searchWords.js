@@ -195,12 +195,19 @@
                 var links = graph.links;
 
                 
-                // console.log(nodes);
-                // console.log(links);
-                var n = 100;
-                var radius = 14;
+                 console.log(nodes);
+                 var groups = nodes.map(function(e) {
+                     return e.group
+                 });
+                
+                 var maxval = Math.max.apply(Math, nodes.map(function(o) { return o.group; }))
+                var minval = Math.min.apply(Math, nodes.map(function(o) { return o.group; }))
+                
+                 console.log(groups);
+                 console.log(links);
+
                 var color = d3.scaleLinear()
-                    .domain([1, domVariables.MaxGroup])
+                    .domain([minval, maxval])
                     .range(["red", "blue", "green"]);
 
                 var attractForce = d3.forceManyBody()

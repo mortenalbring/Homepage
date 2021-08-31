@@ -18,13 +18,64 @@ WordsGeneral.GetDiffChar = function (source, target) {
     return diffChar;
 };
 
-WordsGeneral.FilterDataOnGroup = function (graph, group) {
+WordsGeneral.FilterDataOnTerm = function (graph, term) {
 
+    console.log("filtering to term " + term);
+    var maxresults = 100;
     var filteredNodes = [];
     for (var i = 0; i < graph.nodes.length; i++) {
         var n = graph.nodes[i];
 
-        if (n.group === group || group === -1) {
+        if (term != null && term.length > 1 && n.id.includes(term) && filteredNodes.length < maxresults) {
+            var exists = false;
+            for (var b = 0; b < filteredNodes.length; b++) {
+                if (filteredNodes[b].id === n.id) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                filteredNodes.push(n);
+            }
+        }
+    }
+    
+    graph.nodes = filteredNodes;
+    var filteredLinks = [];
+    for (var j = 0; j < graph.links.length; j++) {
+        var searchLink = graph.links[j];
+        var source = searchLink.source;
+        var target = searchLink.target;
+
+        var founds = false;
+        var foundt = false;
+        for (var l = 0; l < graph.nodes.length; l++) {
+            var searchNode = graph.nodes[l];
+            if (searchNode.id === source) {
+                founds = true;
+            }
+            if (searchNode.id === target) {
+                foundt = true;
+            }
+        }
+        if (founds && foundt) {
+            searchLink.diffChar = WordsGeneral.GetDiffChar(source, target);
+            filteredLinks.push(searchLink);
+        }
+    }
+    graph.links = filteredLinks;
+    console.log("done");
+};
+
+
+WordsGeneral.FilterDataOnGroup = function (graph, group) {
+
+    console.log("filtering to group " + group);
+    var filteredNodes = [];
+    for (var i = 0; i < graph.nodes.length; i++) {
+        var n = graph.nodes[i];
+
+        if (n.group === group || group === -1 ) {
             var exists = false;
             for (var b = 0; b < filteredNodes.length; b++) {
                 if (filteredNodes[b].id === n.id) {
@@ -61,7 +112,7 @@ WordsGeneral.FilterDataOnGroup = function (graph, group) {
         }
     }
     graph.links = filteredLinks;
-
+console.log("done");
 };
 
 WordsGeneral.MakeCenterGroup = function(start,end,maxGroup) {

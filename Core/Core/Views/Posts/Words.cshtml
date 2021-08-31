@@ -9,6 +9,7 @@
 {
     <script src="/lib/d3/dist/d3.js"></script>
     <script src="/words/simpleWords.js"></script>
+    <script src="/words/searchWords.js"></script>
     <script src="/words/wordsGeneral.js"></script>
     <script src="/words/barChart.js"></script>
 }
@@ -166,10 +167,37 @@
                      repelforcedistancemin="0"
                      repelforcedistancemax="100"
                      useforcexbygroup="true"
-
                      charge="-9"
                      json="wordChainEnglish.json">
                 </svg>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Links search</h2>
+                <input class="form-control"></input> <button class="btn btn-dark">Search</button>
+
+                <svg id="wordSearch"></svg>
+                
+                
+                <svg id="simpleWords2wd"
+                                     group="1"
+                                     maxgroup="9"
+                                     width="1050"
+                                     height="600"
+                                     linkdistance="40"
+                                     attractforcestrength="200"
+                                     attractforcedistancemin="100"
+                                     attractforcedistancemax="300"
+                                     repelforcestrength="-450"
+                                     repelforcedistancemin="0"
+                                     repelforcedistancemax="100"
+                                     useforcexbygroup="true"
+                                     charge="-9"
+                                     json="EnglishSowpodsdeepwordchain.json">
+                                </svg>
+                
             </div>
         </div>
 

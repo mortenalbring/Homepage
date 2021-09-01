@@ -38,20 +38,13 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
                 }
             }
             if (!exists) {
-                if (n.x) {
-                    n.x = 0;
-                }
-                if (n.y) {
-                    n.y = 0;
-                }
                 filteredNodes.push(n);
             }
         }
     }
     
     newGraph.nodes = filteredNodes;
-    console.log("ngnlength:" + newGraph.nodes.length);
-    console.log("ngnlength:" + inputGraph.links.length);
+    var onlyLinkedNodes = [];
     var filteredLinks = [];
     for (var j = 0; j < inputGraph.links.length; j++) {
         var searchLink = inputGraph.links[j];
@@ -62,6 +55,10 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
         var foundt = false;
         for (var l = 0; l < newGraph.nodes.length; l++) {
             var searchNode = newGraph.nodes[l];
+
+            if (!searchNode.linkCount) {
+                searchNode.linkCount = 0;
+            }
             
             if (l === 0 && j === 0) {
                 console.log("finding links");
@@ -70,10 +67,18 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
                 console.log(target);
             }
             if (searchNode.id === source || searchNode.id === source.id) {
+                searchNode.linkCount++;
                 founds = true;
             }
             if (searchNode.id === target || searchNode.id === target.id) {
+                searchNode.linkCount++;
                 foundt = true;
+            }
+            if (founds || foundt) {
+                var inArray = onlyLinkedNodes.findIndex(v => v.id === searchNode.id);
+                if (inArray == -1) {
+                    onlyLinkedNodes.push(searchNode);
+                }
             }
         }
         if (founds && foundt) {
@@ -82,9 +87,17 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
         }
    
     }
+    
+    //newGraph.nodes = onlyLinkedNodes;
+    var onlyLinks = filteredNodes.filter(function(e) { return e.linkCount > 0 });
+    
+    //newGraph.nodes = onlyLinks;
     newGraph.links = filteredLinks;
     
+    var test = filteredNodes.filter(function(e) { return e.id === "mortally"});
+    console.log(test);
     return newGraph;
+    
 };
 
 

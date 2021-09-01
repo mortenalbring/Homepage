@@ -42,9 +42,15 @@ function drawGraph(graphData) {
         .enter().append("g")
 
     var radius = 5;
+var linkCountFilter = 1;
 
     var circles = node.append("circle")
-        .attr("r", radius)
+        .attr("r", function(d) {
+            if (d.linkCount < linkCountFilter) {
+                return 0;
+            }
+            return d.linkCount * 2;
+        })
         .attr("fill", function (d) {
             return color(d.group);
         });
@@ -54,7 +60,14 @@ function drawGraph(graphData) {
             return d.id;
         })
         .attr('x', 6)
-        .attr('y', 3);
+        .attr('y', 3)
+        .style("font-size", function(d) {
+            if (d.linkCount < linkCountFilter) {
+                return 0;
+            }
+            return "10px";
+        })
+    ;
 
     node.append("title")
         .text(function (d) {
@@ -90,12 +103,22 @@ function drawGraph(graphData) {
                 var newy = Math.max(radius, Math.min(width - radius, d.y));
                 return "translate(" + newx + "," + newy + ")";
             })
+        
+     
+        
+        
     }
 
 
 }
 
 $('#btnSearchWord').click(function() {
+    var searchVal = $('#btnSearchInput').val();
+    if (searchVal.length < 3) {
+        return;
+    }
+    console.log("Search Val : " + searchVal);
+
     var svg = d3.select("#simpleWords2wd");
     
     svg.selectAll("*").remove();
@@ -106,7 +129,7 @@ $('#btnSearchWord').click(function() {
     d3.json(path).then(function (graph) {
         console.log(graph);
 
-        var graphData = WordsGeneral.FilterDataOnTerm(graph, newterm);
+        var graphData = WordsGeneral.FilterDataOnTerm(graph, searchVal);
 
         drawGraph(graphData);
 

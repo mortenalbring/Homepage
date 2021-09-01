@@ -36,15 +36,17 @@ d3.timeout(function() {
         .attr("r", 5)
         .attr("fill", function(d) { return color(d.group); });
 
-    // Create a drag handler and append it to the node object instead
-    var drag_handler = d3.drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended);
 
-    drag_handler(node);
+        const D = d3.drag()
+            .on("start", (event, d) => {})
+            .on("drag", (event, d) => {
+                //d.x = event.x;
+                //d.y = event.y;
+            })
+            .on("end", (event, d) => {});
+        node.call(D);
 
-    var lables = node.append("text")
+        var lables = node.append("text")
         .text(function(d) {
             return d.id;
         })

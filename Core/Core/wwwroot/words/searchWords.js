@@ -181,13 +181,13 @@ function init() {
             if (domVariables == null) {
                 return;
             }
-            console.log("calling d3 json.." + domVariables.JsonPath);
             
             d3.json("/words/Json/" + domVariables.JsonPath).then(function (jsonData) {
-                console.log("d3 json recieved!");
-
-                
+console.log("got Json:");
+                console.log(jsonData);
                 var origData = jsonData;
+                var origNodes = jsonData.nodes.slice();
+                var origLinks = jsonData.links.slice();
                 
 
                 $('#btnSearchWord').click(function() {
@@ -198,7 +198,8 @@ function init() {
                     simulation.restart();
                     
                     var newterm = "test";
-                    var newGraph = WordsGeneral.FilterDataOnTerm(origData, newterm);
+                    var baseData = {nodes: origNodes, links: origLinks}
+                    var newGraph = WordsGeneral.FilterDataOnTerm(baseData, newterm);
                     
                     console.log("click!")
                     console.log(newGraph);
@@ -209,8 +210,12 @@ function init() {
                 var centreGroupY = WordsGeneral.MakeCenterGroup(50, domVariables.Height - 50, domVariables.MaxGroup, 50);
 
 
-                
-                var graphData = WordsGeneral.FilterDataOnTerm(origData, "test");
+                var copyNodes = jsonData.nodes.slice();
+                var copyLinks = jsonData.links.slice();
+var copyData =  {nodes: copyNodes, links: copyLinks};
+
+
+                var graphData = WordsGeneral.FilterDataOnTerm(copyData, "test");
 
                 console.log(graphData);
                 

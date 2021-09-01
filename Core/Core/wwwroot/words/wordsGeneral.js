@@ -38,6 +38,12 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
                 }
             }
             if (!exists) {
+                if (n.x) {
+                    n.x = 0;
+                }
+                if (n.y) {
+                    n.y = 0;
+                }
                 filteredNodes.push(n);
             }
         }
@@ -46,7 +52,6 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
     newGraph.nodes = filteredNodes;
     console.log("ngnlength:" + newGraph.nodes.length);
     console.log("ngnlength:" + inputGraph.links.length);
-    console.log(newGraph.nodes);
     var filteredLinks = [];
     for (var j = 0; j < inputGraph.links.length; j++) {
         var searchLink = inputGraph.links[j];
@@ -59,12 +64,15 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
             var searchNode = newGraph.nodes[l];
             
             if (l === 0 && j === 0) {
+                console.log("finding links");
                 console.log(searchNode);    
+                console.log(source);
+                console.log(target);
             }
-            if (searchNode.id === source) {
+            if (searchNode.id === source || searchNode.id === source.id) {
                 founds = true;
             }
-            if (searchNode.id === target) {
+            if (searchNode.id === target || searchNode.id === target.id) {
                 foundt = true;
             }
         }
@@ -81,8 +89,7 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
 
 
 WordsGeneral.FilterDataOnGroup = function (graph, group) {
-
-    console.log("filtering to group " + group);
+    
     var filteredNodes = [];
     for (var i = 0; i < graph.nodes.length; i++) {
         var n = graph.nodes[i];
@@ -124,7 +131,6 @@ WordsGeneral.FilterDataOnGroup = function (graph, group) {
         }
     }
     graph.links = filteredLinks;
-console.log("done");
 };
 
 WordsGeneral.MakeCenterGroup = function(start,end,maxGroup) {

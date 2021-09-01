@@ -1,4 +1,4 @@
-﻿function drawGraph(graphData) {
+﻿function drawGraph(graphData, searchVal) {
 
     var svg = d3.select("#simpleWords2wd"),
         width = +svg.attr("width"),
@@ -15,14 +15,16 @@
     console.log("max min" + maxval + "  " + minval);
     var color = d3.scaleLinear()
         .domain([minval, maxval])
-        .range(["red", "blue", "green"]);
-
+        .range(["red","blue","green"])
+        .interpolate(d3.interpolateHcl)
+    ;
+    
     var attractForce = d3.forceManyBody()
         .strength(3)
         .distanceMax(50)
         .distanceMin(10);
     var repelForce = d3.forceManyBody()
-        .strength(-100)
+        .strength(-300)
         .distanceMax(5)
         .distanceMin(1);
 
@@ -32,10 +34,10 @@
         }))
         .force("charge", d3.forceManyBody().strength(-25))
         .force("center", d3.forceCenter(width / 2, height / 2).strength(1))
-        .force("attractForce", attractForce)
-        .force("repelForce", repelForce)
+      //  .force("attractForce", attractForce)
+     //   .force("repelForce", repelForce)
         .force('collision', d3.forceCollide().radius(function (d) {
-            return d.id.length * 2.9
+            return d.id.length * 3.5
         }))
     ;
 
@@ -56,7 +58,7 @@
 
     var radius = 5;
     var linkCountFilter = -1;
-    var defaultNodeCircleOpacity = 0.2;
+    var defaultNodeCircleOpacity = 0.8;
 
     var circles = node.append("circle")
         .attr("r", function (d) {
@@ -74,6 +76,7 @@
         })
         .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
+            console.log(color(d.linkCount));
             return color(d.linkCount);
         });
 
@@ -156,7 +159,7 @@ $('#btnSearchWord').click(function () {
 
         var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
         console.log(graphData);
-        drawGraph(graphData);
+        drawGraph(graphData,searchVal);
 
     });
 })
@@ -168,11 +171,12 @@ d3.timeout(function () {
     d3.json(path).then(function (graph) {
         console.log(graph);
 
-        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
+        var searchVal = "test";
+        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
 
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 
-        drawGraph(graphData);
+        drawGraph(graphData,searchVal);
 
     });
 

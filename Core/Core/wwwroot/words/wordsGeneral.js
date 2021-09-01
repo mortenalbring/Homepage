@@ -18,6 +18,55 @@ WordsGeneral.GetDiffChar = function (source, target) {
     return diffChar;
 };
 
+
+WordsGeneral.FilterDataOnTermExact = function(inputGraph, term) {
+    var newGraph = {};
+
+    var searchLinks = [];
+    
+    for (var j = 0; j < inputGraph.links.length; j++) {
+        var searchLink = inputGraph.links[j];
+        var source = searchLink.source;
+        var target = searchLink.target;
+
+        if (source === term) {
+            searchLinks.push(searchLink);
+        }
+        if (target === term) {
+            searchLinks.push(searchLink);
+        }
+    }
+
+    var searchNodes = [];
+    
+    for (var i = 0; i < inputGraph.nodes.length; i++) {
+
+        for (let j = 0; j < searchLinks.length; j++) {
+            if ((inputGraph.nodes[i].id === searchLinks[j].source) || (inputGraph.nodes[i].id === searchLinks[j].target)) {
+                var inArray = searchNodes.findIndex(v => v.id === inputGraph.nodes[i].id);
+                if (inArray == -1) {
+                    inputGraph.nodes[i].linkCount = 1;
+                    searchNodes.push(inputGraph.nodes[i]);
+                }
+                else {
+                    searchNodes[inArray].linkCount++;
+                }
+            }
+            
+        }
+    }
+    
+    
+    console.log(searchLinks);
+    console.log(searchNodes);
+    
+    var newGraph = {};
+    newGraph.nodes = searchNodes;
+    newGraph.links = searchLinks;
+    return newGraph;
+    
+}
+
 WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
 
     

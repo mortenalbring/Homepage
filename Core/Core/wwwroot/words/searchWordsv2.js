@@ -42,10 +42,14 @@ function drawGraph(graphData) {
         .enter().append("g")
 
     var radius = 5;
-var linkCountFilter = 1;
+var linkCountFilter = -1;
 
     var circles = node.append("circle")
         .attr("r", function(d) {
+            if (!d.linkCount) {
+                return 2;
+            }
+            
             if (d.linkCount < linkCountFilter) {
                 return 0;
             }
@@ -62,6 +66,9 @@ var linkCountFilter = 1;
         .attr('x', 6)
         .attr('y', 3)
         .style("font-size", function(d) {
+            if (!d.linkCount) {
+                return "10px";
+            }
             if (d.linkCount < linkCountFilter) {
                 return 0;
             }
@@ -129,8 +136,8 @@ $('#btnSearchWord').click(function() {
     d3.json(path).then(function (graph) {
         console.log(graph);
 
-        var graphData = WordsGeneral.FilterDataOnTerm(graph, searchVal);
-
+        var graphData = WordsGeneral.FilterDataOnTermExact(graph, searchVal);
+        console.log(graphData);
         drawGraph(graphData);
 
     });
@@ -143,8 +150,10 @@ d3.timeout(function () {
     d3.json(path).then(function (graph) {
         console.log(graph);
 
-        var graphData = WordsGeneral.FilterDataOnTerm(graph, "mort");
-
+        var graphData = WordsGeneral.FilterDataOnTermExact(graph, "test");
+        console.log("filter exact");
+console.log(graphData); 
+        
       drawGraph(graphData);
       
     });

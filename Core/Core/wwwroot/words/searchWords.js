@@ -116,7 +116,9 @@ function init() {
                     return defaultNodeCircleOpacity;
                 })
 
-            })
+            });
+            
+            return nodeGroup;
         }
 
         function PutLinks(g, graph) {
@@ -185,21 +187,13 @@ function init() {
             d3.json("/words/Json/" + domVariables.JsonPath).then(function (jsonData) {
 console.log("got Json:");
                 console.log(jsonData);
-                var origData = jsonData;
-                var origNodes = jsonData.nodes.slice();
-                var origLinks = jsonData.links.slice();
                 
 
                 $('#btnSearchWord').click(function() {
                     svg.selectAll("*").remove();
-                    for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
-                        simulation.tick();
-                    }
-                    simulation.restart();
                     
                     var newterm = "test";
-                    var baseData = {nodes: origNodes, links: origLinks}
-                    var newGraph = WordsGeneral.FilterDataOnTerm(baseData, newterm);
+                    var newGraph = WordsGeneral.FilterDataOnTerm(jsonData, newterm);
                     
                     console.log("click!")
                     console.log(newGraph);
@@ -208,16 +202,11 @@ console.log("got Json:");
                 
                 var centreGroupX = WordsGeneral.MakeCenterGroup(50, domVariables.Width - 50, domVariables.MaxGroup, 100);
                 var centreGroupY = WordsGeneral.MakeCenterGroup(50, domVariables.Height - 50, domVariables.MaxGroup, 50);
+                
 
 
-                var copyNodes = jsonData.nodes.slice();
-                var copyLinks = jsonData.links.slice();
-var copyData =  {nodes: copyNodes, links: copyLinks};
-
-
-                var graphData = WordsGeneral.FilterDataOnTerm(copyData, "test");
-
-                console.log(graphData);
+                var graphData = WordsGeneral.FilterDataOnTerm(jsonData, "test");
+                
                 
                 var simulation;
 
@@ -283,18 +272,31 @@ var copyData =  {nodes: copyNodes, links: copyLinks};
 
                     simulation.force("link")
                         .links(graphData.links);
+                    
 
-                    simulation.stop();
-
+                    
 
                     // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
-                    for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
-                        simulation.tick();
-                    }
+                    // for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
+                    //     simulation.tick();
+                    // }
 
                     var lines = PutLinks(g, graphData);
 
-                    PutNodes(g, graphData, lines, nodes, color);
+                    var nodeGroups = PutNodes(g, graphData, lines, nodes, color);
+
+                    simulation.on("tick", function() {
+                        
+                        nodeGroups.attr("transform", function(d) {
+                        return "translate(" + d.x + "," + d.y + ")";
+                        })
+                        
+                        lines     .attr("x1", function(d) { return d.source.x; })
+                            .attr("y1", function(d) { return d.source.y; })
+                            .attr("x2", function(d) { return d.target.x; })
+                            .attr("y2", function(d) { return d.target.y; });
+                    })
+
                 }
 
                 

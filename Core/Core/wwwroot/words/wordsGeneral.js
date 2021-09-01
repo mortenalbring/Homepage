@@ -18,6 +18,87 @@ WordsGeneral.GetDiffChar = function (source, target) {
     return diffChar;
 };
 
+WordsGeneral.FilterDataOnTermExactRecursive = function(inputGraph, term) {
+    var newGraph = {};
+
+    var searchLinks = [];
+
+    var searchTerms = [];
+    searchTerms.push(term);
+    
+    var foundTerms = [];
+    
+    for (var j = 0; j < inputGraph.links.length; j++) {
+        var searchLink = inputGraph.links[j];
+        var source = searchLink.source;
+        var target = searchLink.target;
+
+        for (let i = 0; i < searchTerms.length; i++) {
+            if (source === searchTerms[i]) {
+                if (foundTerms.indexOf(source) === -1) {
+                    foundTerms.push(source);    
+                }
+                
+                searchLinks.push(searchLink);
+                if (searchTerms.indexOf(target) === -1) {
+                    searchTerms.push(target);
+                }
+            }
+            if (target === searchTerms[i]) {
+                if (foundTerms.indexOf(target) === -1) {
+                    foundTerms.push(target);
+                }
+                searchLinks.push(searchLink);
+                if (searchTerms.indexOf(source) === -1) {
+                    searchTerms.push(source);
+                }
+            }
+        }
+    }
+    console.log("SearchRecurs:")
+    console.log(searchTerms.length);
+    console.log(foundTerms.length);
+
+    var notFound = [];
+    for (let i = 0; i < searchTerms.length; i++) {
+        var found = foundTerms.indexOf(searchTerms[i]);
+        if (found === -1) {
+            notFound.push(searchTerms[i]);
+        }
+    }
+    console.log("Not found " + notFound.length);
+    
+    
+    var searchNodes = [];
+
+    for (var i = 0; i < inputGraph.nodes.length; i++) {
+
+        for (let j = 0; j < searchLinks.length; j++) {
+            if ((inputGraph.nodes[i].id === searchLinks[j].source) || (inputGraph.nodes[i].id === searchLinks[j].target)) {
+                var inArray = searchNodes.findIndex(v => v.id === inputGraph.nodes[i].id);
+                if (inArray == -1) {
+                    inputGraph.nodes[i].linkCount = 1;
+                    searchNodes.push(inputGraph.nodes[i]);
+                }
+                else {
+                    searchNodes[inArray].linkCount++;
+                }
+            }
+
+        }
+    }
+
+
+    console.log(searchLinks);
+    console.log(searchNodes);
+
+    var newGraph = {};
+    newGraph.nodes = searchNodes;
+    newGraph.links = searchLinks;
+    return newGraph;
+
+}
+
 
 WordsGeneral.FilterDataOnTermExact = function(inputGraph, term) {
     var newGraph = {};

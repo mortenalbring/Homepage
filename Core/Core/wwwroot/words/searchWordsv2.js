@@ -22,7 +22,7 @@ function drawGraph(graphData) {
         .force("link", d3.forceLink().id(function (d) {
             return d.id;
         }))
-        .force("charge", d3.forceManyBody().strength(-5))
+        .force("charge", d3.forceManyBody().strength(-25))
         .force("center", d3.forceCenter(width / 2, height / 2).strength(1));
 
 
@@ -136,7 +136,7 @@ $('#btnSearchWord').click(function() {
     d3.json(path).then(function (graph) {
         console.log(graph);
 
-        var graphData = WordsGeneral.FilterDataOnTermExact(graph, searchVal);
+        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
         console.log(graphData);
         drawGraph(graphData);
 
@@ -150,10 +150,10 @@ d3.timeout(function () {
     d3.json(path).then(function (graph) {
         console.log(graph);
 
-        var graphData = WordsGeneral.FilterDataOnTermExact(graph, "test");
-        console.log("filter exact");
-console.log(graphData); 
-        
+        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
+
+        //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
+
       drawGraph(graphData);
       
     });

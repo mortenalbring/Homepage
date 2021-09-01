@@ -1,30 +1,43 @@
-﻿
-
-
-
-function drawGraph(graphData) {
+﻿function drawGraph(graphData) {
 
     var svg = d3.select("#simpleWords2wd"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
 
-    var maxval = Math.max.apply(Math, graphData.nodes.map(function(o) { return o.group; }))
-    var minval = Math.min.apply(Math, graphData.nodes.map(function(o) { return o.group; }))
+    var maxval = Math.max.apply(Math, graphData.nodes.map(function (o) {
+        return o.linkCount;
+    }))
+    var minval = Math.min.apply(Math, graphData.nodes.map(function (o) {
+        return o.linkCount;
+    }))
 
-
+    console.log("max min" + maxval + "  " + minval);
     var color = d3.scaleLinear()
         .domain([minval, maxval])
         .range(["red", "blue", "green"]);
-    
+
+    var attractForce = d3.forceManyBody()
+        .strength(3)
+        .distanceMax(50)
+        .distanceMin(10);
+    var repelForce = d3.forceManyBody()
+        .strength(-100)
+        .distanceMax(5)
+        .distanceMin(1);
 
     var simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function (d) {
             return d.id;
         }))
         .force("charge", d3.forceManyBody().strength(-25))
-        .force("center", d3.forceCenter(width / 2, height / 2).strength(1));
-
+        .force("center", d3.forceCenter(width / 2, height / 2).strength(1))
+        .force("attractForce", attractForce)
+        .force("repelForce", repelForce)
+        .force('collision', d3.forceCollide().radius(function (d) {
+            return d.id.length * 2.9
+        }))
+    ;
 
     var link = svg.append("g")
         .attr("class", "links")
@@ -42,30 +55,37 @@ function drawGraph(graphData) {
         .enter().append("g")
 
     var radius = 5;
-var linkCountFilter = -1;
+    var linkCountFilter = -1;
+    var defaultNodeCircleOpacity = 0.2;
 
     var circles = node.append("circle")
-        .attr("r", function(d) {
-            if (!d.linkCount) {
-                return 2;
-            }
-            
-            if (d.linkCount < linkCountFilter) {
-                return 0;
-            }
-            return d.linkCount * 2;
+        .attr("r", function (d) {
+
+            return d.id.length * 3;
+            //
+            // if (!d.linkCount) {
+            //     return 2;
+            // }
+            //
+            // if (d.linkCount < linkCountFilter) {
+            //     return 0;
+            // }
+            // return d.linkCount * 2;
         })
+        .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
-            return color(d.group);
+            return color(d.linkCount);
         });
 
     var lables = node.append("text")
         .text(function (d) {
             return d.id;
+            
         })
-        .attr('x', 6)
+        .attr("text-anchor", "middle")
+        .attr('x', 0)
         .attr('y', 3)
-        .style("font-size", function(d) {
+        .style("font-size", function (d) {
             if (!d.linkCount) {
                 return "10px";
             }
@@ -78,7 +98,7 @@ var linkCountFilter = -1;
 
     node.append("title")
         .text(function (d) {
-            return d.id;
+            return "[" + d.group + "] " + d.id + " (" + d.linkCount + ")";
         });
 
 
@@ -110,16 +130,14 @@ var linkCountFilter = -1;
                 var newy = Math.max(radius, Math.min(width - radius, d.y));
                 return "translate(" + newx + "," + newy + ")";
             })
-        
-     
-        
-        
+
+
     }
 
 
 }
 
-$('#btnSearchWord').click(function() {
+$('#btnSearchWord').click(function () {
     var searchVal = $('#btnSearchInput').val();
     if (searchVal.length < 3) {
         return;
@@ -127,7 +145,7 @@ $('#btnSearchWord').click(function() {
     console.log("Search Val : " + searchVal);
 
     var svg = d3.select("#simpleWords2wd");
-    
+
     svg.selectAll("*").remove();
 
     var newterm = "test";
@@ -144,9 +162,9 @@ $('#btnSearchWord').click(function() {
 })
 
 d3.timeout(function () {
-    
+
     var path = "/words/Json/" + "EnglishSowpodsdeepwordchain.json";
-    
+
     d3.json(path).then(function (graph) {
         console.log(graph);
 
@@ -154,8 +172,8 @@ d3.timeout(function () {
 
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 
-      drawGraph(graphData);
-      
+        drawGraph(graphData);
+
     });
 
 

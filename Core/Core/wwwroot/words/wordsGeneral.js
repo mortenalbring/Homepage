@@ -89,8 +89,6 @@ WordsGeneral.FilterDataOnTermExactRecursive = function(inputGraph, term) {
     }
 
 
-    console.log(searchLinks);
-    console.log(searchNodes);
 
     var newGraph = {};
     newGraph.nodes = searchNodes;

@@ -1,4 +1,6 @@
-﻿function drawGraph(graphData, searchVal) {
+﻿var TotalGraphData;
+
+function drawGraph(graphData, searchVal) {
 
     var svg = d3.select("#simpleWords2wd"),
         width = +svg.attr("width"),
@@ -76,21 +78,30 @@
         })
         .on("click", function(event, d) {
             console.log(d);
-            var nodes = simulation.nodes();
-            console.log(nodes);
-            var links = simulation.force("link").links();
-            console.log(links);
-            
-            var newNode = {id: "newNode", group: 1, linkCount: 2, x:0,y:0}
-            //nodes.push(newNode);
-             var newLink = {source: graphData.nodes[0], target: newNode}
-             //graphData.links.push(newLink);
-            
+
+            searchVal = d.id;
+
+            var svg = d3.select("#simpleWords2wd");
+            svg.selectAll("*").remove();
+
+            var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
+            d3.json(path).then(function (graph) {
+                console.log("New data found")
+                console.log(TotalGraphData);
+                
+                var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
+                
+                var combinedData = WordsGeneral.CombineData(TotalGraphData,graphData);
+                console.log(combinedData);
+                
+                drawGraph(combinedData,searchVal);
+
+            });
+             
             
         })
         .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
-            console.log(color(d.linkCount));
             return color(d.linkCount);
         });
 
@@ -150,11 +161,7 @@
                 }
                 
             })
-
-
     }
-
-
 }
 
 $('#btnSearchWord').click(function () {
@@ -162,20 +169,16 @@ $('#btnSearchWord').click(function () {
     if (searchVal.length < 3) {
         return;
     }
-    console.log("Search Val : " + searchVal);
 
     var svg = d3.select("#simpleWords2wd");
-
     svg.selectAll("*").remove();
-
-    var newterm = "test";
-    var path = "/words/Json/" + "EnglishSowpodsdeepwordchain.json";
+    
+    var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
     d3.json(path).then(function (graph) {
-        console.log(graph);
-
         var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
         console.log(graphData);
+        
         drawGraph(graphData,searchVal);
 
     });
@@ -183,14 +186,14 @@ $('#btnSearchWord').click(function () {
 
 d3.timeout(function () {
 
-    var path = "/words/Json/" + "EnglishSowpodsdeepwordchain.json";
+    var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
     d3.json(path).then(function (graph) {
-        console.log(graph);
+        
 
         var searchVal = "test";
         var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
-
+        TotalGraphData = graphData;
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 
         drawGraph(graphData,searchVal);

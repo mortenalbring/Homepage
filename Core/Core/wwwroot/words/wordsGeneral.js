@@ -1,5 +1,48 @@
 ﻿var WordsGeneral = {};
 
+WordsGeneral.CombineData = function(graphData, newData) {
+    
+    var combinedData = {nodes: [], links: []};
+    
+    combinedData.nodes = graphData.nodes;
+    combinedData.links = graphData.links;
+
+    for (let i = 0; i < newData.nodes.length; i++) {
+        var exists = false;
+        for (let j = 0; j < combinedData.nodes.length; j++) {
+            if (combinedData.nodes[j].id == newData.nodes[i].id) {
+                exists =  true;
+                break;
+            }
+        }
+        if (!exists) {
+            combinedData.nodes.push(newData.nodes[i]);
+        }
+    }
+
+    for (let i = 0; i < newData.links.length; i++) {
+        var exists = false;
+        for (let j = 0; j < combinedData.links.length; j++) {
+            if (combinedData.links[j].source.id == newData.links[i].source.id && combinedData.links[j].target.id == newData.links[i].target.id) {
+                exists = true;
+                break;
+            }
+            if (combinedData.links[j].source.id == newData.links[i].source && combinedData.links[j].target.id == newData.links[i].target) {
+                exists = true;
+                break;
+            }
+
+
+        }
+        if (!exists) {
+            console.log(newData.links[i]);
+            combinedData.links.push(newData.links[i]);
+        }
+    }
+        
+    return combinedData;
+}
+
 
 WordsGeneral.GetDiffChar = function (source, target) {
     var diffChar = "";

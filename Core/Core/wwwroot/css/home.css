@@ -52,8 +52,9 @@
     background-size: cover;
 }
 .parallax-angulard3 {
-    background-image: url("../angularD3/AngularD3-preview.png");
+    background-image: url("../angularD3/AngularD3-preview2.png");
     background-size: contain;
+    background-color: #3e3e3e;
 }
 
 @media (min-width:575px) and (max-width: 767px) {

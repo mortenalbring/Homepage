@@ -70,7 +70,7 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Combining D3.js with AngularJS.
+        ///   Looks up a localized string similar to D3.js is a versatile and powerful library for manipulating data in documents. AngularJS is a framework for developing single page applications. This post combines D3.js with AngularJS in order to manipulate settings for a force-directed graph in real-time..
         /// </summary>
         public static string AngularD3TextLong {
             get {

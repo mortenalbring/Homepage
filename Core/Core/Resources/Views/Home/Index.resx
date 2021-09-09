@@ -79,7 +79,7 @@
         <value>Angular D3</value>
     </data>
     <data name="AngularD3TextLong" xml:space="preserve">
-        <value>Combining D3.js with AngularJS</value>
+        <value>D3.js is a versatile and powerful library for manipulating data in documents. AngularJS is a framework for developing single page applications. This post combines D3.js with AngularJS in order to manipulate settings for a force-directed graph in real-time.</value>
     </data>
     <data name="AngularD3TextShort" xml:space="preserve">
         <value>Combining D3.js with AngularJS</value>

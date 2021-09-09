@@ -74,6 +74,20 @@
             // }
             // return d.linkCount * 2;
         })
+        .on("click", function(event, d) {
+            console.log(d);
+            var nodes = simulation.nodes();
+            console.log(nodes);
+            var links = simulation.force("link").links();
+            console.log(links);
+            
+            var newNode = {id: "newNode", group: 1, linkCount: 2, x:0,y:0}
+            //nodes.push(newNode);
+             var newLink = {source: graphData.nodes[0], target: newNode}
+             //graphData.links.push(newLink);
+            
+            
+        })
         .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
             console.log(color(d.linkCount));
@@ -131,7 +145,10 @@
             .attr("transform", function (d) {
                 var newx = Math.max(radius, Math.min(width - radius, d.x));
                 var newy = Math.max(radius, Math.min(width - radius, d.y));
-                return "translate(" + newx + "," + newy + ")";
+                if (newx && newy) {
+                    return "translate(" + newx + "," + newy + ")";    
+                }
+                
             })
 
 

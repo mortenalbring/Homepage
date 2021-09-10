@@ -97,12 +97,37 @@ function drawGraph(graphData, searchVal) {
             var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, graphData);
 
             WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(combinedData));
+
+           
             // console.log(combinedData);
 
-            if (combinedData != null && combinedData.nodes.length > 0) {
+            var newNodes = [];
+            for (let i = 0; i < combinedData.nodes.length; i++) {
+                if (combinedData.nodes[i].new) {
+                    newNodes.push(combinedData.nodes[i]);
+                }
+            }
+
+
+            if (combinedData != null && combinedData.nodes.length > 0 && newNodes.length > 0) {
+                
+                for (let i = 0; i < WordsGeneral.FilteredDataArchive.nodes.length; i++) {
+                    WordsGeneral.FilteredDataArchive.nodes[i].new = false;
+                }
+                
                 var svg = d3.select("#simpleWords2wd");
                 svg.selectAll("*").remove();
 
+                var newNodeText = "";
+                for (let i = 0; i < newNodes.length; i++) {
+                    newNodeText = newNodeText + ", " + newNodes[i].id;
+                }
+                svg.append("g").append("text")
+                    .attr("x",20)
+                    .attr("y",20)
+                    .attr("fill","white")
+                    .style("font-size","10px")
+                    .text("New Nodes: " + newNodes.length + newNodeText);
                 drawGraph(combinedData, searchVal);
             }
 
@@ -110,6 +135,9 @@ function drawGraph(graphData, searchVal) {
         })
         .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
+            if (d.new) {
+                return "yellow";
+            }
             return color(d.id.length);
         });
 

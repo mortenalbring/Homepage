@@ -8,6 +8,14 @@ WordsGeneral.CombineData = function(graphData, newData) {
     console.log(graphData);
     console.log("New Data:");
     console.log(newData);
+
+    // for (let i = 0; i < graphData.length; i++) {
+    //     graphData.nodes[i].new = false;
+    // }
+    //
+    // for (let i = 0; i < newData.nodes.length; i++) {
+    //     newData.nodes[i].new = true;
+    // }
     
     var combinedData = {nodes: [], links: []};
     
@@ -18,11 +26,13 @@ WordsGeneral.CombineData = function(graphData, newData) {
         var exists = false;
         for (let j = 0; j < combinedData.nodes.length; j++) {
             if (combinedData.nodes[j].id == newData.nodes[i].id) {
+                combinedData.nodes[j].new = false;
                 exists =  true;
                 break;
             }
         }
         if (!exists) {
+            newData.nodes[i].new = true;
             combinedData.nodes.push(newData.nodes[i]);
         }
     }
@@ -46,8 +56,8 @@ WordsGeneral.CombineData = function(graphData, newData) {
             combinedData.links.push(newData.links[i]);
         }
     }
-        
-    return combinedData;
+    var updateData = JSON.parse(JSON.stringify(combinedData))
+    return updateData;
 }
 
 

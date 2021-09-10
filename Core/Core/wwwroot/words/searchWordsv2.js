@@ -88,22 +88,24 @@ function drawGraph(graphData, searchVal) {
 
             searchVal = d.id;
 
-            var svg = d3.select("#simpleWords2wd");
-            svg.selectAll("*").remove();
 
             var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
-            d3.json(path).then(function (graph) {
-                console.log("New data found")
-                console.log(TotalGraphData);
+            
                 
-                var graphData = WordsGeneral.FilterDataOnTermExact(graph, searchVal);
+                var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
                 
-                var combinedData = WordsGeneral.CombineData(TotalGraphData,graphData);
-                console.log(combinedData);
+               // var combinedData = WordsGeneral.CombineData(TotalGraphData,graphData);
+               // console.log(combinedData);
                 
-                drawGraph(combinedData,searchVal);
+            if (graphData != null && graphData.nodes.length > 0) {
+                var svg = d3.select("#simpleWords2wd");
+                svg.selectAll("*").remove();
 
-            });
+                drawGraph(graphData,searchVal);
+            }
+                
+
+            
              
             
         })
@@ -182,13 +184,12 @@ $('#btnSearchWord').click(function () {
     
     var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
-    d3.json(path).then(function (graph) {
-        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
+    console.log(WordsGeneral.DataArchive);
+    
+        var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
         console.log(graphData);
         
         drawGraph(graphData,searchVal);
-
-    });
 })
 
 d3.timeout(function () {
@@ -196,10 +197,11 @@ d3.timeout(function () {
     var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
     d3.json(path).then(function (graph) {
-        
+        WordsGeneral.DataArchive = JSON.parse(JSON.stringify(graph));
+        console.log(WordsGeneral.DataArchive);
 
         var searchVal = "test";
-        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
+        var graphData = WordsGeneral.FilterDataOnTermExact(graph, searchVal);
         TotalGraphData = graphData;
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 

@@ -1,6 +1,12 @@
 ﻿var WordsGeneral = {};
 
+WordsGeneral.DataArchive = {};
+
 WordsGeneral.CombineData = function(graphData, newData) {
+    console.log("CombineData:");
+    console.log(graphData);
+    console.log("New Data:");
+    console.log(newData);
     
     var combinedData = {nodes: [], links: []};
     
@@ -178,9 +184,6 @@ WordsGeneral.FilterDataOnTermExact = function(inputGraph, term) {
         }
     }
     
-    
-    console.log(searchLinks);
-    console.log(searchNodes);
     
     var newGraph = {};
     newGraph.nodes = searchNodes;

@@ -7,11 +7,18 @@ function drawGraph(graphData, searchVal) {
         height = +svg.attr("height");
 
 
+    // var maxval = Math.max.apply(Math, graphData.nodes.map(function (o) {
+    //     return o.linkCount;
+    // }))
+    // var minval = Math.min.apply(Math, graphData.nodes.map(function (o) {
+    //     return o.linkCount;
+    // }))
+
     var maxval = Math.max.apply(Math, graphData.nodes.map(function (o) {
-        return o.linkCount;
+        return o.id.length;
     }))
     var minval = Math.min.apply(Math, graphData.nodes.map(function (o) {
-        return o.linkCount;
+        return o.id.length;
     }))
 
     console.log("max min" + maxval + "  " + minval);
@@ -89,7 +96,7 @@ function drawGraph(graphData, searchVal) {
                 console.log("New data found")
                 console.log(TotalGraphData);
                 
-                var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
+                var graphData = WordsGeneral.FilterDataOnTermExact(graph, searchVal);
                 
                 var combinedData = WordsGeneral.CombineData(TotalGraphData,graphData);
                 console.log(combinedData);
@@ -102,7 +109,7 @@ function drawGraph(graphData, searchVal) {
         })
         .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
-            return color(d.linkCount);
+            return color(d.id.length);
         });
 
     var lables = node.append("text")

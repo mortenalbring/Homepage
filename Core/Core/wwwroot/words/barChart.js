@@ -20,12 +20,10 @@ var g = svg.append("g")
     .attr("transform", "translate(" + 70 + "," + 50 + ")");
 
 d3.csv("/words/bar-data.csv").then(function(flatData) {
-    console.log(flatData);
     xScale.domain(flatData.map(function(d) { return d.wordlength; }));
     yScale.domain([0, d3.max(flatData, function(d) { return parseInt(d.words); })]);
 
     var maxval = d3.max(flatData, function(d) { return parseInt(d.words); });
-    console.log(maxval);
     
     g.append("g")
         .attr("transform", "translate(0," + height + ")")

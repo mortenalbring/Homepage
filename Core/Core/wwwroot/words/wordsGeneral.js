@@ -1,6 +1,7 @@
 ﻿var WordsGeneral = {};
 
 WordsGeneral.DataArchive = {};
+WordsGeneral.FilteredDataArchive = {};
 
 WordsGeneral.CombineData = function(graphData, newData) {
     console.log("CombineData:");
@@ -29,7 +30,7 @@ WordsGeneral.CombineData = function(graphData, newData) {
     for (let i = 0; i < newData.links.length; i++) {
         var exists = false;
         for (let j = 0; j < combinedData.links.length; j++) {
-            if (combinedData.links[j].source.id == newData.links[i].source.id && combinedData.links[j].target.id == newData.links[i].target.id) {
+            if (combinedData.links[j].source == newData.links[i].source.id && combinedData.links[j].target.id == newData.links[i].target.id) {
                 exists = true;
                 break;
             }

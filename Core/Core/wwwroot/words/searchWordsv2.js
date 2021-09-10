@@ -24,10 +24,10 @@ function drawGraph(graphData, searchVal) {
     console.log("max min" + maxval + "  " + minval);
     var color = d3.scaleLinear()
         .domain([minval, maxval])
-        .range(["red","blue","green"])
+        .range(["red", "blue", "green"])
         .interpolate(d3.interpolateHcl)
     ;
-    
+
     var attractForce = d3.forceManyBody()
         .strength(3)
         .distanceMax(50)
@@ -43,8 +43,8 @@ function drawGraph(graphData, searchVal) {
         }))
         .force("charge", d3.forceManyBody().strength(-25))
         .force("center", d3.forceCenter(width / 2, height / 2).strength(1))
-      //  .force("attractForce", attractForce)
-     //   .force("repelForce", repelForce)
+        //  .force("attractForce", attractForce)
+        //   .force("repelForce", repelForce)
         .force('collision', d3.forceCollide().radius(function (d) {
             return d.id.length * 3.5
         }))
@@ -83,31 +83,30 @@ function drawGraph(graphData, searchVal) {
             // }
             // return d.linkCount * 2;
         })
-        .on("click", function(event, d) {
-            console.log(d);
-
+        .on("click", function (event, d) {
             searchVal = d.id;
 
 
             var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
-            
+
+            var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
                 
-                var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
-                
-               // var combinedData = WordsGeneral.CombineData(TotalGraphData,graphData);
-               // console.log(combinedData);
-                
-            if (graphData != null && graphData.nodes.length > 0) {
+            console.log("WordsGeneral.FilteredDataArchive:");
+            console.log(WordsGeneral.FilteredDataArchive);
+
+            var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, graphData);
+
+            WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(combinedData));
+            // console.log(combinedData);
+
+            if (combinedData != null && combinedData.nodes.length > 0) {
                 var svg = d3.select("#simpleWords2wd");
                 svg.selectAll("*").remove();
 
-                drawGraph(graphData,searchVal);
+                drawGraph(combinedData, searchVal);
             }
-                
 
-            
-             
-            
+
         })
         .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
@@ -117,7 +116,7 @@ function drawGraph(graphData, searchVal) {
     var lables = node.append("text")
         .text(function (d) {
             return d.id;
-            
+
         })
         .attr("text-anchor", "middle")
         .attr('x', 0)
@@ -166,9 +165,9 @@ function drawGraph(graphData, searchVal) {
                 var newx = Math.max(radius, Math.min(width - radius, d.x));
                 var newy = Math.max(radius, Math.min(width - radius, d.y));
                 if (newx && newy) {
-                    return "translate(" + newx + "," + newy + ")";    
+                    return "translate(" + newx + "," + newy + ")";
                 }
-                
+
             })
     }
 }
@@ -181,15 +180,14 @@ $('#btnSearchWord').click(function () {
 
     var svg = d3.select("#simpleWords2wd");
     svg.selectAll("*").remove();
-    
+
     var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
-    console.log(WordsGeneral.DataArchive);
-    
-        var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
-        console.log(graphData);
-        
-        drawGraph(graphData,searchVal);
+
+    var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
+    WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(graphData));
+
+    drawGraph(graphData, searchVal);
 })
 
 d3.timeout(function () {
@@ -202,10 +200,12 @@ d3.timeout(function () {
 
         var searchVal = "test";
         var graphData = WordsGeneral.FilterDataOnTermExact(graph, searchVal);
-        TotalGraphData = graphData;
+        WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(graphData));
+        console.log("Filtered data archive");
+        console.log(WordsGeneral.FilteredDataArchive);
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 
-        drawGraph(graphData,searchVal);
+        drawGraph(graphData, searchVal);
 
     });
 

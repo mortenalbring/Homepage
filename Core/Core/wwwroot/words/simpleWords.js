@@ -126,7 +126,11 @@
                 })
 
             })
+            
+            return nodeGroup;
         }
+        
+        
 
         function PutLinks(g, graph, color) {
             //Group containing link line and link text
@@ -322,9 +326,10 @@
 
                 simulation.force("link")
                     .links(graph.links);
-
+                
                 simulation.stop();
 
+               
 
                 // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
@@ -333,7 +338,17 @@
 
                 var lines = PutLinks(g, graph, nodeLengthColor);
 
-                PutNodes(g, graph, lines, nodes, color);
+                var nodeGroups = PutNodes(g, graph, lines, nodes, color);
+                // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
+                for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
+                    simulation.tick();
+             
+
+                }
+                function ticked() {
+
+console.log("tick");
+                }
             });
 
         });

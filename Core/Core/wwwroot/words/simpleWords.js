@@ -289,7 +289,7 @@
                         return d.id;
                     }).distance(domVariables.LinkDistance).iterations(1))
                     .force("charge", d3.forceManyBody().strength(domVariables.Charge))
-                    .force('center', d3.forceCenter().x((domVariables.Width / 2)).y((domVariables.Height / 2)))
+                    .force('center', d3.forceCenter(width/2,height/2).strength(1.5))
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
                     .force('collision', d3.forceCollide().radius(function (d) {

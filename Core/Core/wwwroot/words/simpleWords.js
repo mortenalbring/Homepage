@@ -128,7 +128,7 @@
             })
         }
 
-        function PutLinks(g, graph) {
+        function PutLinks(g, graph, color) {
             //Group containing link line and link text
             var linkGroup = g.append("g")
                 .attr("class", "links")
@@ -136,10 +136,26 @@
                 .data(graph.links)
                 .enter()
                 .append("g")
-
                 .attr("class", "link-group");
 
 
+            linkGroup.append("title").text(function(d) {
+                var snode;
+                var tnode;
+                for (let i = 0; i < graph.nodes.length; i++) {
+                    if (d.source.id == graph.nodes[i].id) {
+                        snode = graph.nodes[i].id;
+                    }
+                    if (d.target.id == graph.nodes[i].id) {
+                        tnode = graph.nodes[i].id;
+                    }
+                }
+                if (snode && tnode) {
+                    return snode + " [" + d.diffChar + "] " + tnode;
+                }
+                return "";
+            })
+            
             //Lines connecting nodes
             var lines = linkGroup.append("line")
                 .attr("x1", function (d) {
@@ -156,7 +172,35 @@
                 })
                 .attr("stroke-width", function (d) {
                     return 10;
-                });
+                })
+                .attr("stroke", function(d) {
+                    var snode;
+                    var tnode;
+                    for (let i = 0; i < graph.nodes.length; i++) {
+                        if (d.source.id == graph.nodes[i].id) {
+                            snode = graph.nodes[i].id;
+                        }
+                        if (d.target.id == graph.nodes[i].id) {
+                            tnode = graph.nodes[i].id;
+                        }
+                    }
+                    
+                    if (snode && tnode) {
+                        var smallest = snode.length;
+                        if (tnode.length < snode.length) {
+                            smallest = tnode.length;
+                        }
+                        var lendiff = snode.length - tnode.length;
+                        if (lendiff < 0) {
+                            lendiff = lendiff * -1;
+                        }
+                        return color(smallest + lendiff);
+                    }
+
+                    return "green"
+                })
+            
+            ;
 
             //Tiny text along link lines
             linkGroup.append("text")
@@ -205,6 +249,20 @@
                 var nodes = graph.nodes;
                 var links = graph.links;
 
+                var maxNodeLength = 0;
+                var minNodeLength = 999;
+                for (let i = 0; i < graph.nodes.length; i++) {
+                    var n =graph.nodes[i]; 
+                    if (n.id.length > maxNodeLength) {
+                        maxNodeLength = n.id.length;
+                    }
+                    if (n.id.length < minNodeLength) {
+                        minNodeLength = n.id.length;
+                    }
+
+                }
+                console.log("MinNodeLength:" + minNodeLength + "MaxNodeLength:" + maxNodeLength);
+                
                 // console.log(nodes);
                 // console.log(links);
                 var n = 100;
@@ -212,6 +270,10 @@
                 var color = d3.scaleLinear()
                     .domain([1, domVariables.MaxGroup])
                     .range(["red", "blue", "green"]);
+                var nodeLengthColor = d3.scaleLinear()
+                    .domain([minNodeLength, maxNodeLength])
+                    .range(["red", "blue", "green"]);
+
 
                 var attractForce = d3.forceManyBody()
                     .strength(domVariables.AttractForce.Strength)
@@ -237,7 +299,7 @@
                 ;
                 if (domVariables.UseForceYByHeight) {
                     simulation.force('y', d3.forceY().y(function (d) {
-                        return domVariables.Height / 2
+                        return d.id.length*2;
                     }))
                 }
                 if (domVariables.UseForceYByGroup) {
@@ -266,7 +328,7 @@
                     simulation.tick();
                 }
 
-                var lines = PutLinks(g, graph);
+                var lines = PutLinks(g, graph, nodeLengthColor);
 
                 PutNodes(g, graph, lines, nodes, color);
             });

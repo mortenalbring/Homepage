@@ -56,12 +56,19 @@ function drawGraph(graphData, searchVal) {
         .selectAll("line")
         .data(graphData.links)
         .enter().append("line")
-        .attr("stroke-width", function (d) {
+        .attr("stroke", function(d) {
+            return color(d.source.length)
+        })
+        .attr("stroke-opacity", function (d) {
             return 1
+        })        
+        .attr("stroke-width", function (d) {
+            var ll = d.source.length + d.target.length;
+            return ll 
         });
 
     var node = svg.append("g")
-        .attr("class", "nodes")
+        .attr("class", "search-nodes")
         .selectAll("g")
         .data(graphData.nodes)
         .enter().append("g")
@@ -134,11 +141,17 @@ function drawGraph(graphData, searchVal) {
 
 
         })
-        .attr("opacity", defaultNodeCircleOpacity)
-        .attr("fill", function (d) {
+        .attr("stroke",function(d) {
             if (d.new) {
                 return "yellow";
             }
+            return "white";
+        })
+        .attr("stroke-width", function(d) {
+            return "1.5px";
+        })
+        .attr("opacity", defaultNodeCircleOpacity)
+        .attr("fill", function (d) {
             return color(d.id.length);
         });
 

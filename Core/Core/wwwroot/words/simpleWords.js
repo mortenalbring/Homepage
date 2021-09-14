@@ -170,6 +170,9 @@
                 .attr("y2", function (d) {
                     return d.target.y;
                 })
+                .attr("stroke-opacity", function (d) {
+                    return 0.2;
+                })                
                 .attr("stroke-width", function (d) {
                     return 10;
                 })

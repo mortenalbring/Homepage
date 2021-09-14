@@ -41,6 +41,7 @@ function drawGraph(graphData, searchVal) {
         .force("link", d3.forceLink().id(function (d) {
             return d.id;
         }))
+
         .force("charge", d3.forceManyBody().strength(-25))
         .force("center", d3.forceCenter(width / 2, height / 2).strength(1))
         //  .force("attractForce", attractForce)

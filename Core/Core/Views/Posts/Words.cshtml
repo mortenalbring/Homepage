@@ -11,7 +11,7 @@
     <script src="/words/wordsGeneral.js"></script>
     <script src="/words/simpleWords.js"></script>
     <script src="/words/searchWordsv2.js"></script>
-    
+
     <script src="/words/barChart.js"></script>
 }
 
@@ -147,6 +147,25 @@
                 </svg>
             </div>
         </div>
+        
+        <div class="row">
+                    <div class="col-md-12">
+                        <svg id="wordChainLongEnglish"
+                             group="0"
+                             width="1000"
+                             height="400"
+                             linkdistance="50"
+                             useforceybyheight="true"
+                             charge="-50"
+                             repelforcestrength="-200"
+                             repelforcedistancemin="0"
+                             repelforcedistancemax="600"
+        
+                             json="\en\wordChainsEnglish20210914.json">
+                        </svg>
+                    </div>
+                </div>
+
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -173,40 +192,52 @@
                 </svg>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-12">
                 <h2>Links search</h2>
-                
+
                 <div class="row">
-                    <div class="col-2">
-                <input class="form-control" id="btnSearchInput"></input> <button class="btn btn-primary btn-dark" id="btnSearchWord">Search</button>        
-                    </div>
-                    <div class="col-10">
-                                        <svg id="simpleWords2wd"
-                                                             group="1"
-                                                             maxgroup="9"
-                                                             width="1050"
-                                                             height="600"
-                                                             linkdistance="40"
-                                                             attractforcestrength="20"
-                                                             attractforcedistancemin="10"
-                                                             attractforcedistancemax="30"
-                                                             repelforcestrength="-45"
-                                                             repelforcedistancemin="0"
-                                                             repelforcedistancemax="10"
-                                                             charge="-9"
-                                                             json="EnglishSowpodsdeepwordchain.json">
-                                                        </svg>
-                                        
+                    <div class="col-12">
+                        <div class="row g-3">
+                   
+                            <div class="col-auto">
+                                
+                                <input class="form-control" id="btnSearchInput" placeholder="Search">
+                            </div>
+                            <div class="col-auto">
+                                <button id="btnSearchWord" class="btn btn-primary mb-3">Search</button>
+                            </div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                
-                
-                
+
+                <div class="row">
+                    <div class="col-12">
+                        <svg id="simpleWords2wd"
+                             group="1"
+                             maxgroup="9"
+                             width="1050"
+                             height="600"
+                             linkdistance="40"
+                             attractforcestrength="20"
+                             attractforcedistancemin="10"
+                             attractforcedistancemax="30"
+                             repelforcestrength="-45"
+                             repelforcedistancemin="0"
+                             repelforcedistancemax="10"
+                             charge="-9"
+                             json="EnglishSowpodsdeepwordchain.json">
+                        </svg>
+
+                    </div>
+                </div>
+
+
                 <br>
-                
-             
+
 
             </div>
         </div>

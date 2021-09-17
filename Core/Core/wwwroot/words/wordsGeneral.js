@@ -429,8 +429,8 @@ output.Charge = -80;
         output.UseForceYByGroup = true;
     }
 
-    if (svg.attr("colourstyle") != null) {
-        output.ColorStyle = parseInt(svg.attr("colourstyle"));
+    if (svg.attr("colorstyle") != null) {
+        output.ColorStyle = parseInt(svg.attr("colorstyle"));
     }
 
 

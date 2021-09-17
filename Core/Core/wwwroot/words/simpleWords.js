@@ -31,24 +31,30 @@
                 }
 
             }
-            console.log("MinNodeLength:" + minNodeLength + "MaxNodeLength:" + maxNodeLength);
 
-            var color = d3.scaleLinear()
+            var nodeColor = d3.scaleLinear()
                 .domain([1, domVariables.MaxGroup])
                 .range(["red", "blue", "green"]);
-            var nodeLengthColor = d3.scaleLinear()
+            
+            if (domVariables.ColorStyle == 1) {
+                nodeColor = d3.scaleLinear()
+                    .domain([minNodeLength, maxNodeLength])
+                    .range(["red", "orange", "yellow"]);
+            }
+            
+            var linksColor = d3.scaleLinear()
                 .domain([minNodeLength, maxNodeLength])
                 .range(["red", "blue", "green"]);
 
-            var output = [color, nodeLengthColor];
+            var output = [nodeColor, linksColor];
                 
             return output;
 
         }
         
-        function PutNodes(g, graph, lines, nodes, color) {
+        function PutNodes(g, graph, lines, nodes, color, domVariables) {
 
-            var defaultNodeCircleOpacity = 0.2;
+            var defaultNodeCircleOpacity = 0.6;
 
             //Group containing circle and text
             var nodeGroup = g.append("g")
@@ -72,7 +78,11 @@
                     return d.y;
                 })
                 .attr("fill", function (d) {
+                    if (domVariables.ColorStyle === 1) {
+                        return color(d.id.length);    
+                    }
                     return color(d.group);
+                    
                 })
                 .attr("opacity", defaultNodeCircleOpacity)
             ;
@@ -280,8 +290,8 @@
                 WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
 
                 var colours = GetColours(graph, domVariables);
-                var color = colours[0];
-                var nodeLengthColor = colours[1];
+                var nodeColor = colours[0];
+                var linksColor = colours[1];
                 
                 var nodes = graph.nodes;
                 var links = graph.links;
@@ -353,9 +363,9 @@
                     simulation.tick();
                 }
 
-                var lines = PutLinks(g, graph, nodeLengthColor);
+                var lines = PutLinks(g, graph, linksColor);
 
-                var nodeGroups = PutNodes(g, graph, lines, nodes, color);
+                var nodeGroups = PutNodes(g, graph, lines, nodes, nodeColor, domVariables);
                 // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
                     simulation.tick();

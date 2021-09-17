@@ -18,6 +18,34 @@
 
     function initSvgStatic(svg, containerId) {
 
+        function GetColours(graph,domVariables) {
+            var maxNodeLength = 0;
+            var minNodeLength = 999;
+            for (let i = 0; i < graph.nodes.length; i++) {
+                var n =graph.nodes[i];
+                if (n.id.length > maxNodeLength) {
+                    maxNodeLength = n.id.length;
+                }
+                if (n.id.length < minNodeLength) {
+                    minNodeLength = n.id.length;
+                }
+
+            }
+            console.log("MinNodeLength:" + minNodeLength + "MaxNodeLength:" + maxNodeLength);
+
+            var color = d3.scaleLinear()
+                .domain([1, domVariables.MaxGroup])
+                .range(["red", "blue", "green"]);
+            var nodeLengthColor = d3.scaleLinear()
+                .domain([minNodeLength, maxNodeLength])
+                .range(["red", "blue", "green"]);
+
+            var output = [color, nodeLengthColor];
+                
+            return output;
+
+        }
+        
         function PutNodes(g, graph, lines, nodes, color) {
 
             var defaultNodeCircleOpacity = 0.2;
@@ -130,8 +158,6 @@
             return nodeGroup;
         }
         
-        
-
         function PutLinks(g, graph, color) {
             //Group containing link line and link text
             var linkGroup = g.append("g")
@@ -253,33 +279,24 @@
                 var g = svg.append("g");
                 WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
 
+                var colours = GetColours(graph, domVariables);
+                var color = colours[0];
+                var nodeLengthColor = colours[1];
+                
                 var nodes = graph.nodes;
                 var links = graph.links;
 
-                var maxNodeLength = 0;
-                var minNodeLength = 999;
-                for (let i = 0; i < graph.nodes.length; i++) {
-                    var n =graph.nodes[i]; 
-                    if (n.id.length > maxNodeLength) {
-                        maxNodeLength = n.id.length;
-                    }
-                    if (n.id.length < minNodeLength) {
-                        minNodeLength = n.id.length;
-                    }
-
-                }
-                console.log("MinNodeLength:" + minNodeLength + "MaxNodeLength:" + maxNodeLength);
-                
+           
                 // console.log(nodes);
                 // console.log(links);
                 var n = 100;
                 var radius = 14;
-                var color = d3.scaleLinear()
-                    .domain([1, domVariables.MaxGroup])
-                    .range(["red", "blue", "green"]);
-                var nodeLengthColor = d3.scaleLinear()
-                    .domain([minNodeLength, maxNodeLength])
-                    .range(["red", "blue", "green"]);
+                // var color = d3.scaleLinear()
+                //     .domain([1, domVariables.MaxGroup])
+                //     .range(["red", "blue", "green"]);
+                // var nodeLengthColor = d3.scaleLinear()
+                //     .domain([minNodeLength, maxNodeLength])
+                //     .range(["red", "blue", "green"]);
 
 
                 var attractForce = d3.forceManyBody()

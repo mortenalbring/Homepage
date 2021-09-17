@@ -1,6 +1,4 @@
-﻿var TotalGraphData;
-
-function drawGraph(graphData, searchVal) {
+﻿function drawGraph(graphData, searchVal) {
 
     var svg = d3.select("#simpleWords2wd"),
         width = +svg.attr("width"),

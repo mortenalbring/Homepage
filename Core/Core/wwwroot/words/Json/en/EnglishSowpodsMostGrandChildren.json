@@ -1,0 +1,27 @@
+{"nodes":[{ "id": "speared", "group":1},
+{ "id": "seared", "group":2},
+{ "id": "spared", "group":2},
+{ "id": "eared", "group":0},
+{ "id": "sared", "group":0},
+{ "id": "sered", "group":0},
+{ "id": "seare", "group":0},
+{ "id": "pared", "group":0},
+{ "id": "spred", "group":0},
+{ "id": "spaed", "group":0},
+{ "id": "spard", "group":0},
+{ "id": "spare", "group":0}
+],
+"links":[{"source":"speared","target":"seared","value":1},
+{"source":"speared","target":"spared","value":1},
+{"source":"seared","target":"eared","value":1},
+{"source":"seared","target":"sared","value":1},
+{"source":"seared","target":"sered","value":1},
+{"source":"seared","target":"seare","value":1},
+{"source":"spared","target":"pared","value":1},
+{"source":"spared","target":"sared","value":1},
+{"source":"spared","target":"spred","value":1},
+{"source":"spared","target":"spaed","value":1},
+{"source":"spared","target":"spard","value":1},
+{"source":"spared","target":"spare","value":1}
+]
+ }

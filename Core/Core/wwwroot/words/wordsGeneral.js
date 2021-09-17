@@ -348,8 +348,7 @@ WordsGeneral.MakeCenterGroup = function(start,end,maxGroup) {
 }
 
 WordsGeneral.ParseDomVariables = function (svg, containerId) {
-    var output = {
-    };
+    var output = {};
     output.LinkDistance = 40;
     output.MaxGroup = 1;
     output.Group = 1;
@@ -371,6 +370,8 @@ output.Charge = -80;
 
     output.Height = 50;
     output.Width = 50;
+    
+    output.ColorStyle = 0;
 
     var parentElement = document.getElementById(containerId);
     if (parentElement === null) {
@@ -426,6 +427,10 @@ output.Charge = -80;
     }
     if (svg.attr("useforceybygroup") != null) {
         output.UseForceYByGroup = true;
+    }
+
+    if (svg.attr("colourstyle") != null) {
+        output.ColorStyle = parseInt(svg.attr("colourstyle"));
     }
 
 

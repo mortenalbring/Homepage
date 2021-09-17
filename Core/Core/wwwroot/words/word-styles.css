@@ -8,6 +8,11 @@ svg {
     stroke-linecap: round;
 }
 
+.links line:hover {
+    cursor: pointer;
+    stroke-opacity: 0.9;
+}
+
 .nodes circle {
     stroke: #fff;
     stroke-width: 1.5px;

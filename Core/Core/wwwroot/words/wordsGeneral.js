@@ -3,6 +3,7 @@
 WordsGeneral.DataArchive = {};
 WordsGeneral.FilteredDataArchive = {};
 
+
 WordsGeneral.CombineData = function(graphData, newData) {
     console.log("CombineData:");
     console.log(graphData);

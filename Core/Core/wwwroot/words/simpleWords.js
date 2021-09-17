@@ -1,4 +1,7 @@
-﻿function init() {
+﻿ConnectedNodes = [];
+
+
+function init() {
 //This is for d3 v5 word chains and generates a static force graph
     $('.simpleWords').each(function (d) {
         var svgId = "#" + this.id;
@@ -78,6 +81,7 @@
                     return d.y;
                 })
                 .attr("fill", function (d) {
+              
                     if (domVariables.ColorStyle === 1) {
                         return color(d.id.length);    
                     }
@@ -121,47 +125,11 @@
                     return "[" + d.group + "] " + d.id;
                 });
 
-            nodeGroup.on('mouseover', function (d) {
-                var nodeIds = [];
-                nodeIds.push(d.id);
-                lines.attr('stroke-width', function (ld) {
-
-                    if (ld.source.id === d.id) {
-                        nodeIds.push(ld.target.id);
-
-                        return 20;
-                    }
-                    if (ld.target.id === d.id) {
-                        nodeIds.push(ld.source.id);
-
-                        return 20;
-                    }
-                    return 10;
-
-                });
-
-                nodeCircles.attr('opacity', function (dd) {
-                    if (nodeIds.includes(dd.id)) {
-                        return 0.5;
-                    }
-
-                    return defaultNodeCircleOpacity;
-                })
-
+            nodeGroup.on('mouseover', function (event,d) {
+       
 
             })
             nodeGroup.on('mouseout', function (d) {
-                lines.attr('stroke-width', function (ld) {
-                    return 10;
-                });
-
-                nodeCircles.attr('fill', function (dd) {
-                    return color(dd.group);
-                })
-
-                nodeCircles.attr('opacity', function (dd) {
-                    return defaultNodeCircleOpacity;
-                })
 
             })
             

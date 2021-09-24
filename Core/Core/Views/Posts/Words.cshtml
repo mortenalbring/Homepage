@@ -126,14 +126,13 @@
                 This does spit out some pretty peculiar words, such as '<a href="https://1word.ws/eards">eards</a>', '<a href="https://1word.ws/sared">sared</a>', and '<a href="https://1word.ws/yerds">yerds</a>'. No idea what they mean or why they're in this dictionary, but they are valid scrabble words. It's also notable that the child 'eards' is connected to two of the parent words.
             </p>
             <p>
-                So we've looked at words with the most number of children. How about going another level and looking at words with the most number of grand-children?
+                So we've looked at words with the most number of children. How about going another level and looking at words with the most number of children <strong>and</strong> grand-children?
             </p>
 
         </div>
     </div>
 
     <div class="row">
-
         <div class="col-12">
             <svg id="simpleWordsGrandchildren" class="simpleWordsBig"
                  group="-1"
@@ -153,33 +152,61 @@
     <div class="row">
         <div class="col-12">
             <p>
-                This gave one clear winner: <strong>spains</strong> with 12 grand-children. <strong>Spains</strong> has five immediate children, which share custody over a few of the grand-children. The connections to the grandchildren are a bit messy, you can hover over the links to see more clearly which are connected. 
-                
-                I did count only unique grand-child names, though <strong>spains</strong> wins either way. Why stop there?    
+                This gave one clear winner: <strong>spains</strong> with 12 grand-children. <strong>Spains</strong> has five immediate children, which share custody over a few of the grand-children. The connections to the grandchildren are a bit messy, you can hover over the links to see more clearly which are connected.
+
+                I did count only unique grand-child names, though <strong>spains</strong> wins either way. Why stop there?
             </p>
-            
+
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <svg id="simpleWordsGreatGrandchildren" class="simpleWordsBig"
+                 group="-1"
+                 maxgroup="5"
+                 width="1050"
+                 height="450"
+                 linkdistance="100"
+                 useforcexbygroup="true"
+                 useforceybygroup="true"
+                 charge="-250"
+                 colorstyle="1"
+                 json="\en\EnglishSowpodsMostGreatGrandChildren.json">
+            </svg>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <p>Looking at most children, grandchildren and great-grandchildren, the winner is <strong>steares</strong>.</p>
+            <br/>
+            <a class="btn btn-primary" id="childNext">Next</a>
         </div>
     </div>
 
-        <div class="row">
-    
-            <div class="col-12">
-                <svg id="simpleWordsGreatGrandchildren" class="simpleWordsBig"
-                     group="-1"
-                     maxgroup="5"
-                     width="1050"
-                     height="450"
-                     linkdistance="100"
-                     useforcexbygroup="true"
-                     useforceybygroup="true"
-                     charge="-250"
-                     colorstyle="1"
-                     json="\en\EnglishSowpodsMostGreatGrandChildren.json">
-                </svg>
-            </div>
+    <div class="row">
+        <div class="col-12">
+            <svg id="simpleWorldsNChildren1" class="simpleWordsBig"
+                 group="-1"
+                 maxgroup="7"
+                 width="1050"
+                 height="450"
+                 linkdistance="100"
+                 useforcexbygroup="true"
+                 useforceybygroup="true"
+                 charge="-250"
+                 colorstyle="1"
+                 json="\en\children\children3.json"
+                 jsonfolder="\en\children"
+                 jsoncurrent="3"
+                 jsonmax="9"
+                 >
+            </svg>
         </div>
+    </div>
 
-    
+
     <div>
         <div>
             <h2>Word chains</h2>

@@ -12,6 +12,27 @@ function init() {
         initSvgStatic(d3.select(svgId), "simpleWords1pt");
     });
 
+    $('#childNext').on('click', function() {
+        
+        var svgId = "#simpleWorldsNChildren1";
+        var jsonfolder = $(svgId).attr("jsonfolder");
+        var current = parseInt($(svgId).attr("jsoncurrent"));
+        var maxJson = parseInt($(svgId).attr("jsonmax"));
+        var nextJson = current + 1;
+        if (nextJson > maxJson) {
+            nextJson = 1;
+        }
+        var nextJsonFile = jsonfolder + "\\children" + nextJson + ".json"; 
+        
+        console.log(nextJsonFile);
+        
+        $(svgId).attr("json",nextJsonFile);
+        $(svgId).attr("jsoncurrent",nextJson);
+
+        d3.selectAll(svgId + " > *").remove();
+        
+        initSvgStatic(d3.select(svgId), "simpleWords1pt");
+    })
     
     initSvgStatic(d3.select("#simpleWords1wc"), "simpleWords1pt");
     initSvgStatic(d3.select("#simpleWords2wc"), "simpleWords1pt");

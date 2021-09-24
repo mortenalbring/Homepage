@@ -23,8 +23,9 @@ function init() {
             nextJson = 1;
         }
         var nextJsonFile = jsonfolder + "\\children" + nextJson + ".json";
-
-        console.log(nextJsonFile);
+        
+        var buttonText = "Generation " + nextJson;
+        $('#childNextText').text(buttonText);
 
         $(svgId).attr("json", nextJsonFile);
         $(svgId).attr("jsoncurrent", nextJson);
@@ -57,7 +58,7 @@ function init() {
             }
 
             var nodeColor = d3.scaleLinear()
-                .domain([1, domVariables.MaxGroup])
+                .domain([1, maxGroup])
                 .range(["red", "blue", "green"]);
 
             if (domVariables.ColorStyle == 1) {

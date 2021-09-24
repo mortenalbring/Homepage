@@ -12,8 +12,8 @@ function init() {
         initSvgStatic(d3.select(svgId), "simpleWords1pt");
     });
 
-    $('#childNext').on('click', function() {
-        
+    $('#childNext').on('click', function () {
+
         var svgId = "#simpleWorldsNChildren1";
         var jsonfolder = $(svgId).attr("jsonfolder");
         var current = parseInt($(svgId).attr("jsoncurrent"));
@@ -22,18 +22,18 @@ function init() {
         if (nextJson > maxJson) {
             nextJson = 1;
         }
-        var nextJsonFile = jsonfolder + "\\children" + nextJson + ".json"; 
-        
+        var nextJsonFile = jsonfolder + "\\children" + nextJson + ".json";
+
         console.log(nextJsonFile);
-        
-        $(svgId).attr("json",nextJsonFile);
-        $(svgId).attr("jsoncurrent",nextJson);
+
+        $(svgId).attr("json", nextJsonFile);
+        $(svgId).attr("jsoncurrent", nextJson);
 
         d3.selectAll(svgId + " > *").remove();
-        
+
         initSvgStatic(d3.select(svgId), "simpleWords1pt");
     })
-    
+
     initSvgStatic(d3.select("#simpleWords1wc"), "simpleWords1pt");
     initSvgStatic(d3.select("#simpleWords2wc"), "simpleWords1pt");
 
@@ -42,11 +42,11 @@ function init() {
 
     function initSvgStatic(svg, containerId) {
 
-        function GetColours(graph,domVariables) {
+        function GetColours(graph, domVariables, maxGroup) {
             var maxNodeLength = 0;
             var minNodeLength = 999;
             for (let i = 0; i < graph.nodes.length; i++) {
-                var n =graph.nodes[i];
+                var n = graph.nodes[i];
                 if (n.id.length > maxNodeLength) {
                     maxNodeLength = n.id.length;
                 }
@@ -59,23 +59,23 @@ function init() {
             var nodeColor = d3.scaleLinear()
                 .domain([1, domVariables.MaxGroup])
                 .range(["red", "blue", "green"]);
-            
+
             if (domVariables.ColorStyle == 1) {
                 nodeColor = d3.scaleLinear()
                     .domain([minNodeLength, maxNodeLength])
                     .range(["red", "orange", "yellow"]);
             }
-            
+
             var linksColor = d3.scaleLinear()
                 .domain([minNodeLength, maxNodeLength])
                 .range(["red", "blue", "green"]);
 
             var output = [nodeColor, linksColor];
-                
+
             return output;
 
         }
-        
+
         function PutNodes(g, graph, lines, nodes, color, domVariables) {
 
             var defaultNodeCircleOpacity = 0.6;
@@ -102,12 +102,12 @@ function init() {
                     return d.y;
                 })
                 .attr("fill", function (d) {
-              
+
                     if (domVariables.ColorStyle === 1) {
-                        return color(d.id.length);    
+                        return color(d.id.length);
                     }
                     return color(d.group);
-                    
+
                 })
                 .attr("opacity", defaultNodeCircleOpacity)
             ;
@@ -146,17 +146,17 @@ function init() {
                     return "[" + d.group + "] " + d.id;
                 });
 
-            nodeGroup.on('mouseover', function (event,d) {
-       
+            nodeGroup.on('mouseover', function (event, d) {
+
 
             })
             nodeGroup.on('mouseout', function (d) {
 
             })
-            
+
             return nodeGroup;
         }
-        
+
         function PutLinks(g, graph, color) {
             //Group containing link line and link text
             var linkGroup = g.append("g")
@@ -168,7 +168,7 @@ function init() {
                 .attr("class", "link-group");
 
 
-            linkGroup.append("title").text(function(d) {
+            linkGroup.append("title").text(function (d) {
                 var snode;
                 var tnode;
                 for (let i = 0; i < graph.nodes.length; i++) {
@@ -184,7 +184,7 @@ function init() {
                 }
                 return "";
             })
-            
+
             //Lines connecting nodes
             var lines = linkGroup.append("line")
                 .attr("x1", function (d) {
@@ -201,11 +201,11 @@ function init() {
                 })
                 .attr("stroke-opacity", function (d) {
                     return 0.2;
-                })                
+                })
                 .attr("stroke-width", function (d) {
                     return 10;
                 })
-                .attr("stroke", function(d) {
+                .attr("stroke", function (d) {
                     var snode;
                     var tnode;
                     for (let i = 0; i < graph.nodes.length; i++) {
@@ -216,7 +216,7 @@ function init() {
                             tnode = graph.nodes[i].id;
                         }
                     }
-                    
+
                     if (snode && tnode) {
                         var smallest = snode.length;
                         if (tnode.length < snode.length) {
@@ -231,7 +231,7 @@ function init() {
 
                     return "green"
                 })
-            
+
             ;
 
             //Tiny text along link lines
@@ -271,32 +271,30 @@ function init() {
                 var width = domVariables.Width;
                 var height = domVariables.Height;
 
-                var centreGroupX = WordsGeneral.MakeCenterGroup(50, domVariables.Width - 50, domVariables.MaxGroup, 100);
-                var centreGroupY = WordsGeneral.MakeCenterGroup(50, domVariables.Height - 50, domVariables.MaxGroup, 50);
-
+             
 
                 var g = svg.append("g");
                 WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
 
-                var colours = GetColours(graph, domVariables);
+                var nodes = graph.nodes;
+                var maxGroup = 0;
+                for (let i = 0; i < nodes.length; i++) {
+                    var group = nodes[i].group;
+                    if (group > maxGroup) {
+                        maxGroup = group;
+                    }
+                }
+
+                var centreGroupX = WordsGeneral.MakeCenterGroup(50, domVariables.Width - 50, maxGroup, 100);
+                var centreGroupY = WordsGeneral.MakeCenterGroup(50, domVariables.Height - 50, maxGroup, 50);
+
+
+                var colours = GetColours(graph, domVariables, maxGroup);
                 var nodeColor = colours[0];
                 var linksColor = colours[1];
-                
-                var nodes = graph.nodes;
-                var links = graph.links;
+
 
            
-                // console.log(nodes);
-                // console.log(links);
-                var n = 100;
-                var radius = 14;
-                // var color = d3.scaleLinear()
-                //     .domain([1, domVariables.MaxGroup])
-                //     .range(["red", "blue", "green"]);
-                // var nodeLengthColor = d3.scaleLinear()
-                //     .domain([minNodeLength, maxNodeLength])
-                //     .range(["red", "blue", "green"]);
-
 
                 var attractForce = d3.forceManyBody()
                     .strength(domVariables.AttractForce.Strength)
@@ -312,7 +310,7 @@ function init() {
                         return d.id;
                     }).distance(domVariables.LinkDistance).iterations(1))
                     .force("charge", d3.forceManyBody().strength(domVariables.Charge))
-                    .force('center', d3.forceCenter(width/2,height/2).strength(1.5))
+                    .force('center', d3.forceCenter(width / 2, height / 2).strength(1.5))
                     .force("attractForce", attractForce)
                     .force("repelForce", repelForce)
                     .force('collision', d3.forceCollide().radius(function (d) {
@@ -322,7 +320,7 @@ function init() {
                 ;
                 if (domVariables.UseForceYByHeight) {
                     simulation.force('y', d3.forceY().y(function (d) {
-                        return d.id.length*2;
+                        return d.id.length * 2;
                     }))
                 }
                 if (domVariables.UseForceYByGroup) {
@@ -342,10 +340,9 @@ function init() {
 
                 simulation.force("link")
                     .links(graph.links);
-                
+
                 simulation.stop();
 
-               
 
                 // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
@@ -358,12 +355,8 @@ function init() {
                 // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                 for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
                     simulation.tick();
-             
 
-                }
-                function ticked() {
 
-console.log("tick");
                 }
             });
 

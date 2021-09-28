@@ -35,13 +35,35 @@
                             @Localizer["Home"]
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">Posts</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Posts
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="FractalChaos">Fractal Chaos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="MengerSponge">Menger Sponge</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="TSUCS">Three Unified Scroll attractor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="PeterDeJong">Peter De Jong attractor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="Lorenz">Lorenz attractor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="AngularD3">Angular D3</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="ComputationsIrreversibility">Computation and irreversibility</a>
+                            </li>
+                        </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             About
@@ -61,6 +83,10 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                    </li>
+
                 </ul>
             </div>
         </div>

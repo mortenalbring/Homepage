@@ -25,10 +25,10 @@
         <value>Language:</value>
     </data>
     <data name="IntroPart1" xml:space="preserve">
-        <value>Hello! I'm Morten. I'm a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. </value>
+        <value>Hello! I'm Morten. I'm a software developer with an interest in visualisations of chaotic mathematical systems.  </value>
     </data>
     <data name="IntroPart2" xml:space="preserve">
-        <value>I studied Theoretical Physics at University and I have a particular interest in Quantum Computing.</value>
+        <value>Here is a collection of a few of the things I find interesting</value>
     </data>
     <data name="FractalChaos" xml:space="preserve">
         <value>Fractal Chaos</value>

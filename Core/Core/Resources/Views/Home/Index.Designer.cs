@@ -133,7 +133,7 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hello! I&apos;m Morten. I&apos;m a software developer with a passion for data visualisation. I have a keen interest in the latest developments in web frameworks and building powerful web applications. .
+        ///   Looks up a localized string similar to Hello! I&apos;m Morten. I&apos;m a software developer with an interest in visualisations of chaotic mathematical systems.  .
         /// </summary>
         public static string IntroPart1 {
             get {
@@ -142,7 +142,7 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I studied Theoretical Physics at University and I have a particular interest in Quantum Computing..
+        ///   Looks up a localized string similar to Here is a collection of a few of the things I find interesting.
         /// </summary>
         public static string IntroPart2 {
             get {

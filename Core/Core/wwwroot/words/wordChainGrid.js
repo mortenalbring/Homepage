@@ -29,11 +29,14 @@ function drawGraphChains(graphData) {
         .interpolate(d3.interpolateHcl)
     ;
 
-    var lengthColor = d3.scaleOrdinal()
-        .domain([idLengthMin, idLengthMax])
-        .range(["red", "orange", "yellow","green","blue"])
-        
-    ;
+    // var lengthColor = d3.scaleOrdinal()
+    //     .domain([idLengthMin, idLengthMax])
+    //     .range(["red", "orange", "yellow","green","blue"])
+    //    
+    // ;
+
+    var lengthColor = d3.scaleSequential().domain([idLengthMin,idLengthMax])
+        .interpolator(d3.interpolateViridis);
     
     
     var attractForce = d3.forceManyBody()

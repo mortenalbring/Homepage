@@ -9,11 +9,10 @@ function drawGraph(graphData, searchVal) {
         searchVal = d.id;
         d.highlight = true;
         d.fixed = true;
-
-
+        
         var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
         var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, graphData);
-
+        
         WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(combinedData));
 
 
@@ -29,7 +28,6 @@ function drawGraph(graphData, searchVal) {
                 combinedData.nodes[i].highlight = true;
                 combinedData.nodes[i].fixed = true;
             }
-
         }
 
         for (let i = 0; i < WordsGeneral.FilteredDataArchive.nodes.length; i++) {
@@ -87,7 +85,7 @@ function drawGraph(graphData, searchVal) {
     }))
 
     var color = d3.scaleSequential()
-        .interpolator(d3.interpolateRainbow)
+        .interpolator(d3.interpolateViridis)
         .domain([minval, maxval]);
 
     // var color = d3.scaleLinear()
@@ -168,7 +166,7 @@ function drawGraph(graphData, searchVal) {
         })
         .attr("stroke", function (d) {
             if (d.highlight) {
-                return "red";
+                return "blue";
             }
             if (d.new) {
                 return "yellow";
@@ -291,7 +289,6 @@ d3.timeout(function () {
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 
         drawGraph(graphData, searchVal);
-
     });
 
 

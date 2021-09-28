@@ -5,10 +5,10 @@ WordsGeneral.FilteredDataArchive = {};
 
 
 WordsGeneral.CombineData = function (graphData, newData) {
-    console.log("CombineData:");
-    console.log(graphData);
-    console.log("New Data:");
-    console.log(newData);
+    // console.log("CombineData:");
+    // console.log(graphData);
+    // console.log("New Data:");
+    // console.log(newData);
 
     // for (let i = 0; i < graphData.length; i++) {
     //     graphData.nodes[i].new = false;
@@ -116,10 +116,7 @@ WordsGeneral.FilterDataOnTermExactRecursive = function (inputGraph, term) {
             }
         }
     }
-    console.log("SearchRecurs:")
-    console.log(searchTerms.length);
-    console.log(foundTerms.length);
-
+    
     var notFound = [];
     for (let i = 0; i < searchTerms.length; i++) {
         var found = foundTerms.indexOf(searchTerms[i]);
@@ -127,7 +124,6 @@ WordsGeneral.FilterDataOnTermExactRecursive = function (inputGraph, term) {
             notFound.push(searchTerms[i]);
         }
     }
-    console.log("Not found " + notFound.length);
 
 
     var searchNodes = [];

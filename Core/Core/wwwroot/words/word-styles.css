@@ -21,6 +21,16 @@ svg {
 .search-nodes {
     cursor: pointer;
 }
+.search-nodes g:hover circle {
+    transition: 1s;
+    fill:white;
+    stroke:blue;
+}
+.search-nodes g:hover text {
+    fill:black;
+}
+
+
 
 
 text {

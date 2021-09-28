@@ -40,6 +40,7 @@ function drawGraphChains(graphData) {
             return d.id;
         }).distance(10).iterations(1))
 
+        .force("radial", d3.forceRadial(width/4,width/2,height/2))
         .force("charge", d3.forceManyBody().strength(-25))
         .force("center", d3.forceCenter(width / 2, height / 2).strength(1))
           .force("attractForce", attractForce)
@@ -138,6 +139,9 @@ function drawGraphChains(graphData) {
     simulation.force("link")
         .links(graphData.links);
 
+
+   
+    
     function ticked() {
         node
             .attr("transform", function(d) {

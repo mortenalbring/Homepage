@@ -3,10 +3,73 @@ var infoTextBoxNew;
 
 function drawGraph(graphData, searchVal) {
 
+
+    function handleClick(d) {
+
+        searchVal = d.id;
+        d.highlight = true;
+        d.fixed = true;
+
+
+        var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
+        var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, graphData);
+
+        WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(combinedData));
+
+
+        var newNodes = [];
+        for (let i = 0; i < combinedData.nodes.length; i++) {
+            if (combinedData.nodes[i].new) {
+                newNodes.push(combinedData.nodes[i]);
+            }
+        }
+
+        for (let i = 0; i < combinedData.nodes.length; i++) {
+            if (combinedData.nodes[i].id === searchVal) {
+                combinedData.nodes[i].highlight = true;
+                combinedData.nodes[i].fixed = true;
+            }
+
+        }
+
+        for (let i = 0; i < WordsGeneral.FilteredDataArchive.nodes.length; i++) {
+            WordsGeneral.FilteredDataArchive.nodes[i].new = false;
+        }
+
+        var svg = d3.select("#searchWordsSvg");
+        svg.selectAll("*").remove();
+
+        var newNodeText = "";
+        for (let i = 0; i < newNodes.length; i++) {
+            if (i === 0) {
+                newNodeText = newNodes[i].id;
+            } else {
+                newNodeText = newNodeText + ", " + newNodes[i].id;
+            }
+        }
+
+        var infoText = "New nodes: " + newNodeText;
+
+        infoTextBoxNew = svg.append("g").append("text")
+            .attr("x", 20)
+            .attr("y", 30)
+            .attr("fill", "white")
+            .style("font-size", "10px")
+            .text(infoText);
+
+        infoTextBoxSelected = svg.append("g").append("text")
+            .attr("x", 20)
+            .attr("y", 20)
+            .attr("fill", "white")
+            .style("font-size", "10px")
+            .text("Selected: '" + searchVal + "'");
+        drawGraph(combinedData, searchVal);
+    }
+
+
     var svg = d3.select("#searchWordsSvg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
-    
 
 
     // var maxval = Math.max.apply(Math, graphData.nodes.map(function (o) {
@@ -23,8 +86,9 @@ function drawGraph(graphData, searchVal) {
         return o.id.length;
     }))
 
-    var color = d3.scaleSequential().domain([minval,maxval])
-        .interpolator(d3.interpolateViridis);
+    var color = d3.scaleSequential()
+        .interpolator(d3.interpolateRainbow)
+        .domain([minval, maxval]);
 
     // var color = d3.scaleLinear()
     //     .domain([minval, maxval])
@@ -60,16 +124,16 @@ function drawGraph(graphData, searchVal) {
         .selectAll("line")
         .data(graphData.links)
         .enter().append("line")
-        .attr("stroke", function(d) {
-            var aveval = (d.source.length + d.target.length)/2;
-            return color(aveval)
+        .attr("stroke", function (d) {
+            var aveval = (d.source.length + d.target.length) / 2;
+            return color(d.source.length)
         })
         .attr("stroke-opacity", function (d) {
             return 1
-        })        
+        })
         .attr("stroke-width", function (d) {
-            var ll = d.source.length + d.target.length;
-            return ll 
+            var ll = d.source.length;
+            return ll
         });
 
     var node = svg.append("g")
@@ -81,8 +145,8 @@ function drawGraph(graphData, searchVal) {
     var radius = 5;
     var linkCountFilter = -1;
     var defaultNodeCircleOpacity = 0.8;
-     
-    
+
+
     var circles = node.append("circle")
         .attr("r", function (d) {
 
@@ -98,81 +162,11 @@ function drawGraph(graphData, searchVal) {
             // return d.linkCount * 2;
         })
         .on("click", function (event, d) {
-            searchVal = d.id;
-            d.highlight = true;
-    
-            
-            var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
-                
-       
-            var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, graphData);
-
-            WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(combinedData));
-
            
-            // console.log(combinedData);
-
-            var newNodes = [];
-            for (let i = 0; i < combinedData.nodes.length; i++) {
-                if (combinedData.nodes[i].new) {
-                    newNodes.push(combinedData.nodes[i]);
-                }
-            }
-
-            for (let i = 0; i < combinedData.nodes.length; i++) {
-                if (combinedData.nodes[i].id === searchVal) {
-                    combinedData.nodes[i].highlight = true;
-                }
-                
-            }
-            var bloop = 0;
-            if (combinedData != null && combinedData.nodes.length > 0 && newNodes.length > 0 || bloop == 0) {
-                
-                for (let i = 0; i < WordsGeneral.FilteredDataArchive.nodes.length; i++) {
-                    WordsGeneral.FilteredDataArchive.nodes[i].new = false;
-                }
-                
-                var svg = d3.select("#searchWordsSvg");
-                svg.selectAll("*").remove();
-
-                var newNodeText = "";
-                for (let i = 0; i < newNodes.length; i++) {
-                    if (i === 0) {
-                        newNodeText = newNodes[i].id;
-                    }
-                    else {
-                        newNodeText = newNodeText + ", " + newNodes[i].id;    
-                    }
-                }
-                
-                var infoText = "New nodes: " + newNodeText;
-
-                infoTextBoxNew = svg.append("g").append("text")
-                    .attr("x",20)
-                    .attr("y",30)
-                    .attr("fill","white")
-                    .style("font-size","10px")
-                    .text(infoText);
-
-                infoTextBoxSelected = svg.append("g").append("text")
-                    .attr("x",20)
-                    .attr("y",20)
-                    .attr("fill","white")
-                    .style("font-size","10px")
-                    .text("Selected: '" + searchVal + "'");
-                drawGraph(combinedData, searchVal);
-            }
-            else {
-                if (infoTextBoxSelected && infoTextBoxNew) {
-                    infoTextBoxSelected.text("Selected: '" + searchVal + "'");
-                    infoTextBoxNew.text("No new nodes added")
-                }
-                
-            }
-
+            handleClick(d);
 
         })
-        .attr("stroke",function(d) {
+        .attr("stroke", function (d) {
             if (d.highlight) {
                 return "red";
             }
@@ -181,7 +175,7 @@ function drawGraph(graphData, searchVal) {
             }
             return "white";
         })
-        .attr("stroke-width", function(d) {
+        .attr("stroke-width", function (d) {
             return "1.5px";
         })
         .attr("opacity", defaultNodeCircleOpacity)
@@ -192,6 +186,11 @@ function drawGraph(graphData, searchVal) {
     var lables = node.append("text")
         .text(function (d) {
             return d.id;
+
+        })
+        .on("click", function (event, d) {
+
+            handleClick(d);
 
         })
         .attr("text-anchor", "middle")
@@ -222,6 +221,17 @@ function drawGraph(graphData, searchVal) {
         .links(graphData.links);
 
     function ticked() {
+        node
+            .attr("transform", function (d) {
+                var newx = Math.max(radius, Math.min(width - radius, d.x));
+                var newy = Math.max(radius, Math.min(width - radius, d.y));
+              
+                if (newx && newy) {
+                    return "translate(" + newx + "," + newy + ")";
+                }
+
+            })
+        
         link
             .attr("x1", function (d) {
                 return d.source.x;
@@ -236,15 +246,7 @@ function drawGraph(graphData, searchVal) {
                 return d.target.y;
             });
 
-        node
-            .attr("transform", function (d) {
-                var newx = Math.max(radius, Math.min(width - radius, d.x));
-                var newy = Math.max(radius, Math.min(width - radius, d.y));
-                if (newx && newy) {
-                    return "translate(" + newx + "," + newy + ")";
-                }
-
-            })
+   
     }
 }
 
@@ -273,10 +275,10 @@ d3.timeout(function () {
     if (parentElement != null) {
 
         var cw = parentElement.parentElement.clientWidth;
-        $('#searchWordsSvg').attr("width",cw);
+        $('#searchWordsSvg').attr("width", cw);
     }
-    
-    
+
+
     var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
     d3.json(path).then(function (graph) {

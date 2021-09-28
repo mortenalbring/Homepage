@@ -22,12 +22,15 @@ function drawGraph(graphData, searchVal) {
     var minval = Math.min.apply(Math, graphData.nodes.map(function (o) {
         return o.id.length;
     }))
-    
-    var color = d3.scaleLinear()
-        .domain([minval, maxval])
-        .range(["red", "blue", "green"])
-        .interpolate(d3.interpolateHcl)
-    ;
+
+    var color = d3.scaleSequential().domain([minval,maxval])
+        .interpolator(d3.interpolateViridis);
+
+    // var color = d3.scaleLinear()
+    //     .domain([minval, maxval])
+    //     .range(["red", "blue", "green"])
+    //     .interpolate(d3.interpolateHcl)
+    // ;
 
     var attractForce = d3.forceManyBody()
         .strength(3)
@@ -58,7 +61,8 @@ function drawGraph(graphData, searchVal) {
         .data(graphData.links)
         .enter().append("line")
         .attr("stroke", function(d) {
-            return color(d.source.length)
+            var aveval = (d.source.length + d.target.length)/2;
+            return color(aveval)
         })
         .attr("stroke-opacity", function (d) {
             return 1
@@ -95,10 +99,9 @@ function drawGraph(graphData, searchVal) {
         })
         .on("click", function (event, d) {
             searchVal = d.id;
-
-
-            var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
-
+            d.highlight = true;
+    
+            
             var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
                 
        
@@ -116,8 +119,14 @@ function drawGraph(graphData, searchVal) {
                 }
             }
 
-
-            if (combinedData != null && combinedData.nodes.length > 0 && newNodes.length > 0) {
+            for (let i = 0; i < combinedData.nodes.length; i++) {
+                if (combinedData.nodes[i].id === searchVal) {
+                    combinedData.nodes[i].highlight = true;
+                }
+                
+            }
+            var bloop = 0;
+            if (combinedData != null && combinedData.nodes.length > 0 && newNodes.length > 0 || bloop == 0) {
                 
                 for (let i = 0; i < WordsGeneral.FilteredDataArchive.nodes.length; i++) {
                     WordsGeneral.FilteredDataArchive.nodes[i].new = false;
@@ -154,13 +163,19 @@ function drawGraph(graphData, searchVal) {
                 drawGraph(combinedData, searchVal);
             }
             else {
-                infoTextBoxSelected.text("Selected: '" + searchVal + "'");
-                infoTextBoxNew.text("No new nodes added")
+                if (infoTextBoxSelected && infoTextBoxNew) {
+                    infoTextBoxSelected.text("Selected: '" + searchVal + "'");
+                    infoTextBoxNew.text("No new nodes added")
+                }
+                
             }
 
 
         })
         .attr("stroke",function(d) {
+            if (d.highlight) {
+                return "red";
+            }
             if (d.new) {
                 return "yellow";
             }

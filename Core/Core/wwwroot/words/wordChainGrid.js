@@ -1,8 +1,11 @@
-﻿function drawGraphChains(graphData) {
+﻿
+function drawGraphChains(graphData) {
 
     var svg = d3.select("#wordChains"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
+    
+    console.log(width);
     
     var groupMax = Math.max.apply(Math, graphData.nodes.map(function (o) { return o.group;}))
     var groupMin = Math.min.apply(Math, graphData.nodes.map(function (o) { return o.group;}))
@@ -52,7 +55,6 @@
         .data(graphData.links)
         .enter().append("line")
         .attr("stroke", function(d) {
-            console.log(d);
             var ss = (d.source.length + d.target.length) /2;
             
             return lengthColor(ss);
@@ -137,6 +139,12 @@
         .links(graphData.links);
 
     function ticked() {
+        node
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            })
+            
+        
         link
             .attr("x1", function (d) {
                 return d.source.x;
@@ -151,20 +159,19 @@
                 return d.target.y;
             });
 
-        node
-            .attr("transform", function (d) {
-                var newx = Math.max(radius, Math.min(width - radius, d.x));
-                var newy = Math.max(radius, Math.min(width - radius, d.y));
-                if (newx && newy) {
-                    return "translate(" + newx + "," + newy + ")";
-                }
-
-            })
+ 
     }
 }
 
 
 d3.timeout(function () {
+    
+    var parentElement = document.getElementById("wordChains");
+    if (parentElement != null) {
+        console.log(parentElement.parentElement.clientWidth);
+        var cw = parentElement.parentElement.clientWidth;
+        $('#wordChains').attr("width",cw);
+    }
 
     var path = "/words/Json/en/wordChainsEnglish20210914.json";
 

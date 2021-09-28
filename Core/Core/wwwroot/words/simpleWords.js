@@ -24,11 +24,18 @@ function init() {
         }
         var nextJsonFile = jsonfolder + "\\children" + nextJson + ".json";
         
+        var linkDist = 100 - 15*nextJson;
+        if (linkDist < 0) {
+            linkDist = 10;
+        }
+        
+        
         var buttonText = "Generation " + nextJson;
         $('#childNextText').text(buttonText);
 
         $(svgId).attr("json", nextJsonFile);
         $(svgId).attr("jsoncurrent", nextJson);
+        $(svgId).attr("linkdistance", linkDist);
 
         d3.selectAll(svgId + " > *").remove();
 

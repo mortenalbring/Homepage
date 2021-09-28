@@ -1,6 +1,6 @@
 ﻿function drawGraph(graphData, searchVal) {
 
-    var svg = d3.select("#simpleWords2wd"),
+    var svg = d3.select("#searchWordsSvg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
@@ -121,7 +121,7 @@
                     WordsGeneral.FilteredDataArchive.nodes[i].new = false;
                 }
                 
-                var svg = d3.select("#simpleWords2wd");
+                var svg = d3.select("#searchWordsSvg");
                 svg.selectAll("*").remove();
 
                 var newNodeText = "";
@@ -218,7 +218,7 @@ $('#btnSearchWord').click(function () {
         return;
     }
 
-    var svg = d3.select("#simpleWords2wd");
+    var svg = d3.select("#searchWordsSvg");
     svg.selectAll("*").remove();
 
     var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
@@ -232,13 +232,22 @@ $('#btnSearchWord').click(function () {
 
 d3.timeout(function () {
 
+
+    var parentElement = document.getElementById("searchWordsSvg");
+    if (parentElement != null) {
+
+        var cw = parentElement.parentElement.clientWidth;
+        $('#searchWordsSvg').attr("width",cw);
+    }
+    
+    
     var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
     d3.json(path).then(function (graph) {
         WordsGeneral.DataArchive = JSON.parse(JSON.stringify(graph));
         console.log(WordsGeneral.DataArchive);
 
-        var searchVal = "test";
+        var searchVal = "word";
         var graphData = WordsGeneral.FilterDataOnTermExact(graph, searchVal);
         WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(graphData));
         console.log("Filtered data archive");

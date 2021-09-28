@@ -4,7 +4,7 @@ WordsGeneral.DataArchive = {};
 WordsGeneral.FilteredDataArchive = {};
 
 
-WordsGeneral.CombineData = function(graphData, newData) {
+WordsGeneral.CombineData = function (graphData, newData) {
     console.log("CombineData:");
     console.log(graphData);
     console.log("New Data:");
@@ -17,9 +17,9 @@ WordsGeneral.CombineData = function(graphData, newData) {
     // for (let i = 0; i < newData.nodes.length; i++) {
     //     newData.nodes[i].new = true;
     // }
-    
+
     var combinedData = {nodes: [], links: []};
-    
+
     combinedData.nodes = graphData.nodes;
     combinedData.links = graphData.links;
 
@@ -28,7 +28,7 @@ WordsGeneral.CombineData = function(graphData, newData) {
         for (let j = 0; j < combinedData.nodes.length; j++) {
             if (combinedData.nodes[j].id == newData.nodes[i].id) {
                 combinedData.nodes[j].new = false;
-                exists =  true;
+                exists = true;
                 break;
             }
         }
@@ -79,16 +79,16 @@ WordsGeneral.GetDiffChar = function (source, target) {
     return diffChar;
 };
 
-WordsGeneral.FilterDataOnTermExactRecursive = function(inputGraph, term) {
+WordsGeneral.FilterDataOnTermExactRecursive = function (inputGraph, term) {
     var newGraph = {};
 
     var searchLinks = [];
 
     var searchTerms = [];
     searchTerms.push(term);
-    
+
     var foundTerms = [];
-    
+
     for (var j = 0; j < inputGraph.links.length; j++) {
         var searchLink = inputGraph.links[j];
         var source = searchLink.source;
@@ -97,9 +97,9 @@ WordsGeneral.FilterDataOnTermExactRecursive = function(inputGraph, term) {
         for (let i = 0; i < searchTerms.length; i++) {
             if (source === searchTerms[i]) {
                 if (foundTerms.indexOf(source) === -1) {
-                    foundTerms.push(source);    
+                    foundTerms.push(source);
                 }
-                
+
                 searchLinks.push(searchLink);
                 if (searchTerms.indexOf(target) === -1) {
                     searchTerms.push(target);
@@ -128,8 +128,8 @@ WordsGeneral.FilterDataOnTermExactRecursive = function(inputGraph, term) {
         }
     }
     console.log("Not found " + notFound.length);
-    
-    
+
+
     var searchNodes = [];
 
     for (var i = 0; i < inputGraph.nodes.length; i++) {
@@ -140,15 +140,13 @@ WordsGeneral.FilterDataOnTermExactRecursive = function(inputGraph, term) {
                 if (inArray == -1) {
                     inputGraph.nodes[i].linkCount = 1;
                     searchNodes.push(inputGraph.nodes[i]);
-                }
-                else {
+                } else {
                     searchNodes[inArray].linkCount++;
                 }
             }
 
         }
     }
-
 
 
     var newGraph = {};
@@ -159,11 +157,11 @@ WordsGeneral.FilterDataOnTermExactRecursive = function(inputGraph, term) {
 }
 
 
-WordsGeneral.FilterDataOnTermExact = function(inputGraph, term) {
+WordsGeneral.FilterDataOnTermExact = function (inputGraph, term) {
     var newGraph = {};
 
     var searchLinks = [];
-    
+
     for (var j = 0; j < inputGraph.links.length; j++) {
         var searchLink = inputGraph.links[j];
         var source = searchLink.source;
@@ -178,7 +176,7 @@ WordsGeneral.FilterDataOnTermExact = function(inputGraph, term) {
     }
 
     var searchNodes = [];
-    
+
     for (var i = 0; i < inputGraph.nodes.length; i++) {
 
         for (let j = 0; j < searchLinks.length; j++) {
@@ -187,28 +185,27 @@ WordsGeneral.FilterDataOnTermExact = function(inputGraph, term) {
                 if (inArray == -1) {
                     inputGraph.nodes[i].linkCount = 1;
                     searchNodes.push(inputGraph.nodes[i]);
-                }
-                else {
+                } else {
                     searchNodes[inArray].linkCount++;
                 }
             }
-            
+
         }
     }
-    
-    
+
+
     var newGraph = {};
     newGraph.nodes = searchNodes;
     newGraph.links = searchLinks;
     return newGraph;
-    
+
 }
 
 WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
 
-    
+
     var newGraph = {};
-    
+
     console.log("filtering to term " + term);
     var maxresults = 1000;
     var filteredNodes = [];
@@ -228,7 +225,7 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
             }
         }
     }
-    
+
     newGraph.nodes = filteredNodes;
     var onlyLinkedNodes = [];
     var filteredLinks = [];
@@ -245,10 +242,10 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
             if (!searchNode.linkCount) {
                 searchNode.linkCount = 0;
             }
-            
+
             if (l === 0 && j === 0) {
                 console.log("finding links");
-                console.log(searchNode);    
+                console.log(searchNode);
                 console.log(source);
                 console.log(target);
             }
@@ -271,29 +268,33 @@ WordsGeneral.FilterDataOnTerm = function (inputGraph, term) {
             searchLink.diffChar = WordsGeneral.GetDiffChar(source, target);
             filteredLinks.push(searchLink);
         }
-   
+
     }
-    
+
     //newGraph.nodes = onlyLinkedNodes;
-    var onlyLinks = filteredNodes.filter(function(e) { return e.linkCount > 0 });
-    
+    var onlyLinks = filteredNodes.filter(function (e) {
+        return e.linkCount > 0
+    });
+
     //newGraph.nodes = onlyLinks;
     newGraph.links = filteredLinks;
-    
-    var test = filteredNodes.filter(function(e) { return e.id === "mortally"});
+
+    var test = filteredNodes.filter(function (e) {
+        return e.id === "mortally"
+    });
     console.log(test);
     return newGraph;
-    
+
 };
 
 
 WordsGeneral.FilterDataOnGroup = function (graph, group) {
-    
+
     var filteredNodes = [];
     for (var i = 0; i < graph.nodes.length; i++) {
         var n = graph.nodes[i];
 
-        if (n.group === group || group === -1 ) {
+        if (n.group === group || group === -1) {
             var exists = false;
             for (var b = 0; b < filteredNodes.length; b++) {
                 if (filteredNodes[b].id === n.id) {
@@ -332,13 +333,12 @@ WordsGeneral.FilterDataOnGroup = function (graph, group) {
     graph.links = filteredLinks;
 };
 
-WordsGeneral.MakeCenterGroup = function(start,end,maxGroup) {
+WordsGeneral.MakeCenterGroup = function (start, end, maxGroup) {
     var arr = [];
-    var steps = (end - start) / maxGroup ;
-    
-     
-    
-    for (var i=0;i<=maxGroup;i++) {
+    var steps = (end - start) / maxGroup;
+
+
+    for (var i = 0; i <= maxGroup; i++) {
         var elem = i * steps;
         arr.push(elem);
     }
@@ -366,12 +366,12 @@ WordsGeneral.ParseDomVariables = function (svg, containerId) {
     output.UseForceYByHeight = false;
     output.UseForceYByGroup = false;
     output.UseForceXByGroup = false;
-    
-output.Charge = -80;
+
+    output.Charge = -80;
 
     output.Height = 50;
     output.Width = 50;
-    
+
     output.ColorStyle = 0;
 
     var parentElement = document.getElementById(containerId);
@@ -415,7 +415,7 @@ output.Charge = -80;
     if (svg.attr("repelforcedistancemin") != null) {
         output.RepelForce.DistanceMin = parseInt(svg.attr("repelforcedistancemin"));
     }
-    
+
     if (svg.attr("charge") != null) {
         output.RepelForce.DistanceMin = parseInt(svg.attr("charge"));
     }

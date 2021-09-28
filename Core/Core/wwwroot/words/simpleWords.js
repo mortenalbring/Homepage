@@ -43,10 +43,9 @@ function init() {
     })
 
     initSvgStatic(d3.select("#simpleWords1wc"), "simpleWords1pt");
-    initSvgStatic(d3.select("#simpleWords2wc"), "simpleWords1pt");
 
     initSvgStatic(d3.select("#simpleWords1no"), "simpleWords1ptno");
-    initSvgStatic(d3.select("#wordChainLongEnglish"), "simpleWords1pt");
+ //   initSvgStatic(d3.select("#wordChainLongEnglish"), "simpleWords1pt");
 
     function initSvgStatic(svg, containerId) {
 

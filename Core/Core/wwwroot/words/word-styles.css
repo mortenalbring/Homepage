@@ -18,6 +18,10 @@ svg {
     stroke-width: 1.5px;
 }
 
+.search-nodes {
+    cursor: pointer;
+}
+
 
 text {
     font-family: sans-serif;

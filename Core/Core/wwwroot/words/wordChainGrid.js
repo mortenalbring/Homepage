@@ -5,13 +5,23 @@ function drawGraphChains(graphData) {
         width = +svg.attr("width"),
         height = +svg.attr("height");
     
-    console.log(width);
     
     var groupMax = Math.max.apply(Math, graphData.nodes.map(function (o) { return o.group;}))
     var groupMin = Math.min.apply(Math, graphData.nodes.map(function (o) { return o.group;}))
 
+    var combMax = Math.max.apply(Math, graphData.nodes.map(function (o) { return o.group*100+o.id.length;}))
+    var combMin = Math.min.apply(Math, graphData.nodes.map(function (o) { return o.group*100+o.id.length;}))
+
     var idLengthMax = Math.max.apply(Math, graphData.nodes.map(function (o) { return o.id.length;}))
     var idLengthMin = Math.min.apply(Math, graphData.nodes.map(function (o) { return o.id.length;}))
+
+    console.log("comb" + combMin + ":" + combMax);
+    
+    var combinedColor = d3.scaleLinear()
+        .domain([combMin, combMax])
+        .range(["red","yellow", "blue"])
+        .interpolate(d3.interpolateHcl)
+    ;
     
     var groupColor = d3.scaleLinear()
         .domain([groupMin, groupMax])
@@ -19,10 +29,10 @@ function drawGraphChains(graphData) {
         .interpolate(d3.interpolateHcl)
     ;
 
-    var lengthColor = d3.scaleLinear()
+    var lengthColor = d3.scaleOrdinal()
         .domain([idLengthMin, idLengthMax])
-        .range(["red", "blue", "green"])
-        .interpolate(d3.interpolateHcl)
+        .range(["red", "orange", "yellow","green","blue"])
+        
     ;
     
     
@@ -31,7 +41,7 @@ function drawGraphChains(graphData) {
         .distanceMax(50)
         .distanceMin(10);
     var repelForce = d3.forceManyBody()
-        .strength(30)
+        .strength(300)
         .distanceMax(5)
         .distanceMin(1);
 
@@ -40,8 +50,8 @@ function drawGraphChains(graphData) {
             return d.id;
         }).distance(10).iterations(1))
 
-        .force("radial", d3.forceRadial(width/4,width/2,height/2))
-        .force("charge", d3.forceManyBody().strength(-25))
+        .force("radial", d3.forceRadial(width/3,width/2,height/2).strength(0.01))
+        .force("charge", d3.forceManyBody().strength(-20))
         .force("center", d3.forceCenter(width / 2, height / 2).strength(1))
           .force("attractForce", attractForce)
            .force("repelForce", repelForce)
@@ -50,6 +60,23 @@ function drawGraphChains(graphData) {
         }))
     ;
 
+    simulation.force('y', d3.forceY().y(function (d) {
+        return d.id.length * 20;
+    }))
+
+
+    function dragstarted(event, d) {
+        d3.select(this).raise().attr("stroke", "black");
+    }
+
+    function dragged(event, d) {
+        d3.select(this).attr("cx", d.x = event.x).attr("cy", d.y = event.y);
+    }
+
+    function dragended(event, d) {
+        d3.select(this).attr("stroke", null);
+    }
+    
     var link = svg.append("g")
         .attr("class", "links")
         .selectAll("line")
@@ -57,7 +84,6 @@ function drawGraphChains(graphData) {
         .enter().append("line")
         .attr("stroke", function(d) {
             var ss = (d.source.length + d.target.length) /2;
-            
             return lengthColor(ss);
         })
         .attr("stroke-opacity", function (d) {
@@ -92,7 +118,6 @@ function drawGraphChains(graphData) {
             // return d.linkCount * 2;
         })
         .on("click", function (event, d) {
-            searchVal = d.id;
 
         })
         .attr("stroke",function(d) {
@@ -104,8 +129,12 @@ function drawGraphChains(graphData) {
         })
         .attr("opacity", defaultNodeCircleOpacity)
         .attr("fill", function (d) {
-            return groupColor(d.group);
+            var combVal = d.group*100+d.id.length;
+            
+            return lengthColor(d.id.length);
         });
+    
+
 
     var lables = node.append("text")
         .text(function (d) {
@@ -128,7 +157,7 @@ function drawGraphChains(graphData) {
 
     node.append("title")
         .text(function (d) {
-            return "[" + d.group + "] " + d.id + " (" + d.linkCount + ")";
+            return "[" + d.group + "] " + d.id + "";
         });
 
 
@@ -172,15 +201,40 @@ d3.timeout(function () {
     
     var parentElement = document.getElementById("wordChains");
     if (parentElement != null) {
-        console.log(parentElement.parentElement.clientWidth);
+        
         var cw = parentElement.parentElement.clientWidth;
         $('#wordChains').attr("width",cw);
     }
 
-    var path = "/words/Json/en/wordChainsEnglish20210914.json";
+    var path = "/words/Json/en/wordChainsEnglish20210914Depth8.json";
 
     d3.json(path).then(function (graph) {
 
+        var safeLinks = [];
+        for (let i = 0; i < graph.links.length; i++) {
+            var source = graph.links[i].source;
+            var target = graph.links[i].target;
+
+            var exists = false;
+            var existt = false;
+            for (let j = 0; j < graph.nodes.length; j++) {
+                if (graph.nodes[j].id === source) {
+                    exists = true;
+                }
+                if (graph.nodes[j].id === target) {
+                    existt = true;
+                }
+            }
+            if (exists && existt) {
+                safeLinks.push(graph.links[i]);
+            }
+            else {
+                console.log("bad link");
+                console.log(graph.links[i]);
+            }
+        }
+        graph.links = safeLinks;
+        console.log(graph);
         drawGraphChains(graph);
 
     });

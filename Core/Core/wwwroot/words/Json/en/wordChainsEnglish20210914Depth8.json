@@ -78,7 +78,6 @@
   "links":[{"source":"austringers","target":"astringers","value":1},
     {"source":"austringers","target":"austringer","value":1},
     {"source":"astringers","target":"stringers","value":1},
-    {"source":"astringers","target":"astringes","value":1},
     {"source":"astringers","target":"astringer","value":1},
     {"source":"stringers","target":"stingers","value":1},
     {"source":"stringers","target":"stringer","value":1},

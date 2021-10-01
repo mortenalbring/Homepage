@@ -79,6 +79,11 @@
         min-height: 80vh !important;
         max-height: 100px;
     }
+    .parallax.parallax-about {
+        min-height: 10vh !important;
+        max-height: 100px;
+    }
+
 }
 
 .parallax.parallax-menger {
@@ -87,7 +92,7 @@
 }
 .parallax.parallax-about {
     min-height: 50vh;
-    max-height: 500px;
+    max-height: 60vh;
 }
 
 .parallax-menger {
@@ -95,7 +100,18 @@
 }
 
 .parallax-about {
-    background-image: url("../images/about/about_cover.jpg");
+    background-position:calc(100% + 300px) calc(100% - 400px);
+    background-size:cover;     
+    background-image: url("../images/about/about_cover_cropped.png");
+}
+
+.parallax-valaam {
+    min-height: 300px;
+    background-image: url("../images/about/valaamview.png");
+    background-size:cover;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .ma-title {
@@ -210,13 +226,18 @@
 
 .ma-section-lighter {
     margin-top:0;
-    background: #0c5460;
-    border-top:1px solid #07363d;
+    background: #08363f;
+    border-top:1px solid #5ad2de;
 }
 
 .ma-section-lighter a {
     color: #bdbdbd;
+    text-decoration: none;
 }
+.ma-section-lighter a:hover {
+    text-decoration: underline;
+}
+
 .scrollspy-list {
     position: fixed;
     z-index: 100;

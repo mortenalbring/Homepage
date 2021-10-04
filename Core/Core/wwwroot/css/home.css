@@ -150,7 +150,7 @@
     position:absolute;
     padding-left:5px;
     padding-right:5px;
-    text-align: center;
+    text-align: justify;
     /*top:50%;*/
     /*left:50%;*/
     /*transform:translate(-50%,-50%);*/
@@ -209,7 +209,9 @@
 .ma-img-container:hover .ma-overlay{
     border:6px solid #3b3b3b;
     border-radius:15px;
+    background-color:#1a1e21;
     opacity:0.8;
+    text-align: justify;
 }
 .ma-underlay {
     font-size: 1.1em;

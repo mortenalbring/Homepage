@@ -114,6 +114,16 @@
     margin-bottom: 0;
     border-top:1px solid #ccc;
 }
+.parallax-gource {
+    min-height: 400px;
+    background-image: url("../images/about/gource-back.png");
+    background-size:cover;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-top:1px solid #ccc;
+}
+
 
 .ma-title {
     font-family: dosis,"HelveticaNeue-CondensedBold","trebuchet ms",sans-serif;

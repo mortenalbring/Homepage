@@ -1,0 +1,130 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = "";
+}
+
+@section Scripts
+{
+
+}
+
+@section Jumbo
+{
+    <div class="parallax parallax-angulard3">
+        <div class="parallax-title">
+            <span>
+
+            </span>
+        </div>
+    </div>
+}
+
+@section Content {
+    <div class="container text-light">
+
+        <div class="row">
+            <div class="col">
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="~/angularD3/AngularD3.html">Launch application</a>
+                    <a class="btn btn-default" href="https://github.com/mortenalbring/AngularD3">See source on GitHub</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>Introduction</h3>
+                <p>
+                    This web application produces interactive force-directed graphs. This project started as a fun experiment in combining two of my favourite JavaScript libraries: <a href="https://d3js.org/">D3.js</a> and <a href="https://angularjs.org/">AngularJS</a>. D3.js is a library for drawing and manipulating data with HTML, CSS and SVG and has a <a href="https://github.com/mbostock/d3/wiki/Gallery">vast array</a> of options for many different and beautiful data types.
+                </p>
+                <p>
+                    For this project, I was particularly interested in <a href="http://bl.ocks.org/mbostock/4062045">force-directed graphs</a>, a representation of objects and how they are connected. Force-directed graphs are often used to model road networks, the analysis of protein-protein interaction networks and have also been used to <a href="http://stm.sciencemag.org/content/6/234/234ra57">identify disease-trait pairs</a>.
+                </p>
+                <p>
+                    In a force-directed graph, the objects are typically called <strong>nodes</strong> (also called <em>vertices</em> or <em>points</em>) and the connections between them are called <strong>edges</strong> (also called <em>lines</em> or <em>arcs</em>).
+                    In general, a node can be connected to any other node and have any number of edges. In a force-directed graph, the direction of the connection matters; i.e., Node A &#8594; Node B is not the same as Node B &#8594; Node A.
+                </p>
+                <h3>Drawing the Graph</h3>
+                <p>D3.js provides tremendous functionality in rendering flexible force-directed graphs. The implementation effectively simulates a series of forces upon the nodes to constrain them according to their connections.</p>
+                <p>The parameters that can be set for the simulation include: </p>
+                <dl class="dl-horizontal">
+                    <dt>Link Distance</dt>
+                    <dd>The desired distance between nodes. The simulation calculates a number of other forces that affect how far apart nodes will appear and so the distances are 'springy', but the distance will tend to converge towards this value if the other forces are not excessively powerful. This parameter can be any value greater than zero, and defaults to 20</dd>
+                    <dt>Link Strength</dt>
+                    <dd>The strength of the force that controls the linkDistance. This affects how rigid the 'spring' forces are. This parameter can be any value between 0 and 1 and defaults to 1</dd>
+                    <dt>Friction</dt>
+                    <dd>The speed at which node movement slows down. This is not a physical coefficient of friction, rather just a rate at which the nodes tend to come to rest. This parameter can take values between 0 and 1 and defaults to 0.9.</dd>
+                    <dt>Charge</dt>
+                    <dd>The force that either attracts or repels other nodes. With negative values of charge, nodes will repel eachother and large negative values result in great repulsion. Positive values result in node attraction, but for force-directed graphs then we generally always want a negative value. This parameter can be any value, and defaults to -30.</dd>
+                    <dt>Gravity</dt>
+                    <dd>A weak geometric constraint that attempts to keep nodes within the centre of the layout. This does not really correspond to a physical 'gravity', it is merely a force that attempts to move nodes towards the center of the graph. At the center of the graph, the gravitational strength is close to zero while further away from the center the gravitational strength increases in proportion to distance. This prevents any loose nodes from escaping away from the layout. This parameter can be any value greater than zero, and defaults to 0.1. </dd>
+                </dl>
+
+                <p>Every single one of these parameters can either be a constant value applied across all nodes, or it can be a function of the nodes or edges. This means that different nodes could have different values of charge, or different edges could have different values of link distance. Some examples of this are included in the presets of the application. </p>
+
+                <h3>Controlling with AngularJS</h3>
+                <p>AngularJS provides fantastic two-way data binding between the client and the web application. At its most basic, this can be used to watch for changes in an input field, but we also use it for binding more complex data as well.</p>
+                <p>While D3 controls the rendering of the graph, AngularJS manages the data that is fed into it. The user has control over adding, removing and renaming nodes and connecting nodes together. </p>
+                <p>
+                    Nodes are stored in an array and have the properties <em>ID</em> and <em>Name</em>.
+                </p>
+                <pre>
+[
+    { ID: 1, Name: "Node 1" },
+    { ID: 2, Name: "Node 2"},
+    { ID: 3, Name: "Node 3" },
+    { ID: 4, Name: "Node 4" },
+    { ID: 5, Name: "Node 5" }
+]
+</pre>
+                <p>
+                    Edges are stored in the array and have the properties <em>StartNode</em> and <em>EndNode</em> where those parameters refer to the node IDs
+                </p>
+                <pre>
+[
+    { StartNode: 1, EndNode: 2 },
+    { StartNode: 2, EndNode: 3 },
+    { StartNode: 3, EndNode: 4 },
+    { StartNode: 4, EndNode: 5 }
+]
+</pre>
+                <p>This would result in a simple chain of Node 1 &#8594; Node 2 &#8594; Node 3 &#8594; Node 4 &#8594; Node 5. </p>
+                <p>These arrays are controlled by Angular and can be manipulated dynamically by the user.</p>
+                <p>Additionally, all of the parameters for the simulation can be managed by AngularJS as well, allowing users to change the settings and see the effects in real-time.</p>
+
+                <h3>Code Structure</h3>
+                <p>This is quite a simple Angular application and consists of one controller and two services:</p>
+                <dl class="dl-horizontal">
+                    <dt>
+                        <a href="/angularD3/AngularD3-GraphService.js">GraphService</a>
+                    </dt>
+                    <dd>Responsible for all the logic involved in rendering the graph and all D3.js dependency</dd>
+                    <dt>
+                        <a href="/angularD3/AngularD3-SettingsService.js">SettingsService</a>
+                    </dt>
+                    <dd>Response for handling the parameters for the simulation, performing some basic error-checking and storing default values</dd>
+                </dl>
+
+                <p>
+                    I have chosen not to implement routing in this application, as I wanted the application to be able to be a standalone application that would run locally.
+                    For security reasons, browsers will not load local files and so cannot render the templates for the views without running through a web server.
+                    I also did not want to use inline templates, as that would be rather messy with a large template. I could bypass this by putting the templates inside script tags within the main HTML, so that Angular no longer needs to try to load external resources to render a template.
+                    At some point, I may refactor to implement this.
+                </p>
+
+                <h3>Presets</h3>
+                <p>After I'd finished the basic application, I decided to have some fun with it! I wanted to see what I could do with a force-directed graph, so I added a few simple preset arrays of nodes and edges. </p>
+                <p>
+                    For some of the simple ones, I just <a href="/angularD3/presets/AngularD3-preset-cube.js">constructed the arrays manually</a> but for most of the others the arrays are generated programmatically. The output is always just an array of nodes and edges.
+                </p>
+                <p>Each of the presets also comes with sets of custom graph parameters, which make that particular graph look 'best' but the user can still adjust these afterwards.</p>
+                <p>I may add new presets once I come up with new and interesting things I can do with force-directed graphs!</p>
+
+            </div>
+
+        </div>
+    </div>
+}

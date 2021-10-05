@@ -192,3 +192,6 @@ Homepage/tempfiles/
 Homepage/ConnectionStrings.config
 *.lock
 .vs/
+Homepage/packages/*
+*.pubxml
+.merge_file_*

@@ -1,0 +1,34 @@
+﻿<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/2.10.0/d3.v2.min.js"></script>
+
+<style type="text/css">
+circle {
+  
+}
+    </style>
+
+
+<div id="fractal">
+
+</div>
+
+<div>
+    <div class="input-group input-group-sm">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Iterations</span>
+        <input id="iterMaxCount" type="text" class="form-control">
+    </div>
+    <div class="input-group input-group-sm">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Radius</span>
+        <input id="dataRadius" type="text" class="form-control">
+        <span class="input-group-text">Speed</span>
+        <input id="dataSpeed" type="text" class="form-control">
+
+    </div>
+    <div class="btn-group btn-group-sm">
+        <button role="fractal" class="btn btn-primary" id="regen" onclick="restart()">Start</button>
+        <button role="fractal" class="btn btn-primary" onclick="stop()">Stop</button>
+        <span class="btn btn-outline-primary text-light" id="iter"></span>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/js/fractalChaos/fractalChaos.js"></script>

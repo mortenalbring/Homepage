@@ -1,0 +1,180 @@
+﻿@{
+    ViewData.Add("NavbarCustomStyle","navbar-ma-trans");
+}
+
+
+@section Styles {
+    <link rel="stylesheet" href="/css/fractalchaos.css"/>
+}
+
+@section Jumbo
+{
+    <div class="parallax parallax-fc2">
+        <div class="parallax-title">
+            <span>
+                Fractal Chaos
+            </span>
+        </div>
+    </div>
+}
+
+@section Content
+{
+
+    <div class="container text-light">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                @Html.Partial("FractalChaos/Navigation")
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>
+                            What if we had more anchor points? Does every shape produce a fractal?
+                        </p>
+
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="fc-image-container">
+
+
+                            <a href="/images/fractalChaos/polygons/lg/fcSquareBig.png">
+                                <img src="/images/fractalChaos/polygons/fcSquareSmall.png"/>
+                            </a>
+
+                            <div class="caption">
+                                Chaos game played over 10,000,000 iterations with four anchor points, going halfway towards a random anchor at every iteration.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="fc-image-text">
+                            <p>
+                                Unfortunately not.
+                            </p>
+                            <p>
+                                If we have four anchor points, a square, we do simply get a random collection across a canvas.
+                            </p>
+                            <p>
+                                This is because the points are free to move anywhere on the canvas with equal probability. They're not constrained to move away from any particular area.
+                            </p>
+                            <p>
+                                We can see what happens with other polygons.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="fc-image-container">
+                            <a href="/images/fractalChaos/polygons/lg/fcPentagonBig.png">
+                                <img src="/images/fractalChaos/polygons/fcPentagonSmall.png"/>
+                            </a>
+                            <div class="caption">
+                                Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fc-image-container">
+                            <a href="/images/fractalChaos/polygons/lg/fcHexagonBig.png">
+                                <img src="/images/fractalChaos/polygons/fcHexagonSmall.png"/>
+                            </a>
+                            <div class="caption">
+                                Chaos game played over 10,000,000 iterations with six anchor points, going halfway towards a random anchor at every iteration.
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <p>
+                            As we increase the number of anchor points, it doesn't seem to produce any especially interesting fractal structures. The more anchor points, the more freedom there is for points to span the entire canvas.
+                        </p>
+
+
+                    </div>
+                </div>
+
+              
+            </div>
+        </div>
+        
+    </div>
+        
+
+        <div class="container-fluid text-light">
+  <div class="row">
+
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex3normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex3normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex4normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex4normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex5normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex5normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex6normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex6normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex7normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex7normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex8normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex8normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex9normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex9normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="/images/fractalChaos/polygons/table/vertex10normal1.00e+006-dp.txt.png">
+                            <img class="img-fluid" src="/images/fractalChaos/polygons/table/tr_vertex10normal1.00e+006-dp.txt.png"/>
+                        </a>
+                    </div>
+
+                </div>
+
+        </div>
+
+    <div class="container text-light">
+            <div class="row">
+                <div class="col">
+                    <p>
+                        In the <a href="@Url.Action("FractalChaos2b")">next section</a>, we'll add some more constraints to reduce the freedom of movement.
+                    </p>
+
+                </div>
+            </div>
+    </div>
+
+ 
+
+
+}

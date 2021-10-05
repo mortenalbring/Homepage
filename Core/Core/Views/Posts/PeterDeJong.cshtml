@@ -1,0 +1,141 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@{
+    ViewData.Add("NavbarCustomStyle","navbar-ma-trans");
+    ViewBag.Title = "Peter De Jong Attractor";
+@inject IViewLocalizer Localizer
+    }
+
+@section Scripts {
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+}
+
+
+@section Jumbo {
+    <div class="parallax parallax-peterdejong">
+        <div class="parallax-title">
+            <span>
+                POV-Ray rendering of Peter de Jong attractor
+            </span>
+        </div>
+    </div>
+}
+
+@section Content {
+
+    <div class="container text-light">
+        <div class="row">
+            <div class="col-md-12">
+                <small>2015/07/26</small>
+
+
+                <p>Chaotic attractors are mathematical systems that evolve over time. The Peter de Jong attractors are systems that are especially beautiful, following the underlying equations: </p>
+                <p>
+                    \(x_{n+1} = \sin(a y_n) - \cos(b x_n)\)
+                </p>
+                <p>
+                    \( y_{n+1} = \sin(c x_n) - \cos(d y_n) \)
+                </p>
+                <br/>
+                <p>The choice of the constants <span lang="latex">a, b, c, d</span> produces radically different attractors. </p>
+
+                My personal favourite coefficients are:
+                <p>
+                    \begin{align}
+                    a & = 2 \\
+                    b & = 2 \\
+                    c & = -1.2 \\
+                    d & = -1.2 \\
+
+                    \end{align}
+                </p>
+
+
+                <p>
+                    <a href="http://www.povray.org/">POV-RAY</a> is a free raytracing tool for creating three-dimensional graphics.
+                    We can encode the equations above into POV-RAY to produce a visualisation of the Peter de Jong attractor.
+                </p>
+                <pre>
+light_source {
+  0*x                 
+  color rgb 1.0       
+  area_light
+            &lt;8, 0, 0> &lt;0, 0, 8>
+  4, 4                
+  adaptive 0          
+  jitter              
+  circular            
+  orient              
+  translate &lt;40, 80, -40>
+}
+light_source {
+  0*x
+  color rgb &lt;1,1,1>
+  translate &lt;0,20,-20>
+}
+/* Peter de Jong style attractor */
+#declare x1=0;
+#declare y1=0;
+#declare i=2000000; // Number of points in the simulation. 
+#declare a = -2;
+#declare b = -2;
+#declare c  = -1.2;
+#declare d = -2;
+#declare attractor = union {
+#while(i>0)
+   #declare x2=sin(a*y1)-cos(b*x1);
+   #declare y2=sin(c*x1)-cos(d*y1);
+   sphere{ &lt;x1,y1,3>, 0.001  
+   pigment { rgb &lt;(1-(x2*2)),0.5,(1-(y2*2))> }
+   finish{  diffuse 0.7      ambient 0.0      specular 0.3      reflection { 0.8  metallic } }
+    }
+   #declare x1 = x2;
+   #declare y1 = y2;
+   #declare i = i - 1;
+#end
+}
+object { attractor scale 2 }
+camera {
+location &lt; 0,0,-5> 
+look_at &lt;0,0,0>
+}
+plane {
+  y,
+  -4.0
+  hollow on 
+  pigment { rgb 1 }
+} 
+</pre>
+                <p>This results in this beautiful render of the attractor</p>
+                <a href="/images/peterdejong/peterdejong.png">
+                    <img class="img-thumbnail" src="/images/peterdejong/peterdejong.png"/>
+                </a>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <br>
+                    <strong>Links</strong>
+
+
+                    <ul>
+                        <li>
+                            <a href="http://paulbourke.net/fractals/peterdejong/">Paul Bourke's illustrations of Peter de Jong Attractors</a>
+                        </li>
+                        <li>
+                            <a href="http://www.povray.org/">POV-RAY software</a>
+                        </li>
+                    </ul>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+}

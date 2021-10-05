@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @section Scripts {
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 }
@@ -16,7 +17,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            
+
 
             <p>Chaotic attractors are mathematical systems that evolve over time. The Peter de Jong attractors are systems that are especially beautiful, following the underlying equations: </p>
             <div lang="latex">
@@ -25,7 +26,7 @@
             <div lang="latex">
                 y_{n+1} = \sin(c x_n) - \cos(d y_n)
             </div>
-            <br />
+            <br/>
             <p>The choice of the constants <span lang="latex">a, b, c, d</span> produces radically different attractors. </p>
             <p>
                 My personal favourite coefficients are:
@@ -46,18 +47,18 @@ light_source {
   0*x                 
   color rgb 1.0       
   area_light
-            <8, 0, 0> <0, 0, 8>
+            &lt;8, 0, 0> &lt;0, 0, 8>
   4, 4                
   adaptive 0          
   jitter              
   circular            
   orient              
-  translate <40, 80, -40>
+  translate &lt;40, 80, -40>
 }
 light_source {
   0*x
-  color rgb <1,1,1>
-  translate <0,20,-20>
+  color rgb &lt;1,1,1>
+  translate &lt;0,20,-20>
 }
 /* Peter de Jong style attractor */
 #declare x1=0;
@@ -71,8 +72,8 @@ light_source {
 #while(i>0)
    #declare x2=sin(a*y1)-cos(b*x1);
    #declare y2=sin(c*x1)-cos(d*y1);
-   sphere{ <x1,y1,3>, 0.001  
-   pigment { rgb <(1-(x2*2)),0.5,(1-(y2*2))> }
+   sphere{ &lt;x1,y1,3>, 0.001  
+   pigment { rgb &lt;(1-(x2*2)),0.5,(1-(y2*2))> }
    finish{  diffuse 0.7      ambient 0.0      specular 0.3      reflection { 0.8  metallic } }
     }
    #declare x1 = x2;
@@ -82,8 +83,8 @@ light_source {
 }
 object { attractor scale 2 }
 camera {
-location < 0,0,-5> 
-look_at <0,0,0>
+location &lt; 0,0,-5> 
+look_at &lt;0,0,0>
 }
 plane {
   y,
@@ -93,7 +94,9 @@ plane {
 } 
 </pre>
             <p>This results in this beautiful render of the attractor</p>
-            <a href="~/Content/images/peterDeJongattactor.png"><img class="img-thumbnail" src="~/Content/images/peterDeJongattactor_small.png" /></a>
+            <a href="~/Content/images/peterDeJongattactor.png">
+                <img class="img-thumbnail" src="~/Content/images/peterDeJongattactor_small.png"/>
+            </a>
 
         </div>
 
@@ -102,8 +105,12 @@ plane {
         <div class="col-md-12">
             <h3>Links</h3>
             <ul class="list-group">
-                <li class="list-group-item"><a href="http://paulbourke.net/fractals/peterdejong/">Paul Bourke's illustrations of Peter de Jong Attractors</a></li>
-                <li class="list-group-item"><a href="http://www.povray.org/">POV-RAY software</a></li>
+                <li class="list-group-item">
+                    <a href="http://paulbourke.net/fractals/peterdejong/">Paul Bourke's illustrations of Peter de Jong Attractors</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="http://www.povray.org/">POV-RAY software</a>
+                </li>
             </ul>
 
 

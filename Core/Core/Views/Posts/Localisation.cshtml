@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+
+@{
+    ViewBag.Title = "title";
+@inject IViewLocalizer Localizer
+}
+
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+<h2>Localisation</h2>
+<small>2021/06/08</small>
+<p>
+    While moving this site to .NET 5, I thought I would explore localisation implementations so that I could have my site in both English and Norwegian. Getting localisation set up was a little tricky at first, as it either works or it doesn't and there isn't much of an avenue for debugging. The relative locations and naming of various files is quite important. 
+</p>
+
+<p>
+    First of all, in the <code>ConfigureServices</code> method within the <code>Startup</code> class, add:
+</p>
+<pre>
+<code class="language-cs">services.AddLocalization(options => options.ResourcesPath = "Resources");</code>
+</pre>
+
+<p>This tells the service to look for Resource files within the 'Resources' folder within project</p>
+
+
+<pre><code class="language-cs">
+services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder);
+</code>
+</pre>

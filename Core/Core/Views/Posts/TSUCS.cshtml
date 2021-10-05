@@ -1,0 +1,169 @@
+﻿@section Scripts
+{
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+}
+
+@section Jumbo {
+    <div class="parallax parallax-tsucs">
+  <div class="parallax-title">
+                <span>
+                    Three-Scroll Unified Chaotic System
+                </span>
+            </div>
+    </div>
+          
+}
+
+@section Content
+{
+<div class="container text-light">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <p>
+                The Three-Scroll Unified Chaotic System (TSUCS) was introduced by Lin Pan, Wuneng Zhou, Jian’an Fang and Dequan Li in <a href="http://www.internonlinearscience.org/upload/papers/20110618025420887.pdf">a paper submitted to the International Journal of Nonlinear Science</a> in 2010. The TSUCS contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.
+            </p>
+
+            <p>
+                \begin{align}
+                \frac{dx}{dt} & = \textrm{a} (y - x) + \textrm{d} x y \\
+                \frac{dy}{dt} & = \textrm{c}x - xy + \textrm{f}y \\
+                \frac{dz}{dt} & = \textrm{b}z + yx - \textrm{e}x^2 \\
+                \end{align}
+            </p>
+
+            where I use the parameters
+            <p>
+                \begin{align}
+                \textrm{a} & = 40 \\
+                \textrm{b} & = 1.833 \\
+                \textrm{c} & = 55 \\
+                \textrm{d} & = 0.16 \\
+                \textrm{e} & = 0.65 \\
+                \textrm{f} & = 20
+                \end{align}
+
+            </p>
+
+            <p>
+                The POV-Ray macro for rendering this attractor is:
+            </p>
+            <pre class="text-light">
+//Draws a Three-Scroll Unified Chaotic System 
+#macro TSUCS(a, b, c, d, e, f, dT, Iter, x0, y0, z0, R) 
+    #local Count=0;
+	#while (Count&lt;Iter)        
+		#local x1=x0+dT*(a*(y0-x0) + (d*x0*z0));
+		#local y1=y0+dT*((c * x0) - (x0*z0) + (f*y0));
+        #local z1=z0+dT*((b * z0) + (x0 * y0) - (e * x0 * x0));		
+        #if(Count &lt; (Iter - 1500))	
+    		sphere {
+    		    &lt;x1,y1,z1&gt;, R
+                pigment { 
+                    rgb &lt;0.9-(Count/Iter)*0.7,0.6,0.2+(Count/Iter)*0.7&gt;
+                }
+                finish { 
+                    diffuse 0.7
+                    ambient 0.3 
+                    specular 0.5
+                    reflection { 
+                        0.9  metallic 
+                    } 
+                }
+            }
+        #else
+            sphere {
+                &lt;x1,y1,z1&gt;, R
+                pigment { 
+                    rgb &lt;(Count/Iter),(Count/Iter)*0.25,(Count/Iter)*0.25&gt;
+                }
+                finish{
+                    diffuse 0.7
+                    ambient 0.9
+                    specular 0.3
+                    reflection { 
+                        0.8  metallic 
+                    } 
+                }
+            }
+        #end                                             
+		#local Count=Count+1;
+		#local x0=x1;
+		#local y0=y1;
+		#local z0=z1;
+	#end
+#end
+</pre>
+            <p>
+                This renders a series of spheres according to the differential equations.
+                This also renders a red trace for the most recent points.
+            </p>
+
+            <p>To run this macro we use, where the 'clock' variable controls the animation</p>
+            <pre class="text-light">
+                TSUCS(40, 1.833, 55, 0.16,0.65,20,0.00002, 1000000*clock, 0.0001, 0.0001, 0.0001, 1)
+</pre>
+            <p>We also add a skysphere and checkered floor to make the scene look nice </p>
+
+            <pre class="text-light">
+    
+light_source {
+  0*x
+  color rgb 1.0
+  area_light
+  &lt;8, 0, 0&gt; &lt;0, 0, 8&gt;
+  6, 4
+  adaptive 3
+  translate &lt;0, 0, -10&gt;
+}
+camera {	
+	location &lt;0, 20, -500&gt;		           
+	look_at &lt;20-(50*clock),5,0&gt;       
+	rotate &lt;0,-90+(180*clock),0&gt;
+}
+plane { y, -220
+		pigment { checker rgb &lt;0.1, 0.1, 0.1&gt; rgb &lt;1.0, 1.0, 1.0&gt; scale 5 }
+		finish { reflection 0.2 ambient 0.4 }
+	}
+	fog {
+		distance 1000
+		color rgb 0.9
+		fog_offset 2
+		fog_alt 5
+		fog_type 2
+	}
+sky_sphere {
+		pigment { gradient y
+			color_map {
+				[0 rgb &lt;0.5, 0.6, 1&gt; ]
+				[1 rgb &lt;0, 0, 1&gt; ]
+			}
+		}
+		pigment { wrinkles turbulence clock
+			color_map {
+				[0 rgbt &lt;1,1,1,1&gt;]
+				[0.5 rgbt &lt;0.98, 0.99, 0.99, .6&gt;]
+				[1 rgbt &lt;1, 1, 1, 1&gt;]
+			}
+			scale &lt;.8, .1, .8&gt;
+		}
+	} 
+
+</pre>
+            <a href="~/Content/images/tsucs/tsucs3407.png">
+                <img src="~/Content/images/tsucs/tsucs3407_sm.png"/>
+            </a>
+
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ev8ALZkZGgI" frameborder="0" allowfullscreen></iframe>
+
+            <p>
+                <a class="btn btn-default" href="https://github.com/mortenalbring/ThreeScrollUnifiedChaoticSystem">You can view the full code for this render on GitHub.</a>
+            </p>
+        </div>
+    </div>
+</div>    
+}

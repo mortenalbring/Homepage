@@ -16,42 +16,43 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <p>
-                Edward Lorenz was an American mathematician and pioneer of chaos theory.
-                Lorenz built mathematical models of the motion of air in the atmosphere.
-            </p><p>
-                His original model involved a set of 12 nonlinear differential equations and discovered complex
-                movements that were highly dependent upon the initial conditions of the system.
-                He then looked for complex behaviour in simpler models.
-                He built a simple model of a gas in a solid rectangular box with a heat source at the bottom.
-            </p>
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+<p>
+    Edward Lorenz was an American mathematician and pioneer of chaos theory.
+    Lorenz built mathematical models of the motion of air in the atmosphere.
+</p>
+<p>
+    His original model involved a set of 12 nonlinear differential equations and discovered complex
+    movements that were highly dependent upon the initial conditions of the system.
+    He then looked for complex behaviour in simpler models.
+    He built a simple model of a gas in a solid rectangular box with a heat source at the bottom.
+</p>
 
-            <p>
-                The Lorenz attractor is a simplified model of convection of a gas within a confined space. This very simple model results in some very interesting motion, an example of deterministic chaos. A chaotic system is very sensitive to initial conditions and the system rapidly diverges.
-            </p>
-            <p>The system is described by three coupled non-linear differential equations:</p>
+<p>
+    The Lorenz attractor is a simplified model of convection of a gas within a confined space. This very simple model results in some very interesting motion, an example of deterministic chaos. A chaotic system is very sensitive to initial conditions and the system rapidly diverges.
+</p>
+<p>The system is described by three coupled non-linear differential equations:</p>
 
-            <p>
-                \begin{align}
-                \frac{dx}{dt} & = a (y - x) \\
-                \frac{dy}{dt} & = x (b - z) - y \\
-                \frac{dz}{dt} & = xy - cz \\
-                \end{align}
-            </p>
-            <p>where</p>
-            <ul class="list-unstyled">
-                <li><em>a</em> is the <strong>Prandtl number</strong> that represents the ratio of fluid viscosity to thermal conductivity </li>
-                <li><em>b</em> is the <strong>Rayleigh number</strong> representing the difference in temperature between the top and bottom of the box</li>
-                <li><em>c</em> is the ratio of the width to the height of the box</li>
-            </ul>
+<p>
+    \begin{align}
+    \frac{dx}{dt} & = a (y - x) \\
+    \frac{dy}{dt} & = x (b - z) - y \\
+    \frac{dz}{dt} & = xy - cz \\
+    \end{align}
+</p>
+<p>where</p>
+<ul class="list-unstyled">
+    <li><em>a</em> is the <strong>Prandtl number</strong> that represents the ratio of fluid viscosity to thermal conductivity </li>
+    <li><em>b</em> is the <strong>Rayleigh number</strong> representing the difference in temperature between the top and bottom of the box</li>
+    <li><em>c</em> is the ratio of the width to the height of the box</li>
+</ul>
 
-            <p>Commonly used constants are <em>a = 10</em>, <em>b = 28</em> and <em>c = 8/3</em>.</p>
+<p>Commonly used constants are <em>a = 10</em>, <em>b = 28</em> and <em>c = 8/3</em>.</p>
 
-            <p>In order to produce a POV-Ray render, we first need to set up a light source and a camera </p>
+<p>In order to produce a POV-Ray render, we first need to set up a light source and a camera </p>
 
-            <pre>
+<pre>
 light_source {
   0*x
   color rgb 1.0
@@ -67,18 +68,18 @@ camera {
 }
 </pre>
 
-            <p>The equation above can be calculated in POV-Ray with </p>
+<p>The equation above can be calculated in POV-Ray with </p>
 <pre>
 #local x1=x0+dT*a*(y0-x0);
 #local y1=y0+dT*(x0*(b-z0)-y0);
 #local z1=z0+dT*(x0*y0-c*z0);		
 </pre>
-            <p>We can wrap this in a macro to repeatedly calculate the points <em>x</em>, <em>y</em> and <em>z</em> over multiple iterations and draw spheres of radius <em>R</em> at each point. </p>
+<p>We can wrap this in a macro to repeatedly calculate the points <em>x</em>, <em>y</em> and <em>z</em> over multiple iterations and draw spheres of radius <em>R</em> at each point. </p>
 
-            <div class="row">
-                <div class="col-md-6">
+<div class="row">
+    <div class="col-md-6">
 
-                    <pre>
+        <pre>
 #macro Lorenz(a, b, c, dT, Iter, x0, y0, z0, R)     
  #local Count=0;
  #while (Count &lt; Iter) 
@@ -106,18 +107,20 @@ camera {
  #end
 #end
 </pre>
-                </div>
-                <div class="col-md-6">
-                    <a href="~/Images/LorenzAttractorNoBall.png"><img class="img-responsive img-thumbnail" src="~/Images/LorenzAttractorNoBall.png" /></a>
-                </div>
-            </div>
+    </div>
+    <div class="col-md-6">
+        <a href="~/Images/LorenzAttractorNoBall.png">
+            <img class="img-responsive img-thumbnail" src="~/Images/LorenzAttractorNoBall.png"/>
+        </a>
+    </div>
+</div>
 
-            <p>We colour the spheres based on their iteration, to make the whole thing look pretty. The image above is rendered with 40000 spheres, calling the macro with  </p>
-            <pre>Lorenz(10, 28, 8/3, 0.00022, 400000, 0.0001, 0.0001, 0.0001, 0.1)</pre>
+<p>We colour the spheres based on their iteration, to make the whole thing look pretty. The image above is rendered with 40000 spheres, calling the macro with </p>
+<pre>Lorenz(10, 28, 8/3, 0.00022, 400000, 0.0001, 0.0001, 0.0001, 0.1)</pre>
 
-            <p>In POV-Ray, we can produce animations by rendering frames with the <em>clock</em> variable and parameters set in an INI file </p>
+<p>In POV-Ray, we can produce animations by rendering frames with the <em>clock</em> variable and parameters set in an INI file </p>
 
-            <pre>
+<pre>
 Antialias=On
 Antialias_Threshold=0.1
 Antialias_Depth=5
@@ -130,10 +133,10 @@ Cyclic_Animation=on
 Pause_when_Done=off
 </pre>
 
-            <p>In our case, it is quite simple to produce a nice animation of building up the attractor as we just call the Lorenz macro with the iterations determined by the clock variable </p>
-            <pre>Lorenz(10, 28, 8/3, 0.00022, 400000*clock, 0.0001, 0.0001, 0.0001, 0.1)</pre>
-            <p>We can go one step further and draw a larger, red sphere at the final calculated value.</p>
-            <pre>
+<p>In our case, it is quite simple to produce a nice animation of building up the attractor as we just call the Lorenz macro with the iterations determined by the clock variable </p>
+<pre>Lorenz(10, 28, 8/3, 0.00022, 400000*clock, 0.0001, 0.0001, 0.0001, 0.1)</pre>
+<p>We can go one step further and draw a larger, red sphere at the final calculated value.</p>
+<pre>
 #macro LorenzPoint(a, b, c, dT, Iter, x0, y0, z0, R)
  #local Count=0;
  #while (Count&lt;Iter) 
@@ -161,11 +164,11 @@ Pause_when_Done=off
  }
 #end
 </pre>
-            <p>We can put in a sky sphere and a checkered plane, to add some depth to the render </p>
+<p>We can put in a sky sphere and a checkered plane, to add some depth to the render </p>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <pre>
+<div class="row">
+    <div class="col-md-6">
+        <pre>
 plane { y, -25
   pigment { checker rgb &lt;0.1, 0.1, 0.1&gt; rgb &lt;1.0, 1.0, 1.0&gt; scale 5 }
   finish { reflection 0.2 ambient 0.4 }
@@ -194,43 +197,45 @@ sky_sphere {
   }
 } 
 </pre>
-                </div>
-                <div class="col-md-6">
-                    <a href="~/Images/LorenzAttractorCheckered.png"><img class="img-responsive img-thumbnail" src="~/Images/LorenzAttractorCheckered.png" /></a>
-                </div>
-            </div>
-
-            <p>By rendering enough frames, we can produce a smooth animation building up the Lorenz attractor. The animation below is produced by 5000 frames, rendered over 3 days or so.</p>
-
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SBTiyolNGfw"></iframe>
-
-            </div>
-
-            <br />
-            <br />
-            <p>You can see the full code at the <a href="https://github.com/mortenalbring/Lorenz-Attractor-POV-Ray">Github repository for this project</a>.</p>
-
-            <br />
-            <p>
-                Resources:
-                <ul>
-                    <li>
-                        <a href="https://en.wikipedia.org/wiki/Lorenz_system">Wikipedia article on Lorenz system</a>
-                    </li>
-                    <li>
-                        <a href="http://demonstrations.wolfram.com/LorenzAttractor/">Lorenz system on Wolfram alpha</a>
-                    </li>
-                    <li>
-                        <a href="http://www.povray.org/">Persistence of Vision Raytracer software</a>
-                    </li>
-                    <li>
-                        <a href="http://paulbourke.net/fractals">Paul Bourke's page on fractal rendering</a>
-                    </li>
-                </ul>
-
-            </p>
-
-        </div>
     </div>
+    <div class="col-md-6">
+        <a href="~/Images/LorenzAttractorCheckered.png">
+            <img class="img-responsive img-thumbnail" src="~/Images/LorenzAttractorCheckered.png"/>
+        </a>
+    </div>
+</div>
+
+<p>By rendering enough frames, we can produce a smooth animation building up the Lorenz attractor. The animation below is produced by 5000 frames, rendered over 3 days or so.</p>
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SBTiyolNGfw"></iframe>
+
+</div>
+
+<br/>
+<br/>
+<p>You can see the full code at the <a href="https://github.com/mortenalbring/Lorenz-Attractor-POV-Ray">Github repository for this project</a>.</p>
+
+<br/>
+<p>
+    Resources:
+    <ul>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Lorenz_system">Wikipedia article on Lorenz system</a>
+        </li>
+        <li>
+            <a href="http://demonstrations.wolfram.com/LorenzAttractor/">Lorenz system on Wolfram alpha</a>
+        </li>
+        <li>
+            <a href="http://www.povray.org/">Persistence of Vision Raytracer software</a>
+        </li>
+        <li>
+            <a href="http://paulbourke.net/fractals">Paul Bourke's page on fractal rendering</a>
+        </li>
+    </ul>
+
+</p>
+
+</div>
+</div>
 </div>

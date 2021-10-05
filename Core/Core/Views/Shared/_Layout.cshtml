@@ -1,0 +1,112 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@{
+@inject IViewLocalizer Localizer;
+    }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Core</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/home.css"/>
+    @await RenderSectionAsync("Styles", required: false)
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+</head>
+<body class="bg-dark">
+<header>
+    <nav class="navbar navbar-ma navbar-expand-lg @ViewData["NavbarCustomStyle"] navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                @await Html.PartialAsync("_SelectLanguagePartial")
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                            @Localizer["Home"]
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Posts
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="FractalChaos">Fractal Chaos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="MengerSponge">Menger Sponge</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="TSUCS">Three Unified Scroll attractor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="PeterDeJong">Peter De Jong attractor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="Lorenz">Lorenz attractor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="AngularD3">Angular D3</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Posts" asp-action="ComputationsIrreversibility">Computation and irreversibility</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About">About me</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Education">Education</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Employment">Employment</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+@await RenderSectionAsync("Jumbo", required: false)
+
+<main role="main" class="pb-3">
+    @RenderSection("Content", required: true)
+</main>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2021 - Morten Albring
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/bootstrap.bundle.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿@model HomeViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@{
+    ViewData["Title"] = "Morten Albring - Personal Homepage";
+
+@inject IViewLocalizer Localizer
+    }
+
+@section Scripts
+{
+    <script src="lib/particles.js-master/particles.js"></script>
+    <script src="/home/homeparticles.js"></script>
+}
+
+@section Content
+{
+    <div class="ma-particles">
+        <div id="particles-js"></div>
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-9 offset-1 col-md-4 col-lg-2 col-xl-2 offset-md-0 offset-lg-0 offset-xl-0">
+                    <img src="images/home/mortcoverface.png" class="img-fluid mortface align-middle">
+                </div>
+                <div class="col-12 col-md-8 col-lg-10 col-xl-10 text-secondary p-5">
+                    <div class="text-center">
+                        <h1 class="display-3 text-light ma-title">Morten Alexander Albring</h1>
+                    </div>
+
+                    <p class="ma-blurb">@Localizer["IntroPart1"]</p>
+                    <p class="ma-blurb">@Localizer["IntroPart2"]</p>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container p-3">
+        <div class="row p-3">
+            <div class="col-sm-6 col-md-4">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="FractalChaos">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaos)],
+                               CoverImagePath = "images/home/cover-fractalchaos.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="MengerSponge">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Menger)],
+                               CoverImagePath = "images/home/cover-menger.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextShort)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="TSUCS">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCS)],
+                               CoverImagePath = "images/home/cover-tsucs.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCSTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCSTextShort)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row p-3">
+            <div class="col-sm">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="PeterDeJong">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJong)],
+                               CoverImagePath = "images/home/cover-peterdejong.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJongTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJongTextShort)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="Lorenz">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Lorenz)],
+                               CoverImagePath = "images/home/cover-lorenz.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.LorenzTextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.LorenzTextShort)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row p-3">
+            <div class="col-sm">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="AngularD3">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3)],
+                               CoverImagePath = "images/home/cover-angulard3.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3TextLong)],
+                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3TextShort)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="ma-img-container d-flex justify-content-center">
+                    <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="ComputationsIrreversibility">
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                           {
+                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Computations)],
+                               CoverImagePath = "images/home/cover-demon-sm-trans.png",
+                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.ComputationsTextLong)]
+                           }); }
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

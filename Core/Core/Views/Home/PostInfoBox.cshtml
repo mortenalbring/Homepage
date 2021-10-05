@@ -1,0 +1,28 @@
+﻿@model PostInfoBox
+
+@{
+    var rnd = new Random();
+    var className = "ma-overlay-color-" + rnd.Next(0, 6).ToString();
+}
+
+
+<img src="@Model.CoverImagePath" class="img-fluid" alt="@Model.Title">
+<div class="@className ma-overlay">
+    <span>
+        @if (Model.TextLong != null)
+        {
+            <p class="d-none d-xl-block d-lg-block">
+                @Model.TextLong
+            </p>
+        }
+        @if (Model.TextShort != null)
+        {
+            <p class="d-xl-none d-lg-none">
+                @Model.TextShort
+            </p>
+        }
+    </span>
+</div>
+<div class="ma-underlay">
+    @Model.Title
+</div>

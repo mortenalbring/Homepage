@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Homepage</RootNamespace>
     <AssemblyName>Homepage</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -216,6 +216,7 @@
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\WordsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +240,8 @@
     <Compile Include="Models\Amenhokit\Database\UploadFile.cs" />
     <Compile Include="Models\Amenhokit\ViewModels\PlayerSessionScore.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Words\WordVisViewModel.cs" />
+    <Compile Include="Projects\Words\WordsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AmenhokitRepository.cs" />
     <Compile Include="Services\Amenhokit\BowlingCalc.cs" />
@@ -246,7 +249,6 @@
     <Compile Include="Services\Amenhokit\WriteDataToJson.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConnectionStrings.config" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -260,6 +262,8 @@
     <Content Include="Content\datafiles\teamreport.txt" />
     <Content Include="Content\datafiles\teamreportByPlayerCount.txt" />
     <Content Include="Content\datafiles\uniquePlayers.txt" />
+    <Content Include="Content\EnglishGeneralClusterJsonSerial.xml" />
+    <Content Include="Content\EnglishSowpodsClusterJsonSerial.xml" />
     <Content Include="Content\images\angularD3\AngularD3-cover.png" />
     <Content Include="Content\images\angularD3\AngularD3-preview.png" />
     <Content Include="Content\images\anyons.jpg" />
@@ -267,6 +271,7 @@
     <Content Include="Content\images\fractalChaos\background.png" />
     <Content Include="Content\images\fractalChaos\background2.png" />
     <Content Include="Content\images\fractalChaos\background4.png" />
+    <Content Include="Content\images\fractalChaos\background_parallax.png" />
     <Content Include="Content\images\fractalChaos\fc-cover.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001.png" />
     <Content Include="Content\images\fractalChaos\fc-triangle_f00001_2.gif" />
@@ -321,6 +326,7 @@
     <Content Include="Content\images\fractalChaos\triangle_VaryAngle6.gif" />
     <Content Include="Content\images\fractalChaos\triangle_VaryRatio.gif" />
     <Content Include="Content\images\me.png" />
+    <Content Include="Content\images\me2.png" />
     <Content Include="Content\images\menger\menger-layers-loop.gif" />
     <Content Include="Content\images\menger\menger-level-0-sm.png" />
     <Content Include="Content\images\menger\menger-level-0.png" />
@@ -351,6 +357,7 @@
     <Content Include="Content\mortenalbring-charts.css" />
     <Content Include="Content\mortenalbring.css" />
     <Content Include="Content\responsiveTable.css" />
+    <Content Include="Content\Words\word-styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -428,7 +435,9 @@
     <Content Include="Projects\AngularD3\packages\angular.min.js" />
     <Content Include="Projects\AngularD3\packages\d3.js" />
     <Content Include="Projects\AngularD3\packages\d3.min.js" />
+    <Content Include="Projects\AngularD3\presets\AngularD3-preset-countryNodes.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-cube.js" />
+    <Content Include="Projects\AngularD3\presets\AngularD3-preset-words.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-custom-charge.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-DNA.js" />
     <Content Include="Projects\AngularD3\presets\AngularD3-preset-graphene-auto.js" />
@@ -476,6 +485,18 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\d3v5\API.md" />
+    <Content Include="Scripts\d3v5\CHANGES.md" />
+    <Content Include="Scripts\d3v5\d3.js" />
+    <Content Include="Scripts\d3v5\d3.min.js" />
+    <Content Include="Scripts\d3v5\LICENSE" />
+    <Content Include="Scripts\d3v5\README.md" />
+    <Content Include="Scripts\d3v6\API.md" />
+    <Content Include="Scripts\d3v6\CHANGES.md" />
+    <Content Include="Scripts\d3v6\d3.js" />
+    <Content Include="Scripts\d3v6\d3.min.js" />
+    <Content Include="Scripts\d3v6\LICENSE" />
+    <Content Include="Scripts\d3v6\README.md" />
     <Content Include="Scripts\d3\d3.js" />
     <Content Include="Scripts\d3\d3.min.js" />
     <Content Include="Scripts\d3\LICENSE" />
@@ -485,6 +506,7 @@
     <Content Include="Scripts\d3\README.md" />
     <Content Include="Scripts\d3\CHANGES.md" />
     <Content Include="Scripts\d3\API.md" />
+    <None Include="Properties\PublishProfiles\SmarterAspNet2020.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\FileAPI.flash.swf" />
     <Content Include="Scripts\FileAPI.js" />
@@ -30420,7 +30442,19 @@
     <Content Include="Scripts\ng-file-upload-shim.min.js" />
     <Content Include="Scripts\ng-file-upload.js" />
     <Content Include="Scripts\ng-file-upload.min.js" />
+    <Content Include="Scripts\Words\Json\simpleWordDataEnglish.json" />
+    <Content Include="Scripts\Words\Json\simpleWordDataGerman.json" />
+    <Content Include="Scripts\Words\Json\simpleWordDataNorsk.json" />
+    <Content Include="Scripts\Words\Json\wordChainEnglish.json" />
+    <Content Include="Scripts\Words\simpleWords.js" />
+    <Content Include="Scripts\Words\wordChains.js" />
+    <Content Include="Scripts\Words\wordsGeneral.js" />
+    <Content Include="Scripts\Words\wordsVisv1.js" />
+    <Content Include="Scripts\Words\wordVisv2.js" />
     <Content Include="Views\Home\Redesign.cshtml" />
+    <Content Include="Views\Words\Index.cshtml" />
+    <Content Include="Views\Words\Index2.cshtml" />
+    <Content Include="Views\Words\WordsVisualise.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -31027,6 +31061,7 @@
     <Content Include="Views\Posts\FractalChaos\FractalChaos6.cshtml" />
     <Content Include="Views\Posts\FractalChaos\FractalChaos7.cshtml" />
     <Content Include="Views\Posts\FractalChaos\Navigation.cshtml" />
+    <Content Include="Projects\graph.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

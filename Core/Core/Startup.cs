@@ -53,6 +53,9 @@ namespace Core
                 });
             
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder);
+            
+            services.AddWebOptimizer();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +72,8 @@ namespace Core
                 app.UseHsts();
             }
 
+            app.UseWebOptimizer();
+            
             app.UseRequestLocalization();
             
             app.UseStaticFiles();

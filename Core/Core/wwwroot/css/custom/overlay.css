@@ -1,0 +1,86 @@
+﻿
+.ma-overlay span{
+    position:absolute;
+    padding-left:5px;
+    padding-right:5px;
+    text-align: justify;
+    /*top:50%;*/
+    /*left:50%;*/
+    /*transform:translate(-50%,-50%);*/
+    color: #ffffff;
+}
+
+
+.ma-overlay-color-0 {
+    border:2px solid #ffaa00 !important;
+}
+
+.ma-overlay-color-1 {
+    border:2px solid #0090ff !important;
+}
+.ma-overlay-color-2 {
+    border:2px solid rgb(50, 50, 0) !important;
+}
+.ma-overlay-color-3 {
+    border:2px solid rgb(80, 50, 0) !important;
+}
+.ma-overlay-color-4 {
+    border:2px solid rgb(120, 50, 0) !important;
+}
+.ma-overlay-color-5 {
+    border:2px solid rgb(50, 50, 120) !important;
+}
+.ma-overlay-color-6 {
+    border:2px solid rgb(50, 50, 90) !important;
+}
+
+.ma-img-container .ma-overlay{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#212529;
+    text-shadow: 0 0 4px #ffffff;
+    opacity:0;
+    border:6px solid rgb(0,170,170);
+    border-radius:50px;
+
+    transition:opacity 500ms ease-in-out,
+    border-radius 500ms ease-in-out,
+    border-width 500ms ease-in-out,
+    border-top-color 500ms ease-in-out,
+    border-right-color 500ms ease-in-out,
+    border-left-color 500ms ease-in-out,
+    border-bottom-color 500ms ease-in-out;
+}
+.ma-img-container:hover .ma-overlay{
+    border:6px solid #3b3b3b;
+    border-radius:15px;
+    background-color:#1a1e21;
+    opacity:0.8;
+    text-align: justify;
+}
+.ma-underlay {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0px 0px 10px #000000;
+    position: relative;
+    top:-50%;
+    transition:top 500ms ease-in-out, color 500ms ease-in-out, text-shadow 500ms ease-in-out, font-size 500ms ease-in-out, opacity 500ms ease-in-out;
+}
+.ma-img-container:hover .ma-underlay {
+    font-size: 1.1em;
+    opacity: 0;
+    top:-80%;
+    color:white;
+    text-shadow: none;
+
+}

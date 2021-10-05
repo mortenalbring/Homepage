@@ -54,8 +54,17 @@ namespace Core
             
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder);
             
-            services.AddWebOptimizer();
+            // if (env.IsDevelopment())
+            // {
+            //     services.AddWebOptimizer(minifyJavaScript:false,minifyCss:false);
+            // }
             
+            // services.AddWebOptimizer();
+            //
+            services.AddWebOptimizer(pipeline =>
+            {
+                pipeline.AddCssBundle("/css/bundle.css", "css/custom/*.css");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

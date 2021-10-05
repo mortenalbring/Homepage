@@ -116,12 +116,21 @@
 }
 .parallax-gource {
     min-height: 400px;
-    background-image: url("../images/about/gource-back.png");
+    background-image: url("../images/about/gource-back_nobloom.png") ;
     background-size:cover;
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0;
-    border-top:1px solid #ccc;
+
+
+    
+}
+
+.lingrad {
+    position:absolute;
+    height:100%;
+    width:100%;
+    background: linear-gradient(to bottom,  #212529 0%,rgba(255,255,255,0) 10%,rgba(255,255,255,0) 90%, #08363f 100%);
 }
 
 
@@ -240,7 +249,7 @@
 .ma-section-lighter {
     margin-top:0;
     background: #08363f;
-    border-top:1px solid #5ad2de;
+    /*border-top:1px solid #5ad2de;*/
 }
 
 .ma-section-lighter a {

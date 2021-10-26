@@ -1,6 +1,7 @@
 ﻿@{
-    
+    Layout = "_LayoutBlank";
 }
+
 
 
 @section Scripts
@@ -9,7 +10,8 @@
     <script src="/words/wordsGeneral.js"></script>
     
     <script src="/words/searchWordsv2.js"></script>
-    
+    <link rel="stylesheet" href="/words/word-styles.css"/>
+
     
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 }
@@ -17,10 +19,9 @@
 
 @section Content
 { 
-    <div>
-        @Html.Partial("WordSearchPartial")
-
-
+    @Html.Partial("Words/WordsSearchControl")
+    <div style="min-height: 90vh">
+        @Html.Partial("Words/WordSearchPartial")
     </div>
 }
 

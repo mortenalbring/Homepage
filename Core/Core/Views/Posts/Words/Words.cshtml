@@ -265,7 +265,14 @@
             
             <a asp-controller="Posts" asp-action="WordsSearch">Full screen</a>
 
-            @Html.Partial("WordSearchPartial")
+            @Html.Partial("Words/WordsSearchControl")
+            
+            
+            <div style="min-height: 200px">
+                
+            
+            @Html.Partial("Words/WordSearchPartial")
+            </div>
 
             <br>
         </div>

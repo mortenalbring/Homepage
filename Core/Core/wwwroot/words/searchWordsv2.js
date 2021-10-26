@@ -70,6 +70,7 @@ function drawGraph(graphData, searchVal) {
         height = +svg.attr("height");
 
 
+
     // var maxval = Math.max.apply(Math, graphData.nodes.map(function (o) {
     //     return o.linkCount;
     // }))
@@ -218,6 +219,9 @@ function drawGraph(graphData, searchVal) {
     simulation.force("link")
         .links(graphData.links);
 
+
+  
+    
     function ticked() {
         node
             .attr("transform", function (d) {
@@ -355,10 +359,16 @@ d3.timeout(function () {
 
 
     var parentElement = document.getElementById("searchWordsSvg");
+    
     if (parentElement != null) {
-
+        
         var cw = parentElement.parentElement.clientWidth;
+        var ch = parentElement.parentElement.clientHeight;
+
+        console.log(ch);
+        console.log(parentElement.parentElement);
         $('#searchWordsSvg').attr("width", cw);
+        $('#searchWordsSvg').attr("height", ch);
     }
 
 

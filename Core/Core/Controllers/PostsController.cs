@@ -21,12 +21,12 @@ namespace Core.Controllers
 
         public IActionResult Words()
         {
-            return View();
+            return View("Words/Words");
         }
 
         public IActionResult WordsSearch()
         {
-            return View();
+            return View("Words/WordsSearch");
         }
 
       

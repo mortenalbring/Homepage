@@ -11,29 +11,6 @@
 }
 
 
-.ma-overlay-color-0 {
-    border:2px solid #ffaa00 !important;
-}
-
-.ma-overlay-color-1 {
-    border:2px solid #0090ff !important;
-}
-.ma-overlay-color-2 {
-    border:2px solid rgb(50, 50, 0) !important;
-}
-.ma-overlay-color-3 {
-    border:2px solid rgb(80, 50, 0) !important;
-}
-.ma-overlay-color-4 {
-    border:2px solid rgb(120, 50, 0) !important;
-}
-.ma-overlay-color-5 {
-    border:2px solid rgb(50, 50, 120) !important;
-}
-.ma-overlay-color-6 {
-    border:2px solid rgb(50, 50, 90) !important;
-}
-
 .ma-img-container .ma-overlay{
     position:absolute;
     display: flex;
@@ -48,7 +25,7 @@
     background:#212529;
     text-shadow: 0 0 4px #ffffff;
     opacity:0;
-    border:6px solid rgb(0,170,170);
+
     border-radius:50px;
 
     transition:opacity 500ms ease-in-out,
@@ -60,10 +37,15 @@
     border-bottom-color 500ms ease-in-out;
 }
 .ma-img-container:hover .ma-overlay{
-    border:6px solid #3b3b3b;
+    
     border-radius:15px;
-    background-color:#1a1e21;
-    opacity:0.8;
+/*    */
+/*    background: linear-gradient(0deg, rgba(255,255,255,0.0), rgba(256,37,41,0.1), rgba(255,255,255,0.00)),*/
+/*    linear-gradient(90deg, rgba(255,255,255,0.0), rgba(256,37,41,0.1), rgba(255,255,255,0.00))*/
+/*;*/
+/*    */
+    background: radial-gradient(closest-side, #424242, rgba(145, 152, 229, 0));
+    opacity:0.9;
     text-align: justify;
 }
 .ma-underlay {

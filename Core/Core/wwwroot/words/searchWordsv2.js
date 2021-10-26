@@ -248,6 +248,93 @@ function drawGraph(graphData, searchVal) {
     }
 }
 
+
+$('#btnExpandAll').click(function () {
+
+    var data = JSON.parse(JSON.stringify(WordsGeneral.FilteredDataArchive));
+    var newNodes = [];
+    var newLinks = [];
+console.log(data);
+    for (let i = 0; i < data.nodes.length; i++) {
+        var newData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, data.nodes[i].id);
+        for (let j = 0; j < newData.nodes.length; j++) {
+            newNodes.push(newData.nodes[j]);
+        }
+        for (let j = 0; j < newData.links.length; j++) {
+            newLinks.push(newData.links[j]);
+        }
+    }
+    
+    var updatedData = {nodes: newNodes, links: newLinks};
+    var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, updatedData);
+    
+    console.log(combinedData);
+    var svg = d3.select("#searchWordsSvg");
+    svg.selectAll("*").remove();
+    drawGraph(combinedData, "");
+
+    function handleClick(d) {
+
+        searchVal = d.id;
+        d.highlight = true;
+        d.fixed = true;
+
+        var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
+        var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, graphData);
+
+        WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(combinedData));
+
+
+        var newNodes = [];
+        for (let i = 0; i < combinedData.nodes.length; i++) {
+            if (combinedData.nodes[i].new) {
+                newNodes.push(combinedData.nodes[i]);
+            }
+        }
+
+        for (let i = 0; i < combinedData.nodes.length; i++) {
+            if (combinedData.nodes[i].id === searchVal) {
+                combinedData.nodes[i].highlight = true;
+                combinedData.nodes[i].fixed = true;
+            }
+        }
+
+        for (let i = 0; i < WordsGeneral.FilteredDataArchive.nodes.length; i++) {
+            WordsGeneral.FilteredDataArchive.nodes[i].new = false;
+        }
+
+        var svg = d3.select("#searchWordsSvg");
+        svg.selectAll("*").remove();
+
+        var newNodeText = "";
+        for (let i = 0; i < newNodes.length; i++) {
+            if (i === 0) {
+                newNodeText = newNodes[i].id;
+            } else {
+                newNodeText = newNodeText + ", " + newNodes[i].id;
+            }
+        }
+
+        var infoText = "New nodes: " + newNodeText;
+
+        infoTextBoxNew = svg.append("g").append("text")
+            .attr("x", 20)
+            .attr("y", 30)
+            .attr("fill", "white")
+            .style("font-size", "10px")
+            .text(infoText);
+
+        infoTextBoxSelected = svg.append("g").append("text")
+            .attr("x", 20)
+            .attr("y", 20)
+            .attr("fill", "white")
+            .style("font-size", "10px")
+            .text("Selected: '" + searchVal + "'");
+        drawGraph(combinedData, searchVal);
+    }
+
+});
+
 $('#btnSearchWord').click(function () {
     var searchVal = $('#btnSearchInput').val();
     if (searchVal.length < 3) {
@@ -256,8 +343,6 @@ $('#btnSearchWord').click(function () {
 
     var svg = d3.select("#searchWordsSvg");
     svg.selectAll("*").remove();
-
-    var path = "/words/Json/EnglishSowpodsdeepwordchain.json";
 
 
     var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
@@ -284,7 +369,8 @@ d3.timeout(function () {
         console.log(WordsGeneral.DataArchive);
 
         var searchVal = "word";
-        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
+        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);         
+        
         WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(graphData));
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 

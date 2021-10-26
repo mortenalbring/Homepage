@@ -125,9 +125,9 @@
 }
 
 .parallax-words {
-    min-height: 400px;
+    min-height: 800px;
     background-image: url("../../images/words/wordsBackground.PNG") ;
-    background-size:cover;
+    background-size: cover;
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0;

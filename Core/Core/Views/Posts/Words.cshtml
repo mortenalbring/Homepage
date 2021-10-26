@@ -14,7 +14,7 @@
     <script src="/words/wordChainGrid.js"></script>
 
     <script src="/words/barChart.js"></script>
-    
+
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 }
 
@@ -160,8 +160,6 @@
 
         </div>
     </div>
-    
-
 
 
     <div class="row">
@@ -178,23 +176,22 @@
                  json="\en\children\children2.json"
                  jsonfolder="\en\children"
                  jsoncurrent="2"
-                 jsonmax="7"
-            >
+                 jsonmax="7">
             </svg>
             <div class="btn-group">
                 <a class="btn btn-secondary" id="childNextText">Generation 2</a>
                 <a class="btn btn-primary" id="childNext">Go Next</a>
             </div>
-            
+
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-12">
             <p>Looking at most children, grandchildren and great-grandchildren, the winner is <strong>steares</strong>.</p>
             <p>We can keep going for more generations, click the button to cycle through to more generations. Anything above 7 generations, the results are the same. </p>
-            
-            
+
+
         </div>
     </div>
 
@@ -252,11 +249,11 @@
     <div class="row">
         <div class="col-12">
             <svg id="wordChains" width="1000" height="600">
-                
+
             </svg>
         </div>
     </div>
-   
+
 
     <div class="row">
         <div class="col-12">
@@ -265,39 +262,11 @@
             <p>
                 I also implemented a basic search feature so that I could explore if there were any particularly interesting chains or groups. Enter a word into the text box and hit 'Search' to find that word and any connected words. From then, you can click on the circle to then load up any words connected to that.
             </p>
-            <div class="row">
-                <div class="col-12">
-                    <div class="row g-3">
-                        <div class="col-auto">
-                            <input class="form-control" id="btnSearchInput" placeholder="word">
-                        </div>
-                        <div class="col-auto">
-                            <button id="btnSearchWord" class="btn btn-primary mb-3">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            <a asp-controller="Posts" asp-action="WordsSearch">Full screen</a>
 
-            <div class="row">
-                <div class="col-12">
-                    <svg id="searchWordsSvg"
-                         group="1"
-                         maxgroup="9"
-                         width="1050"
-                         height="600"
-                         linkdistance="40"
-                         attractforcestrength="20"
-                         attractforcedistancemin="10"
-                         attractforcedistancemax="30"
-                         repelforcestrength="-45"
-                         repelforcedistancemin="0"
-                         repelforcedistancemax="10"
-                         charge="-9"
-                         json="EnglishSowpodsdeepwordchain.json">
-                    </svg>
+            @Html.Partial("WordSearchPartial")
 
-                </div>
-            </div>
             <br>
         </div>
     </div>

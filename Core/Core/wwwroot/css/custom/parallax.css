@@ -58,6 +58,11 @@
         max-height: 100px;
     }
 
+    .parallax.parallax-words {
+        min-height:10vh !important;
+        max-height: 100px;
+    }
+
 }
 @media (max-width:575px)  {
     .parallax.parallax-menger {
@@ -73,6 +78,11 @@
     }
     .parallax.parallax-about {
         min-height: 10vh !important;
+        max-height: 100px;
+    }
+    
+    .parallax.parallax-words {
+        min-height:10vh !important;
         max-height: 100px;
     }
 
@@ -127,7 +137,7 @@
 .parallax-words {
     min-height: 800px;
     background-image: url("../../images/words/wordsBackground.PNG") ;
-    background-size: cover;
+    background-size:contain;
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0;

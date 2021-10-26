@@ -24,6 +24,11 @@ namespace Core.Controllers
             return View();
         }
 
+        public IActionResult WordsSearch()
+        {
+            return View();
+        }
+
       
         
         public IActionResult FractalChaos()

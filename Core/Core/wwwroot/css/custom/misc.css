@@ -47,8 +47,15 @@
     position:relative;
     border: 1px solid;
     border-top-color: #2a2f34;
-    border-bottom-color: #2a2f34;
-    background: rgba(255, 255, 255, 0.06);
+    /*border-bottom-color: #2a2f34;*/
+    /*background: rgba(255, 255, 255, 0.06);*/
+
+    background: linear-gradient(0deg, rgba(33,37,41,1), rgba(255,255,255,0.06) 40%);
+    
+
+
+
+
 }
 
 .mortface {

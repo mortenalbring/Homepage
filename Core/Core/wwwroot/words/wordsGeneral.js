@@ -53,7 +53,7 @@ WordsGeneral.CombineData = function (graphData, newData) {
 
         }
         if (!exists) {
-            console.log(newData.links[i]);
+//            console.log(newData.links[i]);
             combinedData.links.push(newData.links[i]);
         }
     }

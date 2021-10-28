@@ -232,8 +232,8 @@ d3.timeout(function () {
                 safeLinks.push(graph.links[i]);
             }
             else {
-                console.log("bad link");
-                console.log(graph.links[i]);
+//                console.log("bad link");
+//                console.log(graph.links[i]);
             }
         }
         graph.links = safeLinks;

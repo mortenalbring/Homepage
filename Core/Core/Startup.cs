@@ -53,6 +53,18 @@ namespace Core
                 });
             
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder);
+            
+            // if (env.IsDevelopment())
+            // {
+            //     services.AddWebOptimizer(minifyJavaScript:false,minifyCss:false);
+            // }
+            
+            // services.AddWebOptimizer();
+            //
+            services.AddWebOptimizer(pipeline =>
+            {
+                pipeline.AddCssBundle("/css/bundle.css", "css/custom/*.css");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +80,9 @@ namespace Core
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseHttpsRedirection();
+            app.UseWebOptimizer();
+            
             app.UseRequestLocalization();
             
             app.UseStaticFiles();

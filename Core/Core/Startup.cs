@@ -11,14 +11,18 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IHostingEnvironment = Microsoft.Extensions.Hosting.IHostingEnvironment;
+
 
 namespace Core
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public bool IsTesting { get; }
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            IsTesting = env.IsDevelopment();
         }
 
         public IConfiguration Configuration { get; }
@@ -54,17 +58,19 @@ namespace Core
             
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder);
             
-            // if (env.IsDevelopment())
-            // {
-            //     services.AddWebOptimizer(minifyJavaScript:false,minifyCss:false);
-            // }
-            
-            // services.AddWebOptimizer();
-            //
-            services.AddWebOptimizer(pipeline =>
+            if (IsTesting)
             {
-                pipeline.AddCssBundle("/css/bundle.css", "css/custom/*.css");
-            });
+                services.AddWebOptimizer(minifyJavaScript:false,minifyCss:false);
+            }
+            else
+            {
+                services.AddWebOptimizer(pipeline =>
+                {
+                    pipeline.AddCssBundle("/css/bundle.css", "css/custom/*.css");
+                });
+            }
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

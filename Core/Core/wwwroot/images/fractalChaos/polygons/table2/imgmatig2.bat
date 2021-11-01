@@ -1,1 +1,0 @@
-FOR %%a in (*.png) DO "C:\Program Files\ImageMagick-7.1.0-Q16-HDRI\magick.exe" convert %%a -trim %%a

@@ -45,7 +45,11 @@
 }
 .ma-particles {
     position:relative;
+<<<<<<< Updated upstream
+    border: 1px solid;
     border-top-color: rgb(46,50,54);
+=======
+>>>>>>> Stashed changes
     /*border-bottom-color: #2a2f34;*/
     /*background: rgba(255, 255, 255, 0.06);*/
 

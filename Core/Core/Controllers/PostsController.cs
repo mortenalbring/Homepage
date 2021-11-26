@@ -21,6 +21,7 @@ namespace Core.Controllers
 
         public IActionResult Words()
         {
+            ViewData["NavbarCustomStyle"] = "ma-grey-gradient";
             return View("Words/Words");
         }
 

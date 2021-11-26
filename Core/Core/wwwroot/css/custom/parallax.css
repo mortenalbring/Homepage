@@ -142,6 +142,13 @@
     padding-bottom: 0;
     margin-bottom: 0;
 }
+.parallax-words .parallax-title {
+    display: block;
+    width:100%;
+    margin-left:0;
+    left:0;
+    background: linear-gradient(0deg, rgba(33,37,41,1) 0%, rgba(45,45,45,0) 100%);
+}
 
 
 .lingrad {

@@ -42,4 +42,10 @@
     <data name="Menger" xml:space="preserve">
         <value>Menger Svampe</value>
     </data>
+    <data name="WordsTextLong" xml:space="preserve">
+        <value>En kort undersøkelse av ord innenfor ord</value>
+    </data>
+    <data name="WordsTextShort" xml:space="preserve">
+        <value>En kort undersøkelse av ord innenfor ord</value>
+    </data>
 </root>

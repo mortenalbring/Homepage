@@ -275,5 +275,32 @@ namespace Core.Resources.Views.Home {
                 return ResourceManager.GetString("TSUCSTextShort", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Words within Words.
+        /// </summary>
+        public static string Words {
+            get {
+                return ResourceManager.GetString("Words", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A brief look at words contained within other words and interesting word chains.
+        /// </summary>
+        public static string WordsTextLong {
+            get {
+                return ResourceManager.GetString("WordsTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A brief look at words contained within other words.
+        /// </summary>
+        public static string WordsTextShort {
+            get {
+                return ResourceManager.GetString("WordsTextShort", resourceCulture);
+            }
+        }
     }
 }

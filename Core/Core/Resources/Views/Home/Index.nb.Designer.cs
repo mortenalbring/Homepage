@@ -131,5 +131,23 @@ namespace Core.Resources.Views.Home {
                 return ResourceManager.GetString("test", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to En kort undersøkelse av ord innenfor ord.
+        /// </summary>
+        public static string WordsTextLong {
+            get {
+                return ResourceManager.GetString("WordsTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to En kort undersøkelse av ord innenfor ord.
+        /// </summary>
+        public static string WordsTextShort {
+            get {
+                return ResourceManager.GetString("WordsTextShort", resourceCulture);
+            }
+        }
     }
 }

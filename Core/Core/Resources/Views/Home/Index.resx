@@ -90,4 +90,13 @@
     <data name="ComputationsTextLong" xml:space="preserve">
         <value>Thermodynamics, Computation and Irreversibility</value>
     </data>
+    <data name="Words" xml:space="preserve">
+        <value>Words within Words</value>
+    </data>
+    <data name="WordsTextShort" xml:space="preserve">
+        <value>A brief look at words contained within other words</value>
+    </data>
+    <data name="WordsTextLong" xml:space="preserve">
+        <value>A brief look at words contained within other words and interesting word chains</value>
+    </data>
 </root>

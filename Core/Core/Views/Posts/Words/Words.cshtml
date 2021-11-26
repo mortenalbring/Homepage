@@ -262,16 +262,17 @@
             <p>
                 I also implemented a basic search feature so that I could explore if there were any particularly interesting chains or groups. Enter a word into the text box and hit 'Search' to find that word and any connected words. From then, you can click on the circle to then load up any words connected to that.
             </p>
-            
-            <a asp-controller="Posts" asp-action="WordsSearch">Full screen</a>
+
 
             @Html.Partial("Words/WordsSearchControl")
-            
-            
-            <div style="min-height: 200px">
-                
-            
-            @Html.Partial("Words/WordSearchPartial")
+
+
+            <div style="min-height: 300px">
+
+
+                @Html.Partial("Words/WordSearchPartial")
+
+                <a asp-controller="Posts" asp-action="WordsSearch" class="btn btn-primary">Full screen</a>
             </div>
 
             <br>

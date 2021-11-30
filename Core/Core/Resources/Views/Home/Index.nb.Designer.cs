@@ -133,6 +133,15 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ord innenfor Ord.
+        /// </summary>
+        public static string Words {
+            get {
+                return ResourceManager.GetString("Words", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to En kort undersøkelse av ord innenfor ord.
         /// </summary>
         public static string WordsTextLong {

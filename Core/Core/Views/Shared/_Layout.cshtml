@@ -73,25 +73,25 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About
+                            @Localizer["About"]
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="About">About me</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About">@Localizer["About Me"]</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Education">Education</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Education">@Localizer["Education"]</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Employment">Employment</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="About" asp-fragment="Employment">@Localizer["Employment"]</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">@Localizer["Contact"]</a>
                     </li>
 
                 </ul>

@@ -21,4 +21,19 @@
     <data name="Home" xml:space="preserve">
         <value>Hjem</value>
     </data>
+    <data name="About" xml:space="preserve">
+        <value>Om meg</value>
+    </data>
+    <data name="About Me" xml:space="preserve">
+        <value>Om meg</value>
+    </data>
+    <data name="Education" xml:space="preserve">
+        <value>Utdanning</value>
+    </data>
+    <data name="Employment" xml:space="preserve">
+        <value>Arbeid</value>
+    </data>
+    <data name="Contact" xml:space="preserve">
+        <value>Kontakt</value>
+    </data>
 </root>

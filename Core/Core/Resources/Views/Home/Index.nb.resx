@@ -48,4 +48,7 @@
     <data name="WordsTextShort" xml:space="preserve">
         <value>En kort undersøkelse av ord innenfor ord</value>
     </data>
+    <data name="Words" xml:space="preserve">
+        <value>Ord innenfor Ord</value>
+    </data>
 </root>

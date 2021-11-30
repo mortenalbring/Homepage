@@ -61,6 +61,51 @@ namespace Core.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Om meg.
+        /// </summary>
+        internal static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Om meg.
+        /// </summary>
+        internal static string About_Me {
+            get {
+                return ResourceManager.GetString("About Me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontakt.
+        /// </summary>
+        internal static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Utdanning.
+        /// </summary>
+        internal static string Education {
+            get {
+                return ResourceManager.GetString("Education", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arbeid.
+        /// </summary>
+        internal static string Employment {
+            get {
+                return ResourceManager.GetString("Employment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hjem.
         /// </summary>
         internal static string Home {

@@ -27,7 +27,7 @@
 </head>
 <body class="bg-dark">
 <header>
-    <nav class="navbar navbar-ma navbar-expand-lg @ViewData["NavbarCustomStyle"] navbar-dark">
+    <nav class="navbar @ViewData["NavbarCustomStyle"] navbar-ma navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                 @await Html.PartialAsync("_SelectLanguagePartial")

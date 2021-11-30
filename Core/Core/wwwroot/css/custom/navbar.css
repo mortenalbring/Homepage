@@ -14,6 +14,9 @@
 }
 
 .navbar-ma {
+
+}
+.navbar-ma-home {
     margin-bottom: 0 !important;
     border-bottom: 0;
     border-top: 0;
@@ -39,4 +42,13 @@
 
 .ma-grey-gradient {
     background: linear-gradient(180deg, rgba(45,45,45,1) 0%, rgba(45,45,45,0) 100%);
+}
+
+.ma-navbar-trans {
+    background: rgba(0,0,0,0.0) !important;
+    /*background: rgba(255,209,204,0) !important;*/
+}
+
+.ma-navbar-trans > .nav-item {
+    background: red;
 }

@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 
 @{
-    ViewData.Add("NavbarCustomStyle","navbar-ma-trans");
+    // ViewData.Add("NavbarCustomStyle","navbar-ma-trans");
     ViewBag.Title = "Lorenz Attractor";
 @inject IViewLocalizer Localizer
     }
@@ -12,12 +12,21 @@
 
 }
 
+@section Date {
+    <div class="container">
+        <div class="datePosted">
+            Date posted <span id="dateval">2015-09-13</span> <span id="datevalnice"></span> <span id="datevalago"></span>
+        </div>
+    </div>
+}
+
 
 @section Jumbo {
     <div class="parallax parallax-lorenz">
+        <div class="lingrad-gg"></div>
         <div class="parallax-title">
             <span>
-                POV-Ray rendering of Lorenz attractor
+                Lorenz Attractor
             </span>
         </div>
     </div>
@@ -219,7 +228,7 @@ sky_sphere {
 <p>By rendering enough frames, we can produce a smooth animation building up the Lorenz attractor. The animation below is produced by 5000 frames, rendered over 3 days or so.</p>
 
 <div class="embed-responsive embed-responsive-16by9">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/SBTiyolNGfw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="100%" height="515" src="https://www.youtube.com/embed/SBTiyolNGfw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <br/>

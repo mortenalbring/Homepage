@@ -5,8 +5,8 @@
 @section Scripts
 {
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
 }
@@ -16,50 +16,79 @@
         <div class="lingrad-gg">
         </div>
         <div class="parallax-title">
-                        <span>
-                            Three-Scroll Unified Chaotic System
-                        </span>
+            <span>
+                Three-Scroll Unified Chaotic System
+            </span>
 
         </div>
     </div>
-          
+
 }
+
+@section Date {
+    <div class="container">
+        <div class="datePosted">
+            Date posted <span id="dateval">2015-06-06</span> <span id="datevalnice"></span> <span id="datevalago"></span>
+        </div>
+    </div>
+}
+
 
 @section Content
 {
-<div class="container text-light">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <p>
-                The Three-Scroll Unified Chaotic System (TSUCS) was introduced by Lin Pan, Wuneng Zhou, Jian’an Fang and Dequan Li in <a href="http://www.internonlinearscience.org/upload/papers/20110618025420887.pdf">a paper submitted to the International Journal of Nonlinear Science</a> in 2010. The TSUCS contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.
-            </p>
+    <div class="container text-light">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <p>
+                    The Three-Scroll Unified Chaotic System (TSUCS) was introduced by Lin Pan, Wuneng Zhou, Jian’an Fang and Dequan Li in <a href="http://www.internonlinearscience.org/upload/papers/20110618025420887.pdf">a paper submitted to the International Journal of Nonlinear Science</a> in 2010. The TSUCS contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.
+                </p>
 
-            <p>
-                \begin{align}
-                \frac{dx}{dt} & = \textrm{a} (y - x) + \textrm{d} x y \\
-                \frac{dy}{dt} & = \textrm{c}x - xy + \textrm{f}y \\
-                \frac{dz}{dt} & = \textrm{b}z + yx - \textrm{e}x^2 \\
-                \end{align}
-            </p>
+                <p>
+                    \begin{align}
+                    \frac{dx}{dt} & = \textrm{a} (y - x) + \textrm{d} x y \\
+                    \frac{dy}{dt} & = \textrm{c}x - xy + \textrm{f}y \\
+                    \frac{dz}{dt} & = \textrm{b}z + yx - \textrm{e}x^2 \\
+                    \end{align}
+                </p>
 
-            where I use the parameters
-            <p>
-                \begin{align}
-                \textrm{a} & = 40 \\
-                \textrm{b} & = 1.833 \\
-                \textrm{c} & = 55 \\
-                \textrm{d} & = 0.16 \\
-                \textrm{e} & = 0.65 \\
-                \textrm{f} & = 20
-                \end{align}
+                where I use the parameters
+                <p>
+                    \begin{align}
+                    \textrm{a} & = 40 \\
+                    \textrm{b} & = 1.833 \\
+                    \textrm{c} & = 55 \\
+                    \textrm{d} & = 0.16 \\
+                    \textrm{e} & = 0.65 \\
+                    \textrm{f} & = 20
+                    \end{align}
 
-            </p>
+                </p>
 
-            <p>
-                The POV-Ray macro for rendering this attractor is:
-            </p>
-            <pre class="text-light">
-//Draws a Three-Scroll Unified Chaotic System 
+                <p>
+                    This attractor is quite beautiful as it starts off initially creating a corkscrew structure.
+                </p>
+
+                <a href="/images/tsucs/tsucs0073.png">
+                    <img src="/images/tsucs/tsucs0073_sm.png"/>
+                </a>
+
+                <p>
+                    As it continues, it creates a spherical structure around it while retracing the previous structure.
+                </p>
+
+                <a href="/images/tsucs/tsucs_full.png">
+                    <img src="/images/tsucs/tsucs_full_sm.png"/>
+                </a>
+
+                <br/>
+
+                <p>
+                    The POV-Ray macro for rendering this attractor is:
+                </p>
+
+
+                <code>
+                    <pre>
 #macro TSUCS(a, b, c, d, e, f, dT, Iter, x0, y0, z0, R) 
     #local Count=0;
 	#while (Count&lt;Iter)        
@@ -104,19 +133,20 @@
 	#end
 #end
 </pre>
-            <p>
-                This renders a series of spheres according to the differential equations.
-                This also renders a red trace for the most recent points.
-            </p>
+                </code>
+                <p>
+                    This renders a series of spheres according to the differential equations.
+                    This also renders a red trace for the most recent points.
+                </p>
 
-            <p>To run this macro we use, where the 'clock' variable controls the animation</p>
-            <pre class="text-light">
-                TSUCS(40, 1.833, 55, 0.16,0.65,20,0.00002, 1000000*clock, 0.0001, 0.0001, 0.0001, 1)
-</pre>
-            <p>We also add a skysphere and checkered floor to make the scene look nice </p>
+                <p>To run this macro we use, where the 'clock' variable controls the animation</p>
+                <code><pre>
+TSUCS(40, 1.833, 55, 0.16,0.65,20,0.00002, 1000000*clock, 0.0001, 0.0001, 0.0001, 1)
+</pre></code>
+                <p>We can also add a skysphere and checkered floor to make the scene look nice </p>
 
-            <pre class="text-light">
-    
+                <code>
+                    <pre>
 light_source {
   0*x
   color rgb 1.0
@@ -159,18 +189,22 @@ sky_sphere {
 		}
 	} 
 
-</pre>
-            <a href="~/Content/images/tsucs/tsucs3407.png">
-                <img src="~/Content/images/tsucs/tsucs3407_sm.png"/>
-            </a>
+</pre></code>
+                
+                <a href="/images/tsucs/tsucs3407.png">
+                    <img src="/images/tsucs/tsucs34072_sm.png"/>
+                </a>
+                <br/>
+                <br/>
 
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ev8ALZkZGgI" frameborder="0" allowfullscreen></iframe>
+                <p>See below for a video of the render of this attractor building up</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ev8ALZkZGgI" frameborder="0" allowfullscreen></iframe>
 
-            <p>
-                <a class="btn btn-default" href="https://github.com/mortenalbring/ThreeScrollUnifiedChaoticSystem">You can view the full code for this render on GitHub.</a>
-            </p>
+                <p>
+                    <a class="btn btn-default" href="https://github.com/mortenalbring/ThreeScrollUnifiedChaoticSystem">You can view the full code for this render on GitHub.</a>
+                </p>
+            </div>
         </div>
     </div>
-</div>    
 }

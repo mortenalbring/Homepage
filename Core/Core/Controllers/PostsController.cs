@@ -19,6 +19,11 @@ namespace Core.Controllers
         }
 
 
+        public IActionResult CssReflect()
+        {
+            return View("CssReflect");
+        }
+
         public IActionResult Words()
         {
             return View("Words/Words");

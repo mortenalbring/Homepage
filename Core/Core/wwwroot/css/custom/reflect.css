@@ -1,5 +1,5 @@
 ﻿.reflect-button-1 {
-    cursor:pointer;
+    cursor: pointer;
     font-size: 3rem;
     display: inline-block;
     color: #fd4444;
@@ -10,9 +10,9 @@
 }
 
 .reflect-button-2 {
-    
+
     text-shadow: 0 0 0.5em #fd4444;
-    
+
 }
 
 .reflect-button-3 {
@@ -26,9 +26,10 @@
 
     text-shadow: 0 0 0.125em rgba(246, 73, 73, 0.66),
     0 0 0.5em #fd4444;
-    
+
     box-shadow: 0 0 0.5em 0 #fd4444;
 }
+
 .reflect-button-5 {
     text-shadow: 0 0 0.125em rgba(246, 73, 73, 0.66),
     0 0 0.5em #fd4444;
@@ -38,49 +39,50 @@
 
 .reflect-button-6 {
     margin-bottom: 0.5em;
-    position:relative;
+    position: relative;
 }
 
 .reflect-button-6::before {
     content: '';
-    position:absolute;
+    position: absolute;
     background: blue;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .reflect-button-7 {
     margin-bottom: 2.5em;
-    position:relative;
+    position: relative;
 }
+
 .reflect-button-8 {
     margin-bottom: 2.5em;
-    position:relative;
+    position: relative;
 }
 
 
 .reflect-button-7::before {
     content: '';
-    position:absolute;
+    position: absolute;
     background: #fd4444;
-    top:120%;
-    left:0;
-    width:100%;
-    height:100%;
-    
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
     transform: perspective(1.5em) rotateX(42deg) translateZ(0.6em) scale(1, 0.2);
 }
 
 .reflect-button-8::before {
     content: '';
-    position:absolute;
+    position: absolute;
     background: #fd4444;
-    top:120%;
-    left:0;
-    width:100%;
-    height:100%;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
     transform: perspective(1.5em) rotateX(42deg) translateZ(0.6em) scale(1, 0.2);
     filter: blur(1em);
@@ -88,25 +90,25 @@
 }
 
 .reflect-button-9 {
-    position:relative;
-}
-.reflect-button-9::before {
-    content: attr(data-text);
-    
-    position:absolute;
-    
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    transform-origin:bottom;
-    transform: perspective(1.2em) rotateX(180deg) translateZ(-0.5em) scale(1,0.4);
-    line-height:0.865em;
-    -webkit-background-clip: text;
-    filter:blur(0.05em);
-    
+    position: relative;
 }
 
+.reflect-button-9::before {
+    content: attr(data-text);
+
+    position: absolute;
+    text-shadow: 0 0 50px #fd4444;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom;
+    transform: perspective(1.2em) rotateX(180deg) translateZ(-0.5em) scale(1, 0.4);
+    line-height: 0.865em;
+    -webkit-background-clip: text;
+    filter: blur(0.05em);
+
+}
 
 
 .reflect-box-1 {

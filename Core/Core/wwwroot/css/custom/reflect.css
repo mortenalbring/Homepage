@@ -103,11 +103,40 @@
     width: 100%;
     height: 100%;
     transform-origin: bottom;
-    transform: perspective(1.2em) rotateX(180deg) translateZ(-0.5em) scale(1, 0.4);
+    transform: perspective(1.5em) rotateX(180deg) translateZ(-0.8em) scale(1, 0.2);
     line-height: 0.865em;
     -webkit-background-clip: text;
     filter: blur(0.05em);
 
+}
+
+
+.reflect-button-container {
+    cursor: pointer;
+    font-size: 3rem;
+    display: inline-block;
+    color: #fd4444;
+    
+    
+    padding: 0.2em 1.1em;
+    margin: 0.3em 0.2em 0.1em;
+    
+    position:relative;
+}
+
+.reflect-button-container::before {
+    content: '';
+    position: absolute;
+    background: #fd4444;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+    transform: perspective(1em) rotateX(49deg) translateZ(0.1em) scale(1, 0.3);
+    filter: blur(1em);
+    z-index: -1;
 }
 
 

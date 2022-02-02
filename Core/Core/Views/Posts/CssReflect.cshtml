@@ -19,31 +19,31 @@
 
     <div class="container text-light">
 
-        <div class="row">
-            <div class="col">
-                <p>I've been interested in the reflections (or appearances of reflections) in pure CSS. In this post, I'll go through my steps in playing round with creating DOM elements that appear to have reflections.</p>
-                <p>
-                    Let's start with just a button
-                </p>
+    <div class="row">
+        <div class="col">
+            <p>I've been interested in the reflections (or appearances of reflections) in pure CSS. In this post, I'll go through my steps in playing round with creating DOM elements that appear to have reflections.</p>
+            <p>
+                Let's start with just a button
+            </p>
 
-            </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col text-center">
+    <div class="row">
+        <div class="col text-center">
 
-                <pre>
+            <pre>
 <code class="language-markup">
 &lt;div class="reflect-button">Button&lt;/div>
 </code>
 </pre>
 
-                <div class="reflect-button-1">Button</div>
+            <div class="reflect-button-1">Button</div>
 
-            </div>
-            <div class="col">
+        </div>
+        <div class="col">
 
-                <pre>
+            <pre>
 <code class="language-css">
 .reflect-button {
     cursor: pointer;
@@ -58,41 +58,41 @@
 }
 </code>
 </pre>
-            </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col">
-                <p>I've added some padding, border and border-radius to give this div the basic appearance of a button. The <code class="language-css">display: inline-block</code> allows elements to lay inline, but also have margin and padding, which is perfect for buttons. </p>
-                <p>Using <code class="language-css">em</code> for the padding allows us to change the <code class="language-css">font-size:</code> and the padding adjusts with it. </p>
-                <p>
-                    Now we can add a glowing effect to the text and button.
-                </p>
-            </div>
+    <div class="row">
+        <div class="col">
+            <p>I've added some padding, border and border-radius to give this div the basic appearance of a button. The <code class="language-css">display: inline-block</code> allows elements to lay inline, but also have margin and padding, which is perfect for buttons. </p>
+            <p>Using <code class="language-css">em</code> for the padding allows us to change the <code class="language-css">font-size:</code> and the padding adjusts with it. </p>
+            <p>
+                Now we can add a glowing effect to the text and button.
+            </p>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col text-center">
-                <div class="reflect-button-1 reflect-button-2">Button</div>
-                <br/>
-                <small>One text-shadow</small>
-                <br/>
-                <div class="reflect-button-1 reflect-button-3">Button</div>
-                <br/>
-                <small>Two text-shadows</small>
-                <br/>
-                <div class="reflect-button-1 reflect-button-4">Button</div>
-                <br/>
-                <small>Text shadows and outer box-shadow</small>
-                <br/>
-                <div class="reflect-button-1 reflect-button-5">Button</div>
-                <br/>
-                <small>Text shadows and box-shadows</small>
-                <br/>
+    <div class="row">
+        <div class="col text-center">
+            <div class="reflect-button-1 reflect-button-2">Button</div>
+            <br/>
+            <small>One text-shadow</small>
+            <br/>
+            <div class="reflect-button-1 reflect-button-3">Button</div>
+            <br/>
+            <small>Two text-shadows</small>
+            <br/>
+            <div class="reflect-button-1 reflect-button-4">Button</div>
+            <br/>
+            <small>Text shadows and outer box-shadow</small>
+            <br/>
+            <div class="reflect-button-1 reflect-button-5">Button</div>
+            <br/>
+            <small>Text shadows and box-shadows</small>
+            <br/>
 
-            </div>
-            <div class="col">
-                <pre>
+        </div>
+        <div class="col">
+            <pre>
 <code class="language-css">
 .reflect-button {
     font-size: 3rem;
@@ -112,28 +112,29 @@
 
 </code>
 </pre>
-            </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <p>I've added two <code class="language-css">text-shadow: </code> to the text. The first one gives the text itself a glow around it, and the second brightens text itself, giving the appearance that it is lit from the back. </p>
-                <p>I've also added two <code class="language-css">box-shadow: </code> tags to the div. One of them gives a glow around the div, and the second one has the <code class="language-css">inset</code> keyword which adds the shadow inside of the element. That makes it appear to glow all around. </p>
-                <p>Now we can adding the components for the reflection</p>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>I've added two <code class="language-css">text-shadow: </code> to the text. The first one gives the text itself a glow around it, and the second brightens text itself, giving the appearance that it is lit from the back. </p>
+            <p>I've also added two <code class="language-css">box-shadow: </code> tags to the div. One of them gives a glow around the div, and the second one has the <code class="language-css">inset</code> keyword which adds the shadow inside of the element. That makes it appear to glow all around. </p>
+            <p>Now we can adding the components for the reflection</p>
         </div>
-        
-        <div class="row">
-            <div class="col text-center">
-                <div class="reflect-button-1 reflect-button-5 reflect-button-6">Button</div>
-                <br/>
-                <p style="text-align: left">This involves <a href="https://www.w3schools.com/css/css_pseudo_elements.asp">CSS pseudo-elements</a>, to insert something before the element.
-                    Whenever using pseudo-elements, you need to have a content property. In this case, I just want the content to be blank. I've added <code class="language-css">position: absolute</code> to the pseudo-element just to make positioning a bit easier, and then also added <code class="language-css">position: relative</code> to the <code class="language-css">.reflect-button</code> itself.
-                    Just for demonstration purposes I have made this element just a blue box that fills the container. 
-                    </p>
-            </div>
-            
-            <div class="col">
-                <pre>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <div class="reflect-button-1 reflect-button-5 reflect-button-6">Button</div>
+            <br/>
+            <p style="text-align: left">
+                This involves <a href="https://www.w3schools.com/css/css_pseudo_elements.asp">CSS pseudo-elements</a>, to insert something before the element.
+                Whenever using pseudo-elements, you need to have a content property. In this case, I just want the content to be blank. I've added <code class="language-css">position: absolute</code> to the pseudo-element just to make positioning a bit easier, and then also added <code class="language-css">position: relative</code> to the <code class="language-css">.reflect-button</code> itself.
+                Just for demonstration purposes I have made this element just a blue box that fills the container.
+            </p>
+        </div>
+
+        <div class="col">
+            <pre>
 <code class="language-css">
 .reflect-button {
 ...
@@ -151,24 +152,24 @@
 }
 </code>
 
-</pre>                
-            </div>
+</pre>
         </div>
-        
-        <div class="row">
-            <div class="col">
-                <p>Now we can apply some transforms to this pseudo-element. </p>
-            </div>
-        </div>
+    </div>
 
-        <div class="row">
-            <div class="col text-center">
-                <div class="reflect-button-1 reflect-button-5 reflect-button-7">Button</div>
-                <br/>
-                
-            </div>
-            <div class="col">
-                <pre>
+    <div class="row">
+        <div class="col">
+            <p>Now we can apply some transforms to this pseudo-element. </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <div class="reflect-button-1 reflect-button-5 reflect-button-7">Button</div>
+            <br/>
+
+        </div>
+        <div class="col">
+            <pre>
 <code class="language-css">
 .reflect-button::before {
     content: '';
@@ -188,36 +189,192 @@
 }
 </code>
 </pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p>This uses the perspective transform. The perspective transform has to be declared first, before any of the other transforms. The <code class="language-css">rotateX()</code> transform rotates that element, and the <code class="language-css>">perspective()</code> transform tells it the axis about which to rotate. I then use <code class="language-css">translateZ()</code> just to move it up slightly and then <code class="language-css">scale()</code> in order to just make it slightly smaller, while preserving the angles. </p>
+            <p>Then the final piece is just to add the <code class="language-css">blur()</code> filter: </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <div class="reflect-button-1 reflect-button-5 reflect-button-8">Button</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p>Looks good, it gives the appearance of light reflecting off a surface. But what about the text? Well, that gets a bit trickier, and requires some slight bodging.. </p>
+            <p>We'll have to change the markup to have a parent container, and then also add a <code class="language-css">data-text</code> property to the child container. </p>
+            <pre>
+<code class="language-markup">&lt;div class="reflect-button-container">
+    &lt;div class="reflect-button" data-text="Button">Button&lt;/div>
+&lt;/div></code>
+</pre>
+            <p>This <code class="language-css">data-text</code> property is something we can grab in CSS. I wasn't able to grab the actual div content text in pure CSS, but data properties can be accessed. </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="reflect-button-container-1">
+                <div class="reflect-button-text-1" data-text="Button">Button</div>
+            </div>
+            <p>Using another pseudoelement, we can duplicate the text using <code class="language-css">content: attr(data-text</code>.</p>
+        </div>
+        <div class="col">
+            <pre><code class="language-css">
+.reflect-button-text {
+    position:relative;
+}
+.reflect-button-text::before {
+    content: attr(data-text);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+}
+</code>
+</pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p>Now we need to rotate this text, similarly to how to we did for the box. However, we want to transform from the bottom.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="reflect-button-container-1">
+                <div class="reflect-button-text-2" data-text="Button">Button</div>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col">
-                <p>This uses the perspective transform. The perspective transform has to be declared first, before any of the other transforms. The <code class="language-css">rotateX()</code> transform rotates that element, and the <code class="language-css>">perspective()</code> transform tells it the axis about which to rotate. I then use <code class="language-css">translateZ()</code> just to move it up slightly and then <code class="language-css">scale()</code> in order to just make it slightly smaller, while preserving the angles. </p>
-                <p>Then the final piece is just to add the <code class="language-css">blur()</code> filter: </p>
+
+        <div class="col">
+            <pre><code class="language-css">
+.reflect-button-text::before {
+    content: attr(data-text);
+    position: absolute;
+    color:white;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom;
+    transform: perspective(1.5em) rotateX(180deg) translateZ(-0.8em) scale(1, 0.2);
+    line-height: 0.865em;
+}
+</code></pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                I've also reduced the <code class="language-css">top:</code> property, because it affects the <code class="language-css">translateZ()</code> transform. Fiddling with the <code class="language-css">perspective()</code> and <code class="language-css">scale()</code> properties produces some fun results too.
+                We can now bring back all the properties we added for the border and reflect box we did before also. This is why I added a container div element, so that I could address a <code class="language-css">::before</code> element on that too.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <div class="reflect-button-container-3">
+                <div class="reflect-button-text-3" data-text="Button">Button</div>
             </div>
         </div>
-        <div class="row">
-            <div class="col text-center">
-                <div class="reflect-button-1 reflect-button-5 reflect-button-8">Button</div>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>The complete CSS for this effect</p>
         </div>
-        
-        <div class="row">
-            <div class="col text-center">
-                
-                <div class="reflect-button-container">
-                <div class="reflect-button-1 reflect-button-5  reflect-button-9" data-text="Button">Button</div>    
-                </div>
-                
-                @* <div class="reflect-button-1 reflect-button-5  reflect-button-9 reflect-button-8" data-text="Button">Button</div> *@
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <pre><code class="language-css">
+.reflect-button-container {
+    position:relative;
+    cursor: pointer;
+    font-size: 3rem;
+    display: inline-block;
+    color: #fd4444;
+    padding: 0.2em 1.1em;
+    margin: 0.3em 0.2em 1.5em;
+}
+
+.reflect-button-container::before {
+    content: '';
+    position: absolute;
+    background: #fd4444;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(49deg) 
+        translateZ(0.1em) scale(1, 0.2);
+    filter: blur(1em);
+    z-index: -1;
+}
+
+</code></pre>
         </div>
+        <div class="col-6">
+            <pre><code class="language-css">
+.reflect-button-text {
+    position:relative;
+    cursor: pointer;
+    font-size: 3rem;
+    display: inline-block;
+    color: #fd4444;
+    border: #fd4444 0.125em solid;
+    border-radius: 0.2em;
+    padding: 0.2em 1.1em;
+    margin: 0.3em 0.2em 0.1em;
+    text-shadow: 0 0 0.125em rgba(246, 73, 73, 0.66), 
+        0 0 0.5em #fd4444;
+    box-shadow: inset 0 0 0.5em 0 #fd4444, 
+        0 0 0.5em 0 #fd4444;
+}
+
+.reflect-button-text::before {
+    content: attr(data-text);
+    color: rgba(0, 0, 0, 0.27);
+    position: absolute;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom;
+    transform: perspective(1.5em) rotateX(180deg) 
+        translateZ(-0.9em) scale(1, 0.2);
+    line-height: 0.865em;
+    -webkit-background-clip: text;
+    filter: blur(0.02em);
+}
+</code></pre>            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+
+            <div class="reflect-button-container">
+                <div class="reflect-button-1 reflect-button-5  reflect-button-9" data-text="Button">Button</div>
+            </div>
+
+            @* <div class="reflect-button-1 reflect-button-5  reflect-button-9 reflect-button-8" data-text="Button">Button</div> *@
+        </div>
+    </div>
     </div>
 
 
     <img class="reflect-box-1" src="/images/home/mortcoverface.png"/>
 
 
-    
 }

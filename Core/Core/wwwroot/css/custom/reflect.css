@@ -254,9 +254,7 @@
     
     font-size: 3rem;
     font-weight: 700;
-    /*-webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));*/
-    /*-webkit-box-reflect: below 10px;*/
-    /*mix-blend-mode: overlay;*/
+    -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));
     background: element(#wkreflect);
 }
 

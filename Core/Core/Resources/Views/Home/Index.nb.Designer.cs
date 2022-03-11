@@ -61,6 +61,33 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CSS Refleksjoner.
+        /// </summary>
+        public static string CssReflect {
+            get {
+                return ResourceManager.GetString("CssReflect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Noen måter å lage refleksjonsligende effekter med bare CSS.
+        /// </summary>
+        public static string CssReflectTextLong {
+            get {
+                return ResourceManager.GetString("CssReflectTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refleskjoner i CSS.
+        /// </summary>
+        public static string CssReflectTextShort {
+            get {
+                return ResourceManager.GetString("CssReflectTextShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fraktalkaos.
         /// </summary>
         public static string FractalChaos {

@@ -51,4 +51,13 @@
     <data name="Words" xml:space="preserve">
         <value>Ord innenfor Ord</value>
     </data>
+    <data name="CssReflect" xml:space="preserve">
+        <value>CSS Refleksjoner</value>
+    </data>
+    <data name="CssReflectTextLong" xml:space="preserve">
+        <value>Noen måter å lage refleksjonsligende effekter med bare CSS</value>
+    </data>
+    <data name="CssReflectTextShort" xml:space="preserve">
+        <value>Refleskjoner i CSS</value>
+    </data>
 </root>

@@ -106,6 +106,33 @@ namespace Core.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CSS Reflections.
+        /// </summary>
+        public static string CssReflect {
+            get {
+                return ResourceManager.GetString("CssReflect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A few ways of making neat reflection and reflection-like styles in pure CSS.
+        /// </summary>
+        public static string CssReflectTextLong {
+            get {
+                return ResourceManager.GetString("CssReflectTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Making reflections in pure CSS.
+        /// </summary>
+        public static string CssReflectTextShort {
+            get {
+                return ResourceManager.GetString("CssReflectTextShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fractal Chaos.
         /// </summary>
         public static string FractalChaos {

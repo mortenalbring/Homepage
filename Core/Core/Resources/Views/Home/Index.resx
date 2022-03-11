@@ -99,4 +99,13 @@
     <data name="WordsTextLong" xml:space="preserve">
         <value>A brief look at words contained within other words and interesting word chains</value>
     </data>
+    <data name="CssReflect" xml:space="preserve">
+        <value>CSS Reflections</value>
+    </data>
+    <data name="CssReflectTextLong" xml:space="preserve">
+        <value>A few ways of making neat reflection and reflection-like styles in pure CSS</value>
+    </data>
+    <data name="CssReflectTextShort" xml:space="preserve">
+        <value>Making reflections in pure CSS</value>
+    </data>
 </root>

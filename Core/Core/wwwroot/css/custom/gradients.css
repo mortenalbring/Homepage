@@ -1,0 +1,104 @@
+﻿body {
+    background: #111213;
+}
+
+
+section {
+    aspect-ratio: 1;
+    width: 80dvmin;
+    margin: 5rem auto;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 1);
+}
+
+section.one {
+    background-image: linear-gradient(
+            transparent 50%,
+            hsl(231, 53%, 75%, 0.5) 50%
+    ),
+    linear-gradient(90deg, rgb(87, 113, 50) 50%, rgb(129, 21, 21) 50%);
+    background-size: 4rem 4rem;
+}
+
+section.norway {
+    background-image: linear-gradient(90deg, transparent 28%, blue 28%, blue 34%, transparent 10%),
+    linear-gradient(transparent 42%, white 42%, white 46%, blue 46%, blue 58%, white 58%, white 62%, transparent 62%),
+    linear-gradient(90deg, red 25%, white 25%, white 28%, blue 28%, blue 34%, white 34%, white 37%, red 37%)
+;
+    
+
+    background-size: 15rem 9rem;
+    background-repeat: no-repeat;
+    
+
+}
+
+section.two {
+    background-color: hsl(0, 39%, 10%);
+    background-image: linear-gradient(
+            -45deg,
+            transparent 75%,
+            hsl(0, 80%, 60%) 75%
+    ),
+    linear-gradient(45deg, transparent 75%, hsl(0, 80%, 60%) 75%),
+    linear-gradient(-135deg, transparent 75%, hsl(0, 80%, 60%) 75%),
+    linear-gradient(135deg, transparent 75%, hsl(0, 80%, 60%) 75%);
+    background-size: 10rem 10rem;
+    background-position: 2rem 0, 2rem 0, 0 0, 0 0;
+}
+
+section.three {
+    background-color: #212223;
+    background-image: radial-gradient(circle, transparent 1rem, #212223 1rem),
+    linear-gradient(teal 0.5rem, transparent 0.5rem),
+    linear-gradient(90deg, teal 0.5rem, transparent 0.5rem);
+    background-size: 5rem 5rem;
+    background-position: 5.25rem 5.25rem, 2.5rem 2.5rem, 2.5rem 2.5rem;
+}
+
+section.four {
+    background-color: #232221;
+    background-image: radial-gradient(
+            circle at 100% 50%,
+            transparent 1rem,
+            #fff 1rem,
+            #fff 1.5rem,
+            transparent 1.5rem
+    ),
+    radial-gradient(
+            circle at 0% 50%,
+            transparent 1rem,
+            #fff 1rem,
+            #fff 1.5rem,
+            transparent 1.5rem
+    ),
+    linear-gradient(-45deg, red, blue);
+    background-size: 8rem 5rem, 8rem 5rem, 100% 100%;
+    background-position: 0 0, 0 2.5rem;
+}
+
+section.five {
+    background-color: #313466;
+    background-image: conic-gradient(
+            from 330deg at 50% 60%,
+            #11ffbb 60deg,
+            transparent 60deg
+    ),
+    conic-gradient(from 150deg at 50% 30%, #5255bb 60deg, transparent 60deg);
+    background-size: 3rem 3rem;
+    background-position: 0 0, 1.5rem -0.5rem;
+}
+
+section.six {
+    width: 320px;
+    height: 320px;
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%,
+    var(--lg) 0 0 / 50% 50%,
+    var(--lg) 0 0 / 25% 25%,
+    var(--lg) 0 0 / 12.5% 12.5%,
+    var(--lg) 0 0 / 6.25% 6.25%,
+    var(--lg) 0 0 / 3.125% 3.125%;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}

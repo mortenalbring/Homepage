@@ -18,7 +18,10 @@ namespace Core.Controllers
             _sharedLocalizer = sharedLocalizer;
         }
 
-
+        public IActionResult CssGradients()
+        {
+            return View("CssGradients");
+        }
         public IActionResult CssReflect()
         {
             return View("CssReflect");

@@ -70,7 +70,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Pages" />
       <Folder Include="wwwroot\images\fractalChaos\polygons\lg" />
       <Folder Include="wwwroot\words\Json\no\children" />
     </ItemGroup>

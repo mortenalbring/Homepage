@@ -9,10 +9,10 @@ function drawGraph(graphData, searchVal) {
         searchVal = d.id;
         d.highlight = true;
         d.fixed = true;
-        
+
         var graphData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, searchVal);
         var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, graphData);
-        
+
         WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(combinedData));
 
 
@@ -68,7 +68,6 @@ function drawGraph(graphData, searchVal) {
     var svg = d3.select("#searchWordsSvg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
-
 
 
     // var maxval = Math.max.apply(Math, graphData.nodes.map(function (o) {
@@ -161,7 +160,7 @@ function drawGraph(graphData, searchVal) {
             // return d.linkCount * 2;
         })
         .on("click", function (event, d) {
-           
+
             handleClick(d);
 
         })
@@ -220,20 +219,18 @@ function drawGraph(graphData, searchVal) {
         .links(graphData.links);
 
 
-  
-    
     function ticked() {
         node
             .attr("transform", function (d) {
                 var newx = Math.max(radius, Math.min(width - radius, d.x));
                 var newy = Math.max(radius, Math.min(width - radius, d.y));
-              
+
                 if (newx && newy) {
                     return "translate(" + newx + "," + newy + ")";
                 }
 
             })
-        
+
         link
             .attr("x1", function (d) {
                 return d.source.x;
@@ -248,7 +245,7 @@ function drawGraph(graphData, searchVal) {
                 return d.target.y;
             });
 
-   
+
     }
 }
 
@@ -258,7 +255,7 @@ $('#btnExpandAll').click(function () {
     var data = JSON.parse(JSON.stringify(WordsGeneral.FilteredDataArchive));
     var newNodes = [];
     var newLinks = [];
-console.log(data);
+    console.log(data);
     for (let i = 0; i < data.nodes.length; i++) {
         var newData = WordsGeneral.FilterDataOnTermExact(WordsGeneral.DataArchive, data.nodes[i].id);
         for (let j = 0; j < newData.nodes.length; j++) {
@@ -268,10 +265,10 @@ console.log(data);
             newLinks.push(newData.links[j]);
         }
     }
-    
+
     var updatedData = {nodes: newNodes, links: newLinks};
     var combinedData = WordsGeneral.CombineData(WordsGeneral.FilteredDataArchive, updatedData);
-    
+
     console.log(combinedData);
     var svg = d3.select("#searchWordsSvg");
     svg.selectAll("*").remove();
@@ -359,9 +356,9 @@ d3.timeout(function () {
 
 
     var parentElement = document.getElementById("searchWordsSvg");
-    
+
     if (parentElement != null) {
-        
+
         var cw = parentElement.parentElement.clientWidth;
         var ch = parentElement.parentElement.clientHeight;
 
@@ -379,8 +376,8 @@ d3.timeout(function () {
         console.log(WordsGeneral.DataArchive);
 
         var searchVal = "word";
-        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);         
-        
+        var graphData = WordsGeneral.FilterDataOnTermExactRecursive(graph, searchVal);
+
         WordsGeneral.FilteredDataArchive = JSON.parse(JSON.stringify(graphData));
         //WordsGeneral.FilterDataOnTermExactRecursive(graph, "test");
 

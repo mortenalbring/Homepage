@@ -39,32 +39,32 @@ h2 {
     padding-bottom: 0.5em;
 }
 
-    .tab-title a {
-        cursor: pointer;
-        border-top: 1px solid;
-        border-left: 1px solid;
-        border-right: 1px solid;
-        border-color: #cacaca;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        padding-top: 0.2em;
-        margin-right: 0.4em;
-        padding-bottom: 0.5em;
-        color: #808080;
-        background: #f3f3f3;
-    }
+.tab-title a {
+    cursor: pointer;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: #cacaca;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.2em;
+    margin-right: 0.4em;
+    padding-bottom: 0.5em;
+    color: #808080;
+    background: #f3f3f3;
+}
 
-        .tab-title a:hover {
-            background: #fcfcfc;
-        }
+.tab-title a:hover {
+    background: #fcfcfc;
+}
 
-    .tab-title .active {
-        color: #000;
-        background: #fcfcfc;
-        border-color: #b4b4b4;
-    }
+.tab-title .active {
+    color: #000;
+    background: #fcfcfc;
+    border-color: #b4b4b4;
+}
 
 .tab-content {
     background: #fcfcfc;
@@ -85,24 +85,24 @@ h2 {
     border-color: #808080;
 }
 
-    .graph-data-table thead {
-        background-color: #0043f2;
-        color: #fff;
-    }
+.graph-data-table thead {
+    background-color: #0043f2;
+    color: #fff;
+}
 
 
-    .graph-data-table th, td {
-        padding-left: 0.5em;
-        font-size: 0.8em;
-    }
+.graph-data-table th, td {
+    padding-left: 0.5em;
+    font-size: 0.8em;
+}
 
-    .graph-data-table th {
-        text-align: left;
-    }
+.graph-data-table th {
+    text-align: left;
+}
 
-    .graph-data-table td {
-        font-size: 0.7em;
-    }
+.graph-data-table td {
+    font-size: 0.7em;
+}
 
 .nodes-box {
     padding: 1em;
@@ -112,37 +112,37 @@ h2 {
     width: 100%;
 }
 
-    .settings-control-table i {
-        font-size: 0.7em;
-        font-style: normal;
-        font-weight: bold;
-        border: 1px solid;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        border-radius: 5px;
-        border-color: #000;
-    }
+.settings-control-table i {
+    font-size: 0.7em;
+    font-style: normal;
+    font-weight: bold;
+    border: 1px solid;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 5px;
+    border-color: #000;
+}
 
-        .settings-control-table i:hover {
-            color: #fff;
-            border-color: #0a15cb;
-            background: #0a15cb;
-            cursor: pointer;
-        }
+.settings-control-table i:hover {
+    color: #fff;
+    border-color: #0a15cb;
+    background: #0a15cb;
+    cursor: pointer;
+}
 
-    .settings-control-table span {
-        display: block;
-        padding-left: 0.1em;
-    }
+.settings-control-table span {
+    display: block;
+    padding-left: 0.1em;
+}
 
-    .settings-control-table input {
-        width: 40%;
-    }
+.settings-control-table input {
+    width: 40%;
+}
 
-    
-    /*
-    .svg-container {
-        background: #3e3e3e;
-    }
-    
-     */
+
+/*
+.svg-container {
+    background: #3e3e3e;
+}
+
+ */

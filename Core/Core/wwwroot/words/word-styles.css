@@ -1,7 +1,8 @@
 ﻿
 svg {
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
 }
+
 .links line {
     /*stroke: #999;*/
     /*stroke-opacity: 0.2;*/
@@ -21,32 +22,35 @@ svg {
 .search-nodes {
     cursor: pointer;
 }
+
 .search-nodes g:hover circle {
     transition: 1s;
-    fill:white;
-    stroke:blue;
+    fill: white;
+    stroke: blue;
 }
+
 .search-nodes g:hover text {
-    fill:black;
+    fill: black;
 }
-
-
 
 
 text {
     font-family: sans-serif;
     font-size: 10px;
-    fill:#fff;
+    fill: #fff;
 }
+
 .nodes .bold {
-    font-weight:bold;
+    font-weight: bold;
     font-size: 10px;
 }
+
 .nodes circle {
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .nodes .node-text {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
@@ -55,15 +59,16 @@ text {
 }
 
 .link-group text {
-    font-size:8px;
+    font-size: 8px;
     fill: #f3e582;
     opacity: 0.3;
 }
- 
+
 .bar {
-    cursor:pointer;
+    cursor: pointer;
     fill: #fda934;
 }
+
 .bar:hover {
     fill: #fcb046;
 }

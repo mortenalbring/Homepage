@@ -189,9 +189,13 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
 
     $scope.changePreset = function () {
 
-        var match = $scope.preset.options.filter(function (e) { return e.ID == $scope.preset.select.ID });
+        var match = $scope.preset.options.filter(function (e) {
+            return e.ID == $scope.preset.select.ID
+        });
 
-        if (match.length == 0) { return; }
+        if (match.length == 0) {
+            return;
+        }
 
         if (match[0].RunFunction) {
             match[0].RunFunction();
@@ -200,11 +204,11 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
 
     $scope.makeCustom = function () {
         var customSettings =
-        {
-            linkDistance: Math.floor(Math.random() * 100),
-            charge: Math.floor(Math.random() * 1000) * -1,
-            clickToConnect: true,
-        }
+            {
+                linkDistance: Math.floor(Math.random() * 100),
+                charge: Math.floor(Math.random() * 1000) * -1,
+                clickToConnect: true,
+            }
         $scope.settings = SettingsService.checkSettings(customSettings);
 
         $scope.info.Title = "Custom graph";
@@ -223,10 +227,10 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
 
 
         var randomSettings =
-         {
-             linkDistance: Math.floor(Math.random() * 100),
-             charge: Math.floor(Math.random() * 1000) * -1
-         }
+            {
+                linkDistance: Math.floor(Math.random() * 100),
+                charge: Math.floor(Math.random() * 1000) * -1
+            }
         $scope.settings = SettingsService.checkSettings(randomSettings);
 
         var min = 10;
@@ -234,7 +238,7 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
 
         $scope.graph.data.nodes = [];
         for (var i = 0; i < randmax; i++) {
-            var newNode = { ID: i, Name: "Node " + i };
+            var newNode = {ID: i, Name: "Node " + i};
             $scope.graph.data.nodes.push(newNode);
         }
 
@@ -243,7 +247,7 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
             var r = Math.floor((Math.random() * randmax));
             if (r != i) {
                 //Ensures we don't connect a node to itself
-                var newEdge = { StartNode: i, EndNode: r };
+                var newEdge = {StartNode: i, EndNode: r};
                 $scope.graph.data.edges.push(newEdge);
             }
         }
@@ -290,7 +294,6 @@ angularD3Controllers.controller("HomeController", function ($scope, $timeout, Se
         $scope.drawPreset(home);
 
     }, 100);
-
 
 
     function resize() {

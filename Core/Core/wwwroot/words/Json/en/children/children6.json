@@ -1,247 +1,1144 @@
-{"nodes":[{ "id": "scoursed", "group":1},
-{ "id": "coursed", "group":1},
-{ "id": "scorsed", "group":1},
-{ "id": "scoured", "group":1},
-{ "id": "scourse", "group":1},
-{ "id": "cursed", "group":2},
-{ "id": "coured", "group":2},
-{ "id": "course", "group":2},
-{ "id": "cured", "group":3},
-{ "id": "curse", "group":3},
-{ "id": "cred", "group":4},
-{ "id": "cued", "group":4},
-{ "id": "curd", "group":4},
-{ "id": "cure", "group":4},
-{ "id": "red", "group":5},
-{ "id": "ed", "group":6},
-{ "id": "re", "group":6},
-{ "id": "cud", "group":5},
-{ "id": "cue", "group":5},
-{ "id": "urd", "group":5},
-{ "id": "cur", "group":5},
-{ "id": "ur", "group":6},
-{ "id": "ure", "group":5},
-{ "id": "curs", "group":4},
-{ "id": "cored", "group":3},
-{ "id": "courd", "group":3},
-{ "id": "coure", "group":3},
-{ "id": "coed", "group":4},
-{ "id": "cord", "group":4},
-{ "id": "core", "group":4},
-{ "id": "cod", "group":5},
-{ "id": "od", "group":6},
-{ "id": "ord", "group":5},
-{ "id": "cor", "group":5},
-{ "id": "or", "group":6},
-{ "id": "ore", "group":5},
-{ "id": "oe", "group":6},
-{ "id": "cour", "group":4},
-{ "id": "our", "group":5},
-{ "id": "ou", "group":6},
-{ "id": "corse", "group":3},
-{ "id": "cours", "group":3},
-{ "id": "cose", "group":4},
-{ "id": "cors", "group":4},
-{ "id": "ose", "group":5},
-{ "id": "cos", "group":5},
-{ "id": "os", "group":6},
-{ "id": "ors", "group":5},
-{ "id": "ours", "group":4},
-{ "id": "ous", "group":5},
-{ "id": "us", "group":6},
-{ "id": "scored", "group":2},
-{ "id": "scorse", "group":2},
-{ "id": "sored", "group":3},
-{ "id": "score", "group":3},
-{ "id": "sord", "group":4},
-{ "id": "sore", "group":4},
-{ "id": "sod", "group":5},
-{ "id": "so", "group":6},
-{ "id": "soured", "group":2},
-{ "id": "sured", "group":3},
-{ "id": "sued", "group":4},
-{ "id": "surd", "group":4},
-{ "id": "sure", "group":4},
-{ "id": "sed", "group":5},
-{ "id": "sud", "group":5},
-{ "id": "sue", "group":5},
-{ "id": "sur", "group":5},
-{ "id": "sourse", "group":2},
-{ "id": "scouse", "group":2},
-{ "id": "scours", "group":2},
-{ "id": "souse", "group":3},
-{ "id": "sours", "group":3},
-{ "id": "sous", "group":4},
-{ "id": "sus", "group":5},
-{ "id": "sos", "group":5},
-{ "id": "sou", "group":5},
-{ "id": "sour", "group":4},
-{ "id": "scuse", "group":3},
-{ "id": "scurs", "group":3},
-{ "id": "scour", "group":3},
-{ "id": "scur", "group":4}
-],
-"links":[{"source":"scoursed","target":"coursed","value":1},
-{"source":"scoursed","target":"scorsed","value":1},
-{"source":"scoursed","target":"scoured","value":1},
-{"source":"scoursed","target":"scourse","value":1},
-{"source":"coursed","target":"cursed","value":1},
-{"source":"coursed","target":"coured","value":1},
-{"source":"coursed","target":"course","value":1},
-{"source":"cursed","target":"cured","value":1},
-{"source":"cursed","target":"curse","value":1},
-{"source":"cured","target":"cred","value":1},
-{"source":"cured","target":"cued","value":1},
-{"source":"cured","target":"curd","value":1},
-{"source":"cured","target":"cure","value":1},
-{"source":"cred","target":"red","value":1},
-{"source":"red","target":"ed","value":1},
-{"source":"red","target":"re","value":1},
-{"source":"cued","target":"cud","value":1},
-{"source":"cued","target":"cue","value":1},
-{"source":"curd","target":"urd","value":1},
-{"source":"curd","target":"cud","value":1},
-{"source":"curd","target":"cur","value":1},
-{"source":"urd","target":"ur","value":1},
-{"source":"cur","target":"ur","value":1},
-{"source":"cure","target":"ure","value":1},
-{"source":"cure","target":"cue","value":1},
-{"source":"cure","target":"cur","value":1},
-{"source":"ure","target":"re","value":1},
-{"source":"ure","target":"ur","value":1},
-{"source":"curse","target":"cure","value":1},
-{"source":"curse","target":"curs","value":1},
-{"source":"curs","target":"cur","value":1},
-{"source":"coured","target":"cured","value":1},
-{"source":"coured","target":"cored","value":1},
-{"source":"coured","target":"courd","value":1},
-{"source":"coured","target":"coure","value":1},
-{"source":"cored","target":"cred","value":1},
-{"source":"cored","target":"coed","value":1},
-{"source":"cored","target":"cord","value":1},
-{"source":"cored","target":"core","value":1},
-{"source":"coed","target":"cod","value":1},
-{"source":"cod","target":"od","value":1},
-{"source":"cord","target":"ord","value":1},
-{"source":"cord","target":"cod","value":1},
-{"source":"cord","target":"cor","value":1},
-{"source":"ord","target":"od","value":1},
-{"source":"ord","target":"or","value":1},
-{"source":"cor","target":"or","value":1},
-{"source":"core","target":"ore","value":1},
-{"source":"core","target":"cor","value":1},
-{"source":"ore","target":"re","value":1},
-{"source":"ore","target":"oe","value":1},
-{"source":"ore","target":"or","value":1},
-{"source":"courd","target":"curd","value":1},
-{"source":"courd","target":"cord","value":1},
-{"source":"courd","target":"cour","value":1},
-{"source":"cour","target":"our","value":1},
-{"source":"cour","target":"cur","value":1},
-{"source":"cour","target":"cor","value":1},
-{"source":"our","target":"ur","value":1},
-{"source":"our","target":"or","value":1},
-{"source":"our","target":"ou","value":1},
-{"source":"coure","target":"cure","value":1},
-{"source":"coure","target":"core","value":1},
-{"source":"coure","target":"cour","value":1},
-{"source":"course","target":"curse","value":1},
-{"source":"course","target":"corse","value":1},
-{"source":"course","target":"coure","value":1},
-{"source":"course","target":"cours","value":1},
-{"source":"corse","target":"cose","value":1},
-{"source":"corse","target":"core","value":1},
-{"source":"corse","target":"cors","value":1},
-{"source":"cose","target":"ose","value":1},
-{"source":"cose","target":"cos","value":1},
-{"source":"ose","target":"oe","value":1},
-{"source":"ose","target":"os","value":1},
-{"source":"cos","target":"os","value":1},
-{"source":"cors","target":"ors","value":1},
-{"source":"cors","target":"cos","value":1},
-{"source":"cors","target":"cor","value":1},
-{"source":"ors","target":"os","value":1},
-{"source":"ors","target":"or","value":1},
-{"source":"cours","target":"ours","value":1},
-{"source":"cours","target":"curs","value":1},
-{"source":"cours","target":"cors","value":1},
-{"source":"cours","target":"cour","value":1},
-{"source":"ours","target":"ors","value":1},
-{"source":"ours","target":"ous","value":1},
-{"source":"ours","target":"our","value":1},
-{"source":"ous","target":"us","value":1},
-{"source":"ous","target":"os","value":1},
-{"source":"ous","target":"ou","value":1},
-{"source":"scorsed","target":"scored","value":1},
-{"source":"scorsed","target":"scorse","value":1},
-{"source":"scored","target":"cored","value":1},
-{"source":"scored","target":"sored","value":1},
-{"source":"scored","target":"score","value":1},
-{"source":"sored","target":"sord","value":1},
-{"source":"sored","target":"sore","value":1},
-{"source":"sord","target":"ord","value":1},
-{"source":"sord","target":"sod","value":1},
-{"source":"sod","target":"od","value":1},
-{"source":"sod","target":"so","value":1},
-{"source":"sore","target":"ore","value":1},
-{"source":"score","target":"core","value":1},
-{"source":"score","target":"sore","value":1},
-{"source":"scorse","target":"corse","value":1},
-{"source":"scorse","target":"score","value":1},
-{"source":"scoured","target":"coured","value":1},
-{"source":"scoured","target":"soured","value":1},
-{"source":"scoured","target":"scored","value":1},
-{"source":"soured","target":"sured","value":1},
-{"source":"soured","target":"sored","value":1},
-{"source":"sured","target":"sued","value":1},
-{"source":"sured","target":"surd","value":1},
-{"source":"sured","target":"sure","value":1},
-{"source":"sued","target":"sed","value":1},
-{"source":"sued","target":"sud","value":1},
-{"source":"sued","target":"sue","value":1},
-{"source":"sed","target":"ed","value":1},
-{"source":"surd","target":"urd","value":1},
-{"source":"surd","target":"sud","value":1},
-{"source":"surd","target":"sur","value":1},
-{"source":"sur","target":"ur","value":1},
-{"source":"sure","target":"ure","value":1},
-{"source":"sure","target":"sue","value":1},
-{"source":"sure","target":"sur","value":1},
-{"source":"scourse","target":"course","value":1},
-{"source":"scourse","target":"sourse","value":1},
-{"source":"scourse","target":"scorse","value":1},
-{"source":"scourse","target":"scouse","value":1},
-{"source":"scourse","target":"scours","value":1},
-{"source":"sourse","target":"souse","value":1},
-{"source":"sourse","target":"sours","value":1},
-{"source":"souse","target":"sous","value":1},
-{"source":"sous","target":"ous","value":1},
-{"source":"sous","target":"sus","value":1},
-{"source":"sous","target":"sos","value":1},
-{"source":"sous","target":"sou","value":1},
-{"source":"sus","target":"us","value":1},
-{"source":"sos","target":"os","value":1},
-{"source":"sos","target":"so","value":1},
-{"source":"sou","target":"ou","value":1},
-{"source":"sou","target":"so","value":1},
-{"source":"sours","target":"ours","value":1},
-{"source":"sours","target":"sous","value":1},
-{"source":"sours","target":"sour","value":1},
-{"source":"sour","target":"our","value":1},
-{"source":"sour","target":"sur","value":1},
-{"source":"sour","target":"sou","value":1},
-{"source":"scouse","target":"souse","value":1},
-{"source":"scouse","target":"scuse","value":1},
-{"source":"scours","target":"cours","value":1},
-{"source":"scours","target":"sours","value":1},
-{"source":"scours","target":"scurs","value":1},
-{"source":"scours","target":"scour","value":1},
-{"source":"scurs","target":"curs","value":1},
-{"source":"scurs","target":"scur","value":1},
-{"source":"scur","target":"cur","value":1},
-{"source":"scur","target":"sur","value":1},
-{"source":"scour","target":"cour","value":1},
-{"source":"scour","target":"sour","value":1},
-{"source":"scour","target":"scur","value":1}
-]
- }
+{
+  "nodes": [
+    {
+      "id": "scoursed",
+      "group": 1
+    },
+    {
+      "id": "coursed",
+      "group": 1
+    },
+    {
+      "id": "scorsed",
+      "group": 1
+    },
+    {
+      "id": "scoured",
+      "group": 1
+    },
+    {
+      "id": "scourse",
+      "group": 1
+    },
+    {
+      "id": "cursed",
+      "group": 2
+    },
+    {
+      "id": "coured",
+      "group": 2
+    },
+    {
+      "id": "course",
+      "group": 2
+    },
+    {
+      "id": "cured",
+      "group": 3
+    },
+    {
+      "id": "curse",
+      "group": 3
+    },
+    {
+      "id": "cred",
+      "group": 4
+    },
+    {
+      "id": "cued",
+      "group": 4
+    },
+    {
+      "id": "curd",
+      "group": 4
+    },
+    {
+      "id": "cure",
+      "group": 4
+    },
+    {
+      "id": "red",
+      "group": 5
+    },
+    {
+      "id": "ed",
+      "group": 6
+    },
+    {
+      "id": "re",
+      "group": 6
+    },
+    {
+      "id": "cud",
+      "group": 5
+    },
+    {
+      "id": "cue",
+      "group": 5
+    },
+    {
+      "id": "urd",
+      "group": 5
+    },
+    {
+      "id": "cur",
+      "group": 5
+    },
+    {
+      "id": "ur",
+      "group": 6
+    },
+    {
+      "id": "ure",
+      "group": 5
+    },
+    {
+      "id": "curs",
+      "group": 4
+    },
+    {
+      "id": "cored",
+      "group": 3
+    },
+    {
+      "id": "courd",
+      "group": 3
+    },
+    {
+      "id": "coure",
+      "group": 3
+    },
+    {
+      "id": "coed",
+      "group": 4
+    },
+    {
+      "id": "cord",
+      "group": 4
+    },
+    {
+      "id": "core",
+      "group": 4
+    },
+    {
+      "id": "cod",
+      "group": 5
+    },
+    {
+      "id": "od",
+      "group": 6
+    },
+    {
+      "id": "ord",
+      "group": 5
+    },
+    {
+      "id": "cor",
+      "group": 5
+    },
+    {
+      "id": "or",
+      "group": 6
+    },
+    {
+      "id": "ore",
+      "group": 5
+    },
+    {
+      "id": "oe",
+      "group": 6
+    },
+    {
+      "id": "cour",
+      "group": 4
+    },
+    {
+      "id": "our",
+      "group": 5
+    },
+    {
+      "id": "ou",
+      "group": 6
+    },
+    {
+      "id": "corse",
+      "group": 3
+    },
+    {
+      "id": "cours",
+      "group": 3
+    },
+    {
+      "id": "cose",
+      "group": 4
+    },
+    {
+      "id": "cors",
+      "group": 4
+    },
+    {
+      "id": "ose",
+      "group": 5
+    },
+    {
+      "id": "cos",
+      "group": 5
+    },
+    {
+      "id": "os",
+      "group": 6
+    },
+    {
+      "id": "ors",
+      "group": 5
+    },
+    {
+      "id": "ours",
+      "group": 4
+    },
+    {
+      "id": "ous",
+      "group": 5
+    },
+    {
+      "id": "us",
+      "group": 6
+    },
+    {
+      "id": "scored",
+      "group": 2
+    },
+    {
+      "id": "scorse",
+      "group": 2
+    },
+    {
+      "id": "sored",
+      "group": 3
+    },
+    {
+      "id": "score",
+      "group": 3
+    },
+    {
+      "id": "sord",
+      "group": 4
+    },
+    {
+      "id": "sore",
+      "group": 4
+    },
+    {
+      "id": "sod",
+      "group": 5
+    },
+    {
+      "id": "so",
+      "group": 6
+    },
+    {
+      "id": "soured",
+      "group": 2
+    },
+    {
+      "id": "sured",
+      "group": 3
+    },
+    {
+      "id": "sued",
+      "group": 4
+    },
+    {
+      "id": "surd",
+      "group": 4
+    },
+    {
+      "id": "sure",
+      "group": 4
+    },
+    {
+      "id": "sed",
+      "group": 5
+    },
+    {
+      "id": "sud",
+      "group": 5
+    },
+    {
+      "id": "sue",
+      "group": 5
+    },
+    {
+      "id": "sur",
+      "group": 5
+    },
+    {
+      "id": "sourse",
+      "group": 2
+    },
+    {
+      "id": "scouse",
+      "group": 2
+    },
+    {
+      "id": "scours",
+      "group": 2
+    },
+    {
+      "id": "souse",
+      "group": 3
+    },
+    {
+      "id": "sours",
+      "group": 3
+    },
+    {
+      "id": "sous",
+      "group": 4
+    },
+    {
+      "id": "sus",
+      "group": 5
+    },
+    {
+      "id": "sos",
+      "group": 5
+    },
+    {
+      "id": "sou",
+      "group": 5
+    },
+    {
+      "id": "sour",
+      "group": 4
+    },
+    {
+      "id": "scuse",
+      "group": 3
+    },
+    {
+      "id": "scurs",
+      "group": 3
+    },
+    {
+      "id": "scour",
+      "group": 3
+    },
+    {
+      "id": "scur",
+      "group": 4
+    }
+  ],
+  "links": [
+    {
+      "source": "scoursed",
+      "target": "coursed",
+      "value": 1
+    },
+    {
+      "source": "scoursed",
+      "target": "scorsed",
+      "value": 1
+    },
+    {
+      "source": "scoursed",
+      "target": "scoured",
+      "value": 1
+    },
+    {
+      "source": "scoursed",
+      "target": "scourse",
+      "value": 1
+    },
+    {
+      "source": "coursed",
+      "target": "cursed",
+      "value": 1
+    },
+    {
+      "source": "coursed",
+      "target": "coured",
+      "value": 1
+    },
+    {
+      "source": "coursed",
+      "target": "course",
+      "value": 1
+    },
+    {
+      "source": "cursed",
+      "target": "cured",
+      "value": 1
+    },
+    {
+      "source": "cursed",
+      "target": "curse",
+      "value": 1
+    },
+    {
+      "source": "cured",
+      "target": "cred",
+      "value": 1
+    },
+    {
+      "source": "cured",
+      "target": "cued",
+      "value": 1
+    },
+    {
+      "source": "cured",
+      "target": "curd",
+      "value": 1
+    },
+    {
+      "source": "cured",
+      "target": "cure",
+      "value": 1
+    },
+    {
+      "source": "cred",
+      "target": "red",
+      "value": 1
+    },
+    {
+      "source": "red",
+      "target": "ed",
+      "value": 1
+    },
+    {
+      "source": "red",
+      "target": "re",
+      "value": 1
+    },
+    {
+      "source": "cued",
+      "target": "cud",
+      "value": 1
+    },
+    {
+      "source": "cued",
+      "target": "cue",
+      "value": 1
+    },
+    {
+      "source": "curd",
+      "target": "urd",
+      "value": 1
+    },
+    {
+      "source": "curd",
+      "target": "cud",
+      "value": 1
+    },
+    {
+      "source": "curd",
+      "target": "cur",
+      "value": 1
+    },
+    {
+      "source": "urd",
+      "target": "ur",
+      "value": 1
+    },
+    {
+      "source": "cur",
+      "target": "ur",
+      "value": 1
+    },
+    {
+      "source": "cure",
+      "target": "ure",
+      "value": 1
+    },
+    {
+      "source": "cure",
+      "target": "cue",
+      "value": 1
+    },
+    {
+      "source": "cure",
+      "target": "cur",
+      "value": 1
+    },
+    {
+      "source": "ure",
+      "target": "re",
+      "value": 1
+    },
+    {
+      "source": "ure",
+      "target": "ur",
+      "value": 1
+    },
+    {
+      "source": "curse",
+      "target": "cure",
+      "value": 1
+    },
+    {
+      "source": "curse",
+      "target": "curs",
+      "value": 1
+    },
+    {
+      "source": "curs",
+      "target": "cur",
+      "value": 1
+    },
+    {
+      "source": "coured",
+      "target": "cured",
+      "value": 1
+    },
+    {
+      "source": "coured",
+      "target": "cored",
+      "value": 1
+    },
+    {
+      "source": "coured",
+      "target": "courd",
+      "value": 1
+    },
+    {
+      "source": "coured",
+      "target": "coure",
+      "value": 1
+    },
+    {
+      "source": "cored",
+      "target": "cred",
+      "value": 1
+    },
+    {
+      "source": "cored",
+      "target": "coed",
+      "value": 1
+    },
+    {
+      "source": "cored",
+      "target": "cord",
+      "value": 1
+    },
+    {
+      "source": "cored",
+      "target": "core",
+      "value": 1
+    },
+    {
+      "source": "coed",
+      "target": "cod",
+      "value": 1
+    },
+    {
+      "source": "cod",
+      "target": "od",
+      "value": 1
+    },
+    {
+      "source": "cord",
+      "target": "ord",
+      "value": 1
+    },
+    {
+      "source": "cord",
+      "target": "cod",
+      "value": 1
+    },
+    {
+      "source": "cord",
+      "target": "cor",
+      "value": 1
+    },
+    {
+      "source": "ord",
+      "target": "od",
+      "value": 1
+    },
+    {
+      "source": "ord",
+      "target": "or",
+      "value": 1
+    },
+    {
+      "source": "cor",
+      "target": "or",
+      "value": 1
+    },
+    {
+      "source": "core",
+      "target": "ore",
+      "value": 1
+    },
+    {
+      "source": "core",
+      "target": "cor",
+      "value": 1
+    },
+    {
+      "source": "ore",
+      "target": "re",
+      "value": 1
+    },
+    {
+      "source": "ore",
+      "target": "oe",
+      "value": 1
+    },
+    {
+      "source": "ore",
+      "target": "or",
+      "value": 1
+    },
+    {
+      "source": "courd",
+      "target": "curd",
+      "value": 1
+    },
+    {
+      "source": "courd",
+      "target": "cord",
+      "value": 1
+    },
+    {
+      "source": "courd",
+      "target": "cour",
+      "value": 1
+    },
+    {
+      "source": "cour",
+      "target": "our",
+      "value": 1
+    },
+    {
+      "source": "cour",
+      "target": "cur",
+      "value": 1
+    },
+    {
+      "source": "cour",
+      "target": "cor",
+      "value": 1
+    },
+    {
+      "source": "our",
+      "target": "ur",
+      "value": 1
+    },
+    {
+      "source": "our",
+      "target": "or",
+      "value": 1
+    },
+    {
+      "source": "our",
+      "target": "ou",
+      "value": 1
+    },
+    {
+      "source": "coure",
+      "target": "cure",
+      "value": 1
+    },
+    {
+      "source": "coure",
+      "target": "core",
+      "value": 1
+    },
+    {
+      "source": "coure",
+      "target": "cour",
+      "value": 1
+    },
+    {
+      "source": "course",
+      "target": "curse",
+      "value": 1
+    },
+    {
+      "source": "course",
+      "target": "corse",
+      "value": 1
+    },
+    {
+      "source": "course",
+      "target": "coure",
+      "value": 1
+    },
+    {
+      "source": "course",
+      "target": "cours",
+      "value": 1
+    },
+    {
+      "source": "corse",
+      "target": "cose",
+      "value": 1
+    },
+    {
+      "source": "corse",
+      "target": "core",
+      "value": 1
+    },
+    {
+      "source": "corse",
+      "target": "cors",
+      "value": 1
+    },
+    {
+      "source": "cose",
+      "target": "ose",
+      "value": 1
+    },
+    {
+      "source": "cose",
+      "target": "cos",
+      "value": 1
+    },
+    {
+      "source": "ose",
+      "target": "oe",
+      "value": 1
+    },
+    {
+      "source": "ose",
+      "target": "os",
+      "value": 1
+    },
+    {
+      "source": "cos",
+      "target": "os",
+      "value": 1
+    },
+    {
+      "source": "cors",
+      "target": "ors",
+      "value": 1
+    },
+    {
+      "source": "cors",
+      "target": "cos",
+      "value": 1
+    },
+    {
+      "source": "cors",
+      "target": "cor",
+      "value": 1
+    },
+    {
+      "source": "ors",
+      "target": "os",
+      "value": 1
+    },
+    {
+      "source": "ors",
+      "target": "or",
+      "value": 1
+    },
+    {
+      "source": "cours",
+      "target": "ours",
+      "value": 1
+    },
+    {
+      "source": "cours",
+      "target": "curs",
+      "value": 1
+    },
+    {
+      "source": "cours",
+      "target": "cors",
+      "value": 1
+    },
+    {
+      "source": "cours",
+      "target": "cour",
+      "value": 1
+    },
+    {
+      "source": "ours",
+      "target": "ors",
+      "value": 1
+    },
+    {
+      "source": "ours",
+      "target": "ous",
+      "value": 1
+    },
+    {
+      "source": "ours",
+      "target": "our",
+      "value": 1
+    },
+    {
+      "source": "ous",
+      "target": "us",
+      "value": 1
+    },
+    {
+      "source": "ous",
+      "target": "os",
+      "value": 1
+    },
+    {
+      "source": "ous",
+      "target": "ou",
+      "value": 1
+    },
+    {
+      "source": "scorsed",
+      "target": "scored",
+      "value": 1
+    },
+    {
+      "source": "scorsed",
+      "target": "scorse",
+      "value": 1
+    },
+    {
+      "source": "scored",
+      "target": "cored",
+      "value": 1
+    },
+    {
+      "source": "scored",
+      "target": "sored",
+      "value": 1
+    },
+    {
+      "source": "scored",
+      "target": "score",
+      "value": 1
+    },
+    {
+      "source": "sored",
+      "target": "sord",
+      "value": 1
+    },
+    {
+      "source": "sored",
+      "target": "sore",
+      "value": 1
+    },
+    {
+      "source": "sord",
+      "target": "ord",
+      "value": 1
+    },
+    {
+      "source": "sord",
+      "target": "sod",
+      "value": 1
+    },
+    {
+      "source": "sod",
+      "target": "od",
+      "value": 1
+    },
+    {
+      "source": "sod",
+      "target": "so",
+      "value": 1
+    },
+    {
+      "source": "sore",
+      "target": "ore",
+      "value": 1
+    },
+    {
+      "source": "score",
+      "target": "core",
+      "value": 1
+    },
+    {
+      "source": "score",
+      "target": "sore",
+      "value": 1
+    },
+    {
+      "source": "scorse",
+      "target": "corse",
+      "value": 1
+    },
+    {
+      "source": "scorse",
+      "target": "score",
+      "value": 1
+    },
+    {
+      "source": "scoured",
+      "target": "coured",
+      "value": 1
+    },
+    {
+      "source": "scoured",
+      "target": "soured",
+      "value": 1
+    },
+    {
+      "source": "scoured",
+      "target": "scored",
+      "value": 1
+    },
+    {
+      "source": "soured",
+      "target": "sured",
+      "value": 1
+    },
+    {
+      "source": "soured",
+      "target": "sored",
+      "value": 1
+    },
+    {
+      "source": "sured",
+      "target": "sued",
+      "value": 1
+    },
+    {
+      "source": "sured",
+      "target": "surd",
+      "value": 1
+    },
+    {
+      "source": "sured",
+      "target": "sure",
+      "value": 1
+    },
+    {
+      "source": "sued",
+      "target": "sed",
+      "value": 1
+    },
+    {
+      "source": "sued",
+      "target": "sud",
+      "value": 1
+    },
+    {
+      "source": "sued",
+      "target": "sue",
+      "value": 1
+    },
+    {
+      "source": "sed",
+      "target": "ed",
+      "value": 1
+    },
+    {
+      "source": "surd",
+      "target": "urd",
+      "value": 1
+    },
+    {
+      "source": "surd",
+      "target": "sud",
+      "value": 1
+    },
+    {
+      "source": "surd",
+      "target": "sur",
+      "value": 1
+    },
+    {
+      "source": "sur",
+      "target": "ur",
+      "value": 1
+    },
+    {
+      "source": "sure",
+      "target": "ure",
+      "value": 1
+    },
+    {
+      "source": "sure",
+      "target": "sue",
+      "value": 1
+    },
+    {
+      "source": "sure",
+      "target": "sur",
+      "value": 1
+    },
+    {
+      "source": "scourse",
+      "target": "course",
+      "value": 1
+    },
+    {
+      "source": "scourse",
+      "target": "sourse",
+      "value": 1
+    },
+    {
+      "source": "scourse",
+      "target": "scorse",
+      "value": 1
+    },
+    {
+      "source": "scourse",
+      "target": "scouse",
+      "value": 1
+    },
+    {
+      "source": "scourse",
+      "target": "scours",
+      "value": 1
+    },
+    {
+      "source": "sourse",
+      "target": "souse",
+      "value": 1
+    },
+    {
+      "source": "sourse",
+      "target": "sours",
+      "value": 1
+    },
+    {
+      "source": "souse",
+      "target": "sous",
+      "value": 1
+    },
+    {
+      "source": "sous",
+      "target": "ous",
+      "value": 1
+    },
+    {
+      "source": "sous",
+      "target": "sus",
+      "value": 1
+    },
+    {
+      "source": "sous",
+      "target": "sos",
+      "value": 1
+    },
+    {
+      "source": "sous",
+      "target": "sou",
+      "value": 1
+    },
+    {
+      "source": "sus",
+      "target": "us",
+      "value": 1
+    },
+    {
+      "source": "sos",
+      "target": "os",
+      "value": 1
+    },
+    {
+      "source": "sos",
+      "target": "so",
+      "value": 1
+    },
+    {
+      "source": "sou",
+      "target": "ou",
+      "value": 1
+    },
+    {
+      "source": "sou",
+      "target": "so",
+      "value": 1
+    },
+    {
+      "source": "sours",
+      "target": "ours",
+      "value": 1
+    },
+    {
+      "source": "sours",
+      "target": "sous",
+      "value": 1
+    },
+    {
+      "source": "sours",
+      "target": "sour",
+      "value": 1
+    },
+    {
+      "source": "sour",
+      "target": "our",
+      "value": 1
+    },
+    {
+      "source": "sour",
+      "target": "sur",
+      "value": 1
+    },
+    {
+      "source": "sour",
+      "target": "sou",
+      "value": 1
+    },
+    {
+      "source": "scouse",
+      "target": "souse",
+      "value": 1
+    },
+    {
+      "source": "scouse",
+      "target": "scuse",
+      "value": 1
+    },
+    {
+      "source": "scours",
+      "target": "cours",
+      "value": 1
+    },
+    {
+      "source": "scours",
+      "target": "sours",
+      "value": 1
+    },
+    {
+      "source": "scours",
+      "target": "scurs",
+      "value": 1
+    },
+    {
+      "source": "scours",
+      "target": "scour",
+      "value": 1
+    },
+    {
+      "source": "scurs",
+      "target": "curs",
+      "value": 1
+    },
+    {
+      "source": "scurs",
+      "target": "scur",
+      "value": 1
+    },
+    {
+      "source": "scur",
+      "target": "cur",
+      "value": 1
+    },
+    {
+      "source": "scur",
+      "target": "sur",
+      "value": 1
+    },
+    {
+      "source": "scour",
+      "target": "cour",
+      "value": 1
+    },
+    {
+      "source": "scour",
+      "target": "sour",
+      "value": 1
+    },
+    {
+      "source": "scour",
+      "target": "scur",
+      "value": 1
+    }
+  ]
+}

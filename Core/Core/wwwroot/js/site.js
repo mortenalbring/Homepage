@@ -9,5 +9,5 @@
         $('#datevalago').text(fromNowText);
         $('#datevalnice').text(niceText);
         $('#dateval').hide();
-    }    
+    }
 }

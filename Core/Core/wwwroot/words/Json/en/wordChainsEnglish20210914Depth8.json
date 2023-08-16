@@ -1,203 +1,930 @@
-{"nodes":[{ "id": "austringers", "group":4},
-  { "id": "astringers", "group":4},
-  { "id": "austringer", "group":4},
-  { "id": "stringers", "group":4},
-  { "id": "stingers", "group":4},
-  { "id": "singers", "group":4},
-  { "id": "singes", "group":4},
-  { "id": "sines", "group":4},
-  { "id": "sies", "group":4},
-  { "id": "sis", "group":4},
-  { "id": "breastfeeds", "group":2},
-  { "id": "breastfeed", "group":2},
-  { "id": "breastfed", "group":2},
-  { "id": "breasted", "group":2},
-  { "id": "reasted", "group":2},
-  { "id": "easted", "group":2},
-  { "id": "eased", "group":2},
-  { "id": "ease", "group":2},
-  { "id": "eas", "group":2},
-  { "id": "as", "group":2},
-  { "id": "carabineers", "group":3},
-  { "id": "carabiners", "group":3},
-  { "id": "carabines", "group":3},
-  { "id": "carbines", "group":3},
-  { "id": "carbies", "group":3},
-  { "id": "caries", "group":3},
-  { "id": "cries", "group":3},
-  { "id": "cris", "group":3},
-  { "id": "cis", "group":3},
-  { "id": "complecting", "group":1},
-  { "id": "completing", "group":1},
-  { "id": "competing", "group":1},
-  { "id": "compting", "group":1},
-  { "id": "comping", "group":1},
-  { "id": "coping", "group":1},
-  { "id": "oping", "group":1},
-  { "id": "ping", "group":1},
-  { "id": "pig", "group":1},
-  { "id": "pi", "group":1},
-  { "id": "housellings", "group":5},
-  { "id": "houselling", "group":5},
-  { "id": "houseling", "group":5},
-  { "id": "housling", "group":5},
-  { "id": "housing", "group":5},
-  { "id": "hosing", "group":5},
-  { "id": "hoing", "group":5},
-  { "id": "hing", "group":5},
-  { "id": "hin", "group":5},
-  { "id": "in", "group":5},
-  { "id": "scratchiest", "group":6},
-  { "id": "scratchies", "group":6},
-  { "id": "scratches", "group":6},
-  { "id": "cratches", "group":6},
-  { "id": "scatches", "group":6},
-  { "id": "ratches", "group":6},
-  { "id": "raches", "group":6},
-  { "id": "aches", "group":6},
-  { "id": "aces", "group":6},
-  { "id": "ace", "group":6},
-  { "id": "ae", "group":6},
-  { "id": "streamlings", "group":7},
-  { "id": "streamings", "group":7},
-  { "id": "steamings", "group":7},
-  { "id": "teamings", "group":7},
-  { "id": "tamings", "group":7},
-  { "id": "tamins", "group":7},
-  { "id": "amins", "group":7},
-  { "id": "ains", "group":7},
-  { "id": "ins", "group":7},
-  { "id": "unpreaching", "group":8},
-  { "id": "upreaching", "group":8},
-  { "id": "preaching", "group":8},
-  { "id": "peaching", "group":8},
-  { "id": "peching", "group":8},
-  { "id": "eching", "group":8},
-  { "id": "ehing", "group":8}
-],
-  "links":[{"source":"austringers","target":"astringers","value":1},
-    {"source":"austringers","target":"austringer","value":1},
-    {"source":"astringers","target":"stringers","value":1},
-    {"source":"astringers","target":"astringer","value":1},
-    {"source":"stringers","target":"stingers","value":1},
-    {"source":"stringers","target":"stringer","value":1},
-    {"source":"stingers","target":"singers","value":1},
-    {"source":"stingers","target":"stinger","value":1},
-    {"source":"singers","target":"singes","value":1},
-    {"source":"singers","target":"singer","value":1},
-    {"source":"singes","target":"sines","value":1},
-    {"source":"singes","target":"sings","value":1},
-    {"source":"singes","target":"singe","value":1},
-    {"source":"sines","target":"sies","value":1},
-    {"source":"sines","target":"sins","value":1},
-    {"source":"sines","target":"sine","value":1},
-    {"source":"sies","target":"sis","value":1},
-    {"source":"sis","target":"is","value":1},
-    {"source":"sis","target":"si","value":1},
-    {"source":"breastfeeds","target":"breastfeed","value":1},
-    {"source":"breastfeed","target":"breastfed","value":1},
-    {"source":"breastfed","target":"breasted","value":1},
-    {"source":"breasted","target":"reasted","value":1},
-    {"source":"reasted","target":"easted","value":1},
-    {"source":"reasted","target":"rested","value":1},
-    {"source":"easted","target":"eased","value":1},
-    {"source":"eased","target":"ease","value":1},
-    {"source":"ease","target":"eas","value":1},
-    {"source":"eas","target":"as","value":1},
-    {"source":"eas","target":"es","value":1},
-    {"source":"eas","target":"ea","value":1},
-    {"source":"carabineers","target":"carbineers","value":1},
-    {"source":"carabineers","target":"carabiners","value":1},
-    {"source":"carabineers","target":"carabineer","value":1},
-    {"source":"carabiners","target":"carabines","value":1},
-    {"source":"carabiners","target":"carabiner","value":1},
-    {"source":"carabines","target":"carbines","value":1},
-    {"source":"carabines","target":"carabins","value":1},
-    {"source":"carabines","target":"carabine","value":1},
-    {"source":"carbines","target":"carbies","value":1},
-    {"source":"carbines","target":"carbine","value":1},
-    {"source":"carbies","target":"caries","value":1},
-    {"source":"caries","target":"cries","value":1},
-    {"source":"caries","target":"cares","value":1},
-    {"source":"cries","target":"cris","value":1},
-    {"source":"cris","target":"cis","value":1},
-    {"source":"cis","target":"is","value":1},
-    {"source":"carabineros","target":"carabiners","value":1},
-    {"source":"carabineros","target":"carabinero","value":1},
-    {"source":"carabiniers","target":"carbiniers","value":1},
-    {"source":"carabiniers","target":"carabiners","value":1},
-    {"source":"carabiniers","target":"carabinier","value":1},
-    {"source":"complecting","target":"completing","value":1},
-    {"source":"completing","target":"competing","value":1},
-    {"source":"competing","target":"compting","value":1},
-    {"source":"compting","target":"comping","value":1},
-    {"source":"comping","target":"coping","value":1},
-    {"source":"comping","target":"coming","value":1},
-    {"source":"coping","target":"oping","value":1},
-    {"source":"oping","target":"ping","value":1},
-    {"source":"ping","target":"pig","value":1},
-    {"source":"ping","target":"pin","value":1},
-    {"source":"pig","target":"pi","value":1},
-    {"source":"housellings","target":"houselling","value":1},
-    {"source":"houselling","target":"houseling","value":1},
-    {"source":"houseling","target":"housling","value":1},
-    {"source":"housling","target":"housing","value":1},
-    {"source":"housing","target":"hosing","value":1},
-    {"source":"hosing","target":"hoing","value":1},
-    {"source":"hoing","target":"hing","value":1},
-    {"source":"hoing","target":"hong","value":1},
-    {"source":"hing","target":"hin","value":1},
-    {"source":"hin","target":"in","value":1},
-    {"source":"hin","target":"hi","value":1},
-    {"source":"nostologies","target":"nosologies","value":1},
-    {"source":"nosologies","target":"noologies","value":1},
-    {"source":"noologies","target":"oologies","value":1},
-    {"source":"scratchiest","target":"scratchies","value":1},
-    {"source":"scratchies","target":"scratches","value":1},
-    {"source":"scratchies","target":"scratchie","value":1},
-    {"source":"scratches","target":"cratches","value":1},
-    {"source":"scratches","target":"scatches","value":1},
-    {"source":"cratches","target":"ratches","value":1},
-    {"source":"cratches","target":"catches","value":1},
-    {"source":"ratches","target":"raches","value":1},
-    {"source":"raches","target":"aches","value":1},
-    {"source":"raches","target":"races","value":1},
-    {"source":"raches","target":"rache","value":1},
-    {"source":"aches","target":"aces","value":1},
-    {"source":"aches","target":"ache","value":1},
-    {"source":"aces","target":"ace","value":1},
-    {"source":"ace","target":"ae","value":1},
-    {"source":"streamlings","target":"streamings","value":1},
-    {"source":"streamlings","target":"streamling","value":1},
-    {"source":"streamings","target":"steamings","value":1},
-    {"source":"streamings","target":"streaming","value":1},
-    {"source":"steamings","target":"teamings","value":1},
-    {"source":"steamings","target":"steaming","value":1},
-    {"source":"teamings","target":"tamings","value":1},
-    {"source":"teamings","target":"teaming","value":1},
-    {"source":"tamings","target":"tamins","value":1},
-    {"source":"tamings","target":"taming","value":1},
-    {"source":"tamins","target":"amins","value":1},
-    {"source":"tamins","target":"tains","value":1},
-    {"source":"tamins","target":"tamis","value":1},
-    {"source":"tamins","target":"tamin","value":1},
-    {"source":"amins","target":"ains","value":1},
-    {"source":"amins","target":"amis","value":1},
-    {"source":"amins","target":"amin","value":1},
-    {"source":"ains","target":"ins","value":1},
-    {"source":"ains","target":"ais","value":1},
-    {"source":"ains","target":"ain","value":1},
-    {"source":"ins","target":"is","value":1},
-    {"source":"ins","target":"in","value":1},
-    {"source":"unpreaching","target":"upreaching","value":1},
-    {"source":"upreaching","target":"preaching","value":1},
-    {"source":"preaching","target":"reaching","value":1},
-    {"source":"preaching","target":"peaching","value":1},
-    {"source":"preaching","target":"preacing","value":1},
-    {"source":"peaching","target":"peching","value":1},
-    {"source":"peaching","target":"peacing","value":1},
-    {"source":"peching","target":"eching","value":1},
-    {"source":"eching","target":"ehing","value":1},
-    {"source":"ehing","target":"hing","value":1}
+{
+  "nodes": [
+    {
+      "id": "austringers",
+      "group": 4
+    },
+    {
+      "id": "astringers",
+      "group": 4
+    },
+    {
+      "id": "austringer",
+      "group": 4
+    },
+    {
+      "id": "stringers",
+      "group": 4
+    },
+    {
+      "id": "stingers",
+      "group": 4
+    },
+    {
+      "id": "singers",
+      "group": 4
+    },
+    {
+      "id": "singes",
+      "group": 4
+    },
+    {
+      "id": "sines",
+      "group": 4
+    },
+    {
+      "id": "sies",
+      "group": 4
+    },
+    {
+      "id": "sis",
+      "group": 4
+    },
+    {
+      "id": "breastfeeds",
+      "group": 2
+    },
+    {
+      "id": "breastfeed",
+      "group": 2
+    },
+    {
+      "id": "breastfed",
+      "group": 2
+    },
+    {
+      "id": "breasted",
+      "group": 2
+    },
+    {
+      "id": "reasted",
+      "group": 2
+    },
+    {
+      "id": "easted",
+      "group": 2
+    },
+    {
+      "id": "eased",
+      "group": 2
+    },
+    {
+      "id": "ease",
+      "group": 2
+    },
+    {
+      "id": "eas",
+      "group": 2
+    },
+    {
+      "id": "as",
+      "group": 2
+    },
+    {
+      "id": "carabineers",
+      "group": 3
+    },
+    {
+      "id": "carabiners",
+      "group": 3
+    },
+    {
+      "id": "carabines",
+      "group": 3
+    },
+    {
+      "id": "carbines",
+      "group": 3
+    },
+    {
+      "id": "carbies",
+      "group": 3
+    },
+    {
+      "id": "caries",
+      "group": 3
+    },
+    {
+      "id": "cries",
+      "group": 3
+    },
+    {
+      "id": "cris",
+      "group": 3
+    },
+    {
+      "id": "cis",
+      "group": 3
+    },
+    {
+      "id": "complecting",
+      "group": 1
+    },
+    {
+      "id": "completing",
+      "group": 1
+    },
+    {
+      "id": "competing",
+      "group": 1
+    },
+    {
+      "id": "compting",
+      "group": 1
+    },
+    {
+      "id": "comping",
+      "group": 1
+    },
+    {
+      "id": "coping",
+      "group": 1
+    },
+    {
+      "id": "oping",
+      "group": 1
+    },
+    {
+      "id": "ping",
+      "group": 1
+    },
+    {
+      "id": "pig",
+      "group": 1
+    },
+    {
+      "id": "pi",
+      "group": 1
+    },
+    {
+      "id": "housellings",
+      "group": 5
+    },
+    {
+      "id": "houselling",
+      "group": 5
+    },
+    {
+      "id": "houseling",
+      "group": 5
+    },
+    {
+      "id": "housling",
+      "group": 5
+    },
+    {
+      "id": "housing",
+      "group": 5
+    },
+    {
+      "id": "hosing",
+      "group": 5
+    },
+    {
+      "id": "hoing",
+      "group": 5
+    },
+    {
+      "id": "hing",
+      "group": 5
+    },
+    {
+      "id": "hin",
+      "group": 5
+    },
+    {
+      "id": "in",
+      "group": 5
+    },
+    {
+      "id": "scratchiest",
+      "group": 6
+    },
+    {
+      "id": "scratchies",
+      "group": 6
+    },
+    {
+      "id": "scratches",
+      "group": 6
+    },
+    {
+      "id": "cratches",
+      "group": 6
+    },
+    {
+      "id": "scatches",
+      "group": 6
+    },
+    {
+      "id": "ratches",
+      "group": 6
+    },
+    {
+      "id": "raches",
+      "group": 6
+    },
+    {
+      "id": "aches",
+      "group": 6
+    },
+    {
+      "id": "aces",
+      "group": 6
+    },
+    {
+      "id": "ace",
+      "group": 6
+    },
+    {
+      "id": "ae",
+      "group": 6
+    },
+    {
+      "id": "streamlings",
+      "group": 7
+    },
+    {
+      "id": "streamings",
+      "group": 7
+    },
+    {
+      "id": "steamings",
+      "group": 7
+    },
+    {
+      "id": "teamings",
+      "group": 7
+    },
+    {
+      "id": "tamings",
+      "group": 7
+    },
+    {
+      "id": "tamins",
+      "group": 7
+    },
+    {
+      "id": "amins",
+      "group": 7
+    },
+    {
+      "id": "ains",
+      "group": 7
+    },
+    {
+      "id": "ins",
+      "group": 7
+    },
+    {
+      "id": "unpreaching",
+      "group": 8
+    },
+    {
+      "id": "upreaching",
+      "group": 8
+    },
+    {
+      "id": "preaching",
+      "group": 8
+    },
+    {
+      "id": "peaching",
+      "group": 8
+    },
+    {
+      "id": "peching",
+      "group": 8
+    },
+    {
+      "id": "eching",
+      "group": 8
+    },
+    {
+      "id": "ehing",
+      "group": 8
+    }
+  ],
+  "links": [
+    {
+      "source": "austringers",
+      "target": "astringers",
+      "value": 1
+    },
+    {
+      "source": "austringers",
+      "target": "austringer",
+      "value": 1
+    },
+    {
+      "source": "astringers",
+      "target": "stringers",
+      "value": 1
+    },
+    {
+      "source": "astringers",
+      "target": "astringer",
+      "value": 1
+    },
+    {
+      "source": "stringers",
+      "target": "stingers",
+      "value": 1
+    },
+    {
+      "source": "stringers",
+      "target": "stringer",
+      "value": 1
+    },
+    {
+      "source": "stingers",
+      "target": "singers",
+      "value": 1
+    },
+    {
+      "source": "stingers",
+      "target": "stinger",
+      "value": 1
+    },
+    {
+      "source": "singers",
+      "target": "singes",
+      "value": 1
+    },
+    {
+      "source": "singers",
+      "target": "singer",
+      "value": 1
+    },
+    {
+      "source": "singes",
+      "target": "sines",
+      "value": 1
+    },
+    {
+      "source": "singes",
+      "target": "sings",
+      "value": 1
+    },
+    {
+      "source": "singes",
+      "target": "singe",
+      "value": 1
+    },
+    {
+      "source": "sines",
+      "target": "sies",
+      "value": 1
+    },
+    {
+      "source": "sines",
+      "target": "sins",
+      "value": 1
+    },
+    {
+      "source": "sines",
+      "target": "sine",
+      "value": 1
+    },
+    {
+      "source": "sies",
+      "target": "sis",
+      "value": 1
+    },
+    {
+      "source": "sis",
+      "target": "is",
+      "value": 1
+    },
+    {
+      "source": "sis",
+      "target": "si",
+      "value": 1
+    },
+    {
+      "source": "breastfeeds",
+      "target": "breastfeed",
+      "value": 1
+    },
+    {
+      "source": "breastfeed",
+      "target": "breastfed",
+      "value": 1
+    },
+    {
+      "source": "breastfed",
+      "target": "breasted",
+      "value": 1
+    },
+    {
+      "source": "breasted",
+      "target": "reasted",
+      "value": 1
+    },
+    {
+      "source": "reasted",
+      "target": "easted",
+      "value": 1
+    },
+    {
+      "source": "reasted",
+      "target": "rested",
+      "value": 1
+    },
+    {
+      "source": "easted",
+      "target": "eased",
+      "value": 1
+    },
+    {
+      "source": "eased",
+      "target": "ease",
+      "value": 1
+    },
+    {
+      "source": "ease",
+      "target": "eas",
+      "value": 1
+    },
+    {
+      "source": "eas",
+      "target": "as",
+      "value": 1
+    },
+    {
+      "source": "eas",
+      "target": "es",
+      "value": 1
+    },
+    {
+      "source": "eas",
+      "target": "ea",
+      "value": 1
+    },
+    {
+      "source": "carabineers",
+      "target": "carbineers",
+      "value": 1
+    },
+    {
+      "source": "carabineers",
+      "target": "carabiners",
+      "value": 1
+    },
+    {
+      "source": "carabineers",
+      "target": "carabineer",
+      "value": 1
+    },
+    {
+      "source": "carabiners",
+      "target": "carabines",
+      "value": 1
+    },
+    {
+      "source": "carabiners",
+      "target": "carabiner",
+      "value": 1
+    },
+    {
+      "source": "carabines",
+      "target": "carbines",
+      "value": 1
+    },
+    {
+      "source": "carabines",
+      "target": "carabins",
+      "value": 1
+    },
+    {
+      "source": "carabines",
+      "target": "carabine",
+      "value": 1
+    },
+    {
+      "source": "carbines",
+      "target": "carbies",
+      "value": 1
+    },
+    {
+      "source": "carbines",
+      "target": "carbine",
+      "value": 1
+    },
+    {
+      "source": "carbies",
+      "target": "caries",
+      "value": 1
+    },
+    {
+      "source": "caries",
+      "target": "cries",
+      "value": 1
+    },
+    {
+      "source": "caries",
+      "target": "cares",
+      "value": 1
+    },
+    {
+      "source": "cries",
+      "target": "cris",
+      "value": 1
+    },
+    {
+      "source": "cris",
+      "target": "cis",
+      "value": 1
+    },
+    {
+      "source": "cis",
+      "target": "is",
+      "value": 1
+    },
+    {
+      "source": "carabineros",
+      "target": "carabiners",
+      "value": 1
+    },
+    {
+      "source": "carabineros",
+      "target": "carabinero",
+      "value": 1
+    },
+    {
+      "source": "carabiniers",
+      "target": "carbiniers",
+      "value": 1
+    },
+    {
+      "source": "carabiniers",
+      "target": "carabiners",
+      "value": 1
+    },
+    {
+      "source": "carabiniers",
+      "target": "carabinier",
+      "value": 1
+    },
+    {
+      "source": "complecting",
+      "target": "completing",
+      "value": 1
+    },
+    {
+      "source": "completing",
+      "target": "competing",
+      "value": 1
+    },
+    {
+      "source": "competing",
+      "target": "compting",
+      "value": 1
+    },
+    {
+      "source": "compting",
+      "target": "comping",
+      "value": 1
+    },
+    {
+      "source": "comping",
+      "target": "coping",
+      "value": 1
+    },
+    {
+      "source": "comping",
+      "target": "coming",
+      "value": 1
+    },
+    {
+      "source": "coping",
+      "target": "oping",
+      "value": 1
+    },
+    {
+      "source": "oping",
+      "target": "ping",
+      "value": 1
+    },
+    {
+      "source": "ping",
+      "target": "pig",
+      "value": 1
+    },
+    {
+      "source": "ping",
+      "target": "pin",
+      "value": 1
+    },
+    {
+      "source": "pig",
+      "target": "pi",
+      "value": 1
+    },
+    {
+      "source": "housellings",
+      "target": "houselling",
+      "value": 1
+    },
+    {
+      "source": "houselling",
+      "target": "houseling",
+      "value": 1
+    },
+    {
+      "source": "houseling",
+      "target": "housling",
+      "value": 1
+    },
+    {
+      "source": "housling",
+      "target": "housing",
+      "value": 1
+    },
+    {
+      "source": "housing",
+      "target": "hosing",
+      "value": 1
+    },
+    {
+      "source": "hosing",
+      "target": "hoing",
+      "value": 1
+    },
+    {
+      "source": "hoing",
+      "target": "hing",
+      "value": 1
+    },
+    {
+      "source": "hoing",
+      "target": "hong",
+      "value": 1
+    },
+    {
+      "source": "hing",
+      "target": "hin",
+      "value": 1
+    },
+    {
+      "source": "hin",
+      "target": "in",
+      "value": 1
+    },
+    {
+      "source": "hin",
+      "target": "hi",
+      "value": 1
+    },
+    {
+      "source": "nostologies",
+      "target": "nosologies",
+      "value": 1
+    },
+    {
+      "source": "nosologies",
+      "target": "noologies",
+      "value": 1
+    },
+    {
+      "source": "noologies",
+      "target": "oologies",
+      "value": 1
+    },
+    {
+      "source": "scratchiest",
+      "target": "scratchies",
+      "value": 1
+    },
+    {
+      "source": "scratchies",
+      "target": "scratches",
+      "value": 1
+    },
+    {
+      "source": "scratchies",
+      "target": "scratchie",
+      "value": 1
+    },
+    {
+      "source": "scratches",
+      "target": "cratches",
+      "value": 1
+    },
+    {
+      "source": "scratches",
+      "target": "scatches",
+      "value": 1
+    },
+    {
+      "source": "cratches",
+      "target": "ratches",
+      "value": 1
+    },
+    {
+      "source": "cratches",
+      "target": "catches",
+      "value": 1
+    },
+    {
+      "source": "ratches",
+      "target": "raches",
+      "value": 1
+    },
+    {
+      "source": "raches",
+      "target": "aches",
+      "value": 1
+    },
+    {
+      "source": "raches",
+      "target": "races",
+      "value": 1
+    },
+    {
+      "source": "raches",
+      "target": "rache",
+      "value": 1
+    },
+    {
+      "source": "aches",
+      "target": "aces",
+      "value": 1
+    },
+    {
+      "source": "aches",
+      "target": "ache",
+      "value": 1
+    },
+    {
+      "source": "aces",
+      "target": "ace",
+      "value": 1
+    },
+    {
+      "source": "ace",
+      "target": "ae",
+      "value": 1
+    },
+    {
+      "source": "streamlings",
+      "target": "streamings",
+      "value": 1
+    },
+    {
+      "source": "streamlings",
+      "target": "streamling",
+      "value": 1
+    },
+    {
+      "source": "streamings",
+      "target": "steamings",
+      "value": 1
+    },
+    {
+      "source": "streamings",
+      "target": "streaming",
+      "value": 1
+    },
+    {
+      "source": "steamings",
+      "target": "teamings",
+      "value": 1
+    },
+    {
+      "source": "steamings",
+      "target": "steaming",
+      "value": 1
+    },
+    {
+      "source": "teamings",
+      "target": "tamings",
+      "value": 1
+    },
+    {
+      "source": "teamings",
+      "target": "teaming",
+      "value": 1
+    },
+    {
+      "source": "tamings",
+      "target": "tamins",
+      "value": 1
+    },
+    {
+      "source": "tamings",
+      "target": "taming",
+      "value": 1
+    },
+    {
+      "source": "tamins",
+      "target": "amins",
+      "value": 1
+    },
+    {
+      "source": "tamins",
+      "target": "tains",
+      "value": 1
+    },
+    {
+      "source": "tamins",
+      "target": "tamis",
+      "value": 1
+    },
+    {
+      "source": "tamins",
+      "target": "tamin",
+      "value": 1
+    },
+    {
+      "source": "amins",
+      "target": "ains",
+      "value": 1
+    },
+    {
+      "source": "amins",
+      "target": "amis",
+      "value": 1
+    },
+    {
+      "source": "amins",
+      "target": "amin",
+      "value": 1
+    },
+    {
+      "source": "ains",
+      "target": "ins",
+      "value": 1
+    },
+    {
+      "source": "ains",
+      "target": "ais",
+      "value": 1
+    },
+    {
+      "source": "ains",
+      "target": "ain",
+      "value": 1
+    },
+    {
+      "source": "ins",
+      "target": "is",
+      "value": 1
+    },
+    {
+      "source": "ins",
+      "target": "in",
+      "value": 1
+    },
+    {
+      "source": "unpreaching",
+      "target": "upreaching",
+      "value": 1
+    },
+    {
+      "source": "upreaching",
+      "target": "preaching",
+      "value": 1
+    },
+    {
+      "source": "preaching",
+      "target": "reaching",
+      "value": 1
+    },
+    {
+      "source": "preaching",
+      "target": "peaching",
+      "value": 1
+    },
+    {
+      "source": "preaching",
+      "target": "preacing",
+      "value": 1
+    },
+    {
+      "source": "peaching",
+      "target": "peching",
+      "value": 1
+    },
+    {
+      "source": "peaching",
+      "target": "peacing",
+      "value": 1
+    },
+    {
+      "source": "peching",
+      "target": "eching",
+      "value": 1
+    },
+    {
+      "source": "eching",
+      "target": "ehing",
+      "value": 1
+    },
+    {
+      "source": "ehing",
+      "target": "hing",
+      "value": 1
+    }
   ]
 }

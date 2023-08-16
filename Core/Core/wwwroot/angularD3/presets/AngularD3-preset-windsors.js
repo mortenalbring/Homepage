@@ -1,7 +1,7 @@
 var windsors = {
     info: {
         Title: "Windsor Family Tree",
-        Message:"This shows how to create a fairly rudimentary family tree structure using a force-directed graph. " +
+        Message: "This shows how to create a fairly rudimentary family tree structure using a force-directed graph. " +
             "This also shows how to style different links according to a custom property, as marriages and children are styled with " +
             "different link colours. There is also a weak geometric force that forces end nodes downwards, dynamically creating the tree-like structure."
     },
@@ -18,11 +18,8 @@ var windsors = {
 
     },
     data: {
-        nodes: [
-        ],
-        edges: [
-
-        ],
+        nodes: [],
+        edges: [],
     }
 }
 
@@ -34,7 +31,7 @@ windsors.addIfNew = function (Name, fixed) {
         return e.Name == Name;
     });
     if (existing.length == 0) {
-        var newNode = { ID: ID, Name: Name }
+        var newNode = {ID: ID, Name: Name}
 
         if (fixed) {
             var fixedCount = windsors.data.nodes.filter(function (e) {
@@ -62,16 +59,16 @@ windsors.addChildren = function (parent1Name, parent2Name, childrenNames, fixPar
         return e.StartNode == parent1Node.ID && e.EndNode == parent2Node.ID
     });
     if (existingEdge.length == 0) {
-        var newEdge = { StartNode: parent1Node.ID, EndNode: parent2Node.ID, EdgeType: "Couple" };
+        var newEdge = {StartNode: parent1Node.ID, EndNode: parent2Node.ID, EdgeType: "Couple"};
         windsors.data.edges.push(newEdge);
     }
 
     var startId = windsors.data.nodes.length + 1;
 
     for (var i = 0; i < childrenNames.length; i++) {
-        var newNode = { ID: startId + i, Name: childrenNames[i] };
+        var newNode = {ID: startId + i, Name: childrenNames[i]};
         windsors.data.nodes.push(newNode);
-        var newEdge1 = { StartNode: parent1Node.ID, EndNode: newNode.ID }
+        var newEdge1 = {StartNode: parent1Node.ID, EndNode: newNode.ID}
         windsors.data.edges.push(newEdge1);
 
         //Originally I was connecting both parents to all the children, but this ended up producing quite a confusing diagram so now I only 
@@ -80,7 +77,6 @@ windsors.addChildren = function (parent1Name, parent2Name, childrenNames, fixPar
         //  var newEdge2 = { StartNode: parent2Node.ID, EndNode: newNode.ID }        
         // windsors.data.edges.push(newEdge2);
     }
-
 
 
 }
@@ -97,7 +93,7 @@ windsors.initialise = function () {
     windsors.addChildren("Charles, Prince of Wales", "Camilla, Duchess of Cornwall", []);
 
     windsors.addChildren("Charles, Prince of Wales", "Diana, Princess of Wales",
-    ["William, Duke of Cambridge", "Henry, Prince of Wales"]);
+        ["William, Duke of Cambridge", "Henry, Prince of Wales"]);
 
     windsors.addChildren("William, Duke of Cambridge", "Catherine, Duchess of Cambridge",
         ["George, Prince of Cambridge", "?"]);
@@ -106,16 +102,15 @@ windsors.initialise = function () {
         ["Beatrice, Princess of York", "Eugeine, Princess of York"]);
 
     windsors.addChildren("Edward, Earl of Wessex", "Sophie, Countess of Wessex",
-    ["James, Viscount Severn", "Louise, Lady Louise Windsor"]);
+        ["James, Viscount Severn", "Louise, Lady Louise Windsor"]);
 
     windsors.addChildren("Anne, Princess Royal", "Mark Phillips, Captain",
-["Peter Phillips", "Zara Phillips"]);
+        ["Peter Phillips", "Zara Phillips"]);
 
 
     windsors.addChildren("Anne, Princess Royal", "Timothy Laurence, Vice-Admiral", []);
     windsors.addChildren("Zara Phillips", "Michael Tindall", ["Mia Grace"]);
     windsors.addChildren("Peter Phillips", "Autumn Phillips", ["Savannah Phillips", "Isla Phillips"]);
-
 
 
 }
@@ -139,15 +134,17 @@ windsors.settings.linkClass = function (edge) {
     return "link-children";
 };
 
-windsors.settings.nodeClass = function (d) { return 'node-container-windsor'; },
+windsors.settings.nodeClass = function (d) {
+    return 'node-container-windsor';
+},
 
-windsors.settings.customTickFunction = function (e, linkData) {
-    //A gentle force that pushes sources up and targets down to force a weak tree
-    var k = 9 * e.alpha;
-    linkData.forEach(function (d, i) {
-        d.source.y -= k;
-        d.target.y += k;
-    });
-}
+    windsors.settings.customTickFunction = function (e, linkData) {
+        //A gentle force that pushes sources up and targets down to force a weak tree
+        var k = 9 * e.alpha;
+        linkData.forEach(function (d, i) {
+            d.source.y -= k;
+            d.target.y += k;
+        });
+    }
 
 

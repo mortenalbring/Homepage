@@ -1,61 +1,273 @@
-{"nodes":[{ "id": "kveikene", "group":1},
-{ "id": "veikene", "group":1},
-{ "id": "keikene", "group":1},
-{ "id": "kvikene", "group":1},
-{ "id": "kvekene", "group":1},
-{ "id": "kveikne", "group":1},
-{ "id": "kveiken", "group":1},
-{ "id": "eikene", "group":2},
-{ "id": "vikene", "group":2},
-{ "id": "vekene", "group":2},
-{ "id": "veiene", "group":2},
-{ "id": "veikne", "group":2},
-{ "id": "veiken", "group":2},
-{ "id": "kikene", "group":2},
-{ "id": "keiene", "group":2},
-{ "id": "keiken", "group":2},
-{ "id": "kvikne", "group":2},
-{ "id": "kviken", "group":2},
-{ "id": "kveene", "group":2},
-{ "id": "kvekne", "group":2},
-{ "id": "kveken", "group":2},
-{ "id": "kveike", "group":2},
-{ "id": "kveikn", "group":2}
-],
-"links":[{"source":"kveikene","target":"veikene","value":1},
-{"source":"kveikene","target":"keikene","value":1},
-{"source":"kveikene","target":"kvikene","value":1},
-{"source":"kveikene","target":"kvekene","value":1},
-{"source":"kveikene","target":"kveikne","value":1},
-{"source":"kveikene","target":"kveiken","value":1},
-{"source":"veikene","target":"eikene","value":1},
-{"source":"veikene","target":"vikene","value":1},
-{"source":"veikene","target":"vekene","value":1},
-{"source":"veikene","target":"veiene","value":1},
-{"source":"veikene","target":"veikne","value":1},
-{"source":"veikene","target":"veiken","value":1},
-{"source":"keikene","target":"eikene","value":1},
-{"source":"keikene","target":"kikene","value":1},
-{"source":"keikene","target":"keiene","value":1},
-{"source":"keikene","target":"keiken","value":1},
-{"source":"kvikene","target":"vikene","value":1},
-{"source":"kvikene","target":"kikene","value":1},
-{"source":"kvikene","target":"kvikne","value":1},
-{"source":"kvikene","target":"kviken","value":1},
-{"source":"kvekene","target":"vekene","value":1},
-{"source":"kvekene","target":"kveene","value":1},
-{"source":"kvekene","target":"kvekne","value":1},
-{"source":"kvekene","target":"kveken","value":1},
-{"source":"kveikne","target":"veikne","value":1},
-{"source":"kveikne","target":"kvikne","value":1},
-{"source":"kveikne","target":"kvekne","value":1},
-{"source":"kveikne","target":"kveike","value":1},
-{"source":"kveikne","target":"kveikn","value":1},
-{"source":"kveiken","target":"veiken","value":1},
-{"source":"kveiken","target":"keiken","value":1},
-{"source":"kveiken","target":"kviken","value":1},
-{"source":"kveiken","target":"kveken","value":1},
-{"source":"kveiken","target":"kveikn","value":1},
-{"source":"kveiken","target":"kveike","value":1}
-]
- }
+{
+  "nodes": [
+    {
+      "id": "kveikene",
+      "group": 1
+    },
+    {
+      "id": "veikene",
+      "group": 1
+    },
+    {
+      "id": "keikene",
+      "group": 1
+    },
+    {
+      "id": "kvikene",
+      "group": 1
+    },
+    {
+      "id": "kvekene",
+      "group": 1
+    },
+    {
+      "id": "kveikne",
+      "group": 1
+    },
+    {
+      "id": "kveiken",
+      "group": 1
+    },
+    {
+      "id": "eikene",
+      "group": 2
+    },
+    {
+      "id": "vikene",
+      "group": 2
+    },
+    {
+      "id": "vekene",
+      "group": 2
+    },
+    {
+      "id": "veiene",
+      "group": 2
+    },
+    {
+      "id": "veikne",
+      "group": 2
+    },
+    {
+      "id": "veiken",
+      "group": 2
+    },
+    {
+      "id": "kikene",
+      "group": 2
+    },
+    {
+      "id": "keiene",
+      "group": 2
+    },
+    {
+      "id": "keiken",
+      "group": 2
+    },
+    {
+      "id": "kvikne",
+      "group": 2
+    },
+    {
+      "id": "kviken",
+      "group": 2
+    },
+    {
+      "id": "kveene",
+      "group": 2
+    },
+    {
+      "id": "kvekne",
+      "group": 2
+    },
+    {
+      "id": "kveken",
+      "group": 2
+    },
+    {
+      "id": "kveike",
+      "group": 2
+    },
+    {
+      "id": "kveikn",
+      "group": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "kveikene",
+      "target": "veikene",
+      "value": 1
+    },
+    {
+      "source": "kveikene",
+      "target": "keikene",
+      "value": 1
+    },
+    {
+      "source": "kveikene",
+      "target": "kvikene",
+      "value": 1
+    },
+    {
+      "source": "kveikene",
+      "target": "kvekene",
+      "value": 1
+    },
+    {
+      "source": "kveikene",
+      "target": "kveikne",
+      "value": 1
+    },
+    {
+      "source": "kveikene",
+      "target": "kveiken",
+      "value": 1
+    },
+    {
+      "source": "veikene",
+      "target": "eikene",
+      "value": 1
+    },
+    {
+      "source": "veikene",
+      "target": "vikene",
+      "value": 1
+    },
+    {
+      "source": "veikene",
+      "target": "vekene",
+      "value": 1
+    },
+    {
+      "source": "veikene",
+      "target": "veiene",
+      "value": 1
+    },
+    {
+      "source": "veikene",
+      "target": "veikne",
+      "value": 1
+    },
+    {
+      "source": "veikene",
+      "target": "veiken",
+      "value": 1
+    },
+    {
+      "source": "keikene",
+      "target": "eikene",
+      "value": 1
+    },
+    {
+      "source": "keikene",
+      "target": "kikene",
+      "value": 1
+    },
+    {
+      "source": "keikene",
+      "target": "keiene",
+      "value": 1
+    },
+    {
+      "source": "keikene",
+      "target": "keiken",
+      "value": 1
+    },
+    {
+      "source": "kvikene",
+      "target": "vikene",
+      "value": 1
+    },
+    {
+      "source": "kvikene",
+      "target": "kikene",
+      "value": 1
+    },
+    {
+      "source": "kvikene",
+      "target": "kvikne",
+      "value": 1
+    },
+    {
+      "source": "kvikene",
+      "target": "kviken",
+      "value": 1
+    },
+    {
+      "source": "kvekene",
+      "target": "vekene",
+      "value": 1
+    },
+    {
+      "source": "kvekene",
+      "target": "kveene",
+      "value": 1
+    },
+    {
+      "source": "kvekene",
+      "target": "kvekne",
+      "value": 1
+    },
+    {
+      "source": "kvekene",
+      "target": "kveken",
+      "value": 1
+    },
+    {
+      "source": "kveikne",
+      "target": "veikne",
+      "value": 1
+    },
+    {
+      "source": "kveikne",
+      "target": "kvikne",
+      "value": 1
+    },
+    {
+      "source": "kveikne",
+      "target": "kvekne",
+      "value": 1
+    },
+    {
+      "source": "kveikne",
+      "target": "kveike",
+      "value": 1
+    },
+    {
+      "source": "kveikne",
+      "target": "kveikn",
+      "value": 1
+    },
+    {
+      "source": "kveiken",
+      "target": "veiken",
+      "value": 1
+    },
+    {
+      "source": "kveiken",
+      "target": "keiken",
+      "value": 1
+    },
+    {
+      "source": "kveiken",
+      "target": "kviken",
+      "value": 1
+    },
+    {
+      "source": "kveiken",
+      "target": "kveken",
+      "value": 1
+    },
+    {
+      "source": "kveiken",
+      "target": "kveikn",
+      "value": 1
+    },
+    {
+      "source": "kveiken",
+      "target": "kveike",
+      "value": 1
+    }
+  ]
+}

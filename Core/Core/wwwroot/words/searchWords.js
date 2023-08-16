@@ -1,10 +1,6 @@
-﻿
+﻿function init() {
 
 
-function init() {
-    
-  
-    
     initSvgStatic(d3.select("#simpleWords2wd"), "simpleWords1pt");
 
     function initSvgStatic(svg, containerId) {
@@ -117,7 +113,7 @@ function init() {
                 })
 
             });
-            
+
             return nodeGroup;
         }
 
@@ -183,31 +179,30 @@ function init() {
             if (domVariables == null) {
                 return;
             }
-            
-            d3.json("/words/Json/" + domVariables.JsonPath).then(function (jsonData) {
-console.log("got Json:");
-                console.log(jsonData);
-                
 
-                $('#btnSearchWord').click(function() {
+            d3.json("/words/Json/" + domVariables.JsonPath).then(function (jsonData) {
+                console.log("got Json:");
+                console.log(jsonData);
+
+
+                $('#btnSearchWord').click(function () {
                     svg.selectAll("*").remove();
-                    
+
                     var newterm = "test";
                     var newGraph = WordsGeneral.FilterDataOnTerm(jsonData, newterm);
-                    
+
                     console.log("click!")
                     console.log(newGraph);
                     drawGraph(newGraph);
                 })
-                
+
                 var centreGroupX = WordsGeneral.MakeCenterGroup(50, domVariables.Width - 50, domVariables.MaxGroup, 100);
                 var centreGroupY = WordsGeneral.MakeCenterGroup(50, domVariables.Height - 50, domVariables.MaxGroup, 50);
-                
 
 
                 var graphData = WordsGeneral.FilterDataOnTerm(jsonData, "test");
-                
-                
+
+
                 var simulation;
 
                 function drawGraph(graphData) {
@@ -216,11 +211,15 @@ console.log("got Json:");
                     var nodes = graphData.nodes;
                     var links = graphData.links;
 
-                    console.log("drawGraph links length: " +links.length);
+                    console.log("drawGraph links length: " + links.length);
 
 
-                    var maxval = Math.max.apply(Math, nodes.map(function(o) { return o.group; }))
-                    var minval = Math.min.apply(Math, nodes.map(function(o) { return o.group; }))
+                    var maxval = Math.max.apply(Math, nodes.map(function (o) {
+                        return o.group;
+                    }))
+                    var minval = Math.min.apply(Math, nodes.map(function (o) {
+                        return o.group;
+                    }))
 
 
                     var color = d3.scaleLinear()
@@ -235,8 +234,8 @@ console.log("got Json:");
                         .strength(domVariables.RepelForce.Strength)
                         .distanceMax(domVariables.RepelForce.DistanceMax)
                         .distanceMin(domVariables.RepelForce.DistanceMin);
-                    
-                    
+
+
                     simulation = d3.forceSimulation()
                         .force("link", d3.forceLink().id(function (d) {
                             return d.id;
@@ -272,9 +271,7 @@ console.log("got Json:");
 
                     simulation.force("link")
                         .links(graphData.links);
-                    
 
-                    
 
                     // See https://github.com/d3/d3-force/blob/master/README.md#simulation_tick
                     // for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
@@ -285,21 +282,29 @@ console.log("got Json:");
 
                     var nodeGroups = PutNodes(g, graphData, lines, nodes, color);
 
-                    simulation.on("tick", function() {
-                        
-                        nodeGroups.attr("transform", function(d) {
-                        return "translate(" + d.x + "," + d.y + ")";
+                    simulation.on("tick", function () {
+
+                        nodeGroups.attr("transform", function (d) {
+                            return "translate(" + d.x + "," + d.y + ")";
                         })
-                        
-                        lines     .attr("x1", function(d) { return d.source.x; })
-                            .attr("y1", function(d) { return d.source.y; })
-                            .attr("x2", function(d) { return d.target.x; })
-                            .attr("y2", function(d) { return d.target.y; });
+
+                        lines.attr("x1", function (d) {
+                            return d.source.x;
+                        })
+                            .attr("y1", function (d) {
+                                return d.source.y;
+                            })
+                            .attr("x2", function (d) {
+                                return d.target.x;
+                            })
+                            .attr("y2", function (d) {
+                                return d.target.y;
+                            });
                     })
 
                 }
 
-                
+
                 drawGraph(graphData);
             });
 

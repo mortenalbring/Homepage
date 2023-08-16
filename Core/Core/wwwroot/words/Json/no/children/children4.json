@@ -1,249 +1,1149 @@
-{"nodes":[{ "id": "staurende", "group":1},
-{ "id": "saurende", "group":1},
-{ "id": "sturende", "group":1},
-{ "id": "staurede", "group":1},
-{ "id": "staurene", "group":1},
-{ "id": "aurende", "group":2},
-{ "id": "urende", "group":3},
-{ "id": "auende", "group":3},
-{ "id": "aurene", "group":3},
-{ "id": "urede", "group":4},
-{ "id": "urene", "group":4},
-{ "id": "rede", "group":5},
-{ "id": "rene", "group":5},
-{ "id": "urne", "group":5},
-{ "id": "uren", "group":5},
-{ "id": "auene", "group":4},
-{ "id": "arene", "group":4},
-{ "id": "aurne", "group":4},
-{ "id": "auren", "group":4},
-{ "id": "arne", "group":5},
-{ "id": "aren", "group":5},
-{ "id": "aure", "group":5},
-{ "id": "turende", "group":2},
-{ "id": "strende", "group":2},
-{ "id": "stuende", "group":2},
-{ "id": "turede", "group":3},
-{ "id": "turene", "group":3},
-{ "id": "trede", "group":4},
-{ "id": "tred", "group":5},
-{ "id": "trene", "group":4},
-{ "id": "tuene", "group":4},
-{ "id": "turne", "group":4},
-{ "id": "turen", "group":4},
-{ "id": "tene", "group":5},
-{ "id": "tren", "group":5},
-{ "id": "tune", "group":5},
-{ "id": "tuen", "group":5},
-{ "id": "ture", "group":5},
-{ "id": "turn", "group":5},
-{ "id": "strede", "group":3},
-{ "id": "strene", "group":3},
-{ "id": "strend", "group":3},
-{ "id": "stede", "group":4},
-{ "id": "stred", "group":4},
-{ "id": "sted", "group":5},
-{ "id": "stren", "group":4},
-{ "id": "sten", "group":5},
-{ "id": "trend", "group":4},
-{ "id": "stunde", "group":3},
-{ "id": "stuede", "group":3},
-{ "id": "stuene", "group":3},
-{ "id": "sunde", "group":4},
-{ "id": "stund", "group":4},
-{ "id": "sund", "group":5},
-{ "id": "suene", "group":4},
-{ "id": "stuen", "group":4},
-{ "id": "sene", "group":5},
-{ "id": "suen", "group":5},
-{ "id": "stue", "group":5},
-{ "id": "starene", "group":2},
-{ "id": "stauren", "group":2},
-{ "id": "tarene", "group":3},
-{ "id": "sarene", "group":3},
-{ "id": "staene", "group":3},
-{ "id": "staren", "group":3},
-{ "id": "taren", "group":4},
-{ "id": "tare", "group":5},
-{ "id": "saren", "group":4},
-{ "id": "stane", "group":4},
-{ "id": "staen", "group":4},
-{ "id": "tane", "group":5},
-{ "id": "stae", "group":5},
-{ "id": "stan", "group":5},
-{ "id": "stare", "group":4},
-{ "id": "star", "group":5},
-{ "id": "sauren", "group":3},
-{ "id": "sturen", "group":3},
-{ "id": "staure", "group":3},
-{ "id": "suren", "group":4},
-{ "id": "sauen", "group":4},
-{ "id": "saure", "group":4},
-{ "id": "surn", "group":5},
-{ "id": "sure", "group":5},
-{ "id": "saur", "group":5},
-{ "id": "sture", "group":4},
-{ "id": "stur", "group":5},
-{ "id": "staur", "group":4}
-],
-"links":[{"source":"staurende","target":"saurende","value":1},
-{"source":"staurende","target":"sturende","value":1},
-{"source":"staurende","target":"staurede","value":1},
-{"source":"staurende","target":"staurene","value":1},
-{"source":"saurende","target":"aurende","value":1},
-{"source":"aurende","target":"urende","value":1},
-{"source":"aurende","target":"auende","value":1},
-{"source":"aurende","target":"aurene","value":1},
-{"source":"urende","target":"urede","value":1},
-{"source":"urende","target":"urene","value":1},
-{"source":"urede","target":"rede","value":1},
-{"source":"urene","target":"rene","value":1},
-{"source":"urene","target":"urne","value":1},
-{"source":"urene","target":"uren","value":1},
-{"source":"auende","target":"auene","value":1},
-{"source":"aurene","target":"urene","value":1},
-{"source":"aurene","target":"arene","value":1},
-{"source":"aurene","target":"auene","value":1},
-{"source":"aurene","target":"aurne","value":1},
-{"source":"aurene","target":"auren","value":1},
-{"source":"arene","target":"rene","value":1},
-{"source":"arene","target":"arne","value":1},
-{"source":"arene","target":"aren","value":1},
-{"source":"aurne","target":"urne","value":1},
-{"source":"aurne","target":"arne","value":1},
-{"source":"aurne","target":"aure","value":1},
-{"source":"auren","target":"uren","value":1},
-{"source":"auren","target":"aren","value":1},
-{"source":"auren","target":"aure","value":1},
-{"source":"sturende","target":"turende","value":1},
-{"source":"sturende","target":"strende","value":1},
-{"source":"sturende","target":"stuende","value":1},
-{"source":"turende","target":"urende","value":1},
-{"source":"turende","target":"turede","value":1},
-{"source":"turende","target":"turene","value":1},
-{"source":"turede","target":"urede","value":1},
-{"source":"turede","target":"trede","value":1},
-{"source":"trede","target":"rede","value":1},
-{"source":"trede","target":"tred","value":1},
-{"source":"turene","target":"urene","value":1},
-{"source":"turene","target":"trene","value":1},
-{"source":"turene","target":"tuene","value":1},
-{"source":"turene","target":"turne","value":1},
-{"source":"turene","target":"turen","value":1},
-{"source":"trene","target":"rene","value":1},
-{"source":"trene","target":"tene","value":1},
-{"source":"trene","target":"tren","value":1},
-{"source":"tuene","target":"tene","value":1},
-{"source":"tuene","target":"tune","value":1},
-{"source":"tuene","target":"tuen","value":1},
-{"source":"turne","target":"urne","value":1},
-{"source":"turne","target":"tune","value":1},
-{"source":"turne","target":"ture","value":1},
-{"source":"turne","target":"turn","value":1},
-{"source":"turen","target":"uren","value":1},
-{"source":"turen","target":"tren","value":1},
-{"source":"turen","target":"tuen","value":1},
-{"source":"turen","target":"turn","value":1},
-{"source":"turen","target":"ture","value":1},
-{"source":"strende","target":"strede","value":1},
-{"source":"strende","target":"strene","value":1},
-{"source":"strende","target":"strend","value":1},
-{"source":"strede","target":"trede","value":1},
-{"source":"strede","target":"stede","value":1},
-{"source":"strede","target":"stred","value":1},
-{"source":"stede","target":"sted","value":1},
-{"source":"stred","target":"tred","value":1},
-{"source":"stred","target":"sted","value":1},
-{"source":"strene","target":"trene","value":1},
-{"source":"strene","target":"stren","value":1},
-{"source":"stren","target":"tren","value":1},
-{"source":"stren","target":"sten","value":1},
-{"source":"strend","target":"trend","value":1},
-{"source":"strend","target":"stred","value":1},
-{"source":"strend","target":"stren","value":1},
-{"source":"trend","target":"tred","value":1},
-{"source":"trend","target":"tren","value":1},
-{"source":"stuende","target":"stunde","value":1},
-{"source":"stuende","target":"stuede","value":1},
-{"source":"stuende","target":"stuene","value":1},
-{"source":"stunde","target":"sunde","value":1},
-{"source":"stunde","target":"stund","value":1},
-{"source":"sunde","target":"sund","value":1},
-{"source":"stund","target":"sund","value":1},
-{"source":"stuede","target":"stede","value":1},
-{"source":"stuene","target":"tuene","value":1},
-{"source":"stuene","target":"suene","value":1},
-{"source":"stuene","target":"stuen","value":1},
-{"source":"suene","target":"sene","value":1},
-{"source":"suene","target":"suen","value":1},
-{"source":"stuen","target":"tuen","value":1},
-{"source":"stuen","target":"suen","value":1},
-{"source":"stuen","target":"sten","value":1},
-{"source":"stuen","target":"stue","value":1},
-{"source":"staurene","target":"starene","value":1},
-{"source":"staurene","target":"stauren","value":1},
-{"source":"starene","target":"tarene","value":1},
-{"source":"starene","target":"sarene","value":1},
-{"source":"starene","target":"strene","value":1},
-{"source":"starene","target":"staene","value":1},
-{"source":"starene","target":"staren","value":1},
-{"source":"tarene","target":"arene","value":1},
-{"source":"tarene","target":"trene","value":1},
-{"source":"tarene","target":"taren","value":1},
-{"source":"taren","target":"aren","value":1},
-{"source":"taren","target":"tren","value":1},
-{"source":"taren","target":"tare","value":1},
-{"source":"sarene","target":"arene","value":1},
-{"source":"sarene","target":"saren","value":1},
-{"source":"saren","target":"aren","value":1},
-{"source":"staene","target":"stane","value":1},
-{"source":"staene","target":"staen","value":1},
-{"source":"stane","target":"tane","value":1},
-{"source":"stane","target":"stae","value":1},
-{"source":"stane","target":"stan","value":1},
-{"source":"staen","target":"sten","value":1},
-{"source":"staen","target":"stan","value":1},
-{"source":"staen","target":"stae","value":1},
-{"source":"staren","target":"taren","value":1},
-{"source":"staren","target":"saren","value":1},
-{"source":"staren","target":"stren","value":1},
-{"source":"staren","target":"staen","value":1},
-{"source":"staren","target":"stare","value":1},
-{"source":"stare","target":"tare","value":1},
-{"source":"stare","target":"stae","value":1},
-{"source":"stare","target":"star","value":1},
-{"source":"stauren","target":"sauren","value":1},
-{"source":"stauren","target":"sturen","value":1},
-{"source":"stauren","target":"staren","value":1},
-{"source":"stauren","target":"staure","value":1},
-{"source":"sauren","target":"auren","value":1},
-{"source":"sauren","target":"suren","value":1},
-{"source":"sauren","target":"saren","value":1},
-{"source":"sauren","target":"sauen","value":1},
-{"source":"sauren","target":"saure","value":1},
-{"source":"suren","target":"uren","value":1},
-{"source":"suren","target":"suen","value":1},
-{"source":"suren","target":"surn","value":1},
-{"source":"suren","target":"sure","value":1},
-{"source":"sauen","target":"suen","value":1},
-{"source":"saure","target":"aure","value":1},
-{"source":"saure","target":"sure","value":1},
-{"source":"saure","target":"saur","value":1},
-{"source":"sturen","target":"turen","value":1},
-{"source":"sturen","target":"suren","value":1},
-{"source":"sturen","target":"stren","value":1},
-{"source":"sturen","target":"stuen","value":1},
-{"source":"sturen","target":"sture","value":1},
-{"source":"sture","target":"ture","value":1},
-{"source":"sture","target":"sure","value":1},
-{"source":"sture","target":"stue","value":1},
-{"source":"sture","target":"stur","value":1},
-{"source":"staure","target":"saure","value":1},
-{"source":"staure","target":"sture","value":1},
-{"source":"staure","target":"stare","value":1},
-{"source":"staure","target":"staur","value":1},
-{"source":"staur","target":"saur","value":1},
-{"source":"staur","target":"stur","value":1},
-{"source":"staur","target":"star","value":1}
-]
- }
+{
+  "nodes": [
+    {
+      "id": "staurende",
+      "group": 1
+    },
+    {
+      "id": "saurende",
+      "group": 1
+    },
+    {
+      "id": "sturende",
+      "group": 1
+    },
+    {
+      "id": "staurede",
+      "group": 1
+    },
+    {
+      "id": "staurene",
+      "group": 1
+    },
+    {
+      "id": "aurende",
+      "group": 2
+    },
+    {
+      "id": "urende",
+      "group": 3
+    },
+    {
+      "id": "auende",
+      "group": 3
+    },
+    {
+      "id": "aurene",
+      "group": 3
+    },
+    {
+      "id": "urede",
+      "group": 4
+    },
+    {
+      "id": "urene",
+      "group": 4
+    },
+    {
+      "id": "rede",
+      "group": 5
+    },
+    {
+      "id": "rene",
+      "group": 5
+    },
+    {
+      "id": "urne",
+      "group": 5
+    },
+    {
+      "id": "uren",
+      "group": 5
+    },
+    {
+      "id": "auene",
+      "group": 4
+    },
+    {
+      "id": "arene",
+      "group": 4
+    },
+    {
+      "id": "aurne",
+      "group": 4
+    },
+    {
+      "id": "auren",
+      "group": 4
+    },
+    {
+      "id": "arne",
+      "group": 5
+    },
+    {
+      "id": "aren",
+      "group": 5
+    },
+    {
+      "id": "aure",
+      "group": 5
+    },
+    {
+      "id": "turende",
+      "group": 2
+    },
+    {
+      "id": "strende",
+      "group": 2
+    },
+    {
+      "id": "stuende",
+      "group": 2
+    },
+    {
+      "id": "turede",
+      "group": 3
+    },
+    {
+      "id": "turene",
+      "group": 3
+    },
+    {
+      "id": "trede",
+      "group": 4
+    },
+    {
+      "id": "tred",
+      "group": 5
+    },
+    {
+      "id": "trene",
+      "group": 4
+    },
+    {
+      "id": "tuene",
+      "group": 4
+    },
+    {
+      "id": "turne",
+      "group": 4
+    },
+    {
+      "id": "turen",
+      "group": 4
+    },
+    {
+      "id": "tene",
+      "group": 5
+    },
+    {
+      "id": "tren",
+      "group": 5
+    },
+    {
+      "id": "tune",
+      "group": 5
+    },
+    {
+      "id": "tuen",
+      "group": 5
+    },
+    {
+      "id": "ture",
+      "group": 5
+    },
+    {
+      "id": "turn",
+      "group": 5
+    },
+    {
+      "id": "strede",
+      "group": 3
+    },
+    {
+      "id": "strene",
+      "group": 3
+    },
+    {
+      "id": "strend",
+      "group": 3
+    },
+    {
+      "id": "stede",
+      "group": 4
+    },
+    {
+      "id": "stred",
+      "group": 4
+    },
+    {
+      "id": "sted",
+      "group": 5
+    },
+    {
+      "id": "stren",
+      "group": 4
+    },
+    {
+      "id": "sten",
+      "group": 5
+    },
+    {
+      "id": "trend",
+      "group": 4
+    },
+    {
+      "id": "stunde",
+      "group": 3
+    },
+    {
+      "id": "stuede",
+      "group": 3
+    },
+    {
+      "id": "stuene",
+      "group": 3
+    },
+    {
+      "id": "sunde",
+      "group": 4
+    },
+    {
+      "id": "stund",
+      "group": 4
+    },
+    {
+      "id": "sund",
+      "group": 5
+    },
+    {
+      "id": "suene",
+      "group": 4
+    },
+    {
+      "id": "stuen",
+      "group": 4
+    },
+    {
+      "id": "sene",
+      "group": 5
+    },
+    {
+      "id": "suen",
+      "group": 5
+    },
+    {
+      "id": "stue",
+      "group": 5
+    },
+    {
+      "id": "starene",
+      "group": 2
+    },
+    {
+      "id": "stauren",
+      "group": 2
+    },
+    {
+      "id": "tarene",
+      "group": 3
+    },
+    {
+      "id": "sarene",
+      "group": 3
+    },
+    {
+      "id": "staene",
+      "group": 3
+    },
+    {
+      "id": "staren",
+      "group": 3
+    },
+    {
+      "id": "taren",
+      "group": 4
+    },
+    {
+      "id": "tare",
+      "group": 5
+    },
+    {
+      "id": "saren",
+      "group": 4
+    },
+    {
+      "id": "stane",
+      "group": 4
+    },
+    {
+      "id": "staen",
+      "group": 4
+    },
+    {
+      "id": "tane",
+      "group": 5
+    },
+    {
+      "id": "stae",
+      "group": 5
+    },
+    {
+      "id": "stan",
+      "group": 5
+    },
+    {
+      "id": "stare",
+      "group": 4
+    },
+    {
+      "id": "star",
+      "group": 5
+    },
+    {
+      "id": "sauren",
+      "group": 3
+    },
+    {
+      "id": "sturen",
+      "group": 3
+    },
+    {
+      "id": "staure",
+      "group": 3
+    },
+    {
+      "id": "suren",
+      "group": 4
+    },
+    {
+      "id": "sauen",
+      "group": 4
+    },
+    {
+      "id": "saure",
+      "group": 4
+    },
+    {
+      "id": "surn",
+      "group": 5
+    },
+    {
+      "id": "sure",
+      "group": 5
+    },
+    {
+      "id": "saur",
+      "group": 5
+    },
+    {
+      "id": "sture",
+      "group": 4
+    },
+    {
+      "id": "stur",
+      "group": 5
+    },
+    {
+      "id": "staur",
+      "group": 4
+    }
+  ],
+  "links": [
+    {
+      "source": "staurende",
+      "target": "saurende",
+      "value": 1
+    },
+    {
+      "source": "staurende",
+      "target": "sturende",
+      "value": 1
+    },
+    {
+      "source": "staurende",
+      "target": "staurede",
+      "value": 1
+    },
+    {
+      "source": "staurende",
+      "target": "staurene",
+      "value": 1
+    },
+    {
+      "source": "saurende",
+      "target": "aurende",
+      "value": 1
+    },
+    {
+      "source": "aurende",
+      "target": "urende",
+      "value": 1
+    },
+    {
+      "source": "aurende",
+      "target": "auende",
+      "value": 1
+    },
+    {
+      "source": "aurende",
+      "target": "aurene",
+      "value": 1
+    },
+    {
+      "source": "urende",
+      "target": "urede",
+      "value": 1
+    },
+    {
+      "source": "urende",
+      "target": "urene",
+      "value": 1
+    },
+    {
+      "source": "urede",
+      "target": "rede",
+      "value": 1
+    },
+    {
+      "source": "urene",
+      "target": "rene",
+      "value": 1
+    },
+    {
+      "source": "urene",
+      "target": "urne",
+      "value": 1
+    },
+    {
+      "source": "urene",
+      "target": "uren",
+      "value": 1
+    },
+    {
+      "source": "auende",
+      "target": "auene",
+      "value": 1
+    },
+    {
+      "source": "aurene",
+      "target": "urene",
+      "value": 1
+    },
+    {
+      "source": "aurene",
+      "target": "arene",
+      "value": 1
+    },
+    {
+      "source": "aurene",
+      "target": "auene",
+      "value": 1
+    },
+    {
+      "source": "aurene",
+      "target": "aurne",
+      "value": 1
+    },
+    {
+      "source": "aurene",
+      "target": "auren",
+      "value": 1
+    },
+    {
+      "source": "arene",
+      "target": "rene",
+      "value": 1
+    },
+    {
+      "source": "arene",
+      "target": "arne",
+      "value": 1
+    },
+    {
+      "source": "arene",
+      "target": "aren",
+      "value": 1
+    },
+    {
+      "source": "aurne",
+      "target": "urne",
+      "value": 1
+    },
+    {
+      "source": "aurne",
+      "target": "arne",
+      "value": 1
+    },
+    {
+      "source": "aurne",
+      "target": "aure",
+      "value": 1
+    },
+    {
+      "source": "auren",
+      "target": "uren",
+      "value": 1
+    },
+    {
+      "source": "auren",
+      "target": "aren",
+      "value": 1
+    },
+    {
+      "source": "auren",
+      "target": "aure",
+      "value": 1
+    },
+    {
+      "source": "sturende",
+      "target": "turende",
+      "value": 1
+    },
+    {
+      "source": "sturende",
+      "target": "strende",
+      "value": 1
+    },
+    {
+      "source": "sturende",
+      "target": "stuende",
+      "value": 1
+    },
+    {
+      "source": "turende",
+      "target": "urende",
+      "value": 1
+    },
+    {
+      "source": "turende",
+      "target": "turede",
+      "value": 1
+    },
+    {
+      "source": "turende",
+      "target": "turene",
+      "value": 1
+    },
+    {
+      "source": "turede",
+      "target": "urede",
+      "value": 1
+    },
+    {
+      "source": "turede",
+      "target": "trede",
+      "value": 1
+    },
+    {
+      "source": "trede",
+      "target": "rede",
+      "value": 1
+    },
+    {
+      "source": "trede",
+      "target": "tred",
+      "value": 1
+    },
+    {
+      "source": "turene",
+      "target": "urene",
+      "value": 1
+    },
+    {
+      "source": "turene",
+      "target": "trene",
+      "value": 1
+    },
+    {
+      "source": "turene",
+      "target": "tuene",
+      "value": 1
+    },
+    {
+      "source": "turene",
+      "target": "turne",
+      "value": 1
+    },
+    {
+      "source": "turene",
+      "target": "turen",
+      "value": 1
+    },
+    {
+      "source": "trene",
+      "target": "rene",
+      "value": 1
+    },
+    {
+      "source": "trene",
+      "target": "tene",
+      "value": 1
+    },
+    {
+      "source": "trene",
+      "target": "tren",
+      "value": 1
+    },
+    {
+      "source": "tuene",
+      "target": "tene",
+      "value": 1
+    },
+    {
+      "source": "tuene",
+      "target": "tune",
+      "value": 1
+    },
+    {
+      "source": "tuene",
+      "target": "tuen",
+      "value": 1
+    },
+    {
+      "source": "turne",
+      "target": "urne",
+      "value": 1
+    },
+    {
+      "source": "turne",
+      "target": "tune",
+      "value": 1
+    },
+    {
+      "source": "turne",
+      "target": "ture",
+      "value": 1
+    },
+    {
+      "source": "turne",
+      "target": "turn",
+      "value": 1
+    },
+    {
+      "source": "turen",
+      "target": "uren",
+      "value": 1
+    },
+    {
+      "source": "turen",
+      "target": "tren",
+      "value": 1
+    },
+    {
+      "source": "turen",
+      "target": "tuen",
+      "value": 1
+    },
+    {
+      "source": "turen",
+      "target": "turn",
+      "value": 1
+    },
+    {
+      "source": "turen",
+      "target": "ture",
+      "value": 1
+    },
+    {
+      "source": "strende",
+      "target": "strede",
+      "value": 1
+    },
+    {
+      "source": "strende",
+      "target": "strene",
+      "value": 1
+    },
+    {
+      "source": "strende",
+      "target": "strend",
+      "value": 1
+    },
+    {
+      "source": "strede",
+      "target": "trede",
+      "value": 1
+    },
+    {
+      "source": "strede",
+      "target": "stede",
+      "value": 1
+    },
+    {
+      "source": "strede",
+      "target": "stred",
+      "value": 1
+    },
+    {
+      "source": "stede",
+      "target": "sted",
+      "value": 1
+    },
+    {
+      "source": "stred",
+      "target": "tred",
+      "value": 1
+    },
+    {
+      "source": "stred",
+      "target": "sted",
+      "value": 1
+    },
+    {
+      "source": "strene",
+      "target": "trene",
+      "value": 1
+    },
+    {
+      "source": "strene",
+      "target": "stren",
+      "value": 1
+    },
+    {
+      "source": "stren",
+      "target": "tren",
+      "value": 1
+    },
+    {
+      "source": "stren",
+      "target": "sten",
+      "value": 1
+    },
+    {
+      "source": "strend",
+      "target": "trend",
+      "value": 1
+    },
+    {
+      "source": "strend",
+      "target": "stred",
+      "value": 1
+    },
+    {
+      "source": "strend",
+      "target": "stren",
+      "value": 1
+    },
+    {
+      "source": "trend",
+      "target": "tred",
+      "value": 1
+    },
+    {
+      "source": "trend",
+      "target": "tren",
+      "value": 1
+    },
+    {
+      "source": "stuende",
+      "target": "stunde",
+      "value": 1
+    },
+    {
+      "source": "stuende",
+      "target": "stuede",
+      "value": 1
+    },
+    {
+      "source": "stuende",
+      "target": "stuene",
+      "value": 1
+    },
+    {
+      "source": "stunde",
+      "target": "sunde",
+      "value": 1
+    },
+    {
+      "source": "stunde",
+      "target": "stund",
+      "value": 1
+    },
+    {
+      "source": "sunde",
+      "target": "sund",
+      "value": 1
+    },
+    {
+      "source": "stund",
+      "target": "sund",
+      "value": 1
+    },
+    {
+      "source": "stuede",
+      "target": "stede",
+      "value": 1
+    },
+    {
+      "source": "stuene",
+      "target": "tuene",
+      "value": 1
+    },
+    {
+      "source": "stuene",
+      "target": "suene",
+      "value": 1
+    },
+    {
+      "source": "stuene",
+      "target": "stuen",
+      "value": 1
+    },
+    {
+      "source": "suene",
+      "target": "sene",
+      "value": 1
+    },
+    {
+      "source": "suene",
+      "target": "suen",
+      "value": 1
+    },
+    {
+      "source": "stuen",
+      "target": "tuen",
+      "value": 1
+    },
+    {
+      "source": "stuen",
+      "target": "suen",
+      "value": 1
+    },
+    {
+      "source": "stuen",
+      "target": "sten",
+      "value": 1
+    },
+    {
+      "source": "stuen",
+      "target": "stue",
+      "value": 1
+    },
+    {
+      "source": "staurene",
+      "target": "starene",
+      "value": 1
+    },
+    {
+      "source": "staurene",
+      "target": "stauren",
+      "value": 1
+    },
+    {
+      "source": "starene",
+      "target": "tarene",
+      "value": 1
+    },
+    {
+      "source": "starene",
+      "target": "sarene",
+      "value": 1
+    },
+    {
+      "source": "starene",
+      "target": "strene",
+      "value": 1
+    },
+    {
+      "source": "starene",
+      "target": "staene",
+      "value": 1
+    },
+    {
+      "source": "starene",
+      "target": "staren",
+      "value": 1
+    },
+    {
+      "source": "tarene",
+      "target": "arene",
+      "value": 1
+    },
+    {
+      "source": "tarene",
+      "target": "trene",
+      "value": 1
+    },
+    {
+      "source": "tarene",
+      "target": "taren",
+      "value": 1
+    },
+    {
+      "source": "taren",
+      "target": "aren",
+      "value": 1
+    },
+    {
+      "source": "taren",
+      "target": "tren",
+      "value": 1
+    },
+    {
+      "source": "taren",
+      "target": "tare",
+      "value": 1
+    },
+    {
+      "source": "sarene",
+      "target": "arene",
+      "value": 1
+    },
+    {
+      "source": "sarene",
+      "target": "saren",
+      "value": 1
+    },
+    {
+      "source": "saren",
+      "target": "aren",
+      "value": 1
+    },
+    {
+      "source": "staene",
+      "target": "stane",
+      "value": 1
+    },
+    {
+      "source": "staene",
+      "target": "staen",
+      "value": 1
+    },
+    {
+      "source": "stane",
+      "target": "tane",
+      "value": 1
+    },
+    {
+      "source": "stane",
+      "target": "stae",
+      "value": 1
+    },
+    {
+      "source": "stane",
+      "target": "stan",
+      "value": 1
+    },
+    {
+      "source": "staen",
+      "target": "sten",
+      "value": 1
+    },
+    {
+      "source": "staen",
+      "target": "stan",
+      "value": 1
+    },
+    {
+      "source": "staen",
+      "target": "stae",
+      "value": 1
+    },
+    {
+      "source": "staren",
+      "target": "taren",
+      "value": 1
+    },
+    {
+      "source": "staren",
+      "target": "saren",
+      "value": 1
+    },
+    {
+      "source": "staren",
+      "target": "stren",
+      "value": 1
+    },
+    {
+      "source": "staren",
+      "target": "staen",
+      "value": 1
+    },
+    {
+      "source": "staren",
+      "target": "stare",
+      "value": 1
+    },
+    {
+      "source": "stare",
+      "target": "tare",
+      "value": 1
+    },
+    {
+      "source": "stare",
+      "target": "stae",
+      "value": 1
+    },
+    {
+      "source": "stare",
+      "target": "star",
+      "value": 1
+    },
+    {
+      "source": "stauren",
+      "target": "sauren",
+      "value": 1
+    },
+    {
+      "source": "stauren",
+      "target": "sturen",
+      "value": 1
+    },
+    {
+      "source": "stauren",
+      "target": "staren",
+      "value": 1
+    },
+    {
+      "source": "stauren",
+      "target": "staure",
+      "value": 1
+    },
+    {
+      "source": "sauren",
+      "target": "auren",
+      "value": 1
+    },
+    {
+      "source": "sauren",
+      "target": "suren",
+      "value": 1
+    },
+    {
+      "source": "sauren",
+      "target": "saren",
+      "value": 1
+    },
+    {
+      "source": "sauren",
+      "target": "sauen",
+      "value": 1
+    },
+    {
+      "source": "sauren",
+      "target": "saure",
+      "value": 1
+    },
+    {
+      "source": "suren",
+      "target": "uren",
+      "value": 1
+    },
+    {
+      "source": "suren",
+      "target": "suen",
+      "value": 1
+    },
+    {
+      "source": "suren",
+      "target": "surn",
+      "value": 1
+    },
+    {
+      "source": "suren",
+      "target": "sure",
+      "value": 1
+    },
+    {
+      "source": "sauen",
+      "target": "suen",
+      "value": 1
+    },
+    {
+      "source": "saure",
+      "target": "aure",
+      "value": 1
+    },
+    {
+      "source": "saure",
+      "target": "sure",
+      "value": 1
+    },
+    {
+      "source": "saure",
+      "target": "saur",
+      "value": 1
+    },
+    {
+      "source": "sturen",
+      "target": "turen",
+      "value": 1
+    },
+    {
+      "source": "sturen",
+      "target": "suren",
+      "value": 1
+    },
+    {
+      "source": "sturen",
+      "target": "stren",
+      "value": 1
+    },
+    {
+      "source": "sturen",
+      "target": "stuen",
+      "value": 1
+    },
+    {
+      "source": "sturen",
+      "target": "sture",
+      "value": 1
+    },
+    {
+      "source": "sture",
+      "target": "ture",
+      "value": 1
+    },
+    {
+      "source": "sture",
+      "target": "sure",
+      "value": 1
+    },
+    {
+      "source": "sture",
+      "target": "stue",
+      "value": 1
+    },
+    {
+      "source": "sture",
+      "target": "stur",
+      "value": 1
+    },
+    {
+      "source": "staure",
+      "target": "saure",
+      "value": 1
+    },
+    {
+      "source": "staure",
+      "target": "sture",
+      "value": 1
+    },
+    {
+      "source": "staure",
+      "target": "stare",
+      "value": 1
+    },
+    {
+      "source": "staure",
+      "target": "staur",
+      "value": 1
+    },
+    {
+      "source": "staur",
+      "target": "saur",
+      "value": 1
+    },
+    {
+      "source": "staur",
+      "target": "stur",
+      "value": 1
+    },
+    {
+      "source": "staur",
+      "target": "star",
+      "value": 1
+    }
+  ]
+}

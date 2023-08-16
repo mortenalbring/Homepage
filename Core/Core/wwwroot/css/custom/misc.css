@@ -1,32 +1,30 @@
 ﻿
-
-
-
 .ma-title {
-    font-family: dosis,"HelveticaNeue-CondensedBold","trebuchet ms",sans-serif;
-    font-weight:700;
-    letter-spacing:0.05em;
+    font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
+
 .ma-blurb {
-    font-family: "Open Sans",sans-serif;
-    font-weight:600;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
 }
+
 .ma-main {
     background: #121212;
     color: #b8daff;
 }
 
 .ma-img-container {
-    position:relative;
-    display:inline-block;
-    border:0px solid rgba(184, 218, 255, 0.07);
+    position: relative;
+    display: inline-block;
+    border: 0px solid rgba(184, 218, 255, 0.07);
     border-radius: 10px;
 }
 
 
-
 .ma-section-lighter {
-    margin-top:0;
+    margin-top: 0;
     background: #08363f;
     /*border-top:1px solid #5ad2de;*/
 }
@@ -35,22 +33,24 @@
     color: #bdbdbd;
     text-decoration: none;
 }
+
 .ma-section-lighter a:hover {
     text-decoration: underline;
 }
 
 .ma-particles .container {
-    padding-top:4rem;
-    padding-bottom:4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
+
 .ma-particles {
-    position:relative;
-    border-top-color: rgb(46,50,54);
+    position: relative;
+    border-top-color: rgb(46, 50, 54);
     /*border-bottom-color: #2a2f34;*/
     /*background: rgba(255, 255, 255, 0.06);*/
 
-    
-    background: linear-gradient(0deg, rgba(33,37,41,1), rgba(255,255,255,0.06) 40%);
+
+    background: linear-gradient(0deg, rgba(33, 37, 41, 1), rgba(255, 255, 255, 0.06) 40%);
 
 }
 
@@ -59,15 +59,15 @@
 }
 
 canvas {
-    max-height:100%;
-    position:absolute;
+    max-height: 100%;
+    position: absolute;
     z-index: -1;
 }
 
 .datePosted {
-    padding-top:1em;
+    padding-top: 1em;
     padding-bottom: 1em;
     color: #dcdcdc;
-    font-size:0.8em;
+    font-size: 0.8em;
     font-style: italic;
 }

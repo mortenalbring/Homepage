@@ -20,10 +20,10 @@ document.getElementById('dataRadius').value = radius;
 document.getElementById('dataSpeed').value = animSpeed;
 
 var svg = d3.select("#fractal").append("svg")
-//    .attr("width", width)
-//    .attr("height", height)
-    .attr("style","border: 1px solid white")
-    .attr("viewBox","0 0 100 100")
+    //    .attr("width", width)
+    //    .attr("height", height)
+    .attr("style", "border: 1px solid white")
+    .attr("viewBox", "0 0 100 100")
 ;
 
 function drawAnchors() {
@@ -34,12 +34,12 @@ function drawAnchors() {
 
 function parseGuiVariables() {
     var iterTextVal = document.getElementById('iterMaxCount').value;
-    var parsedInt = parseInt(iterTextVal,10);
+    var parsedInt = parseInt(iterTextVal, 10);
     if (parsedInt > 0) {
         iterations = parsedInt;
     }
 
-    var radiusTextVal= document.getElementById('dataRadius').value;
+    var radiusTextVal = document.getElementById('dataRadius').value;
     var parsedRadius = parseFloat(radiusTextVal);
     if (parsedRadius > 0) {
         radius = parsedRadius;
@@ -54,16 +54,40 @@ function parseGuiVariables() {
 
 function calc() {
     parseGuiVariables();
-    
-    
+
+
     var strokeWidthAnchor = 1.0;
     var strokeWidthPoint = radius / 10;
-    
+
     var anchorOffset = 5;
-    
-    nodes[0] = {x: width - anchorRadius-anchorOffset, y: height - anchorRadius-anchorOffset, r: 255, g: 0, b: 0, radius: anchorRadius, strokeWidth: strokeWidthAnchor};
-    nodes[1] = {x: anchorRadius+anchorOffset, y: height - anchorRadius-anchorOffset, r: 0, g: 255, b: 0, radius: anchorRadius, strokeWidth: strokeWidthAnchor};
-    nodes[2] = {x: (width / 2), y: anchorRadius+anchorOffset, r: 0, g: 0, b: 255, radius: anchorRadius, strokeWidth: strokeWidthAnchor};
+
+    nodes[0] = {
+        x: width - anchorRadius - anchorOffset,
+        y: height - anchorRadius - anchorOffset,
+        r: 255,
+        g: 0,
+        b: 0,
+        radius: anchorRadius,
+        strokeWidth: strokeWidthAnchor
+    };
+    nodes[1] = {
+        x: anchorRadius + anchorOffset,
+        y: height - anchorRadius - anchorOffset,
+        r: 0,
+        g: 255,
+        b: 0,
+        radius: anchorRadius,
+        strokeWidth: strokeWidthAnchor
+    };
+    nodes[2] = {
+        x: (width / 2),
+        y: anchorRadius + anchorOffset,
+        r: 0,
+        g: 0,
+        b: 255,
+        radius: anchorRadius,
+        strokeWidth: strokeWidthAnchor
+    };
 
     var r = 0;
     var g = 0;
@@ -99,11 +123,11 @@ function calc() {
 }
 
 function stop() {
-    var highestTimeoutId = setInterval(";",1);
-    for (var i = 0 ; i < highestTimeoutId ; i++) {
+    var highestTimeoutId = setInterval("", 1);
+    for (var i = 0; i < highestTimeoutId; i++) {
         clearInterval(i);
     }
-   // svg.selectAll("*").remove();
+    // svg.selectAll("*").remove();
 }
 
 
@@ -135,7 +159,7 @@ function drawUpTo(max, stopOnMax) {
         .attr("r", function (d) {
             return d.radius
         })
-        .style("stroke-width", function(d) {
+        .style("stroke-width", function (d) {
             return d.strokeWidth;
         })
         .style("stroke", function (d) {
@@ -153,13 +177,13 @@ function drawUpTo(max, stopOnMax) {
 function restart() {
     stop();
     calc();
-    
+
     var i = 1;
     setInterval(function () {
         if (i < iterations) {
             i++;
         }
-        drawUpTo(i,true);
+        drawUpTo(i, true);
     }, animSpeed);
 
 }
@@ -173,13 +197,13 @@ function startLoop() {
     setInterval(function () {
         if (i <= iterations) {
             i++;
-        }
-        else {
+        } else {
             i = 1;
         }
         drawUpTo(i, false);
     }, animSpeed);
 
 }
+
 drawAnchors();
 startLoop();

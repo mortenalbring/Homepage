@@ -1,26 +1,27 @@
 ﻿
 .navbar-ma-trans {
     position: absolute;
-    width:100%;
+    width: 100%;
     z-index: 1;
     background: transparent;
 }
 
 .navbar-ma-semi-trans {
     position: absolute;
-    width:100%;
+    width: 100%;
     z-index: 1;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .navbar-ma {
 
 }
+
 .navbar-ma-home {
     margin-bottom: 0 !important;
     border-bottom: 0;
     border-top: 0;
-    background: rgb(46,50,54);
+    background: rgb(46, 50, 54);
 }
 
 .navbar-trans {
@@ -31,6 +32,7 @@
 #toggleLanguage {
     opacity: 0.7;
 }
+
 #toggleLanguage:hover {
     opacity: 1;
 }
@@ -41,11 +43,11 @@
 }
 
 .ma-grey-gradient {
-    background: linear-gradient(180deg, rgba(45,45,45,1) 0%, rgba(45,45,45,0) 100%);
+    background: linear-gradient(180deg, rgba(45, 45, 45, 1) 0%, rgba(45, 45, 45, 0) 100%);
 }
 
 .ma-navbar-trans {
-    background: rgba(0,0,0,0.0) !important;
+    background: rgba(0, 0, 0, 0.0) !important;
     /*background: rgba(255,209,204,0) !important;*/
 }
 

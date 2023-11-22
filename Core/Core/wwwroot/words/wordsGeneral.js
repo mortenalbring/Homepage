@@ -116,7 +116,7 @@ WordsGeneral.FilterDataOnTermExactRecursive = function (inputGraph, term) {
             }
         }
     }
-    
+
     var notFound = [];
     for (let i = 0; i < searchTerms.length; i++) {
         var found = foundTerms.indexOf(searchTerms[i]);
@@ -174,7 +174,7 @@ WordsGeneral.FilterDataOnTermExact = function (inputGraph, term) {
     var searchNodes = [];
 
     for (var i = 0; i < inputGraph.nodes.length; i++) {
-        
+
         for (let j = 0; j < searchLinks.length; j++) {
             if ((inputGraph.nodes[i].id === searchLinks[j].source) || (inputGraph.nodes[i].id === searchLinks[j].target)) {
                 var inArray = searchNodes.findIndex(v => v.id === inputGraph.nodes[i].id);

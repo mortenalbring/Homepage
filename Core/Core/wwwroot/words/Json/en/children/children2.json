@@ -1,85 +1,384 @@
-{"nodes":[{ "id": "steares", "group":1},
-{ "id": "stares", "group":1},
-{ "id": "steres", "group":1},
-{ "id": "stears", "group":1},
-{ "id": "steare", "group":1},
-{ "id": "tares", "group":2},
-{ "id": "stars", "group":2},
-{ "id": "stare", "group":2},
-{ "id": "ares", "group":3},
-{ "id": "tres", "group":3},
-{ "id": "taes", "group":3},
-{ "id": "tars", "group":3},
-{ "id": "tare", "group":3},
-{ "id": "sars", "group":3},
-{ "id": "star", "group":3},
-{ "id": "teres", "group":2},
-{ "id": "seres", "group":2},
-{ "id": "stere", "group":2},
-{ "id": "eres", "group":3},
-{ "id": "tees", "group":3},
-{ "id": "sees", "group":3},
-{ "id": "sers", "group":3},
-{ "id": "sere", "group":3},
-{ "id": "tears", "group":2},
-{ "id": "sears", "group":2},
-{ "id": "stear", "group":2},
-{ "id": "ears", "group":3},
-{ "id": "teas", "group":3},
-{ "id": "tear", "group":3},
-{ "id": "seas", "group":3},
-{ "id": "sear", "group":3},
-{ "id": "seare", "group":2}
-],
-"links":[{"source":"steares","target":"stares","value":1},
-{"source":"steares","target":"steres","value":1},
-{"source":"steares","target":"stears","value":1},
-{"source":"steares","target":"steare","value":1},
-{"source":"stares","target":"tares","value":1},
-{"source":"stares","target":"stars","value":1},
-{"source":"stares","target":"stare","value":1},
-{"source":"tares","target":"ares","value":1},
-{"source":"tares","target":"tres","value":1},
-{"source":"tares","target":"taes","value":1},
-{"source":"tares","target":"tars","value":1},
-{"source":"tares","target":"tare","value":1},
-{"source":"stars","target":"tars","value":1},
-{"source":"stars","target":"sars","value":1},
-{"source":"stars","target":"star","value":1},
-{"source":"stare","target":"tare","value":1},
-{"source":"stare","target":"star","value":1},
-{"source":"steres","target":"teres","value":1},
-{"source":"steres","target":"seres","value":1},
-{"source":"steres","target":"stere","value":1},
-{"source":"teres","target":"eres","value":1},
-{"source":"teres","target":"tres","value":1},
-{"source":"teres","target":"tees","value":1},
-{"source":"seres","target":"eres","value":1},
-{"source":"seres","target":"sees","value":1},
-{"source":"seres","target":"sers","value":1},
-{"source":"seres","target":"sere","value":1},
-{"source":"stere","target":"sere","value":1},
-{"source":"stears","target":"tears","value":1},
-{"source":"stears","target":"sears","value":1},
-{"source":"stears","target":"stars","value":1},
-{"source":"stears","target":"stear","value":1},
-{"source":"tears","target":"ears","value":1},
-{"source":"tears","target":"tars","value":1},
-{"source":"tears","target":"teas","value":1},
-{"source":"tears","target":"tear","value":1},
-{"source":"sears","target":"ears","value":1},
-{"source":"sears","target":"sars","value":1},
-{"source":"sears","target":"sers","value":1},
-{"source":"sears","target":"seas","value":1},
-{"source":"sears","target":"sear","value":1},
-{"source":"stear","target":"tear","value":1},
-{"source":"stear","target":"sear","value":1},
-{"source":"stear","target":"star","value":1},
-{"source":"steare","target":"seare","value":1},
-{"source":"steare","target":"stare","value":1},
-{"source":"steare","target":"stere","value":1},
-{"source":"steare","target":"stear","value":1},
-{"source":"seare","target":"sere","value":1},
-{"source":"seare","target":"sear","value":1}
-]
- }
+{
+  "nodes": [
+    {
+      "id": "steares",
+      "group": 1
+    },
+    {
+      "id": "stares",
+      "group": 1
+    },
+    {
+      "id": "steres",
+      "group": 1
+    },
+    {
+      "id": "stears",
+      "group": 1
+    },
+    {
+      "id": "steare",
+      "group": 1
+    },
+    {
+      "id": "tares",
+      "group": 2
+    },
+    {
+      "id": "stars",
+      "group": 2
+    },
+    {
+      "id": "stare",
+      "group": 2
+    },
+    {
+      "id": "ares",
+      "group": 3
+    },
+    {
+      "id": "tres",
+      "group": 3
+    },
+    {
+      "id": "taes",
+      "group": 3
+    },
+    {
+      "id": "tars",
+      "group": 3
+    },
+    {
+      "id": "tare",
+      "group": 3
+    },
+    {
+      "id": "sars",
+      "group": 3
+    },
+    {
+      "id": "star",
+      "group": 3
+    },
+    {
+      "id": "teres",
+      "group": 2
+    },
+    {
+      "id": "seres",
+      "group": 2
+    },
+    {
+      "id": "stere",
+      "group": 2
+    },
+    {
+      "id": "eres",
+      "group": 3
+    },
+    {
+      "id": "tees",
+      "group": 3
+    },
+    {
+      "id": "sees",
+      "group": 3
+    },
+    {
+      "id": "sers",
+      "group": 3
+    },
+    {
+      "id": "sere",
+      "group": 3
+    },
+    {
+      "id": "tears",
+      "group": 2
+    },
+    {
+      "id": "sears",
+      "group": 2
+    },
+    {
+      "id": "stear",
+      "group": 2
+    },
+    {
+      "id": "ears",
+      "group": 3
+    },
+    {
+      "id": "teas",
+      "group": 3
+    },
+    {
+      "id": "tear",
+      "group": 3
+    },
+    {
+      "id": "seas",
+      "group": 3
+    },
+    {
+      "id": "sear",
+      "group": 3
+    },
+    {
+      "id": "seare",
+      "group": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "steares",
+      "target": "stares",
+      "value": 1
+    },
+    {
+      "source": "steares",
+      "target": "steres",
+      "value": 1
+    },
+    {
+      "source": "steares",
+      "target": "stears",
+      "value": 1
+    },
+    {
+      "source": "steares",
+      "target": "steare",
+      "value": 1
+    },
+    {
+      "source": "stares",
+      "target": "tares",
+      "value": 1
+    },
+    {
+      "source": "stares",
+      "target": "stars",
+      "value": 1
+    },
+    {
+      "source": "stares",
+      "target": "stare",
+      "value": 1
+    },
+    {
+      "source": "tares",
+      "target": "ares",
+      "value": 1
+    },
+    {
+      "source": "tares",
+      "target": "tres",
+      "value": 1
+    },
+    {
+      "source": "tares",
+      "target": "taes",
+      "value": 1
+    },
+    {
+      "source": "tares",
+      "target": "tars",
+      "value": 1
+    },
+    {
+      "source": "tares",
+      "target": "tare",
+      "value": 1
+    },
+    {
+      "source": "stars",
+      "target": "tars",
+      "value": 1
+    },
+    {
+      "source": "stars",
+      "target": "sars",
+      "value": 1
+    },
+    {
+      "source": "stars",
+      "target": "star",
+      "value": 1
+    },
+    {
+      "source": "stare",
+      "target": "tare",
+      "value": 1
+    },
+    {
+      "source": "stare",
+      "target": "star",
+      "value": 1
+    },
+    {
+      "source": "steres",
+      "target": "teres",
+      "value": 1
+    },
+    {
+      "source": "steres",
+      "target": "seres",
+      "value": 1
+    },
+    {
+      "source": "steres",
+      "target": "stere",
+      "value": 1
+    },
+    {
+      "source": "teres",
+      "target": "eres",
+      "value": 1
+    },
+    {
+      "source": "teres",
+      "target": "tres",
+      "value": 1
+    },
+    {
+      "source": "teres",
+      "target": "tees",
+      "value": 1
+    },
+    {
+      "source": "seres",
+      "target": "eres",
+      "value": 1
+    },
+    {
+      "source": "seres",
+      "target": "sees",
+      "value": 1
+    },
+    {
+      "source": "seres",
+      "target": "sers",
+      "value": 1
+    },
+    {
+      "source": "seres",
+      "target": "sere",
+      "value": 1
+    },
+    {
+      "source": "stere",
+      "target": "sere",
+      "value": 1
+    },
+    {
+      "source": "stears",
+      "target": "tears",
+      "value": 1
+    },
+    {
+      "source": "stears",
+      "target": "sears",
+      "value": 1
+    },
+    {
+      "source": "stears",
+      "target": "stars",
+      "value": 1
+    },
+    {
+      "source": "stears",
+      "target": "stear",
+      "value": 1
+    },
+    {
+      "source": "tears",
+      "target": "ears",
+      "value": 1
+    },
+    {
+      "source": "tears",
+      "target": "tars",
+      "value": 1
+    },
+    {
+      "source": "tears",
+      "target": "teas",
+      "value": 1
+    },
+    {
+      "source": "tears",
+      "target": "tear",
+      "value": 1
+    },
+    {
+      "source": "sears",
+      "target": "ears",
+      "value": 1
+    },
+    {
+      "source": "sears",
+      "target": "sars",
+      "value": 1
+    },
+    {
+      "source": "sears",
+      "target": "sers",
+      "value": 1
+    },
+    {
+      "source": "sears",
+      "target": "seas",
+      "value": 1
+    },
+    {
+      "source": "sears",
+      "target": "sear",
+      "value": 1
+    },
+    {
+      "source": "stear",
+      "target": "tear",
+      "value": 1
+    },
+    {
+      "source": "stear",
+      "target": "sear",
+      "value": 1
+    },
+    {
+      "source": "stear",
+      "target": "star",
+      "value": 1
+    },
+    {
+      "source": "steare",
+      "target": "seare",
+      "value": 1
+    },
+    {
+      "source": "steare",
+      "target": "stare",
+      "value": 1
+    },
+    {
+      "source": "steare",
+      "target": "stere",
+      "value": 1
+    },
+    {
+      "source": "steare",
+      "target": "stear",
+      "value": 1
+    },
+    {
+      "source": "seare",
+      "target": "sere",
+      "value": 1
+    },
+    {
+      "source": "seare",
+      "target": "sear",
+      "value": 1
+    }
+  ]
+}

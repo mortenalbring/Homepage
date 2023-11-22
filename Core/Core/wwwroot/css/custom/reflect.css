@@ -94,12 +94,12 @@
     font-size: 3rem;
     display: inline-block;
     color: #fd4444;
-    
-    
+
+
     padding: 0.2em 1.1em;
     margin: 0.3em 0.2em 0.1em;
-    
-    position:relative;
+
+    position: relative;
 }
 
 .reflect-button-container::before {
@@ -127,7 +127,7 @@
     padding: 0.2em 1.1em;
     margin: 0.3em 0.3em 0.1em;
 
-    position:relative;
+    position: relative;
 }
 
 
@@ -139,19 +139,20 @@
     /*left: 0;*/
     /*width: 100%;*/
     /*height: 100%;*/
-    
+
     /*transform: perspective(1em) rotateX(49deg) translateZ(0.1em) scale(1, 0.2);*/
     /*filter: blur(1em);*/
     /*z-index: -1;*/
 }
 
 .reflect-button-text-1 {
-    position:relative;
-    margin-bottom:1em;
+    position: relative;
+    margin-bottom: 1em;
 }
+
 .reflect-button-text-1::before {
     content: attr(data-text);
-    
+
     color: white;
     position: absolute;
     top: 50%;
@@ -159,15 +160,17 @@
     width: 100%;
     height: 100%;
 }
+
 .reflect-button-text-2 {
-    position:relative;
-    margin-bottom:2em;
+    position: relative;
+    margin-bottom: 2em;
 }
+
 .reflect-button-text-2::before {
     content: attr(data-text);
-    
+
     position: absolute;
-    color:white;
+    color: white;
     /*text-shadow: 0 0 20px rgba(0, 0, 0, 0.22);*/
     top: 0;
     left: 50%;
@@ -180,7 +183,7 @@
 }
 
 .reflect-button-container-3 {
-    position:relative;
+    position: relative;
     cursor: pointer;
     font-size: 3rem;
     display: inline-block;
@@ -189,7 +192,7 @@
     margin: 0.3em 0.2em 1.5em;
 }
 
-.reflect-button-container-3::before{
+.reflect-button-container-3::before {
     content: '';
     position: absolute;
     background: #fd4444;
@@ -203,7 +206,7 @@
 }
 
 .reflect-button-text-3 {
-    position:relative;
+    position: relative;
     cursor: pointer;
     font-size: 3rem;
     display: inline-block;
@@ -227,18 +230,14 @@
     width: 100%;
     height: 100%;
     transform-origin: bottom;
-    transform: 
-            perspective(1.5em) 
-            rotateX(180deg) 
-            translateZ(-0.9em) 
-            scale(1, 0.2);
+    transform: perspective(1.5em) rotateX(180deg) translateZ(-0.9em) scale(1, 0.2);
     line-height: 0.865em;
     -webkit-background-clip: text;
     filter: blur(0.02em);
 }
 
 .svg-button {
-    fill:red;
+    fill: red;
 }
 
 .wkreflect {
@@ -246,12 +245,12 @@
     border: #fd4444 0.125em solid;
     color: #fd4444;
     border-radius: 0.2em;
-    margin-bottom:5em;
+    margin-bottom: 5em;
     position: relative;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    
+
     font-size: 3rem;
     font-weight: 700;
     -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));

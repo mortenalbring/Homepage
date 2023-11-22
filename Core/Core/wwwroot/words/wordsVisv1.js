@@ -8,7 +8,9 @@ var forceX = d3.forceX(width / 2).strength(0.015);
 var forceY = d3.forceY(height / 2).strength(0.015);
 
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(20).iterations(1))
+    .force("link", d3.forceLink().id(function (d) {
+        return d.id;
+    }).distance(20).iterations(1))
     .force("charge", d3.forceManyBody().distanceMax(90).strength(-90))
     .force('x', forceX)
     .force('y', forceY);
@@ -23,7 +25,9 @@ d3.json("/Words/GetWordsData", function (error, data) {
         .selectAll("line")
         .data(graph.links)
         .enter().append("line")
-        .attr("stroke-width", function (d) { return Math.sqrt(d.value); });
+        .attr("stroke-width", function (d) {
+            return Math.sqrt(d.value);
+        });
 
     var node = svg.append("g")
         .attr("class", "nodes")
@@ -33,7 +37,9 @@ d3.json("/Words/GetWordsData", function (error, data) {
 
     var circles = node.append("circle")
         .attr("r", 5)
-        .attr("fill", function (d) { return color(d.id.length); })
+        .attr("fill", function (d) {
+            return color(d.id.length);
+        })
         .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -47,7 +53,9 @@ d3.json("/Words/GetWordsData", function (error, data) {
         .attr('y', 3);
 
     node.append("title")
-        .text(function (d) { return d.id; });
+        .text(function (d) {
+            return d.id;
+        });
 
     simulation
         .nodes(graph.nodes)
@@ -62,7 +70,7 @@ d3.json("/Words/GetWordsData", function (error, data) {
     //     simulation.tick();  
     // } 
     simulation.stop();
-    
+
     function ticked() {
 
         node
@@ -71,14 +79,26 @@ d3.json("/Words/GetWordsData", function (error, data) {
             });
 
         node
-            .attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
-            .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
+            .attr("cx", function (d) {
+                return d.x = Math.max(radius, Math.min(width - radius, d.x));
+            })
+            .attr("cy", function (d) {
+                return d.y = Math.max(radius, Math.min(height - radius, d.y));
+            });
 
         link
-            .attr("x1", function(d) { return d.source.x; })
-            .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
+            .attr("x1", function (d) {
+                return d.source.x;
+            })
+            .attr("y1", function (d) {
+                return d.source.y;
+            })
+            .attr("x2", function (d) {
+                return d.target.x;
+            })
+            .attr("y2", function (d) {
+                return d.target.y;
+            });
     }
 });
 
@@ -101,5 +121,5 @@ function dragended(d) {
 
 function tickActions() {
     //constrains the nodes to be within a box
-   
+
 } 

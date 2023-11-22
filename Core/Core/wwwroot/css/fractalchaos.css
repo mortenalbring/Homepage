@@ -3,21 +3,25 @@
     background-color: #050506;
     background-image: url("../images/fractalChaos/backgrounds/background_fc1.png");
 }
+
 .parallax-fc2 {
     height: 90vh !important;
     background-color: #050506;
     background-image: url("../images/fractalChaos/backgrounds/background_fc2c2.png");
 }
+
 .parallax-fc3 {
     height: 90vh !important;
     background-color: #050506;
     background-image: url("../images/fractalChaos/backgrounds/background_fc3.png");
 }
+
 .parallax-fc4 {
     height: 90vh !important;
     background-color: #050506;
     background-image: url("../images/fractalChaos/backgrounds/background_fc4c1.png");
 }
+
 .parallax-fc5 {
     height: 90vh !important;
     background-color: #050506;
@@ -29,14 +33,15 @@
     background-color: #050506;
     background-image: url("../images/fractalChaos/backgrounds/background_fc6.png");
 }
-@media (max-width:575px)  {
+
+@media (max-width: 575px) {
     .parallax-fc6 {
         min-height: 20vh !important;
         height: 20vh !important;
     }
 }
 
-@media (min-width:575px) and (max-width: 767px) {
+@media (min-width: 575px) and (max-width: 767px) {
     .parallax-fc6 {
         min-height: 20vh !important;
         height: 20vh !important;
@@ -45,37 +50,38 @@
 
 
 .fractal-chaos-nav li {
-    display:inline-block;
+    display: inline-block;
 }
 
 .fractal-chaos-nav li:not(:first-child) {
-    padding-left:1em;
+    padding-left: 1em;
 }
 
 .fractal-chaos-nav li:not(:last-child) {
-    padding-right:1em;
+    padding-right: 1em;
 }
 
 .fractal-chaos-nav {
-    padding-top:1em;
-    padding-bottom:1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     font-family: 'Open Sans', sans-serif;
 }
+
 .fractal-chaos-nav li a {
-    
+
     color: #a4ebf8;
-    font-weight:200;
+    font-weight: 200;
     text-decoration: none;
 }
 
 .fractal-chaos-nav li a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
     text-underline: #0f5132;
 }
 
-.fractal-chaos-nav li.active a{
-    font-weight:800;
-    text-decoration:underline;
+.fractal-chaos-nav li.active a {
+    font-weight: 800;
+    text-decoration: underline;
 }
 
 
@@ -96,6 +102,7 @@
     border-bottom: 1px solid #9a9a9a;
     transition: background-color 2s linear;
 }
+
 .fc-image-container a img:hover {
     background: rgba(0, 0, 0, 1) !important;
 }
@@ -108,28 +115,32 @@
 }
 
 .navbar-ma {
-    background: rgba(0,0,0,0.0) !important;
+    background: rgba(0, 0, 0, 0.0) !important;
 }
 
 .ma-fc-table {
     background: rgba(0, 26, 19, 0.14);
 }
+
 .ma-fc-table td a img {
-    
+
 }
+
 .ma-fc-table td {
-    width:11%;
-    border-left:1px solid #ccc;
-    border-bottom:1px solid #ccc;
+    width: 11%;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
+
 .ma-fc-table {
-    border-top:1px solid #ccc;
-    border-right:1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
+
 .ma-fc-table th {
     text-align: center;
-    border-left:1px solid #ccc;
-    border-bottom:1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .ma-fc-table td a:hover img {
@@ -141,9 +152,10 @@
 }
 
 .fc-dice-table td {
-    width:1%;
+    width: 1%;
     white-space: nowrap;
 }
+
 .fc-dice-table th {
     font-size: smaller;
     text-align: center;

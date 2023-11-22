@@ -1,7 +1,7 @@
 //Data courtesy of http://www.royalcourt.no/slektstre.html?tid=28695 with additional information from Wikipedia
 
 var norskekongehus = {
-    info : {
+    info: {
         Title: "Family tree of the Norwegian Royal Family",
         Message: "Originally this was supposed to be just a simple family tree with the connections between the Scandinavian royal houses. " +
             " Its purpose was to show how different nodes can be styled according to different node properties and how custom tooltip text can be set. " +
@@ -21,11 +21,8 @@ var norskekongehus = {
 
     },
     data: {
-        nodes: [
-        ],
-        edges: [
-
-        ],
+        nodes: [],
+        edges: [],
     }
 }
 
@@ -95,25 +92,25 @@ norskekongehus.settings.nodeClass = function (d) {
     return output;
 },
 
-norskekongehus.settings.customTickFunction = function (e, linkData) {
-    //A gentle force that pushes sources up and targets down to force a weak tree
-    var k = 15 * e.alpha;
-    linkData.forEach(function (d, i) {
-        d.source.y -= k;
-        d.target.y += k;
-        /*
+    norskekongehus.settings.customTickFunction = function (e, linkData) {
+        //A gentle force that pushes sources up and targets down to force a weak tree
+        var k = 15 * e.alpha;
+        linkData.forEach(function (d, i) {
+            d.source.y -= k;
+            d.target.y += k;
+            /*
+    
+                if (d.source.Born > d.target.Born) {
+                    d.source.y -= k;
+                    d.target.y += k;
+                } else {
+                    d.source.y += k;
+                    d.target.y -= k;
+                }             
+                */
+        });
 
-            if (d.source.Born > d.target.Born) {
-                d.source.y -= k;
-                d.target.y += k;
-            } else {
-                d.source.y += k;
-                d.target.y -= k;
-            }             
-            */
-    });
-
-}
+    }
 
 
 norskekongehus.addIfNew = function (Element, fixed) {
@@ -176,9 +173,9 @@ norskekongehus.addChildren = function (parent1, parent2, children, fixParent1, f
         return e.StartNode == parent1Node.ID && e.EndNode == parent2Node.ID
     });
     if (existingEdge.length == 0) {
-        var newEdge = { StartNode: parent1Node.ID, EndNode: parent2Node.ID, EdgeType: "Couple" };
+        var newEdge = {StartNode: parent1Node.ID, EndNode: parent2Node.ID, EdgeType: "Couple"};
         norskekongehus.data.edges.push(newEdge);
-        var newEdge = { StartNode: parent2Node.ID, EndNode: parent1Node.ID, EdgeType: "Couple" };
+        var newEdge = {StartNode: parent2Node.ID, EndNode: parent1Node.ID, EdgeType: "Couple"};
         norskekongehus.data.edges.push(newEdge);
     }
 
@@ -187,7 +184,7 @@ norskekongehus.addChildren = function (parent1, parent2, children, fixParent1, f
     for (var i = 0; i < children.length; i++) {
         var newNode = norskekongehus.addIfNew(children[i]);
 
-        var newEdge1 = { StartNode: parent1Node.ID, EndNode: newNode.ID }
+        var newEdge1 = {StartNode: parent1Node.ID, EndNode: newNode.ID}
         norskekongehus.data.edges.push(newEdge1);
 
         //Originally I was connecting both parents to all the children, but this ended up producing quite a confusing diagram so now I only 
@@ -210,7 +207,7 @@ norskekongehus.makeTooltipText = function () {
 
     for (var i = 0; i < nodes.length; i++) {
         var t = [];
-        
+
         //On the first line, we have the individuals name and birth (and death) years
         var nodeName = nodes[i].Name + " (" + nodes[i].Born + " - ";
         if (nodes[i].Died) {
@@ -237,8 +234,12 @@ norskekongehus.makeTooltipText = function () {
         var spouseID = 0;
         for (var j = 0; j < spouseEdges.length; j++) {
 
-            if (spouseEdges[j].StartNode != nodes[i].ID) { spouseID = spouseEdges[j].StartNode }
-            if (spouseEdges[j].EndNode != nodes[i].ID) { spouseID = spouseEdges[j].EndNode }
+            if (spouseEdges[j].StartNode != nodes[i].ID) {
+                spouseID = spouseEdges[j].StartNode
+            }
+            if (spouseEdges[j].EndNode != nodes[i].ID) {
+                spouseID = spouseEdges[j].EndNode
+            }
 
             var spouseNodes = nodes.filter(function (e) {
                 return e.ID == spouseID;
@@ -247,7 +248,7 @@ norskekongehus.makeTooltipText = function () {
             if (spouseNodes.length > 0) {
                 t.push("Married to " + spouseNodes[0].Name + " - " + spouseNodes[0].Country);
             }
-        }        
+        }
 
         //Then we find the edges without the EdgeType 'couple' and insert a line indicating the names of their children
         var childrenNames = [];
@@ -283,8 +284,6 @@ norskekongehus.makeTooltipText = function () {
         }
 
 
-
-
         //And then attach that array to be displayed as a tooltip on hover over the node
         nodes[i].TooltipText = t;
     }
@@ -297,7 +296,7 @@ norskekongehus.initialise = function () {
 
     norskekongehus.makeTooltipText(norskekongehus.data.nodes);
 
-  
+
 }
 
 
@@ -444,7 +443,7 @@ norskekongehus.constructData = function () {
     };
     var Ingeborg = {
         Name: "Ingeborg",
-       Country: "Sweden",
+        Country: "Sweden",
         Titles: ["Princess of Sweden", "Princess of Denmark"],
         House: "Schleswig-Holstein-Sonderburg-Glucksburg",
         Born: 1878,
@@ -496,8 +495,8 @@ norskekongehus.constructData = function () {
         Died: 1961
     }
 
-    
-    norskekongehus.addChildren(FrederikVIII, Louise2, [ChristianX, HaakonVII, Louise4,Harald, Ingeborg, Thyra2,Gustav,Dagmar2]);
+
+    norskekongehus.addChildren(FrederikVIII, Louise2, [ChristianX, HaakonVII, Louise4, Harald, Ingeborg, Thyra2, Gustav, Dagmar2]);
 
     var Astrid = {
         Name: "Astrid",
@@ -517,7 +516,7 @@ norskekongehus.constructData = function () {
     }
     var Margaretha = {
         Name: "Margaretha",
-       Country: "Sweden",
+        Country: "Sweden",
         Titles: ["Princess of Sweden and Norway", "Princess of Sweden"],
         House: "Bernadotte",
         Born: 1899,
@@ -582,7 +581,6 @@ norskekongehus.constructData = function () {
         Died: 1939
     }
 
-    
 
     var EdvardVII = {
         Name: "Edward VII",
@@ -617,7 +615,7 @@ norskekongehus.constructData = function () {
         Died: 1892
 
     }
-    
+
     var Louise5 = {
         Name: "Louise",
         Country: "United Kingdom",
@@ -635,7 +633,7 @@ norskekongehus.constructData = function () {
         Born: 1868,
         Died: 1935
     }
-    
+
     norskekongehus.addChildren(EdvardVII, Alexandra, [AlbertVictor, GeorgeV, Louise5, Maud]);
 
     var AlexanderDuff = {
@@ -665,7 +663,7 @@ norskekongehus.constructData = function () {
 
     norskekongehus.addChildren(JamesDuff, ElizabethHay, [AlexanderDuff]);
 
-    
+
     var WilliamIV = {
         Name: "William IV",
         Country: "United Kingdom",
@@ -680,10 +678,8 @@ norskekongehus.constructData = function () {
         Born: 1761,
         Died: 1816
     }
-    
-    norskekongehus.addChildren(WilliamIV, Dorothea, [ElizabethHay]);
-    
 
+    norskekongehus.addChildren(WilliamIV, Dorothea, [ElizabethHay]);
 
 
     var MaryOfTeck = {
@@ -694,7 +690,7 @@ norskekongehus.constructData = function () {
         Born: 1867,
         Died: 1953
     }
-    
+
     var GeorgeIV = {
         Name: "George VI",
         Country: "United Kingdom",
@@ -720,7 +716,7 @@ norskekongehus.constructData = function () {
         Country: "United Kingdom",
         Titles: ["Queen of the United Kingdom"],
         House: "Windsor",
-        Born: 1952,        
+        Born: 1952,
     }
 
     norskekongehus.addChildren(GeorgeIV, ElizabethBowes, [Elizabeth]);
@@ -735,7 +731,7 @@ norskekongehus.constructData = function () {
     var Charles2 = {
         Name: "Charles",
         Country: "United Kingdom",
-        Titles: ["Prince of Wales","Duke of Rothesay"],
+        Titles: ["Prince of Wales", "Duke of Rothesay"],
         House: "Windsor",
         Born: 1948
     }
@@ -758,7 +754,7 @@ norskekongehus.constructData = function () {
         Born: 1885,
         Died: 1969
     }
-    
+
     norskekongehus.addChildren(Andrew, AliceBattenberg, [Phillip]);
 
 
@@ -811,7 +807,7 @@ norskekongehus.constructData = function () {
 
     var MargaretConnaught = {
         Name: "Margaret of Connaught",
-       Country: "Sweden",
+        Country: "Sweden",
         Titles: ["Princess of Sweden", "Duchess of Skane"],
         House: "Saxe-Coburg and Gotha",
         Born: 1882,
@@ -877,7 +873,7 @@ norskekongehus.constructData = function () {
 
     var Ragnhild = {
         Name: "Ragnhild",
-       Country: "Norway",
+        Country: "Norway",
         Titles: ["Princess of Norway"],
         House: "Schleswig-Holstein-Sonderburg-Glucksburg",
         Born: 1930,
@@ -885,7 +881,7 @@ norskekongehus.constructData = function () {
     };
     var Astrid2 = {
         Name: "Astrid",
-       Country: "Norway",
+        Country: "Norway",
         Titles: ["Princess of Norway"],
         House: "Schleswig-Holstein-Sonderburg-Glucksburg",
         Born: 1932
@@ -915,7 +911,7 @@ norskekongehus.constructData = function () {
     };
     var MarthaLouise = {
         Name: "Martha Louise",
-       Country: "Norway",
+        Country: "Norway",
         Titles: ["Princess of Norway"],
         House: "Schleswig-Holstein-Sonderburg-Glucksburg",
         Born: 1971
@@ -926,21 +922,21 @@ norskekongehus.constructData = function () {
     var MetteMarit = {
         Name: "Mette-Marit",
         Country: "Norway",
-        Titles: ["Crown Princess of Norway"],        
+        Titles: ["Crown Princess of Norway"],
         Born: 1973
     }
 
     var Marius = {
         Name: "Marius Borg",
         Country: "Norway",
-        Titles: ["Commoner"],        
+        Titles: ["Commoner"],
         Born: 1997
     }
 
     var Morten = {
         Name: "Morten Borg",
         Country: "Norway",
-        Titles: ["Commoner"],        
+        Titles: ["Commoner"],
         Born: 1968
     }
 
@@ -999,7 +995,6 @@ norskekongehus.constructData = function () {
     norskekongehus.addChildren(Victoria, Albert, [EdvardVII, Arthur, Leopold]);
 
 
-
     var Edward = {
         Name: "Edward",
         Country: "United Kingdom",
@@ -1016,7 +1011,7 @@ norskekongehus.constructData = function () {
         Born: 1786,
         Died: 1861
     };
-    norskekongehus.addChildren(Edward, Victoria3, [Victoria]);    
+    norskekongehus.addChildren(Edward, Victoria3, [Victoria]);
 
     var GeorgeIII = {
         Name: "George III",
@@ -1067,7 +1062,7 @@ norskekongehus.constructData = function () {
 
     var VictoriaAdelaide = {
         Name: "Victoria Adelaide",
-       Country: "Prussia",
+        Country: "Prussia",
         Titles: ["Princess of Schleswig-Holstein"],
         House: "Schleswig-Holstein-Sonderburg-Glucksburg",
         Born: 1885,
@@ -1077,7 +1072,7 @@ norskekongehus.constructData = function () {
 
     var LouiseMargareth = {
         Name: "Louise Margareth",
-       Country: "Prussia",
+        Country: "Prussia",
         Titles: ["Princess of Prussia", "Duchess of Connaught and Strathearn"],
         House: "Hohenzollern",
         Born: 1860,
@@ -1115,7 +1110,5 @@ norskekongehus.constructData = function () {
     norskekongehus.addChildren(ChristianIX, Louise3, [Alexandra, FrederikVIII, GeorgeI, Dagmar, Thyra, Valdemar]);
 
 
-
-    
 }
 

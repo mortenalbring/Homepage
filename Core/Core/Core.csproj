@@ -13416,4 +13416,13 @@
       <None Include="wwwroot\angularD3\styles\pagestyles.css" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="wwwroot\home\cover-cssreflect_2.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\home\cover-cssreflect.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

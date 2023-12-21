@@ -1,111 +1,210 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true">
-            
-        </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
-        <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
-        <value>1.3</value>
-    </resheader>
-    <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <data name="test" xml:space="preserve">
-        <value>aaaa</value>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
-    <data name="Language:" xml:space="preserve">
-        <value>Language:</value>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
     </data>
-    <data name="IntroPart1" xml:space="preserve">
-        <value>Hello! I'm Morten. I'm a software developer with an interest in visualisations of chaotic mathematical systems.  </value>
-    </data>
-    <data name="IntroPart2" xml:space="preserve">
-        <value>Here is a collection of a few of the things I find interesting</value>
-    </data>
-    <data name="FractalChaos" xml:space="preserve">
-        <value>Fractal Chaos</value>
-    </data>
-    <data name="FractalChaosTextLong" xml:space="preserve">
-        <value>The chaos game is a game of very simple rules that produces remarkable fractal structures. This post explores a variety of different structures and the code used to generate them.</value>
-    </data>
-    <data name="Home" xml:space="preserve">
-        <value>Home</value>
-    </data>
-    <data name="Menger" xml:space="preserve">
-        <value>Menger Sponge</value>
-    </data>
-    <data name="MengerTextLong" xml:space="preserve">
-        <value>The Menger sponge is a three-dimensional fractal curve that exhibits infinite surface area and zero volume. This shows the POV-Ray code to render this mathematical structure</value>
-    </data>
-    <data name="MengerTextShort" xml:space="preserve">
-        <value>The Menger sponge is a three-dimensional fractal curve with infinite surface area</value>
-    </data>
-    <data name="TSUCS" xml:space="preserve">
-        <value>Three-Scroll Unified Chaotic System</value>
-    </data>
-    <data name="TSUCSTextLong" xml:space="preserve">
-        <value>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</value>
-    </data>
-    <data name="TSUCSTextShort" xml:space="preserve">
-        <value>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</value>
-    </data>
-    <data name="PeterDeJong" xml:space="preserve">
-        <value>Peter De Jong </value>
-    </data>
-    <data name="PeterDeJongTextLong" xml:space="preserve">
-        <value>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</value>
-    </data>
-    <data name="PeterDeJongTextShort" xml:space="preserve">
-        <value>The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</value>
-    </data>
-    <data name="Lorenz" xml:space="preserve">
-        <value>Lorenz Attractor</value>
-    </data>
-    <data name="LorenzTextShort" xml:space="preserve">
-        <value>The Lorenz attractor is a chaotic system that arises out of three simple differential equations.</value>
-    </data>
-    <data name="LorenzTextLong" xml:space="preserve">
-        <value>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </value>
-    </data>
-    <data name="AngularD3" xml:space="preserve">
-        <value>Angular D3</value>
-    </data>
-    <data name="AngularD3TextLong" xml:space="preserve">
-        <value>D3.js is a versatile and powerful library for manipulating data in documents. AngularJS is a framework for developing single page applications. This post combines D3.js with AngularJS in order to manipulate settings for a force-directed graph in real-time.</value>
-    </data>
-    <data name="AngularD3TextShort" xml:space="preserve">
-        <value>Combining D3.js with AngularJS</value>
-    </data>
-    <data name="Computations" xml:space="preserve">
-        <value>Thermodynamics, Computation and Irreversibility</value>
-    </data>
-    <data name="ComputationsTextLong" xml:space="preserve">
-        <value>Thermodynamics, Computation and Irreversibility</value>
-    </data>
-    <data name="Words" xml:space="preserve">
-        <value>Words within Words</value>
-    </data>
-    <data name="WordsTextShort" xml:space="preserve">
-        <value>A brief look at words contained within other words</value>
-    </data>
-    <data name="WordsTextLong" xml:space="preserve">
-        <value>A brief look at words contained within other words and interesting word chains</value>
-    </data>
-    <data name="CssReflect" xml:space="preserve">
-        <value>CSS Reflections</value>
-    </data>
-    <data name="CssReflectTextLong" xml:space="preserve">
-        <value>A few ways of making neat reflection and reflection-like styles in pure CSS</value>
-    </data>
-    <data name="CssReflectTextShort" xml:space="preserve">
-        <value>Making reflections in pure CSS</value>
-    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="test" xml:space="preserve">
+    <value>aaaa</value>
+  </data>
+  <data name="Language:" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="IntroPart1" xml:space="preserve">
+    <value>Hello! I'm Morten. I'm a software developer with an interest in visualisations of chaotic mathematical systems.  </value>
+  </data>
+  <data name="IntroPart2" xml:space="preserve">
+    <value>Here is a collection of a few of the things I find interesting</value>
+  </data>
+  <data name="FractalChaos" xml:space="preserve">
+    <value>Fractal Chaos</value>
+  </data>
+  <data name="FractalChaosTextLong" xml:space="preserve">
+    <value>The chaos game is a game of very simple rules that produces remarkable fractal structures. This post explores a variety of different structures and the code used to generate them.</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Menger" xml:space="preserve">
+    <value>Menger Sponge</value>
+  </data>
+  <data name="MengerTextLong" xml:space="preserve">
+    <value>The Menger sponge is a three-dimensional fractal curve that exhibits infinite surface area and zero volume. This shows the POV-Ray code to render this mathematical structure</value>
+  </data>
+  <data name="MengerTextShort" xml:space="preserve">
+    <value>The Menger sponge is a three-dimensional fractal curve with infinite surface area</value>
+  </data>
+  <data name="TSUCS" xml:space="preserve">
+    <value>Three-Scroll Chaotic Attractor</value>
+  </data>
+  <data name="TSUCSTextLong" xml:space="preserve">
+    <value>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</value>
+  </data>
+  <data name="TSUCSTextShort" xml:space="preserve">
+    <value>The Three-Scroll Unified Chaotic System is a chaotic system that contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.</value>
+  </data>
+  <data name="PeterDeJong" xml:space="preserve">
+    <value>Peter De Jong Attractor</value>
+  </data>
+  <data name="PeterDeJongTextLong" xml:space="preserve">
+    <value>Chaotic attractors are mathematical systems that evolve over time. The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</value>
+  </data>
+  <data name="PeterDeJongTextShort" xml:space="preserve">
+    <value>The Peter De Jong attractor is an especially elegant system, calculated by very simple trigonometry.</value>
+  </data>
+  <data name="Lorenz" xml:space="preserve">
+    <value>Lorenz Attractor</value>
+  </data>
+  <data name="LorenzTextShort" xml:space="preserve">
+    <value>The Lorenz attractor is a chaotic system that arises out of three simple differential equations.</value>
+  </data>
+  <data name="LorenzTextLong" xml:space="preserve">
+    <value>The Lorenz attractor is a chaotic system that arises out of three simple differential equations. This shows the POV-Ray code necessary to simulate this system. </value>
+  </data>
+  <data name="AngularD3" xml:space="preserve">
+    <value>Angular D3</value>
+  </data>
+  <data name="AngularD3TextLong" xml:space="preserve">
+    <value>D3.js is a versatile and powerful library for manipulating data in documents. AngularJS is a framework for developing single page applications. This post combines D3.js with AngularJS in order to manipulate settings for a force-directed graph in real-time.</value>
+  </data>
+  <data name="AngularD3TextShort" xml:space="preserve">
+    <value>Combining D3.js with AngularJS</value>
+  </data>
+  <data name="Computations" xml:space="preserve">
+    <value>Thermodynamics, Computation and Irreversibility</value>
+  </data>
+  <data name="ComputationsTextLong" xml:space="preserve">
+    <value>Thermodynamics, Computation and Irreversibility</value>
+  </data>
+  <data name="Words" xml:space="preserve">
+    <value>Words within Words</value>
+  </data>
+  <data name="WordsTextShort" xml:space="preserve">
+    <value>A brief look at words contained within other words</value>
+  </data>
+  <data name="WordsTextLong" xml:space="preserve">
+    <value>A brief look at words contained within other words and interesting word chains</value>
+  </data>
+  <data name="CssReflect" xml:space="preserve">
+    <value>CSS Reflections</value>
+  </data>
+  <data name="CssReflectTextLong" xml:space="preserve">
+    <value>A few ways of making neat reflection and reflection-like styles in pure CSS</value>
+  </data>
+  <data name="CssReflectTextShort" xml:space="preserve">
+    <value>Making reflections in pure CSS</value>
+  </data>
 </root>

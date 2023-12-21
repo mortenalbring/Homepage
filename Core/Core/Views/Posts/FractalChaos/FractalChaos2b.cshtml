@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData.Add("NavbarCustomStyle","navbar-ma-trans");
+    ViewData.Add("NavbarCustomStyle", "navbar-ma-trans");
 }
 
 
@@ -110,7 +110,7 @@
         <div class="col-md-1"></div>
         <div class="col">
             <div class="fc-image-container">
-                <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/lg/fcSquareNoRepeatBig2.png"})">
+                <a href="@Url.Action("RenderBig", new { imageLoc = "/images/fractalChaos/polygons/lg/fcSquareNoRepeatBig2.png" })">
                     <img src="/images/fractalChaos/polygons/fcSquareNoRepeatSmall2.png"/>
                 </a>
                 <div class="caption">
@@ -135,7 +135,7 @@
 
         <div class="col">
             <div class="fc-image-container">
-                <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/lg/fcPentagonNoRepeatBig.png"})">
+                <a href="@Url.Action("RenderBig", new { imageLoc = "/images/fractalChaos/polygons/lg/fcPentagonNoRepeatBig.png" })">
                     <img src="/images/fractalChaos/polygons/fcPentagonNoRepeatSmall.png"/>
                 </a>
 
@@ -146,133 +146,133 @@
             </div>
 
         </div>
-  <div class="col-md-1">
+        <div class="col-md-1">
 
         </div>
 
     </div>
 
-        <div class="row">
-            <div class="col">
-                <p> There are other constraints we could explore too.</p>
-                <p>Expanding on the 'no repeat' constraint, we can introduce another rule </p>
-            </div>
+    <div class="row">
+        <div class="col">
+            <p> There are other constraints we could explore too.</p>
+            <p>Expanding on the 'no repeat' constraint, we can introduce another rule </p>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-3">
-                <svg viewBox="0 0 50 50" style="border: 1px solid white">
-                    <circle cx="30%" cy="90%" r="2" stroke="white" stroke-width="0.5" fill="green"/>
-                    <circle cx="70%" cy="90%" r="2" stroke="white" stroke-width="0.5" fill="red"/>
-                    <circle cx="50%" cy="10%" r="2" stroke="white" stroke-width="0.5" fill="yellow"/>
-                    <circle cx="90%" cy="50%" r="2" stroke="white" stroke-width="0.5" fill="blue"/>
-                    <circle cx="10%" cy="50%" r="2" stroke="white" stroke-width="0.5" fill="purple"/>
-                </svg>
-            </div>
-            <div class="col">
-
-
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        If we roll the same anchor point as we had on the last iteration <b>or any nearest neighbours</b> , we roll again until we select a different one.
-                        <br>
-
-                        <table class="fc-dice-table">
-                            <thead>
-                            <tr>
-                                <th>1</th>
-                                <th></th>
-                                <th>2</th>
-                                <th>3</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <img src="/images/fractalChaos/cube-r.png"/>
-                                </td>
-                                <td>
-                                    <img src="/images/fractalChaos/cube-r-no.png"/>
-                                    <img src="/images/fractalChaos/cube-g-no.png"/>
-                                    <img src="/images/fractalChaos/cube-b-no.png"/>
-                                </td>
-                                <td>
-                                    <img src="/images/fractalChaos/cube-y.png"/>
-                                </td>
-                                <td>
-                                    <img src="/images/fractalChaos/cube-g.png"/>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-
-                    </li>
-                </ul>
-
-
-            </div>
+    <div class="row">
+        <div class="col-3">
+            <svg viewBox="0 0 50 50" style="border: 1px solid white">
+                <circle cx="30%" cy="90%" r="2" stroke="white" stroke-width="0.5" fill="green"/>
+                <circle cx="70%" cy="90%" r="2" stroke="white" stroke-width="0.5" fill="red"/>
+                <circle cx="50%" cy="10%" r="2" stroke="white" stroke-width="0.5" fill="yellow"/>
+                <circle cx="90%" cy="50%" r="2" stroke="white" stroke-width="0.5" fill="blue"/>
+                <circle cx="10%" cy="50%" r="2" stroke="white" stroke-width="0.5" fill="purple"/>
+            </svg>
         </div>
-        <div class="row">
-            <div class="col">
-                <p>
-                    This constraint only works if there are five or more anchor points. If there are three anchor points, then every anchor point is of equal distance from eachother. If there are four, then the game will just ping pong between two corners.
-                </p>
-                <p>With five anchor points, we get another remarkably different fractal structure</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col">
-                <div class="fc-image-container">
-                    <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex5norepeatnearestnorepeatnearest-dp.txt.png"})">
-                        <img class="img-fluid" src="/images/fractalChaos/polygons/table/cr_vertex5norepeatnearestnorepeatnearest-dp.txt.png"/>
-                    </a>
-                    <div class="caption">
-                        Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration but with constraint that we cannot repeat the same anchor point or either nearest neighbour
-                    </div>
-                </div>
-                
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>We can also explore a constraint that is in the inverse of this.</p>
-                
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        If we roll the same anchor point as we had on the last iteration <b>or any furthest away anchors</b> , we roll again until we select a different one.
-                    </li>
-                </ul>
-                
+        <div class="col">
 
-            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    If we roll the same anchor point as we had on the last iteration <b>or any nearest neighbours</b> , we roll again until we select a different one.
+                    <br>
+
+                    <table class="fc-dice-table">
+                        <thead>
+                        <tr>
+                            <th>1</th>
+                            <th></th>
+                            <th>2</th>
+                            <th>3</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <img src="/images/fractalChaos/cube-r.png"/>
+                            </td>
+                            <td>
+                                <img src="/images/fractalChaos/cube-r-no.png"/>
+                                <img src="/images/fractalChaos/cube-g-no.png"/>
+                                <img src="/images/fractalChaos/cube-b-no.png"/>
+                            </td>
+                            <td>
+                                <img src="/images/fractalChaos/cube-y.png"/>
+                            </td>
+                            <td>
+                                <img src="/images/fractalChaos/cube-g.png"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </li>
+            </ul>
+
+
         </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                This constraint only works if there are five or more anchor points. If there are three anchor points, then every anchor point is of equal distance from eachother. If there are four, then the game will just ping pong between two corners.
+            </p>
+            <p>With five anchor points, we get another remarkably different fractal structure</p>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col">
             <div class="fc-image-container">
-                <a href="@Url.Action("RenderBig", new {imageLoc = "/images/fractalChaos/polygons/table/vertex5norepeatfurthestnorepeatfurthest-dp.txt.png"})">
+                <a href="@Url.Action("RenderBig", new { imageLoc = "/images/fractalChaos/polygons/table/vertex5norepeatnearestnorepeatnearest-dp.txt.png" })">
+                    <img class="img-fluid" src="/images/fractalChaos/polygons/table/cr_vertex5norepeatnearestnorepeatnearest-dp.txt.png"/>
+                </a>
+                <div class="caption">
+                    Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration but with constraint that we cannot repeat the same anchor point or either nearest neighbour
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>We can also explore a constraint that is in the inverse of this.</p>
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    If we roll the same anchor point as we had on the last iteration <b>or any furthest away anchors</b> , we roll again until we select a different one.
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col">
+            <div class="fc-image-container">
+                <a href="@Url.Action("RenderBig", new { imageLoc = "/images/fractalChaos/polygons/table/vertex5norepeatfurthestnorepeatfurthest-dp.txt.png" })">
                     <img class="img-fluid" src="/images/fractalChaos/polygons/table/cr_vertex5norepeatfurthestnorepeatfurthest-dp.txt.png"/>
                 </a>
                 <div class="caption">
                     Chaos game played over 10,000,000 iterations with five anchor points, going halfway towards a random anchor at every iteration but with constraint that we cannot repeat the same anchor point or any anchor point that is the furthest away.
                 </div>
             </div>
-                        
+
         </div>
         <div class="col-md-1"></div>
     </div>
-    
+
     <div class="row">
         <div class="col">
             Below is a table of all the polygons I've run with all these different constraints.
         </div>
     </div>
     </div>
-    
+
     @await Html.PartialAsync("FractalChaos/FractalChaosTable")
-   
+
 
 }

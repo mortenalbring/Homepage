@@ -26,19 +26,19 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css"/>
-    <link rel="stylesheet" href="/css/bundle.css" />
-    
-    <link rel="stylesheet" href="/css/custom/misc.css" />
-    <link rel="stylesheet" href="/css/custom/navbar.css" />
-    <link rel="stylesheet" href="/css/custom/overlay.css" />
-    <link rel="stylesheet" href="/css/custom/parallax.css" />
-    
-    
-    @await RenderSectionAsync("Styles", required: false)
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'/>
-    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'/>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'/>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'/>
+    <link rel="stylesheet" href="/css/bundle.css"/>
+
+    <link rel="stylesheet" href="/css/custom/misc.css"/>
+    <link rel="stylesheet" href="/css/custom/navbar.css"/>
+    <link rel="stylesheet" href="/css/custom/overlay.css"/>
+    <link rel="stylesheet" href="/css/custom/parallax.css"/>
+
+
+    @await RenderSectionAsync("Styles", false)
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
 </head>
 <body class="bg-dark">
 <header>
@@ -115,15 +115,15 @@
     </nav>
 </header>
 
-@await RenderSectionAsync("Jumbo", required: false)
+@await RenderSectionAsync("Jumbo", false)
 
 <div class="text-light">
-@await RenderSectionAsync("Date", required:false)    
+    @await RenderSectionAsync("Date", false)
 </div>
 
 
 <main role="main" class="pb-3">
-    @RenderSection("Content", required: true)
+    @RenderSection("Content", true)
 </main>
 
 <footer class="border-top footer text-muted">
@@ -137,6 +137,6 @@
 <script src="~/js/site.js" asp-append-version="true"></script>
 
 
-@await RenderSectionAsync("Scripts", required: false)
+@await RenderSectionAsync("Scripts", false)
 </body>
 </html>

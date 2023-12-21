@@ -1,9 +1,9 @@
 var sphere = {
     info: {
-        Title:"Sphere",
-        Message:"Draws several chains of nodes and connects them up to form a sphere."
+        Title: "Sphere",
+        Message: "Draws several chains of nodes and connects them up to form a sphere."
     },
-    settings: {        
+    settings: {
         linkDistance: 10,
         linkStrength: 0.8,
         gravity: 0.2,
@@ -12,29 +12,27 @@ var sphere = {
         clickToConnect: false,
         charge: -300,
         radius: 4,
-        
+
     },
     data: {
-        nodes: [ 
-        ],
-        edges: [
-        ],       
+        nodes: [],
+        edges: [],
     }
 }
 
 
-sphere.makeChain = function (startId,maxElements) {               
+sphere.makeChain = function (startId, maxElements) {
     var nodes = [];
-    for (var i = startId; i < startId + maxElements; i++) {        
-        var newNode = { ID: i, Name: "" };
+    for (var i = startId; i < startId + maxElements; i++) {
+        var newNode = {ID: i, Name: ""};
         nodes.push(newNode);
     }
     var edges = [];
-    for (var i = 0; i < (nodes.length-1); i++) {
-        var newEdge = { StartNode: nodes[i].ID, EndNode: nodes[i + 1].ID };
+    for (var i = 0; i < (nodes.length - 1); i++) {
+        var newEdge = {StartNode: nodes[i].ID, EndNode: nodes[i + 1].ID};
         edges.push(newEdge);
     }
-    
+
     var output = {};
     output.nodes = nodes;
     output.edges = edges;
@@ -50,7 +48,7 @@ sphere.makeNodes = function () {
 
 
     chains = [];
-    for (var i = 0; i < chainCount; i++) {        
+    for (var i = 0; i < chainCount; i++) {
         var chain = sphere.makeChain(i * chainCount, chainLength);
         chains.push(chain);
     }
@@ -75,26 +73,26 @@ sphere.makeNodes = function () {
     sphere.data.nodes.push(pole2);
     var newEdges = [];
     for (var j = 0; j < chains.length; j++) {
-        var newEdge1 = { StartNode: pole1.ID, EndNode: chains[j].nodes[0].ID }
-        var newEdge2 = { StartNode: pole2.ID, EndNode: chains[j].nodes[chains[j].nodes.length - 1].ID };
+        var newEdge1 = {StartNode: pole1.ID, EndNode: chains[j].nodes[0].ID}
+        var newEdge2 = {StartNode: pole2.ID, EndNode: chains[j].nodes[chains[j].nodes.length - 1].ID};
         newEdges.push(newEdge1);
         newEdges.push(newEdge2);
 
-        
+
         for (var k = 0; k <= (chains[j].nodes.length - 1); k++) {
             if (j < (chains.length - 1)) {
-                var newEdge = { StartNode: chains[j].nodes[k].ID, EndNode: chains[j + 1].nodes[k].ID }
+                var newEdge = {StartNode: chains[j].nodes[k].ID, EndNode: chains[j + 1].nodes[k].ID}
                 newEdges.push(newEdge);
             } else {
-                var newEdge = { StartNode: chains[j].nodes[k].ID, EndNode: chains[0].nodes[k].ID }
+                var newEdge = {StartNode: chains[j].nodes[k].ID, EndNode: chains[0].nodes[k].ID}
                 newEdges.push(newEdge);
             }
-        } 
+        }
     }
     sphere.data.edges = sphere.data.edges.concat(newEdges);
 }
 
 
-sphere.initialise = function() {
+sphere.initialise = function () {
     sphere.makeNodes();
 }

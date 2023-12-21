@@ -18,7 +18,7 @@ var orbit = {
     },
 
     data: {
-        nodes: [          
+        nodes: [
             {
                 ID: 1, Name: "A",
                 nodeClass: "node-container node-blue",
@@ -36,9 +36,9 @@ var orbit = {
 
         ],
         edges: [
-           
 
-        { StartNode: 1, EndNode: 2 },
+
+            {StartNode: 1, EndNode: 2},
         ]
     }
 
@@ -47,9 +47,9 @@ var orbit = {
 
 orbit.settings.radius = function (d) {
     if (!d.Mass) {
-        return 1;}
+        return 1;
+    }
     var masslog = Math.log10(d.Mass);
-
 
 
     return masslog;
@@ -57,7 +57,9 @@ orbit.settings.radius = function (d) {
 
 
 orbit.settings.nodeClass = function (d) {
-    if (d.nodeClass) { return d.nodeClass; }
+    if (d.nodeClass) {
+        return d.nodeClass;
+    }
     return "node-container";
 }
 
@@ -75,10 +77,10 @@ orbit.settings.customTickFunction = function (e, links) {
             var bigG = 0.0000001;
             var precessVal = 0.1;
             if (d.source.Mass && d.target.Mass) {
-                var precessVal = Math.sqrt((bigG * (d.source.Mass + d.target.Mass)) / distanceVal);                
+                var precessVal = Math.sqrt((bigG * (d.source.Mass + d.target.Mass)) / distanceVal);
             }
 
-         
+
             d.target.x = d.source.x + (d.target.x * distanceVal * Math.cos(precessVal * orbit.time));
             d.target.y = d.source.y + (d.target.y * distanceVal * Math.sin(precessVal * orbit.time));
         }
@@ -105,7 +107,6 @@ orbit.settings.customTickFunction = function (e, links) {
     })
 
 
-
 }
 
 orbit.makeSystem = function () {
@@ -127,19 +128,19 @@ orbit.makeSystem = function () {
     var planets = orbit.makePlanets(maxPlanetNumber);
 
     for (var i = 0; i < planets.length; i++) {
-        orbit.data.nodes.push(planets[i]);        
-        
-        
+        orbit.data.nodes.push(planets[i]);
+
+
         var planetEdge = {
             StartNode: sun.ID,
             EndNode: planets[i].ID,
             Properties: {
-                Distance: 0.1 + ((i/maxPlanetNumber)*0.4),
+                Distance: 0.1 + ((i / maxPlanetNumber) * 0.4),
             }
         }
         orbit.data.edges.push(planetEdge);
 
-        
+
         planets[i].orbitPoint = true;
         var numberOfMoons = getRandomInt(0, 0);
         var moons = orbit.makeMoons(numberOfMoons);
@@ -152,12 +153,12 @@ orbit.makeSystem = function () {
                 StartNode: planets[i].ID,
                 EndNode: moons[j].ID,
                 Properties: {
-                    Distance: 0.001 + ((j/numberOfMoons)*0.1) ,                    
+                    Distance: 0.001 + ((j / numberOfMoons) * 0.1),
                 }
             }
             orbit.data.edges.push(moonEdge);
         }
-        
+
 
     }
 }
@@ -166,49 +167,49 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-orbit.makeMoons = function(number) {
+orbit.makeMoons = function (number) {
     var startId = orbit.data.nodes.length + 100;
     var moons = [];
 
     for (var i = 0; i < number; i++) {
         var moon =
-        {
-            ID: startId + i,
-            Name: "",
-            Mass: 10,
-            nodeClass: "node-container node-blue"
-        }
+            {
+                ID: startId + i,
+                Name: "",
+                Mass: 10,
+                nodeClass: "node-container node-blue"
+            }
         moons.push(moon);
     }
 
 
     return moons;
 }
-orbit.makePlanets = function(number) {
+orbit.makePlanets = function (number) {
     var startId = orbit.data.nodes.length + 1;
     var planets = [];
 
     for (var i = 0; i < number; i++) {
-        var planet = 
-        {
-            ID: startId + i,
-            Name: "P" + i,
-            Mass: 1000,
-            Acceleration: {
-                x: 0, y: 0
-            },
-            Velocity: {
-                x: 1, y: 0
-            },
-            nodeClass: "node-container node-yellow"
-        }
+        var planet =
+            {
+                ID: startId + i,
+                Name: "P" + i,
+                Mass: 1000,
+                Acceleration: {
+                    x: 0, y: 0
+                },
+                Velocity: {
+                    x: 1, y: 0
+                },
+                nodeClass: "node-container node-yellow"
+            }
         planets.push(planet);
     }
 
     return planets;
 }
 
-orbit.initialise = function() {
+orbit.initialise = function () {
     orbit.makeSystem();
 
 };

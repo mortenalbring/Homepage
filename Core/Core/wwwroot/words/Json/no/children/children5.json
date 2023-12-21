@@ -1,338 +1,1565 @@
-{"nodes":[{ "id": "skravlende", "group":1},
-{ "id": "kravlende", "group":1},
-{ "id": "skavlende", "group":1},
-{ "id": "skralende", "group":1},
-{ "id": "skravlede", "group":1},
-{ "id": "skravlene", "group":1},
-{ "id": "ravlende", "group":2},
-{ "id": "kavlende", "group":2},
-{ "id": "kravende", "group":2},
-{ "id": "kravlede", "group":2},
-{ "id": "kravlene", "group":2},
-{ "id": "avlende", "group":3},
-{ "id": "ravende", "group":3},
-{ "id": "alende", "group":4},
-{ "id": "avlede", "group":4},
-{ "id": "avlene", "group":4},
-{ "id": "lende", "group":5},
-{ "id": "alede", "group":5},
-{ "id": "alene", "group":5},
-{ "id": "ende", "group":6},
-{ "id": "lede", "group":6},
-{ "id": "lene", "group":6},
-{ "id": "lend", "group":6},
-{ "id": "alne", "group":6},
-{ "id": "alen", "group":6},
-{ "id": "avled", "group":5},
-{ "id": "avle", "group":6},
-{ "id": "avene", "group":5},
-{ "id": "avlen", "group":5},
-{ "id": "vene", "group":6},
-{ "id": "raende", "group":4},
-{ "id": "ravene", "group":4},
-{ "id": "rande", "group":5},
-{ "id": "raene", "group":5},
-{ "id": "ande", "group":6},
-{ "id": "rade", "group":6},
-{ "id": "rane", "group":6},
-{ "id": "rand", "group":6},
-{ "id": "rene", "group":6},
-{ "id": "raven", "group":5},
-{ "id": "ravn", "group":6},
-{ "id": "rave", "group":6},
-{ "id": "kavende", "group":3},
-{ "id": "kavlede", "group":3},
-{ "id": "kavlene", "group":3},
-{ "id": "kaende", "group":4},
-{ "id": "kavene", "group":4},
-{ "id": "kaene", "group":5},
-{ "id": "kane", "group":6},
-{ "id": "kaen", "group":6},
-{ "id": "kaven", "group":5},
-{ "id": "kven", "group":6},
-{ "id": "kave", "group":6},
-{ "id": "kalene", "group":4},
-{ "id": "kavlen", "group":4},
-{ "id": "klene", "group":5},
-{ "id": "kalen", "group":5},
-{ "id": "klen", "group":6},
-{ "id": "kale", "group":6},
-{ "id": "kavle", "group":5},
-{ "id": "kavl", "group":6},
-{ "id": "kraende", "group":3},
-{ "id": "kravene", "group":3},
-{ "id": "kraene", "group":4},
-{ "id": "krane", "group":5},
-{ "id": "krae", "group":6},
-{ "id": "kran", "group":6},
-{ "id": "kraven", "group":4},
-{ "id": "krave", "group":5},
-{ "id": "krav", "group":6},
-{ "id": "kralene", "group":3},
-{ "id": "kralen", "group":4},
-{ "id": "savlende", "group":2},
-{ "id": "skavende", "group":2},
-{ "id": "skavlede", "group":2},
-{ "id": "skavlene", "group":2},
-{ "id": "salende", "group":3},
-{ "id": "savlene", "group":3},
-{ "id": "salede", "group":4},
-{ "id": "salene", "group":4},
-{ "id": "slede", "group":5},
-{ "id": "salen", "group":5},
-{ "id": "sale", "group":6},
-{ "id": "savene", "group":4},
-{ "id": "savne", "group":5},
-{ "id": "saven", "group":5},
-{ "id": "save", "group":6},
-{ "id": "savn", "group":6},
-{ "id": "skavede", "group":3},
-{ "id": "skavene", "group":3},
-{ "id": "skavde", "group":4},
-{ "id": "kavde", "group":5},
-{ "id": "skade", "group":5},
-{ "id": "skave", "group":5},
-{ "id": "skavd", "group":5},
-{ "id": "kavd", "group":6},
-{ "id": "skad", "group":6},
-{ "id": "skav", "group":6},
-{ "id": "skavlen", "group":3},
-{ "id": "skavle", "group":4},
-{ "id": "savle", "group":5},
-{ "id": "skavl", "group":5},
-{ "id": "savl", "group":6},
-{ "id": "skal", "group":6},
-{ "id": "skralede", "group":2},
-{ "id": "skravlen", "group":2},
-{ "id": "skravle", "group":3},
-{ "id": "kravle", "group":4},
-{ "id": "skrale", "group":4},
-{ "id": "skravl", "group":4},
-{ "id": "ravle", "group":5},
-{ "id": "kravl", "group":5},
-{ "id": "rale", "group":6},
-{ "id": "ravl", "group":6},
-{ "id": "kral", "group":6},
-{ "id": "skral", "group":5}
-],
-"links":[{"source":"skravlende","target":"kravlende","value":1},
-{"source":"skravlende","target":"skavlende","value":1},
-{"source":"skravlende","target":"skralende","value":1},
-{"source":"skravlende","target":"skravlede","value":1},
-{"source":"skravlende","target":"skravlene","value":1},
-{"source":"kravlende","target":"ravlende","value":1},
-{"source":"kravlende","target":"kavlende","value":1},
-{"source":"kravlende","target":"kravende","value":1},
-{"source":"kravlende","target":"kravlede","value":1},
-{"source":"kravlende","target":"kravlene","value":1},
-{"source":"ravlende","target":"avlende","value":1},
-{"source":"ravlende","target":"ravende","value":1},
-{"source":"avlende","target":"alende","value":1},
-{"source":"avlende","target":"avlede","value":1},
-{"source":"avlende","target":"avlene","value":1},
-{"source":"alende","target":"lende","value":1},
-{"source":"alende","target":"alede","value":1},
-{"source":"alende","target":"alene","value":1},
-{"source":"lende","target":"ende","value":1},
-{"source":"lende","target":"lede","value":1},
-{"source":"lende","target":"lene","value":1},
-{"source":"lende","target":"lend","value":1},
-{"source":"alede","target":"lede","value":1},
-{"source":"alene","target":"lene","value":1},
-{"source":"alene","target":"alne","value":1},
-{"source":"alene","target":"alen","value":1},
-{"source":"avlede","target":"alede","value":1},
-{"source":"avlede","target":"avled","value":1},
-{"source":"avled","target":"avle","value":1},
-{"source":"avlene","target":"alene","value":1},
-{"source":"avlene","target":"avene","value":1},
-{"source":"avlene","target":"avlen","value":1},
-{"source":"avene","target":"vene","value":1},
-{"source":"avlen","target":"alen","value":1},
-{"source":"avlen","target":"avle","value":1},
-{"source":"ravende","target":"raende","value":1},
-{"source":"ravende","target":"ravene","value":1},
-{"source":"raende","target":"rande","value":1},
-{"source":"raende","target":"raene","value":1},
-{"source":"rande","target":"ande","value":1},
-{"source":"rande","target":"rade","value":1},
-{"source":"rande","target":"rane","value":1},
-{"source":"rande","target":"rand","value":1},
-{"source":"raene","target":"rene","value":1},
-{"source":"raene","target":"rane","value":1},
-{"source":"ravene","target":"avene","value":1},
-{"source":"ravene","target":"raene","value":1},
-{"source":"ravene","target":"raven","value":1},
-{"source":"raven","target":"ravn","value":1},
-{"source":"raven","target":"rave","value":1},
-{"source":"kavlende","target":"avlende","value":1},
-{"source":"kavlende","target":"kavende","value":1},
-{"source":"kavlende","target":"kavlede","value":1},
-{"source":"kavlende","target":"kavlene","value":1},
-{"source":"kavende","target":"kaende","value":1},
-{"source":"kavende","target":"kavene","value":1},
-{"source":"kaende","target":"kaene","value":1},
-{"source":"kaene","target":"kane","value":1},
-{"source":"kaene","target":"kaen","value":1},
-{"source":"kavene","target":"avene","value":1},
-{"source":"kavene","target":"kaene","value":1},
-{"source":"kavene","target":"kaven","value":1},
-{"source":"kaven","target":"kven","value":1},
-{"source":"kaven","target":"kaen","value":1},
-{"source":"kaven","target":"kave","value":1},
-{"source":"kavlede","target":"avlede","value":1},
-{"source":"kavlene","target":"avlene","value":1},
-{"source":"kavlene","target":"kalene","value":1},
-{"source":"kavlene","target":"kavene","value":1},
-{"source":"kavlene","target":"kavlen","value":1},
-{"source":"kalene","target":"alene","value":1},
-{"source":"kalene","target":"klene","value":1},
-{"source":"kalene","target":"kaene","value":1},
-{"source":"kalene","target":"kalen","value":1},
-{"source":"klene","target":"lene","value":1},
-{"source":"klene","target":"klen","value":1},
-{"source":"kalen","target":"alen","value":1},
-{"source":"kalen","target":"klen","value":1},
-{"source":"kalen","target":"kaen","value":1},
-{"source":"kalen","target":"kale","value":1},
-{"source":"kavlen","target":"avlen","value":1},
-{"source":"kavlen","target":"kalen","value":1},
-{"source":"kavlen","target":"kaven","value":1},
-{"source":"kavlen","target":"kavle","value":1},
-{"source":"kavle","target":"avle","value":1},
-{"source":"kavle","target":"kale","value":1},
-{"source":"kavle","target":"kave","value":1},
-{"source":"kavle","target":"kavl","value":1},
-{"source":"kravende","target":"ravende","value":1},
-{"source":"kravende","target":"kavende","value":1},
-{"source":"kravende","target":"kraende","value":1},
-{"source":"kravende","target":"kravene","value":1},
-{"source":"kraende","target":"raende","value":1},
-{"source":"kraende","target":"kaende","value":1},
-{"source":"kraende","target":"kraene","value":1},
-{"source":"kraene","target":"raene","value":1},
-{"source":"kraene","target":"kaene","value":1},
-{"source":"kraene","target":"krane","value":1},
-{"source":"krane","target":"rane","value":1},
-{"source":"krane","target":"kane","value":1},
-{"source":"krane","target":"krae","value":1},
-{"source":"krane","target":"kran","value":1},
-{"source":"kravene","target":"ravene","value":1},
-{"source":"kravene","target":"kavene","value":1},
-{"source":"kravene","target":"kraene","value":1},
-{"source":"kravene","target":"kraven","value":1},
-{"source":"kraven","target":"raven","value":1},
-{"source":"kraven","target":"kaven","value":1},
-{"source":"kraven","target":"krave","value":1},
-{"source":"krave","target":"rave","value":1},
-{"source":"krave","target":"kave","value":1},
-{"source":"krave","target":"krae","value":1},
-{"source":"krave","target":"krav","value":1},
-{"source":"kravlede","target":"kavlede","value":1},
-{"source":"kravlene","target":"kavlene","value":1},
-{"source":"kravlene","target":"kralene","value":1},
-{"source":"kravlene","target":"kravene","value":1},
-{"source":"kralene","target":"kalene","value":1},
-{"source":"kralene","target":"kraene","value":1},
-{"source":"kralene","target":"kralen","value":1},
-{"source":"kralen","target":"kalen","value":1},
-{"source":"skavlende","target":"kavlende","value":1},
-{"source":"skavlende","target":"savlende","value":1},
-{"source":"skavlende","target":"skavende","value":1},
-{"source":"skavlende","target":"skavlede","value":1},
-{"source":"skavlende","target":"skavlene","value":1},
-{"source":"savlende","target":"avlende","value":1},
-{"source":"savlende","target":"salende","value":1},
-{"source":"savlende","target":"savlene","value":1},
-{"source":"salende","target":"alende","value":1},
-{"source":"salende","target":"salede","value":1},
-{"source":"salende","target":"salene","value":1},
-{"source":"salede","target":"alede","value":1},
-{"source":"salede","target":"slede","value":1},
-{"source":"slede","target":"lede","value":1},
-{"source":"salene","target":"alene","value":1},
-{"source":"salene","target":"salen","value":1},
-{"source":"salen","target":"alen","value":1},
-{"source":"salen","target":"sale","value":1},
-{"source":"savlene","target":"avlene","value":1},
-{"source":"savlene","target":"salene","value":1},
-{"source":"savlene","target":"savene","value":1},
-{"source":"savene","target":"avene","value":1},
-{"source":"savene","target":"savne","value":1},
-{"source":"savene","target":"saven","value":1},
-{"source":"savne","target":"save","value":1},
-{"source":"savne","target":"savn","value":1},
-{"source":"saven","target":"savn","value":1},
-{"source":"saven","target":"save","value":1},
-{"source":"skavende","target":"kavende","value":1},
-{"source":"skavende","target":"skavede","value":1},
-{"source":"skavende","target":"skavene","value":1},
-{"source":"skavede","target":"skavde","value":1},
-{"source":"skavde","target":"kavde","value":1},
-{"source":"skavde","target":"skade","value":1},
-{"source":"skavde","target":"skave","value":1},
-{"source":"skavde","target":"skavd","value":1},
-{"source":"kavde","target":"kave","value":1},
-{"source":"kavde","target":"kavd","value":1},
-{"source":"skade","target":"skad","value":1},
-{"source":"skave","target":"kave","value":1},
-{"source":"skave","target":"save","value":1},
-{"source":"skave","target":"skav","value":1},
-{"source":"skavd","target":"kavd","value":1},
-{"source":"skavd","target":"skad","value":1},
-{"source":"skavd","target":"skav","value":1},
-{"source":"skavene","target":"kavene","value":1},
-{"source":"skavene","target":"savene","value":1},
-{"source":"skavlede","target":"kavlede","value":1},
-{"source":"skavlede","target":"skavede","value":1},
-{"source":"skavlene","target":"kavlene","value":1},
-{"source":"skavlene","target":"savlene","value":1},
-{"source":"skavlene","target":"skavene","value":1},
-{"source":"skavlene","target":"skavlen","value":1},
-{"source":"skavlen","target":"kavlen","value":1},
-{"source":"skavlen","target":"skavle","value":1},
-{"source":"skavle","target":"kavle","value":1},
-{"source":"skavle","target":"savle","value":1},
-{"source":"skavle","target":"skave","value":1},
-{"source":"skavle","target":"skavl","value":1},
-{"source":"savle","target":"avle","value":1},
-{"source":"savle","target":"sale","value":1},
-{"source":"savle","target":"save","value":1},
-{"source":"savle","target":"savl","value":1},
-{"source":"skavl","target":"kavl","value":1},
-{"source":"skavl","target":"savl","value":1},
-{"source":"skavl","target":"skal","value":1},
-{"source":"skavl","target":"skav","value":1},
-{"source":"skralende","target":"skralede","value":1},
-{"source":"skravlede","target":"kravlede","value":1},
-{"source":"skravlede","target":"skavlede","value":1},
-{"source":"skravlede","target":"skralede","value":1},
-{"source":"skravlene","target":"kravlene","value":1},
-{"source":"skravlene","target":"skavlene","value":1},
-{"source":"skravlene","target":"skravlen","value":1},
-{"source":"skravlen","target":"skavlen","value":1},
-{"source":"skravlen","target":"skravle","value":1},
-{"source":"skravle","target":"kravle","value":1},
-{"source":"skravle","target":"skavle","value":1},
-{"source":"skravle","target":"skrale","value":1},
-{"source":"skravle","target":"skravl","value":1},
-{"source":"kravle","target":"ravle","value":1},
-{"source":"kravle","target":"kavle","value":1},
-{"source":"kravle","target":"krave","value":1},
-{"source":"kravle","target":"kravl","value":1},
-{"source":"ravle","target":"avle","value":1},
-{"source":"ravle","target":"rale","value":1},
-{"source":"ravle","target":"rave","value":1},
-{"source":"ravle","target":"ravl","value":1},
-{"source":"kravl","target":"ravl","value":1},
-{"source":"kravl","target":"kavl","value":1},
-{"source":"kravl","target":"kral","value":1},
-{"source":"kravl","target":"krav","value":1},
-{"source":"skrale","target":"skral","value":1},
-{"source":"skral","target":"kral","value":1},
-{"source":"skral","target":"skal","value":1},
-{"source":"skravl","target":"kravl","value":1},
-{"source":"skravl","target":"skavl","value":1},
-{"source":"skravl","target":"skral","value":1}
-]
- }
+{
+  "nodes": [
+    {
+      "id": "skravlende",
+      "group": 1
+    },
+    {
+      "id": "kravlende",
+      "group": 1
+    },
+    {
+      "id": "skavlende",
+      "group": 1
+    },
+    {
+      "id": "skralende",
+      "group": 1
+    },
+    {
+      "id": "skravlede",
+      "group": 1
+    },
+    {
+      "id": "skravlene",
+      "group": 1
+    },
+    {
+      "id": "ravlende",
+      "group": 2
+    },
+    {
+      "id": "kavlende",
+      "group": 2
+    },
+    {
+      "id": "kravende",
+      "group": 2
+    },
+    {
+      "id": "kravlede",
+      "group": 2
+    },
+    {
+      "id": "kravlene",
+      "group": 2
+    },
+    {
+      "id": "avlende",
+      "group": 3
+    },
+    {
+      "id": "ravende",
+      "group": 3
+    },
+    {
+      "id": "alende",
+      "group": 4
+    },
+    {
+      "id": "avlede",
+      "group": 4
+    },
+    {
+      "id": "avlene",
+      "group": 4
+    },
+    {
+      "id": "lende",
+      "group": 5
+    },
+    {
+      "id": "alede",
+      "group": 5
+    },
+    {
+      "id": "alene",
+      "group": 5
+    },
+    {
+      "id": "ende",
+      "group": 6
+    },
+    {
+      "id": "lede",
+      "group": 6
+    },
+    {
+      "id": "lene",
+      "group": 6
+    },
+    {
+      "id": "lend",
+      "group": 6
+    },
+    {
+      "id": "alne",
+      "group": 6
+    },
+    {
+      "id": "alen",
+      "group": 6
+    },
+    {
+      "id": "avled",
+      "group": 5
+    },
+    {
+      "id": "avle",
+      "group": 6
+    },
+    {
+      "id": "avene",
+      "group": 5
+    },
+    {
+      "id": "avlen",
+      "group": 5
+    },
+    {
+      "id": "vene",
+      "group": 6
+    },
+    {
+      "id": "raende",
+      "group": 4
+    },
+    {
+      "id": "ravene",
+      "group": 4
+    },
+    {
+      "id": "rande",
+      "group": 5
+    },
+    {
+      "id": "raene",
+      "group": 5
+    },
+    {
+      "id": "ande",
+      "group": 6
+    },
+    {
+      "id": "rade",
+      "group": 6
+    },
+    {
+      "id": "rane",
+      "group": 6
+    },
+    {
+      "id": "rand",
+      "group": 6
+    },
+    {
+      "id": "rene",
+      "group": 6
+    },
+    {
+      "id": "raven",
+      "group": 5
+    },
+    {
+      "id": "ravn",
+      "group": 6
+    },
+    {
+      "id": "rave",
+      "group": 6
+    },
+    {
+      "id": "kavende",
+      "group": 3
+    },
+    {
+      "id": "kavlede",
+      "group": 3
+    },
+    {
+      "id": "kavlene",
+      "group": 3
+    },
+    {
+      "id": "kaende",
+      "group": 4
+    },
+    {
+      "id": "kavene",
+      "group": 4
+    },
+    {
+      "id": "kaene",
+      "group": 5
+    },
+    {
+      "id": "kane",
+      "group": 6
+    },
+    {
+      "id": "kaen",
+      "group": 6
+    },
+    {
+      "id": "kaven",
+      "group": 5
+    },
+    {
+      "id": "kven",
+      "group": 6
+    },
+    {
+      "id": "kave",
+      "group": 6
+    },
+    {
+      "id": "kalene",
+      "group": 4
+    },
+    {
+      "id": "kavlen",
+      "group": 4
+    },
+    {
+      "id": "klene",
+      "group": 5
+    },
+    {
+      "id": "kalen",
+      "group": 5
+    },
+    {
+      "id": "klen",
+      "group": 6
+    },
+    {
+      "id": "kale",
+      "group": 6
+    },
+    {
+      "id": "kavle",
+      "group": 5
+    },
+    {
+      "id": "kavl",
+      "group": 6
+    },
+    {
+      "id": "kraende",
+      "group": 3
+    },
+    {
+      "id": "kravene",
+      "group": 3
+    },
+    {
+      "id": "kraene",
+      "group": 4
+    },
+    {
+      "id": "krane",
+      "group": 5
+    },
+    {
+      "id": "krae",
+      "group": 6
+    },
+    {
+      "id": "kran",
+      "group": 6
+    },
+    {
+      "id": "kraven",
+      "group": 4
+    },
+    {
+      "id": "krave",
+      "group": 5
+    },
+    {
+      "id": "krav",
+      "group": 6
+    },
+    {
+      "id": "kralene",
+      "group": 3
+    },
+    {
+      "id": "kralen",
+      "group": 4
+    },
+    {
+      "id": "savlende",
+      "group": 2
+    },
+    {
+      "id": "skavende",
+      "group": 2
+    },
+    {
+      "id": "skavlede",
+      "group": 2
+    },
+    {
+      "id": "skavlene",
+      "group": 2
+    },
+    {
+      "id": "salende",
+      "group": 3
+    },
+    {
+      "id": "savlene",
+      "group": 3
+    },
+    {
+      "id": "salede",
+      "group": 4
+    },
+    {
+      "id": "salene",
+      "group": 4
+    },
+    {
+      "id": "slede",
+      "group": 5
+    },
+    {
+      "id": "salen",
+      "group": 5
+    },
+    {
+      "id": "sale",
+      "group": 6
+    },
+    {
+      "id": "savene",
+      "group": 4
+    },
+    {
+      "id": "savne",
+      "group": 5
+    },
+    {
+      "id": "saven",
+      "group": 5
+    },
+    {
+      "id": "save",
+      "group": 6
+    },
+    {
+      "id": "savn",
+      "group": 6
+    },
+    {
+      "id": "skavede",
+      "group": 3
+    },
+    {
+      "id": "skavene",
+      "group": 3
+    },
+    {
+      "id": "skavde",
+      "group": 4
+    },
+    {
+      "id": "kavde",
+      "group": 5
+    },
+    {
+      "id": "skade",
+      "group": 5
+    },
+    {
+      "id": "skave",
+      "group": 5
+    },
+    {
+      "id": "skavd",
+      "group": 5
+    },
+    {
+      "id": "kavd",
+      "group": 6
+    },
+    {
+      "id": "skad",
+      "group": 6
+    },
+    {
+      "id": "skav",
+      "group": 6
+    },
+    {
+      "id": "skavlen",
+      "group": 3
+    },
+    {
+      "id": "skavle",
+      "group": 4
+    },
+    {
+      "id": "savle",
+      "group": 5
+    },
+    {
+      "id": "skavl",
+      "group": 5
+    },
+    {
+      "id": "savl",
+      "group": 6
+    },
+    {
+      "id": "skal",
+      "group": 6
+    },
+    {
+      "id": "skralede",
+      "group": 2
+    },
+    {
+      "id": "skravlen",
+      "group": 2
+    },
+    {
+      "id": "skravle",
+      "group": 3
+    },
+    {
+      "id": "kravle",
+      "group": 4
+    },
+    {
+      "id": "skrale",
+      "group": 4
+    },
+    {
+      "id": "skravl",
+      "group": 4
+    },
+    {
+      "id": "ravle",
+      "group": 5
+    },
+    {
+      "id": "kravl",
+      "group": 5
+    },
+    {
+      "id": "rale",
+      "group": 6
+    },
+    {
+      "id": "ravl",
+      "group": 6
+    },
+    {
+      "id": "kral",
+      "group": 6
+    },
+    {
+      "id": "skral",
+      "group": 5
+    }
+  ],
+  "links": [
+    {
+      "source": "skravlende",
+      "target": "kravlende",
+      "value": 1
+    },
+    {
+      "source": "skravlende",
+      "target": "skavlende",
+      "value": 1
+    },
+    {
+      "source": "skravlende",
+      "target": "skralende",
+      "value": 1
+    },
+    {
+      "source": "skravlende",
+      "target": "skravlede",
+      "value": 1
+    },
+    {
+      "source": "skravlende",
+      "target": "skravlene",
+      "value": 1
+    },
+    {
+      "source": "kravlende",
+      "target": "ravlende",
+      "value": 1
+    },
+    {
+      "source": "kravlende",
+      "target": "kavlende",
+      "value": 1
+    },
+    {
+      "source": "kravlende",
+      "target": "kravende",
+      "value": 1
+    },
+    {
+      "source": "kravlende",
+      "target": "kravlede",
+      "value": 1
+    },
+    {
+      "source": "kravlende",
+      "target": "kravlene",
+      "value": 1
+    },
+    {
+      "source": "ravlende",
+      "target": "avlende",
+      "value": 1
+    },
+    {
+      "source": "ravlende",
+      "target": "ravende",
+      "value": 1
+    },
+    {
+      "source": "avlende",
+      "target": "alende",
+      "value": 1
+    },
+    {
+      "source": "avlende",
+      "target": "avlede",
+      "value": 1
+    },
+    {
+      "source": "avlende",
+      "target": "avlene",
+      "value": 1
+    },
+    {
+      "source": "alende",
+      "target": "lende",
+      "value": 1
+    },
+    {
+      "source": "alende",
+      "target": "alede",
+      "value": 1
+    },
+    {
+      "source": "alende",
+      "target": "alene",
+      "value": 1
+    },
+    {
+      "source": "lende",
+      "target": "ende",
+      "value": 1
+    },
+    {
+      "source": "lende",
+      "target": "lede",
+      "value": 1
+    },
+    {
+      "source": "lende",
+      "target": "lene",
+      "value": 1
+    },
+    {
+      "source": "lende",
+      "target": "lend",
+      "value": 1
+    },
+    {
+      "source": "alede",
+      "target": "lede",
+      "value": 1
+    },
+    {
+      "source": "alene",
+      "target": "lene",
+      "value": 1
+    },
+    {
+      "source": "alene",
+      "target": "alne",
+      "value": 1
+    },
+    {
+      "source": "alene",
+      "target": "alen",
+      "value": 1
+    },
+    {
+      "source": "avlede",
+      "target": "alede",
+      "value": 1
+    },
+    {
+      "source": "avlede",
+      "target": "avled",
+      "value": 1
+    },
+    {
+      "source": "avled",
+      "target": "avle",
+      "value": 1
+    },
+    {
+      "source": "avlene",
+      "target": "alene",
+      "value": 1
+    },
+    {
+      "source": "avlene",
+      "target": "avene",
+      "value": 1
+    },
+    {
+      "source": "avlene",
+      "target": "avlen",
+      "value": 1
+    },
+    {
+      "source": "avene",
+      "target": "vene",
+      "value": 1
+    },
+    {
+      "source": "avlen",
+      "target": "alen",
+      "value": 1
+    },
+    {
+      "source": "avlen",
+      "target": "avle",
+      "value": 1
+    },
+    {
+      "source": "ravende",
+      "target": "raende",
+      "value": 1
+    },
+    {
+      "source": "ravende",
+      "target": "ravene",
+      "value": 1
+    },
+    {
+      "source": "raende",
+      "target": "rande",
+      "value": 1
+    },
+    {
+      "source": "raende",
+      "target": "raene",
+      "value": 1
+    },
+    {
+      "source": "rande",
+      "target": "ande",
+      "value": 1
+    },
+    {
+      "source": "rande",
+      "target": "rade",
+      "value": 1
+    },
+    {
+      "source": "rande",
+      "target": "rane",
+      "value": 1
+    },
+    {
+      "source": "rande",
+      "target": "rand",
+      "value": 1
+    },
+    {
+      "source": "raene",
+      "target": "rene",
+      "value": 1
+    },
+    {
+      "source": "raene",
+      "target": "rane",
+      "value": 1
+    },
+    {
+      "source": "ravene",
+      "target": "avene",
+      "value": 1
+    },
+    {
+      "source": "ravene",
+      "target": "raene",
+      "value": 1
+    },
+    {
+      "source": "ravene",
+      "target": "raven",
+      "value": 1
+    },
+    {
+      "source": "raven",
+      "target": "ravn",
+      "value": 1
+    },
+    {
+      "source": "raven",
+      "target": "rave",
+      "value": 1
+    },
+    {
+      "source": "kavlende",
+      "target": "avlende",
+      "value": 1
+    },
+    {
+      "source": "kavlende",
+      "target": "kavende",
+      "value": 1
+    },
+    {
+      "source": "kavlende",
+      "target": "kavlede",
+      "value": 1
+    },
+    {
+      "source": "kavlende",
+      "target": "kavlene",
+      "value": 1
+    },
+    {
+      "source": "kavende",
+      "target": "kaende",
+      "value": 1
+    },
+    {
+      "source": "kavende",
+      "target": "kavene",
+      "value": 1
+    },
+    {
+      "source": "kaende",
+      "target": "kaene",
+      "value": 1
+    },
+    {
+      "source": "kaene",
+      "target": "kane",
+      "value": 1
+    },
+    {
+      "source": "kaene",
+      "target": "kaen",
+      "value": 1
+    },
+    {
+      "source": "kavene",
+      "target": "avene",
+      "value": 1
+    },
+    {
+      "source": "kavene",
+      "target": "kaene",
+      "value": 1
+    },
+    {
+      "source": "kavene",
+      "target": "kaven",
+      "value": 1
+    },
+    {
+      "source": "kaven",
+      "target": "kven",
+      "value": 1
+    },
+    {
+      "source": "kaven",
+      "target": "kaen",
+      "value": 1
+    },
+    {
+      "source": "kaven",
+      "target": "kave",
+      "value": 1
+    },
+    {
+      "source": "kavlede",
+      "target": "avlede",
+      "value": 1
+    },
+    {
+      "source": "kavlene",
+      "target": "avlene",
+      "value": 1
+    },
+    {
+      "source": "kavlene",
+      "target": "kalene",
+      "value": 1
+    },
+    {
+      "source": "kavlene",
+      "target": "kavene",
+      "value": 1
+    },
+    {
+      "source": "kavlene",
+      "target": "kavlen",
+      "value": 1
+    },
+    {
+      "source": "kalene",
+      "target": "alene",
+      "value": 1
+    },
+    {
+      "source": "kalene",
+      "target": "klene",
+      "value": 1
+    },
+    {
+      "source": "kalene",
+      "target": "kaene",
+      "value": 1
+    },
+    {
+      "source": "kalene",
+      "target": "kalen",
+      "value": 1
+    },
+    {
+      "source": "klene",
+      "target": "lene",
+      "value": 1
+    },
+    {
+      "source": "klene",
+      "target": "klen",
+      "value": 1
+    },
+    {
+      "source": "kalen",
+      "target": "alen",
+      "value": 1
+    },
+    {
+      "source": "kalen",
+      "target": "klen",
+      "value": 1
+    },
+    {
+      "source": "kalen",
+      "target": "kaen",
+      "value": 1
+    },
+    {
+      "source": "kalen",
+      "target": "kale",
+      "value": 1
+    },
+    {
+      "source": "kavlen",
+      "target": "avlen",
+      "value": 1
+    },
+    {
+      "source": "kavlen",
+      "target": "kalen",
+      "value": 1
+    },
+    {
+      "source": "kavlen",
+      "target": "kaven",
+      "value": 1
+    },
+    {
+      "source": "kavlen",
+      "target": "kavle",
+      "value": 1
+    },
+    {
+      "source": "kavle",
+      "target": "avle",
+      "value": 1
+    },
+    {
+      "source": "kavle",
+      "target": "kale",
+      "value": 1
+    },
+    {
+      "source": "kavle",
+      "target": "kave",
+      "value": 1
+    },
+    {
+      "source": "kavle",
+      "target": "kavl",
+      "value": 1
+    },
+    {
+      "source": "kravende",
+      "target": "ravende",
+      "value": 1
+    },
+    {
+      "source": "kravende",
+      "target": "kavende",
+      "value": 1
+    },
+    {
+      "source": "kravende",
+      "target": "kraende",
+      "value": 1
+    },
+    {
+      "source": "kravende",
+      "target": "kravene",
+      "value": 1
+    },
+    {
+      "source": "kraende",
+      "target": "raende",
+      "value": 1
+    },
+    {
+      "source": "kraende",
+      "target": "kaende",
+      "value": 1
+    },
+    {
+      "source": "kraende",
+      "target": "kraene",
+      "value": 1
+    },
+    {
+      "source": "kraene",
+      "target": "raene",
+      "value": 1
+    },
+    {
+      "source": "kraene",
+      "target": "kaene",
+      "value": 1
+    },
+    {
+      "source": "kraene",
+      "target": "krane",
+      "value": 1
+    },
+    {
+      "source": "krane",
+      "target": "rane",
+      "value": 1
+    },
+    {
+      "source": "krane",
+      "target": "kane",
+      "value": 1
+    },
+    {
+      "source": "krane",
+      "target": "krae",
+      "value": 1
+    },
+    {
+      "source": "krane",
+      "target": "kran",
+      "value": 1
+    },
+    {
+      "source": "kravene",
+      "target": "ravene",
+      "value": 1
+    },
+    {
+      "source": "kravene",
+      "target": "kavene",
+      "value": 1
+    },
+    {
+      "source": "kravene",
+      "target": "kraene",
+      "value": 1
+    },
+    {
+      "source": "kravene",
+      "target": "kraven",
+      "value": 1
+    },
+    {
+      "source": "kraven",
+      "target": "raven",
+      "value": 1
+    },
+    {
+      "source": "kraven",
+      "target": "kaven",
+      "value": 1
+    },
+    {
+      "source": "kraven",
+      "target": "krave",
+      "value": 1
+    },
+    {
+      "source": "krave",
+      "target": "rave",
+      "value": 1
+    },
+    {
+      "source": "krave",
+      "target": "kave",
+      "value": 1
+    },
+    {
+      "source": "krave",
+      "target": "krae",
+      "value": 1
+    },
+    {
+      "source": "krave",
+      "target": "krav",
+      "value": 1
+    },
+    {
+      "source": "kravlede",
+      "target": "kavlede",
+      "value": 1
+    },
+    {
+      "source": "kravlene",
+      "target": "kavlene",
+      "value": 1
+    },
+    {
+      "source": "kravlene",
+      "target": "kralene",
+      "value": 1
+    },
+    {
+      "source": "kravlene",
+      "target": "kravene",
+      "value": 1
+    },
+    {
+      "source": "kralene",
+      "target": "kalene",
+      "value": 1
+    },
+    {
+      "source": "kralene",
+      "target": "kraene",
+      "value": 1
+    },
+    {
+      "source": "kralene",
+      "target": "kralen",
+      "value": 1
+    },
+    {
+      "source": "kralen",
+      "target": "kalen",
+      "value": 1
+    },
+    {
+      "source": "skavlende",
+      "target": "kavlende",
+      "value": 1
+    },
+    {
+      "source": "skavlende",
+      "target": "savlende",
+      "value": 1
+    },
+    {
+      "source": "skavlende",
+      "target": "skavende",
+      "value": 1
+    },
+    {
+      "source": "skavlende",
+      "target": "skavlede",
+      "value": 1
+    },
+    {
+      "source": "skavlende",
+      "target": "skavlene",
+      "value": 1
+    },
+    {
+      "source": "savlende",
+      "target": "avlende",
+      "value": 1
+    },
+    {
+      "source": "savlende",
+      "target": "salende",
+      "value": 1
+    },
+    {
+      "source": "savlende",
+      "target": "savlene",
+      "value": 1
+    },
+    {
+      "source": "salende",
+      "target": "alende",
+      "value": 1
+    },
+    {
+      "source": "salende",
+      "target": "salede",
+      "value": 1
+    },
+    {
+      "source": "salende",
+      "target": "salene",
+      "value": 1
+    },
+    {
+      "source": "salede",
+      "target": "alede",
+      "value": 1
+    },
+    {
+      "source": "salede",
+      "target": "slede",
+      "value": 1
+    },
+    {
+      "source": "slede",
+      "target": "lede",
+      "value": 1
+    },
+    {
+      "source": "salene",
+      "target": "alene",
+      "value": 1
+    },
+    {
+      "source": "salene",
+      "target": "salen",
+      "value": 1
+    },
+    {
+      "source": "salen",
+      "target": "alen",
+      "value": 1
+    },
+    {
+      "source": "salen",
+      "target": "sale",
+      "value": 1
+    },
+    {
+      "source": "savlene",
+      "target": "avlene",
+      "value": 1
+    },
+    {
+      "source": "savlene",
+      "target": "salene",
+      "value": 1
+    },
+    {
+      "source": "savlene",
+      "target": "savene",
+      "value": 1
+    },
+    {
+      "source": "savene",
+      "target": "avene",
+      "value": 1
+    },
+    {
+      "source": "savene",
+      "target": "savne",
+      "value": 1
+    },
+    {
+      "source": "savene",
+      "target": "saven",
+      "value": 1
+    },
+    {
+      "source": "savne",
+      "target": "save",
+      "value": 1
+    },
+    {
+      "source": "savne",
+      "target": "savn",
+      "value": 1
+    },
+    {
+      "source": "saven",
+      "target": "savn",
+      "value": 1
+    },
+    {
+      "source": "saven",
+      "target": "save",
+      "value": 1
+    },
+    {
+      "source": "skavende",
+      "target": "kavende",
+      "value": 1
+    },
+    {
+      "source": "skavende",
+      "target": "skavede",
+      "value": 1
+    },
+    {
+      "source": "skavende",
+      "target": "skavene",
+      "value": 1
+    },
+    {
+      "source": "skavede",
+      "target": "skavde",
+      "value": 1
+    },
+    {
+      "source": "skavde",
+      "target": "kavde",
+      "value": 1
+    },
+    {
+      "source": "skavde",
+      "target": "skade",
+      "value": 1
+    },
+    {
+      "source": "skavde",
+      "target": "skave",
+      "value": 1
+    },
+    {
+      "source": "skavde",
+      "target": "skavd",
+      "value": 1
+    },
+    {
+      "source": "kavde",
+      "target": "kave",
+      "value": 1
+    },
+    {
+      "source": "kavde",
+      "target": "kavd",
+      "value": 1
+    },
+    {
+      "source": "skade",
+      "target": "skad",
+      "value": 1
+    },
+    {
+      "source": "skave",
+      "target": "kave",
+      "value": 1
+    },
+    {
+      "source": "skave",
+      "target": "save",
+      "value": 1
+    },
+    {
+      "source": "skave",
+      "target": "skav",
+      "value": 1
+    },
+    {
+      "source": "skavd",
+      "target": "kavd",
+      "value": 1
+    },
+    {
+      "source": "skavd",
+      "target": "skad",
+      "value": 1
+    },
+    {
+      "source": "skavd",
+      "target": "skav",
+      "value": 1
+    },
+    {
+      "source": "skavene",
+      "target": "kavene",
+      "value": 1
+    },
+    {
+      "source": "skavene",
+      "target": "savene",
+      "value": 1
+    },
+    {
+      "source": "skavlede",
+      "target": "kavlede",
+      "value": 1
+    },
+    {
+      "source": "skavlede",
+      "target": "skavede",
+      "value": 1
+    },
+    {
+      "source": "skavlene",
+      "target": "kavlene",
+      "value": 1
+    },
+    {
+      "source": "skavlene",
+      "target": "savlene",
+      "value": 1
+    },
+    {
+      "source": "skavlene",
+      "target": "skavene",
+      "value": 1
+    },
+    {
+      "source": "skavlene",
+      "target": "skavlen",
+      "value": 1
+    },
+    {
+      "source": "skavlen",
+      "target": "kavlen",
+      "value": 1
+    },
+    {
+      "source": "skavlen",
+      "target": "skavle",
+      "value": 1
+    },
+    {
+      "source": "skavle",
+      "target": "kavle",
+      "value": 1
+    },
+    {
+      "source": "skavle",
+      "target": "savle",
+      "value": 1
+    },
+    {
+      "source": "skavle",
+      "target": "skave",
+      "value": 1
+    },
+    {
+      "source": "skavle",
+      "target": "skavl",
+      "value": 1
+    },
+    {
+      "source": "savle",
+      "target": "avle",
+      "value": 1
+    },
+    {
+      "source": "savle",
+      "target": "sale",
+      "value": 1
+    },
+    {
+      "source": "savle",
+      "target": "save",
+      "value": 1
+    },
+    {
+      "source": "savle",
+      "target": "savl",
+      "value": 1
+    },
+    {
+      "source": "skavl",
+      "target": "kavl",
+      "value": 1
+    },
+    {
+      "source": "skavl",
+      "target": "savl",
+      "value": 1
+    },
+    {
+      "source": "skavl",
+      "target": "skal",
+      "value": 1
+    },
+    {
+      "source": "skavl",
+      "target": "skav",
+      "value": 1
+    },
+    {
+      "source": "skralende",
+      "target": "skralede",
+      "value": 1
+    },
+    {
+      "source": "skravlede",
+      "target": "kravlede",
+      "value": 1
+    },
+    {
+      "source": "skravlede",
+      "target": "skavlede",
+      "value": 1
+    },
+    {
+      "source": "skravlede",
+      "target": "skralede",
+      "value": 1
+    },
+    {
+      "source": "skravlene",
+      "target": "kravlene",
+      "value": 1
+    },
+    {
+      "source": "skravlene",
+      "target": "skavlene",
+      "value": 1
+    },
+    {
+      "source": "skravlene",
+      "target": "skravlen",
+      "value": 1
+    },
+    {
+      "source": "skravlen",
+      "target": "skavlen",
+      "value": 1
+    },
+    {
+      "source": "skravlen",
+      "target": "skravle",
+      "value": 1
+    },
+    {
+      "source": "skravle",
+      "target": "kravle",
+      "value": 1
+    },
+    {
+      "source": "skravle",
+      "target": "skavle",
+      "value": 1
+    },
+    {
+      "source": "skravle",
+      "target": "skrale",
+      "value": 1
+    },
+    {
+      "source": "skravle",
+      "target": "skravl",
+      "value": 1
+    },
+    {
+      "source": "kravle",
+      "target": "ravle",
+      "value": 1
+    },
+    {
+      "source": "kravle",
+      "target": "kavle",
+      "value": 1
+    },
+    {
+      "source": "kravle",
+      "target": "krave",
+      "value": 1
+    },
+    {
+      "source": "kravle",
+      "target": "kravl",
+      "value": 1
+    },
+    {
+      "source": "ravle",
+      "target": "avle",
+      "value": 1
+    },
+    {
+      "source": "ravle",
+      "target": "rale",
+      "value": 1
+    },
+    {
+      "source": "ravle",
+      "target": "rave",
+      "value": 1
+    },
+    {
+      "source": "ravle",
+      "target": "ravl",
+      "value": 1
+    },
+    {
+      "source": "kravl",
+      "target": "ravl",
+      "value": 1
+    },
+    {
+      "source": "kravl",
+      "target": "kavl",
+      "value": 1
+    },
+    {
+      "source": "kravl",
+      "target": "kral",
+      "value": 1
+    },
+    {
+      "source": "kravl",
+      "target": "krav",
+      "value": 1
+    },
+    {
+      "source": "skrale",
+      "target": "skral",
+      "value": 1
+    },
+    {
+      "source": "skral",
+      "target": "kral",
+      "value": 1
+    },
+    {
+      "source": "skral",
+      "target": "skal",
+      "value": 1
+    },
+    {
+      "source": "skravl",
+      "target": "kravl",
+      "value": 1
+    },
+    {
+      "source": "skravl",
+      "target": "skavl",
+      "value": 1
+    },
+    {
+      "source": "skravl",
+      "target": "skral",
+      "value": 1
+    }
+  ]
+}

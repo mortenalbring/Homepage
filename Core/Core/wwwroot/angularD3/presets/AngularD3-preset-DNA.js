@@ -14,7 +14,7 @@ var DNA = {
         linkDistance: -30,
         charge: -300,
         radius: 2,
-        clickToConnect:false
+        clickToConnect: false
     }
 }
 
@@ -41,7 +41,7 @@ function singleStrand(startID, maxLength) {
 
     var start = startID + output.nodes.length;
     var arrayList = ["G", "A", "T", "C"];
-    for (var i = start ; i < start + maxLength; i++) {
+    for (var i = start; i < start + maxLength; i++) {
         //Then insert some non-phosphates!
         var randomNumber = Math.round(Math.random() * 3);
         var randomThing = arrayList[randomNumber];
@@ -57,7 +57,7 @@ function singleStrand(startID, maxLength) {
     });
 
     //First we connect all the phosphates up together in a nice line    
-    for (var i = 0; i < (phosphates.length - 1) ; i++) {        
+    for (var i = 0; i < (phosphates.length - 1); i++) {
         var newEdge = {
             StartNode: phosphates[i].ID,
             EndNode: phosphates[i + 1].ID
@@ -71,7 +71,7 @@ function singleStrand(startID, maxLength) {
     });
 
     //The two lists are the same length, so we just connect them at the same position in the list
-    for (var i = 0; i < notPhosphates.length; i++) {        
+    for (var i = 0; i < notPhosphates.length; i++) {
         var newEdge = {
             StartNode: notPhosphates[i].ID,
             EndNode: phosphates[i].ID
@@ -93,7 +93,7 @@ function polymerase(firstStrand) {
     var output = {
         nodes: [],
         edges: []
-    };    
+    };
 
     //First we go through all the non-phosphates in the first strand and generate complementary nodes
     var notPhosphates = firstStrand.nodes.filter(function (e) {
@@ -134,16 +134,16 @@ function polymerase(firstStrand) {
     //Now we need to generate some new phosphates and connect those up to the complementary nodes
     var newPhosphates = [];
     for (var j = 0; j < output.nodes.length; j++) {
-        var newNode = { ID: j + output.nodes.length + firstStrand.nodes.length + 1, Name: "P" };
+        var newNode = {ID: j + output.nodes.length + firstStrand.nodes.length + 1, Name: "P"};
 
-        var newEdge = { StartNode: output.nodes[j].ID, EndNode: newNode.ID };
+        var newEdge = {StartNode: output.nodes[j].ID, EndNode: newNode.ID};
         output.edges.push(newEdge);
         newPhosphates.push(newNode);
     }
     output.nodes = output.nodes.concat(newPhosphates);
 
     //And we also need to connect the new phosphates together in a chain
-    for (var k = 0; k < (newPhosphates.length - 1) ; k++) {
+    for (var k = 0; k < (newPhosphates.length - 1); k++) {
         var newEdge = {
             StartNode: newPhosphates[k].ID,
             EndNode: newPhosphates[k + 1].ID
@@ -153,7 +153,7 @@ function polymerase(firstStrand) {
     return output;
 }
 
-DNA.makeDNA = function(maxLength) {
+DNA.makeDNA = function (maxLength) {
     var firstStrand = singleStrand(0, maxLength);
     DNA.data.nodes = firstStrand.nodes;
     DNA.data.edges = firstStrand.edges;
@@ -165,7 +165,7 @@ DNA.makeDNA = function(maxLength) {
 
 }
 
-DNA.initialise = function() {
+DNA.initialise = function () {
     DNA.makeDNA(30);
 }
 

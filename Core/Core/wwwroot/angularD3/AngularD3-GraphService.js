@@ -15,24 +15,24 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
     };
 
     console.log(this.graph);
-    
+
     this.clicked = {
         StartNode: null,
         EndNode: null
     }
     this.addNode = function (ID, Name) {
         //Adds a node to the graph
-        var self = this;    
+        var self = this;
         if (!ID) {
             ID = self.graph.data.nodes.length + 1;
         }
         if (!Name) {
             Name = "Test Node " + ID;
         }
-        var newNode = { ID: ID, Name: Name };
-        self.graph.data.nodes.push(newNode);        
+        var newNode = {ID: ID, Name: Name};
+        self.graph.data.nodes.push(newNode);
     }
-    
+
     this.makeEdges = function (StartNodeID, EndNodeID) {
         var self = this;
 
@@ -43,7 +43,7 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
         var existingEdge = self.graph.data.edges.filter(function (e) {
             return e.StartNode == StartNodeID && e.EndNode == EndNodeID
         });
-        if (existingEdge.length == 0) {            
+        if (existingEdge.length == 0) {
             self.graph.data.edges.push(newEdge);
         }
     }
@@ -86,7 +86,7 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
 
 
     this.drawGraph = function () {
-        console.log("drawGraph"); 
+        console.log("drawGraph");
         var self = this;
 
         d3.select("svg").remove();
@@ -145,7 +145,9 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
 
         self.graph.linklines.enter()
             .insert("polyline", ".node")
-            .attr("class", function (e) { return SettingsService.currentSettings.linkClass(e); })
+            .attr("class", function (e) {
+                return SettingsService.currentSettings.linkClass(e);
+            })
             .attr("marker-mid", "url(#end)");
 
         self.graph.linklines.exit().remove();
@@ -169,19 +171,21 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
             .attr("class", "cnode")
             .attr("r",
 
-            function (d) {
-                if (SettingsService.isNumeric(SettingsService.currentSettings.radius)) {
-                    return SettingsService.currentSettings.radius;
-                }
-                return SettingsService.currentSettings.radius(d);
-            });
+                function (d) {
+                    if (SettingsService.isNumeric(SettingsService.currentSettings.radius)) {
+                        return SettingsService.currentSettings.radius;
+                    }
+                    return SettingsService.currentSettings.radius(d);
+                });
 
         var labels = gnodes.append("text")
             .attr("class", "label-text")
-            .text(function (d) { return d.Name });
+            .text(function (d) {
+                return d.Name
+            });
 
 
-        function connectNodes(d) {            
+        function connectNodes(d) {
             if (!SettingsService.currentSettings.clickToConnect) {
                 return;
             }
@@ -192,18 +196,20 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
             var node = self.graph.data.nodes.filter(function (e) {
                 return e.ID == d.ID;
             });
-            
+
             if (node.length > 0) {
                 $rootScope.$apply(function () {
                     self.setClickedNode(node[0]);
                 })
             }
-            
+
         }
 
         // Generates a tooltip for a SVG circle element based on its ID
         function addTooltip(container) {
-            if (!container.TooltipText) { return; }
+            if (!container.TooltipText) {
+                return;
+            }
 
 
             var x = parseFloat(container.x);
@@ -269,7 +275,7 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
             }
         }
 
-        function setHighlight(ID) {            
+        function setHighlight(ID) {
             //Sets the highlight property on nodes connected to given ID
             var connectedNodes = self.graph.data.nodes.filter(function (e) {
                 return e.ID == ID;
@@ -281,23 +287,24 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
 
         function mouseover(d) {
             addTooltip(d);
-            
+
             $rootScope.$apply(function () {
                 highlightConnectedNodes(d.ID);
             });
-            
+
             var thisRadius = d3.select(this).select("circle").attr("r");
 
             d3.select(this).select("circle").transition().duration(750).attr("r", thisRadius * 2);
         }
+
         function mouseout() {
 
             d3.select("#tooltip").remove();
             d3.select("#tooltip-container").remove();
-            
+
             $rootScope.$apply(function () {
                 self.clearHighlights();
-            })            
+            })
             var thisRadius = d3.select(this).select("circle").attr("r");
             d3.select(this).select("circle").transition().duration(750).attr("r", thisRadius / 2);
         }
@@ -309,8 +316,12 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
             for (var i = 0; i < edges.length; i++) {
                 var startId = edges[i].StartNode;
                 var endId = edges[i].EndNode;
-                var sourceNode = nodes.filter(function (n) { return n.ID == startId; });
-                var targetNode = nodes.filter(function (n) { return n.ID == endId; });
+                var sourceNode = nodes.filter(function (n) {
+                    return n.ID == startId;
+                });
+                var targetNode = nodes.filter(function (n) {
+                    return n.ID == endId;
+                });
 
                 if ((sourceNode.length == 1) && (targetNode.length == 1)) {
                     var out = {
@@ -318,7 +329,9 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
                         target: targetNode[0]
                     }
 
-                    if (edges[i].EdgeType) { out.EdgeType = edges[i].EdgeType; }
+                    if (edges[i].EdgeType) {
+                        out.EdgeType = edges[i].EdgeType;
+                    }
                     if (edges[i].Properties) {
                         out.Properties = edges[i].Properties;
                     }
@@ -358,8 +371,8 @@ var AngularD3GraphService = function ($rootScope, SettingsService) {
 
             self.graph.linklines.attr("points", function (d) {
                 return d.source.x + "," + d.source.y + " " +
-                       (d.source.x + d.target.x) / 2 + "," + (d.source.y + d.target.y) / 2 + " " +
-                       d.target.x + "," + d.target.y;
+                    (d.source.x + d.target.x) / 2 + "," + (d.source.y + d.target.y) / 2 + " " +
+                    d.target.x + "," + d.target.y;
             });
         }
     }

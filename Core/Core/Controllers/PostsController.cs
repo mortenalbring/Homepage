@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Core.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 
@@ -18,7 +16,10 @@ namespace Core.Controllers
             _sharedLocalizer = sharedLocalizer;
         }
 
-
+        public IActionResult CssGradients()
+        {
+            return View("CssGradients");
+        }
         public IActionResult CssReflect()
         {
             return View("CssReflect");

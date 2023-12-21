@@ -23,13 +23,13 @@ function init() {
             nextJson = 1;
         }
         var nextJsonFile = jsonfolder + "\\children" + nextJson + ".json";
-        
-        var linkDist = 100 - 15*nextJson;
+
+        var linkDist = 100 - 15 * nextJson;
         if (linkDist < 0) {
             linkDist = 10;
         }
-        
-        
+
+
         var buttonText = "Generation " + nextJson;
         $('#childNextText').text(buttonText);
 
@@ -45,7 +45,8 @@ function init() {
     initSvgStatic(d3.select("#simpleWords1wc"), "simpleWords1pt");
 
     initSvgStatic(d3.select("#simpleWords1no"), "simpleWords1ptno");
- //   initSvgStatic(d3.select("#wordChainLongEnglish"), "simpleWords1pt");
+
+    //   initSvgStatic(d3.select("#wordChainLongEnglish"), "simpleWords1pt");
 
     function initSvgStatic(svg, containerId) {
 
@@ -278,7 +279,6 @@ function init() {
                 var width = domVariables.Width;
                 var height = domVariables.Height;
 
-             
 
                 var g = svg.append("g");
                 WordsGeneral.FilterDataOnGroup(graph, domVariables.Group);
@@ -300,8 +300,6 @@ function init() {
                 var nodeColor = colours[0];
                 var linksColor = colours[1];
 
-
-           
 
                 var attractForce = d3.forceManyBody()
                     .strength(domVariables.AttractForce.Strength)

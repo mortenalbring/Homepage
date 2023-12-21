@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
@@ -70,8 +70,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Pages" />
-      <Folder Include="wwwroot\images\fractalChaos\polygons\lg" />
       <Folder Include="wwwroot\words\Json\no\children" />
     </ItemGroup>
 
@@ -13415,6 +13413,232 @@
       <None Include="wwwroot\angularD3\styles\containers.css" />
       <None Include="wwwroot\angularD3\styles\nodestyles.css" />
       <None Include="wwwroot\angularD3\styles\pagestyles.css" />
+      <None Include="wwwroot\images\fractalChaos\polygons\table2\imgmatig.bat" />
+      <None Include="wwwroot\images\fractalChaos\polygons\table2\imgmatig2.bat" />
+      <None Include="wwwroot\images\fractalChaos\polygons\table2\test\imgmatig2.bat" />
+      <None Include="wwwroot\images\fractalChaos\polygons\table\imgmatig.bat" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="wwwroot\home\cover-cssreflect_2.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\home\cover-cssreflect.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex10norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex10norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex10norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex10normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex11norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex11norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex11norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex11normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex3norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex3norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex3normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex4norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex4norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex4norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex4normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex5norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex5norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex5norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex5normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex6norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex6norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex6norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex6normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex7norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex7norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex7norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex7normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex8norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex8norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex8norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex8normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex9norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex9norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex9norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\tr_vertex9normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex10norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex10norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex10norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex10normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex11norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex11norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex11norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex11normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex3norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex3norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex3normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex4norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex4norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex4norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex4normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex5norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex5norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex5norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex5normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex6norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex6norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex6norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex6normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex7norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex7norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex7norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex7normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex8norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex8norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex8norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex8normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex9norepeatnorepeat-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex9norepeatfurthestnorepeatfurthest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex9norepeatnearestnorepeatnearest-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\vertex9normal-dp.txt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\images\fractalchaos\polygons\table\yarp.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

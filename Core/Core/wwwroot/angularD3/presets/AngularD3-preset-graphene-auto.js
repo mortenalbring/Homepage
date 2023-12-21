@@ -1,27 +1,23 @@
 var grapheneauto = {
     settings: {
         charge: -450,
-        linkDistance: 5,        
+        linkDistance: 5,
         clickToConnect: false
     },
     data: {
-        nodes: [
-
-        ],
-        edges: [
-
-        ]
+        nodes: [],
+        edges: []
     }
 }
 
 function connectHexConnections(hexagons) {
     var edges = [];
 
-    for (var i = 0; i < (hexagons.length-1); i++) {
+    for (var i = 0; i < (hexagons.length - 1); i++) {
         for (var j = 0; j < 5; j++) {
             var newEdge = {
                 StartNode: hexagons[i].nodes[j].ID,
-                EndNode: hexagons[i+1].nodes[j+1].ID,
+                EndNode: hexagons[i + 1].nodes[j + 1].ID,
             }
             edges.push(newEdge);
         }
@@ -42,7 +38,7 @@ function drawHexConnections(startID) {
         }
         hexagon.nodes.push(newNode);
     }
-    for (var i = 1; i < 6; i++) {        
+    for (var i = 1; i < 6; i++) {
         var newEdge = {
             StartNode: hexagon.nodes[0].ID,
             EndNode: hexagon.nodes[i].ID
@@ -55,10 +51,10 @@ function drawHexConnections(startID) {
 
 function drawHexagon(startID) {
     var hexagon =
-    {
-        nodes: [],
-        edges: []
-    }
+        {
+            nodes: [],
+            edges: []
+        }
 
     for (var i = startID; i < startID + 6; i++) {
         var newNode = {
@@ -114,25 +110,16 @@ function connectHexagons(hexagons) {
 
     newEdges.push(connecthex(hexagons, 4, 1, 3, 1));
 
-    
+
     newEdges.push(connecthex(hexagons, 5, 1, 3, 5));
 
     newEdges.push(connecthex(hexagons, 6, 1, 5, 5));
 
-    
+
     newEdges.push(connecthex(hexagons, 7, 1, 6, 5));
 
     newEdges.push(connecthex(hexagons, 8, 5, 1, 5));
     newEdges.push(connecthex(hexagons, 8, 1, 7, 5));
-
-
-
-
-    
-
-
-
-
 
 
     return newEdges;
@@ -181,7 +168,7 @@ function connectVertices(vertices) {
 
     var newEdges = [];
 
-    for (var i = 0; i < (vertices.length - 1) ; i++) {
+    for (var i = 0; i < (vertices.length - 1); i++) {
         var newEdge1 = {
             StartNode: vertices[i].nodes[1].ID,
             EndNode: vertices[i + 1].nodes[1].ID

@@ -1,130 +1,597 @@
-{"nodes":[{ "id": "grauset", "group":1},
-{ "id": "rauset", "group":1},
-{ "id": "gauset", "group":1},
-{ "id": "gruset", "group":1},
-{ "id": "graset", "group":1},
-{ "id": "graust", "group":1},
-{ "id": "grause", "group":1},
-{ "id": "ruset", "group":2},
-{ "id": "raset", "group":2},
-{ "id": "raust", "group":2},
-{ "id": "rause", "group":2},
-{ "id": "ruet", "group":3},
-{ "id": "rust", "group":3},
-{ "id": "ruse", "group":3},
-{ "id": "aset", "group":3},
-{ "id": "raet", "group":3},
-{ "id": "rast", "group":3},
-{ "id": "rase", "group":3},
-{ "id": "aust", "group":3},
-{ "id": "raut", "group":3},
-{ "id": "raus", "group":3},
-{ "id": "ause", "group":3},
-{ "id": "gaset", "group":2},
-{ "id": "gauet", "group":2},
-{ "id": "gaust", "group":2},
-{ "id": "gause", "group":2},
-{ "id": "gast", "group":3},
-{ "id": "gase", "group":3},
-{ "id": "auet", "group":3},
-{ "id": "gaut", "group":3},
-{ "id": "gaue", "group":3},
-{ "id": "gust", "group":3},
-{ "id": "gaus", "group":3},
-{ "id": "gruet", "group":2},
-{ "id": "grust", "group":2},
-{ "id": "gruse", "group":2},
-{ "id": "grut", "group":3},
-{ "id": "grue", "group":3},
-{ "id": "grus", "group":3},
-{ "id": "grase", "group":2},
-{ "id": "grae", "group":3},
-{ "id": "gras", "group":3},
-{ "id": "graut", "group":2},
-{ "id": "graus", "group":2}
-],
-"links":[{"source":"grauset","target":"rauset","value":1},
-{"source":"grauset","target":"gauset","value":1},
-{"source":"grauset","target":"gruset","value":1},
-{"source":"grauset","target":"graset","value":1},
-{"source":"grauset","target":"graust","value":1},
-{"source":"grauset","target":"grause","value":1},
-{"source":"rauset","target":"ruset","value":1},
-{"source":"rauset","target":"raset","value":1},
-{"source":"rauset","target":"raust","value":1},
-{"source":"rauset","target":"rause","value":1},
-{"source":"ruset","target":"ruet","value":1},
-{"source":"ruset","target":"rust","value":1},
-{"source":"ruset","target":"ruse","value":1},
-{"source":"raset","target":"aset","value":1},
-{"source":"raset","target":"raet","value":1},
-{"source":"raset","target":"rast","value":1},
-{"source":"raset","target":"rase","value":1},
-{"source":"raust","target":"aust","value":1},
-{"source":"raust","target":"rust","value":1},
-{"source":"raust","target":"rast","value":1},
-{"source":"raust","target":"raut","value":1},
-{"source":"raust","target":"raus","value":1},
-{"source":"rause","target":"ause","value":1},
-{"source":"rause","target":"ruse","value":1},
-{"source":"rause","target":"rase","value":1},
-{"source":"rause","target":"raus","value":1},
-{"source":"gauset","target":"gaset","value":1},
-{"source":"gauset","target":"gauet","value":1},
-{"source":"gauset","target":"gaust","value":1},
-{"source":"gauset","target":"gause","value":1},
-{"source":"gaset","target":"aset","value":1},
-{"source":"gaset","target":"gast","value":1},
-{"source":"gaset","target":"gase","value":1},
-{"source":"gauet","target":"auet","value":1},
-{"source":"gauet","target":"gaut","value":1},
-{"source":"gauet","target":"gaue","value":1},
-{"source":"gaust","target":"aust","value":1},
-{"source":"gaust","target":"gust","value":1},
-{"source":"gaust","target":"gast","value":1},
-{"source":"gaust","target":"gaut","value":1},
-{"source":"gaust","target":"gaus","value":1},
-{"source":"gause","target":"ause","value":1},
-{"source":"gause","target":"gase","value":1},
-{"source":"gause","target":"gaue","value":1},
-{"source":"gause","target":"gaus","value":1},
-{"source":"gruset","target":"ruset","value":1},
-{"source":"gruset","target":"gruet","value":1},
-{"source":"gruset","target":"grust","value":1},
-{"source":"gruset","target":"gruse","value":1},
-{"source":"gruet","target":"ruet","value":1},
-{"source":"gruet","target":"grut","value":1},
-{"source":"gruet","target":"grue","value":1},
-{"source":"grust","target":"rust","value":1},
-{"source":"grust","target":"gust","value":1},
-{"source":"grust","target":"grut","value":1},
-{"source":"grust","target":"grus","value":1},
-{"source":"gruse","target":"ruse","value":1},
-{"source":"gruse","target":"grue","value":1},
-{"source":"gruse","target":"grus","value":1},
-{"source":"graset","target":"raset","value":1},
-{"source":"graset","target":"gaset","value":1},
-{"source":"graset","target":"grase","value":1},
-{"source":"grase","target":"rase","value":1},
-{"source":"grase","target":"gase","value":1},
-{"source":"grase","target":"grae","value":1},
-{"source":"grase","target":"gras","value":1},
-{"source":"graust","target":"raust","value":1},
-{"source":"graust","target":"gaust","value":1},
-{"source":"graust","target":"grust","value":1},
-{"source":"graust","target":"graut","value":1},
-{"source":"graust","target":"graus","value":1},
-{"source":"graut","target":"raut","value":1},
-{"source":"graut","target":"gaut","value":1},
-{"source":"graut","target":"grut","value":1},
-{"source":"graus","target":"raus","value":1},
-{"source":"graus","target":"gaus","value":1},
-{"source":"graus","target":"grus","value":1},
-{"source":"graus","target":"gras","value":1},
-{"source":"grause","target":"rause","value":1},
-{"source":"grause","target":"gause","value":1},
-{"source":"grause","target":"gruse","value":1},
-{"source":"grause","target":"grase","value":1},
-{"source":"grause","target":"graus","value":1}
-]
- }
+{
+  "nodes": [
+    {
+      "id": "grauset",
+      "group": 1
+    },
+    {
+      "id": "rauset",
+      "group": 1
+    },
+    {
+      "id": "gauset",
+      "group": 1
+    },
+    {
+      "id": "gruset",
+      "group": 1
+    },
+    {
+      "id": "graset",
+      "group": 1
+    },
+    {
+      "id": "graust",
+      "group": 1
+    },
+    {
+      "id": "grause",
+      "group": 1
+    },
+    {
+      "id": "ruset",
+      "group": 2
+    },
+    {
+      "id": "raset",
+      "group": 2
+    },
+    {
+      "id": "raust",
+      "group": 2
+    },
+    {
+      "id": "rause",
+      "group": 2
+    },
+    {
+      "id": "ruet",
+      "group": 3
+    },
+    {
+      "id": "rust",
+      "group": 3
+    },
+    {
+      "id": "ruse",
+      "group": 3
+    },
+    {
+      "id": "aset",
+      "group": 3
+    },
+    {
+      "id": "raet",
+      "group": 3
+    },
+    {
+      "id": "rast",
+      "group": 3
+    },
+    {
+      "id": "rase",
+      "group": 3
+    },
+    {
+      "id": "aust",
+      "group": 3
+    },
+    {
+      "id": "raut",
+      "group": 3
+    },
+    {
+      "id": "raus",
+      "group": 3
+    },
+    {
+      "id": "ause",
+      "group": 3
+    },
+    {
+      "id": "gaset",
+      "group": 2
+    },
+    {
+      "id": "gauet",
+      "group": 2
+    },
+    {
+      "id": "gaust",
+      "group": 2
+    },
+    {
+      "id": "gause",
+      "group": 2
+    },
+    {
+      "id": "gast",
+      "group": 3
+    },
+    {
+      "id": "gase",
+      "group": 3
+    },
+    {
+      "id": "auet",
+      "group": 3
+    },
+    {
+      "id": "gaut",
+      "group": 3
+    },
+    {
+      "id": "gaue",
+      "group": 3
+    },
+    {
+      "id": "gust",
+      "group": 3
+    },
+    {
+      "id": "gaus",
+      "group": 3
+    },
+    {
+      "id": "gruet",
+      "group": 2
+    },
+    {
+      "id": "grust",
+      "group": 2
+    },
+    {
+      "id": "gruse",
+      "group": 2
+    },
+    {
+      "id": "grut",
+      "group": 3
+    },
+    {
+      "id": "grue",
+      "group": 3
+    },
+    {
+      "id": "grus",
+      "group": 3
+    },
+    {
+      "id": "grase",
+      "group": 2
+    },
+    {
+      "id": "grae",
+      "group": 3
+    },
+    {
+      "id": "gras",
+      "group": 3
+    },
+    {
+      "id": "graut",
+      "group": 2
+    },
+    {
+      "id": "graus",
+      "group": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "grauset",
+      "target": "rauset",
+      "value": 1
+    },
+    {
+      "source": "grauset",
+      "target": "gauset",
+      "value": 1
+    },
+    {
+      "source": "grauset",
+      "target": "gruset",
+      "value": 1
+    },
+    {
+      "source": "grauset",
+      "target": "graset",
+      "value": 1
+    },
+    {
+      "source": "grauset",
+      "target": "graust",
+      "value": 1
+    },
+    {
+      "source": "grauset",
+      "target": "grause",
+      "value": 1
+    },
+    {
+      "source": "rauset",
+      "target": "ruset",
+      "value": 1
+    },
+    {
+      "source": "rauset",
+      "target": "raset",
+      "value": 1
+    },
+    {
+      "source": "rauset",
+      "target": "raust",
+      "value": 1
+    },
+    {
+      "source": "rauset",
+      "target": "rause",
+      "value": 1
+    },
+    {
+      "source": "ruset",
+      "target": "ruet",
+      "value": 1
+    },
+    {
+      "source": "ruset",
+      "target": "rust",
+      "value": 1
+    },
+    {
+      "source": "ruset",
+      "target": "ruse",
+      "value": 1
+    },
+    {
+      "source": "raset",
+      "target": "aset",
+      "value": 1
+    },
+    {
+      "source": "raset",
+      "target": "raet",
+      "value": 1
+    },
+    {
+      "source": "raset",
+      "target": "rast",
+      "value": 1
+    },
+    {
+      "source": "raset",
+      "target": "rase",
+      "value": 1
+    },
+    {
+      "source": "raust",
+      "target": "aust",
+      "value": 1
+    },
+    {
+      "source": "raust",
+      "target": "rust",
+      "value": 1
+    },
+    {
+      "source": "raust",
+      "target": "rast",
+      "value": 1
+    },
+    {
+      "source": "raust",
+      "target": "raut",
+      "value": 1
+    },
+    {
+      "source": "raust",
+      "target": "raus",
+      "value": 1
+    },
+    {
+      "source": "rause",
+      "target": "ause",
+      "value": 1
+    },
+    {
+      "source": "rause",
+      "target": "ruse",
+      "value": 1
+    },
+    {
+      "source": "rause",
+      "target": "rase",
+      "value": 1
+    },
+    {
+      "source": "rause",
+      "target": "raus",
+      "value": 1
+    },
+    {
+      "source": "gauset",
+      "target": "gaset",
+      "value": 1
+    },
+    {
+      "source": "gauset",
+      "target": "gauet",
+      "value": 1
+    },
+    {
+      "source": "gauset",
+      "target": "gaust",
+      "value": 1
+    },
+    {
+      "source": "gauset",
+      "target": "gause",
+      "value": 1
+    },
+    {
+      "source": "gaset",
+      "target": "aset",
+      "value": 1
+    },
+    {
+      "source": "gaset",
+      "target": "gast",
+      "value": 1
+    },
+    {
+      "source": "gaset",
+      "target": "gase",
+      "value": 1
+    },
+    {
+      "source": "gauet",
+      "target": "auet",
+      "value": 1
+    },
+    {
+      "source": "gauet",
+      "target": "gaut",
+      "value": 1
+    },
+    {
+      "source": "gauet",
+      "target": "gaue",
+      "value": 1
+    },
+    {
+      "source": "gaust",
+      "target": "aust",
+      "value": 1
+    },
+    {
+      "source": "gaust",
+      "target": "gust",
+      "value": 1
+    },
+    {
+      "source": "gaust",
+      "target": "gast",
+      "value": 1
+    },
+    {
+      "source": "gaust",
+      "target": "gaut",
+      "value": 1
+    },
+    {
+      "source": "gaust",
+      "target": "gaus",
+      "value": 1
+    },
+    {
+      "source": "gause",
+      "target": "ause",
+      "value": 1
+    },
+    {
+      "source": "gause",
+      "target": "gase",
+      "value": 1
+    },
+    {
+      "source": "gause",
+      "target": "gaue",
+      "value": 1
+    },
+    {
+      "source": "gause",
+      "target": "gaus",
+      "value": 1
+    },
+    {
+      "source": "gruset",
+      "target": "ruset",
+      "value": 1
+    },
+    {
+      "source": "gruset",
+      "target": "gruet",
+      "value": 1
+    },
+    {
+      "source": "gruset",
+      "target": "grust",
+      "value": 1
+    },
+    {
+      "source": "gruset",
+      "target": "gruse",
+      "value": 1
+    },
+    {
+      "source": "gruet",
+      "target": "ruet",
+      "value": 1
+    },
+    {
+      "source": "gruet",
+      "target": "grut",
+      "value": 1
+    },
+    {
+      "source": "gruet",
+      "target": "grue",
+      "value": 1
+    },
+    {
+      "source": "grust",
+      "target": "rust",
+      "value": 1
+    },
+    {
+      "source": "grust",
+      "target": "gust",
+      "value": 1
+    },
+    {
+      "source": "grust",
+      "target": "grut",
+      "value": 1
+    },
+    {
+      "source": "grust",
+      "target": "grus",
+      "value": 1
+    },
+    {
+      "source": "gruse",
+      "target": "ruse",
+      "value": 1
+    },
+    {
+      "source": "gruse",
+      "target": "grue",
+      "value": 1
+    },
+    {
+      "source": "gruse",
+      "target": "grus",
+      "value": 1
+    },
+    {
+      "source": "graset",
+      "target": "raset",
+      "value": 1
+    },
+    {
+      "source": "graset",
+      "target": "gaset",
+      "value": 1
+    },
+    {
+      "source": "graset",
+      "target": "grase",
+      "value": 1
+    },
+    {
+      "source": "grase",
+      "target": "rase",
+      "value": 1
+    },
+    {
+      "source": "grase",
+      "target": "gase",
+      "value": 1
+    },
+    {
+      "source": "grase",
+      "target": "grae",
+      "value": 1
+    },
+    {
+      "source": "grase",
+      "target": "gras",
+      "value": 1
+    },
+    {
+      "source": "graust",
+      "target": "raust",
+      "value": 1
+    },
+    {
+      "source": "graust",
+      "target": "gaust",
+      "value": 1
+    },
+    {
+      "source": "graust",
+      "target": "grust",
+      "value": 1
+    },
+    {
+      "source": "graust",
+      "target": "graut",
+      "value": 1
+    },
+    {
+      "source": "graust",
+      "target": "graus",
+      "value": 1
+    },
+    {
+      "source": "graut",
+      "target": "raut",
+      "value": 1
+    },
+    {
+      "source": "graut",
+      "target": "gaut",
+      "value": 1
+    },
+    {
+      "source": "graut",
+      "target": "grut",
+      "value": 1
+    },
+    {
+      "source": "graus",
+      "target": "raus",
+      "value": 1
+    },
+    {
+      "source": "graus",
+      "target": "gaus",
+      "value": 1
+    },
+    {
+      "source": "graus",
+      "target": "grus",
+      "value": 1
+    },
+    {
+      "source": "graus",
+      "target": "gras",
+      "value": 1
+    },
+    {
+      "source": "grause",
+      "target": "rause",
+      "value": 1
+    },
+    {
+      "source": "grause",
+      "target": "gause",
+      "value": 1
+    },
+    {
+      "source": "grause",
+      "target": "gruse",
+      "value": 1
+    },
+    {
+      "source": "grause",
+      "target": "grase",
+      "value": 1
+    },
+    {
+      "source": "grause",
+      "target": "graus",
+      "value": 1
+    }
+  ]
+}

@@ -1,68 +1,66 @@
-﻿
-.ma-overlay span{
-    position:absolute;
-    padding-left:5px;
-    padding-right:5px;
-    text-align: justify;
-    /*top:50%;*/
-    /*left:50%;*/
-    /*transform:translate(-50%,-50%);*/
-    color: #ffffff;
+﻿.ma-underlay, .ma-img-container, .ma-img-container img {
+    transition: top 500ms ease-in-out, color 500ms ease-in-out, text-shadow 500ms ease-in-out, font-size 500ms ease-in-out, opacity 800ms ease-in-out;
 }
 
-
-.ma-img-container .ma-overlay{
-    position:absolute;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#212529;
-    text-shadow: 0 0 4px #343434;
-    opacity:0;
-
-    border-radius:50px;
-
-    transition:opacity 500ms ease-in-out,
-    border-radius 500ms ease-in-out,
-    border-width 500ms ease-in-out,
-    border-top-color 500ms ease-in-out,
-    border-right-color 500ms ease-in-out,
-    border-left-color 500ms ease-in-out,
-    border-bottom-color 500ms ease-in-out;
-}
-.ma-img-container:hover .ma-overlay{
-    
-    border-radius:15px;
-/*    */
-/*    background: linear-gradient(0deg, rgba(255,255,255,0.0), rgba(256,37,41,0.1), rgba(255,255,255,0.00)),*/
-/*    linear-gradient(90deg, rgba(255,255,255,0.0), rgba(256,37,41,0.1), rgba(255,255,255,0.00))*/
-/*;*/
-/*    */
-    background: radial-gradient(closest-side, #383838 20%, rgba(145, 152, 229, 0));
-    opacity:0.9;
-    text-align: justify;
-}
 .ma-underlay {
-    font-size: 1.1em;
+    font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
     text-shadow: 0px 0px 20px #000000;
     position: relative;
-    top:-10%;
-    transition:top 500ms ease-in-out, color 500ms ease-in-out, text-shadow 500ms ease-in-out, font-size 500ms ease-in-out, opacity 800ms ease-in-out;
+    top: -50%;
+    z-index: -1;
 }
-.ma-img-container:hover .ma-underlay {
-    font-size: 1.1em;
-    opacity: 0;
-    
-    color:white;
-    text-shadow: none;
 
+.ma-img-container:hover .ma-underlay {
+    animation: underlayhover 1s;
+    font-size: 2em;
+    opacity: 0.9;
+    z-index: 1;
+    top: -50%;
+    color: white;
+    text-shadow: none;
+}
+.ma-img-container:hover img {
+    
+    animation: underlayimghover 5s infinite;
+   
+}
+
+@keyframes underlayimghover {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+
+    50% {
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        
+        filter: hue-rotate(360deg);
+        z-index: -1;
+    }
+}
+
+@keyframes underlayhover {
+    0% {
+        opacity: 0.9;
+        z-index: -1;
+        top: -50%;
+    }
+
+
+    50% {
+        top: -52%;
+        z-index: -1;
+    }
+
+    100% {
+        top: -50%;
+        opacity: 0.9;
+        z-index: 1;
+    }
 }

@@ -1,77 +1,337 @@
-﻿{"nodes":[{ "id": "trauben", "group":1},
-{ "id": "rauben", "group":1},
-{ "id": "tauben", "group":1},
-{ "id": "traben", "group":1},
-{ "id": "trauen", "group":1},
-{ "id": "traube", "group":1},
-{ "id": "traufen", "group":2},
-{ "id": "raufen", "group":2},
-{ "id": "taufen", "group":2},
-{ "id": "trafen", "group":2},
-{ "id": "traufe", "group":2},
-{ "id": "verwehrte", "group":3},
-{ "id": "erwehrte", "group":3},
-{ "id": "verehrte", "group":3},
-{ "id": "verwehte", "group":3},
-{ "id": "verwehre", "group":3},
-{ "id": "verwehrt", "group":3},
-{ "id": "verwehrtest", "group":4},
-{ "id": "erwehrtest", "group":4},
-{ "id": "verehrtest", "group":4},
-{ "id": "verwertest", "group":4},
-{ "id": "verwehtest", "group":4},
-{ "id": "verwehrtet", "group":4},
-{ "id": "erwehrtet", "group":5},
-{ "id": "verehrtet", "group":5},
-{ "id": "verwertet", "group":5},
-{ "id": "verwehtet", "group":5},
-{ "id": "wehrte", "group":6},
-{ "id": "ehrte", "group":6},
-{ "id": "werte", "group":6},
-{ "id": "wehte", "group":6},
-{ "id": "wehre", "group":6},
-{ "id": "wehrt", "group":6},
-{ "id": "weilten", "group":7},
-{ "id": "eilten", "group":7},
-{ "id": "welten", "group":7},
-{ "id": "weiten", "group":7},
-{ "id": "weilen", "group":7},
-{ "id": "weilte", "group":7}
-],
-"links":[{"source":"trauben","target":"rauben","value":1},
-{"source":"trauben","target":"tauben","value":1},
-{"source":"trauben","target":"traben","value":1},
-{"source":"trauben","target":"trauen","value":1},
-{"source":"trauben","target":"traube","value":1},
-{"source":"traufen","target":"raufen","value":1},
-{"source":"traufen","target":"taufen","value":1},
-{"source":"traufen","target":"trafen","value":1},
-{"source":"traufen","target":"trauen","value":1},
-{"source":"traufen","target":"traufe","value":1},
-{"source":"verwehrte","target":"erwehrte","value":1},
-{"source":"verwehrte","target":"verehrte","value":1},
-{"source":"verwehrte","target":"verwehte","value":1},
-{"source":"verwehrte","target":"verwehre","value":1},
-{"source":"verwehrte","target":"verwehrt","value":1},
-{"source":"verwehrtest","target":"erwehrtest","value":1},
-{"source":"verwehrtest","target":"verehrtest","value":1},
-{"source":"verwehrtest","target":"verwertest","value":1},
-{"source":"verwehrtest","target":"verwehtest","value":1},
-{"source":"verwehrtest","target":"verwehrtet","value":1},
-{"source":"verwehrtet","target":"erwehrtet","value":1},
-{"source":"verwehrtet","target":"verehrtet","value":1},
-{"source":"verwehrtet","target":"verwertet","value":1},
-{"source":"verwehrtet","target":"verwehtet","value":1},
-{"source":"verwehrtet","target":"verwehrte","value":1},
-{"source":"wehrte","target":"ehrte","value":1},
-{"source":"wehrte","target":"werte","value":1},
-{"source":"wehrte","target":"wehte","value":1},
-{"source":"wehrte","target":"wehre","value":1},
-{"source":"wehrte","target":"wehrt","value":1},
-{"source":"weilten","target":"eilten","value":1},
-{"source":"weilten","target":"welten","value":1},
-{"source":"weilten","target":"weiten","value":1},
-{"source":"weilten","target":"weilen","value":1},
-{"source":"weilten","target":"weilte","value":1}
-]
- }
+﻿{
+  "nodes": [
+    {
+      "id": "trauben",
+      "group": 1
+    },
+    {
+      "id": "rauben",
+      "group": 1
+    },
+    {
+      "id": "tauben",
+      "group": 1
+    },
+    {
+      "id": "traben",
+      "group": 1
+    },
+    {
+      "id": "trauen",
+      "group": 1
+    },
+    {
+      "id": "traube",
+      "group": 1
+    },
+    {
+      "id": "traufen",
+      "group": 2
+    },
+    {
+      "id": "raufen",
+      "group": 2
+    },
+    {
+      "id": "taufen",
+      "group": 2
+    },
+    {
+      "id": "trafen",
+      "group": 2
+    },
+    {
+      "id": "traufe",
+      "group": 2
+    },
+    {
+      "id": "verwehrte",
+      "group": 3
+    },
+    {
+      "id": "erwehrte",
+      "group": 3
+    },
+    {
+      "id": "verehrte",
+      "group": 3
+    },
+    {
+      "id": "verwehte",
+      "group": 3
+    },
+    {
+      "id": "verwehre",
+      "group": 3
+    },
+    {
+      "id": "verwehrt",
+      "group": 3
+    },
+    {
+      "id": "verwehrtest",
+      "group": 4
+    },
+    {
+      "id": "erwehrtest",
+      "group": 4
+    },
+    {
+      "id": "verehrtest",
+      "group": 4
+    },
+    {
+      "id": "verwertest",
+      "group": 4
+    },
+    {
+      "id": "verwehtest",
+      "group": 4
+    },
+    {
+      "id": "verwehrtet",
+      "group": 4
+    },
+    {
+      "id": "erwehrtet",
+      "group": 5
+    },
+    {
+      "id": "verehrtet",
+      "group": 5
+    },
+    {
+      "id": "verwertet",
+      "group": 5
+    },
+    {
+      "id": "verwehtet",
+      "group": 5
+    },
+    {
+      "id": "wehrte",
+      "group": 6
+    },
+    {
+      "id": "ehrte",
+      "group": 6
+    },
+    {
+      "id": "werte",
+      "group": 6
+    },
+    {
+      "id": "wehte",
+      "group": 6
+    },
+    {
+      "id": "wehre",
+      "group": 6
+    },
+    {
+      "id": "wehrt",
+      "group": 6
+    },
+    {
+      "id": "weilten",
+      "group": 7
+    },
+    {
+      "id": "eilten",
+      "group": 7
+    },
+    {
+      "id": "welten",
+      "group": 7
+    },
+    {
+      "id": "weiten",
+      "group": 7
+    },
+    {
+      "id": "weilen",
+      "group": 7
+    },
+    {
+      "id": "weilte",
+      "group": 7
+    }
+  ],
+  "links": [
+    {
+      "source": "trauben",
+      "target": "rauben",
+      "value": 1
+    },
+    {
+      "source": "trauben",
+      "target": "tauben",
+      "value": 1
+    },
+    {
+      "source": "trauben",
+      "target": "traben",
+      "value": 1
+    },
+    {
+      "source": "trauben",
+      "target": "trauen",
+      "value": 1
+    },
+    {
+      "source": "trauben",
+      "target": "traube",
+      "value": 1
+    },
+    {
+      "source": "traufen",
+      "target": "raufen",
+      "value": 1
+    },
+    {
+      "source": "traufen",
+      "target": "taufen",
+      "value": 1
+    },
+    {
+      "source": "traufen",
+      "target": "trafen",
+      "value": 1
+    },
+    {
+      "source": "traufen",
+      "target": "trauen",
+      "value": 1
+    },
+    {
+      "source": "traufen",
+      "target": "traufe",
+      "value": 1
+    },
+    {
+      "source": "verwehrte",
+      "target": "erwehrte",
+      "value": 1
+    },
+    {
+      "source": "verwehrte",
+      "target": "verehrte",
+      "value": 1
+    },
+    {
+      "source": "verwehrte",
+      "target": "verwehte",
+      "value": 1
+    },
+    {
+      "source": "verwehrte",
+      "target": "verwehre",
+      "value": 1
+    },
+    {
+      "source": "verwehrte",
+      "target": "verwehrt",
+      "value": 1
+    },
+    {
+      "source": "verwehrtest",
+      "target": "erwehrtest",
+      "value": 1
+    },
+    {
+      "source": "verwehrtest",
+      "target": "verehrtest",
+      "value": 1
+    },
+    {
+      "source": "verwehrtest",
+      "target": "verwertest",
+      "value": 1
+    },
+    {
+      "source": "verwehrtest",
+      "target": "verwehtest",
+      "value": 1
+    },
+    {
+      "source": "verwehrtest",
+      "target": "verwehrtet",
+      "value": 1
+    },
+    {
+      "source": "verwehrtet",
+      "target": "erwehrtet",
+      "value": 1
+    },
+    {
+      "source": "verwehrtet",
+      "target": "verehrtet",
+      "value": 1
+    },
+    {
+      "source": "verwehrtet",
+      "target": "verwertet",
+      "value": 1
+    },
+    {
+      "source": "verwehrtet",
+      "target": "verwehtet",
+      "value": 1
+    },
+    {
+      "source": "verwehrtet",
+      "target": "verwehrte",
+      "value": 1
+    },
+    {
+      "source": "wehrte",
+      "target": "ehrte",
+      "value": 1
+    },
+    {
+      "source": "wehrte",
+      "target": "werte",
+      "value": 1
+    },
+    {
+      "source": "wehrte",
+      "target": "wehte",
+      "value": 1
+    },
+    {
+      "source": "wehrte",
+      "target": "wehre",
+      "value": 1
+    },
+    {
+      "source": "wehrte",
+      "target": "wehrt",
+      "value": 1
+    },
+    {
+      "source": "weilten",
+      "target": "eilten",
+      "value": 1
+    },
+    {
+      "source": "weilten",
+      "target": "welten",
+      "value": 1
+    },
+    {
+      "source": "weilten",
+      "target": "weiten",
+      "value": 1
+    },
+    {
+      "source": "weilten",
+      "target": "weilen",
+      "value": 1
+    },
+    {
+      "source": "weilten",
+      "target": "weilte",
+      "value": 1
+    }
+  ]
+}

@@ -3,8 +3,13 @@
 }
 
 .gradient-box {
+    border: 1px solid white;
     min-width: 200px;
     min-height: 200px;
+}
+
+.gradient-basic-1 {
+    background-image: linear-gradient(#ff6a00, #0a15cb);
 }
 
 section {
@@ -13,6 +18,8 @@ section {
     margin: 5rem auto;
     box-shadow: 0 0 2rem rgb(0 0 0 / 1);
 }
+
+
 
 section.one {
     background-image: linear-gradient(
@@ -28,12 +35,15 @@ section.one {
     background-size: 15rem 9rem;
     background-repeat: no-repeat;
 }
+
 .norway-part-2 {
     background-image: linear-gradient(transparent 42%, white 42%, white 46%, blue 46%, blue 58%, white 58%, white 62%, transparent 62%)
 }
+
 .norway-part-3 {
     background-image: linear-gradient(90deg, red 25%, white 25%, white 28%, blue 28%, blue 34%, white 34%, white 37%, red 37%);
 }
+
 .norway-container {
     background-size: 15rem 9rem;
     background-repeat: no-repeat;
@@ -42,11 +52,10 @@ section.one {
 .norway {
     background-image: linear-gradient(90deg, transparent 28%, blue 28%, blue 34%, transparent 10%),
     linear-gradient(transparent 42%, white 42%, white 46%, blue 46%, blue 58%, white 58%, white 62%, transparent 62%),
-    linear-gradient(90deg, red 25%, white 25%, white 28%, blue 28%, blue 34%, white 34%, white 37%, red 37%)
-;
-   
+    linear-gradient(90deg, red 25%, white 25%, white 28%, blue 28%, blue 34%, white 34%, white 37%, red 37%);
+
     background-size: 15rem 9rem;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
 }
 
 section.two {
@@ -116,19 +125,25 @@ section.six {
 }
 
 .sierpinski-container {
-    width: 320px;
-    height: 320px;
-}
-.sierpinski-part-1 {
-    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
-    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%;
+    width: 400px;
+    height: 400px;
     background-color: transparent;
     mask: linear-gradient(-45deg, #fff 50%, transparent 0);
     transform: skew(26.5deg) translateX(-25%);
 }
+
+.sierpinski-part-1 {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%,
+    var(--lg) 0 0 / 50% 50%;
+ 
+}
+
 .sierpinski-part-2 {
     --lg: linear-gradient(135deg, #fff 50%, transparent 0);
-    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%;
+    background: var(--lg) 0 0 / 100% 100%,
+    var(--lg) 0 0 / 50% 50%,
+    var(--lg) 0 0 / 25% 25%;
     background-color: transparent;
     mask: linear-gradient(-45deg, #fff 50%, transparent 0);
     transform: skew(26.5deg) translateX(-25%);
@@ -136,7 +151,10 @@ section.six {
 
 .sierpinski-part-3 {
     --lg: linear-gradient(135deg, #fff 50%, transparent 0);
-    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%;
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%;
     background-color: transparent;
     mask: linear-gradient(-45deg, #fff 50%, transparent 0);
     transform: skew(26.5deg) translateX(-25%);
@@ -144,7 +162,11 @@ section.six {
 
 .sierpinski-part-4 {
     --lg: linear-gradient(135deg, #fff 50%, transparent 0);
-    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%; 
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%, 
+    var(--lg) 0 0 / 6.25% 6.25%;
     background-color: transparent;
     mask: linear-gradient(-45deg, #fff 50%, transparent 0);
     transform: skew(26.5deg) translateX(-25%);
@@ -152,7 +174,12 @@ section.six {
 
 .sierpinski-part-5 {
     --lg: linear-gradient(135deg, #fff 50%, transparent 0);
-    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%;
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%, 
+    var(--lg) 0 0 / 6.25% 6.25%, 
+    var(--lg) 0 0 / 3.125% 3.125%;
     background-color: transparent;
     mask: linear-gradient(-45deg, #fff 50%, transparent 0);
     transform: skew(26.5deg) translateX(-25%);
@@ -160,7 +187,14 @@ section.six {
 
 .sierpinski-part-6 {
     --lg: linear-gradient(135deg, #fff 50%, transparent 0);
-    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%;
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%, 
+    var(--lg) 0 0 / 6.25% 6.25%, 
+    var(--lg) 0 0 / 3.125% 3.125%, 
+    var(--lg) 0 0 / 3.125% 3.125%, 
+    var(--lg) 0 0 / 1.5625% 1.5625%;
     background-color: transparent;
     mask: linear-gradient(-45deg, #fff 50%, transparent 0);
     transform: skew(26.5deg) translateX(-25%);
@@ -189,8 +223,8 @@ section.six {
 }
 
 @keyframes sierpinski-anim {
-    0% {       
-        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%;                  
+    0% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%;
     }
     10% {
         background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%;

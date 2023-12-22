@@ -3,7 +3,6 @@
 }
 
 .gradient-box {
-    border: 1px solid white;
     min-width: 200px;
     min-height: 200px;
 }
@@ -11,8 +10,10 @@
 .gradient-basic-1 {
     background-image: linear-gradient(#ff6a00, #0a15cb);
 }
-
-section {
+.gradient-basic-2 {
+    background-image: linear-gradient(30deg,#ff6a00, #0a15cb, rgba(30,30,90,0.5), #dbc46b);
+}
+    section {
     aspect-ratio: 1;
     width: 80dvmin;
     margin: 5rem auto;

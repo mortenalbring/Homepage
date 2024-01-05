@@ -7,9 +7,11 @@ a.navbar-brand {
     word-break: break-all;
 }
 
-/* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+    color: #d0d0d0;
+}
+a:hover {
+    color: #ffbe59;
 }
 
 .btn-primary {
@@ -90,8 +92,8 @@ body {
 
 }
 
-p {
+p,h3 {
     font-family: 'Titillium Web', sans-serif;
-    line-height: 1.25;
+    line-height: 1.4;
 }
 

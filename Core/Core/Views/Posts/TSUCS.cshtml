@@ -36,14 +36,14 @@
 
 @section Content
 {
-    <div class="container text-light">
+    <div class="container panel-main text-light">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <p>
                     The Three-Scroll Unified Chaotic System (TSUCS) was introduced by Lin Pan, Wuneng Zhou, Jian’an Fang and Dequan Li in <a href="http://www.internonlinearscience.org/upload/papers/20110618025420887.pdf">a paper submitted to the International Journal of Nonlinear Science</a> in 2010. The TSUCS contains both a Lorenz-style attractor and also a Lu Chen-style attractor at its extremes.
                 </p>
 
-                <p>
+                <p class="panel-code">
                     \begin{align}
                     \frac{dx}{dt} & = \textrm{a} (y - x) + \textrm{d} x y \\
                     \frac{dy}{dt} & = \textrm{c}x - xy + \textrm{f}y \\
@@ -52,7 +52,7 @@
                 </p>
 
                 where I use the parameters
-                <p>
+                <p class="panel-code">
                     \begin{align}
                     \textrm{a} & = 40 \\
                     \textrm{b} & = 1.833 \\
@@ -69,7 +69,7 @@
                 </p>
 
                 <a href="/images/tsucs/tsucs0073.png">
-                    <img src="/images/tsucs/tsucs0073_sm.png"/>
+                    <img class="panel-image" src="/images/tsucs/tsucs0073_sm.png"/>
                 </a>
 
                 <p>
@@ -77,7 +77,7 @@
                 </p>
 
                 <a href="/images/tsucs/tsucs_full.png">
-                    <img src="/images/tsucs/tsucs_full_sm.png"/>
+                    <img class="panel-image" src="/images/tsucs/tsucs_full_sm.png"/>
                 </a>
 
                 <br/>
@@ -86,9 +86,11 @@
                     The POV-Ray macro for rendering this attractor is:
                 </p>
 
-
-                <code>
-                    <pre>
+                <div class="panel-code">
+                    
+                
+                    <code>
+                        <pre>
 #macro TSUCS(a, b, c, d, e, f, dT, Iter, x0, y0, z0, R) 
     #local Count=0;
 	#while (Count&lt;Iter)        
@@ -133,7 +135,8 @@
 	#end
 #end
 </pre>
-                </code>
+                    </code>
+                    </div>
                 <p>
                     This renders a series of spheres according to the differential equations.
                     This also renders a red trace for the most recent points.
@@ -145,17 +148,22 @@
 TSUCS(40, 1.833, 55, 0.16,0.65,20,0.00002, 1000000*clock, 0.0001, 0.0001, 0.0001, 1)
 </pre>
                 </code>
-                
-                
-                <br/>
-                <a href="/images/tsucs/tscucf24.webm">
-                <video height="480" autoplay="autoplay" loop muted src="/images/tsucs/tscucf24.webm"></video>
-                </a>
-                
-                <p>We can also add a skysphere and checkered floor to make the scene look nice </p>
 
-                <code>
-                    <pre>
+
+                <br/>
+                <div class="panel-image">
+                    
+                
+                <a href="/images/tsucs/tscucf24.webm">
+                    <video height="480" autoplay="autoplay" loop muted src="/images/tsucs/tscucf24.webm"></video>
+                </a>
+</div>
+                <p>We can also add a skysphere and checkered floor to make the scene look nice </p>
+                <div class="panel-code">
+                    
+                
+                    <code>
+                        <pre>
 light_source {
   0*x
   color rgb 1.0
@@ -199,7 +207,8 @@ sky_sphere {
 	} 
 
 </pre>
-                </code>
+                    </code>
+                    </div>
             </div>
         </div>
         <div class="row">
@@ -207,8 +216,7 @@ sky_sphere {
 
 
                 @* <video height="480" autoplay="autoplay" loop muted src="/images/tsucs/tscucf12.webm"></video> *@
-                
-                
+
 
                 <a href="/images/tsucs/tsucs3407.png">
                     <img src="/images/tsucs/tsucs34072_sm.png"/>

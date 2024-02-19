@@ -1,8 +1,8 @@
-﻿@model HomeViewModel
-@using Microsoft.AspNetCore.Mvc.Localization
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Index = Core.Resources.Views.Home.Index
+@model HomeViewModel
 @{
     ViewData["Title"] = "Morten Albring - Personal Homepage";
-
 @inject IViewLocalizer Localizer
     }
 
@@ -42,12 +42,12 @@
             <div class="col-sm-6 col-md-4">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="CssReflect">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.CssReflect)],
+                               Title = Localizer[nameof(Index.CssReflect)],
                                CoverImagePath = "images/home/cover-cssreflect_2.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.CssReflectTextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.CssReflectTextShort)]
+                               TextLong = Localizer[nameof(Index.CssReflectTextLong)],
+                               TextShort = Localizer[nameof(Index.CssReflectTextShort)]
                            }); }
                     </a>
                 </div>
@@ -55,12 +55,12 @@
             <div class="col-sm-6 col-md-4">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="Words">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Words)],
+                               Title = Localizer[nameof(Index.Words)],
                                CoverImagePath = "images/home/cover-words.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.WordsTextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.WordsTextShort)]
+                               TextLong = Localizer[nameof(Index.WordsTextLong)],
+                               TextShort = Localizer[nameof(Index.WordsTextShort)]
                            }); }
                     </a>
                 </div>
@@ -68,28 +68,28 @@
             <div class="col-sm-6 col-md-4">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="FractalChaos">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaos)],
+                               Title = Localizer[nameof(Index.FractalChaos)],
                                CoverImagePath = "images/home/cover-fractalchaos.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.FractalChaosTextLong)]
+                               TextLong = Localizer[nameof(Index.FractalChaosTextLong)],
+                               TextShort = Localizer[nameof(Index.FractalChaosTextLong)]
                            }); }
                     </a>
                 </div>
             </div>
         </div>
-        
+
         <div class="row p-3">
             <div class="col-sm-6 col-md-6">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="MengerSponge">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Menger)],
-                               CoverImagePath = "images/home/cover-menger_2.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.MengerTextShort)]
+                               Title = Localizer[nameof(Index.Menger)],
+                               CoverImagePath = "images/home/cover-menger_3.png",
+                               TextLong = Localizer[nameof(Index.MengerTextLong)],
+                               TextShort = Localizer[nameof(Index.MengerTextShort)]
                            }); }
                     </a>
                 </div>
@@ -97,12 +97,12 @@
             <div class="col-sm-6 col-md-6">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="TSUCS">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCS)],
+                               Title = Localizer[nameof(Index.TSUCS)],
                                CoverImagePath = "images/home/cover-tsucs.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCSTextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.TSUCSTextShort)]
+                               TextLong = Localizer[nameof(Index.TSUCSTextLong)],
+                               TextShort = Localizer[nameof(Index.TSUCSTextShort)]
                            }); }
                     </a>
                 </div>
@@ -116,12 +116,12 @@
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="PeterDeJong">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJong)],
+                               Title = Localizer[nameof(Index.PeterDeJong)],
                                CoverImagePath = "images/home/cover-peterdejong.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJongTextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.PeterDeJongTextShort)]
+                               TextLong = Localizer[nameof(Index.PeterDeJongTextLong)],
+                               TextShort = Localizer[nameof(Index.PeterDeJongTextShort)]
                            }); }
                     </a>
                 </div>
@@ -130,12 +130,12 @@
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="Lorenz">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Lorenz)],
+                               Title = Localizer[nameof(Index.Lorenz)],
                                CoverImagePath = "images/home/cover-lorenz.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.LorenzTextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.LorenzTextShort)]
+                               TextLong = Localizer[nameof(Index.LorenzTextLong)],
+                               TextShort = Localizer[nameof(Index.LorenzTextShort)]
                            }); }
                     </a>
                 </div>
@@ -146,12 +146,12 @@
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="AngularD3">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3)],
+                               Title = Localizer[nameof(Index.AngularD3)],
                                CoverImagePath = "images/home/cover-angulard3.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3TextLong)],
-                               TextShort = Localizer[nameof(Core.Resources.Views.Home.Index.AngularD3TextShort)]
+                               TextLong = Localizer[nameof(Index.AngularD3TextLong)],
+                               TextShort = Localizer[nameof(Index.AngularD3TextShort)]
                            }); }
                     </a>
                 </div>
@@ -160,11 +160,11 @@
             <div class="col-sm">
                 <div class="ma-img-container d-flex justify-content-center">
                     <a class="nav-link" asp-area="" asp-controller="Posts" asp-action="ComputationsIrreversibility">
-                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox()
+                        @{ await Html.RenderPartialAsync("PostInfoBox", new PostInfoBox
                            {
-                               Title = Localizer[nameof(Core.Resources.Views.Home.Index.Computations)],
+                               Title = Localizer[nameof(Index.Computations)],
                                CoverImagePath = "images/home/cover-demon-sm-trans.png",
-                               TextLong = Localizer[nameof(Core.Resources.Views.Home.Index.ComputationsTextLong)]
+                               TextLong = Localizer[nameof(Index.ComputationsTextLong)]
                            }); }
                     </a>
                 </div>

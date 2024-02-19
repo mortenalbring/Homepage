@@ -83,8 +83,12 @@ namespace Core
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseWebOptimizer();
-            
+            if (!IsTesting)
+            {
+                app.UseWebOptimizer();
+
+            }
+
             app.UseRequestLocalization();
             
             app.UseStaticFiles();

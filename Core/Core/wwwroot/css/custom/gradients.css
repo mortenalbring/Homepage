@@ -2,13 +2,25 @@
     background: #111213;
 }
 
+.gradient-box {
+    min-width: 200px;
+    min-height: 200px;
+}
 
-section {
+.gradient-basic-1 {
+    background-image: linear-gradient(#ff6a00, #0a15cb);
+}
+.gradient-basic-2 {
+    background-image: linear-gradient(30deg,#ff6a00, #0a15cb, rgba(30,30,90,0.5), #dbc46b);
+}
+    section {
     aspect-ratio: 1;
     width: 80dvmin;
     margin: 5rem auto;
     box-shadow: 0 0 2rem rgb(0 0 0 / 1);
 }
+
+
 
 section.one {
     background-image: linear-gradient(
@@ -19,17 +31,32 @@ section.one {
     background-size: 4rem 4rem;
 }
 
-section.norway {
+.norway-part-1 {
+    background-image: linear-gradient(90deg, transparent 28%, blue 28%, blue 34%, transparent 10%);
+    background-size: 15rem 9rem;
+    background-repeat: no-repeat;
+}
+
+.norway-part-2 {
+    background-image: linear-gradient(transparent 42%, white 42%, white 46%, blue 46%, blue 58%, white 58%, white 62%, transparent 62%)
+}
+
+.norway-part-3 {
+    background-image: linear-gradient(90deg, red 25%, white 25%, white 28%, blue 28%, blue 34%, white 34%, white 37%, red 37%);
+}
+
+.norway-container {
+    background-size: 15rem 9rem;
+    background-repeat: no-repeat;
+}
+
+.norway {
     background-image: linear-gradient(90deg, transparent 28%, blue 28%, blue 34%, transparent 10%),
     linear-gradient(transparent 42%, white 42%, white 46%, blue 46%, blue 58%, white 58%, white 62%, transparent 62%),
-    linear-gradient(90deg, red 25%, white 25%, white 28%, blue 28%, blue 34%, white 34%, white 37%, red 37%)
-;
-    
+    linear-gradient(90deg, red 25%, white 25%, white 28%, blue 28%, blue 34%, white 34%, white 37%, red 37%);
 
     background-size: 15rem 9rem;
     background-repeat: no-repeat;
-    
-
 }
 
 section.two {
@@ -92,13 +119,143 @@ section.six {
     width: 320px;
     height: 320px;
     --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-container {
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-part-1 {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%,
+    var(--lg) 0 0 / 50% 50%;
+ 
+}
+
+.sierpinski-part-2 {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
     background: var(--lg) 0 0 / 100% 100%,
     var(--lg) 0 0 / 50% 50%,
-    var(--lg) 0 0 / 25% 25%,
-    var(--lg) 0 0 / 12.5% 12.5%,
-    var(--lg) 0 0 / 6.25% 6.25%,
+    var(--lg) 0 0 / 25% 25%;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-part-3 {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-part-4 {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%, 
+    var(--lg) 0 0 / 6.25% 6.25%;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-part-5 {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%, 
+    var(--lg) 0 0 / 6.25% 6.25%, 
     var(--lg) 0 0 / 3.125% 3.125%;
     background-color: transparent;
     mask: linear-gradient(-45deg, #fff 50%, transparent 0);
     transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-part-6 {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%, 
+    var(--lg) 0 0 / 50% 50%, 
+    var(--lg) 0 0 / 25% 25%, 
+    var(--lg) 0 0 / 12.5% 12.5%, 
+    var(--lg) 0 0 / 6.25% 6.25%, 
+    var(--lg) 0 0 / 3.125% 3.125%, 
+    var(--lg) 0 0 / 3.125% 3.125%, 
+    var(--lg) 0 0 / 1.5625% 1.5625%;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-part- {
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+    background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%;
+    background-color: transparent;
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    transform: skew(26.5deg) translateX(-25%);
+}
+
+.sierpinski-anim {
+    animation-name: sierpinski-anim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    background-color: transparent;
+    animation-direction: alternate;
+    transform: skew(26.5deg) translateX(-25%);
+    mask: linear-gradient(-45deg, #fff 50%, transparent 0);
+    --lg: linear-gradient(135deg, #fff 50%, transparent 0);
+}
+
+@keyframes sierpinski-anim {
+    0% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%;
+    }
+    10% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%;
+    }
+    20% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%;
+    }
+    30% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%;
+    }
+    40% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%;
+    }
+    50% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%;
+    }
+    60% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%;
+    }
+    70% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%, var(--lg) 0 0 / 0.78125% 0.78125%;
+    }
+    80% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%, var(--lg) 0 0 / 0.78125% 0.78125%, var(--lg) 0 0 / 0.390625% 0.390625%;
+    }
+    90% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%, var(--lg) 0 0 / 0.78125% 0.78125%, var(--lg) 0 0 / 0.390625% 0.390625%;
+    }
+    100% {
+        background: var(--lg) 0 0 / 100% 100%, var(--lg) 0 0 / 50% 50%, var(--lg) 0 0 / 25% 25%, var(--lg) 0 0 / 12.5% 12.5%, var(--lg) 0 0 / 6.25% 6.25%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 3.125% 3.125%, var(--lg) 0 0 / 1.5625% 1.5625%, var(--lg) 0 0 / 0.78125% 0.78125%, var(--lg) 0 0 / 0.390625% 0.390625%;
+    }
+
 }

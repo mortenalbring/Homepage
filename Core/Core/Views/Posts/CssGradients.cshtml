@@ -15,15 +15,63 @@
 @section Content {
 
     <link rel="stylesheet" href="/css/custom/gradients.css"/>
-    
+
     <div class="container text-light">
+        <div class="row">
+            <div class="col">
+                <p>CSS gradients are pretty fun, and there's a remarkable amount of things you can do with them! The most obvious thing we can do is just a basic smooth linear gradient from one colour to another.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <pre>
+                <code class="language-css">
+.gradient-basic-1 {
+    background-image: linear-gradient(#ff6a00, #0a15cb);
+}
+                </code>
+                </pre>
+            </div>
+            <div class="col">
+                <div class="gradient-box gradient-basic-1"></div>                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>And of course we can add rotations, more colours, transparency, etc... </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <pre>
+                <code class="language-markup">
+.gradient-basic-2 {
+    background-image: linear-gradient(30deg, 
+                        #ff6a00, 
+                        #0a15cb, 
+                        rgba(30,30,90,0.5), 
+                        #dbc46b);
+    
+}
+                </code>
+                </pre>
+            </div>
+            <div class="col">
+                <div class="gradient-box gradient-basic-2"></div>                
+            </div>
+        </div>
 
         <div class="row">
             <div class="col">
-                Norge
+                Norge 4
             </div>
             <div class="col">
-                <section class="norway"></section>
+                <div class="gradient-box norway"></div>
+                <br />
+                <div class="gradient-box norway-container norway-part-1"></div>
+                <br/>                
+                 <div class="gradient-box norway-container norway-part-2"></div>
+                  <div class="gradient-box norway-container norway-part-3"></div>
             </div>
         </div>
 
@@ -37,7 +85,7 @@
         </div>
         <div class="row">
             <div class="col">
-                Test
+                Test 4
             </div>
             <div class="col">
                 <section class="two"></section>
@@ -76,6 +124,19 @@
             </div>
             <div class="col">
                 <section class="six"></section>
+
+                <div class="sierpinski-container sierpinski-part-1">
+
+                </div>
+                                <div class="sierpinski-container sierpinski-part-2">
+
+                </div>
+                <div class="sierpinski-container sierpinski-part-3"></div>
+                <div class="sierpinski-container sierpinski-part-4"></div>
+                <div class="sierpinski-container sierpinski-part-5"></div>
+                <div class="sierpinski-container sierpinski-part-6"></div>
+                <div class="sierpinski-container sierpinski-anim"></div>
+
             </div>
         </div>
 

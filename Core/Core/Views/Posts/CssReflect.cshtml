@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="/css/custom/reflect.css"/>
 
-    <div class="container text-light">
+    <div class="container panel-main text-light">
 
     <div class="row">
         <div class="col">
@@ -364,15 +364,17 @@
             <p>We can also avoid the whole pseudoelement stuff by using <code class="language-css">-webkit</code> classes. Note that these features are highly non-standard and will not work the same (or at all!) across devices or browsers. However, if it works on your device, it does look pretty neat. </p>
         </div>
     </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="wkreflect">Button</div>
-                <div><p>We use all the general styling that we did above, and then also set the background using the <code class="language-css">element()</code> function on the ID of that element. </p></div>
-                <p>We can then use the <code class="language-css">-webkit-box-reflect</code> to reflect that element, apply a gradient and get the look of the reflections. I've not been able to reproduce the same angle and perspective as we did with the transform above, but presumably using this class on a separate element and transforming that might work. </p>
+    <div class="row">
+        <div class="col-6">
+            <div class="wkreflect">Button</div>
+            <div>
+                <p>We use all the general styling that we did above, and then also set the background using the <code class="language-css">element()</code> function on the ID of that element. </p>
             </div>
-            <div class="col-6">
-                <pre><code class="language-html">&lt;div class="wkreflect">Button&lt;/div></code></pre>
-                <pre><code class="language-css">
+            <p>We can then use the <code class="language-css">-webkit-box-reflect</code> to reflect that element, apply a gradient and get the look of the reflections. I've not been able to reproduce the same angle and perspective as we did with the transform above, but presumably using this class on a separate element and transforming that might work. </p>
+        </div>
+        <div class="col-6">
+            <pre><code class="language-html">&lt;div class="wkreflect">Button&lt;/div></code></pre>
+            <pre><code class="language-css">
 .wkreflect {
     display: inline-block;
     border: #fd4444 0.125em solid;
@@ -390,12 +392,10 @@
                         -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));
     background: element(#wkreflect);
 }</code></pre>
-            </div>
         </div>
-
     </div>
 
-
+    </div>
 
 
     @* <img class="reflect-webkit-image" src="/images/home/mortcoverface.png"/> *@

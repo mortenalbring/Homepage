@@ -1,7 +1,5 @@
-﻿namespace Core.Controllers
+﻿namespace Core.Controllers;
+
+public class SharedResource
 {
-    public class SharedResource
-    {
-        
-    }
 }

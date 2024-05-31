@@ -21,7 +21,12 @@
     display: inline-block;
     border: 0px solid rgba(184, 218, 255, 0.07);
     border-radius: 10px;
+    
+    .nav-link {
+        text-align: center !important;
+    }
 }
+
 
 
 .ma-section-lighter {
